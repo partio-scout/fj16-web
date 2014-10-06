@@ -31,6 +31,16 @@ drush runserver
 
 This requires PHP 5.4 (or php-cgi). If you use WAMP/XAMPP/etc. you can also place the codebase in a virtual host or somewhere under the web root and just access it via Apache.
 
+# Features-based Workflow
+
+Every time you're done with your changes to a feature, export it to disk using the Drupal UI.
+
+Always before starting new work or doing a git pull, make sure your database matches the code by running:
+```sh
+# fra is a shorthand for features-revert-all
+drush fra -y
+```
+
 # License
 
 TODO Licence
