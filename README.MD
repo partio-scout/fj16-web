@@ -31,6 +31,8 @@ chmod +x fj16-dev-setup.sh
 drush runserver
 ```
 
+Default login is admin/admin.
+
 This requires PHP 5.4 (or php-cgi). If you use WAMP/XAMPP/etc. you can also place the codebase in a virtual host or somewhere under the web root and just access it via Apache.
 
 # Features-based Workflow
