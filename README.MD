@@ -19,7 +19,7 @@ Also LAMP, WAMP etc., also with slightly older PHP do work, you just need to rep
 ## Site Installation
 
 ```sh
-git@github.com:partio-scout/fj16-web.git
+git clone git@github.com:partio-scout/fj16-web.git
 cd fj16-web
 chmod +x fj16-dev-setup.sh
 ./fj16-dev-setup.sh
