@@ -37,6 +37,8 @@ Every time you're done with your changes to a feature, export it to disk using t
 
 Always before starting new work or doing a git pull, make sure your database matches the code by running:
 ```sh
+# runs database migrations, e.g. installation of new features
+drush updatedb
 # fra is a shorthand for features-revert-all
 drush fra -y
 ```
