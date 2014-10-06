@@ -1,0 +1,4 @@
+name = FJ16 Master
+description = "Keeps track of installed features"
+package = FJ16
+core = 7.x
