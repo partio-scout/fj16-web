@@ -78,6 +78,7 @@ features[user_permission][] = translate user-defined strings
 features[user_permission][] = view own unpublished content
 features[user_permission][] = view revisions
 features[user_permission][] = view the administration theme
+features[user_role][] = content editor
 features[variable][] = date_default_timezone
 features[variable][] = filter_fallback_format
 features[variable][] = language_count
