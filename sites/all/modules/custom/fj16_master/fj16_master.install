@@ -1,3 +1,7 @@
 <?php
 
-// Placehoder for update hooks that enable necessary features
+// Update hooks that enable necessary features
+
+function fj16_master_update_7001() {
+  module_enable(array('fj16_base'));
+}
