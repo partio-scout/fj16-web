@@ -350,6 +350,27 @@ Your account on [site:name] has been canceled.
   'configurable_timezones' => 0,
   'empty_timezone_message' => 0,
   'user_default_timezone' => 0,
+  'admin_theme' => 'seven',
+  'node_admin_theme' => 0,
+  'menu_main_links_source' => 'main-menu',
+  'menu_secondary_links_source' => 'user-menu',
+  'features_semaphore' => array(),
+  'features_codecache' => array(
+    'fj16_base' => array(
+      'filter' => '7464fa39844d973ed9c41db3fb2a0509',
+      'language' => '43f7750f41aab994637a1fba5deb8c5b',
+      'menu_custom' => 'cd80c9fe432c12127dca6444105a0a2e',
+      'user_permission' => '3697fb15fcd74270e70359e831ca5ac0',
+      'user_role' => '13fa3ef3699d7dae83b03a4b0fa51bb1',
+      'dependencies' => 'ccd7096e54e8e4c28de039bfde696b86',
+      'variable' => 'ee09a00c176406f457c827a84e9f4028',
+      'variable_realm' => '613dd4a6955905b56618baca03b7a269',
+      'translations' => '123d73a5a6d1ed20b51d205826877661',
+    ),
+  ),
+  '404_fast_paths_exclude' => '/\\/(?:styles)\\//',
+  '404_fast_paths' => '/\\.(?:txt|png|gif|jpe?g|css|js|ico|swf|flv|cgi|bat|pl|dll|exe|asp)$/i',
+  '404_fast_html' => '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>404 Not Found</title></head><body><h1>Not Found</h1><p>The requested URL "@path" was not found on this server.</p></body></html>',
   'javascript_parsed' => array(
     0 => 'misc/drupal.js',
     1 => 'misc/jquery.js',
@@ -381,13 +402,6 @@ Your account on [site:name] has been canceled.
     26 => 'misc/vertical-tabs.js',
     27 => 'misc/states.js',
   ),
-  'admin_theme' => 'seven',
-  'node_admin_theme' => 0,
-  'menu_main_links_source' => 'main-menu',
-  'menu_secondary_links_source' => 'user-menu',
-  '404_fast_paths_exclude' => '/\\/(?:styles)\\//',
-  '404_fast_paths' => '/\\.(?:txt|png|gif|jpe?g|css|js|ico|swf|flv|cgi|bat|pl|dll|exe|asp)$/i',
-  '404_fast_html' => '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>404 Not Found</title></head><body><h1>Not Found</h1><p>The requested URL "@path" was not found on this server.</p></body></html>',
 );
   $realm_variables['language']['en'] = array();
   $realm_variables['language']['fi'] = array();

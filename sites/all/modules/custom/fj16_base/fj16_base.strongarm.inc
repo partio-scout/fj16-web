@@ -42,7 +42,7 @@ function fj16_base_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'date_first_day';
-  $strongarm->value = '1';
+  $strongarm->value = 1;
   $export['date_first_day'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -87,7 +87,7 @@ function fj16_base_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'image_jpeg_quality';
-  $strongarm->value = '90';
+  $strongarm->value = 90;
   $export['image_jpeg_quality'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -108,17 +108,17 @@ function fj16_base_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_default';
-  $strongarm->value = (object) array(
+  $strongarm->value = array(
     'language' => 'fi',
     'name' => 'Finnish',
     'native' => 'Suomi',
-    'direction' => '0',
-    'enabled' => '1',
-    'plurals' => '2',
+    'direction' => 0,
+    'enabled' => 1,
+    'plurals' => 2,
     'formula' => '($n!=1)',
     'domain' => '',
     'prefix' => 'fi',
-    'weight' => '-10',
+    'weight' => -10,
     'javascript' => '64CNqrBSQJQC6ZoVFpW0YSkgW3A5kLZRBOh66ZwvI_E',
   );
   $export['language_default'] = $strongarm;
@@ -195,7 +195,7 @@ function fj16_base_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'locale_language_negotiation_url_part';
-  $strongarm->value = '0';
+  $strongarm->value = 0;
   $export['locale_language_negotiation_url_part'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -203,11 +203,11 @@ function fj16_base_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'locale_language_providers_weight_language';
   $strongarm->value = array(
-    'locale-url' => '-8',
-    'locale-session' => '-6',
-    'locale-user' => '-4',
-    'locale-browser' => '-2',
-    'language-default' => '10',
+    'locale-url' => -8,
+    'locale-session' => -6,
+    'locale-user' => -4,
+    'locale-browser' => -2,
+    'language-default' => 10,
   );
   $export['locale_language_providers_weight_language'] = $strongarm;
 
@@ -243,7 +243,7 @@ function fj16_base_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_case';
-  $strongarm->value = '1';
+  $strongarm->value = 1;
   $export['pathauto_case'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -257,14 +257,14 @@ function fj16_base_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_max_component_length';
-  $strongarm->value = '100';
+  $strongarm->value = 100;
   $export['pathauto_max_component_length'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_max_length';
-  $strongarm->value = '100';
+  $strongarm->value = 100;
   $export['pathauto_max_length'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -278,224 +278,224 @@ function fj16_base_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_punctuation_ampersand';
-  $strongarm->value = '0';
+  $strongarm->value = 0;
   $export['pathauto_punctuation_ampersand'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_punctuation_asterisk';
-  $strongarm->value = '0';
+  $strongarm->value = 0;
   $export['pathauto_punctuation_asterisk'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_punctuation_at';
-  $strongarm->value = '0';
+  $strongarm->value = 0;
   $export['pathauto_punctuation_at'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_punctuation_back_slash';
-  $strongarm->value = '0';
+  $strongarm->value = 0;
   $export['pathauto_punctuation_back_slash'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_punctuation_backtick';
-  $strongarm->value = '0';
+  $strongarm->value = 0;
   $export['pathauto_punctuation_backtick'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_punctuation_caret';
-  $strongarm->value = '0';
+  $strongarm->value = 0;
   $export['pathauto_punctuation_caret'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_punctuation_colon';
-  $strongarm->value = '0';
+  $strongarm->value = 0;
   $export['pathauto_punctuation_colon'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_punctuation_comma';
-  $strongarm->value = '0';
+  $strongarm->value = 0;
   $export['pathauto_punctuation_comma'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_punctuation_dollar';
-  $strongarm->value = '0';
+  $strongarm->value = 0;
   $export['pathauto_punctuation_dollar'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_punctuation_double_quotes';
-  $strongarm->value = '0';
+  $strongarm->value = 0;
   $export['pathauto_punctuation_double_quotes'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_punctuation_equal';
-  $strongarm->value = '0';
+  $strongarm->value = 0;
   $export['pathauto_punctuation_equal'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_punctuation_exclamation';
-  $strongarm->value = '0';
+  $strongarm->value = 0;
   $export['pathauto_punctuation_exclamation'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_punctuation_greater_than';
-  $strongarm->value = '0';
+  $strongarm->value = 0;
   $export['pathauto_punctuation_greater_than'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_punctuation_hash';
-  $strongarm->value = '0';
+  $strongarm->value = 0;
   $export['pathauto_punctuation_hash'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_punctuation_hyphen';
-  $strongarm->value = '1';
+  $strongarm->value = 1;
   $export['pathauto_punctuation_hyphen'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_punctuation_left_curly';
-  $strongarm->value = '0';
+  $strongarm->value = 0;
   $export['pathauto_punctuation_left_curly'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_punctuation_left_parenthesis';
-  $strongarm->value = '0';
+  $strongarm->value = 0;
   $export['pathauto_punctuation_left_parenthesis'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_punctuation_left_square';
-  $strongarm->value = '0';
+  $strongarm->value = 0;
   $export['pathauto_punctuation_left_square'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_punctuation_less_than';
-  $strongarm->value = '0';
+  $strongarm->value = 0;
   $export['pathauto_punctuation_less_than'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_punctuation_percent';
-  $strongarm->value = '0';
+  $strongarm->value = 0;
   $export['pathauto_punctuation_percent'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_punctuation_period';
-  $strongarm->value = '0';
+  $strongarm->value = 0;
   $export['pathauto_punctuation_period'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_punctuation_pipe';
-  $strongarm->value = '0';
+  $strongarm->value = 0;
   $export['pathauto_punctuation_pipe'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_punctuation_plus';
-  $strongarm->value = '0';
+  $strongarm->value = 0;
   $export['pathauto_punctuation_plus'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_punctuation_question_mark';
-  $strongarm->value = '0';
+  $strongarm->value = 0;
   $export['pathauto_punctuation_question_mark'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_punctuation_quotes';
-  $strongarm->value = '0';
+  $strongarm->value = 0;
   $export['pathauto_punctuation_quotes'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_punctuation_right_curly';
-  $strongarm->value = '0';
+  $strongarm->value = 0;
   $export['pathauto_punctuation_right_curly'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_punctuation_right_parenthesis';
-  $strongarm->value = '0';
+  $strongarm->value = 0;
   $export['pathauto_punctuation_right_parenthesis'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_punctuation_right_square';
-  $strongarm->value = '0';
+  $strongarm->value = 0;
   $export['pathauto_punctuation_right_square'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_punctuation_semicolon';
-  $strongarm->value = '0';
+  $strongarm->value = 0;
   $export['pathauto_punctuation_semicolon'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_punctuation_slash';
-  $strongarm->value = '0';
+  $strongarm->value = 0;
   $export['pathauto_punctuation_slash'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_punctuation_tilde';
-  $strongarm->value = '0';
+  $strongarm->value = 0;
   $export['pathauto_punctuation_tilde'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_punctuation_underscore';
-  $strongarm->value = '0';
+  $strongarm->value = 0;
   $export['pathauto_punctuation_underscore'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -523,7 +523,7 @@ function fj16_base_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_update_action';
-  $strongarm->value = '2';
+  $strongarm->value = 2;
   $export['pathauto_update_action'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -551,7 +551,7 @@ function fj16_base_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'redirect_default_status_code';
-  $strongarm->value = '301';
+  $strongarm->value = 301;
   $export['redirect_default_status_code'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -607,7 +607,7 @@ function fj16_base_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'redirect_purge_inactive';
-  $strongarm->value = '0';
+  $strongarm->value = 0;
   $export['redirect_purge_inactive'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -658,7 +658,7 @@ function fj16_base_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'user_admin_role';
-  $strongarm->value = '0';
+  $strongarm->value = 0;
   $export['user_admin_role'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -672,7 +672,7 @@ function fj16_base_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'user_default_timezone';
-  $strongarm->value = '0';
+  $strongarm->value = 0;
   $export['user_default_timezone'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -909,7 +909,7 @@ Your account on [site:name] has been canceled.
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'user_picture_file_size';
-  $strongarm->value = '30';
+  $strongarm->value = 30;
   $export['user_picture_file_size'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -944,7 +944,7 @@ Your account on [site:name] has been canceled.
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'user_register';
-  $strongarm->value = '0';
+  $strongarm->value = 0;
   $export['user_register'] = $strongarm;
 
   $strongarm = new stdClass();
