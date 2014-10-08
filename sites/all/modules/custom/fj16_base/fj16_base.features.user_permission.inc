@@ -335,6 +335,15 @@ function fj16_base_user_default_permissions() {
     'module' => 'i18n_string',
   );
 
+  // Exported permission: 'use text format full_html'.
+  $permissions['use text format full_html'] = array(
+    'name' => 'use text format full_html',
+    'roles' => array(
+      'content editor' => 'content editor',
+    ),
+    'module' => 'filter',
+  );
+
   // Exported permission: 'view own unpublished content'.
   $permissions['view own unpublished content'] = array(
     'name' => 'view own unpublished content',
