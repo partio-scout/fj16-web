@@ -16,8 +16,8 @@ $realm_variables = array();
   'install_task' => 'done',
   'path_alias_whitelist' => array(),
   'filter_fallback_format' => 'plain_text',
-  'user_register' => 2,
-  'css_js_query_string' => 'nd1nh7',
+  'user_register' => 0,
+  'css_js_query_string' => 'nd55sg',
   'menu_masks' => array(
     0 => 501,
     1 => 250,
@@ -51,8 +51,8 @@ $realm_variables = array();
   'menu_expanded' => array(),
   'site_name' => 'Roihu 2016',
   'site_mail' => 'admin@example.com',
-  'date_default_timezone' => 'UTC',
-  'site_default_country' => '',
+  'date_default_timezone' => 'Europe/Helsinki',
+  'site_default_country' => 'FI',
   'update_notify_emails' => array(
     0 => 'admin@example.com',
   ),
@@ -91,9 +91,23 @@ $realm_variables = array();
     'language_content' => FALSE,
     'language_url' => FALSE,
   ),
-  'language_negotiation_language' => array(),
+  'language_negotiation_language' => array(
+    'locale-url' => array(
+      'callbacks' => array(
+        'language' => 'locale_language_from_url',
+        'switcher' => 'locale_language_switcher_url',
+        'url_rewrite' => 'locale_language_url_rewrite_url',
+      ),
+      'file' => 'includes/locale.inc',
+    ),
+    'language-default' => array(
+      'callbacks' => array(
+        'language' => 'language_from_default',
+      ),
+    ),
+  ),
   'features_ignored_orphans' => array(),
-  'pathauto_node_pattern' => 'content/[node:title]',
+  'pathauto_node_pattern' => '[node:menu-link:parents:join-path]/[node:title]',
   'pathauto_taxonomy_term_pattern' => '[term:vocabulary]/[term:name]',
   'pathauto_forum_pattern' => '[term:vocabulary]/[term:name]',
   'pathauto_user_pattern' => 'users/[user:name]',
@@ -102,6 +116,8 @@ $realm_variables = array();
   'variable_realm_list_language' => array(
     0 => 'site_name',
     1 => 'site_slogan',
+    2 => 'anonymous',
+    3 => 'maintenance_mode_message',
   ),
   'variable_module_list' => array(
     'i18n' => array(
@@ -138,23 +154,191 @@ $realm_variables = array();
       1 => 'i18n_variable_list',
     ),
   ),
+  'language_count' => 3,
+  'language_default' => array(
+    'language' => 'fi',
+    'name' => 'Finnish',
+    'native' => 'Suomi',
+    'direction' => 0,
+    'enabled' => 1,
+    'plurals' => 0,
+    'formula' => '',
+    'domain' => '',
+    'prefix' => 'fi',
+    'weight' => -10,
+    'javascript' => '',
+  ),
+  'ctools_last_cron' => 1412795493,
+  'image_toolkit' => 'gd',
+  'file_public_path' => 'sites/default/files',
+  'file_private_path' => '../drupal_private',
+  'file_default_scheme' => 'public',
+  'image_jpeg_quality' => 90,
+  'anonymous' => 'Anonymous',
+  'user_admin_role' => 0,
+  'user_email_verification' => 1,
+  'user_cancel_method' => 'user_cancel_reassign',
+  'user_signatures' => 0,
+  'user_pictures' => 0,
+  'user_picture_path' => 'pictures',
+  'user_picture_default' => '',
+  'user_picture_style' => '',
+  'user_picture_dimensions' => '85x85',
+  'user_picture_file_size' => 30,
+  'user_picture_guidelines' => '',
+  'email__active_tab' => 'edit-email-admin-created',
+  'user_mail_register_admin_created_subject' => 'An administrator created an account for you at [site:name]',
+  'user_mail_register_admin_created_body' => '[user:name],
+
+A site administrator at [site:name] has created an account for you. You may now log in by clicking this link or copying and pasting it to your browser:
+
+[user:one-time-login-url]
+
+This link can only be used once to log in and will lead you to a page where you can set your password.
+
+After setting your password, you will be able to log in at [site:login-url] in the future using:
+
+username: [user:name]
+password: Your password
+
+--  [site:name] team',
+  'user_mail_register_pending_approval_subject' => 'Account details for [user:name] at [site:name] (pending admin approval)',
+  'user_mail_register_pending_approval_body' => '[user:name],
+
+Thank you for registering at [site:name]. Your application for an account is currently pending approval. Once it has been approved, you will receive another e-mail containing information about how to log in, set your password, and other details.
+
+
+--  [site:name] team',
+  'user_mail_register_no_approval_required_subject' => 'Account details for [user:name] at [site:name]',
+  'user_mail_register_no_approval_required_body' => '[user:name],
+
+Thank you for registering at [site:name]. You may now log in by clicking this link or copying and pasting it to your browser:
+
+[user:one-time-login-url]
+
+This link can only be used once to log in and will lead you to a page where you can set your password.
+
+After setting your password, you will be able to log in at [site:login-url] in the future using:
+
+username: [user:name]
+password: Your password
+
+--  [site:name] team',
+  'user_mail_password_reset_subject' => 'Replacement login information for [user:name] at [site:name]',
+  'user_mail_password_reset_body' => '[user:name],
+
+A request to reset the password for your account has been made at [site:name].
+
+You may now log in by clicking this link or copying and pasting it to your browser:
+
+[user:one-time-login-url]
+
+This link can only be used once to log in and will lead you to a page where you can set your password. It expires after one day and nothing will happen if it\'s not used.
+
+--  [site:name] team',
+  'user_mail_status_activated_notify' => 1,
+  'user_mail_status_activated_subject' => 'Account details for [user:name] at [site:name] (approved)',
+  'user_mail_status_activated_body' => '[user:name],
+
+Your account at [site:name] has been activated.
+
+You may now log in by clicking this link or copying and pasting it into your browser:
+
+[user:one-time-login-url]
+
+This link can only be used once to log in and will lead you to a page where you can set your password.
+
+After setting your password, you will be able to log in at [site:login-url] in the future using:
+
+username: [user:name]
+password: Your password
+
+--  [site:name] team',
+  'user_mail_status_blocked_notify' => 0,
+  'user_mail_status_blocked_subject' => 'Account details for [user:name] at [site:name] (blocked)',
+  'user_mail_status_blocked_body' => '[user:name],
+
+Your account on [site:name] has been blocked.
+
+--  [site:name] team',
+  'user_mail_cancel_confirm_subject' => 'Account cancellation request for [user:name] at [site:name]',
+  'user_mail_cancel_confirm_body' => '[user:name],
+
+A request to cancel your account has been made at [site:name].
+
+You may now cancel your account on [site:url-brief] by clicking this link or copying and pasting it into your browser:
+
+[user:cancel-url]
+
+NOTE: The cancellation of your account is not reversible.
+
+This link expires in one day and nothing will happen if it is not used.
+
+--  [site:name] team',
+  'user_mail_status_canceled_notify' => 0,
+  'user_mail_status_canceled_subject' => 'Account details for [user:name] at [site:name] (canceled)',
+  'user_mail_status_canceled_body' => '[user:name],
+
+Your account on [site:name] has been canceled.
+
+--  [site:name] team',
+  'pathauto_verbose' => 0,
+  'pathauto_separator' => '-',
+  'pathauto_case' => 1,
+  'pathauto_max_length' => 100,
+  'pathauto_max_component_length' => 100,
+  'pathauto_update_action' => 2,
+  'pathauto_transliterate' => 1,
+  'pathauto_reduce_ascii' => 1,
+  'pathauto_ignore_words' => '',
+  'pathauto_punctuation_double_quotes' => 0,
+  'pathauto_punctuation_quotes' => 0,
+  'pathauto_punctuation_backtick' => 0,
+  'pathauto_punctuation_comma' => 0,
+  'pathauto_punctuation_period' => 0,
+  'pathauto_punctuation_underscore' => 0,
+  'pathauto_punctuation_colon' => 0,
+  'pathauto_punctuation_semicolon' => 0,
+  'pathauto_punctuation_pipe' => 0,
+  'pathauto_punctuation_left_curly' => 0,
+  'pathauto_punctuation_left_square' => 0,
+  'pathauto_punctuation_right_curly' => 0,
+  'pathauto_punctuation_right_square' => 0,
+  'pathauto_punctuation_plus' => 0,
+  'pathauto_punctuation_equal' => 0,
+  'pathauto_punctuation_asterisk' => 0,
+  'pathauto_punctuation_ampersand' => 0,
+  'pathauto_punctuation_percent' => 0,
+  'pathauto_punctuation_caret' => 0,
+  'pathauto_punctuation_dollar' => 0,
+  'pathauto_punctuation_hash' => 0,
+  'pathauto_punctuation_at' => 0,
+  'pathauto_punctuation_exclamation' => 0,
+  'pathauto_punctuation_tilde' => 0,
+  'pathauto_punctuation_left_parenthesis' => 0,
+  'pathauto_punctuation_right_parenthesis' => 0,
+  'pathauto_punctuation_question_mark' => 0,
+  'pathauto_punctuation_less_than' => 0,
+  'pathauto_punctuation_greater_than' => 0,
+  'pathauto_punctuation_slash' => 0,
+  'pathauto_punctuation_back_slash' => 0,
   'javascript_parsed' => array(
     0 => 'misc/drupal.js',
     1 => 'misc/jquery.js',
     2 => 'misc/jquery.once.js',
-    3 => 'misc/tableheader.js',
+    3 => 'misc/textarea.js',
     4 => 'misc/form.js',
     5 => 'misc/collapse.js',
     6 => 'misc/jquery.cookie.js',
     7 => 'modules/toolbar/toolbar.js',
     8 => 'sites/all/modules/contrib/admin_menu/admin_menu.js',
-    9 => 'misc/tabledrag.js',
-    10 => 'modules/block/block.js',
-    11 => 'misc/textarea.js',
-    12 => 'sites/all/modules/contrib/i18n/i18n_block/i18n_block.js',
-    13 => 'misc/vertical-tabs.js',
-    14 => 'misc/states.js',
     'refresh:sv' => 'waiting',
+    9 => 'misc/tableheader.js',
+    10 => 'sites/all/modules/contrib/redirect/redirect.admin.js',
+    11 => 'misc/vertical-tabs.js',
+    12 => 'misc/tableselect.js',
+    13 => 'misc/tabledrag.js',
+    14 => 'misc/states.js',
     15 => 'sites/all/modules/contrib/features/features.js',
     16 => 'misc/machine-name.js',
     17 => 'misc/autocomplete.js',
@@ -171,22 +355,34 @@ $realm_variables = array();
     28 => 'misc/ui/jquery.ui.dialog.min.js',
     29 => 'sites/all/modules/contrib/views/js/jquery.ui.dialog.patch.js',
   ),
-  'language_count' => 3,
-  'language_default' => array(
-    'language' => 'fi',
-    'name' => 'Finnish',
-    'native' => 'Suomi',
-    'direction' => 0,
-    'enabled' => 1,
-    'plurals' => 0,
-    'formula' => '',
-    'domain' => '',
-    'prefix' => 'fi',
-    'weight' => -10,
-    'javascript' => '',
-    'provider' => 'language-default',
+  'redirect_auto_redirect' => 1,
+  'redirect_passthrough_querystring' => 1,
+  'redirect_warning' => FALSE,
+  'redirect_default_status_code' => 301,
+  'redirect_page_cache' => 0,
+  'redirect_purge_inactive' => 0,
+  'redirect_global_home' => 1,
+  'redirect_global_clean' => 1,
+  'redirect_global_canonical' => 1,
+  'redirect_global_deslash' => 0,
+  'redirect_global_admin_paths' => 0,
+  'i18n_string_allowed_formats' => array(
+    'full_html' => 'full_html',
+    'plain_text' => 'plain_text',
   ),
-  'ctools_last_cron' => 1412795493,
+  'i18n_string_source_language' => 'fi',
+  'locale_language_providers_weight_language' => array(
+    'locale-url' => -8,
+    'locale-session' => -6,
+    'locale-user' => -4,
+    'locale-browser' => -2,
+    'language-default' => 10,
+  ),
+  'locale_language_negotiation_url_part' => 0,
+  'date_first_day' => 1,
+  'configurable_timezones' => 0,
+  'empty_timezone_message' => 0,
+  'user_default_timezone' => 0,
   '404_fast_paths_exclude' => '/\\/(?:styles)\\//',
   '404_fast_paths' => '/\\.(?:txt|png|gif|jpe?g|css|js|ico|swf|flv|cgi|bat|pl|dll|exe|asp)$/i',
   '404_fast_html' => '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>404 Not Found</title></head><body><h1>Not Found</h1><p>The requested URL "@path" was not found on this server.</p></body></html>',
