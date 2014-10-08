@@ -106,13 +106,13 @@ function fj16_base_strongarm() {
     'name' => 'Finnish',
     'native' => 'Suomi',
     'direction' => '0',
-    'enabled' => 1,
-    'plurals' => '0',
-    'formula' => '',
+    'enabled' => '1',
+    'plurals' => '2',
+    'formula' => '($n!=1)',
     'domain' => '',
     'prefix' => 'fi',
     'weight' => '-10',
-    'javascript' => '',
+    'javascript' => '64CNqrBSQJQC6ZoVFpW0YSkgW3A5kLZRBOh66ZwvI_E',
   );
   $export['language_default'] = $strongarm;
 
