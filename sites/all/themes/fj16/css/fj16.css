@@ -85,8 +85,3 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   src: url("Aleo-BoldItalic-webfont.eot?#iefix") format("embedded-opentype"), url("Aleo-BoldItalic-webfont.woff") format("woff"), url("Aleo-BoldItalic-webfont.ttf") format("truetype"), url("Aleo-BoldItalic-webfont.svg#aleo") format("svg");
   font-weight: 600;
   font-style: italic; }
-/* Placeholder file for CSS */
-/* line 12, ../sass/fj16.scss */
-#page {
-  width: 900px;
-  margin: 0 auto; }
