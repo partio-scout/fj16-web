@@ -85,3 +85,48 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   src: url("Aleo-BoldItalic-webfont.eot?#iefix") format("embedded-opentype"), url("Aleo-BoldItalic-webfont.woff") format("woff"), url("Aleo-BoldItalic-webfont.ttf") format("truetype"), url("Aleo-BoldItalic-webfont.svg#aleo") format("svg");
   font-weight: 600;
   font-style: italic; }
+/* line 3, ../sass/base/typography.scss */
+html, body {
+  font-size: 16px;
+  font-family: 'Aleo', serif;
+  font-weight: 400;
+  line-height: 1.45; }
+
+/* line 10, ../sass/base/typography.scss */
+p {
+  margin-bottom: 1.3em; }
+
+/* line 14, ../sass/base/typography.scss */
+h1, h2, h3, h4 {
+  margin: 1.414em 0 0.5em;
+  font-weight: inherit;
+  line-height: 1.2; }
+
+/* line 20, ../sass/base/typography.scss */
+h1 {
+  margin-top: 0;
+  font-size: 6.854em; }
+
+/* line 25, ../sass/base/typography.scss */
+h2 {
+  font-size: 4.236em; }
+
+/* line 29, ../sass/base/typography.scss */
+h3 {
+  font-size: 2.618em; }
+
+/* line 33, ../sass/base/typography.scss */
+h4 {
+  font-size: 1.618em; }
+
+/* line 37, ../sass/base/typography.scss */
+small, .small {
+  font-size: 0.618em; }
+
+/* line 41, ../sass/base/typography.scss */
+strong, b {
+  font-weight: 600; }
+
+/* line 45, ../sass/base/typography.scss */
+i, em {
+  font-style: italic; }
