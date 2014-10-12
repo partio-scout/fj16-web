@@ -8,3 +8,6 @@ sites/*/private
 # Ignore system files
 .DS_Store
 Thumbs.db
+.sass-cache
+
+config.codekit
