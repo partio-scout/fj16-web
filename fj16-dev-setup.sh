@@ -12,4 +12,4 @@ drush en field_ui -y
 drush en views_ui -y
 
 # Download translations
-drush l10n_update -y
+drush l10n-update -y
