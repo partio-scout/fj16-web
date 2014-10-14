@@ -34,7 +34,7 @@ function fj16_base_locale_default_languages() {
     'formula' => '($n!=1)',
     'domain' => '',
     'prefix' => 'fi',
-    'weight' => 0,
+    'weight' => -10,
   );
   // Exported language: sv.
   $languages['sv'] = array(
@@ -47,7 +47,7 @@ function fj16_base_locale_default_languages() {
     'formula' => '($n!=1)',
     'domain' => '',
     'prefix' => 'sv',
-    'weight' => 0,
+    'weight' => -8,
   );
   return $languages;
 }

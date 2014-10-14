@@ -101,25 +101,25 @@ function fj16_base_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_count';
-  $strongarm->value = 0;
+  $strongarm->value = 3;
   $export['language_count'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_default';
-  $strongarm->value = array(
+  $strongarm->value = (object) array(
     'language' => 'fi',
     'name' => 'Finnish',
     'native' => 'Suomi',
-    'direction' => 0,
-    'enabled' => 1,
-    'plurals' => 2,
+    'direction' => '0',
+    'enabled' => '1',
+    'plurals' => '2',
     'formula' => '($n!=1)',
     'domain' => '',
     'prefix' => 'fi',
-    'weight' => -10,
-    'javascript' => '64CNqrBSQJQC6ZoVFpW0YSkgW3A5kLZRBOh66ZwvI_E',
+    'weight' => '-10',
+    'javascript' => 'wma2hG11icLd6kAH5wrW9kuPdgga59txe2SOYT24Y88',
   );
   $export['language_default'] = $strongarm;
 
@@ -195,7 +195,7 @@ function fj16_base_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'locale_language_negotiation_url_part';
-  $strongarm->value = 0;
+  $strongarm->value = '0';
   $export['locale_language_negotiation_url_part'] = $strongarm;
 
   $strongarm = new stdClass();
