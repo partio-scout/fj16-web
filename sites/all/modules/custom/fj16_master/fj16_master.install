@@ -5,3 +5,7 @@
 function fj16_master_update_7001() {
   module_enable(array('fj16_base'));
 }
+
+function fj16_master_update_7002() {
+  module_enable(array('fj16_frontpage_boxes'));
+}

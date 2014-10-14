@@ -4,3 +4,4 @@ package = FJ16
 core = 7.x
 
 dependencies[] = fj16_base
+dependencies[] = fj16_frontpage_boxes

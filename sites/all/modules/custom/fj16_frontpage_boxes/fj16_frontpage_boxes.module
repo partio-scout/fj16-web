@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the FJ16 Frontpage boxes feature.
+ */
+
+include_once 'fj16_frontpage_boxes.features.inc';
