@@ -1,0 +1,34 @@
+#footer {
+	background: #dbdbdb;
+	padding: 50px 0;
+
+	#roihu-logo {
+		display: inline-block;
+		width: 220px;
+		height: 104px;
+		text-indent: -9999em;
+
+		@include at2x('footer_roihu_logo', 220px);
+
+		@include respond(mobile) {
+			display: block;
+			margin: 20px auto;
+		}
+	}
+
+	#sp-logo {
+		float: right;
+		display: inline-block;
+		width: 245px;
+		height: 94px;
+		text-indent: -9999em;
+
+		@include at2x('footer_sp_logo', 245px);
+
+		@include respond(mobile) {
+			display: block;
+			margin: 50px auto 20px;
+			float: none;
+		}
+	}
+}
