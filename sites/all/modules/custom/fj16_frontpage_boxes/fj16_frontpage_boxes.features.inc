@@ -21,6 +21,40 @@ function fj16_frontpage_boxes_views_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_fe_nodequeue_export_fields().
+ */
+function fj16_frontpage_boxes_fe_nodequeue_export_fields() {
+  $nodequeues = array();
+
+  // Exported nodequeues: fj16_front_page_boxes
+  $nodequeues['fj16_front_page_boxes'] = array(
+    'name' => 'fj16_front_page_boxes',
+    'title' => 'FJ16 Front page boxes',
+    'subqueue_title' => '',
+    'size' => 0,
+    'link' => 'Add to front page',
+    'link_remove' => 'Remove from front page',
+    'owner' => 'nodequeue',
+    'show_in_ui' => 1,
+    'show_in_tab' => 1,
+    'show_in_links' => 1,
+    'reference' => 0,
+    'reverse' => 0,
+    'i18n' => 0,
+    'subqueues' => 1,
+    'types' => array(
+      0 => 'fj16_frontpage_box',
+    ),
+    'roles' => array(
+      0 => 'content editor',
+    ),
+    'count' => 0,
+  );
+
+  return $nodequeues;
+}
+
+/**
  * Implements hook_image_default_styles().
  */
 function fj16_frontpage_boxes_image_default_styles() {

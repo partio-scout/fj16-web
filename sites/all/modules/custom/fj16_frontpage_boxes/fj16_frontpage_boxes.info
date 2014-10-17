@@ -1,6 +1,7 @@
 name = FJ16 Frontpage boxes
 core = 7.x
 package = FJ16
+dependencies[] = fe_nodequeue
 dependencies[] = features
 dependencies[] = file
 dependencies[] = fj16_base
@@ -21,6 +22,7 @@ dependencies[] = translation
 dependencies[] = views
 features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
+features[fe_nodequeue][] = fj16_front_page_boxes
 features[features_api][] = api:2
 features[field_base][] = body
 features[field_base][] = field_color
