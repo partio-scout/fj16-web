@@ -1,4 +1,4 @@
-/* line 5, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+/* line 5, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -19,38 +19,38 @@ time, mark, audio, video {
   font-size: 100%;
   vertical-align: baseline; }
 
-/* line 22, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1; }
 
-/* line 24, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none; }
 
-/* line 26, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/* line 28, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle; }
 
-/* line 30, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none; }
-  /* line 103, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+  /* line 103, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
   q:before, q:after, blockquote:before, blockquote:after {
     content: "";
     content: none; }
 
-/* line 32, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none; }
 
-/* line 116, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block; }
 
@@ -85,55 +85,55 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   src: url("Aleo-BoldItalic-webfont.eot?#iefix") format("embedded-opentype"), url("Aleo-BoldItalic-webfont.woff") format("woff"), url("Aleo-BoldItalic-webfont.ttf") format("truetype"), url("Aleo-BoldItalic-webfont.svg#aleo") format("svg");
   font-weight: 600;
   font-style: italic; }
-/* line 3, ../sass/base/typography.scss */
+/* line 3, ../sass/base/_typography.scss */
 html, body {
   font-size: 16px;
   font-family: 'Aleo', serif;
   font-weight: 400;
   line-height: 1.45; }
 
-/* line 10, ../sass/base/typography.scss */
+/* line 10, ../sass/base/_typography.scss */
 p {
   margin-bottom: 1.3em; }
 
-/* line 14, ../sass/base/typography.scss */
+/* line 14, ../sass/base/_typography.scss */
 h1, h2, h3, h4 {
   margin: 1.414em 0 0.5em;
   font-weight: inherit;
   line-height: 1.2; }
 
-/* line 20, ../sass/base/typography.scss */
+/* line 20, ../sass/base/_typography.scss */
 h1 {
   margin-top: 0;
   font-size: 6.854em; }
 
-/* line 25, ../sass/base/typography.scss */
+/* line 25, ../sass/base/_typography.scss */
 h2 {
   font-size: 4.236em; }
 
-/* line 29, ../sass/base/typography.scss */
+/* line 29, ../sass/base/_typography.scss */
 h3 {
   font-size: 2.618em; }
 
-/* line 33, ../sass/base/typography.scss */
+/* line 33, ../sass/base/_typography.scss */
 h4 {
   font-size: 1.618em; }
 
-/* line 37, ../sass/base/typography.scss */
+/* line 37, ../sass/base/_typography.scss */
 small, .small {
   font-size: 0.618em; }
 
-/* line 41, ../sass/base/typography.scss */
+/* line 41, ../sass/base/_typography.scss */
 strong, b {
   font-weight: 600; }
 
-/* line 45, ../sass/base/typography.scss */
+/* line 45, ../sass/base/_typography.scss */
 i, em {
   font-style: italic; }
 
-/* line 15, ../sass/fj16.scss */
+/* line 14, ../sass/fj16.scss */
 .admin-menu #toolbar {
   display: none; }
-/* line 18, ../sass/fj16.scss */
+/* line 17, ../sass/fj16.scss */
 .admin-menu #admin-menu {
   font-size: 12px; }
