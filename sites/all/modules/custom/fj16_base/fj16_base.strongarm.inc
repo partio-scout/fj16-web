@@ -118,8 +118,8 @@ function fj16_base_strongarm() {
     'formula' => '($n!=1)',
     'domain' => '',
     'prefix' => 'fi',
-    'weight' => '-10',
-    'javascript' => 'wma2hG11icLd6kAH5wrW9kuPdgga59txe2SOYT24Y88',
+    'weight' => '0',
+    'javascript' => 'isMYyX6ikOVrPrnVfTZ-tjbPmN1n-yxVw9L-SnGlrwc',
   );
   $export['language_default'] = $strongarm;
 
@@ -195,7 +195,7 @@ function fj16_base_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'locale_language_negotiation_url_part';
-  $strongarm->value = '0';
+  $strongarm->value = 0;
   $export['locale_language_negotiation_url_part'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1004,6 +1004,7 @@ Your account on [site:name] has been canceled.
     1 => 'site_slogan',
     2 => 'anonymous',
     3 => 'maintenance_mode_message',
+    4 => 'theme_settings',
   );
   $export['variable_realm_list_language'] = $strongarm;
 

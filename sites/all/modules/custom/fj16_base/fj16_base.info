@@ -220,7 +220,6 @@ features[variable][] = user_register
 features[variable][] = user_signatures
 features[variable][] = variable_module_list
 features[variable][] = variable_realm_list_language
-features[variable_realm][] = global:default
 features[variable_realm][] = language:en
 features[variable_realm][] = language:fi
 features[variable_realm][] = language:sv

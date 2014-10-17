@@ -13,3 +13,7 @@ drush en views_ui -y
 
 # Download translations
 drush l10n-update -y
+
+# Some features may not go fully on during installation, revert just in case
+drush features-revert-all -y
+drush cc all
