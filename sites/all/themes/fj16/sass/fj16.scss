@@ -3,6 +3,7 @@
 // Compass required
 
 
+@import "compass";
 @import "compass/reset";
 
 @import "base/variables";
@@ -10,6 +11,9 @@
 
 @import "base/fonts";
 @import "base/typography";
+@import "base/layout";
+
+@import "header";
 
 
 // Quick fix for toolbar overlay

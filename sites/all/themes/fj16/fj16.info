@@ -3,9 +3,9 @@ description = Official theme
 package = FJ16
 core = 7.x
 
-regions[header_left] = Header left
-regions[header_right] = Header right
 regions[content] = Content
 regions[footer] = Footer
 
 stylesheets[all][] = css/fj16.css
+
+scripts[] = js/main.js
