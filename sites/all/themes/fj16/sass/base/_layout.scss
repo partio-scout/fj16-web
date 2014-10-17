@@ -20,6 +20,7 @@ a {
 	margin-right: auto;
 	padding-left: 20px;
 	padding-right: 20px;
+	overflow: hidden;
 
 	@respond(large) {
 		max-width: $break-large + 1;

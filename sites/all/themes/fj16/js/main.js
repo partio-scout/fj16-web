@@ -1,5 +1,9 @@
 (function($, Drupal, undefined){
 
+	$('#mobile-menu-toggle').click(function(){
+		$('#mobile-menu').toggleClass('visible');
+	});
+
 	// Avoid `console` errors in browsers that lack a console.
 	(function() {
 		var method;

@@ -14,6 +14,11 @@
 		background-image: url(../img/header_bg_1_small.jpg);
 	}
 
+	@include respond(mobile) {
+		height: 300px;
+	}
+
+
 	#name-and-slogan {
 		display: inline-block;
 		position: absolute;
@@ -32,6 +37,18 @@
 			@include at2x('header_roihu_logo', 136px);
 			background-repeat: no-repeat;
 			background-position: center;
+
+			@include respond(mobile) {
+				width: 133px;
+				height: 200px;
+				display: block;
+				margin: 20px auto;
+				position: relative;
+				top: 0; left: 0;
+				background: transparent;
+				
+				@include at2x('header_roihu_logo_mobile', 136px);
+			}
 		}
 	}
 
@@ -43,6 +60,11 @@
 		bottom: 0;
 		left: 0;
 		width: 100%;
+
+		@include respond(mobile) {
+			display: none;
+		}
+
 
 		h2 {
 			display: none;
@@ -74,11 +96,20 @@
 		width: 100%;
 		height: 50px;
 
+		@include respond(mobile) {
+			background: #000;
+		}
+
+
 		ul {
 			@extend .container;
 
 			padding: 0;
 			list-style-type: none;
+
+			@include respond(mobile) {
+				display: none;
+			}
 
 			li {
 				display: inline-block;
@@ -90,85 +121,32 @@
 				}
 			}
 		}
+
+		#mobile-menu-toggle {
+			display: none;
+
+			@include respond(mobile) {
+				display: block;
+				height: 50px;
+				width: 60px;
+				padding: 10px;
+				position: absolute;
+				top: 0;
+				right: 0;
+
+				span {
+					display: block;
+					width: 40px;
+					height: 5px;
+					margin-top: 6px;
+					background: #fff;
+
+					&:first-child {
+						margin-top: 2px;
+					}
+				}
+			}
+		}
 	}
 
 }
-
-
-
-
-
-
-
-
-
-// #build-menu-page {
-//   left: 0;
-//   position: relative;
-//   background-color: #fff;
-// }
-
-// #build-menu {
-// 	visibility: visible;
-// 	z-index: 0;
-// 	opacity: 1;
-// 	-webkit-transform: none;
-// 	-moz-transform: none;
-// 	-o-transform: none;
-// 	-ms-transform: none;
-// 	transform: none;
-// 	display: none;
-// 	width: 260px;
-//   padding: 0;
-//   position: static;
-//   z-index: 0;
-//   top: 0;
-//   height: 100%;
-//   overflow-y: auto;
-//   left: 0;
-// }
-
-// .build-menu-animating #build-menu-page {
-// 	position: fixed;
-// 	overflow: hidden;
-// 	width: 100%;
-// 	top: 0;
-// 	bottom: 0;
-// }
-
-// .build-menu-animating.build-menu-close #build-menu-page,
-// .build-menu-animating.build-menu-open #build-menu-page {
-// 	-webkit-transition: -webkit-transform 250ms;
-// 	-moz-transition: -moz-transform 250ms;
-// 	-o-transition: -o-transform 250ms;
-// 	-ms-transition: -ms-transform 250ms;
-// 	transition: transform 250ms;
-// }
-
-// .build-menu-animating.build-menu-open #build-menu-page {
-// 	-webkit-transform: translate3d(0, 0, 0);
-// 	-moz-transform: translate3d(0, 0, 0);
-// 	-o-transform: translate3d(0, 0, 0);
-// 	-ms-transform: translate3d(0, 0, 0);
-// 	transform: translate3d(0, 0, 0);
-// }
-
-// .build-menu-animating #build-menu { display: block }
-
-// .build-menu-open #build-menu {
-// 	display: block;
-// 	-webkit-transition-delay: 0ms, 0ms, 0ms;
-// 	-moz-transition-delay: 0ms, 0ms, 0ms;
-// 	-o-transition-delay: 0ms, 0ms, 0ms;
-// 	-ms-transition-delay: 0ms, 0ms, 0ms;
-// 	transition-delay: 0ms, 0ms, 0ms;
-// }
-
-// .build-menu-open #build-menu,
-// .build-menu-close #build-menu {
-// 	-webkit-transition: -webkit-transform 250ms, opacity 250ms, visibility 0ms 250ms;
-// 	-moz-transition: -moz-transform 250ms, opacity 250ms, visibility 0ms 250ms;
-// 	-o-transition: -o-transform 250ms, opacity 250ms, visibility 0ms 250ms;
-// 	-ms-transition: -ms-transform 250ms, opacity 250ms, visibility 0ms 250ms;
-// 	transition: transform 250ms, opacity 250ms, visibility 0ms 250ms;
-// }

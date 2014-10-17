@@ -83,6 +83,11 @@
 
       <div id="top-bar">
         <?php print theme('links__system_main_menu', array('links' => menu_navigation_links('menu-social-media-links'))); ?>
+        <div id="mobile-menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
 
       <?php if ($site_name || $site_slogan): ?>
@@ -144,4 +149,9 @@
       </div>
     </div>
 
+  </div>
+
+  <div id="mobile-menu">
+    <?php print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('id' => 'main-menu'))); ?>
+    <?php print theme('links__system_main_menu', array('links' => menu_navigation_links('menu-social-media-links'))); ?>
   </div>

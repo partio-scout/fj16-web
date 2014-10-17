@@ -1,0 +1,52 @@
+#mobile-menu {
+	display: none;
+
+	@include respond(mobile) {
+		display: block;		
+		position: fixed;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		width: 220px;
+		background: $green;
+		z-index: 100;
+		padding: 15px 20px;
+		overflow: scroll;
+
+		font-family: $exo;
+
+		// GPU acceleration
+		transform: translate3d(-220px,0,0);
+
+		@include transition(all 0.3s ease-out);
+
+		&.visible {
+			transform: translate3d(0,0,0);
+		}
+
+		ul {
+			&.links {
+				margin-top: 10px;
+				border-top: 1px solid rgba(255,255,255,.3);
+				padding-top: 10px;
+			}
+			li {
+				margin-top: 5px;
+				
+				&:first-child {
+					margin-top: 0;
+				}
+
+				a {
+					color: #fff;
+
+					&.active {
+						color: #fff;
+						// border-bottom: 1spx solid #fff;
+					}
+				}
+			}
+		}
+
+	}
+}
