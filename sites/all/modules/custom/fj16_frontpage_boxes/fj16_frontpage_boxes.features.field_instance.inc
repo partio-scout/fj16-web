@@ -50,7 +50,7 @@ function fj16_frontpage_boxes_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -128,6 +128,39 @@ function fj16_frontpage_boxes_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-fj16_frontpage_box-field_instagram_hashtag'
+  $field_instances['node-fj16_frontpage_box-field_instagram_hashtag'] = array(
+    'bundle' => 'fj16_frontpage_box',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Enter <strong>without</strong> the hash (#). This will be used instead of the image.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_instagram_hashtag',
+    'label' => 'Instagram hashtag',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 20,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 3,
+    ),
+  );
+
   // Exported field_instance: 'node-fj16_frontpage_box-field_link'
   $field_instances['node-fj16_frontpage_box-field_link'] = array(
     'bundle' => 'fj16_frontpage_box',
@@ -172,7 +205,7 @@ function fj16_frontpage_boxes_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -180,7 +213,9 @@ function fj16_frontpage_boxes_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Body');
   t('Color');
+  t('Enter <strong>without</strong> the hash (#). This will be used instead of the image.');
   t('Image');
+  t('Instagram hashtag');
   t('Link');
 
   return $field_instances;
