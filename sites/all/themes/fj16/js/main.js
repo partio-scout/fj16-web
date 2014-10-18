@@ -4,6 +4,17 @@
 		$('#mobile-menu').toggleClass('visible');
 	});
 
+	// Sticky nav
+	navpos = $('#navigation').offset();
+	$(window).bind('scroll', function() {
+		if ($(window).scrollTop() > navpos.top) {
+			$('#navigation').addClass('fixed');
+		}
+		else {
+			$('#navigation').removeClass('fixed');
+		}
+	});
+
 	// Avoid `console` errors in browsers that lack a console.
 	(function() {
 		var method;

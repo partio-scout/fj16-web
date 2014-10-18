@@ -27,6 +27,10 @@
 		margin-left: -93px;
 		width: 196px;
 
+		#site-slogan {
+			display: none;
+		}
+
 		a {
 			display: inline-block;
 			width: 196px;
@@ -147,6 +151,10 @@
 				}
 			}
 		}
+	}
+	
+	#bg-slides {
+		display: none;
 	}
 
 }
