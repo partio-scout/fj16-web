@@ -1,0 +1,113 @@
+body.front {
+
+	#header {
+		min-height: 100vh;
+		height: auto;
+		margin-bottom: 80px;
+		background: #f8f8f8;
+		position: relative;
+
+		#name-and-slogan {
+			width: 500px;
+			max-width: 60%;
+			position: relative;
+			left: 0;
+			top: 0;
+			display: block;
+			margin: 0 auto;
+			padding: 100px 0 50px 0;
+
+			a {
+				width: 300px;
+				height: 452px;
+				display: block;
+				margin: 0 auto 20px auto;
+				max-width: 100%;
+
+				@include at2x('front_header_roihu_logo', 100%);
+				background-color: transparent;
+				background-repeat: no-repeat;
+
+				@include respond(medium) {
+					width: 250px;
+					height: 377px;
+				}
+
+				@include respond(mobile) {
+					width: 200px;
+					height: 301px;
+				}
+			}
+
+			#site-slogan {
+				display: block;
+				text-align: center;
+				font-family: $exo;
+				font-size: 1.618em;
+				color: #fffbdb;
+				text-transform: none;
+
+				@include respond(mobile) {
+					font-size: 1.618em;
+				}
+			}
+
+
+			&:after {
+				content: '';
+				display: inline-block;
+				position: absolute;
+				bottom: -80px;
+				left: 50%;
+				margin-left: -30px;
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 25px 30px 0 30px;
+				border-color: #fffbdb transparent transparent transparent;
+				opacity: 0.35;
+
+				@include animation(bounce 2.5s infinite);
+
+				@include respond(mobile){
+					display: none;
+				}
+			}
+		}
+
+		#navigation {
+			bottom: -80px;
+
+			&.fixed {
+				position: fixed;
+				top: 0;
+				left: 0;
+				height: 40px;
+
+				ul li {
+					height: 40px;
+					line-height: 40px;
+				}
+			}
+		}
+
+		#bg-slides {
+			display: block;
+			position: absolute;
+			top: 0; left: 0; right: 0; bottom: 0;
+
+			background: url('../img/front_header/front_header_slide_1_large.jpg') center;
+			background-size: cover;
+
+
+			// TODO: slide change animations
+		}
+	}
+
+}
+
+@include keyframes(bounce) {
+	0%, 20%, 50%, 80%, 100% { @include transform(translateY(0)); }
+	40% { @include transform(translateY(-30px)); }
+	60% { @include transform(translateY(-15px)); }
+}
