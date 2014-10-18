@@ -35,13 +35,13 @@ function fj16_frontpage_boxes_strongarm() {
           'weight' => '0',
         ),
         'title' => array(
-          'weight' => '3',
+          'weight' => '4',
         ),
         'path' => array(
-          'weight' => '6',
+          'weight' => '7',
         ),
         'redirect' => array(
-          'weight' => '7',
+          'weight' => '8',
         ),
       ),
       'display' => array(
