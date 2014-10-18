@@ -5,3 +5,54 @@
  */
 
 include_once 'fj16_frontpage_boxes.features.inc';
+
+define('FJ16_INSTAGRAM_CLIENT_ID', 'de5ab22ba902466e84feddc6de55d4be');
+define('FJ16_INSTAGRAM_CACHE_LIFETIME', 30); // in seconds
+
+function fj16_frontpage_boxes_menu() {
+  $menu = array();
+  $menu['instajson'] = array(
+    'type' => MENU_CALLBACK,
+    'access arguments' => 'access content',
+    'page callback' => '_fj16_frontpage_boxes_get_json',
+  	'delivery callback' => '_fj16_frontpage_boxes_deliver_json'
+  );
+  return $menu;
+}
+
+function _fj16_frontpage_boxes_get_json($hashtag) {
+  //TODO Allow scandics
+  $hashtag = preg_replace("/[^a-zA-Z0-9]+/", "", $hashtag); // remove special characters for security
+  $cached = cache_get('fj16_latest_insta_json_' . md5($hashtag));
+  if(empty($cached) || _fj16_frontpage_boxes_tag_expired()) {
+    $json = _fj16_frontpage_boxes_fetch_media_for_tag($hashtag);
+    cache_set('fj16_latest_insta_json_' . md5($hashtag), $json);
+    return $json;
+  } else {
+    return $cached->data;
+  }
+}
+
+function _fj16_frontpage_boxes_deliver_json($json) {
+  drupal_add_http_header('Content-Type', 'application/json; charset=utf-8');
+  print $json;
+}
+
+function _fj16_frontpage_boxes_tag_expired($hashtag) {
+  //FIXME Always returns true
+  $last_update = variable_get('fj16_insta_last_updated_' . md5($hashtag), 0);
+  return (time() - $last_update) > FJ16_INSTAGRAM_CACHE_LIFETIME;
+}
+
+function _fj16_frontpage_boxes_fetch_media_for_tag($hashtag) {
+  $endpoint = 'https://api.instagram.com/v1/tags/';
+  $endpoint .= $hashtag;
+  $endpoint .= '/media/recent?client_id=';
+  $endpoint .= FJ16_INSTAGRAM_CLIENT_ID;
+
+  $json = file_get_contents($endpoint);
+
+  variable_set('fj16_insta_last_updated_' . md5($hashtag), time());
+
+  return $json;
+}
