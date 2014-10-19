@@ -46,7 +46,9 @@ function fj16_base_user_default_permissions() {
   // Exported permission: 'access content overview'.
   $permissions['access content overview'] = array(
     'name' => 'access content overview',
-    'roles' => array(),
+    'roles' => array(
+      'content editor' => 'content editor',
+    ),
     'module' => 'node',
   );
 
@@ -241,7 +243,9 @@ function fj16_base_user_default_permissions() {
   // Exported permission: 'bypass node access'.
   $permissions['bypass node access'] = array(
     'name' => 'bypass node access',
-    'roles' => array(),
+    'roles' => array(
+      'content editor' => 'content editor',
+    ),
     'module' => 'node',
   );
 
@@ -269,7 +273,9 @@ function fj16_base_user_default_permissions() {
   // Exported permission: 'delete revisions'.
   $permissions['delete revisions'] = array(
     'name' => 'delete revisions',
-    'roles' => array(),
+    'roles' => array(
+      'content editor' => 'content editor',
+    ),
     'module' => 'node',
   );
 
@@ -325,7 +331,9 @@ function fj16_base_user_default_permissions() {
   // Exported permission: 'revert revisions'.
   $permissions['revert revisions'] = array(
     'name' => 'revert revisions',
-    'roles' => array(),
+    'roles' => array(
+      'content editor' => 'content editor',
+    ),
     'module' => 'node',
   );
 
@@ -383,14 +391,18 @@ function fj16_base_user_default_permissions() {
   // Exported permission: 'view own unpublished content'.
   $permissions['view own unpublished content'] = array(
     'name' => 'view own unpublished content',
-    'roles' => array(),
+    'roles' => array(
+      'content editor' => 'content editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'view revisions'.
   $permissions['view revisions'] = array(
     'name' => 'view revisions',
-    'roles' => array(),
+    'roles' => array(
+      'content editor' => 'content editor',
+    ),
     'module' => 'node',
   );
 
