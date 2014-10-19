@@ -104,6 +104,14 @@ body.front {
 		}
 	}
 
+	#main {
+
+		h1#page-title {
+			display: none;
+		}
+
+	}
+
 }
 
 @include keyframes(bounce) {

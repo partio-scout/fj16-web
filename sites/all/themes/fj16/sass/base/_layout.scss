@@ -37,3 +37,18 @@ a {
 		padding-right: 10px;
 	}
 }
+
+#main {
+	@extend .container;
+
+	#content {
+		padding: 100px 200px;
+
+		h1.title {
+			color: $blue;
+			font-size: 4.236em;
+			text-transform: uppercase;
+			font-family: $exo2;
+		}
+	}
+}
