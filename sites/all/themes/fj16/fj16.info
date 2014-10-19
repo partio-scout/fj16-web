@@ -8,4 +8,5 @@ regions[footer] = Footer
 
 stylesheets[all][] = css/fj16.css
 
+scripts[] = js/skrollr.min.js
 scripts[] = js/main.js

@@ -1,5 +1,18 @@
 (function($, Drupal, undefined){
 
+	if($('.node-fj16-frontpage-box').length) {
+		$('.node-fj16-frontpage-box').each(function(){
+			$(this).find('img').attr('data-bottom-top', 'transform: translate3d(0,0%,0)');
+			$(this).find('img').attr('data-top-bottom', 'transform: translate3d(0,-20%,0)');
+		});
+		initSkrollr();
+		$(window).resize(function() {
+			initSkrollr();
+		});
+	}
+
+
+
 	$('#mobile-menu-toggle').click(function(){
 		$('#mobile-menu').toggleClass('visible');
 	});
@@ -42,3 +55,19 @@
 	}());
 
 })(jQuery, Drupal);
+
+var s = undefined;
+
+function initSkrollr() {
+	if(screen.width > 1024 && !(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
+		if(s == undefined) {
+			console.log('init')
+			s = skrollr.init({forceHeight:false});
+		}
+	} else {
+		if(s != undefined) {
+			s.destroy();
+			s = undefined;
+		}
+	}
+}
