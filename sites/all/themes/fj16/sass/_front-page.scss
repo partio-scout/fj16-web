@@ -7,6 +7,14 @@ body.front {
 		background: #f8f8f8;
 		position: relative;
 
+		&.fixed-nav {
+			margin-bottom: 50px;			
+		}
+
+		@include respond(mobile) {
+			margin-bottom: 0 !important;
+		}
+
 		#name-and-slogan {
 			width: 500px;
 			max-width: 60%;
@@ -77,18 +85,6 @@ body.front {
 
 		#navigation {
 			bottom: -80px;
-
-			&.fixed {
-				position: fixed;
-				top: 0;
-				left: 0;
-				height: 40px;
-
-				ul li {
-					height: 40px;
-					line-height: 40px;
-				}
-			}
 		}
 
 		#bg-slides {
@@ -106,8 +102,203 @@ body.front {
 
 	#main {
 
+		overflow: visible;
+
 		h1#page-title {
 			display: none;
+		}
+
+		#content {
+			padding: 0;
+		}
+
+		padding: 0;
+
+		#block-system-main {
+			
+			$padInside: 64%; // These are used below, so variables are worth using
+			$padOutside: 50px;
+			$padVertical: 110px;
+
+			.node {
+
+				padding: $padVertical $padOutside $padVertical $padInside;
+				position: relative;
+				min-height: 400px;
+
+				@include respondMin(large) {
+					&:before { // Make it look like that box is 100% wide
+						content: '';
+						display: inline-block;
+						position: absolute;
+						top: 0;
+						bottom: 0;
+						left: -100%;
+						right: -100%;
+						z-index: -1;
+					}
+				}
+
+				.field-name-field-image {
+					position: absolute;
+					left: 0;
+					top: 0;
+					bottom: 0;
+					width: $padInside - 4;
+					overflow: hidden;
+
+					img {
+						height: 100%;
+						width: auto;
+					}
+
+					&:after {
+						content: '';
+						display: inline-block;
+						width: 0;
+						height: 0;
+						border-style: solid;
+						border-width: 70px 50px 70px 0;
+						position: absolute;
+						right: 0;
+						top: 58px;
+					}
+				}
+
+				h2 {
+					font-family: $exo2;
+					font-size: 2.236em;
+					text-transform: uppercase;
+					margin-top: 0;
+
+					a {
+						color: #fff;
+					}
+				}
+
+				.field-name-body {
+					color: #fff;
+					margin-bottom: 1.3em;
+				}
+
+				.field-name-field-link {
+					color: #fff;
+					font-family: $exo;
+					text-transform: uppercase;
+
+					a {
+						color: #fff;
+
+						&:after {
+							content: " ›";
+							font-size: 1.618em;
+							line-height: 1em;
+							position: relative;
+							top: 1px;
+						}
+					}
+				}
+
+
+				&.purple {
+					background: $purple;
+					.field-name-field-image:after { border-color: transparent $purple transparent transparent; }
+					@include respondMin(large) { &:before { background: $purple; } }
+				}
+
+				&.turquoise {
+					background: $green;
+					.field-name-field-image:after { border-color: transparent $green transparent transparent; }
+					@include respondMin(large) { &:before { background: $green; } }
+				}
+
+				&.orange {
+					background: $red;
+					.field-name-field-image:after { border-color: transparent $red transparent transparent; }
+					@include respondMin(large) { &:before { background: $red; } }
+				}
+
+				&.yellow {
+					background: $yellow;
+					.field-name-field-image:after { border-color: transparent $yellow transparent transparent; }
+					@include respondMin(large) { &:before { background: $yellow; } }
+				}
+
+				&.blue {
+					background: $blue;
+					.field-name-field-image:after { border-color: transparent $blue transparent transparent; }
+					@include respondMin(large) { &:before { background: $blue; } }
+				}
+
+			}
+
+			.views-row-even {
+
+				.node {
+					padding: $padVertical $padInside $padVertical $padOutside;
+
+					.field-name-field-image {
+						left: auto;
+						right: 0;
+
+						&:after {
+							@include transform(scale(-1,1)); // This is a lot easier than changing the direction manually
+							left: 0;
+							right: auto;
+						}
+					}
+				}
+
+			}
+
+			@include respond(mobile) {
+				.views-row-even, .views-row-odd {
+					.node {
+						padding: 380px 20px 30px 20px;
+
+						.field-name-field-image {
+							top: 0;
+							left: 0;
+							right: auto;
+							height: 350px;
+							width: 100%;
+
+							img {
+								width: auto;
+								height: 350px;
+							}
+
+							&:after {
+								@include transform(rotate(90deg));
+								right: 100px;
+								left: auto;
+								top: 280px;
+							}
+						}
+					}
+				}
+			}
+
+			@include respond(480px) {
+				.views-row-even, .views-row-odd {
+					.node {
+						padding: 280px 20px 30px 20px;
+
+						.field-name-field-image {
+							height: 250px;
+
+							img {
+								height: 250px;
+							}
+
+							&:after {
+								top: 180px;
+							}
+						}
+					}
+				}
+			}
+
 		}
 
 	}

@@ -9,9 +9,11 @@
 	$(window).bind('scroll', function() {
 		if ($(window).scrollTop() > navpos.top) {
 			$('#navigation').addClass('fixed');
+			$('#header').addClass('fixed-nav');
 		}
 		else {
 			$('#navigation').removeClass('fixed');
+			$('#header').removeClass('fixed-nav');
 		}
 	});
 

@@ -70,6 +70,19 @@
 		}
 
 
+		&.fixed {
+			position: fixed;
+			top: 0;
+			left: 0;
+			height: 50px;
+			z-index: 50;
+
+			ul li {
+				height: 50px;
+				line-height: 50px;
+			}
+		}
+
 		h2 {
 			display: none;
 		}
