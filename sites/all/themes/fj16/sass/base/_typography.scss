@@ -5,6 +5,10 @@ html, body {
 	font-family: $aleo;
 	font-weight: 400;
 	line-height: 1.45;
+
+	@include respond(mobile) {
+		font-size: $base-font-size - 2;
+	}
 }
 
 p {

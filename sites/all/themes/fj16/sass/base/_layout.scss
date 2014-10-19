@@ -44,11 +44,31 @@ a {
 	#content {
 		padding: 100px 200px;
 
+		@include respond(medium) {
+			padding: 75px 100px;
+		}
+
+		@include respond(mobile) {
+			padding: 30px 0;
+		}
+
 		h1.title {
 			color: $blue;
 			font-size: 4.236em;
 			text-transform: uppercase;
 			font-family: $exo2;
+			margin-bottom: 0.3em;
+
+			@include respond(mobile) {
+				font-size: 2.236em;
+			}
+		}
+
+		.field-name-field-ingres {
+			margin-bottom: 1.3em;
+			font-family: $exo2;
+			color: $blue;
+			text-transform: uppercase;
 		}
 	}
 }
