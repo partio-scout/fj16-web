@@ -63,8 +63,9 @@ function fj16_frontpage_boxes_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
+        'module' => 'list',
         'settings' => array(),
-        'type' => 'hidden',
+        'type' => 'list_key',
         'weight' => 2,
       ),
     ),
@@ -136,9 +137,10 @@ function fj16_frontpage_boxes_field_default_field_instances() {
     'description' => 'Enter <strong>without</strong> the hash (#). This will be used instead of the image.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
+        'type' => 'text_plain',
         'weight' => 4,
       ),
     ),
