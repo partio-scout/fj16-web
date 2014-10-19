@@ -5,9 +5,6 @@ sites/*/settings*.php
 sites/*/files
 sites/*/private
 
-# Ignore main css because using SASS
-sites/all/themes/fj16/css/fj16.css
-
 # Ignore system files
 .DS_Store
 Thumbs.db
