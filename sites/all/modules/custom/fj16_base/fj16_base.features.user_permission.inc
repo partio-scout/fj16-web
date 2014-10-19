@@ -65,7 +65,9 @@ function fj16_base_user_default_permissions() {
   // Exported permission: 'access toolbar'.
   $permissions['access toolbar'] = array(
     'name' => 'access toolbar',
-    'roles' => array(),
+    'roles' => array(
+      'content editor' => 'content editor',
+    ),
     'module' => 'toolbar',
   );
 
