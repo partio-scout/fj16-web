@@ -22,7 +22,7 @@ function fj16_frontpage_boxes_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_plain',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -50,23 +50,31 @@ function fj16_frontpage_boxes_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
   // Exported field_instance: 'node-fj16_frontpage_box-field_color'
   $field_instances['node-fj16_frontpage_box-field_color'] = array(
     'bundle' => 'fj16_frontpage_box',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => 'turquoise',
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_key',
-        'weight' => 2,
+        'module' => 'field_formatter_css_class',
+        'settings' => array(
+          'depth' => 0,
+          'hidden' => 1,
+          'target' => 'node',
+        ),
+        'type' => 'cssclass_formatter',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -80,8 +88,8 @@ function fj16_frontpage_boxes_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 1,
+      'type' => 'options_select',
+      'weight' => 2,
     ),
   );
 
@@ -99,7 +107,7 @@ function fj16_frontpage_boxes_field_default_field_instances() {
           'image_style' => 'fj6_frontpage_box_image',
         ),
         'type' => 'image',
-        'weight' => 1,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'node',
@@ -125,7 +133,7 @@ function fj16_frontpage_boxes_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -159,7 +167,7 @@ function fj16_frontpage_boxes_field_default_field_instances() {
         'size' => 20,
       ),
       'type' => 'text_textfield',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -174,7 +182,7 @@ function fj16_frontpage_boxes_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'link',
         'settings' => array(),
-        'type' => 'link_short',
+        'type' => 'link_label',
         'weight' => 3,
       ),
     ),
@@ -207,7 +215,7 @@ function fj16_frontpage_boxes_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 6,
+      'weight' => 1,
     ),
   );
 

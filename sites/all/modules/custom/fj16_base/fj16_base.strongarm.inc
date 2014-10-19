@@ -501,7 +501,7 @@ user/*/*';
     'domain' => '',
     'prefix' => 'fi',
     'weight' => '0',
-    'javascript' => 'isMYyX6ikOVrPrnVfTZ-tjbPmN1n-yxVw9L-SnGlrwc',
+    'javascript' => 'qRFJXysGun-dlBrr9Z1E3ojZVIUJwkWTW7JuzlkvF0w',
   );
   $export['language_default'] = $strongarm;
 
@@ -1375,6 +1375,9 @@ Your account on [site:name] has been canceled.
     'i18n_variable' => array(
       0 => 'i18n_variable_conf',
       1 => 'i18n_variable_list',
+    ),
+    'googleanalytics' => array(
+      0 => 'googleanalytics_account',
     ),
   );
   $export['variable_module_list'] = $strongarm;

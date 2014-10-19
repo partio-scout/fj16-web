@@ -35,7 +35,7 @@ function fj16_frontpage_boxes_strongarm() {
           'weight' => '0',
         ),
         'title' => array(
-          'weight' => '4',
+          'weight' => '5',
         ),
         'path' => array(
           'weight' => '7',
@@ -47,7 +47,7 @@ function fj16_frontpage_boxes_strongarm() {
       'display' => array(
         'language' => array(
           'default' => array(
-            'weight' => '0',
+            'weight' => '5',
             'visible' => FALSE,
           ),
         ),
