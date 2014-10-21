@@ -1,11 +1,31 @@
 (function($, Drupal, undefined){
 
 	if($('.node-fj16-frontpage-box').length) {
-		
-		// We're parallaxin, baby
 		$('.node-fj16-frontpage-box').each(function(){
-			$(this).find('img').attr('data-bottom-top', 'transform: translate3d(0,0%,0)');
-			$(this).find('img').attr('data-top-bottom', 'transform: translate3d(0,-20%,0)');
+			if($(this).find('.field-name-field-instagram-hashtag').text().length > 0) {
+				// Init the Instagram feed
+
+				var el = $(this).find('.field-name-field-instagram-hashtag');
+				var hashtag = el.find('.field-item').text();
+				el.find('.field-item').text('');
+
+				$.getJSON('/instajson/' + hashtag, function(data) {
+					// console.log(data);
+					// $.each( data, function( key, val ) {
+					// 	console.log(val);
+					// });
+					// var options = $('#'+id+' select');
+					// $('#'+id+' select').append('<option value="">Select Colour</select>');
+					// $.each(data.colors[0], function(i,v) {
+					// 	options.append($("<option />").val(v).text(i));
+					// });
+				});
+
+			} else {
+				// We're parallaxin, baby
+				$(this).find('img').attr('data-bottom-top', 'transform: translate3d(0,0%,0)');
+				$(this).find('img').attr('data-top-bottom', 'transform: translate3d(0,-20%,0)');	
+			}
 		});
 		initSkrollr();
 		$(window).resize(function() {

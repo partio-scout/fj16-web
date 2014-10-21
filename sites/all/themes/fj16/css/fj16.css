@@ -818,7 +818,7 @@ body.front {
           right: -100%;
           z-index: -1; } }
       /* line 170, ../sass/_front-page.scss */
-      body.front #main #block-system-main .node .field-name-field-image {
+      body.front #main #block-system-main .node .field-name-field-image, body.front #main #block-system-main .node .field-name-field-instagram-hashtag {
         position: absolute;
         left: 0;
         top: 0;
@@ -826,11 +826,11 @@ body.front {
         width: 60%;
         overflow: hidden; }
         /* line 178, ../sass/_front-page.scss */
-        body.front #main #block-system-main .node .field-name-field-image img {
+        body.front #main #block-system-main .node .field-name-field-image img, body.front #main #block-system-main .node .field-name-field-instagram-hashtag img {
           height: 100%;
           width: auto; }
         /* line 183, ../sass/_front-page.scss */
-        body.front #main #block-system-main .node .field-name-field-image:after {
+        body.front #main #block-system-main .node .field-name-field-image:after, body.front #main #block-system-main .node .field-name-field-instagram-hashtag:after {
           content: '';
           display: inline-block;
           width: 0;
@@ -884,58 +884,73 @@ body.front {
         /* line 248, ../sass/_front-page.scss */
         body.front #main #block-system-main .node.purple .field-name-field-image:after {
           border-color: transparent #b80170 transparent transparent; }
+        /* line 249, ../sass/_front-page.scss */
+        body.front #main #block-system-main .node.purple .field-name-field-instagram-hashtag:after {
+          border-color: transparent #b80170 transparent transparent; }
         @media only screen and (min-width: 1680px) {
-          /* line 249, ../sass/_front-page.scss */
+          /* line 250, ../sass/_front-page.scss */
           body.front #main #block-system-main .node.purple:before {
             background: #b80170; } }
-      /* line 252, ../sass/_front-page.scss */
+      /* line 253, ../sass/_front-page.scss */
       body.front #main #block-system-main .node.turquoise {
         background: #00a870; }
-        /* line 254, ../sass/_front-page.scss */
+        /* line 255, ../sass/_front-page.scss */
         body.front #main #block-system-main .node.turquoise .field-name-field-image:after {
           border-color: transparent #00a870 transparent transparent; }
+        /* line 256, ../sass/_front-page.scss */
+        body.front #main #block-system-main .node.turquoise .field-name-field-instagram-hashtag:after {
+          border-color: transparent #00a870 transparent transparent; }
         @media only screen and (min-width: 1680px) {
-          /* line 255, ../sass/_front-page.scss */
+          /* line 257, ../sass/_front-page.scss */
           body.front #main #block-system-main .node.turquoise:before {
             background: #00a870; } }
-      /* line 258, ../sass/_front-page.scss */
+      /* line 260, ../sass/_front-page.scss */
       body.front #main #block-system-main .node.orange {
         background: #e74011; }
-        /* line 260, ../sass/_front-page.scss */
+        /* line 262, ../sass/_front-page.scss */
         body.front #main #block-system-main .node.orange .field-name-field-image:after {
           border-color: transparent #e74011 transparent transparent; }
+        /* line 263, ../sass/_front-page.scss */
+        body.front #main #block-system-main .node.orange .field-name-field-instagram-hashtag:after {
+          border-color: transparent #e74011 transparent transparent; }
         @media only screen and (min-width: 1680px) {
-          /* line 261, ../sass/_front-page.scss */
+          /* line 264, ../sass/_front-page.scss */
           body.front #main #block-system-main .node.orange:before {
             background: #e74011; } }
-      /* line 264, ../sass/_front-page.scss */
+      /* line 267, ../sass/_front-page.scss */
       body.front #main #block-system-main .node.yellow {
         background: #ffed00; }
-        /* line 266, ../sass/_front-page.scss */
+        /* line 269, ../sass/_front-page.scss */
         body.front #main #block-system-main .node.yellow .field-name-field-image:after {
           border-color: transparent #ffed00 transparent transparent; }
+        /* line 270, ../sass/_front-page.scss */
+        body.front #main #block-system-main .node.yellow .field-name-field-instagram-hashtag:after {
+          border-color: transparent #ffed00 transparent transparent; }
         @media only screen and (min-width: 1680px) {
-          /* line 267, ../sass/_front-page.scss */
+          /* line 271, ../sass/_front-page.scss */
           body.front #main #block-system-main .node.yellow:before {
             background: #ffed00; } }
-      /* line 270, ../sass/_front-page.scss */
+      /* line 274, ../sass/_front-page.scss */
       body.front #main #block-system-main .node.blue {
         background: #36a9e1; }
-        /* line 272, ../sass/_front-page.scss */
+        /* line 276, ../sass/_front-page.scss */
         body.front #main #block-system-main .node.blue .field-name-field-image:after {
           border-color: transparent #36a9e1 transparent transparent; }
+        /* line 277, ../sass/_front-page.scss */
+        body.front #main #block-system-main .node.blue .field-name-field-instagram-hashtag:after {
+          border-color: transparent #36a9e1 transparent transparent; }
         @media only screen and (min-width: 1680px) {
-          /* line 273, ../sass/_front-page.scss */
+          /* line 278, ../sass/_front-page.scss */
           body.front #main #block-system-main .node.blue:before {
             background: #36a9e1; } }
-    /* line 280, ../sass/_front-page.scss */
+    /* line 285, ../sass/_front-page.scss */
     body.front #main #block-system-main .views-row-even .node {
       padding: 110px 64% 110px 50px; }
-      /* line 283, ../sass/_front-page.scss */
+      /* line 288, ../sass/_front-page.scss */
       body.front #main #block-system-main .views-row-even .node .field-name-field-image {
         left: auto;
         right: 0; }
-        /* line 287, ../sass/_front-page.scss */
+        /* line 292, ../sass/_front-page.scss */
         body.front #main #block-system-main .views-row-even .node .field-name-field-image:after {
           -moz-transform: scale(-1, 1);
           -ms-transform: scale(-1, 1);
@@ -944,21 +959,21 @@ body.front {
           left: 0;
           right: auto; }
     @media only screen and (max-width: 767px) {
-      /* line 299, ../sass/_front-page.scss */
+      /* line 304, ../sass/_front-page.scss */
       body.front #main #block-system-main .views-row-even .node, body.front #main #block-system-main .views-row-odd .node {
         padding: 380px 20px 30px 20px; }
-        /* line 302, ../sass/_front-page.scss */
+        /* line 307, ../sass/_front-page.scss */
         body.front #main #block-system-main .views-row-even .node .field-name-field-image, body.front #main #block-system-main .views-row-odd .node .field-name-field-image {
           top: 0;
           left: 0;
           right: auto;
           height: 350px;
           width: 100%; }
-          /* line 309, ../sass/_front-page.scss */
+          /* line 314, ../sass/_front-page.scss */
           body.front #main #block-system-main .views-row-even .node .field-name-field-image img, body.front #main #block-system-main .views-row-odd .node .field-name-field-image img {
             width: auto;
             height: 350px; }
-          /* line 314, ../sass/_front-page.scss */
+          /* line 319, ../sass/_front-page.scss */
           body.front #main #block-system-main .views-row-even .node .field-name-field-image:after, body.front #main #block-system-main .views-row-odd .node .field-name-field-image:after {
             -moz-transform: rotate(90deg);
             -ms-transform: rotate(90deg);
@@ -968,18 +983,22 @@ body.front {
             left: auto;
             top: 280px; } }
     @media only screen and (max-width: 480px) {
-      /* line 327, ../sass/_front-page.scss */
+      /* line 332, ../sass/_front-page.scss */
       body.front #main #block-system-main .views-row-even .node, body.front #main #block-system-main .views-row-odd .node {
         padding: 280px 20px 30px 20px; }
-        /* line 330, ../sass/_front-page.scss */
+        /* line 335, ../sass/_front-page.scss */
         body.front #main #block-system-main .views-row-even .node .field-name-field-image, body.front #main #block-system-main .views-row-odd .node .field-name-field-image {
           height: 250px; }
-          /* line 333, ../sass/_front-page.scss */
+          /* line 338, ../sass/_front-page.scss */
           body.front #main #block-system-main .views-row-even .node .field-name-field-image img, body.front #main #block-system-main .views-row-odd .node .field-name-field-image img {
             height: 250px; }
-          /* line 337, ../sass/_front-page.scss */
+          /* line 342, ../sass/_front-page.scss */
           body.front #main #block-system-main .views-row-even .node .field-name-field-image:after, body.front #main #block-system-main .views-row-odd .node .field-name-field-image:after {
             top: 180px; } }
+  /* line 354, ../sass/_front-page.scss */
+  body.front .field-name-field-instagram-hashtag {
+    background: url("../img/front_ig_feed_bg.jpg");
+    background-size: 100% auto; }
 
 /* line 27, ../sass/fj16.scss */
 .admin-menu #toolbar {
