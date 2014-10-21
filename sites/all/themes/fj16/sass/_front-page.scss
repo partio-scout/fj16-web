@@ -149,6 +149,9 @@ body.front {
 			$padVertical: 110px;
 
 			.node {
+				@include at2x('front_section_bg', auto, 100%);
+				background-repeat: no-repeat;
+				background-position: right;
 
 				padding: $padVertical $padOutside $padVertical $padInside;
 				position: relative;
@@ -244,35 +247,35 @@ body.front {
 
 
 				&.purple {
-					background: $purple;
+					background-color: $purple;
 					.field-name-field-image:after { border-color: transparent $purple transparent transparent; }
 					.field-name-field-instagram-hashtag:after { border-color: transparent $purple transparent transparent; }
 					@include respondMin(large) { &:before { background: $purple; } }
 				}
 
 				&.turquoise {
-					background: $green;
+					background-color: $green;
 					.field-name-field-image:after { border-color: transparent $green transparent transparent; }
 					.field-name-field-instagram-hashtag:after { border-color: transparent $green transparent transparent; }
 					@include respondMin(large) { &:before { background: $green; } }
 				}
 
 				&.orange {
-					background: $red;
+					background-color: $red;
 					.field-name-field-image:after { border-color: transparent $red transparent transparent; }
 					.field-name-field-instagram-hashtag:after { border-color: transparent $red transparent transparent; }
 					@include respondMin(large) { &:before { background: $red; } }
 				}
 
 				&.yellow {
-					background: $yellow;
+					background-color: $yellow;
 					.field-name-field-image:after { border-color: transparent $yellow transparent transparent; }
 					.field-name-field-instagram-hashtag:after { border-color: transparent $yellow transparent transparent; }
 					@include respondMin(large) { &:before { background: $yellow; } }
 				}
 
 				&.blue {
-					background: $blue;
+					background-color: $blue;
 					.field-name-field-image:after { border-color: transparent $blue transparent transparent; }
 					.field-name-field-instagram-hashtag:after { border-color: transparent $blue transparent transparent; }
 					@include respondMin(large) { &:before { background: $blue; } }
@@ -284,6 +287,7 @@ body.front {
 
 				.node {
 					padding: $padVertical $padInside $padVertical $padOutside;
+					background-position: left;
 
 					.field-name-field-image {
 						left: auto;
