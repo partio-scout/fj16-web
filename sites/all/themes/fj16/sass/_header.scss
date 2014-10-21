@@ -31,27 +31,29 @@
 			display: none;
 		}
 
-		a {
-			display: inline-block;
-			width: 196px;
-			height: 270px;
-			background: $purple;
-			text-indent: -9999em;
+		#site-name {
+			a {
+				display: inline-block;
+				width: 196px;
+				height: 270px;
+				background: $purple;
+				text-indent: -9999em;
 
-			@include at2x('header_roihu_logo', 136px);
-			background-repeat: no-repeat;
-			background-position: center;
+				@include at2x('header_roihu_logo', 136px);
+				background-repeat: no-repeat;
+				background-position: center;
 
-			@include respond(mobile) {
-				width: 133px;
-				height: 200px;
-				display: block;
-				margin: 20px auto;
-				position: relative;
-				top: 0; left: 0;
-				background: transparent;
-				
-				@include at2x('header_roihu_logo_mobile', 136px);
+				@include respond(mobile) {
+					width: 133px;
+					height: 200px;
+					display: block;
+					margin: 20px auto;
+					position: relative;
+					top: 0; left: 0;
+					background: transparent;
+					
+					@include at2x('header_roihu_logo_mobile', 136px);
+				}
 			}
 		}
 	}
