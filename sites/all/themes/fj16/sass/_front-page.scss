@@ -48,33 +48,33 @@ body.front {
 				left: 0;
 			}
 
+			#site-name {
+				a {
+					@extend .animated, .fadeInUp;
+					@include animation-duration(1.0s);
+					@include animation-delay(1.0s);
 
-			a {
-				@extend .animated, .fadeInUp;
-				@include animation-duration(1.0s);
-				@include animation-delay(1.0s);
+					width: 250px;
+					height: 377px;
+					display: block;
+					margin: 0 auto 20px auto;
+					max-width: 100%;
 
-				width: 250px;
-				height: 377px;
-				display: block;
-				margin: 0 auto 20px auto;
-				max-width: 100%;
+					@include at2x('front_header_roihu_logo', 100%);
+					background-color: transparent;
+					background-repeat: no-repeat;
 
-				@include at2x('front_header_roihu_logo', 100%);
-				background-color: transparent;
-				background-repeat: no-repeat;
+					@include respond(medium) {
+						width: 200px;
+						height: 301px;
+					}
 
-				@include respond(medium) {
-					width: 200px;
-					height: 301px;
-				}
-
-				@include respond(mobile) {
-					width: 200px;
-					height: 301px;
+					@include respond(mobile) {
+						width: 200px;
+						height: 301px;
+					}
 				}
 			}
-
 
 			#site-slogan {
 				@extend .animated, .fadeInUp;

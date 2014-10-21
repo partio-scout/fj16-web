@@ -387,7 +387,7 @@ a {
     opacity: 1;
     transform: translateY(0); } }
 /* line 51, ../sass/animate/animations/fade-enter/_fadeInUp.scss */
-.fadeInUp, body.front #header #name-and-slogan a, body.front #header #name-and-slogan #site-slogan {
+.fadeInUp, body.front #header #name-and-slogan #site-name a, body.front #header #name-and-slogan #site-slogan {
   -webkit-animation-name: fadeInUp;
   -moz-animation-name: fadeInUp;
   -o-animation-name: fadeInUp;
@@ -398,7 +398,7 @@ body {
   -webkit-backface-visibility: hidden; }
 
 /* line 96, ../sass/animate/_animate.scss */
-.animated, body.front #header #top-bar, body.front #header #top-bar a, body.front #header #name-and-slogan a, body.front #header #name-and-slogan #site-slogan, body.front #header #name-and-slogan #to-content {
+.animated, body.front #header #top-bar, body.front #header #top-bar a, body.front #header #name-and-slogan #site-name a, body.front #header #name-and-slogan #site-slogan, body.front #header #name-and-slogan #to-content {
   -webkit-animation-duration: 1s;
   -moz-animation-duration: 1s;
   -o-animation-duration: 1s;
@@ -408,7 +408,7 @@ body {
   -o-animation-fill-mode: both;
   animation-fill-mode: both; }
   /* line 100, ../sass/animate/_animate.scss */
-  .animated.hinge, body.front #header .hinge#top-bar, body.front #header #top-bar a.hinge, body.front #header #name-and-slogan a.hinge, body.front #header #name-and-slogan .hinge#site-slogan, body.front #header #name-and-slogan .hinge#to-content {
+  .animated.hinge, body.front #header .hinge#top-bar, body.front #header #top-bar a.hinge, body.front #header #name-and-slogan #site-name a.hinge, body.front #header #name-and-slogan .hinge#site-slogan, body.front #header #name-and-slogan .hinge#to-content {
     -webkit-animation-duration: 2s;
     -moz-animation-duration: 2s;
     -o-animation-duration: 2s;
@@ -709,7 +709,7 @@ body.front {
           top: 0;
           left: 0; } }
       /* line 52, ../sass/_front-page.scss */
-      body.front #header #name-and-slogan a {
+      body.front #header #name-and-slogan #site-name a {
         -moz-animation-duration: 1s;
         -webkit-animation-duration: 1s;
         animation-duration: 1s;
@@ -727,16 +727,16 @@ body.front {
         background-repeat: no-repeat; }
         @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
           /* line 52, ../sass/_front-page.scss */
-          body.front #header #name-and-slogan a {
+          body.front #header #name-and-slogan #site-name a {
             background-image: url(../img/front_header_roihu_logo@2x.png); } }
         @media only screen and (max-width: 1279px) {
           /* line 52, ../sass/_front-page.scss */
-          body.front #header #name-and-slogan a {
+          body.front #header #name-and-slogan #site-name a {
             width: 200px;
             height: 301px; } }
         @media only screen and (max-width: 767px) {
           /* line 52, ../sass/_front-page.scss */
-          body.front #header #name-and-slogan a {
+          body.front #header #name-and-slogan #site-name a {
             width: 200px;
             height: 301px; } }
       /* line 79, ../sass/_front-page.scss */
@@ -895,7 +895,7 @@ body.front {
         body.front #main #block-system-main .node h2, body.front #main #block-system-main .node .field-name-body, body.front #main #block-system-main .node .field-name-field-link {
           opacity: 0; }
           /* line 254, ../sass/_front-page.scss */
-          body.front #main #block-system-main .node h2.animated, body.front #main #block-system-main .node #header h2#top-bar, body.front #header #main #block-system-main .node h2#top-bar, body.front #main #block-system-main .node #header #name-and-slogan h2#site-slogan, body.front #header #name-and-slogan #main #block-system-main .node h2#site-slogan, body.front #main #block-system-main .node #header #name-and-slogan h2#to-content, body.front #header #name-and-slogan #main #block-system-main .node h2#to-content, body.front #main #block-system-main .node .field-name-body.animated, body.front #main #block-system-main .node #header .field-name-body#top-bar, body.front #header #main #block-system-main .node .field-name-body#top-bar, body.front #main #block-system-main .node #header #top-bar a.field-name-body, body.front #header #top-bar #main #block-system-main .node a.field-name-body, body.front #main #block-system-main .node #header #name-and-slogan a.field-name-body, body.front #header #name-and-slogan #main #block-system-main .node a.field-name-body, body.front #main #block-system-main .node #header #name-and-slogan .field-name-body#site-slogan, body.front #header #name-and-slogan #main #block-system-main .node .field-name-body#site-slogan, body.front #main #block-system-main .node #header #name-and-slogan .field-name-body#to-content, body.front #header #name-and-slogan #main #block-system-main .node .field-name-body#to-content, body.front #main #block-system-main .node .field-name-field-link.animated, body.front #main #block-system-main .node #header .field-name-field-link#top-bar, body.front #header #main #block-system-main .node .field-name-field-link#top-bar, body.front #main #block-system-main .node #header #top-bar a.field-name-field-link, body.front #header #top-bar #main #block-system-main .node a.field-name-field-link, body.front #main #block-system-main .node #header #name-and-slogan a.field-name-field-link, body.front #header #name-and-slogan #main #block-system-main .node a.field-name-field-link, body.front #main #block-system-main .node #header #name-and-slogan .field-name-field-link#site-slogan, body.front #header #name-and-slogan #main #block-system-main .node .field-name-field-link#site-slogan, body.front #main #block-system-main .node #header #name-and-slogan .field-name-field-link#to-content, body.front #header #name-and-slogan #main #block-system-main .node .field-name-field-link#to-content {
+          body.front #main #block-system-main .node h2.animated, body.front #main #block-system-main .node #header h2#top-bar, body.front #header #main #block-system-main .node h2#top-bar, body.front #main #block-system-main .node #header #name-and-slogan h2#site-slogan, body.front #header #name-and-slogan #main #block-system-main .node h2#site-slogan, body.front #main #block-system-main .node #header #name-and-slogan h2#to-content, body.front #header #name-and-slogan #main #block-system-main .node h2#to-content, body.front #main #block-system-main .node .field-name-body.animated, body.front #main #block-system-main .node #header .field-name-body#top-bar, body.front #header #main #block-system-main .node .field-name-body#top-bar, body.front #main #block-system-main .node #header #top-bar a.field-name-body, body.front #header #top-bar #main #block-system-main .node a.field-name-body, body.front #main #block-system-main .node #header #name-and-slogan #site-name a.field-name-body, body.front #header #name-and-slogan #site-name #main #block-system-main .node a.field-name-body, body.front #main #block-system-main .node #header #name-and-slogan .field-name-body#site-slogan, body.front #header #name-and-slogan #main #block-system-main .node .field-name-body#site-slogan, body.front #main #block-system-main .node #header #name-and-slogan .field-name-body#to-content, body.front #header #name-and-slogan #main #block-system-main .node .field-name-body#to-content, body.front #main #block-system-main .node .field-name-field-link.animated, body.front #main #block-system-main .node #header .field-name-field-link#top-bar, body.front #header #main #block-system-main .node .field-name-field-link#top-bar, body.front #main #block-system-main .node #header #top-bar a.field-name-field-link, body.front #header #top-bar #main #block-system-main .node a.field-name-field-link, body.front #main #block-system-main .node #header #name-and-slogan #site-name a.field-name-field-link, body.front #header #name-and-slogan #site-name #main #block-system-main .node a.field-name-field-link, body.front #main #block-system-main .node #header #name-and-slogan .field-name-field-link#site-slogan, body.front #header #name-and-slogan #main #block-system-main .node .field-name-field-link#site-slogan, body.front #main #block-system-main .node #header #name-and-slogan .field-name-field-link#to-content, body.front #header #name-and-slogan #main #block-system-main .node .field-name-field-link#to-content {
             opacity: 1; } }
       /* line 261, ../sass/_front-page.scss */
       body.front #main #block-system-main .node.purple {
