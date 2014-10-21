@@ -4,11 +4,11 @@
 
 	#roihu-logo {
 		display: inline-block;
-		width: 220px;
-		height: 104px;
+		width: 170px;
+		height: 80px;
 		text-indent: -9999em;
 
-		@include at2x('footer_roihu_logo', 220px);
+		@include at2x('footer_roihu_logo', 170px);
 
 		@include respond(mobile) {
 			display: block;
@@ -19,11 +19,11 @@
 	#sp-logo {
 		float: right;
 		display: inline-block;
-		width: 245px;
-		height: 94px;
+		width: 150px;
+		height: 58px;
 		text-indent: -9999em;
 
-		@include at2x('footer_sp_logo', 245px);
+		@include at2x('footer_sp_logo', 150px);
 
 		@include respond(mobile) {
 			display: block;
