@@ -107,6 +107,8 @@
           <?php if ($site_slogan): ?>
             <div id="site-slogan"><?php print $site_slogan; ?></div>
           <?php endif; ?>
+
+            <a id="to-content"></a>
         </div>
       <?php endif; ?>
 

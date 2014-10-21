@@ -17,6 +17,18 @@ body.front {
 			margin-bottom: 0 !important;
 		}
 
+		#top-bar {
+			@extend .animated, .fadeInDown;
+			@include animation-duration(0.8s);
+			@include animation-delay(0.5s);
+
+			a {
+				@extend .animated, .fadeIn;
+				@include animation-duration(0.5s);
+				@include animation-delay(1.0s);
+			}
+		}
+
 		#name-and-slogan {
 			width: 500px;
 			max-width: 60%;
@@ -25,9 +37,14 @@ body.front {
 			top: 0;
 			display: block;
 			margin: 0 auto;
-			padding: 100px 0 50px 0;
+			padding: 200px 0 50px 0;
+
 
 			a {
+				@extend .animated, .fadeInUp;
+				@include animation-duration(1.0s);
+				@include animation-delay(1.0s);
+
 				width: 300px;
 				height: 452px;
 				display: block;
@@ -50,6 +67,10 @@ body.front {
 			}
 
 			#site-slogan {
+				@extend .animated, .fadeInUp;
+				@include animation-duration(1.0s);
+				@include animation-delay(1.2s);
+
 				display: block;
 				text-align: center;
 				font-family: $exo;
@@ -63,21 +84,26 @@ body.front {
 			}
 
 
-			&:after {
-				content: '';
+			#to-content {
 				display: inline-block;
 				position: absolute;
+				width: 40px;
+				height: 46px;
 				bottom: -80px;
 				left: 50%;
-				margin-left: -30px;
-				width: 0;
-				height: 0;
-				border-style: solid;
-				border-width: 25px 30px 0 30px;
-				border-color: #fffbdb transparent transparent transparent;
-				opacity: 0.35;
+				margin-left: -20px;
+				opacity: 0.75;
+				cursor: pointer;
 
-				@include animation(bounce 2.5s infinite);
+				@include at2x('front_arrow_down', 40px);
+
+				@extend .animated, .fadeInDown;
+				@include animation-duration(1.0s);
+				@include animation-delay(1.2s);
+
+				&:hover {
+					bottom: -95px;
+				}
 
 				@include respond(mobile){
 					display: none;
@@ -206,6 +232,17 @@ body.front {
 				}
 
 
+				@include respondMin(small) {
+					h2, .field-name-body, .field-name-field-link {
+						opacity: 0;
+
+						&.animated {
+							opacity: 1;
+						}
+					}
+				}
+
+
 				&.purple {
 					background: $purple;
 					.field-name-field-image:after { border-color: transparent $purple transparent transparent; }
@@ -309,10 +346,4 @@ body.front {
 
 	}
 
-}
-
-@include keyframes(bounce) {
-	0%, 20%, 50%, 80%, 100% { @include transform(translateY(0)); }
-	40% { @include transform(translateY(-30px)); }
-	60% { @include transform(translateY(-15px)); }
 }
