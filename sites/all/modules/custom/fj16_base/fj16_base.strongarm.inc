@@ -499,7 +499,7 @@ user/*/*';
     'plurals' => '2',
     'formula' => '($n!=1)',
     'domain' => '',
-    'prefix' => 'fi',
+    'prefix' => '',
     'weight' => '0',
     'javascript' => 'qRFJXysGun-dlBrr9Z1E3ojZVIUJwkWTW7JuzlkvF0w',
   );
