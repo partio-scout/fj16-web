@@ -14,10 +14,15 @@ a {
 	text-decoration: none;
 
 	color: $red;
-	font-weight: 600;
 
 	&:hover {
 		color: shade($red, 15%);
+	}
+}
+
+p {
+	a {
+		font-weight: 600;
 	}
 }
 
