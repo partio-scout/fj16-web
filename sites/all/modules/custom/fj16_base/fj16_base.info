@@ -2,6 +2,7 @@ name = FJ16 Base
 core = 7.x
 package = FJ16
 dependencies[] = admin_menu
+dependencies[] = backup_migrate
 dependencies[] = block
 dependencies[] = ctools
 dependencies[] = dblog
