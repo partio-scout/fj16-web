@@ -9,6 +9,7 @@ dependencies[] = features
 dependencies[] = features_translations
 dependencies[] = file
 dependencies[] = filter
+dependencies[] = globalredirect
 dependencies[] = googleanalytics
 dependencies[] = i18n
 dependencies[] = i18n_block
