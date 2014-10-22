@@ -85,8 +85,8 @@
 
 <div id="node-<?php echo $node->nid; ?>" class="<?php echo $classes; ?> clearfix"<?php echo $attributes; ?>>
 
-  <div class="image" <?php if($field_image) : ?>style="background-image: url(<?php echo file_create_url($field_image[0]['uri']); ?>);"<?php endif; ?>>
-    <?php echo (!empty($field_instagram_hashtag) ? $field_instagram_hashtag[0]['value'] : ''); ?>
+  <div class="image" <?php if($field_image) : ?>style="background-image: url(<?php echo image_style_url('fj6_frontpage_box_image', $field_image[0]['uri']); ?>);"<?php endif; ?>>
+    <?php echo (!empty($field_instagram_hashtag) ? '<span class="hashtag">' . $field_instagram_hashtag[0]['value'] . '</span>' : ''); ?>
   </div>
 
   <div class="content">

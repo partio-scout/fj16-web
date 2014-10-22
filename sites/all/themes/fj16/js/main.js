@@ -2,7 +2,8 @@
 
 	if($('.node-fj16-frontpage-box').length) {
 		$('.node-fj16-frontpage-box').each(function(){
-			if($(this).find('.image').text().length > 0) {
+			if($(this).find('.image .hashtag').length > 0) {
+				console.log('init instagram')
 				// Init the Instagram feed
 
 				var el = $(this).find('.image');
@@ -22,11 +23,13 @@
 				});
 
 			} else {
+				console.log('parallax time')
 				// We're parallaxin, baby
-				$(this).attr('data-bottom-top', 'transform: translate3d(0,0%,0)');
-				$(this).attr('data-top-bottom', 'transform: translate3d(0,-20%,0)');	
+				$(this).find('.image').attr('data-bottom-top', 'transform: translate3d(0,0%,0)');
+				$(this).find('.image').attr('data-top-bottom', 'transform: translate3d(0,-16.66%,0)');	
 			}
 		});
+
 		initSkrollr();
 		$(window).resize(function() {
 			initSkrollr();
