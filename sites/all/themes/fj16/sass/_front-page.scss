@@ -155,45 +155,39 @@ body.front {
 		padding: 0;
 
 		#block-system-main {
-			
-			$padInside: 64%; // These are used below, so variables are worth using
-			$padOutside: 50px;
-			$padVertical: 110px;
-
 			.node {
 				@include at2x('front_section_bg', auto, 100%);
 				background-repeat: no-repeat;
 				background-position: right;
 
-				padding: $padVertical $padOutside $padVertical $padInside;
+				overflow: hidden;
+
+				padding: 0;
 				position: relative;
 				min-height: 400px;
 
 				@include respondMin(large) {
-					&:before { // Make it look like that box is 100% wide
-						content: '';
-						display: inline-block;
-						position: absolute;
-						top: 0;
-						bottom: 0;
-						left: -100%;
-						right: -100%;
-						z-index: -1;
-					}
+					// &:before { // Make it look like that box is 100% wide
+					// 	content: '';
+					// 	display: inline-block;
+					// 	position: absolute;
+					// 	top: 0;
+					// 	bottom: 0;
+					// 	left: -100%;
+					// 	right: -100%;
+					// 	z-index: -1;
+					// }
 				}
 
-				.field-name-field-image, .field-name-field-instagram-hashtag {
+				.image {
 					position: absolute;
 					left: 0;
 					top: 0;
 					bottom: 0;
-					width: $padInside - 4;
+					width: 60%;
 					overflow: hidden;
-
-					img {
-						height: 100%;
-						width: auto;
-					}
+					height: 120%;
+					background-size: cover;
 
 					&:after {
 						content: '';
@@ -208,51 +202,59 @@ body.front {
 					}
 				}
 
-				h2 {
-					font-family: $exo2;
-					font-size: 2.236em;
-					text-transform: uppercase;
-					margin-top: 0;
+				.content {
+					width: 40%;
+					padding: 130px 100px;
+					float: right;
 
-					a {
-						color: #fff;
-					}
-				}
+					h2 {
+						font-family: $exo2;
+						font-size: 2.236em;
+						text-transform: uppercase;
+						margin-top: 0;
 
-				.field-name-body {
-					color: #fff;
-					margin-bottom: 1.3em;
-				}
-
-				.field-name-field-link {
-					color: #fff;
-					font-family: $exo;
-					text-transform: uppercase;
-
-					a {
-						color: #fff;
-
-						&:after {
-							content: " ›";
-							font-size: 1.618em;
-							line-height: 1em;
-							position: relative;
-							top: 1px;
+						a {
+							color: #fff;
 						}
+					}
 
-						&:hover {
-							margin-left: 10px;
+					.body {
+						color: #fff;
+						margin-bottom: 1.3em;
+					}
+
+					.link {
+						color: #fff;
+						font-family: $exo;
+						text-transform: uppercase;
+
+						a {
+							color: #fff;
+
+							&:after {
+								content: " ›";
+								font-size: 1.618em;
+								line-height: 1em;
+								position: relative;
+								top: 1px;
+							}
+
+							&:hover {
+								margin-left: 10px;
+							}
 						}
 					}
 				}
 
 
 				@include respondMin(small) {
-					h2, .field-name-body, .field-name-field-link {
-						opacity: 0;
+					.content {
+						h2, .body, .link {
+							opacity: 0;
 
-						&.animated {
-							opacity: 1;
+							&.animated {
+								opacity: 1;
+							}
 						}
 					}
 				}
@@ -260,36 +262,31 @@ body.front {
 
 				&.purple {
 					background-color: $purple;
-					.field-name-field-image:after { border-color: transparent $purple transparent transparent; }
-					.field-name-field-instagram-hashtag:after { border-color: transparent $purple transparent transparent; }
+					.image:after { border-color: transparent $purple transparent transparent; }
 					@include respondMin(large) { &:before { background: $purple; } }
 				}
 
 				&.turquoise {
 					background-color: $green;
-					.field-name-field-image:after { border-color: transparent $green transparent transparent; }
-					.field-name-field-instagram-hashtag:after { border-color: transparent $green transparent transparent; }
+					.image:after { border-color: transparent $green transparent transparent; }
 					@include respondMin(large) { &:before { background: $green; } }
 				}
 
 				&.orange {
 					background-color: $red;
-					.field-name-field-image:after { border-color: transparent $red transparent transparent; }
-					.field-name-field-instagram-hashtag:after { border-color: transparent $red transparent transparent; }
+					.image:after { border-color: transparent $red transparent transparent; }
 					@include respondMin(large) { &:before { background: $red; } }
 				}
 
 				&.yellow {
 					background-color: $yellow;
-					.field-name-field-image:after { border-color: transparent $yellow transparent transparent; }
-					.field-name-field-instagram-hashtag:after { border-color: transparent $yellow transparent transparent; }
+					.image:after { border-color: transparent $yellow transparent transparent; }
 					@include respondMin(large) { &:before { background: $yellow; } }
 				}
 
 				&.blue {
 					background-color: $blue;
-					.field-name-field-image:after { border-color: transparent $blue transparent transparent; }
-					.field-name-field-instagram-hashtag:after { border-color: transparent $blue transparent transparent; }
+					.image:after { border-color: transparent $blue transparent transparent; }
 					@include respondMin(large) { &:before { background: $blue; } }
 				}
 
@@ -298,18 +295,21 @@ body.front {
 			.views-row-even {
 
 				.node {
-					padding: $padVertical $padInside $padVertical $padOutside;
 					background-position: left;
 
-					.field-name-field-image {
-						left: auto;
+					.image {
 						right: 0;
+						left: auto;
 
 						&:after {
 							@include transform(scale(-1,1)); // This is a lot easier than changing the direction manually
 							left: 0;
 							right: auto;
 						}
+					}
+
+					.content {
+						float: left;
 					}
 				}
 
@@ -318,19 +318,13 @@ body.front {
 			@include respond(mobile) {
 				.views-row-even, .views-row-odd {
 					.node {
-						padding: 380px 20px 30px 20px;
-
-						.field-name-field-image {
+						.image {
+							position: relative;
 							top: 0;
 							left: 0;
-							right: auto;
+							right: 0;
 							height: 350px;
 							width: 100%;
-
-							img {
-								width: auto;
-								height: 350px;
-							}
 
 							&:after {
 								@include transform(rotate(90deg));
@@ -339,25 +333,11 @@ body.front {
 								top: 280px;
 							}
 						}
-					}
-				}
-			}
 
-			@include respond(480px) {
-				.views-row-even, .views-row-odd {
-					.node {
-						padding: 280px 20px 30px 20px;
-
-						.field-name-field-image {
-							height: 250px;
-
-							img {
-								height: 250px;
-							}
-
-							&:after {
-								top: 180px;
-							}
+						.content {
+							width: 100%;
+							float: none;
+							padding: 30px 20px;
 						}
 					}
 				}
@@ -367,9 +347,9 @@ body.front {
 
 	}
 
-	.field-name-field-instagram-hashtag {
-		background: url('../img/front_ig_feed_bg.jpg');
-		background-size: 100% auto;
-	}
+	// .field-name-field-instagram-hashtag {
+	// 	background: url('../img/front_ig_feed_bg.jpg');
+	// 	background-size: 100% auto;
+	// }
 
 }

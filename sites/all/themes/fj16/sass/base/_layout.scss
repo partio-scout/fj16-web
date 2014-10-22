@@ -12,6 +12,18 @@ html, body {
 a {
 	@include transition(all 0.3s ease-out);
 	text-decoration: none;
+
+	color: $red;
+
+	&:hover {
+		color: shade($red, 15%);
+	}
+}
+
+p {
+	a {
+		font-weight: 600;
+	}
 }
 
 .container {

@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* line 5, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+/* line 5, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,38 +20,38 @@ time, mark, audio, video {
   font-size: 100%;
   vertical-align: baseline; }
 
-/* line 22, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1; }
 
-/* line 24, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none; }
 
-/* line 26, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/* line 28, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle; }
 
-/* line 30, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none; }
-  /* line 103, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+  /* line 103, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
   q:before, q:after, blockquote:before, blockquote:after {
     content: "";
     content: none; }
 
-/* line 32, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none; }
 
-/* line 116, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block; }
 
@@ -153,9 +153,17 @@ a {
   -o-transition: all 0.3s ease-out;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
-  text-decoration: none; }
+  text-decoration: none;
+  color: #e74011; }
+  /* line 18, ../sass/base/_layout.scss */
+  a:hover {
+    color: #c4360e; }
 
-/* line 17, ../sass/base/_layout.scss */
+/* line 24, ../sass/base/_layout.scss */
+p a {
+  font-weight: 600; }
+
+/* line 29, ../sass/base/_layout.scss */
 .container, #main, #header #navigation ul, #header #top-bar ul {
   max-width: 1600px;
   margin-left: auto;
@@ -164,35 +172,35 @@ a {
   padding-right: 20px;
   overflow: hidden; }
 @respond (large) {
-  /* line 17, ../sass/base/_layout.scss */
+  /* line 29, ../sass/base/_layout.scss */
   .container, #main, #header #navigation ul, #header #top-bar ul {
     max-width: 1680px; } }
 @respond (medium) {
-  /* line 17, ../sass/base/_layout.scss */
+  /* line 29, ../sass/base/_layout.scss */
   .container, #main, #header #navigation ul, #header #top-bar ul {
     max-width: 1280px; } }
 @respond (small) {
-  /* line 17, ../sass/base/_layout.scss */
+  /* line 29, ../sass/base/_layout.scss */
   .container, #main, #header #navigation ul, #header #top-bar ul {
     max-width: 1024px; } }
 @respond (mobile) {
-  /* line 17, ../sass/base/_layout.scss */
+  /* line 29, ../sass/base/_layout.scss */
   .container, #main, #header #navigation ul, #header #top-bar ul {
     max-width: 768px;
     padding-left: 10px;
     padding-right: 10px; } }
-/* line 44, ../sass/base/_layout.scss */
+/* line 56, ../sass/base/_layout.scss */
 #main #content {
   padding: 100px 200px; }
   @media only screen and (max-width: 1279px) {
-    /* line 44, ../sass/base/_layout.scss */
+    /* line 56, ../sass/base/_layout.scss */
     #main #content {
       padding: 75px 100px; } }
   @media only screen and (max-width: 767px) {
-    /* line 44, ../sass/base/_layout.scss */
+    /* line 56, ../sass/base/_layout.scss */
     #main #content {
       padding: 30px 0; } }
-  /* line 55, ../sass/base/_layout.scss */
+  /* line 67, ../sass/base/_layout.scss */
   #main #content h1.title {
     color: #36a9e1;
     font-size: 4.236em;
@@ -200,10 +208,10 @@ a {
     font-family: "Exo2", sans-serif;
     margin-bottom: 0.3em; }
     @media only screen and (max-width: 767px) {
-      /* line 55, ../sass/base/_layout.scss */
+      /* line 67, ../sass/base/_layout.scss */
       #main #content h1.title {
         font-size: 2.236em; } }
-  /* line 67, ../sass/base/_layout.scss */
+  /* line 79, ../sass/base/_layout.scss */
   #main #content .field-name-field-ingres {
     margin-bottom: 1.3em;
     font-family: "Exo2", sans-serif;
@@ -625,43 +633,101 @@ body {
 /* line 1, ../sass/_footer.scss */
 #footer {
   background: #dbdbdb;
-  padding: 50px 0; }
-  /* line 5, ../sass/_footer.scss */
-  #footer #roihu-logo {
-    display: inline-block;
-    width: 170px;
-    height: 80px;
-    text-indent: -9999em;
-    background-image: url(../img/footer_roihu_logo.png);
-    background-size: 170px auto; }
-    @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
-      /* line 5, ../sass/_footer.scss */
-      #footer #roihu-logo {
-        background-image: url(../img/footer_roihu_logo@2x.png); } }
-    @media only screen and (max-width: 767px) {
-      /* line 5, ../sass/_footer.scss */
-      #footer #roihu-logo {
-        display: block;
-        margin: 20px auto; } }
-  /* line 19, ../sass/_footer.scss */
-  #footer #sp-logo {
-    float: right;
-    display: inline-block;
-    width: 150px;
-    height: 58px;
-    text-indent: -9999em;
-    background-image: url(../img/footer_sp_logo.png);
-    background-size: 150px auto; }
-    @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
-      /* line 19, ../sass/_footer.scss */
-      #footer #sp-logo {
-        background-image: url(../img/footer_sp_logo@2x.png); } }
-    @media only screen and (max-width: 767px) {
-      /* line 19, ../sass/_footer.scss */
-      #footer #sp-logo {
-        display: block;
-        margin: 50px auto 20px;
-        float: none; } }
+  padding: 100px 0; }
+  /* line 6, ../sass/_footer.scss */
+  #footer .footer_section.narrow {
+    width: 15%;
+    display: block;
+    float: left;
+    text-align: right; }
+    /* line 12, ../sass/_footer.scss */
+    #footer .footer_section.narrow:first-child {
+      text-align: left; }
+    /* line 17, ../sass/_footer.scss */
+    #footer .footer_section.narrow #roihu-logo {
+      display: inline-block;
+      max-width: 100%;
+      width: 170px;
+      height: 80px;
+      text-indent: -9999em;
+      background-image: url(../img/footer_roihu_logo.png);
+      background-size: 100% auto;
+      background-repeat: no-repeat; }
+      @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+        /* line 17, ../sass/_footer.scss */
+        #footer .footer_section.narrow #roihu-logo {
+          background-image: url(../img/footer_roihu_logo@2x.png); } }
+    /* line 28, ../sass/_footer.scss */
+    #footer .footer_section.narrow #sp-logo {
+      display: inline-block;
+      max-width: 100%;
+      width: 150px;
+      height: 58px;
+      text-indent: -9999em;
+      background-image: url(../img/footer_sp_logo.png);
+      background-size: 100% auto;
+      background-repeat: no-repeat; }
+      @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+        /* line 28, ../sass/_footer.scss */
+        #footer .footer_section.narrow #sp-logo {
+          background-image: url(../img/footer_sp_logo@2x.png); } }
+  /* line 43, ../sass/_footer.scss */
+  #footer .block h2 {
+    display: none; }
+  /* line 47, ../sass/_footer.scss */
+  #footer .block h5 {
+    font-family: "Exo2", sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 1em; }
+  /* line 53, ../sass/_footer.scss */
+  #footer .block p, #footer .block address {
+    margin-bottom: 1em; }
+  /* line 57, ../sass/_footer.scss */
+  #footer .block .content {
+    width: 70%;
+    float: left;
+    position: relative; }
+    /* line 62, ../sass/_footer.scss */
+    #footer .block .content .footer_section {
+      width: 50%;
+      float: left;
+      padding: 0 20px; }
+      /* line 67, ../sass/_footer.scss */
+      #footer .block .content .footer_section:first-child {
+        padding: 0 50px 0 20px; }
+  @media only screen and (max-width: 1023px) {
+    /* line 1, ../sass/_footer.scss */
+    #footer {
+      text-align: center;
+      padding: 50px 0; }
+      /* line 78, ../sass/_footer.scss */
+      #footer #roihu-logo, #footer #sp-logo {
+        display: block !important;
+        margin: 0 auto !important; }
+      /* line 83, ../sass/_footer.scss */
+      #footer .block {
+        overflow: hidden;
+        *zoom: 1; }
+      /* line 87, ../sass/_footer.scss */
+      #footer .content {
+        width: 100% !important; }
+        /* line 90, ../sass/_footer.scss */
+        #footer .content .footer_section {
+          margin-top: 50px !important; }
+        /* line 94, ../sass/_footer.scss */
+        #footer .content .footer_section:first-child {
+          margin-top: 20px !important; }
+        /* line 98, ../sass/_footer.scss */
+        #footer .content p {
+          max-width: 400px;
+          margin-left: auto;
+          margin-right: auto; }
+      /* line 105, ../sass/_footer.scss */
+      #footer .footer_section, #footer .footer_section.narrow {
+        display: block !important;
+        width: 100% !important;
+        float: none !important;
+        padding: 0 !important; } }
 
 /* line 1, ../sass/_front-page.scss */
 body.front {
@@ -819,44 +885,32 @@ body.front {
     /* line 151, ../sass/_front-page.scss */
     body.front #main #content {
       padding: 0; }
-    /* line 163, ../sass/_front-page.scss */
+    /* line 158, ../sass/_front-page.scss */
     body.front #main #block-system-main .node {
       background-image: url(../img/front_section_bg.png);
       background-size: auto 100%;
       background-repeat: no-repeat;
       background-position: right;
-      padding: 110px 50px 110px 64%;
+      overflow: hidden;
+      padding: 0;
       position: relative;
       min-height: 400px; }
       @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
-        /* line 163, ../sass/_front-page.scss */
+        /* line 158, ../sass/_front-page.scss */
         body.front #main #block-system-main .node {
           background-image: url(../img/front_section_bg@2x.png); } }
-      @media only screen and (min-width: 1680px) {
-        /* line 173, ../sass/_front-page.scss */
-        body.front #main #block-system-main .node:before {
-          content: '';
-          display: inline-block;
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: -100%;
-          right: -100%;
-          z-index: -1; } }
-      /* line 185, ../sass/_front-page.scss */
-      body.front #main #block-system-main .node .field-name-field-image, body.front #main #block-system-main .node .field-name-field-instagram-hashtag {
+      /* line 182, ../sass/_front-page.scss */
+      body.front #main #block-system-main .node .image {
         position: absolute;
         left: 0;
         top: 0;
         bottom: 0;
         width: 60%;
-        overflow: hidden; }
-        /* line 193, ../sass/_front-page.scss */
-        body.front #main #block-system-main .node .field-name-field-image img, body.front #main #block-system-main .node .field-name-field-instagram-hashtag img {
-          height: 100%;
-          width: auto; }
-        /* line 198, ../sass/_front-page.scss */
-        body.front #main #block-system-main .node .field-name-field-image:after, body.front #main #block-system-main .node .field-name-field-instagram-hashtag:after {
+        overflow: hidden;
+        height: 120%;
+        background-size: cover; }
+        /* line 192, ../sass/_front-page.scss */
+        body.front #main #block-system-main .node .image:after {
           content: '';
           display: inline-block;
           width: 0;
@@ -866,65 +920,64 @@ body.front {
           position: absolute;
           right: 0;
           top: 58px; }
-      /* line 211, ../sass/_front-page.scss */
-      body.front #main #block-system-main .node h2 {
-        font-family: "Exo2", sans-serif;
-        font-size: 2.236em;
-        text-transform: uppercase;
-        margin-top: 0; }
-        /* line 217, ../sass/_front-page.scss */
-        body.front #main #block-system-main .node h2 a {
-          color: #fff; }
-      /* line 222, ../sass/_front-page.scss */
-      body.front #main #block-system-main .node .field-name-body {
-        color: #fff;
-        margin-bottom: 1.3em; }
-      /* line 227, ../sass/_front-page.scss */
-      body.front #main #block-system-main .node .field-name-field-link {
-        color: #fff;
-        font-family: "Exo2", sans-serif;
-        text-transform: uppercase; }
-        /* line 232, ../sass/_front-page.scss */
-        body.front #main #block-system-main .node .field-name-field-link a {
-          color: #fff; }
-          /* line 235, ../sass/_front-page.scss */
-          body.front #main #block-system-main .node .field-name-field-link a:after {
-            content: " ›";
-            font-size: 1.618em;
-            line-height: 1em;
-            position: relative;
-            top: 1px; }
-          /* line 243, ../sass/_front-page.scss */
-          body.front #main #block-system-main .node .field-name-field-link a:hover {
-            margin-left: 10px; }
+      /* line 205, ../sass/_front-page.scss */
+      body.front #main #block-system-main .node .content {
+        width: 40%;
+        padding: 130px 100px;
+        float: right; }
+        /* line 210, ../sass/_front-page.scss */
+        body.front #main #block-system-main .node .content h2 {
+          font-family: "Exo2", sans-serif;
+          font-size: 2.236em;
+          text-transform: uppercase;
+          margin-top: 0; }
+          /* line 216, ../sass/_front-page.scss */
+          body.front #main #block-system-main .node .content h2 a {
+            color: #fff; }
+        /* line 221, ../sass/_front-page.scss */
+        body.front #main #block-system-main .node .content .body {
+          color: #fff;
+          margin-bottom: 1.3em; }
+        /* line 226, ../sass/_front-page.scss */
+        body.front #main #block-system-main .node .content .link {
+          color: #fff;
+          font-family: "Exo2", sans-serif;
+          text-transform: uppercase; }
+          /* line 231, ../sass/_front-page.scss */
+          body.front #main #block-system-main .node .content .link a {
+            color: #fff; }
+            /* line 234, ../sass/_front-page.scss */
+            body.front #main #block-system-main .node .content .link a:after {
+              content: " ›";
+              font-size: 1.618em;
+              line-height: 1em;
+              position: relative;
+              top: 1px; }
+            /* line 242, ../sass/_front-page.scss */
+            body.front #main #block-system-main .node .content .link a:hover {
+              margin-left: 10px; }
       @media only screen and (min-width: 1024px) {
-        /* line 251, ../sass/_front-page.scss */
-        body.front #main #block-system-main .node h2, body.front #main #block-system-main .node .field-name-body, body.front #main #block-system-main .node .field-name-field-link {
+        /* line 252, ../sass/_front-page.scss */
+        body.front #main #block-system-main .node .content h2, body.front #main #block-system-main .node .content .body, body.front #main #block-system-main .node .content .link {
           opacity: 0; }
-          /* line 254, ../sass/_front-page.scss */
-          body.front #main #block-system-main .node h2.animated, body.front #main #block-system-main .node #header h2#top-bar, body.front #header #main #block-system-main .node h2#top-bar, body.front #main #block-system-main .node #header #name-and-slogan h2#site-slogan, body.front #header #name-and-slogan #main #block-system-main .node h2#site-slogan, body.front #main #block-system-main .node #header #name-and-slogan h2#to-content, body.front #header #name-and-slogan #main #block-system-main .node h2#to-content, body.front #main #block-system-main .node .field-name-body.animated, body.front #main #block-system-main .node #header .field-name-body#top-bar, body.front #header #main #block-system-main .node .field-name-body#top-bar, body.front #main #block-system-main .node #header #top-bar a.field-name-body, body.front #header #top-bar #main #block-system-main .node a.field-name-body, body.front #main #block-system-main .node #header #name-and-slogan #site-name a.field-name-body, body.front #header #name-and-slogan #site-name #main #block-system-main .node a.field-name-body, body.front #main #block-system-main .node #header #name-and-slogan .field-name-body#site-slogan, body.front #header #name-and-slogan #main #block-system-main .node .field-name-body#site-slogan, body.front #main #block-system-main .node #header #name-and-slogan .field-name-body#to-content, body.front #header #name-and-slogan #main #block-system-main .node .field-name-body#to-content, body.front #main #block-system-main .node .field-name-field-link.animated, body.front #main #block-system-main .node #header .field-name-field-link#top-bar, body.front #header #main #block-system-main .node .field-name-field-link#top-bar, body.front #main #block-system-main .node #header #top-bar a.field-name-field-link, body.front #header #top-bar #main #block-system-main .node a.field-name-field-link, body.front #main #block-system-main .node #header #name-and-slogan #site-name a.field-name-field-link, body.front #header #name-and-slogan #site-name #main #block-system-main .node a.field-name-field-link, body.front #main #block-system-main .node #header #name-and-slogan .field-name-field-link#site-slogan, body.front #header #name-and-slogan #main #block-system-main .node .field-name-field-link#site-slogan, body.front #main #block-system-main .node #header #name-and-slogan .field-name-field-link#to-content, body.front #header #name-and-slogan #main #block-system-main .node .field-name-field-link#to-content {
+          /* line 255, ../sass/_front-page.scss */
+          body.front #main #block-system-main .node .content h2.animated, body.front #main #block-system-main .node .content #header h2#top-bar, body.front #header #main #block-system-main .node .content h2#top-bar, body.front #main #block-system-main .node .content #header #name-and-slogan h2#site-slogan, body.front #header #name-and-slogan #main #block-system-main .node .content h2#site-slogan, body.front #main #block-system-main .node .content #header #name-and-slogan h2#to-content, body.front #header #name-and-slogan #main #block-system-main .node .content h2#to-content, body.front #main #block-system-main .node .content .body.animated, body.front #main #block-system-main .node .content #header .body#top-bar, body.front #header #main #block-system-main .node .content .body#top-bar, body.front #main #block-system-main .node .content #header #top-bar a.body, body.front #header #top-bar #main #block-system-main .node .content a.body, body.front #main #block-system-main .node .content #header #name-and-slogan #site-name a.body, body.front #header #name-and-slogan #site-name #main #block-system-main .node .content a.body, body.front #main #block-system-main .node .content #header #name-and-slogan .body#site-slogan, body.front #header #name-and-slogan #main #block-system-main .node .content .body#site-slogan, body.front #main #block-system-main .node .content #header #name-and-slogan .body#to-content, body.front #header #name-and-slogan #main #block-system-main .node .content .body#to-content, body.front #main #block-system-main .node .content .link.animated, body.front #main #block-system-main .node .content #header .link#top-bar, body.front #header #main #block-system-main .node .content .link#top-bar, body.front #main #block-system-main .node .content #header #top-bar a.link, body.front #header #top-bar #main #block-system-main .node .content a.link, body.front #main #block-system-main .node .content #header #name-and-slogan #site-name a.link, body.front #header #name-and-slogan #site-name #main #block-system-main .node .content a.link, body.front #main #block-system-main .node .content #header #name-and-slogan .link#site-slogan, body.front #header #name-and-slogan #main #block-system-main .node .content .link#site-slogan, body.front #main #block-system-main .node .content #header #name-and-slogan .link#to-content, body.front #header #name-and-slogan #main #block-system-main .node .content .link#to-content {
             opacity: 1; } }
-      /* line 261, ../sass/_front-page.scss */
+      /* line 263, ../sass/_front-page.scss */
       body.front #main #block-system-main .node.purple {
         background-color: #b80170; }
-        /* line 263, ../sass/_front-page.scss */
-        body.front #main #block-system-main .node.purple .field-name-field-image:after {
-          border-color: transparent #b80170 transparent transparent; }
-        /* line 264, ../sass/_front-page.scss */
-        body.front #main #block-system-main .node.purple .field-name-field-instagram-hashtag:after {
+        /* line 265, ../sass/_front-page.scss */
+        body.front #main #block-system-main .node.purple .image:after {
           border-color: transparent #b80170 transparent transparent; }
         @media only screen and (min-width: 1680px) {
-          /* line 265, ../sass/_front-page.scss */
+          /* line 266, ../sass/_front-page.scss */
           body.front #main #block-system-main .node.purple:before {
             background: #b80170; } }
-      /* line 268, ../sass/_front-page.scss */
+      /* line 269, ../sass/_front-page.scss */
       body.front #main #block-system-main .node.turquoise {
         background-color: #00a870; }
-        /* line 270, ../sass/_front-page.scss */
-        body.front #main #block-system-main .node.turquoise .field-name-field-image:after {
-          border-color: transparent #00a870 transparent transparent; }
         /* line 271, ../sass/_front-page.scss */
-        body.front #main #block-system-main .node.turquoise .field-name-field-instagram-hashtag:after {
+        body.front #main #block-system-main .node.turquoise .image:after {
           border-color: transparent #00a870 transparent transparent; }
         @media only screen and (min-width: 1680px) {
           /* line 272, ../sass/_front-page.scss */
@@ -934,98 +987,73 @@ body.front {
       body.front #main #block-system-main .node.orange {
         background-color: #e74011; }
         /* line 277, ../sass/_front-page.scss */
-        body.front #main #block-system-main .node.orange .field-name-field-image:after {
-          border-color: transparent #e74011 transparent transparent; }
-        /* line 278, ../sass/_front-page.scss */
-        body.front #main #block-system-main .node.orange .field-name-field-instagram-hashtag:after {
+        body.front #main #block-system-main .node.orange .image:after {
           border-color: transparent #e74011 transparent transparent; }
         @media only screen and (min-width: 1680px) {
-          /* line 279, ../sass/_front-page.scss */
+          /* line 278, ../sass/_front-page.scss */
           body.front #main #block-system-main .node.orange:before {
             background: #e74011; } }
-      /* line 282, ../sass/_front-page.scss */
+      /* line 281, ../sass/_front-page.scss */
       body.front #main #block-system-main .node.yellow {
         background-color: #ffed00; }
-        /* line 284, ../sass/_front-page.scss */
-        body.front #main #block-system-main .node.yellow .field-name-field-image:after {
-          border-color: transparent #ffed00 transparent transparent; }
-        /* line 285, ../sass/_front-page.scss */
-        body.front #main #block-system-main .node.yellow .field-name-field-instagram-hashtag:after {
+        /* line 283, ../sass/_front-page.scss */
+        body.front #main #block-system-main .node.yellow .image:after {
           border-color: transparent #ffed00 transparent transparent; }
         @media only screen and (min-width: 1680px) {
-          /* line 286, ../sass/_front-page.scss */
+          /* line 284, ../sass/_front-page.scss */
           body.front #main #block-system-main .node.yellow:before {
             background: #ffed00; } }
-      /* line 289, ../sass/_front-page.scss */
+      /* line 287, ../sass/_front-page.scss */
       body.front #main #block-system-main .node.blue {
         background-color: #36a9e1; }
-        /* line 291, ../sass/_front-page.scss */
-        body.front #main #block-system-main .node.blue .field-name-field-image:after {
-          border-color: transparent #36a9e1 transparent transparent; }
-        /* line 292, ../sass/_front-page.scss */
-        body.front #main #block-system-main .node.blue .field-name-field-instagram-hashtag:after {
+        /* line 289, ../sass/_front-page.scss */
+        body.front #main #block-system-main .node.blue .image:after {
           border-color: transparent #36a9e1 transparent transparent; }
         @media only screen and (min-width: 1680px) {
-          /* line 293, ../sass/_front-page.scss */
+          /* line 290, ../sass/_front-page.scss */
           body.front #main #block-system-main .node.blue:before {
             background: #36a9e1; } }
-    /* line 300, ../sass/_front-page.scss */
+    /* line 297, ../sass/_front-page.scss */
     body.front #main #block-system-main .views-row-even .node {
-      padding: 110px 64% 110px 50px;
       background-position: left; }
-      /* line 304, ../sass/_front-page.scss */
-      body.front #main #block-system-main .views-row-even .node .field-name-field-image {
-        left: auto;
-        right: 0; }
-        /* line 308, ../sass/_front-page.scss */
-        body.front #main #block-system-main .views-row-even .node .field-name-field-image:after {
+      /* line 300, ../sass/_front-page.scss */
+      body.front #main #block-system-main .views-row-even .node .image {
+        right: 0;
+        left: auto; }
+        /* line 304, ../sass/_front-page.scss */
+        body.front #main #block-system-main .views-row-even .node .image:after {
           -moz-transform: scale(-1, 1);
           -ms-transform: scale(-1, 1);
           -webkit-transform: scale(-1, 1);
           transform: scale(-1, 1);
           left: 0;
           right: auto; }
+      /* line 311, ../sass/_front-page.scss */
+      body.front #main #block-system-main .views-row-even .node .content {
+        float: left; }
     @media only screen and (max-width: 767px) {
-      /* line 320, ../sass/_front-page.scss */
-      body.front #main #block-system-main .views-row-even .node, body.front #main #block-system-main .views-row-odd .node {
-        padding: 380px 20px 30px 20px; }
-        /* line 323, ../sass/_front-page.scss */
-        body.front #main #block-system-main .views-row-even .node .field-name-field-image, body.front #main #block-system-main .views-row-odd .node .field-name-field-image {
-          top: 0;
-          left: 0;
-          right: auto;
-          height: 350px;
-          width: 100%; }
-          /* line 330, ../sass/_front-page.scss */
-          body.front #main #block-system-main .views-row-even .node .field-name-field-image img, body.front #main #block-system-main .views-row-odd .node .field-name-field-image img {
-            width: auto;
-            height: 350px; }
-          /* line 335, ../sass/_front-page.scss */
-          body.front #main #block-system-main .views-row-even .node .field-name-field-image:after, body.front #main #block-system-main .views-row-odd .node .field-name-field-image:after {
-            -moz-transform: rotate(90deg);
-            -ms-transform: rotate(90deg);
-            -webkit-transform: rotate(90deg);
-            transform: rotate(90deg);
-            right: 100px;
-            left: auto;
-            top: 280px; } }
-    @media only screen and (max-width: 480px) {
-      /* line 348, ../sass/_front-page.scss */
-      body.front #main #block-system-main .views-row-even .node, body.front #main #block-system-main .views-row-odd .node {
-        padding: 280px 20px 30px 20px; }
-        /* line 351, ../sass/_front-page.scss */
-        body.front #main #block-system-main .views-row-even .node .field-name-field-image, body.front #main #block-system-main .views-row-odd .node .field-name-field-image {
-          height: 250px; }
-          /* line 354, ../sass/_front-page.scss */
-          body.front #main #block-system-main .views-row-even .node .field-name-field-image img, body.front #main #block-system-main .views-row-odd .node .field-name-field-image img {
-            height: 250px; }
-          /* line 358, ../sass/_front-page.scss */
-          body.front #main #block-system-main .views-row-even .node .field-name-field-image:after, body.front #main #block-system-main .views-row-odd .node .field-name-field-image:after {
-            top: 180px; } }
-  /* line 370, ../sass/_front-page.scss */
-  body.front .field-name-field-instagram-hashtag {
-    background: url("../img/front_ig_feed_bg.jpg");
-    background-size: 100% auto; }
+      /* line 321, ../sass/_front-page.scss */
+      body.front #main #block-system-main .views-row-even .node .image, body.front #main #block-system-main .views-row-odd .node .image {
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 350px;
+        width: 100%; }
+        /* line 329, ../sass/_front-page.scss */
+        body.front #main #block-system-main .views-row-even .node .image:after, body.front #main #block-system-main .views-row-odd .node .image:after {
+          -moz-transform: rotate(90deg);
+          -ms-transform: rotate(90deg);
+          -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+          right: 100px;
+          left: auto;
+          top: 280px; }
+      /* line 337, ../sass/_front-page.scss */
+      body.front #main #block-system-main .views-row-even .node .content, body.front #main #block-system-main .views-row-odd .node .content {
+        width: 100%;
+        float: none;
+        padding: 30px 20px; } }
 
 /* line 27, ../sass/fj16.scss */
 .admin-menu #toolbar {

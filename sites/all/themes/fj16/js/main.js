@@ -2,12 +2,13 @@
 
 	if($('.node-fj16-frontpage-box').length) {
 		$('.node-fj16-frontpage-box').each(function(){
-			if($(this).find('.field-name-field-instagram-hashtag').text().length > 0) {
+			if($(this).find('.image .hashtag').length > 0) {
+				console.log('init instagram')
 				// Init the Instagram feed
 
-				var el = $(this).find('.field-name-field-instagram-hashtag');
-				var hashtag = el.find('.field-item').text();
-				el.find('.field-item').text('');
+				var el = $(this).find('.image');
+				var hashtag = el.text();
+				el.text('');
 
 				$.getJSON('/instajson/' + hashtag, function(data) {
 					// console.log(data);
@@ -22,11 +23,13 @@
 				});
 
 			} else {
+				console.log('parallax time')
 				// We're parallaxin, baby
-				$(this).find('img').attr('data-bottom-top', 'transform: translate3d(0,0%,0)');
-				$(this).find('img').attr('data-top-bottom', 'transform: translate3d(0,-20%,0)');	
+				$(this).find('.image').attr('data-bottom-top', 'transform: translate3d(0,0%,0)');
+				$(this).find('.image').attr('data-top-bottom', 'transform: translate3d(0,-16.66%,0)');	
 			}
 		});
+
 		initSkrollr();
 		$(window).resize(function() {
 			initSkrollr();
@@ -40,7 +43,7 @@
 						var $this = $(this);
 						setTimeout(function(){
 							$this.find('h2').addClass('animated fadeInDown');
-							$this.find('.field-name-body, .field-name-field-link').addClass('animated fadeInUp');
+							$this.find('.body, .link').addClass('animated fadeInUp');
 						}, 300);
 					}
 				});
