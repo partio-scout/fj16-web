@@ -1,34 +1,112 @@
 #footer {
 	background: #dbdbdb;
-	padding: 50px 0;
+	padding: 100px 0;
 
-	#roihu-logo {
-		display: inline-block;
-		width: 170px;
-		height: 80px;
-		text-indent: -9999em;
 
-		@include at2x('footer_roihu_logo', 170px);
+	.footer_section.narrow {
+		width: 15%;
+		display: block;
+		float: left;
+		text-align: right;
 
-		@include respond(mobile) {
-			display: block;
-			margin: 20px auto;
+		&:first-child {
+			text-align: left;
+		}
+
+		
+		#roihu-logo {
+			display: inline-block;
+			max-width: 100%;
+			width: 170px;
+			height: 80px;
+			text-indent: -9999em;
+
+			@include at2x('footer_roihu_logo', 100%);
+			background-repeat: no-repeat;
+		}
+
+		#sp-logo {
+			display: inline-block;
+			max-width: 100%;
+			width: 150px;
+			height: 58px;
+			text-indent: -9999em;
+
+			@include at2x('footer_sp_logo', 100%);
+			background-repeat: no-repeat;
+
 		}
 	}
 
-	#sp-logo {
-		float: right;
-		display: inline-block;
-		width: 150px;
-		height: 58px;
-		text-indent: -9999em;
+	.block {
 
-		@include at2x('footer_sp_logo', 150px);
+		h2 {
+			display: none;
+		}
 
-		@include respond(mobile) {
-			display: block;
-			margin: 50px auto 20px;
-			float: none;
+		h5 {
+			font-family: $exo;
+			text-transform: uppercase;
+			margin-bottom: 1em;
+		}
+
+		p, address {
+			margin-bottom: 1em;
+		}
+
+		.content {
+			width: 70%;
+			float: left;
+			position: relative;
+
+			.footer_section {
+				width: 50%;
+				float: left;
+				padding: 0 20px;
+
+				&:first-child {
+					padding: 0 50px 0 20px;
+				}
+			}
+		}
+	}
+
+	@include respond(small) {
+		text-align: center;
+		padding: 50px 0;
+
+		#roihu-logo, #sp-logo {
+			display: block !important;
+			margin: 0 auto !important;
+		}
+
+		.block {
+			@include clearfix();
+		}
+
+		.content {
+			width: 100% !important;
+
+			.footer_section {
+				margin-top: 50px !important;
+			}
+
+			.footer_section:first-child {
+				margin-top: 20px !important;
+			}
+
+			p {
+				max-width: 400px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+
+		.footer_section, .footer_section.narrow {
+			display: block !important;
+			width: 100% !important;
+			float: none !important;
+			padding: 0 !important;
 		}
 	}
 }
