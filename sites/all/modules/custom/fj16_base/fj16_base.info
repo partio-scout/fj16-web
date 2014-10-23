@@ -258,7 +258,6 @@ features[variable][] = redirect_passthrough_querystring
 features[variable][] = redirect_purge_inactive
 features[variable][] = redirect_warning
 features[variable][] = site_default_country
-features[variable][] = site_mail
 features[variable][] = site_name
 features[variable][] = theme_default
 features[variable][] = update_notify_emails
