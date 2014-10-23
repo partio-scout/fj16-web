@@ -23,7 +23,7 @@ function fj16_frontpage_boxes_menu() {
 function _fj16_frontpage_boxes_get_json($hashtag) {
   $hashtag = preg_replace("/[^\p{Latin}\-_0-9]/u", "", $hashtag); // remove special characters for security
   $cached = cache_get('fj16_latest_insta_json_' . md5($hashtag));
-  if(empty($cached) || _fj16_frontpage_boxes_tag_expired()) {
+  if(empty($cached) || _fj16_frontpage_boxes_tag_expired($hashtag)) {
     $json = _fj16_frontpage_boxes_fetch_media_for_tag($hashtag);
     cache_set('fj16_latest_insta_json_' . md5($hashtag), $json);
     return $json;
@@ -38,8 +38,7 @@ function _fj16_frontpage_boxes_deliver_json($json) {
 }
 
 function _fj16_frontpage_boxes_tag_expired($hashtag) {
-  //FIXME Always returns true
-  $last_update = variable_get('fj16_insta_last_updated_' . md5($hashtag), 0);
+  $last_update = _fj16_frontpage_boxes_get_last_updated($hashtag);
   return (time() - $last_update) > FJ16_INSTAGRAM_CACHE_LIFETIME;
 }
 
@@ -51,7 +50,18 @@ function _fj16_frontpage_boxes_fetch_media_for_tag($hashtag) {
 
   $json = file_get_contents($endpoint);
 
-  variable_set('fj16_insta_last_updated_' . md5($hashtag), time());
+  _fj16_frontpage_boxes_set_last_updated($hashtag, time());
 
   return $json;
+}
+
+function _fj16_frontpage_boxes_get_last_updated($hashtag) {
+  $vars = variable_get('fj16_insta_last_updated', array());
+  return !empty($vars[$hashtag]) ? $vars[$hashtag] : 0;
+}
+
+function _fj16_frontpage_boxes_set_last_updated($hashtag, $new_value) {
+  $vars = variable_get('fj16_insta_last_updated', array());
+  $vars[$hashtag] = $new_value;
+  variable_set('fj16_insta_last_updated', $vars);
 }
