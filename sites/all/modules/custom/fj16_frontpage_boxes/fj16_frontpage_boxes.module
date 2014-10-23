@@ -21,8 +21,7 @@ function fj16_frontpage_boxes_menu() {
 }
 
 function _fj16_frontpage_boxes_get_json($hashtag) {
-  //TODO Allow scandics
-  $hashtag = preg_replace("/[^a-zA-Z0-9]+/", "", $hashtag); // remove special characters for security
+  $hashtag = preg_replace("/[^\p{Latin}]/u", "", $hashtag); // remove special characters for security
   $cached = cache_get('fj16_latest_insta_json_' . md5($hashtag));
   if(empty($cached) || _fj16_frontpage_boxes_tag_expired()) {
     $json = _fj16_frontpage_boxes_fetch_media_for_tag($hashtag);
