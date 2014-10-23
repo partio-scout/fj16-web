@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* line 5, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+/* line 5, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,38 +20,38 @@ time, mark, audio, video {
   font-size: 100%;
   vertical-align: baseline; }
 
-/* line 22, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1; }
 
-/* line 24, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none; }
 
-/* line 26, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/* line 28, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle; }
 
-/* line 30, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none; }
-  /* line 103, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+  /* line 103, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
   q:before, q:after, blockquote:before, blockquote:after {
     content: "";
     content: none; }
 
-/* line 32, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none; }
 
-/* line 116, ../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block; }
 
@@ -92,7 +92,7 @@ html, body {
   font-family: "Aleo", serif;
   font-weight: 400;
   line-height: 1.45; }
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: 768px) {
     /* line 3, ../sass/base/_typography.scss */
     html, body {
       font-size: 16px; } }
@@ -192,11 +192,11 @@ p a {
 /* line 56, ../sass/base/_layout.scss */
 #main #content {
   padding: 100px 200px; }
-  @media only screen and (max-width: 1279px) {
+  @media only screen and (max-width: 1280px) {
     /* line 56, ../sass/base/_layout.scss */
     #main #content {
       padding: 75px 100px; } }
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: 768px) {
     /* line 56, ../sass/base/_layout.scss */
     #main #content {
       padding: 30px 0; } }
@@ -207,7 +207,7 @@ p a {
     text-transform: uppercase;
     font-family: "Exo2", sans-serif;
     margin-bottom: 0.3em; }
-    @media only screen and (max-width: 767px) {
+    @media only screen and (max-width: 768px) {
       /* line 67, ../sass/base/_layout.scss */
       #main #content h1.title {
         font-size: 2.236em; } }
@@ -432,11 +432,11 @@ body {
   text-transform: uppercase;
   background: url(../img/header_bg_1.jpg) center center;
   background-size: cover; }
-  @media only screen and (max-width: 1023px) {
+  @media only screen and (max-width: 1024px) {
     /* line 1, ../sass/_header.scss */
     #header {
       background-image: url(../img/header_bg_1_small.jpg); } }
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: 768px) {
     /* line 1, ../sass/_header.scss */
     #header {
       height: 300px; } }
@@ -466,7 +466,7 @@ body {
         /* line 35, ../sass/_header.scss */
         #header #name-and-slogan #site-name a {
           background-image: url(../img/header_roihu_logo@2x.png); } }
-      @media only screen and (max-width: 767px) {
+      @media only screen and (max-width: 768px) {
         /* line 35, ../sass/_header.scss */
         #header #name-and-slogan #site-name a {
           width: 133px;
@@ -479,7 +479,7 @@ body {
           background: transparent;
           background-image: url(../img/header_roihu_logo_mobile.png);
           background-size: 136px auto; } }
-  @media only screen and (max-width: 767px) and (min--moz-device-pixel-ratio: 1.3), only screen and (max-width: 767px) and (-o-min-device-pixel-ratio: 2.6 / 2), only screen and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.3), only screen and (max-width: 767px) and (min-device-pixel-ratio: 1.3), only screen and (max-width: 767px) and (min-resolution: 1.3dppx) {
+  @media only screen and (max-width: 768px) and (min--moz-device-pixel-ratio: 1.3), only screen and (max-width: 768px) and (-o-min-device-pixel-ratio: 2.6 / 2), only screen and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 1.3), only screen and (max-width: 768px) and (min-device-pixel-ratio: 1.3), only screen and (max-width: 768px) and (min-resolution: 1.3dppx) {
     /* line 35, ../sass/_header.scss */
     #header #name-and-slogan #site-name a {
       background-image: url(../img/header_roihu_logo_mobile@2x.png); } }
@@ -492,7 +492,7 @@ body {
     bottom: 0;
     left: 0;
     width: 100%; }
-    @media only screen and (max-width: 767px) {
+    @media only screen and (max-width: 768px) {
       /* line 61, ../sass/_header.scss */
       #header #navigation {
         display: none; } }
@@ -531,7 +531,7 @@ body {
     width: 100%;
     height: 50px;
     z-index: 50; }
-    @media only screen and (max-width: 767px) {
+    @media only screen and (max-width: 768px) {
       /* line 110, ../sass/_header.scss */
       #header #top-bar {
         background: #000; } }
@@ -539,14 +539,14 @@ body {
     #header #top-bar ul {
       padding: 0;
       list-style-type: none; }
-      @media only screen and (max-width: 767px) {
+      @media only screen and (max-width: 768px) {
         /* line 125, ../sass/_header.scss */
         #header #top-bar ul {
           display: none; } }
       /* line 135, ../sass/_header.scss */
       #header #top-bar ul li {
         display: inline-block;
-        padding: 0 20px;
+        padding: 0 30px;
         line-height: 50px; }
         /* line 140, ../sass/_header.scss */
         #header #top-bar ul li a {
@@ -554,7 +554,7 @@ body {
     /* line 146, ../sass/_header.scss */
     #header #top-bar #mobile-menu-toggle {
       display: none; }
-      @media only screen and (max-width: 767px) {
+      @media only screen and (max-width: 768px) {
         /* line 146, ../sass/_header.scss */
         #header #top-bar #mobile-menu-toggle {
           display: block;
@@ -584,7 +584,7 @@ body {
 /* line 1, ../sass/_mobile-menu.scss */
 #mobile-menu {
   display: none; }
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: 768px) {
     /* line 1, ../sass/_mobile-menu.scss */
     #mobile-menu {
       display: block;
@@ -695,7 +695,7 @@ body {
       /* line 67, ../sass/_footer.scss */
       #footer .block .content .footer_section:first-child {
         padding: 0 50px 0 20px; }
-  @media only screen and (max-width: 1023px) {
+  @media only screen and (max-width: 1024px) {
     /* line 1, ../sass/_footer.scss */
     #footer {
       text-align: center;
@@ -742,11 +742,12 @@ body.front {
     /* line 12, ../sass/_front-page.scss */
     body.front #header.fixed-nav {
       margin-bottom: 50px; }
-    @media only screen and (max-width: 767px) {
+    @media only screen and (max-width: 768px) {
       /* line 5, ../sass/_front-page.scss */
       body.front #header {
+        min-height: 0;
         margin-bottom: 0 !important; } }
-    /* line 20, ../sass/_front-page.scss */
+    /* line 21, ../sass/_front-page.scss */
     body.front #header #top-bar {
       -moz-animation-duration: 0.8s;
       -webkit-animation-duration: 0.8s;
@@ -754,7 +755,7 @@ body.front {
       -moz-animation-delay: 0.5s;
       -webkit-animation-delay: 0.5s;
       animation-delay: 0.5s; }
-      /* line 25, ../sass/_front-page.scss */
+      /* line 26, ../sass/_front-page.scss */
       body.front #header #top-bar a {
         -moz-animation-duration: 0.5s;
         -webkit-animation-duration: 0.5s;
@@ -762,7 +763,7 @@ body.front {
         -moz-animation-delay: 1s;
         -webkit-animation-delay: 1s;
         animation-delay: 1s; }
-    /* line 32, ../sass/_front-page.scss */
+    /* line 33, ../sass/_front-page.scss */
     body.front #header #name-and-slogan {
       width: 500px;
       max-width: 60%;
@@ -772,8 +773,12 @@ body.front {
       display: block;
       margin: -300px 0 0 -250px;
       padding: 100px 0 50px 0; }
-      @media only screen and (max-width: 767px) {
-        /* line 32, ../sass/_front-page.scss */
+      @media only screen and (max-width: 1280px) {
+        /* line 33, ../sass/_front-page.scss */
+        body.front #header #name-and-slogan {
+          padding-top: 70px; } }
+      @media only screen and (max-width: 768px) {
+        /* line 33, ../sass/_front-page.scss */
         body.front #header #name-and-slogan {
           position: relative;
           margin: 0;
@@ -781,7 +786,7 @@ body.front {
           max-width: 100%;
           top: 0;
           left: 0; } }
-      /* line 52, ../sass/_front-page.scss */
+      /* line 58, ../sass/_front-page.scss */
       body.front #header #name-and-slogan #site-name a {
         -moz-animation-duration: 1s;
         -webkit-animation-duration: 1s;
@@ -799,20 +804,20 @@ body.front {
         background-color: transparent;
         background-repeat: no-repeat; }
         @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
-          /* line 52, ../sass/_front-page.scss */
+          /* line 58, ../sass/_front-page.scss */
           body.front #header #name-and-slogan #site-name a {
             background-image: url(../img/front_header_roihu_logo@2x.png); } }
-        @media only screen and (max-width: 1279px) {
-          /* line 52, ../sass/_front-page.scss */
+        @media only screen and (max-width: 1280px) {
+          /* line 58, ../sass/_front-page.scss */
           body.front #header #name-and-slogan #site-name a {
             width: 200px;
             height: 301px; } }
-        @media only screen and (max-width: 767px) {
-          /* line 52, ../sass/_front-page.scss */
+        @media only screen and (max-width: 768px) {
+          /* line 58, ../sass/_front-page.scss */
           body.front #header #name-and-slogan #site-name a {
             width: 200px;
             height: 301px; } }
-      /* line 79, ../sass/_front-page.scss */
+      /* line 85, ../sass/_front-page.scss */
       body.front #header #name-and-slogan #site-slogan {
         -moz-animation-duration: 1s;
         -webkit-animation-duration: 1s;
@@ -827,11 +832,11 @@ body.front {
         color: #fffbdb;
         text-transform: none;
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); }
-        @media only screen and (max-width: 767px) {
-          /* line 79, ../sass/_front-page.scss */
+        @media only screen and (max-width: 768px) {
+          /* line 85, ../sass/_front-page.scss */
           body.front #header #name-and-slogan #site-slogan {
             font-size: 1.618em; } }
-      /* line 98, ../sass/_front-page.scss */
+      /* line 104, ../sass/_front-page.scss */
       body.front #header #name-and-slogan #to-content {
         display: inline-block;
         position: absolute;
@@ -851,21 +856,28 @@ body.front {
         -webkit-animation-delay: 1.2s;
         animation-delay: 1.2s; }
         @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
-          /* line 98, ../sass/_front-page.scss */
+          /* line 104, ../sass/_front-page.scss */
           body.front #header #name-and-slogan #to-content {
             background-image: url(../img/front_arrow_down@2x.png); } }
-        /* line 115, ../sass/_front-page.scss */
+        /* line 121, ../sass/_front-page.scss */
         body.front #header #name-and-slogan #to-content:hover {
           bottom: -95px; }
-        @media only screen and (max-width: 767px) {
-          /* line 98, ../sass/_front-page.scss */
+        @media only screen and (max-width: 1280px) {
+          /* line 104, ../sass/_front-page.scss */
+          body.front #header #name-and-slogan #to-content {
+            bottom: -60px; }
+            /* line 128, ../sass/_front-page.scss */
+            body.front #header #name-and-slogan #to-content:hover {
+              bottom: -75px; } }
+        @media only screen and (max-width: 768px) {
+          /* line 104, ../sass/_front-page.scss */
           body.front #header #name-and-slogan #to-content {
             position: relative;
             top: 30px; } }
-    /* line 126, ../sass/_front-page.scss */
+    /* line 141, ../sass/_front-page.scss */
     body.front #header #navigation {
       bottom: -80px; }
-    /* line 130, ../sass/_front-page.scss */
+    /* line 145, ../sass/_front-page.scss */
     body.front #header #bg-slides {
       display: block;
       position: absolute;
@@ -875,17 +887,17 @@ body.front {
       bottom: 0;
       background: url("../img/front_header/front_header_slide_1_large.jpg") center;
       background-size: cover; }
-  /* line 143, ../sass/_front-page.scss */
+  /* line 158, ../sass/_front-page.scss */
   body.front #main {
     overflow: visible;
     padding: 0; }
-    /* line 147, ../sass/_front-page.scss */
+    /* line 162, ../sass/_front-page.scss */
     body.front #main h1#page-title {
       display: none; }
-    /* line 151, ../sass/_front-page.scss */
+    /* line 166, ../sass/_front-page.scss */
     body.front #main #content {
       padding: 0; }
-    /* line 158, ../sass/_front-page.scss */
+    /* line 173, ../sass/_front-page.scss */
     body.front #main #block-system-main .node {
       background-image: url(../img/front_section_bg.png);
       background-size: auto 100%;
@@ -896,10 +908,10 @@ body.front {
       position: relative;
       min-height: 400px; }
       @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
-        /* line 158, ../sass/_front-page.scss */
+        /* line 173, ../sass/_front-page.scss */
         body.front #main #block-system-main .node {
           background-image: url(../img/front_section_bg@2x.png); } }
-      /* line 182, ../sass/_front-page.scss */
+      /* line 197, ../sass/_front-page.scss */
       body.front #main #block-system-main .node .image {
         position: absolute;
         left: 0;
@@ -909,7 +921,7 @@ body.front {
         overflow: hidden;
         height: 120%;
         background-size: cover; }
-        /* line 192, ../sass/_front-page.scss */
+        /* line 207, ../sass/_front-page.scss */
         body.front #main #block-system-main .node .image:after {
           content: '';
           display: inline-block;
@@ -920,107 +932,107 @@ body.front {
           position: absolute;
           right: 0;
           top: 58px; }
-      /* line 205, ../sass/_front-page.scss */
+      /* line 220, ../sass/_front-page.scss */
       body.front #main #block-system-main .node .content {
         width: 40%;
         padding: 130px 100px;
         float: right; }
-        /* line 210, ../sass/_front-page.scss */
+        /* line 225, ../sass/_front-page.scss */
         body.front #main #block-system-main .node .content h2 {
           font-family: "Exo2", sans-serif;
           font-size: 2.236em;
           text-transform: uppercase;
           margin-top: 0; }
-          /* line 216, ../sass/_front-page.scss */
+          /* line 231, ../sass/_front-page.scss */
           body.front #main #block-system-main .node .content h2 a {
             color: #fff; }
-        /* line 221, ../sass/_front-page.scss */
+        /* line 236, ../sass/_front-page.scss */
         body.front #main #block-system-main .node .content .body {
           color: #fff;
           margin-bottom: 1.3em; }
-        /* line 226, ../sass/_front-page.scss */
+        /* line 241, ../sass/_front-page.scss */
         body.front #main #block-system-main .node .content .link {
           color: #fff;
           font-family: "Exo2", sans-serif;
           text-transform: uppercase; }
-          /* line 231, ../sass/_front-page.scss */
+          /* line 246, ../sass/_front-page.scss */
           body.front #main #block-system-main .node .content .link a {
             color: #fff; }
-            /* line 234, ../sass/_front-page.scss */
+            /* line 249, ../sass/_front-page.scss */
             body.front #main #block-system-main .node .content .link a:after {
               content: " ›";
               font-size: 1.618em;
               line-height: 1em;
               position: relative;
               top: 1px; }
-            /* line 242, ../sass/_front-page.scss */
+            /* line 257, ../sass/_front-page.scss */
             body.front #main #block-system-main .node .content .link a:hover {
               margin-left: 10px; }
-      @media only screen and (min-width: 1024px) {
-        /* line 252, ../sass/_front-page.scss */
+      @media only screen and (min-width: 1281px) {
+        /* line 267, ../sass/_front-page.scss */
         body.front #main #block-system-main .node .content h2, body.front #main #block-system-main .node .content .body, body.front #main #block-system-main .node .content .link {
           opacity: 0; }
-          /* line 255, ../sass/_front-page.scss */
+          /* line 270, ../sass/_front-page.scss */
           body.front #main #block-system-main .node .content h2.animated, body.front #main #block-system-main .node .content #header h2#top-bar, body.front #header #main #block-system-main .node .content h2#top-bar, body.front #main #block-system-main .node .content #header #name-and-slogan h2#site-slogan, body.front #header #name-and-slogan #main #block-system-main .node .content h2#site-slogan, body.front #main #block-system-main .node .content #header #name-and-slogan h2#to-content, body.front #header #name-and-slogan #main #block-system-main .node .content h2#to-content, body.front #main #block-system-main .node .content .body.animated, body.front #main #block-system-main .node .content #header .body#top-bar, body.front #header #main #block-system-main .node .content .body#top-bar, body.front #main #block-system-main .node .content #header #top-bar a.body, body.front #header #top-bar #main #block-system-main .node .content a.body, body.front #main #block-system-main .node .content #header #name-and-slogan #site-name a.body, body.front #header #name-and-slogan #site-name #main #block-system-main .node .content a.body, body.front #main #block-system-main .node .content #header #name-and-slogan .body#site-slogan, body.front #header #name-and-slogan #main #block-system-main .node .content .body#site-slogan, body.front #main #block-system-main .node .content #header #name-and-slogan .body#to-content, body.front #header #name-and-slogan #main #block-system-main .node .content .body#to-content, body.front #main #block-system-main .node .content .link.animated, body.front #main #block-system-main .node .content #header .link#top-bar, body.front #header #main #block-system-main .node .content .link#top-bar, body.front #main #block-system-main .node .content #header #top-bar a.link, body.front #header #top-bar #main #block-system-main .node .content a.link, body.front #main #block-system-main .node .content #header #name-and-slogan #site-name a.link, body.front #header #name-and-slogan #site-name #main #block-system-main .node .content a.link, body.front #main #block-system-main .node .content #header #name-and-slogan .link#site-slogan, body.front #header #name-and-slogan #main #block-system-main .node .content .link#site-slogan, body.front #main #block-system-main .node .content #header #name-and-slogan .link#to-content, body.front #header #name-and-slogan #main #block-system-main .node .content .link#to-content {
             opacity: 1; } }
-      /* line 263, ../sass/_front-page.scss */
+      /* line 278, ../sass/_front-page.scss */
       body.front #main #block-system-main .node.purple {
         background-color: #b80170; }
-        /* line 265, ../sass/_front-page.scss */
+        /* line 280, ../sass/_front-page.scss */
         body.front #main #block-system-main .node.purple .image:after {
           border-color: transparent #b80170 transparent transparent; }
-        @media only screen and (min-width: 1680px) {
-          /* line 266, ../sass/_front-page.scss */
+        @media only screen and (min-width: 1681px) {
+          /* line 281, ../sass/_front-page.scss */
           body.front #main #block-system-main .node.purple:before {
             background: #b80170; } }
-      /* line 269, ../sass/_front-page.scss */
+      /* line 284, ../sass/_front-page.scss */
       body.front #main #block-system-main .node.turquoise {
         background-color: #00a870; }
-        /* line 271, ../sass/_front-page.scss */
+        /* line 286, ../sass/_front-page.scss */
         body.front #main #block-system-main .node.turquoise .image:after {
           border-color: transparent #00a870 transparent transparent; }
-        @media only screen and (min-width: 1680px) {
-          /* line 272, ../sass/_front-page.scss */
+        @media only screen and (min-width: 1681px) {
+          /* line 287, ../sass/_front-page.scss */
           body.front #main #block-system-main .node.turquoise:before {
             background: #00a870; } }
-      /* line 275, ../sass/_front-page.scss */
+      /* line 290, ../sass/_front-page.scss */
       body.front #main #block-system-main .node.orange {
         background-color: #e74011; }
-        /* line 277, ../sass/_front-page.scss */
+        /* line 292, ../sass/_front-page.scss */
         body.front #main #block-system-main .node.orange .image:after {
           border-color: transparent #e74011 transparent transparent; }
-        @media only screen and (min-width: 1680px) {
-          /* line 278, ../sass/_front-page.scss */
+        @media only screen and (min-width: 1681px) {
+          /* line 293, ../sass/_front-page.scss */
           body.front #main #block-system-main .node.orange:before {
             background: #e74011; } }
-      /* line 281, ../sass/_front-page.scss */
+      /* line 296, ../sass/_front-page.scss */
       body.front #main #block-system-main .node.yellow {
         background-color: #ffed00; }
-        /* line 283, ../sass/_front-page.scss */
+        /* line 298, ../sass/_front-page.scss */
         body.front #main #block-system-main .node.yellow .image:after {
           border-color: transparent #ffed00 transparent transparent; }
-        @media only screen and (min-width: 1680px) {
-          /* line 284, ../sass/_front-page.scss */
+        @media only screen and (min-width: 1681px) {
+          /* line 299, ../sass/_front-page.scss */
           body.front #main #block-system-main .node.yellow:before {
             background: #ffed00; } }
-      /* line 287, ../sass/_front-page.scss */
+      /* line 302, ../sass/_front-page.scss */
       body.front #main #block-system-main .node.blue {
         background-color: #36a9e1; }
-        /* line 289, ../sass/_front-page.scss */
+        /* line 304, ../sass/_front-page.scss */
         body.front #main #block-system-main .node.blue .image:after {
           border-color: transparent #36a9e1 transparent transparent; }
-        @media only screen and (min-width: 1680px) {
-          /* line 290, ../sass/_front-page.scss */
+        @media only screen and (min-width: 1681px) {
+          /* line 305, ../sass/_front-page.scss */
           body.front #main #block-system-main .node.blue:before {
             background: #36a9e1; } }
-    /* line 297, ../sass/_front-page.scss */
+    /* line 312, ../sass/_front-page.scss */
     body.front #main #block-system-main .views-row-even .node {
       background-position: left; }
-      /* line 300, ../sass/_front-page.scss */
+      /* line 315, ../sass/_front-page.scss */
       body.front #main #block-system-main .views-row-even .node .image {
         right: 0;
         left: auto; }
-        /* line 304, ../sass/_front-page.scss */
+        /* line 319, ../sass/_front-page.scss */
         body.front #main #block-system-main .views-row-even .node .image:after {
           -moz-transform: scale(-1, 1);
           -ms-transform: scale(-1, 1);
@@ -1028,11 +1040,19 @@ body.front {
           transform: scale(-1, 1);
           left: 0;
           right: auto; }
-      /* line 311, ../sass/_front-page.scss */
+      /* line 326, ../sass/_front-page.scss */
       body.front #main #block-system-main .views-row-even .node .content {
         float: left; }
-    @media only screen and (max-width: 767px) {
-      /* line 321, ../sass/_front-page.scss */
+    @media only screen and (max-width: 1024px) {
+      /* line 335, ../sass/_front-page.scss */
+      body.front #main #block-system-main .node .image {
+        width: 55%; }
+      /* line 338, ../sass/_front-page.scss */
+      body.front #main #block-system-main .node .content {
+        width: 45%;
+        font-size: 0.85em; } }
+    @media only screen and (max-width: 768px) {
+      /* line 348, ../sass/_front-page.scss */
       body.front #main #block-system-main .views-row-even .node .image, body.front #main #block-system-main .views-row-odd .node .image {
         position: relative;
         top: 0;
@@ -1040,7 +1060,7 @@ body.front {
         right: 0;
         height: 350px;
         width: 100%; }
-        /* line 329, ../sass/_front-page.scss */
+        /* line 356, ../sass/_front-page.scss */
         body.front #main #block-system-main .views-row-even .node .image:after, body.front #main #block-system-main .views-row-odd .node .image:after {
           -moz-transform: rotate(90deg);
           -ms-transform: rotate(90deg);
@@ -1049,11 +1069,12 @@ body.front {
           right: 100px;
           left: auto;
           top: 280px; }
-      /* line 337, ../sass/_front-page.scss */
+      /* line 364, ../sass/_front-page.scss */
       body.front #main #block-system-main .views-row-even .node .content, body.front #main #block-system-main .views-row-odd .node .content {
         width: 100%;
         float: none;
-        padding: 30px 20px; } }
+        padding: 30px 20px;
+        font-size: 1em; } }
 
 /* line 27, ../sass/fj16.scss */
 .admin-menu #toolbar {

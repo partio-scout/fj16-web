@@ -35,16 +35,16 @@ p {
 	overflow: hidden;
 
 	@respond(large) {
-		max-width: $break-large + 1;
+		max-width: $break-large;
 	}
 	@respond(medium) {
-		max-width: $break-medium + 1;
+		max-width: $break-medium;
 	}
 	@respond(small) {
-		max-width: $break-small + 1;
+		max-width: $break-small;
 	}
 	@respond(mobile) {
-		max-width: $break-mobile + 1;
+		max-width: $break-mobile;
 		padding-left: 10px;
 		padding-right: 10px;
 	}
