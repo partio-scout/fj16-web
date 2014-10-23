@@ -135,6 +135,7 @@ features[variable][] = configurable_timezones
 features[variable][] = date_default_timezone
 features[variable][] = date_first_day
 features[variable][] = empty_timezone_message
+features[variable][] = field_bundle_settings_node__webform
 features[variable][] = file_default_scheme
 features[variable][] = filter_fallback_format
 features[variable][] = googleanalytics_account
