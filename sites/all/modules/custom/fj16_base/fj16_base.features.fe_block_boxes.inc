@@ -18,6 +18,7 @@ function fj16_base_default_fe_block_boxes() {
 <h5>Roihu 2016</h5>
 <p>Roihu on Suomen Partiolaisten yhteinen elämys, joka huipentuu kesällä 2016 suurleiriin Evolla.</p>
 <p><a href="/">roihu2016.fi</a></p>
+<p><a href="/palaute">Palaute</a></p>
 </div>
 
 <div class="footer_section">
