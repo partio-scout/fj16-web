@@ -14,6 +14,7 @@ body.front {
 		}
 
 		@include respond(mobile) {
+			min-height: 0;
 			margin-bottom: 0 !important;
 		}
 
@@ -38,6 +39,11 @@ body.front {
 			display: block;
 			margin: -300px 0 0 -250px;
 			padding: 100px 0 50px 0;
+
+
+			@include respond(medium) {
+				padding-top: 70px;
+			}
 
 			@include respond(mobile) {
 				position: relative;
@@ -115,6 +121,15 @@ body.front {
 				&:hover {
 					bottom: -95px;
 				}
+
+				@include respond(medium) {
+					bottom: -60px;
+
+					&:hover {
+						bottom: -75px;
+					}
+				}
+
 
 				@include respond(mobile){
 					position: relative;
@@ -247,7 +262,7 @@ body.front {
 				}
 
 
-				@include respondMin(small) {
+				@include respondMin(medium) {
 					.content {
 						h2, .body, .link {
 							opacity: 0;
@@ -312,7 +327,19 @@ body.front {
 						float: left;
 					}
 				}
+			}
 
+
+			@include respond(small) {
+				.node {
+					.image {
+						width: 55%;
+					}
+					.content {
+						width: 45%;
+						font-size: 0.85em;
+					}
+				}
 			}
 
 			@include respond(mobile) {
@@ -338,6 +365,7 @@ body.front {
 							width: 100%;
 							float: none;
 							padding: 30px 20px;
+							font-size: 1em;
 						}
 					}
 				}
