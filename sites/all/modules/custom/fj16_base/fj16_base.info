@@ -49,6 +49,7 @@ dependencies[] = variable_store
 dependencies[] = variable_views
 dependencies[] = views
 dependencies[] = webform
+scripts[] = fj16_base.js
 features[ctools][] = strongarm:strongarm:1
 features[fe_block_boxes][] = fj16_footer_content
 features[fe_block_settings][] = block-fj16_footer_content
