@@ -27,6 +27,13 @@ function fj16_base_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_webform';
+  $strongarm->value = '0';
+  $export['comment_webform'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'configurable_timezones';
   $strongarm->value = 0;
   $export['configurable_timezones'] = $strongarm;
@@ -451,6 +458,20 @@ user/*/*';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'i18n_node_extended_webform';
+  $strongarm->value = '1';
+  $export['i18n_node_extended_webform'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'i18n_node_options_webform';
+  $strongarm->value = array();
+  $export['i18n_node_options_webform'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'i18n_string_allowed_formats';
   $strongarm->value = array(
     'full_html' => 'full_html',
@@ -482,6 +503,13 @@ user/*/*';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'language_content_type_webform';
+  $strongarm->value = '2';
+  $export['language_content_type_webform'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'language_count';
   $strongarm->value = 3;
   $export['language_count'] = $strongarm;
@@ -501,7 +529,7 @@ user/*/*';
     'domain' => '',
     'prefix' => '',
     'weight' => '0',
-    'javascript' => 'qRFJXysGun-dlBrr9Z1E3ojZVIUJwkWTW7JuzlkvF0w',
+    'javascript' => 'o6OWPnpSH6FMVFt1jHTTVN-3itgkyz9XdSgkWCx3zA8',
   );
   $export['language_default'] = $strongarm;
 
@@ -603,6 +631,22 @@ user/*/*';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'menu_options_webform';
+  $strongarm->value = array(
+    0 => 'main-menu',
+  );
+  $export['menu_options_webform'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_parent_webform';
+  $strongarm->value = 'main-menu:0';
+  $export['menu_parent_webform'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'menu_secondary_links_source';
   $strongarm->value = 'user-menu';
   $export['menu_secondary_links_source'] = $strongarm;
@@ -613,6 +657,30 @@ user/*/*';
   $strongarm->name = 'node_admin_theme';
   $strongarm->value = 0;
   $export['node_admin_theme'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_options_webform';
+  $strongarm->value = array(
+    0 => 'status',
+    1 => 'promote',
+  );
+  $export['node_options_webform'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_preview_webform';
+  $strongarm->value = '1';
+  $export['node_preview_webform'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_submitted_webform';
+  $strongarm->value = 1;
+  $export['node_submitted_webform'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1486,6 +1554,13 @@ Your account on [site:name] has been canceled.
     4 => 'theme_settings',
   );
   $export['variable_realm_list_language'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'webform_node_webform';
+  $strongarm->value = 1;
+  $export['webform_node_webform'] = $strongarm;
 
   return $export;
 }
