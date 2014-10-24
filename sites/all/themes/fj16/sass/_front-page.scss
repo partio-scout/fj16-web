@@ -4,6 +4,26 @@ body.front {
 
 	#header {
 		min-height: 100vh;
+
+		// Fix iOS7 vh unit handling
+		// iPad
+		@media all and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+			& {
+				min-height: 1024px;
+			}
+		}
+		@media all and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
+			& {
+				min-height: 768px;
+			}
+		}
+		// iPhone 5
+		@media all and (device-aspect-ratio: 40/71) {
+			& {
+				min-height: 500px;
+			}
+		}
+
 		height: auto;
 		margin-bottom: 80px;
 		background: #f8f8f8;
