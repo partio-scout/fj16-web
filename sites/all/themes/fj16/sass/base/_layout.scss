@@ -84,3 +84,28 @@ p {
 		}
 	}
 }
+
+input[type="text"],  input[type="email"], textarea {
+	padding: 10px;
+	font-size: 0.9em;
+	font-family: $aleo;
+	letter-spacing: 0.03em;
+	color: #939393;
+	margin: 5px 0 20px 0;
+	max-width: 100%;
+}
+
+input[type="submit"] {
+	background: $green;
+	color: #FFF;
+	padding: 15px 30px;
+	font-family: $exo2;
+	text-transform: uppercase;
+	font-size: 1em;
+	border-width: 0;
+	cursor: pointer;
+
+	&:hover {
+		background: shade($green, 15%);
+	}
+}

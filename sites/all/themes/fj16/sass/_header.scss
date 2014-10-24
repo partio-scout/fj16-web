@@ -36,10 +36,9 @@
 				display: inline-block;
 				width: 196px;
 				height: 270px;
-				background: $purple;
 				text-indent: -9999em;
 
-				@include at2x('header_roihu_logo', 136px);
+				@include at2x('header_roihu_logo', 155px);
 				background-repeat: no-repeat;
 				background-position: center;
 
@@ -50,9 +49,8 @@
 					margin: 20px auto;
 					position: relative;
 					top: 0; left: 0;
-					background: transparent;
+					background-size: 133px;
 					
-					@include at2x('header_roihu_logo_mobile', 136px);
 				}
 			}
 		}
