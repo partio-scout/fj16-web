@@ -312,7 +312,7 @@ body.front {
 				.content {
 					width: 40%;
 					padding: 120px 100px;
-					float: left;
+					float: right;
 
 					@include respond(medium) {
 						padding: 100px 50px;

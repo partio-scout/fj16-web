@@ -1037,7 +1037,7 @@ body.front {
       body.front #main #block-system-main .node .content {
         width: 40%;
         padding: 120px 100px;
-        float: left; }
+        float: right; }
         @media only screen and (max-width: 1280px) {
           /* line 312, ../sass/_front-page.scss */
           body.front #main #block-system-main .node .content {
