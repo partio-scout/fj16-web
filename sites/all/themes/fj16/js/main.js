@@ -66,7 +66,7 @@
 	if($('#navigation').length) {
 		navpos = $('#navigation').offset();
 		$(window).bind('scroll', function() {
-			if ($(window).scrollTop() > navpos.top) {
+			if ($(window).scrollTop() > navpos.top - 1) { // -1 for fixing lagging at bottom
 				$('#navigation').addClass('fixed');
 				$('#header').addClass('fixed-nav');
 			}
