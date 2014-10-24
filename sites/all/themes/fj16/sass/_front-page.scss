@@ -393,7 +393,7 @@ body.front {
 				}
 
 
-				@include respondMin(medium) {
+				@include respondMin(small) {
 					.content {
 						h2, .body, .link {
 							opacity: 0;
