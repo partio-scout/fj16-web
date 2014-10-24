@@ -14,7 +14,6 @@ body.front {
 		}
 
 		@include respond(mobile) {
-			min-height: 0;
 			margin-bottom: 0 !important;
 		}
 
@@ -38,11 +37,11 @@ body.front {
 			top: 50%;
 			display: block;
 			margin: -300px 0 0 -250px;
-			padding: 100px 0 50px 0;
+			padding: 50px 0;
 
 
 			@include respond(medium) {
-				padding-top: 70px;
+				padding-top: 30px;
 			}
 
 			@include respond(mobile) {
@@ -52,6 +51,7 @@ body.front {
 				max-width: 100%;
 				top: 0;
 				left: 0;
+				padding-top: 100px;
 			}
 
 			#site-name {
@@ -91,9 +91,15 @@ body.front {
 				text-align: center;
 				font-family: $exo;
 				font-size: 1.618em;
-				color: #fffbdb;
+				color: #fff;
 				text-transform: none;
-				text-shadow: 1px 1px 3px rgba(0,0,0,.5);
+				text-shadow: 1px 1px 3px rgba(0,0,0,.9);
+
+				&:before {
+					content: 'Finnjamboree 2016';
+					text-transform: uppercase;
+					display: block;
+				}
 
 				@include respond(mobile) {
 					font-size: 1.618em;
@@ -235,6 +241,7 @@ body.front {
 							padding: 0 0 50.417%;  // Hack to make bg image fit (ratio is same in all breakpoints)
 							overflow: visible;
 							position: static !important;
+							margin-bottom: 40px;
 						}
 
 						a {
