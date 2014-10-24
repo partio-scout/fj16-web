@@ -91,7 +91,7 @@
 
   <div class="content">
     <?php if (!$page): ?>
-      <h2<?php echo $title_attributes; ?>><a href="<?php echo $field_link[0]['url']; ?>"><?php echo $title; ?></a></h2>
+      <h2<?php echo $title_attributes; ?>><a href="<?php echo $field_link[0]['url']; ?>" data-ga-category="Front page blocks" data-ga-action="Click" data-ga-opt_label="<?php echo $title; ?> / Title"><?php echo $title; ?></a></h2>
     <?php endif; ?>
 
     <div class="body"<?php echo $content_attributes; ?>>
@@ -99,7 +99,7 @@
     </div>
 
     <div class="link">
-      <a href="<?php echo $field_link[0]['url']; ?>">Lue lisää</a>
+      <a href="<?php echo $field_link[0]['url']; ?>" data-ga-category="Front page blocks" data-ga-action="Click" data-ga-opt_label="<?php echo $title; ?> / Read more">Lue lisää</a>
     </div>
   </div>
 
