@@ -242,6 +242,10 @@ body.front {
 							overflow: visible;
 							position: static !important;
 							margin-bottom: 40px;
+
+							&:after {
+								display: none;
+							}
 						}
 
 						a {
