@@ -13,7 +13,7 @@ function fj16_frontpage_boxes_menu() {
   $menu = array();
   $menu['instajson'] = array(
     'type' => MENU_CALLBACK,
-    'access arguments' => 'access content',
+    'access callback' => TRUE,
     'page callback' => '_fj16_frontpage_boxes_get_json',
   	'delivery callback' => '_fj16_frontpage_boxes_deliver_json'
   );
