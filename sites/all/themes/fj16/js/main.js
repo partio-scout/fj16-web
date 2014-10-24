@@ -63,17 +63,19 @@
 
 
 	// Sticky nav
-	navpos = $('#navigation').offset();
-	$(window).bind('scroll', function() {
-		if ($(window).scrollTop() > navpos.top) {
-			$('#navigation').addClass('fixed');
-			$('#header').addClass('fixed-nav');
-		}
-		else {
-			$('#navigation').removeClass('fixed');
-			$('#header').removeClass('fixed-nav');
-		}
-	});
+	if($('#navigation').length) {
+		navpos = $('#navigation').offset();
+		$(window).bind('scroll', function() {
+			if ($(window).scrollTop() > navpos.top) {
+				$('#navigation').addClass('fixed');
+				$('#header').addClass('fixed-nav');
+			}
+			else {
+				$('#navigation').removeClass('fixed');
+				$('#header').removeClass('fixed-nav');
+			}
+		});
+	}
 
 	// Avoid `console` errors in browsers that lack a console.
 	(function() {
