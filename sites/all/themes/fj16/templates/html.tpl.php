@@ -49,11 +49,13 @@
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
 
+  <?php if($is_front): ?>
   <meta property="og:title" content="<?php print $head_title; ?>" />
   <meta property="og:site_name" content="<?php print $head_title_array['name']; ?>"/>
   <meta property="og:url" content="http://www.roihu2016.fi" />
   <meta property="og:description" content="Roihu on kaikkien Suomen partiolaisten yhteinen elämys, joka huipentuu kesällä 2016 suurleiriin Evolla. Roihu on enemmän kuin jättimäinen kesäleiri. Se on kokemus, jonka me kaikki sudenpennusta tuhteihin aikuisiin teemme yhdessä. Roihu on jotain aivan uutta ja erilaista!" />
   <meta property="og:image" content="/sites/all/themes/fj16/img/front_header/front_header_slide_1_large.jpg"/>
+  <?php endif; ?>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
