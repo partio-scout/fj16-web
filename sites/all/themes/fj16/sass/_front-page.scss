@@ -215,12 +215,112 @@ body.front {
 						right: 0;
 						top: 58px;
 					}
+
+					&.instagram {
+						position: relative;
+						background: url('../img/front_ig_feed_bg.jpg');
+						background-repeat: no-repeat;
+						background-size: 100% auto;
+						float: right;
+						height: auto;
+						padding-top: 26%;
+
+						.hashtag {
+							display: none;
+						}
+
+						@include respond(mobile) {
+							width: 100%;
+							height: 0 !important;
+							padding: 0 0 50.417%;  // Hack to make bg image fit (ratio is same in all breakpoints)
+							overflow: visible;
+							position: static !important;
+						}
+
+						a {
+							width: 20%;
+							display: block;
+							float: left;
+							
+							&.img2 { left: 20%; }
+							&.img3 { left: 40%; }
+							&.img4 { left: 60%; }
+							&.img5 { left: 80%; }
+
+							@include respond(medium) {
+								width: 25%;
+
+								&.img2 { left: 25%; }
+								&.img3 { left: 50%; }
+								&.img4 { left: 75%; }
+								&.img5 { display: none; }
+							}
+
+							@include respond(small) {
+								width: 33.33%;
+
+								&.img2 { left: 33.33%; }
+								&.img3 { left: 66.66%; }
+								&.img4 { display: none; }
+								&.img5 { display: none; }
+							}
+
+							@include respond(mobile) {
+								position: absolute;
+								bottom: 0;
+								z-index: 10;
+
+								&:after {
+									display: none;
+								}
+							}
+
+							img {
+								width: 100%;
+								height: auto;
+								display: block;
+								@include filter(brightness(75%));
+								@include transition(all 0.3s ease);
+
+								@include respond(small) {
+									@include filter(brightness(100%));
+								}
+							}
+
+							&:hover {
+								img {
+									@include filter(brightness(100%));
+								}
+							}
+						}
+
+						& + .content {
+							position: absolute;
+							top: 0;
+							bottom: 0;
+							padding-bottom: 0;
+
+							@include respond(mobile) {
+								position: relative;
+								padding: 30px 20px 38% 20px;
+							}
+						}
+					}
+
 				}
 
 				.content {
 					width: 40%;
-					padding: 130px 100px;
-					float: right;
+					padding: 120px 100px;
+					float: left;
+
+					@include respond(medium) {
+						padding: 100px 50px;
+					}
+
+					@include respond(small) {
+						padding: 80px 30px;
+					}
 
 					h2 {
 						font-family: $exo2;
@@ -321,6 +421,14 @@ body.front {
 							left: 0;
 							right: auto;
 						}
+
+						&.instagram {
+							float: right;
+
+							@include respond(mobile){
+								float: none;
+							}
+						}
 					}
 
 					.content {
@@ -374,10 +482,4 @@ body.front {
 		}
 
 	}
-
-	// .field-name-field-instagram-hashtag {
-	// 	background: url('../img/front_ig_feed_bg.jpg');
-	// 	background-size: 100% auto;
-	// }
-
 }

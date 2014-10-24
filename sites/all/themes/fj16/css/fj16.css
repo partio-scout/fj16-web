@@ -932,107 +932,224 @@ body.front {
           position: absolute;
           right: 0;
           top: 58px; }
-      /* line 220, ../sass/_front-page.scss */
+        /* line 219, ../sass/_front-page.scss */
+        body.front #main #block-system-main .node .image.instagram {
+          position: relative;
+          background: url("../img/front_ig_feed_bg.jpg");
+          background-repeat: no-repeat;
+          background-size: 100% auto;
+          float: right;
+          height: auto;
+          padding-top: 26%; }
+          /* line 228, ../sass/_front-page.scss */
+          body.front #main #block-system-main .node .image.instagram .hashtag {
+            display: none; }
+          @media only screen and (max-width: 768px) {
+            /* line 219, ../sass/_front-page.scss */
+            body.front #main #block-system-main .node .image.instagram {
+              width: 100%;
+              height: 0 !important;
+              padding: 0 0 50.417%;
+              overflow: visible;
+              position: static !important; } }
+          /* line 240, ../sass/_front-page.scss */
+          body.front #main #block-system-main .node .image.instagram a {
+            width: 20%;
+            display: block;
+            float: left; }
+            /* line 245, ../sass/_front-page.scss */
+            body.front #main #block-system-main .node .image.instagram a.img2 {
+              left: 20%; }
+            /* line 246, ../sass/_front-page.scss */
+            body.front #main #block-system-main .node .image.instagram a.img3 {
+              left: 40%; }
+            /* line 247, ../sass/_front-page.scss */
+            body.front #main #block-system-main .node .image.instagram a.img4 {
+              left: 60%; }
+            /* line 248, ../sass/_front-page.scss */
+            body.front #main #block-system-main .node .image.instagram a.img5 {
+              left: 80%; }
+            @media only screen and (max-width: 1280px) {
+              /* line 240, ../sass/_front-page.scss */
+              body.front #main #block-system-main .node .image.instagram a {
+                width: 25%; }
+                /* line 253, ../sass/_front-page.scss */
+                body.front #main #block-system-main .node .image.instagram a.img2 {
+                  left: 25%; }
+                /* line 254, ../sass/_front-page.scss */
+                body.front #main #block-system-main .node .image.instagram a.img3 {
+                  left: 50%; }
+                /* line 255, ../sass/_front-page.scss */
+                body.front #main #block-system-main .node .image.instagram a.img4 {
+                  left: 75%; }
+                /* line 256, ../sass/_front-page.scss */
+                body.front #main #block-system-main .node .image.instagram a.img5 {
+                  display: none; } }
+            @media only screen and (max-width: 1024px) {
+              /* line 240, ../sass/_front-page.scss */
+              body.front #main #block-system-main .node .image.instagram a {
+                width: 33.33%; }
+                /* line 262, ../sass/_front-page.scss */
+                body.front #main #block-system-main .node .image.instagram a.img2 {
+                  left: 33.33%; }
+                /* line 263, ../sass/_front-page.scss */
+                body.front #main #block-system-main .node .image.instagram a.img3 {
+                  left: 66.66%; }
+                /* line 264, ../sass/_front-page.scss */
+                body.front #main #block-system-main .node .image.instagram a.img4 {
+                  display: none; }
+                /* line 265, ../sass/_front-page.scss */
+                body.front #main #block-system-main .node .image.instagram a.img5 {
+                  display: none; } }
+            @media only screen and (max-width: 768px) {
+              /* line 240, ../sass/_front-page.scss */
+              body.front #main #block-system-main .node .image.instagram a {
+                position: absolute;
+                bottom: 0;
+                z-index: 10; }
+                /* line 273, ../sass/_front-page.scss */
+                body.front #main #block-system-main .node .image.instagram a:after {
+                  display: none; } }
+            /* line 278, ../sass/_front-page.scss */
+            body.front #main #block-system-main .node .image.instagram a img {
+              width: 100%;
+              height: auto;
+              display: block;
+              -webkit-filter: brightness(75%);
+              filter: brightness(75%);
+              -moz-transition: all 0.3s ease;
+              -o-transition: all 0.3s ease;
+              -webkit-transition: all 0.3s ease;
+              transition: all 0.3s ease; }
+              @media only screen and (max-width: 1024px) {
+                /* line 278, ../sass/_front-page.scss */
+                body.front #main #block-system-main .node .image.instagram a img {
+                  -webkit-filter: brightness(100%);
+                  filter: brightness(100%); } }
+            /* line 291, ../sass/_front-page.scss */
+            body.front #main #block-system-main .node .image.instagram a:hover img {
+              -webkit-filter: brightness(100%);
+              filter: brightness(100%); }
+          /* line 297, ../sass/_front-page.scss */
+          body.front #main #block-system-main .node .image.instagram + .content {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            padding-bottom: 0; }
+            @media only screen and (max-width: 768px) {
+              /* line 297, ../sass/_front-page.scss */
+              body.front #main #block-system-main .node .image.instagram + .content {
+                position: relative;
+                padding: 30px 20px 38% 20px; } }
+      /* line 312, ../sass/_front-page.scss */
       body.front #main #block-system-main .node .content {
         width: 40%;
-        padding: 130px 100px;
-        float: right; }
-        /* line 225, ../sass/_front-page.scss */
+        padding: 120px 100px;
+        float: left; }
+        @media only screen and (max-width: 1280px) {
+          /* line 312, ../sass/_front-page.scss */
+          body.front #main #block-system-main .node .content {
+            padding: 100px 50px; } }
+        @media only screen and (max-width: 1024px) {
+          /* line 312, ../sass/_front-page.scss */
+          body.front #main #block-system-main .node .content {
+            padding: 80px 30px; } }
+        /* line 325, ../sass/_front-page.scss */
         body.front #main #block-system-main .node .content h2 {
           font-family: "Exo2", sans-serif;
           font-size: 2.236em;
           text-transform: uppercase;
           margin-top: 0; }
-          /* line 231, ../sass/_front-page.scss */
+          /* line 331, ../sass/_front-page.scss */
           body.front #main #block-system-main .node .content h2 a {
             color: #fff; }
-        /* line 236, ../sass/_front-page.scss */
+        /* line 336, ../sass/_front-page.scss */
         body.front #main #block-system-main .node .content .body {
           color: #fff;
           margin-bottom: 1.3em; }
-        /* line 241, ../sass/_front-page.scss */
+        /* line 341, ../sass/_front-page.scss */
         body.front #main #block-system-main .node .content .link {
           color: #fff;
           font-family: "Exo2", sans-serif;
           text-transform: uppercase; }
-          /* line 246, ../sass/_front-page.scss */
+          /* line 346, ../sass/_front-page.scss */
           body.front #main #block-system-main .node .content .link a {
             color: #fff; }
-            /* line 249, ../sass/_front-page.scss */
+            /* line 349, ../sass/_front-page.scss */
             body.front #main #block-system-main .node .content .link a:after {
               content: " ›";
               font-size: 1.618em;
               line-height: 1em;
               position: relative;
               top: 1px; }
-            /* line 257, ../sass/_front-page.scss */
+            /* line 357, ../sass/_front-page.scss */
             body.front #main #block-system-main .node .content .link a:hover {
               margin-left: 10px; }
       @media only screen and (min-width: 1281px) {
-        /* line 267, ../sass/_front-page.scss */
+        /* line 367, ../sass/_front-page.scss */
         body.front #main #block-system-main .node .content h2, body.front #main #block-system-main .node .content .body, body.front #main #block-system-main .node .content .link {
           opacity: 0; }
-          /* line 270, ../sass/_front-page.scss */
+          /* line 370, ../sass/_front-page.scss */
           body.front #main #block-system-main .node .content h2.animated, body.front #main #block-system-main .node .content #header h2#top-bar, body.front #header #main #block-system-main .node .content h2#top-bar, body.front #main #block-system-main .node .content #header #name-and-slogan h2#site-slogan, body.front #header #name-and-slogan #main #block-system-main .node .content h2#site-slogan, body.front #main #block-system-main .node .content #header #name-and-slogan h2#to-content, body.front #header #name-and-slogan #main #block-system-main .node .content h2#to-content, body.front #main #block-system-main .node .content .body.animated, body.front #main #block-system-main .node .content #header .body#top-bar, body.front #header #main #block-system-main .node .content .body#top-bar, body.front #main #block-system-main .node .content #header #top-bar a.body, body.front #header #top-bar #main #block-system-main .node .content a.body, body.front #main #block-system-main .node .content #header #name-and-slogan #site-name a.body, body.front #header #name-and-slogan #site-name #main #block-system-main .node .content a.body, body.front #main #block-system-main .node .content #header #name-and-slogan .body#site-slogan, body.front #header #name-and-slogan #main #block-system-main .node .content .body#site-slogan, body.front #main #block-system-main .node .content #header #name-and-slogan .body#to-content, body.front #header #name-and-slogan #main #block-system-main .node .content .body#to-content, body.front #main #block-system-main .node .content .link.animated, body.front #main #block-system-main .node .content #header .link#top-bar, body.front #header #main #block-system-main .node .content .link#top-bar, body.front #main #block-system-main .node .content #header #top-bar a.link, body.front #header #top-bar #main #block-system-main .node .content a.link, body.front #main #block-system-main .node .content #header #name-and-slogan #site-name a.link, body.front #header #name-and-slogan #site-name #main #block-system-main .node .content a.link, body.front #main #block-system-main .node .content #header #name-and-slogan .link#site-slogan, body.front #header #name-and-slogan #main #block-system-main .node .content .link#site-slogan, body.front #main #block-system-main .node .content #header #name-and-slogan .link#to-content, body.front #header #name-and-slogan #main #block-system-main .node .content .link#to-content {
             opacity: 1; } }
-      /* line 278, ../sass/_front-page.scss */
+      /* line 378, ../sass/_front-page.scss */
       body.front #main #block-system-main .node.purple {
         background-color: #b80170; }
-        /* line 280, ../sass/_front-page.scss */
+        /* line 380, ../sass/_front-page.scss */
         body.front #main #block-system-main .node.purple .image:after {
           border-color: transparent #b80170 transparent transparent; }
         @media only screen and (min-width: 1681px) {
-          /* line 281, ../sass/_front-page.scss */
+          /* line 381, ../sass/_front-page.scss */
           body.front #main #block-system-main .node.purple:before {
             background: #b80170; } }
-      /* line 284, ../sass/_front-page.scss */
+      /* line 384, ../sass/_front-page.scss */
       body.front #main #block-system-main .node.turquoise {
         background-color: #00a870; }
-        /* line 286, ../sass/_front-page.scss */
+        /* line 386, ../sass/_front-page.scss */
         body.front #main #block-system-main .node.turquoise .image:after {
           border-color: transparent #00a870 transparent transparent; }
         @media only screen and (min-width: 1681px) {
-          /* line 287, ../sass/_front-page.scss */
+          /* line 387, ../sass/_front-page.scss */
           body.front #main #block-system-main .node.turquoise:before {
             background: #00a870; } }
-      /* line 290, ../sass/_front-page.scss */
+      /* line 390, ../sass/_front-page.scss */
       body.front #main #block-system-main .node.orange {
         background-color: #e74011; }
-        /* line 292, ../sass/_front-page.scss */
+        /* line 392, ../sass/_front-page.scss */
         body.front #main #block-system-main .node.orange .image:after {
           border-color: transparent #e74011 transparent transparent; }
         @media only screen and (min-width: 1681px) {
-          /* line 293, ../sass/_front-page.scss */
+          /* line 393, ../sass/_front-page.scss */
           body.front #main #block-system-main .node.orange:before {
             background: #e74011; } }
-      /* line 296, ../sass/_front-page.scss */
+      /* line 396, ../sass/_front-page.scss */
       body.front #main #block-system-main .node.yellow {
         background-color: #ffed00; }
-        /* line 298, ../sass/_front-page.scss */
+        /* line 398, ../sass/_front-page.scss */
         body.front #main #block-system-main .node.yellow .image:after {
           border-color: transparent #ffed00 transparent transparent; }
         @media only screen and (min-width: 1681px) {
-          /* line 299, ../sass/_front-page.scss */
+          /* line 399, ../sass/_front-page.scss */
           body.front #main #block-system-main .node.yellow:before {
             background: #ffed00; } }
-      /* line 302, ../sass/_front-page.scss */
+      /* line 402, ../sass/_front-page.scss */
       body.front #main #block-system-main .node.blue {
         background-color: #36a9e1; }
-        /* line 304, ../sass/_front-page.scss */
+        /* line 404, ../sass/_front-page.scss */
         body.front #main #block-system-main .node.blue .image:after {
           border-color: transparent #36a9e1 transparent transparent; }
         @media only screen and (min-width: 1681px) {
-          /* line 305, ../sass/_front-page.scss */
+          /* line 405, ../sass/_front-page.scss */
           body.front #main #block-system-main .node.blue:before {
             background: #36a9e1; } }
-    /* line 312, ../sass/_front-page.scss */
+    /* line 412, ../sass/_front-page.scss */
     body.front #main #block-system-main .views-row-even .node {
       background-position: left; }
-      /* line 315, ../sass/_front-page.scss */
+      /* line 415, ../sass/_front-page.scss */
       body.front #main #block-system-main .views-row-even .node .image {
         right: 0;
         left: auto; }
-        /* line 319, ../sass/_front-page.scss */
+        /* line 419, ../sass/_front-page.scss */
         body.front #main #block-system-main .views-row-even .node .image:after {
           -moz-transform: scale(-1, 1);
           -ms-transform: scale(-1, 1);
@@ -1040,19 +1157,26 @@ body.front {
           transform: scale(-1, 1);
           left: 0;
           right: auto; }
-      /* line 326, ../sass/_front-page.scss */
+        /* line 425, ../sass/_front-page.scss */
+        body.front #main #block-system-main .views-row-even .node .image.instagram {
+          float: right; }
+          @media only screen and (max-width: 768px) {
+            /* line 425, ../sass/_front-page.scss */
+            body.front #main #block-system-main .views-row-even .node .image.instagram {
+              float: none; } }
+      /* line 434, ../sass/_front-page.scss */
       body.front #main #block-system-main .views-row-even .node .content {
         float: left; }
     @media only screen and (max-width: 1024px) {
-      /* line 335, ../sass/_front-page.scss */
+      /* line 443, ../sass/_front-page.scss */
       body.front #main #block-system-main .node .image {
         width: 55%; }
-      /* line 338, ../sass/_front-page.scss */
+      /* line 446, ../sass/_front-page.scss */
       body.front #main #block-system-main .node .content {
         width: 45%;
         font-size: 0.85em; } }
     @media only screen and (max-width: 768px) {
-      /* line 348, ../sass/_front-page.scss */
+      /* line 456, ../sass/_front-page.scss */
       body.front #main #block-system-main .views-row-even .node .image, body.front #main #block-system-main .views-row-odd .node .image {
         position: relative;
         top: 0;
@@ -1060,7 +1184,7 @@ body.front {
         right: 0;
         height: 350px;
         width: 100%; }
-        /* line 356, ../sass/_front-page.scss */
+        /* line 464, ../sass/_front-page.scss */
         body.front #main #block-system-main .views-row-even .node .image:after, body.front #main #block-system-main .views-row-odd .node .image:after {
           -moz-transform: rotate(90deg);
           -ms-transform: rotate(90deg);
@@ -1069,7 +1193,7 @@ body.front {
           right: 100px;
           left: auto;
           top: 280px; }
-      /* line 364, ../sass/_front-page.scss */
+      /* line 472, ../sass/_front-page.scss */
       body.front #main #block-system-main .views-row-even .node .content, body.front #main #block-system-main .views-row-odd .node .content {
         width: 100%;
         float: none;

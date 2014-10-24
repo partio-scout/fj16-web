@@ -3,27 +3,27 @@
 	if($('.node-fj16-frontpage-box').length) {
 		$('.node-fj16-frontpage-box').each(function(){
 			if($(this).find('.image .hashtag').length > 0) {
-				console.log('init instagram')
+				
 				// Init the Instagram feed
-
+				
 				var el = $(this).find('.image');
-				var hashtag = el.text();
-				el.text('');
+				var hashtag = el.find('.hashtag').text().trim();
+				
+				el.addClass('instagram');
+				el.parents('.node').css('min-height', 0);
 
+				var i = 1;
 				$.getJSON('/instajson/' + hashtag, function(data) {
-					// console.log(data);
-					// $.each( data, function( key, val ) {
-					// 	console.log(val);
-					// });
-					// var options = $('#'+id+' select');
-					// $('#'+id+' select').append('<option value="">Select Colour</select>');
-					// $.each(data.colors[0], function(i,v) {
-					// 	options.append($("<option />").val(v).text(i));
-					// });
+					$.each(shuffle(data['data']), function(key, img) {
+						el.append('<a href="' + img.link + '" target="_blank" class="img' + i + '"><img src="' + img.images.standard_resolution.url + '"></a>');
+						if(i++ % 5 == 0) {
+							return false;
+						}
+					});
 				});
 
+
 			} else {
-				console.log('parallax time')
 				// We're parallaxin, baby
 				$(this).find('.image').attr('data-bottom-top', 'transform: translate3d(0,0%,0)');
 				$(this).find('.image').attr('data-top-bottom', 'transform: translate3d(0,-16.66%,0)');	
@@ -39,7 +39,7 @@
 		if($(window).width() > 1024) {
 			$(window).scroll(function() {
 				$('.node-fj16-frontpage-box').each(function(){
-					if($(this).isOnScreen(1,0.75)){
+					if($(this).isOnScreen(1,0.5)){
 						var $this = $(this);
 						setTimeout(function(){
 							$this.find('h2').addClass('animated fadeInDown');
@@ -48,6 +48,8 @@
 					}
 				});
 			});
+		} else {
+			$('.node-fj16-frontpage-box').find('h2, .body, .link').addClass('animated');
 		}
 	}
 
@@ -114,6 +116,15 @@ function initSkrollr() {
 	}
 }
 
+function shuffle(array) {
+	for (var i = array.length - 1; i > 0; i--) {
+		var j = Math.floor(Math.random() * (i + 1));
+		var temp = array[i];
+		array[i] = array[j];
+		array[j] = temp;
+	}
+	return array;
+}
 
 jQuery.fn.isOnScreen = function(x, y){
     
