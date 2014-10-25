@@ -13,7 +13,7 @@ jQuery(document).ready(function() {
 		init : function() {
 
 			// GENERAL TRACKING THROUGH DATA-ATTRIBUTES ON LINKS
-			jQuery('a[data-ga-track="event"]').on('click', function(e) {
+			jQuery('a[data-ga-track="event"]').click(function(e) {
 				var data_category = jQuery(this).attr('data-ga-category');
 				var data_action = jQuery(this).attr('data-ga-action');
 				var data_label = jQuery(this).attr('data-ga-opt_label');
@@ -23,14 +23,14 @@ jQuery(document).ready(function() {
 				send_ga_events(data_category,data_action,data_label );
 			}); 
 
-			jQuery('#navigation #main-menu a').on('click', function(e) {
+			jQuery('#navigation #main-menu a').click(function(e) {
 				var data_category = 'Main navigation';
 				var data_action = 'Click';
 				var data_label = jQuery(this).html();
 				send_ga_events(data_category,data_action,data_label);
 			}); 
 		
-			jQuery('#footer a').on('click', function(e) {
+			jQuery('#footer a').click(function(e) {
 				var data_label = jQuery(this).html();
 
 				if(jQuery(this).attr('id') == 'sp-logo') {
