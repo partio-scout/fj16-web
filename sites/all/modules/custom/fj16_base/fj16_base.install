@@ -1,0 +1,5 @@
+<?php
+
+function fj16_base_update_7001() {
+  module_disable(array('opengraph_meta'));
+}
