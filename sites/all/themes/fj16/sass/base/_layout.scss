@@ -123,6 +123,14 @@ input[type="submit"] {
     	margin-right: 0;
     }
 
+    img {
+    	max-width: 100%;
+
+    	@include respond(mobile) {
+    		width: 100%; // For Windows Phone
+    	}
+    }
+
     h5 {
 	    font-family: 'Exo2';
 	    text-transform: uppercase;

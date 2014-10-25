@@ -1,7 +1,7 @@
 #mobile-menu {
 	display: none;
 
-	@include respond(mobile) {
+	@include respond(1023px) {
 		display: block;		
 		position: fixed;
 		left: 0;
