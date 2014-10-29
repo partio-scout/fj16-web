@@ -44,7 +44,7 @@ function _fj16_frontpage_boxes_tag_expired($hashtag) {
 
 function _fj16_frontpage_boxes_fetch_media_for_tag($hashtag) {
   $endpoint = 'https://api.instagram.com/v1/tags/';
-  $endpoint .= $hashtag;
+  $endpoint .= urlencode($hashtag);
   $endpoint .= '/media/recent?client_id=';
   $endpoint .= FJ16_INSTAGRAM_CLIENT_ID;
 
