@@ -38,5 +38,27 @@ function fj16_base_default_fe_block_settings() {
     'visibility' => 0,
   );
 
+  $export['menu-menu-social-media-links'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 'menu-social-media-links',
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'module' => 'menu',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'fj16' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'fj16',
+        'weight' => 2,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
   return $export;
 }
