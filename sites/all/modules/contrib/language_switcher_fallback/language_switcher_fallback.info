@@ -1,0 +1,13 @@
+name = Language Switcher Fallback
+description = Language Switcher Fallback module creates a language switcher block where untranslated pages link to frontpage instead of strikethroughed language name.
+core = 7.x
+package = Multilingual
+
+dependencies[] = locale
+
+; Information added by drupal.org packaging script on 2013-06-25
+version = "7.x-1.1"
+core = "7.x"
+project = "language_switcher_fallback"
+datestamp = "1372157451"
+

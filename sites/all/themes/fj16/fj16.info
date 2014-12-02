@@ -3,6 +3,7 @@ description = Official theme
 package = FJ16
 core = 7.x
 
+regions[language_chooser] = Language chooser
 regions[content] = Content
 regions[footer] = Footer
 

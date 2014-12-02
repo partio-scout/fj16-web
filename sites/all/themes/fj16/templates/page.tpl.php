@@ -83,6 +83,7 @@
 
       <div id="top-bar">
         <?php print theme('links__system_main_menu', array('links' => menu_navigation_links('menu-social-media-links'))); ?>
+        <?php print render($page['language_chooser']); ?>
         <div id="mobile-menu-toggle">
           <span></span>
           <span></span>
