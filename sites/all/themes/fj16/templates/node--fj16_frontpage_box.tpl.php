@@ -99,7 +99,7 @@
     </div>
 
     <div class="link">
-      <a href="<?php echo $field_link[0]['url']; ?>" data-ga-category="Front page blocks" data-ga-action="Click" data-ga-opt_label="<?php echo $title; ?> / Read more">Lue lisää</a>
+      <a href="<?php echo $field_link[0]['url']; ?>" data-ga-category="Front page blocks" data-ga-action="Click" data-ga-opt_label="<?php echo $title; ?> / Read more"><?php print t('Read more'); ?></a>
     </div>
   </div>
 
