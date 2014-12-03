@@ -173,6 +173,7 @@ features[variable][] = googleanalytics_translation_set
 features[variable][] = googleanalytics_visibility_pages
 features[variable][] = googleanalytics_visibility_roles
 features[variable][] = i18n_hide_translation_links
+features[variable][] = i18n_node_default_language_none
 features[variable][] = i18n_node_extended_webform
 features[variable][] = i18n_node_options_webform
 features[variable][] = i18n_string_allowed_formats
