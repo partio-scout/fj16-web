@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the FJ16 Job ads feature.
+ */
+
+include_once 'fj16_job_ads.features.inc';
