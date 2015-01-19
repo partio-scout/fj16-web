@@ -98,6 +98,10 @@
 				height: 80px;
 				line-height: 80px;
 
+				&.active {
+					background: $blue;
+				}
+
 				a {
 					color: #fff;
 				}
