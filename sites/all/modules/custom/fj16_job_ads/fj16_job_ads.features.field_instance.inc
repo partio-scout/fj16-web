@@ -623,6 +623,85 @@ function fj16_job_ads_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-fj16_job-field_sharepoint_guid'
+  $field_instances['node-fj16_job-field_sharepoint_guid'] = array(
+    'bundle' => 'fj16_job',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 16,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_sharepoint_guid',
+    'label' => 'SharePoint GUID',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 18,
+    ),
+  );
+
+  // Exported field_instance: 'node-fj16_job-field_sharepoint_line_id'
+  $field_instances['node-fj16_job-field_sharepoint_line_id'] = array(
+    'bundle' => 'fj16_job',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 17,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_sharepoint_line_id',
+    'label' => 'SharePoint line ID',
+    'required' => FALSE,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 19,
+    ),
+  );
+
   // Exported field_instance: 'node-fj16_job-field_team'
   $field_instances['node-fj16_job-field_team'] = array(
     'bundle' => 'fj16_job',
@@ -674,6 +753,8 @@ function fj16_job_ads_field_default_field_instances() {
   t('Osa-alue');
   t('Perinteisiä suurleiritaitoja-Jotain aivan muuta');
   t('Pestin taso');
+  t('SharePoint GUID');
+  t('SharePoint line ID');
   t('Suunnittelu-Tekeminen');
   t('Suuret linjat-Yksityiskohdat');
   t('Tiimi');

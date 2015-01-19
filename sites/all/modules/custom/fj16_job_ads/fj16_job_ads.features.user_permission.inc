@@ -45,5 +45,12 @@ function fj16_job_ads_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'use text format fj16_job_content'.
+  $permissions['use text format fj16_job_content'] = array(
+    'name' => 'use text format fj16_job_content',
+    'roles' => array(),
+    'module' => 'filter',
+  );
+
   return $permissions;
 }
