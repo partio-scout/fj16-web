@@ -70,6 +70,7 @@ features[variable][] = menu_parent_fj16_job
 features[variable][] = node_options_fj16_job
 features[variable][] = node_preview_fj16_job
 features[variable][] = node_submitted_fj16_job
+features[variable][] = pathauto_node_fj16_job_pattern
 features[variable][] = save_continue_fj16_job
 features[variable][] = webform_node_fj16_job
 features[views_view][] = fj16_jobs
