@@ -23,7 +23,8 @@ function fj16_job_ads_cron() {
 
 
 function fj16_job_ads_import_jobs() {
-  watchdog('fj16_job_ads', 'Begin job import from SharePoint', WATCHDOG_INFO);
+  watchdog('fj16_job_ads', 'Begin job import from SharePoint', array(), WATCHDOG_INFO);
+  $import_started_time = time();
 
   $config = fj16_job_ads_get_config();
   $jobs = fj16_job_ads_read_sharepoint_list($config['job_list_guid']);
@@ -44,8 +45,12 @@ function fj16_job_ads_import_jobs() {
     node_delete($nid);
   }
 
-  watchdog('fj16_job_ads', '@num_synced jobs synced from SharePoint, @num_removed removed',
-    array('num_synced' => count($jobs), 'num_removed' => count($jobs_to_remove)), WATCHDOG_INFO);
+  watchdog('fj16_job_ads', '@num_synced jobs synced from SharePoint, @num_removed removed in @duration seconds',
+    array(
+      '@num_synced' => count($jobs),
+      '@num_removed' => count($jobs_to_remove),
+      '@duration' => (time() - $import_started_time)
+    ), WATCHDOG_INFO);
 }
 
 
