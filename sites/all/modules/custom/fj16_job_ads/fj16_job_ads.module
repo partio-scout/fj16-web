@@ -221,6 +221,165 @@ function fj16_get_job_nids() {
 }
 
 
+// Job form
+
+
+function fj16_job_ads_node_view($node, $view_mode, $langcode) {
+  //TODO Välitä noden arvot yms.
+  if($node->type == 'fj16_job' && $view_mode == 'full') {
+    $node->content['sdfsdfsdfsdf'] = drupal_get_form('fj16_job_application_form', $node);
+    $node->content['sdfsdfsdfsdf']['#weight'] = 1000;
+  }
+}
+
+
+function fj16_job_application_form($form, &$form_state, $job_node) {
+  if(empty($job_node->nid)) {
+    return;
+  }
+
+  $form['heading'] = array(
+    '#markup' => '<h2>Hae pestiä</h2>'
+  );
+
+  $form['instructions'] = array(
+    '#markup' => '<p>Hakijoille ilmoitetaan valintojen tuloksista henkilökohtaisesti.</p>'
+  );
+
+  // Title for emails
+
+  $form['job_title'] = array(
+    '#type' => 'value',
+    '#value' => $job_node->title
+  );
+
+  // Job refrences
+  
+  $form['nid'] = array(
+    '#type' => 'value',
+    '#value' => $job_node->nid
+  );
+  $form['job_guid'] = array(
+    '#type' => 'value',
+    '#value' => $job_node->field_sharepoint_guid[LANGUAGE_NONE][0]['value']
+  );
+  $form['job_rowid'] = array(
+    '#type' => 'value',
+    '#value' => $job_node->field_sharepoint_line_id[LANGUAGE_NONE][0]['value']
+  );
+
+  // Contact info etc.
+
+  $form['name'] = array(
+    '#type' => 'textfield',
+    '#title' => 'Nimi',
+    '#required' => TRUE,
+  );
+  $form['email'] = array(
+    '#type' => 'textfield',
+    '#title' => 'Sähköpostiosoite',
+    '#required' => TRUE,
+    '#element_validate' => array('fj16_email_validate')
+  );
+  $form['phone'] = array(
+    '#type' => 'textfield',
+    '#title' => 'Puhelinnumero',
+    '#required' => TRUE,
+  );
+  $form['troop_and_district'] = array(
+    '#type' => 'textfield',
+    '#title' => 'Lippukunta ja piiri',
+    '#required' => TRUE,
+  );
+  $form['current_jobs'] = array(
+    '#type' => 'textfield',
+    '#title' => 'Nykyiset partiopestit',
+    '#required' => TRUE,
+  );
+
+  // Free-form application
+
+  $form['reasons_for_applying'] = array(
+    '#type' => 'textarea',
+    '#title' => 'Miksi haet tähän pestiin?',
+    '#required' => TRUE,
+  );
+  $form['previous_scouting_experience'] = array(
+    '#type' => 'textarea',
+    '#title' => 'Miksi olisit hyvä tässä pestissä? Mitä tarpeellista partiokokemusta sinulla on?',
+    '#required' => TRUE,
+  );
+  $form['previous_other_experience'] = array(
+    '#type' => 'textarea',
+    '#title' => 'Entä muualla hankittua kokemusta?',
+    '#required' => TRUE,
+  );
+  $form['comments'] = array(
+    '#type' => 'textarea',
+    '#title' => 'Muuta mahdollista lisätietoa',
+  );
+
+  $form['kogi_119'] = array(
+    '#type' => 'radios',
+    '#title' => 'Haluatko osallistua KoGi 119 -kurssille?',
+    '#required' => TRUE,
+    '#options' => array(
+      '1' => 'Kyllä',
+      '0' => 'Ei'
+    )
+  );
+
+  // KoGi enrollment
+  
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => 'Lähetä hakemus'
+  );
+  return $form;
+}
+
+function fj16_email_validate($element, &$form_state, $form) {
+  if(!valid_email_address($element['#value'])) {
+    form_error($element, 'Sähköpostiosoite ei ole oikeassa muodossa.');
+  }
+}
+
+function fj16_job_application_form_submit($form, &$form_state) {
+  $fields_to_save = array(
+    'nid',
+    'job_guid',
+    'job_rowid',
+    'name',
+    'phone',
+    'email',
+    'troop_and_district',
+    'current_jobs',
+    'previous_scouting_experience',
+    'previous_other_experience',
+    'reasons_for_applying',
+    'kogi_119'
+  );
+
+  $record = array();
+  foreach ($fields_to_save as $field_name) {
+    $record[$field_name] = $form_state['values'][$field_name];
+  }
+  $record['status'] = 'WAITING'; // default
+  
+  $result = drupal_write_record('fj16_job_applications', $record);
+
+  if($result == SAVED_NEW) {
+    drupal_set_message('Hakemuksesi on tallennettu. Sinuun ollaan yhteydessä viimeistään hakuajan päätyttyä.');
+    $form_state['redirect'] = 'pestit';
+  } else {
+    drupal_set_message('Ilmoittautumisesti ei tallentunut teknisen ongelman vuoksi. Ole hyvä ja yritä myöhemmin uudelleen.', 'error');
+    watchdog('fj16_job_ads', 'Unable to save application by @name (@email) fo job @job_title',
+      array('@name' => $record['name'], '@email' => $record['email'], '@job_guid' => $form_state['values']['job_title']),
+      WATCHDOG_ERROR, 'node/' . $record['nid']);
+  }
+}
+
+
 // SharePoint integration
 
 

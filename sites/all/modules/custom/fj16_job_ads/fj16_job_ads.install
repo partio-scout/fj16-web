@@ -1,0 +1,90 @@
+<?php
+
+function fj16_job_ads_update_7001() {
+  drupal_install_schema('fj16_job_ads');
+}
+
+function fj16_job_ads_update_7002() {
+  db_add_field('fj16_job_applications', 'comments', array(
+    'description' => 'Free form comments',
+    'type' => 'text'
+  ));
+}
+
+function fj16_job_ads_schema() {
+  $schema = array();
+
+  $schema['fj16_job_applications'] = array(
+    'description' => 'Unsynced job applications',
+    'fields' => array(
+
+      'nid' => array(
+        'description' => 'Nid of locally synced job',
+        'type' => 'int'
+      ),
+      'job_guid' => array(
+        'description' => 'SharePoint GUID of job',
+        'type' => 'varchar',
+        'length' => '255'
+      ),
+      'job_rowid' => array(
+        'description' => 'SharePoint list line id of job',
+        'type' => 'int'
+      ),
+      'status' => array(
+        'description' => 'Status of the syncing process',
+        'type' => 'varchar',
+        'length' => '32'
+      ),
+      
+      'name' => array(
+        'description' => 'Applicant name',
+        'type' => 'varchar',
+        'length' => '255',
+        'not null' => TRUE
+      ),
+      'email' => array(
+        'description' => 'Applicant email',
+        'type' => 'varchar',
+        'length' => '255'
+      ),
+      'phone' => array(
+        'description' => 'Applicant phone number',
+        'type' => 'varchar',
+        'length' => '255'
+      ),
+      'troop_and_district' => array(
+        'description' => 'Applicant troop and district',
+        'type' => 'varchar',
+        'length' => '255'
+      ),
+      'current_jobs' => array(
+        'description' => "Applicant's current jobs in scouting",
+        'type' => 'varchar',
+        'length' => '255'
+      ),
+
+      'previous_scouting_experience' => array(
+        'description' => 'Previous scouting experience',
+        'type' => 'text'
+      ),
+      'previous_other_experience' => array(
+        'description' => 'Other experience',
+        'type' => 'text'
+      ),
+      'reasons_for_applying' => array(
+        'description' => 'Reasons for applying',
+        'type' => 'text'
+      ),
+      
+      'kogi_119' => array(
+        'description' => 'Does applicant wish to attend KoGi 119 - 1 (yes) or 0 (no)',
+        'type' => 'int'
+      ),
+      
+      
+    )
+  );
+
+  return $schema;
+}
