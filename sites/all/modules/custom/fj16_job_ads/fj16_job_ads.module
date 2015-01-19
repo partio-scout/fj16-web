@@ -1,7 +1,253 @@
 <?php
-/**
- * @file
- * Code for the FJ16 Job ads feature.
- */
 
 include_once 'fj16_job_ads.features.inc';
+
+use Thybag\SharePointAPI;
+require 'vendor/autoload.php';
+
+define('FJ16_SHAREPOINT_CONFIG_FILE', '../sharepoint-integration.conf.php');
+define('FJ16_JOBS_CURRENT_ROUND', '3. Tammikuu 2015');
+define('FJ16_JOBS_PUBLIC_YES', 'Kyllä');
+define('FJ16_JOBS_STATUS_PUBLIC', '4. Julkaistu');
+
+
+// Drupal hooks
+
+
+function fj16_job_ads_cron() {
+  fj16_job_ads_import_jobs();
+}
+
+
+// Job import
+
+
+function fj16_job_ads_import_jobs() {
+  watchdog('fj16_job_ads', 'Begin job import from SharePoint', WATCHDOG_INFO);
+
+  $config = fj16_job_ads_get_config();
+  $jobs = fj16_job_ads_read_sharepoint_list($config['job_list_guid']);
+  $jobs_to_remove = fj16_get_job_nids();
+
+  // Create or update new jobs
+  foreach ($jobs as $job) {
+    if(fj16_job_should_be_displayed($job)) {
+      fj16_job_ads_create_or_update($job);
+
+      $guid = fj16_sharepoint_lookup_value($job['uniqueid']);
+      unset($jobs_to_remove[$guid]);
+    }
+  }
+
+  // Remove existing jobs that should not be displayed as per criteria, or that have been removed from SharePoint
+  foreach ($jobs_to_remove as $nid) {
+    node_delete($nid);
+  }
+
+  watchdog('fj16_job_ads', '@num_synced jobs synced from SharePoint, @num_removed removed',
+    array('num_synced' => count($jobs), 'num_removed' => count($jobs_to_remove)), WATCHDOG_INFO);
+}
+
+
+function fj16_job_should_be_displayed($job) {
+  if($job['pestauksen_x0020_tila'] !== FJ16_JOBS_STATUS_PUBLIC) {
+    return FALSE;
+  }
+
+  if($job['hakuryhm_x00e4_'] !== FJ16_JOBS_CURRENT_ROUND) {
+    return FALSE;
+  }
+
+  if($job['julkinen_x0020_haku'] !== FJ16_JOBS_PUBLIC_YES) {
+    return FALSE;
+  }
+
+  $closing_date = DateTime::createFromFormat('Y-m-d H:i:s', $job['haku_x0020_p_x00e4__x00e4_ttyy_x']);
+  // Original date is the last day one can apply - thus the application closes 1 day later
+  $closing_date->add(new DateInterval('P1D'));
+  $now = new DateTime();
+  if($closing_date < $now) {
+    return false;
+  }
+
+  return TRUE;
+}
+
+
+function fj16_job_ads_create_or_update($job) {
+  $node;
+  $guid = fj16_sharepoint_lookup_value($job['uniqueid']);
+
+  if(fj16_job_exists($guid)) {
+    $node = fj16_get_job_by_guid($guid);
+  } else {
+    $node = fj16_job_ads_new_node($job['title']);
+  }
+  
+  fj16_job_update_node_fields($node, $job);
+  $node = node_submit($node);
+  node_save($node);
+}
+
+
+function fj16_job_ads_new_node($title) {
+  $node = new stdClass();
+  $node->title = $title;
+  $node->type = 'fj16_job';
+  node_object_prepare($node);
+  $node->language = LANGUAGE_NONE;
+  $node->uid = 1;
+  $node->status = 1;
+  $node->promote = 0;
+  $node->comment = 0;
+  return $node;
+}
+
+
+function fj16_job_update_node_fields(&$node, $job) {
+  $mappings = fj16_job_ads_get_field_mappings();
+
+  foreach ($mappings as $sharepoint_field => $drupal_field) {
+    if(!isset($job[$sharepoint_field])) {
+      continue;
+    }
+
+    $node->$drupal_field = array(
+      LANGUAGE_NONE => array(
+        array('value' => $job[$sharepoint_field])
+      )
+    );
+  }
+
+  // body and field_requirements need an input format as they may contain HTML
+  $node->body[LANGUAGE_NONE][0]['format'] = 'fj16_job_content';
+  $node->field_requirements[LANGUAGE_NONE][0]['format'] = 'fj16_job_content';
+
+  //Organization ends up in two fields, department and team
+  $org_parts = explode(':', $job['organisaatio_x0020__x0028_j_x002']);
+  $department = fj16_map_department($org_parts[1]); // Level 0 is whole organization
+  $node->field_department[LANGUAGE_NONE][0]['value'] = $department;
+  $team = end($org_parts);
+  $node->field_team[LANGUAGE_NONE][0]['value'] = $team;
+
+  // sharepoint GUID has the line id prepended, remove that
+  $node->field_sharepoint_guid[LANGUAGE_NONE][0]['value'] = fj16_sharepoint_lookup_value($node->field_sharepoint_guid[LANGUAGE_NONE][0]['value']);
+}
+
+
+// Mapping SharePoint values to Drupal
+
+
+function fj16_job_ads_get_field_mappings() {
+  //Title needs to be mapped separately, as it's not a Fields field
+  return array(
+    'pestin_x0020_taso_x0020__x0028_j'  => 'field_level',
+    'pestin_x0020_koko_x0020__x0028_j'  => 'field_jm_work',
+    'ulkoinen_x0020_kuvaus_x0020_nett'  => 'body',
+    'vaatimukset'                       => 'field_requirements',
+    'lis_x00e4_tietoja_x0020_antaa_x0'  => 'field_info_contact',
+
+    // Job machine (jm, "pestikone") fields
+    'pestikone_x003a__x0020_analyytti'  => 'field_jm_analytic_creative',
+    'pestikone_x003a__x0020_suunnitte'  => 'field_jm_planning_doing',
+    'pestikone_x003a__x0020_johtamine'  => 'field_jm_leading_doing',
+    'pestikone_x003a__x0020_yksil_x00'  => 'field_jm_individual_group',
+    'pestikone_x003a__x0020_perinteis'  => 'field_jm_traditional_modern',
+    'pestikone_x003a__x0020_nuorten_x'  => 'field_jm_growing_marketing',
+    'pestikone_x003a__x0020_suuret_x0'  => 'field_jm_macro_micro',
+    'pestikone_x003a__x0020_kivoja_x0'  => 'field_jm_fun_important',
+    'id' => 'field_sharepoint_line_id',
+    'uniqueid' => 'field_sharepoint_guid'
+  );
+}
+
+
+function fj16_map_department($title) {
+  $mappings = array(
+    'Elämys' => 'elamys',
+    'Kasvatus' => 'kasvatus',
+    'Palvelu' => 'palvelu',
+    'Resurssi' => 'resurssi',
+    'Yhteistyö' => 'yhteistyo'
+  );
+  return $mappings[$title];
+}
+
+
+function fj16_sharepoint_lookup_value($raw) {
+  return substr($raw, strpos($raw, '#') + 1);
+}
+
+
+// Job lookup
+
+
+function fj16_job_exists($guid) {
+  $nids = fj16_get_job_nids();
+  return isset($nids[$guid]);
+}
+
+
+function fj16_get_job_by_guid($guid) {
+  $job_nids_by_guid = fj16_get_job_nids();
+  return node_load($job_nids_by_guid[$guid]);
+}
+
+
+function fj16_get_jobs() {
+  return node_load_multiple(fj16_get_job_nids());
+}
+
+
+function fj16_get_job_nids() {
+  $result = db_select('field_data_field_sharepoint_guid', 'data')
+    ->fields('data', array('entity_id', 'field_sharepoint_guid_value'))
+    ->condition('bundle', 'fj16_job')
+    ->condition('deleted', 0)
+    ->execute();
+
+  $job_nids_by_guid = array();
+  foreach ($result as $row) {
+    $nid  = $row->entity_id;
+    $guid = $row->field_sharepoint_guid_value;
+    $job_nids_by_guid[$guid] = $nid;
+  }
+  return $job_nids_by_guid;
+}
+
+
+// SharePoint integration
+
+
+function fj16_job_ads_get_config() {
+  if(!file_exists(FJ16_SHAREPOINT_CONFIG_FILE)) {
+    return false;
+  }
+  require(FJ16_SHAREPOINT_CONFIG_FILE);
+  return $fj16_sharepoint_config; // defined in require()'d file
+}
+
+
+function fj16_job_ads_read_sharepoint_list($list_guid) {
+  $service_provider = fj16_job_ads_initialize_sharepoint_client();
+  if($service_provider === FALSE) {
+    return; // No credentials file or other problem
+  } else {
+    return $service_provider->query($list_guid)->all_fields()->get();
+  }
+}
+
+
+function fj16_job_ads_initialize_sharepoint_client() {
+  $config = fj16_job_ads_get_config();
+
+  if($config) {
+    return new SharePointAPI(
+      $config['username'],
+      $config['password'],
+      $config['wsdl_url'],
+      $config['auth_variant']
+    );
+  }
+  return false;
+}
