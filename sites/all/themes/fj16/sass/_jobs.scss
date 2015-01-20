@@ -19,10 +19,52 @@ $yhteistyo: $blue;
   #block-views-exp-fj16-jobs-page {
     width: 30%;
     float: right;
+    background: #FFF;
+
+    h2, .views-exposed-widget>label {
+      display: block;
+      font-size: 2.236em;
+      margin: 0;
+      background: #000;
+      color: #FFF;
+      font-weight: normal;
+      text-transform: uppercase;
+      font-family: $exo2;
+      padding: 3% 8%;
+    }
+
+    h2 {
+      padding: 4% 8% 0;
+    }
+
+    .views-exposed-widget>label {
+      font-size: 1em;
+    }
+
+    .views-exposed-widget {
+      float: none;
+      padding: 0;
+    }
+
+    .views-widget {
+      padding: 3% 8%;
+    }
+
+    .views-reset-button, .views-submit-button {
+      text-align: center;
+      padding-bottom: 3%;
+      margin-top: -4%;
+
+      input {
+        background: #000;
+        color: #FFF;
+      }
+    }
+
   }
 
   .view-fj16-jobs {
-    width: 66%;
+    width: 68%;
     float: left;
   }
 
@@ -32,6 +74,24 @@ $yhteistyo: $blue;
 
     p {
       margin: 2% 0;
+    }
+  }
+
+  .pager {
+    li {
+      list-style: none;
+      margin: 0;
+      display: inline;
+    }
+
+    a {
+      display: inline-block;
+      padding: 5px 15px;
+      background: #000;
+      color: #FFF;
+      font-family: $exo2;
+      text-transform: uppercase;
+      font-weight: normal;
     }
   }
 }
