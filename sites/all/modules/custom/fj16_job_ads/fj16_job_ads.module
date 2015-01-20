@@ -371,7 +371,7 @@ function fj16_job_application_form_submit($form, &$form_state) {
   $result = drupal_write_record('fj16_job_applications', $record);
 
   if($result == SAVED_NEW) {
-    drupal_set_message('Hakemuksesi on tallennettu. Sinuun ollaan yhteydessä viimeistään hakuajan päätyttyä.');
+    drupal_set_message('Loistavaa, tervetuloa Roihun tekijöiden joukkoon! Hakemuksesi tuli onnistuneesti perille ja se on toimitettu hakua hoitavalle osa-alueelle. Olemme sinuun yhteydessä hakuajan päätyttyä.');
     $form_state['redirect'] = 'pestit';
   } else {
     drupal_set_message('Ilmoittautumisesti ei tallentunut teknisen ongelman vuoksi. Ole hyvä ja yritä myöhemmin uudelleen.', 'error');
