@@ -16,6 +16,16 @@ $yhteistyo: $blue;
 .page-pestit #main #content {
   padding: 2% 0 0;
 
+  .fj16_job_ads_intro {
+    color: white;
+    text-shadow: #000 0 0 2px;
+    margin-bottom: 1.5em;
+
+    p {
+      margin: 0 0 0.5em;
+    }
+  }
+
   #block-views-exp-fj16-jobs-page {
     width: 30%;
     float: right;
