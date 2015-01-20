@@ -26,8 +26,9 @@ function fj16_job_ads_import_jobs() {
   watchdog('fj16_job_ads', 'Begin job import from SharePoint', array(), WATCHDOG_INFO);
   $import_started_time = time();
 
-  $config = fj16_job_ads_get_config();
-  $jobs = fj16_job_ads_read_sharepoint_list($config['job_list_guid']);
+  //$config = fj16_job_ads_get_config();
+  //$jobs = fj16_job_ads_read_sharepoint_list($config['job_list_guid']);
+  $jobs = fj16_get_jobs_from_adapter();
   $jobs_to_remove = fj16_get_job_nids();
 
   // Create or update new jobs
@@ -381,6 +382,13 @@ function fj16_job_application_form_submit($form, &$form_state) {
 
 
 // SharePoint integration
+
+
+function fj16_get_jobs_from_adapter() {
+  $conf = fj16_job_ads_get_config();
+  $url = $conf['adapter_endpoint'] . '?secret=' . $conf['secret'];
+  return json_decode(file_get_contents($url), TRUE);
+}
 
 
 function fj16_job_ads_get_config() {
