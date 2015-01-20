@@ -49,3 +49,10 @@ strong, b {
 i, em {
 	font-style: italic;
 }
+
+#content ul li {
+	display: list-item;
+	list-style: disc;
+	margin: 0 0 0.5em 20px;
+	padding: 0 10px;
+}

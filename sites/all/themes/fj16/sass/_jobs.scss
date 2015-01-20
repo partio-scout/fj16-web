@@ -1,0 +1,141 @@
+$elamys: $purple;
+$kasvatus: $red;
+$palvelu: $green;
+$resurssi: $yellow;
+$yhteistyo: $blue;
+
+.node-type-fj16-job #main {
+  background: 50% 0 #a96f2e url(../img/backgrounds/pestit.jpg);
+  background-size: 100% auto;
+
+  h1 {
+    display: none; //TODO Accessibility
+  }
+}
+
+.node-fj16-job {
+  background: #FFF;
+  position: relative;
+
+  & .info:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 0;
+    width: 30px;
+    height: 50px;
+    background: 50% 100% red no-repeat url(../img/triangle.png);
+    background-size: contain;
+  }
+
+  &.elamys {
+    .field-name-field-department {
+      color: $elamys;
+    }
+
+    .info:before {
+      background-color: $elamys;
+    }
+  }
+  &.kasvatus {
+    .field-name-field-department {
+      color: $kasvatus;
+    }
+
+    .info:before {
+      background-color: $kasvatus;
+    }
+  }
+  &.palvelu {
+    .field-name-field-department {
+      color: $palvelu;
+    }
+
+    .info:before {
+      background-color: $palvelu;
+    }
+  }
+  &.resurssi {
+    .field-name-field-department {
+      color: $resurssi;
+    }
+
+    .info:before {
+      background-color: $resurssi;
+    }
+  }
+  &.yhteistyo {
+    .field-name-field-department {
+      color: $yhteistyo;
+    }
+
+    .info:before {
+      background-color: $yhteistyo;
+    }
+  }
+
+  &.full {
+    .info {
+      padding: 3.4% 3.4% 0;
+
+      &:before {
+        right: 30px;
+        width: 48px;
+        height: 70px;
+      }
+    }
+
+    .job-content {
+      padding: 0 3.4% 3.4%;
+
+      h3 {
+        margin: 1em 0;
+        font-size: 1em;
+        text-transform: uppercase;
+      }
+    }
+
+    .application-form {
+      padding: 3.4%;
+      background: #d2d2d1;
+
+      h2 {
+        margin: 0 0 20px;
+      }
+    }
+
+    .job-content, .application-form form {
+      width: 65%;
+    }
+  }
+
+  .meta {
+    border-bottom: 1px solid #000;
+    padding-bottom: 3.4%;
+    margin-bottom: 3.4%;
+
+    .organization * {
+      display: inline-block;
+    }
+
+    .field-label {
+      display: none; //TODO Accessibility
+    }
+  }
+
+  h2 {
+    font-family: $exo2;
+    font-size: 2.236em;
+    text-transform: uppercase;
+    margin: 15px 0;
+    letter-spacing: 0.02em;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &, & a {
+      color: #000;
+    }
+  }
+}

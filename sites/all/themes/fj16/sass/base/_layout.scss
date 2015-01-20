@@ -53,6 +53,13 @@ p {
 #main {
 	@extend .container;
 
+	.breadcrumb {
+		a {
+			color: $blue;
+			text-decoration: underline;
+		}
+	}
+
 	#content {
 		padding: 100px 200px;
 
