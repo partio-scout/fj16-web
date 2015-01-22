@@ -16,7 +16,7 @@ function fj16_job_ads_default_fe_block_boxes() {
   $fe_block_boxes->machine_name = 'fj16_job_ads_intro';
   $fe_block_boxes->body = '<div class="fj16_job_ads_intro">
 <p>
-Tervetuloa tekemään Roihua! Tältä sivulta löydät juuri nyt haussa olevat tehtävät. Hakuaika näihin tehtäviin päättyy 15.2.2015, jonka jälkeen kaikkiin itsestään vinkanneisiin ollaan yhteydessä.
+Tervetuloa tekemään Roihua! Tältä sivulta löydät juuri nyt haussa olevat tehtävät. Hakuaika näihin tehtäviin päättyy 12.2.2015, jonka jälkeen kaikkiin itsestään vinkanneisiin ollaan yhteydessä.
 </p>
 <p>
 Hakeminen on huisin helppoa. Täyttämällä ilmoituksen alareunasta löytyvän lomakkeen tietosi löytävät suoraan hausta vastaavalle osa-alueelle. Jos haluat kysyä tehtävästä lisää, paikallisen gurun yhteystiedot löytyvät kustakin ilmoituksesta.
