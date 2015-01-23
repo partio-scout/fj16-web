@@ -29,6 +29,11 @@ function fj16_job_ads_import_jobs() {
   //$config = fj16_job_ads_get_config();
   //$jobs = fj16_job_ads_read_sharepoint_list($config['job_list_guid']);
   $jobs = fj16_get_jobs_from_adapter();
+  if($jobs === FALSE) {
+    watchdog('fj16_job_ads', 'SharePoint import failed', array(), WATCHDOG_ERROR);
+    return;
+  }
+
   $jobs_to_remove = fj16_get_job_nids();
 
   // Create or update new jobs
@@ -388,7 +393,11 @@ function fj16_job_application_form_submit($form, &$form_state) {
 function fj16_get_jobs_from_adapter() {
   $conf = fj16_job_ads_get_config();
   $url = $conf['adapter_endpoint'] . '?secret=' . $conf['secret'];
-  return json_decode(file_get_contents($url), TRUE);
+  $content = file_get_contents($url);
+  if($content === FALSE) {
+    return FALSE;
+  }
+  return json_decode($content, TRUE);
 }
 
 
