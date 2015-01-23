@@ -5,11 +5,24 @@ $resurssi: $yellow;
 $yhteistyo: $blue;
 
 .node-type-fj16-job #main, .page-pestit #main {
-  background: 50% 0 #a96f2e url(../img/backgrounds/pestit.jpg);
+  background: 50% 0 #a96f2e url(../img/backgrounds/pestit-2048.jpg);
   background-size: 100% auto;
 
-  h1 {
+  @include respond(small) {
+    background-image: url(../img/backgrounds/pestit-1024.jpg);
+  }
+
+  #content h1 {
     display: none; //TODO Accessibility
+  }
+}
+
+@include respond(small) {
+  .page-pestit #main #content h1 {
+    display: block;
+    color: #FFF;
+    text-shadow: #000 0 0 2px;
+    margin-top: 17px;
   }
 }
 
@@ -31,6 +44,11 @@ $yhteistyo: $blue;
     float: right;
     background: #FFF;
 
+    @include respond(mobile) {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
     h2, .views-exposed-widget>label {
       display: block;
       font-size: 2.236em;
@@ -41,6 +59,10 @@ $yhteistyo: $blue;
       text-transform: uppercase;
       font-family: $exo2;
       padding: 3% 8%;
+
+      @include respond(mobile) {
+        font-size: 1.6em;
+      }
     }
 
     h2 {
@@ -76,10 +98,14 @@ $yhteistyo: $blue;
   .view-fj16-jobs {
     width: 68%;
     float: left;
+
+    @include respond(mobile) {
+      width: 100%;
+    }
   }
 
   .node-fj16-job.node-teaser {
-    margin-bottom: 3%;
+    margin-bottom: 20px;
     padding: 1% 3% 2%;
 
     p {
@@ -109,6 +135,10 @@ $yhteistyo: $blue;
 .node-fj16-job {
   background: #FFF;
   position: relative;
+
+  .breadcrumb {
+    width: 75%;
+  }
 
   & .info:before {
     content: ' ';
@@ -199,7 +229,8 @@ $yhteistyo: $blue;
     }
 
     .job-content, .application-form form {
-      width: 65%;
+      width: 610px;
+      max-width: 100%;
     }
 
     .meta {
@@ -223,14 +254,19 @@ $yhteistyo: $blue;
     font-family: $exo2;
     font-size: 2.236em;
     text-transform: uppercase;
-    margin: 15px 0;
+    margin: 15px 0 12px;
     letter-spacing: 0.02em;
-    width: 100%;
+    width: 90%;
     overflow: hidden;
     text-overflow: ellipsis;
 
     &, & a {
       color: #000;
+    }
+
+    @include respond(mobile) {
+      font-size: 1.6em;
+      margin-bottom: 7px;
     }
   }
 
