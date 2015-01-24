@@ -11,6 +11,16 @@ function fj16_job_ads_update_7002() {
   ));
 }
 
+function fj16_job_ads_update_7003() {
+  db_add_field('fj16_job_applications', 'application_id', array(
+    'description' => 'Primary key',
+    'type' => 'serial',
+    'not null' => TRUE
+  ), array(
+    'primary_key' => 'application_id'
+  ));
+}
+
 function fj16_job_ads_schema() {
   $schema = array();
 
