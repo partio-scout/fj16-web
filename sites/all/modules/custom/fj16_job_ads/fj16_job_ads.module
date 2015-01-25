@@ -457,7 +457,8 @@ function fj16_job_application_form_submit($form, &$form_state) {
     'previous_scouting_experience',
     'previous_other_experience',
     'reasons_for_applying',
-    'kogi_119'
+    'kogi_119',
+    'comments'
   );
 
   $record = array();
