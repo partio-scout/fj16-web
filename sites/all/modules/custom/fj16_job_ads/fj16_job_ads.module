@@ -16,6 +16,7 @@ define('FJ16_JOBS_STATUS_PUBLIC', '4. Julkaistu');
 
 function fj16_job_ads_cron() {
   fj16_job_ads_import_jobs();
+  fj16_job_ads_export_applications();
 }
 
 
@@ -227,11 +228,103 @@ function fj16_get_job_nids() {
 }
 
 
+// Job application export
+
+
+function fj16_job_ads_export_applications() {
+  $previous_application_id = -1;
+  while($application = fj16_job_ads_get_first_application('WAITING')) {
+    if($application['application_id'] === $previous_application_id) {
+      // Something failed when prcessing previous item and it has stayed in WAITING state
+      watchdog('fj16_job_ads', 'Processing application #@id failed: stayed in WAITING state. Export aborted.', array('@id' => $application['application_id']), WATCHDOG_ERROR);
+      break;
+    }
+
+    fj16_job_ads_export_application($application);
+
+    $previous_application_id = $application['application_id'];
+  }
+}
+
+function fj16_job_ads_export_application($application) {
+  // Change state to prevent reprocessing if there's an error
+  $application['status'] = 'PROCESSING';
+  fj16_job_ads_save_application($application);
+  watchdog('fj16_job_ads', 'Processing application #@id', array('@id' => $application['application_id']), WATCHDOG_INFO);
+
+  $success = fj16_job_ads_save_application_to_backend($application);
+
+  if($success) {
+    watchdog('fj16_job_ads', 'Application #@id synced successfully', array('@id' => $application['application_id']), WATCHDOG_INFO);
+    $application['status'] = 'SYNCED';
+    fj16_job_ads_save_application($application);
+  } else {
+    watchdog('fj16_job_ads', 'Application #@id syncing failed', array('@id' => $application['application_id']), WATCHDOG_ERROR);
+    $application['status'] = 'ERROR';
+    fj16_job_ads_save_application($application);
+  }
+
+}
+
+function fj16_job_ads_get_first_application($state) {
+  $applications = fj16_job_ads_get_applications($state);
+  if(count($applications) > 0) {
+    return $applications[0];
+  }
+  return FALSE;
+}
+
+function fj16_job_ads_get_applications($status) {
+  return db_select('fj16_job_applications', 'applications')
+    ->fields('applications')
+    ->condition('status', $status)
+    ->execute()
+    ->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function fj16_job_ads_save_application($application) {
+  // Determine if this is new (no primary keys) or not (with primary keys)
+  $primary_keys = empty($application['application_id']) ? NULL : 'application_id';
+  $result = drupal_write_record('fj16_job_applications', $application, $primary_keys);
+}
+
+function fj16_job_ads_save_application_to_backend($application) {
+  $conf = fj16_job_ads_get_config();
+  $url = $conf['adapter_endpoint'] . '?secret=' . $conf['secret'];
+  $response = drupal_http_request($url, array(
+    'method' => 'POST',
+    'data' => json_encode(fj16_job_ads_to_adapter_format($application))
+  ));
+
+  if($response->code === '200') {
+    $result_json = json_decode($response->data, TRUE);
+    return ($result_json['result'] === 'OK'); // Success
+  }
+
+  return FALSE;
+}
+
+function fj16_job_ads_to_adapter_format($application) {
+  return array(
+    "Pesti_lookup" => $application['job_rowid'],
+    "Title" => $application['name'],
+    "Email" => $application['email'],
+    "Puhelinnumero" => $application['phone'],
+    "Lippukunta_x0020_ja_x0020_piiri" => $application['troop_and_district'],
+    "Nykyiset_x0020_partiopestit" => $application['current_jobs'],
+    "Partiokokemus" => $application['previous_scouting_experience'],
+    "Partion_x0020_ulkopuolinen_x0020" => $application['previous_other_experience'],
+    "Perustelut" => $application['reasons_for_applying'],
+    "Ko_x002d_Gi_x0020_119" => $application['kogi_119'],
+    "Kommentit" => $application['comments']
+  );
+}
+
+
 // Job form
 
 
 function fj16_job_ads_node_view($node, $view_mode, $langcode) {
-  //TODO Välitä noden arvot yms.
   if($node->type == 'fj16_job' && $view_mode == 'full') {
     $node->content['fj16_job_application_form'] = drupal_get_form('fj16_job_application_form', $node);
     $node->content['fj16_job_application_form']['#weight'] = 1000;
