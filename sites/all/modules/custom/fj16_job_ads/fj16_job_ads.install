@@ -12,13 +12,12 @@ function fj16_job_ads_update_7004() {
 }
 
 function fj16_job_ads_update_7005() {
-  db_drop_primary_key('fj16_job_applications');
   db_add_field('fj16_job_applications', 'application_id', array(
     'description' => 'Primary key',
     'type' => 'serial',
     'not null' => TRUE
   ), array(
-    'primary key' => 'application_id'
+    'primary key' => array('application_id')
   ));
 }
 
