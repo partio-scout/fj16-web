@@ -18,7 +18,7 @@ function fj16_job_ads_update_7005() {
     'type' => 'serial',
     'not null' => TRUE
   ), array(
-    'primary_key' => 'application_id'
+    'primary key' => 'application_id'
   ));
 }
 
