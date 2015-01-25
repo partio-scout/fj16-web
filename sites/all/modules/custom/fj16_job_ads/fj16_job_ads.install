@@ -4,14 +4,15 @@ function fj16_job_ads_update_7001() {
   drupal_install_schema('fj16_job_ads');
 }
 
-function fj16_job_ads_update_7002() {
+function fj16_job_ads_update_7004() {
   db_add_field('fj16_job_applications', 'comments', array(
     'description' => 'Free form comments',
     'type' => 'text'
   ));
 }
 
-function fj16_job_ads_update_7003() {
+function fj16_job_ads_update_7005() {
+  db_drop_primary_key('fj16_job_applications');
   db_add_field('fj16_job_applications', 'application_id', array(
     'description' => 'Primary key',
     'type' => 'serial',
