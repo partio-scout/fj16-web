@@ -91,9 +91,20 @@ function fj16_job_ads_schema() {
         'description' => 'Does applicant wish to attend KoGi 119 - 1 (yes) or 0 (no)',
         'type' => 'int'
       ),
-      
-      
-    )
+
+      'comments' => array(
+        'description' => 'Free form comments',
+        'type' => 'text'
+      ),
+
+      'application_id' => array(
+        'description' => 'Primary key',
+        'type' => 'serial',
+        'not null' => TRUE
+      )
+    ),
+
+    'primary key' => array('application_id')
   );
 
   return $schema;
