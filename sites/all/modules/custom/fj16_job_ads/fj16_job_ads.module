@@ -7,6 +7,7 @@ require 'vendor/autoload.php';
 
 define('FJ16_SHAREPOINT_CONFIG_FILE', '../sharepoint-integration.conf.php');
 define('FJ16_JOBS_CURRENT_ROUND', '3. Tammikuu 2015');
+define('FJ16_JOBS_CONTINUOUS_ROUND', '- Erillishaku');
 define('FJ16_JOBS_PUBLIC_YES', 'Kyllä');
 define('FJ16_JOBS_STATUS_PUBLIC', '4. Julkaistu');
 
@@ -66,7 +67,7 @@ function fj16_job_should_be_displayed($job) {
     return FALSE;
   }
 
-  if($job['hakuryhm_x00e4_'] !== FJ16_JOBS_CURRENT_ROUND) {
+  if($job['hakuryhm_x00e4_'] !== FJ16_JOBS_CURRENT_ROUND && $job['hakuryhm_x00e4_'] !== FJ16_JOBS_CONTINUOUS_ROUND) {
     return FALSE;
   }
 
