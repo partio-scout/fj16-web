@@ -5,13 +5,19 @@ function fj16_job_ads_update_7001() {
 }
 
 function fj16_job_ads_update_7004() {
+  if(db_field_exists('fj16_job_applications', 'comments')) {
+    return;
+  }
   db_add_field('fj16_job_applications', 'comments', array(
     'description' => 'Free form comments',
     'type' => 'text'
   ));
 }
 
-function fj16_job_ads_update_7005() {
+function fj16_job_ads_update_7006() {
+  if(db_field_exists('fj16_job_applications', 'application_id')) {
+    return;
+  }
   db_add_field('fj16_job_applications', 'application_id', array(
     'description' => 'Primary key',
     'type' => 'serial',
@@ -19,6 +25,10 @@ function fj16_job_ads_update_7005() {
   ), array(
     'primary key' => array('application_id')
   ));
+}
+
+function fj16_job_ads_update_7005() {
+  module_enable(array('honeypot'));
 }
 
 function fj16_job_ads_schema() {

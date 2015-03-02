@@ -436,7 +436,12 @@ function fj16_job_application_form($form, &$form_state, $job_node) {
     '#type' => 'submit',
     '#value' => 'Lähetä hakemus'
   );
+
   return $form;
+}
+
+function fj16_job_ads_form_fj16_job_application_form_alter(&$form, &$form_state, $form_id) {
+  honeypot_add_form_protection($form, $form_state, array('honeypot'));
 }
 
 function fj16_email_validate($element, &$form_state, $form) {
