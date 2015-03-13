@@ -289,7 +289,9 @@ function fj16_base_user_default_permissions() {
   // Exported permission: 'create url aliases'.
   $permissions['create url aliases'] = array(
     'name' => 'create url aliases',
-    'roles' => array(),
+    'roles' => array(
+      'content editor' => 'content editor',
+    ),
     'module' => 'path',
   );
 
