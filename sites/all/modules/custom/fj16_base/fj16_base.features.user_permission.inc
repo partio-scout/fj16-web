@@ -461,7 +461,9 @@ function fj16_base_user_default_permissions() {
   // Exported permission: 'translate interface'.
   $permissions['translate interface'] = array(
     'name' => 'translate interface',
-    'roles' => array(),
+    'roles' => array(
+      'content editor' => 'content editor',
+    ),
     'module' => 'locale',
   );
 
