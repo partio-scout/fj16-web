@@ -36,7 +36,9 @@ function fj16_base_user_default_permissions() {
   // Exported permission: 'access all webform results'.
   $permissions['access all webform results'] = array(
     'name' => 'access all webform results',
-    'roles' => array(),
+    'roles' => array(
+      'content editor' => 'content editor',
+    ),
     'module' => 'webform',
   );
 
@@ -298,7 +300,9 @@ function fj16_base_user_default_permissions() {
   // Exported permission: 'create webform content'.
   $permissions['create webform content'] = array(
     'name' => 'create webform content',
-    'roles' => array(),
+    'roles' => array(
+      'content editor' => 'content editor',
+    ),
     'module' => 'node',
   );
 
@@ -312,14 +316,18 @@ function fj16_base_user_default_permissions() {
   // Exported permission: 'delete any webform content'.
   $permissions['delete any webform content'] = array(
     'name' => 'delete any webform content',
-    'roles' => array(),
+    'roles' => array(
+      'content editor' => 'content editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own webform content'.
   $permissions['delete own webform content'] = array(
     'name' => 'delete own webform content',
-    'roles' => array(),
+    'roles' => array(
+      'content editor' => 'content editor',
+    ),
     'module' => 'node',
   );
 
@@ -356,14 +364,18 @@ function fj16_base_user_default_permissions() {
   // Exported permission: 'edit any webform content'.
   $permissions['edit any webform content'] = array(
     'name' => 'edit any webform content',
-    'roles' => array(),
+    'roles' => array(
+      'content editor' => 'content editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'edit own webform content'.
   $permissions['edit own webform content'] = array(
     'name' => 'edit own webform content',
-    'roles' => array(),
+    'roles' => array(
+      'content editor' => 'content editor',
+    ),
     'module' => 'node',
   );
 
