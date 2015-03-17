@@ -115,6 +115,10 @@ input[type="submit"] {
 	&:hover {
 		background: shade($green, 15%);
 	}
+
+	&[disabled] {
+		background: #AAA;
+	}
 }
 
 
