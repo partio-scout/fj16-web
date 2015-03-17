@@ -1,0 +1,35 @@
+name = Block Access
+description = Provides flexible block administration access control.
+package = Access control
+core = 7.x
+files[] = block_access.install
+files[] = block_access.module
+files[] = block_access.admin.inc
+files[] = block_access.db.inc
+files[] = block_access.theme.inc
+
+; tests
+files[] = tests/common.test
+files[] = tests/ui.test
+files[] = tests/op_basic_view.test
+files[] = tests/op_basic_move.test
+files[] = tests/op_basic_enable.test
+files[] = tests/op_basic_disable.test
+files[] = tests/op_basic_config.test
+files[] = tests/op_basic_delete.test
+files[] = tests/op_config.test
+files[] = tests/op_region.test
+
+; Information added by drupal.org packaging script on 2012-03-27
+version = "7.x-1.x-dev"
+core = "7.x"
+project = "block_access"
+datestamp = "1332806729"
+
+
+; Information added by Drupal.org packaging script on 2015-03-04
+version = "7.x-1.6"
+core = "7.x"
+project = "block_access"
+datestamp = "1425477100"
+

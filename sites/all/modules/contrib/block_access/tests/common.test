@@ -1,0 +1,165 @@
+<?php
+
+/**
+ * @file
+ * Tests for block_access - common methods
+ */
+
+/**
+ * Tests for block_access - common methods
+ */
+abstract class BlockAccessTestCase extends DrupalWebTestCase {
+
+  /**
+   * Helper - creates a user with all block_access perms
+   */
+  function createBlockAccessAdmin() {
+    return $this->drupalCreateUser(array(
+      // perms from system.module
+      'access administration pages',
+      // perms from user.module
+      'administer permissions',
+      // perms from block.module
+      'administer blocks',
+      // perms from block_access.module
+      'administer block access settings',
+      'access the block administration page',
+      'create blocks',
+      'view all blocks',
+      'move all blocks',
+      'enable all blocks',
+      'disable all blocks',
+      'delete all blocks',
+      'configure all blocks',
+      'configure all language settings',
+      'configure all block titles',
+      'configure all block descriptions',
+      'configure all block body fields',
+      'configure all region settings',
+      'configure all visibility settings',
+      'configure all page visibility settings',
+      'configure all content type visibility settings',
+      'configure all role visibility settings',
+      'configure all user visibility settings',
+    ));
+  }
+
+  /**
+   * Helper - list basic operations
+   */
+  static function getBasicOperations() {
+    return array('view', 'move', 'enable', 'disable', 'delete', 'config');
+  }
+
+  /**
+   * Helper - list config-specific operations keyed by their associated field on block edit page
+   */
+  static function getConfigOperations() {
+    $theme   = variable_get('theme_default', 'bartik');
+    return array(
+      'title'           => 'config_title',
+      'info'            => 'config_desc',
+      'body[value]'     => 'config_body',
+      "regions[$theme]" => 'config_region',
+      'visibility'      => 'config_page_visibility',
+      'types[page]'     => 'config_type_visibility',
+      'roles[1]'        => 'config_role_visibility',
+      'custom'          => 'config_user_visibility',
+    );
+  }
+
+  /**
+   * Helper - list region-specific operations
+   */
+  static function getRegionOperations() {
+    // Region-specific operations
+    $theme   = variable_get('theme_default', 'bartik');
+    $regions = system_region_list($theme);
+    return array_keys($regions);
+  }
+
+  /**
+   * Helper - allows/disallows operation on a given block, for a given role ID
+   */
+  function setBlockAccessPerm($block, $rid, $operation, $allow = TRUE) {
+    $edit = array($operation . '_roles[' . $rid . ']' => $allow);
+    $this->drupalPost('admin/structure/block/manage/' . $block->module . '/' . $block->delta . '/configure', $edit, t('Save block'));
+    $this->assertResponse(200);
+  }
+
+  /**
+   * Helper - blocks/unblocks access to a specific region, for a given role ID
+   */
+  function blockAccessToRegion($rid, $region, $blockAccess = TRUE, $module = 'block') {
+    $edit = array('dreg_' . $region . '_roles[' . $rid . ']' => $blockAccess);
+    $this->drupalPost('admin/structure/block/block-access/edit/' . $module, $edit, t('Save'));
+    $this->assertResponse(200);
+  }
+
+  /**
+   * Helper - creates a block
+   */
+  function createBlock($region = BLOCK_REGION_NONE) {
+    $theme = variable_get('theme_custom', 'bartik');
+    $edit = array();
+    $edit['info'] = $this->randomName(8);
+    $edit['title'] = $this->randomName(8);
+    $edit['body[value]'] = $this->randomName(32);
+    $edit["regions[$theme]"] = $region;
+    $this->drupalPost('admin/structure/block/add', $edit, t('Save block'));
+    $this->assertResponse(200);
+    $bid = db_query('SELECT bid FROM {block_custom} WHERE info = :info', array(':info' => $edit['info']))->fetchField();
+    return block_load('block', $bid);
+  }
+
+  /**
+   * Helper - asserts that a block is in a given region
+   */
+  function assertBlockInRegion($block, $region, $msg = '') {
+    $theme = variable_get('theme_custom', 'bartik');
+    $block_in_region = db_select('block', 'b')
+      ->fields('b')
+      ->condition('bid',    $block->bid, '=')
+      ->condition('theme',  $theme,      '=')
+      ->condition('region', $region,     '=')
+      ->execute()
+      ->rowCount();
+    $msg = $msg ? $msg : t('Block %block is in region %region', array('%block' => $block->bid, '%region' => $region));
+    return $this->assertTrue($block_in_region, $msg);
+  }
+
+  /**
+   * Helper - asserts that a block is not in a given region
+   */
+  function assertBlockNotInRegion($block, $region, $msg = '') {
+    $theme = variable_get('theme_custom', 'bartik');
+    $block_in_region = db_select('block', 'b')
+      ->fields('b')
+      ->condition('bid',    $block->bid, '=')
+      ->condition('theme',  $theme,      '=')
+      ->condition('region', $region,     '=')
+      ->execute()
+      ->rowCount();
+    $msg = $msg ? $msg : t('Block %block is not in region %region', array('%block' => $block->bid, '%region' => $region));
+    return $this->assertFalse($block_in_region, $msg);
+  }
+
+  /**
+   * Helper - asserts that a select option in the current page exists
+   */
+  function assertOption($name, $option, $msg = '') {
+    $elements = $this->xpath('//select[@name=:name]//option[@value=:option]', array(':name' => $name, ':option' => $option));
+    $msg = $msg ? $msg : t('Option %option for field %name exists', array('%option' => $option, '%name' => $name));
+    return $this->assertTrue(isset($elements[0]), $msg);
+  }
+
+  /**
+   * Helper - asserts that a select option in the current page does not exist
+   */
+  function assertNoOption($name, $option, $msg = '') {
+    $elements = $this->xpath('//select[@name=:name]//option[@value=:option]', array(':name' => $name, ':option' => $option));
+    $msg = $msg ? $msg : t('Option %option for field %name does not exist', array('%option' => $option, '%name' => $name));
+    return $this->assertFalse(isset($elements[0]), $msg);
+  }
+
+}

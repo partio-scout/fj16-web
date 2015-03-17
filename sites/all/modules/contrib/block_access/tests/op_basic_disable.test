@@ -1,0 +1,81 @@
+<?php
+
+/**
+ * @file
+ * Tests for block_access / operation disable
+ */
+
+/**
+ * Tests for block_access / operation disable
+ */
+class BlockAccessDisableTestCase extends BlockAccessTestCase {
+
+  public static function getInfo() {
+    return array(
+      'name' => 'Basic operation "disable"',
+      'description' => 'Tests the "disable" operation of block_access.module',
+      'group' => 'Block Access'
+    );
+  }
+
+  private $admin;
+  private $block;
+  private $user1; // $user1 will be granted operation
+  private $user2; // $user2 will not
+
+  function setUp() {
+    parent::setUp('block_access');
+    $this->admin = $this->createBlockAccessAdmin();
+    $this->drupalLogin($this->admin);
+
+    // Create block in a region (so it is enabled)
+    $this->block = $this->createBlock('sidebar_first');
+
+    // Create 2 users
+    $perms = array('administer blocks', 'access the block administration page', 'view all blocks', 'move all blocks');
+    $this->user1 = $this->drupalCreateUser($perms);
+    $this->user2 = $this->drupalCreateUser($perms);
+
+    // Restrict operation to $user1 role
+    $user1_roles = array_keys($this->user1->roles);
+    $user2_roles = array_keys($this->user2->roles);
+    $role1 = array_shift($user1_roles);
+    $role2 = array_shift($user2_roles);
+    $this->setBlockAccessPerm($this->block, $role1, 'disable', TRUE);
+    $this->setBlockAccessPerm($this->block, $role2, 'disable', FALSE);
+  }
+
+  /**
+   * Test UI allows $user1 to do operation
+   */
+  function testUIGranted() {
+    $this->drupalLogin($this->user1);
+    $this->drupalGet('admin/structure/block');
+    $this->assertResponse(200);
+    $this->assertOption('blocks[block_' . $this->block->delta . '][region]', BLOCK_REGION_NONE);
+  }
+
+  /**
+   * Test $user1 can do operation
+   */
+  function testOperationGranted() {
+    $this->drupalLogin($this->user1);
+    // Disable block
+    $edit = array('blocks[block_' . $this->block->delta . '][region]' => BLOCK_REGION_NONE);
+    $this->drupalPost('admin/structure/block', $edit, t('Save blocks'));
+    $this->assertResponse(200);
+    // Verify block in disabled region
+    $this->assertBlockInRegion($this->block, BLOCK_REGION_NONE);
+  }
+
+  /**
+   * Test UI does not allow $user2 to do operation
+   */
+  function testUINotGranted() {
+    $this->drupalLogin($this->user2);
+    $this->drupalGet('admin/structure/block');
+    $this->assertResponse(200);
+    $this->assertNoOption('blocks[block_' . $this->block->delta . '][region]', BLOCK_REGION_NONE);
+  }
+
+}

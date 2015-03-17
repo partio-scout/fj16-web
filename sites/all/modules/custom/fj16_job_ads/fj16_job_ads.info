@@ -22,7 +22,6 @@ dependencies[] = views
 dependencies[] = honeypot
 features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
-features[fe_block_boxes][] = fj16_job_ads_intro
 features[fe_block_settings][] = block-fj16_job_ads_intro
 features[fe_block_settings][] = views--exp-fj16_jobs-page
 features[features_api][] = api:2

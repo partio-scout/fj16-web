@@ -1,0 +1,51 @@
+<?php
+/**
+ * @file
+ * block_access module installation and upgrade code.
+ */
+
+/**
+ * Implementation of hook_schema().
+ */
+function block_access_schema() {
+  $schema['block_access_roles'] = array(
+    'description' => 'Extension of block_role',
+    'fields' => array(
+      'module' => array(
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => TRUE,
+        'description' => "The block's origin module, from {blocks}.module.",
+      ),
+      'delta'  => array(
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE,
+        'description' => "The block's unique delta within module, from {blocks}.delta.",
+      ),
+      'rid' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'description' => "The user's role ID from {users_roles}.rid.",
+      ),
+      'permission' => array(
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE,
+        'description' => 'The permission being granted',
+      ),
+    ),
+    'primary key' => array(
+      'module',
+      'delta',
+      'rid',
+      'permission',
+    ),
+    'indexes' => array(
+      'rid' => array('rid'),
+    ),
+  );
+  return $schema;
+}
+

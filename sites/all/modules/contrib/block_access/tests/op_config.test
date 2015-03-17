@@ -1,0 +1,74 @@
+<?php
+
+/**
+ * @file
+ * Tests for block_access / config-specific operations (config_lang, config_title etc)
+ */
+
+/**
+ * Tests for block_access / config-specific operations (config_lang, config_title etc)
+ */
+class BlockAccessConfigSpecificTestCase extends BlockAccessTestCase {
+
+  public static function getInfo() {
+    return array(
+      'name' => 'Config-specific operations',
+      'description' => 'Tests config-specific operations of block_access.module',
+      'group' => 'Block Access'
+    );
+  }
+
+  private $admin;
+  private $block;
+
+  private $user1; // $user1 will be granted operation
+  private $user2; // $user2 will not
+
+  private $role1; // role associated with $user1
+  private $role2; // role associated with $user2
+
+  function setUp() {
+    parent::setUp('block_access');
+    $this->admin = $this->createBlockAccessAdmin();
+    $this->drupalLogin($this->admin);
+
+    // Create block
+    $this->block = $this->createBlock();
+
+    // Create 2 users
+    $perms = array('administer blocks', 'access the block administration page',
+      'view all blocks', 'configure all blocks', 'configure all visibility settings');
+    $this->user1 = $this->drupalCreateUser($perms);
+    $this->user2 = $this->drupalCreateUser($perms);
+    $user1_roles = array_keys($this->user1->roles);
+    $user2_roles = array_keys($this->user2->roles);
+    $this->role1 = array_shift($user1_roles);
+    $this->role2 = array_shift($user2_roles);
+  }
+
+
+  /**
+   * Test all config-specific operations
+   */
+  function testConfigOperations() {
+    // For each operation (config_lang, config_title, etc)
+    foreach ($this->getConfigOperations() as $field => $op) {
+      // Restrict operation to $user1
+      $this->drupalLogin($this->admin);
+      $this->setBlockAccessPerm($this->block, $this->role1, $op, TRUE);
+      $this->setBlockAccessPerm($this->block, $this->role2, $op, FALSE);
+      $this->drupalGet('admin/structure/block/manage/block/' . $this->block->delta . '/configure');
+      // Verify $user1 is granted operation
+      $this->drupalLogin($this->user1);
+      $this->drupalGet('admin/structure/block/manage/block/' . $this->block->delta . '/configure');
+      $this->assertResponse(200);
+      $this->assertField($field, t('Found field for operation %op', array('%op' => $op)));
+      // Verify $user2 is not granted operation
+      $this->drupalLogin($this->user2);
+      $this->drupalGet('admin/structure/block/manage/block/' . $this->block->delta . '/configure');
+      $this->assertResponse(200);
+      $this->assertNoField($field, t('Could not find field for operation %op', array('%op' => $op)));
+    }
+  }
+
+}

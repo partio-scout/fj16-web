@@ -1,0 +1,69 @@
+<?php
+
+/**
+ * @file
+ * Tests for block_access / region-specific operations ('cannot access region header etc)
+ */
+
+/**
+ * Tests for block_access / region-specific operations ('cannot access region header etc)
+ */
+class BlockAccessRegionSpecificTestCase extends BlockAccessTestCase {
+
+  public static function getInfo() {
+    return array(
+      'name' => 'Region-specific operations',
+      'description' => 'Tests region-specific operations of block_access.module',
+      'group' => 'Block Access'
+    );
+  }
+
+  private $admin;
+  private $block;
+
+  private $user1; // $user1 will be blocked to a specific region
+  private $user2; // $user2 will not
+
+  private $role1; // role associated with $user1
+  private $role2; // role associated with $user2
+
+  function setUp() {
+    parent::setUp('block_access');
+    $this->admin = $this->createBlockAccessAdmin();
+    $this->drupalLogin($this->admin);
+
+    // Create block
+    $this->block = $this->createBlock('sidebar_first');
+
+    // Create 2 users
+    $perms = array(
+      'administer blocks', 'access the block administration page', 'view all blocks', 'move all blocks');
+    $this->user1 = $this->drupalCreateUser($perms);
+    $this->user2 = $this->drupalCreateUser($perms);
+    $user1_roles = array_keys($this->user1->roles);
+    $user2_roles = array_keys($this->user2->roles);
+    $this->role1 = array_shift($user1_roles);
+    $this->role2 = array_shift($user2_roles);
+  }
+
+
+  /**
+   * Test we can block $user1 access to a region
+   */
+  function testCannotAccessRegion() {
+    // Block access only to $user1 role
+    $this->blockAccessToRegion($this->role1, 'sidebar_second', TRUE);
+    $this->blockAccessToRegion($this->role2, 'sidebar_second', FALSE);
+    // Verify $user1 cannot access region
+    $this->drupalLogin($this->user1);
+    $this->drupalGet('admin/structure/block');
+    $this->assertResponse(200);
+    $this->assertNoOption('blocks[block_' . $this->block->delta . '][region]', 'sidebar_second');
+    // Verify $user2 can access region
+    $this->drupalLogin($this->user2);
+    $this->drupalGet('admin/structure/block');
+    $this->assertResponse(200);
+    $this->assertOption('blocks[block_' . $this->block->delta . '][region]', 'sidebar_second');
+  }
+
+}

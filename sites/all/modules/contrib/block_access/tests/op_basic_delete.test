@@ -1,0 +1,72 @@
+<?php
+
+/**
+ * @file
+ * Tests for block_access / operation delete
+ */
+
+/**
+ * Tests for block_access / operation delete
+ */
+class BlockAccessDeleteTestCase extends BlockAccessTestCase {
+
+  public static function getInfo() {
+    return array(
+      'name' => 'Basic operation "delete"',
+      'description' => 'Tests the "delete" operation of block_access.module',
+      'group' => 'Block Access'
+    );
+  }
+
+  private $admin;
+  private $block;
+  private $user1; // $user1 will be granted operation
+  private $user2; // $user2 will not
+
+  function setUp() {
+    parent::setUp('block_access');
+    $this->admin = $this->createBlockAccessAdmin();
+    $this->drupalLogin($this->admin);
+
+    // Create block
+    $this->block = $this->createBlock();
+
+    // Create 2 users
+    $perms = array('administer blocks', 'access the block administration page', 'view all blocks');
+    $this->user1 = $this->drupalCreateUser($perms);
+    $this->user2 = $this->drupalCreateUser($perms);
+
+    // Restrict operation to $user1 role
+    $user1_roles = array_keys($this->user1->roles);
+    $user2_roles = array_keys($this->user2->roles);
+    $role1 = array_shift($user1_roles);
+    $role2 = array_shift($user2_roles);
+    $this->setBlockAccessPerm($this->block, $role1, 'delete', TRUE);
+    $this->setBlockAccessPerm($this->block, $role2, 'delete', FALSE);
+  }
+
+  /**
+   * Test $user1 is granted operation
+   */
+  function testGranted() {
+    $this->drupalLogin($this->user1);
+    $this->drupalGet('admin/structure/block');
+    $this->assertResponse(200);
+    $this->assertLinkByHref('admin/structure/block/manage/block/' . $this->block->delta . '/delete');
+    $this->drupalGet('admin/structure/block/manage/block/' . $this->block->delta . '/delete');
+    $this->assertResponse(200);
+  }
+
+  /**
+   * Test $user2 is not granted operation
+   */
+  function testNotGranted() {
+    $this->drupalLogin($this->user2);
+    $this->drupalGet('admin/structure/block');
+    $this->assertResponse(200);
+    $this->assertNoLinkByHref('admin/structure/block/manage/block/' . $this->block->delta . '/delete');
+    $this->drupalGet('admin/structure/block/manage/block/' . $this->block->delta . '/delete');
+    $this->assertResponse(403);
+  }
+
+}

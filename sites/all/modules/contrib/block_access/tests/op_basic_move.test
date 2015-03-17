@@ -1,0 +1,83 @@
+<?php
+
+/**
+ * @file
+ * Tests for block_access / operation move
+ */
+
+/**
+ * Tests for block_access / operation move
+ */
+class BlockAccessMoveTestCase extends BlockAccessTestCase {
+
+  public static function getInfo() {
+    return array(
+      'name' => 'Basic operation "move"',
+      'description' => 'Tests the "move" operation of block_access.module',
+      'group' => 'Block Access'
+    );
+  }
+
+  private $admin;
+  private $block;
+  private $user1; // $user1 will be granted operation
+  private $user2; // $user2 will not
+
+  function setUp() {
+    parent::setUp('block_access');
+    $this->admin = $this->createBlockAccessAdmin();
+    $this->drupalLogin($this->admin);
+
+    // Create block in an arbitrary region
+    $this->block = $this->createBlock('sidebar_first');
+
+    // Create 2 users
+    $perms = array('administer blocks', 'access the block administration page', 'view all blocks');
+    $this->user1 = $this->drupalCreateUser($perms);
+    $this->user2 = $this->drupalCreateUser($perms);
+
+    // Restrict operation to $user1 role
+    $user1_roles = array_keys($this->user1->roles);
+    $user2_roles = array_keys($this->user2->roles);
+    $role1 = array_shift($user1_roles);
+    $role2 = array_shift($user2_roles);
+    $this->setBlockAccessPerm($this->block, $role1, 'move', TRUE);
+    $this->setBlockAccessPerm($this->block, $role2, 'move', FALSE);
+  }
+
+  /**
+   * Test UI allows $user1 to do operation
+   */
+  function testUIGranted() {
+    $this->drupalLogin($this->user1);
+    $this->drupalGet('admin/structure/block');
+    $this->assertResponse(200);
+    $this->assertOption('blocks[block_' . $this->block->delta . '][region]', 'sidebar_second');
+  }
+
+  /**
+   * Test $user1 can do operation
+   */
+  function testOperationGranted() {
+    $this->drupalLogin($this->user1);
+    // Verify block in sidebar_first
+    $this->assertBlockInRegion($this->block, 'sidebar_first');
+    // Move block to sidebar_second
+    $edit = array('blocks[block_' . $this->block->delta . '][region]' => 'sidebar_second');
+    $this->drupalPost('admin/structure/block', $edit, t('Save blocks'));
+    $this->assertResponse(200);
+    // Verify block in sidebar_second
+    $this->assertBlockInRegion($this->block, 'sidebar_second');
+  }
+
+  /**
+   * Test UI does not allow $user2 to do operation
+   */
+  function testUINotGranted() {
+    $this->drupalLogin($this->user2);
+    $this->drupalGet('admin/structure/block');
+    $this->assertResponse(200);
+    $this->assertNoOption('blocks[block_' . $this->block->delta . '][region]', 'sidebar_second');
+  }
+
+}

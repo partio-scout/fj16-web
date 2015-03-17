@@ -1,0 +1,80 @@
+<?php
+
+/**
+ * @file
+ * Tests for block_access / UI
+ */
+
+/**
+ * Tests for block_access / UI
+ */
+class BlockAccessUITestCase extends BlockAccessTestCase {
+
+  public static function getInfo() {
+    return array(
+      'name' => 'UI',
+      'description' => 'Tests the UI of block_access.module',
+      'group' => 'Block Access'
+    );
+  }
+
+  private $admin;
+  private $block;
+
+  function setUp() {
+    parent::setUp('block_access');
+    $this->admin = $this->createBlockAccessAdmin();
+    $this->drupalLogin($this->admin);
+    $this->block = $this->createBlock();
+  }
+
+
+  /**
+   * Test UI on settings page
+   *
+   * every module implementing hook_block_info should have a link
+   */
+  function testUISettingsPage() {
+    $this->drupalGet('admin/structure/block/block-access');
+    $this->assertResponse(200);
+    foreach (module_implements('block_info') as $module) {
+      $this->assertLinkByHref("admin/structure/block/block-access/edit/$module");
+    }
+  }
+
+  /**
+   * Test UI on settings edit page
+   *
+   * basic + config + region-specific operations should show up
+   */
+  function testUISettingsEditPage() {
+    $this->drupalGet('admin/structure/block/block-access/edit/node');
+    $this->assertResponse(200);
+    foreach ($this->getBasicOperations() as $op) {
+      $this->assertField($op . '_roles[1]', t('Found field %op', array('%op' => $op)));
+    }
+    foreach ($this->getConfigOperations() as $op) {
+      $this->assertField($op . '_roles[1]', t('Found field %op', array('%op' => $op)));
+    }
+    foreach ($this->getRegionOperations() as $op) {
+      $this->assertField('dreg_' . $op . '_roles[1]', t('Found field %op', array('%op' => $op)));
+    }
+  }
+
+  /**
+   * Test UI on block config page
+   *
+   * basic + config operations should show up here
+   */
+  function testUIBlockConfigPage() {
+    $this->drupalGet('admin/structure/block/manage/block/' . $this->block->delta . '/configure');
+    $this->assertResponse(200);
+    foreach ($this->getBasicOperations() as $op) {
+      $this->assertField($op . '_roles[1]', t('Found field %op', array('%op' => $op)));
+    }
+    foreach ($this->getConfigOperations() as $op) {
+      $this->assertField($op . '_roles[1]', t('Found field %op', array('%op' => $op)));
+    }
+  }
+
+}
