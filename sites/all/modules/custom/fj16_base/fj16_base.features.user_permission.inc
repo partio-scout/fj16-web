@@ -575,14 +575,18 @@ function fj16_base_user_default_permissions() {
   // Exported permission: 'translate admin strings'.
   $permissions['translate admin strings'] = array(
     'name' => 'translate admin strings',
-    'roles' => array(),
+    'roles' => array(
+      'content editor' => 'content editor',
+    ),
     'module' => 'i18n_string',
   );
 
   // Exported permission: 'translate content'.
   $permissions['translate content'] = array(
     'name' => 'translate content',
-    'roles' => array(),
+    'roles' => array(
+      'content editor' => 'content editor',
+    ),
     'module' => 'translation',
   );
 
@@ -598,7 +602,9 @@ function fj16_base_user_default_permissions() {
   // Exported permission: 'translate user-defined strings'.
   $permissions['translate user-defined strings'] = array(
     'name' => 'translate user-defined strings',
-    'roles' => array(),
+    'roles' => array(
+      'content editor' => 'content editor',
+    ),
     'module' => 'i18n_string',
   );
 
