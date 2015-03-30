@@ -62,17 +62,9 @@ function fj16_frontpage_boxes_image_default_styles() {
 
   // Exported image style: fj6_frontpage_box_image.
   $styles['fj6_frontpage_box_image'] = array(
-    'name' => 'fj6_frontpage_box_image',
     'label' => 'FJ6 Frontpage box image',
     'effects' => array(
       2 => array(
-        'label' => 'Skaalaa',
-        'help' => 'Skaalaus säilyttää kuvan alkuperäisen kuvasuhteen. Jos vain yksi ulottuvuus on määritettynä, järjestelmä laskee toisen ulottuvuuden automaattisesti.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => '',

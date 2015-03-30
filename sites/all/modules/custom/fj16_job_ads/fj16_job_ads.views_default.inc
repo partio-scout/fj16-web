@@ -86,32 +86,32 @@ function fj16_job_ads_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['row_options']['links'] = FALSE;
-  /* Toiminta jos tuloksia ei löydy: Yleinen: Tekstialue */
+  /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = '<p>Ei yhtään näytettävää pestiä.</p>';
   $handler->display->display_options['empty']['area']['format'] = 'full_html';
-  /* Kenttä: Sisältö: Otsikko */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Lajittelukriteeri: Sisältö: Otsikko */
+  /* Sort criterion: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
   $handler->display->display_options['sorts']['title']['field'] = 'title';
-  /* Suodatinkriteeri: Sisältö: Julkaistu */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Suodatinkriteeri: Sisältö: Tyyppi */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -119,7 +119,7 @@ function fj16_job_ads_views_default_views() {
     'fj16_job' => 'fj16_job',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Suodatinkriteeri: Sisältö: Pestin taso (field_level) */
+  /* Filter criterion: Content: Pestin taso (field_level) */
   $handler->display->display_options['filters']['field_level_value']['id'] = 'field_level_value';
   $handler->display->display_options['filters']['field_level_value']['table'] = 'field_data_field_level';
   $handler->display->display_options['filters']['field_level_value']['field'] = 'field_level_value';
@@ -135,7 +135,7 @@ function fj16_job_ads_views_default_views() {
     1 => 0,
     3 => 0,
   );
-  /* Suodatinkriteeri: Sisältö: Osa-alue (field_department) */
+  /* Filter criterion: Content: Osa-alue (field_department) */
   $handler->display->display_options['filters']['field_department_value']['id'] = 'field_department_value';
   $handler->display->display_options['filters']['field_department_value']['table'] = 'field_data_field_department';
   $handler->display->display_options['filters']['field_department_value']['field'] = 'field_department_value';
@@ -173,6 +173,7 @@ function fj16_job_ads_views_default_views() {
     t('Pestin taso'),
     t('Osa-alue'),
     t('Page'),
+    t('more'),
   );
   $export['fj16_jobs'] = $view;
 

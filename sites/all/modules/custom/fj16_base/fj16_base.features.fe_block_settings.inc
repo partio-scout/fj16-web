@@ -73,7 +73,7 @@ function fj16_base_default_fe_block_settings() {
     'themes' => array(
       'fj16' => array(
         'region' => '',
-        'status' => 0,
+        'status' => 1,
         'theme' => 'fj16',
         'weight' => 2,
       ),
