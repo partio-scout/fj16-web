@@ -58,23 +58,24 @@
 
 	#navigation {
 		background: #000;
-		height: 80px;
+		min-height: 80px;
 
 		position: absolute;
 		bottom: 0;
 		left: 0;
 		width: 100%;
+		overflow: visible;
 
 		@include respond(1023px) {
 			display: none;
 		}
-
 
 		&.fixed {
 			position: fixed;
 			top: 0;
 			left: 0;
 			height: 50px;
+			min-height: 50px;
 			z-index: 50;
 
 			ul li {
@@ -89,22 +90,50 @@
 
 		ul {
 			@extend .container;
-
+			overflow: visible; // override .container
 			padding: 0;
 
 			li {
 				display: inline-block;
 				padding: 0 30px;
+				margin: 0 -4px 0 0; // negative right margin to hide tha gap between inline-block items
 				height: 80px;
 				line-height: 80px;
+				position: relative;
 
-				&.active {
+				&.active, &.active-trail, &:hover {
 					background: $blue;
 				}
 
 				a {
 					color: #fff;
 				}
+			}
+
+			ul {
+				display: none; // hode 2nd level by default
+				position: absolute;
+				top: 95%;
+				left: 0;
+				background: $blue;
+				width: 300px;
+				padding-top: 10px;
+
+				li { // 2nd level
+					text-transform: none;
+					display: block;
+					height: 50px;
+					line-height: 50px;
+					margin: -10px 0 0;
+				}
+
+				a:hover {
+					text-decoration: underline;
+				}
+			}
+
+			li:hover ul, ul:hover {
+				display: block;
 			}
 		}
 	}
@@ -122,7 +151,6 @@
 		@include respond(1023px) {
 			background: #000;
 		}
-
 
 		ul {
 			@extend .container;
