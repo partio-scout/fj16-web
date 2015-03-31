@@ -116,7 +116,7 @@
 
       <?php if ($main_menu): ?>
         <div id="navigation">
-          <?php print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('id' => 'main-menu'))); ?>
+          <?php print render($page['main_menu']); ?>
         </div>
       <?php endif; ?>
 
@@ -129,6 +129,12 @@
     <?php print $messages; ?>
 
     <div id="main" class="clearfix">
+
+      <?php if(isset($page['sidebar_left'])): ?>
+        <div id="sidebar-left">
+          <?php print render($page['sidebar_left']); ?>
+        </div>
+      <?php endif; ?>
 
       <div id="content" class="column">
         <a id="main-content"></a>

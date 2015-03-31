@@ -4,6 +4,8 @@ package = FJ16
 core = 7.x
 
 regions[language_chooser] = Language chooser
+regions[main_menu] = Main menu
+regions[sidebar_left] = Sidebar left
 regions[content] = Content
 regions[footer] = Footer
 
