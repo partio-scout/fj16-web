@@ -8,6 +8,7 @@ regions[main_menu] = Main menu
 regions[sidebar_left] = Sidebar left
 regions[content] = Content
 regions[footer] = Footer
+regions[mobile_menu] = Mobile menu
 
 stylesheets[all][] = css/fj16.css
 
