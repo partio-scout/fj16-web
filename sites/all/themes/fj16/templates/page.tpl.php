@@ -128,9 +128,9 @@
 
     <?php print $messages; ?>
 
-    <div id="main" class="clearfix">
+    <div id="main" class="clearfix<?php print (count($page['sidebar_left']) === 0) ? ' one-col' : ' two-col'; ?>">
 
-      <?php if(isset($page['sidebar_left'])): ?>
+      <?php if(count($page['sidebar_left']) > 0): ?>
         <div id="sidebar-left">
           <?php print render($page['sidebar_left']); ?>
         </div>
