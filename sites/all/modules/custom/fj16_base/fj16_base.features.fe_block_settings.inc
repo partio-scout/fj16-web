@@ -122,7 +122,7 @@ function fj16_base_default_fe_block_settings() {
         'weight' => -12,
       ),
     ),
-    'title' => '<none>',
+    'title' => '',
     'visibility' => 0,
   );
 
