@@ -78,7 +78,7 @@
 			min-height: 50px;
 			z-index: 50;
 
-			ul li {
+			ul li a {
 				height: 50px;
 				line-height: 50px;
 			}
@@ -95,32 +95,44 @@
 
 			li {
 				display: inline-block;
+				padding: 0;
+				margin: 0;
+				position: relative;
+			}
+
+			a {
+				display: inline-block;
 				padding: 0 30px;
-				margin: 0 -4px 0 0; // negative right margin to hide tha gap between inline-block items
+				margin: 0 -4px 0 0; // negative right margin to hide the gap between inline-block items
 				height: 80px;
 				line-height: 80px;
-				position: relative;
+				color: #fff;
+				@include transition(background-color 0.3s ease-out);
 
 				&.active, &.active-trail, &:hover {
 					background: $blue;
 				}
-
-				a {
-					color: #fff;
-				}
 			}
 
 			ul {
-				display: none; // hode 2nd level by default
+				visibility: hidden;
+				opacity: 0.0; // hide 2nd level by default
+				@include transition(opacity 0.3s ease-out);
+
 				position: absolute;
-				top: 95%;
+				top: 100%;
 				left: 0;
 				background: $blue;
 				width: 300px;
 				padding-top: 10px;
 				z-index: 1;
+				margin-top: -4px;
 
-				li { // 2nd level
+				li {
+					display: inline;
+				}
+
+				a {
 					text-transform: none;
 					display: block;
 					height: 50px;
@@ -133,8 +145,10 @@
 				}
 			}
 
+			// Show dropdown on hover
 			li:hover ul, ul:hover {
-				display: block;
+				visibility: visible;
+				opacity: 1.0;
 			}
 		}
 	}
