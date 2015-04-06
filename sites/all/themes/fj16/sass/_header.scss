@@ -108,10 +108,10 @@
 				line-height: 80px;
 				color: #fff;
 				@include transition(background-color 0.3s ease-out);
+			}
 
-				&.active, &.active-trail, &:hover {
-					background: $blue;
-				}
+			a.active, a.active-trail, li:hover a {
+				background: $blue;
 			}
 
 			ul {
