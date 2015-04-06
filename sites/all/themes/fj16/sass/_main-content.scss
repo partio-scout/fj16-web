@@ -107,5 +107,20 @@
 
 .two-col #content {
   width: 73.9%;
-  float: left;
+  float: right;
+}
+
+@include respond(1023px) {
+  #main.two-col {
+    background: none;
+    
+    #sidebar-left, #content {
+      float: none;
+      width: 100%;
+    }
+
+    .block-menu-block {
+      display: none; //Use mobile nav instead
+    }
+  }
 }

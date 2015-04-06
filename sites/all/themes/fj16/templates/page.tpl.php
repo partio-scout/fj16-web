@@ -130,12 +130,6 @@
 
     <div id="main" class="clearfix<?php print (count($page['sidebar_left']) === 0) ? ' one-col' : ' two-col'; ?>">
 
-      <?php if(count($page['sidebar_left']) > 0): ?>
-        <div id="sidebar-left">
-          <?php print render($page['sidebar_left']); ?>
-        </div>
-      <?php endif; ?>
-
       <div id="content" class="column">
         <a id="main-content"></a>
         <?php print render($title_prefix); ?>
@@ -147,6 +141,12 @@
         <?php print render($page['content']); ?>
         <?php print $feed_icons; ?>
       </div>
+
+      <?php if(count($page['sidebar_left']) > 0): ?>
+        <div id="sidebar-left">
+          <?php print render($page['sidebar_left']); ?>
+        </div>
+      <?php endif; ?>
 
     </div>
 
