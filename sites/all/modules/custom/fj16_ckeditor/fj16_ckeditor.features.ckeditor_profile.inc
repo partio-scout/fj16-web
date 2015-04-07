@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * fj16_base.features.ckeditor_profile.inc
+ * fj16_ckeditor.features.ckeditor_profile.inc
  */
 
 /**
  * Implements hook_ckeditor_profile_defaults().
  */
-function fj16_base_ckeditor_profile_defaults() {
+function fj16_ckeditor_ckeditor_profile_defaults() {
   $data = array(
     'CKEditor Global Profile' => array(
       'name' => 'CKEditor Global Profile',
@@ -30,13 +30,13 @@ function fj16_base_ckeditor_profile_defaults() {
       'settings' => array(
         'ss' => 2,
         'toolbar' => '[
-    [\'Undo\',\'Redo\'],
+    [\'Save\',\'Undo\',\'Redo\'],
     [\'Styles\',\'Format\'],
     [\'Bold\',\'Italic\'],
     [\'NumberedList\',\'BulletedList\'],
     [\'Outdent\',\'Indent\'],
     [\'JustifyLeft\',\'JustifyCenter\',\'JustifyRight\'],
-    [\'Copy\',\'Cut\',\'Paste\',\'PasteFromWord\',\'RemoveFormat\'],
+    [\'Copy\',\'Cut\',\'Paste\',\'PasteFromWord\'],
     [\'Link\',\'Unlink\',\'Anchor\'],
     [\'Table\',\'MediaEmbed\']
 ]',

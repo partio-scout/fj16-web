@@ -406,7 +406,7 @@ user/*/*';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_count';
-  $strongarm->value = 0;
+  $strongarm->value = 3;
   $export['language_count'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -418,13 +418,13 @@ user/*/*';
     'name' => 'Finnish',
     'native' => 'Suomi',
     'direction' => '0',
-    'enabled' => '1',
+    'enabled' => 1,
     'plurals' => '2',
     'formula' => '($n!=1)',
     'domain' => '',
-    'prefix' => 'fi',
+    'prefix' => '',
     'weight' => '0',
-    'javascript' => '-Qrzj1ZSdep57b7Y2qIxWLS8SkuIXmipfLGTm854r2o',
+    'javascript' => 'o6OWPnpSH6FMVFt1jHTTVN-3itgkyz9XdSgkWCx3zA8',
   );
   $export['language_default'] = $strongarm;
 
@@ -432,7 +432,21 @@ user/*/*';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_negotiation_language';
-  $strongarm->value = array();
+  $strongarm->value = array(
+    'locale-url' => array(
+      'callbacks' => array(
+        'language' => 'locale_language_from_url',
+        'switcher' => 'locale_language_switcher_url',
+        'url_rewrite' => 'locale_language_url_rewrite_url',
+      ),
+      'file' => 'includes/locale.inc',
+    ),
+    'language-default' => array(
+      'callbacks' => array(
+        'language' => 'language_from_default',
+      ),
+    ),
+  );
   $export['language_negotiation_language'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -569,6 +583,7 @@ user/*/*';
   $strongarm->name = 'path_alias_whitelist';
   $strongarm->value = array(
     'node' => TRUE,
+    'user' => TRUE,
   );
   $export['path_alias_whitelist'] = $strongarm;
 
@@ -688,7 +703,7 @@ user/*/*';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_pattern';
-  $strongarm->value = 'content/[node:title]';
+  $strongarm->value = '[node:menu-link:parents:join-path]/[node:title]';
   $export['pathauto_node_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1045,7 +1060,7 @@ user/*/*';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'site_default_country';
-  $strongarm->value = '';
+  $strongarm->value = 'FI';
   $export['site_default_country'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1361,7 +1376,7 @@ Your account on [site:name] has been canceled.
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'user_register';
-  $strongarm->value = 2;
+  $strongarm->value = 0;
   $export['user_register'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1422,6 +1437,9 @@ Your account on [site:name] has been canceled.
   $strongarm->value = array(
     0 => 'site_name',
     1 => 'site_slogan',
+    2 => 'anonymous',
+    3 => 'maintenance_mode_message',
+    4 => 'theme_settings',
   );
   $export['variable_realm_list_language'] = $strongarm;
 
@@ -1429,7 +1447,7 @@ Your account on [site:name] has been canceled.
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'webform_node_webform';
-  $strongarm->value = TRUE;
+  $strongarm->value = 1;
   $export['webform_node_webform'] = $strongarm;
 
   return $export;

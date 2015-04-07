@@ -15,7 +15,7 @@ $realm_variables = array();
 );
   $realm_variables['language']['fi'] = array(
   'site_name' => 'Roihu 2016',
-  'site_slogan' => '',
+  'site_slogan' => 'Yhteinen partioelämys',
 );
   $realm_variables['language']['sv'] = array(
   'site_name' => 'Roihu 2016',
