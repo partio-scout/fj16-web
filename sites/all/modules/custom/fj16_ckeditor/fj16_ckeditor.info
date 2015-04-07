@@ -1,9 +1,0 @@
-name = FJ16 CKEditor
-description = CKEditor for full HTML fields
-core = 7.x
-package = FJ16
-dependencies[] = ckeditor
-features[ckeditor_profile][] = CKEditor Global Profile
-features[ckeditor_profile][] = Full
-features[features_api][] = api:2
-features_exclude[dependencies][ckeditor] = ckeditor

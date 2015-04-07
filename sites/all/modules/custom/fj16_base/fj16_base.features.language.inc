@@ -33,7 +33,7 @@ function fj16_base_locale_default_languages() {
     'plurals' => 2,
     'formula' => '($n!=1)',
     'domain' => '',
-    'prefix' => '',
+    'prefix' => 'fi',
     'weight' => 0,
   );
   // Exported language: sv.
