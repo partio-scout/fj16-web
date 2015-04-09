@@ -58,26 +58,27 @@
 
 	#navigation {
 		background: #000;
-		height: 80px;
+		min-height: 80px;
 
 		position: absolute;
 		bottom: 0;
 		left: 0;
 		width: 100%;
+		overflow: visible;
 
 		@include respond(1023px) {
 			display: none;
 		}
-
 
 		&.fixed {
 			position: fixed;
 			top: 0;
 			left: 0;
 			height: 50px;
+			min-height: 50px;
 			z-index: 50;
 
-			ul li {
+			ul li a {
 				height: 50px;
 				line-height: 50px;
 			}
@@ -89,22 +90,65 @@
 
 		ul {
 			@extend .container;
-
+			overflow: visible; // override .container
 			padding: 0;
 
 			li {
 				display: inline-block;
+				padding: 0;
+				margin: 0;
+				position: relative;
+			}
+
+			a {
+				display: inline-block;
 				padding: 0 30px;
+				margin: 0 -4px 0 0; // negative right margin to hide the gap between inline-block items
 				height: 80px;
 				line-height: 80px;
+				color: #fff;
+				@include transition(background-color 0.3s ease-out);
+			}
 
-				&.active {
-					background: $blue;
+			a.active, a.active-trail, li:hover a {
+				background: $blue;
+			}
+
+			ul {
+				visibility: hidden;
+				opacity: 0.0; // hide 2nd level by default
+				@include transition(opacity 0.3s ease-out);
+
+				position: absolute;
+				top: 100%;
+				left: 0;
+				background: $blue;
+				width: 300px;
+				padding-top: 10px;
+				z-index: 1;
+				margin-top: -4px;
+
+				li {
+					display: inline;
 				}
 
 				a {
-					color: #fff;
+					text-transform: none;
+					display: block;
+					height: 50px;
+					line-height: 50px;
+					margin: -10px 0 0;
 				}
+
+				a:hover {
+					text-decoration: underline;
+				}
+			}
+
+			// Show dropdown on hover
+			li:hover ul, ul:hover {
+				visibility: visible;
+				opacity: 1.0;
 			}
 		}
 	}
@@ -122,7 +166,6 @@
 		@include respond(1023px) {
 			background: #000;
 		}
-
 
 		ul {
 			@extend .container;

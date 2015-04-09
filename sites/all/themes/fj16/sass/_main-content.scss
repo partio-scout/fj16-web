@@ -1,0 +1,125 @@
+#main {
+  @extend .container;
+
+  .breadcrumb {
+    a {
+      color: $blue;
+      text-decoration: underline;
+    }
+  }
+
+  &.two-col {
+    background: 26% 0 repeat-y url(../img/backgrounds/two-col.pngx);
+    background: 26% 0 repeat-y inline-image("../img/backgrounds/two-col.png");
+  }
+}
+
+#sidebar-left {
+  width: 26%;
+  float: left;
+}
+
+#sidebar-left .block-menu-block {
+  font-family: $exo;
+  margin-right: 7px;
+  margin-left: -20px;
+
+  h2 {
+    font-size: 100%;
+    margin: 40px 0 30px 18%;
+  }
+
+  ul, li {
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  a {
+    display: block;
+    padding: 7px 0;
+  }
+
+  a:link, a:visited {
+    color: $black;
+  }
+
+  a:hover, a:active, a.active {
+    color: $white;
+    background: $blue;
+  }
+
+  a {
+    padding-left: 18%;
+  }
+
+  a:before { //2nd level links' arrow
+    content: '\25b6';
+    position: absolute;
+    margin-left: -28px;
+  }
+
+  li li a:before {
+    display: none;
+  }
+
+  li li a {
+    padding-left: 23%;
+  }
+
+  li li li a {
+    padding-left: 32%;
+  }
+}
+
+#content {
+  padding: 100px 200px;
+
+  @include respond(medium) {
+    padding: 75px 100px;
+  }
+
+  @include respond(mobile) {
+    padding: 30px 0;
+  }
+
+  h1.title {
+    color: $blue;
+    font-size: 4.236em;
+    text-transform: uppercase;
+    font-family: $exo2;
+    margin-bottom: 0.3em;
+
+    @include respond(mobile) {
+      font-size: 2.236em;
+    }
+  }
+
+  .field-name-field-ingres {
+    margin-bottom: 1.3em;
+    font-family: $exo2;
+    color: $blue;
+    text-transform: uppercase;
+  }
+}
+
+.two-col #content {
+  width: 73.9%;
+  float: right;
+}
+
+@include respond(1023px) {
+  #main.two-col {
+    background: none;
+    
+    #sidebar-left, #content {
+      float: none;
+      width: 100%;
+    }
+
+    .block-menu-block {
+      display: none; //Use mobile nav instead
+    }
+  }
+}

@@ -116,7 +116,7 @@
 
       <?php if ($main_menu): ?>
         <div id="navigation">
-          <?php print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('id' => 'main-menu'))); ?>
+          <?php print render($page['main_menu']); ?>
         </div>
       <?php endif; ?>
 
@@ -128,7 +128,7 @@
 
     <?php print $messages; ?>
 
-    <div id="main" class="clearfix">
+    <div id="main" class="clearfix<?php print (count($page['sidebar_left']) === 0) ? ' one-col' : ' two-col'; ?>">
 
       <div id="content" class="column">
         <a id="main-content"></a>
@@ -141,6 +141,12 @@
         <?php print render($page['content']); ?>
         <?php print $feed_icons; ?>
       </div>
+
+      <?php if(count($page['sidebar_left']) > 0): ?>
+        <div id="sidebar-left">
+          <?php print render($page['sidebar_left']); ?>
+        </div>
+      <?php endif; ?>
 
     </div>
 
@@ -159,6 +165,6 @@
   </div>
 
   <div id="mobile-menu">
-    <?php print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('id' => 'main-menu'))); ?>
+    <?php print render($page['mobile_menu']); /* custom menu block */ ?>
     <?php print theme('links__system_main_menu', array('links' => menu_navigation_links('menu-social-media-links'))); ?>
   </div>

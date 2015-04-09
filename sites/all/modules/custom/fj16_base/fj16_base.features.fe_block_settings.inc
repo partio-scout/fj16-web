@@ -82,5 +82,71 @@ function fj16_base_default_fe_block_settings() {
     'visibility' => 0,
   );
 
+  $export['menu_block-1'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 1,
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'module' => 'menu_block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'fj16' => array(
+        'region' => 'main_menu',
+        'status' => 1,
+        'theme' => 'fj16',
+        'weight' => -12,
+      ),
+    ),
+    'title' => '<none>',
+    'visibility' => 0,
+  );
+
+  $export['menu_block-2'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 2,
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'module' => 'menu_block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'fj16' => array(
+        'region' => 'sidebar_left',
+        'status' => 1,
+        'theme' => 'fj16',
+        'weight' => -12,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['menu_block-3'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 3,
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'module' => 'menu_block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'fj16' => array(
+        'region' => 'mobile_menu',
+        'status' => 1,
+        'theme' => 'fj16',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '<none>',
+    'visibility' => 0,
+  );
+
   return $export;
 }
