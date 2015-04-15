@@ -418,13 +418,13 @@ user/*/*';
     'name' => 'Finnish',
     'native' => 'Suomi',
     'direction' => '0',
-    'enabled' => 1,
+    'enabled' => '1',
     'plurals' => '2',
     'formula' => '($n!=1)',
     'domain' => '',
     'prefix' => '',
     'weight' => '0',
-    'javascript' => 'o6OWPnpSH6FMVFt1jHTTVN-3itgkyz9XdSgkWCx3zA8',
+    'javascript' => 'Va4pUksJdlZNDyQadTnFNRMJjCHJNQtUWcQ_DMiOqz8',
   );
   $export['language_default'] = $strongarm;
 

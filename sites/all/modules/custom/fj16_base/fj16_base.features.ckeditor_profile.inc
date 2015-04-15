@@ -38,7 +38,9 @@ function fj16_base_ckeditor_profile_defaults() {
     [\'JustifyLeft\',\'JustifyCenter\',\'JustifyRight\'],
     [\'Copy\',\'Cut\',\'Paste\',\'PasteFromWord\',\'RemoveFormat\'],
     [\'Link\',\'Unlink\',\'Anchor\'],
-    [\'Table\',\'MediaEmbed\']
+    [\'Table\',\'MediaEmbed\'],
+    \'/\',
+    [\'Image\',\'IMCE\']
 ]',
         'expand' => 't',
         'default' => 't',
@@ -69,9 +71,9 @@ function fj16_base_ckeditor_profile_defaults() {
         'css_path' => '',
         'css_style' => 'theme',
         'styles_path' => '',
-        'filebrowser' => 'none',
-        'filebrowser_image' => '',
-        'filebrowser_flash' => '',
+        'filebrowser' => 'imce',
+        'filebrowser_image' => 'imce',
+        'filebrowser_flash' => 'imce',
         'UserFilesPath' => '%b%f/',
         'UserFilesAbsolutePath' => '%d%b%f/',
         'forcePasteAsPlainText' => 'f',
