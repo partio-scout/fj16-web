@@ -36,17 +36,17 @@ function fj16_base_ckeditor_profile_defaults() {
     [\'NumberedList\',\'BulletedList\'],
     [\'Outdent\',\'Indent\'],
     [\'JustifyLeft\',\'JustifyCenter\',\'JustifyRight\'],
+    [\'Table\'],
+    \'/\',
     [\'Copy\',\'Cut\',\'Paste\',\'PasteFromWord\',\'RemoveFormat\'],
     [\'Link\',\'Unlink\',\'Anchor\'],
-    [\'Table\',\'MediaEmbed\'],
-    \'/\',
-    [\'Image\',\'IMCE\']
+    [\'MediaEmbed\',\'Image\']
 ]',
         'expand' => 't',
         'default' => 't',
         'show_toggle' => 't',
-        'uicolor' => 'default',
-        'uicolor_user' => 'default',
+        'uicolor' => 'custom',
+        'uicolor_user' => '#D3D3D3',
         'width' => '100%',
         'lang' => 'en',
         'auto_lang' => 't',
@@ -93,6 +93,18 @@ function fj16_base_ckeditor_profile_defaults() {
               ),
             ),
             'default' => 't',
+          ),
+          'mediaembed' => array(
+            'name' => 'mediaembed',
+            'desc' => 'Plugin for inserting Drupal embeded media',
+            'path' => '%plugin_dir%mediaembed/',
+            'buttons' => array(
+              'MediaEmbed' => array(
+                'label' => 'MediaEmbed',
+                'icon' => 'images/icon.png',
+              ),
+            ),
+            'default' => 'f',
           ),
           'tableresize' => array(
             'name' => 'tableresize',
