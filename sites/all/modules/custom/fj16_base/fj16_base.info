@@ -59,6 +59,7 @@ scripts[] = fj16_base.js
 features[ckeditor_profile][] = CKEditor Global Profile
 features[ckeditor_profile][] = Full
 features[ctools][] = strongarm:strongarm:1
+features[fe_block_settings][] = block-fj16_footer_content
 features[fe_block_settings][] = language_switcher_fallback-language-switcher-fallback
 features[fe_block_settings][] = menu-menu-social-media-links
 features[fe_block_settings][] = menu_block-1
