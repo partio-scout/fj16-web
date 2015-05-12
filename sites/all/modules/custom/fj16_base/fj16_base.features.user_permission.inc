@@ -484,6 +484,15 @@ function fj16_base_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'edit media'.
+  $permissions['edit media'] = array(
+    'name' => 'edit media',
+    'roles' => array(
+      'content editor' => 'content editor',
+    ),
+    'module' => 'media',
+  );
+
   // Exported permission: 'edit own webform content'.
   $permissions['edit own webform content'] = array(
     'name' => 'edit own webform content',
@@ -519,6 +528,15 @@ function fj16_base_user_default_permissions() {
     'name' => 'generate features',
     'roles' => array(),
     'module' => 'features',
+  );
+
+  // Exported permission: 'import media'.
+  $permissions['import media'] = array(
+    'name' => 'import media',
+    'roles' => array(
+      'content editor' => 'content editor',
+    ),
+    'module' => 'media',
   );
 
   // Exported permission: 'manage features'.
@@ -631,6 +649,17 @@ function fj16_base_user_default_permissions() {
       'content editor' => 'content editor',
     ),
     'module' => 'block_access',
+  );
+
+  // Exported permission: 'view media'.
+  $permissions['view media'] = array(
+    'name' => 'view media',
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+      'content editor' => 'content editor',
+    ),
+    'module' => 'media',
   );
 
   // Exported permission: 'view own unpublished content'.
