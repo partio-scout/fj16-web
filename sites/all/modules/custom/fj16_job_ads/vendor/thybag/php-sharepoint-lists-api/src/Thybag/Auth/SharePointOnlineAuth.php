@@ -21,7 +21,7 @@ class SharePointOnlineAuth extends \SoapClient {
 
 		// Set base headers
 		$headers = array();
-		$headers[] = "Content-Type: text/xml;";
+		$headers[] = "Content-Type: text/xml; charset=utf-8";
 
 		$curl = curl_init($location);
 
@@ -32,9 +32,7 @@ class SharePointOnlineAuth extends \SoapClient {
 		curl_setopt($curl, CURLOPT_POSTFIELDS, $request);
 		curl_setopt($curl, CURLOPT_COOKIE, $this->authCookies);
 
- 		// Connection requires CURLOPT_SSLVERSION set to 3
 		curl_setopt($curl, CURLOPT_TIMEOUT, 10);
-		curl_setopt($curl, CURLOPT_SSLVERSION, 3);
 		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE);
 
 		// Useful for debugging
@@ -166,7 +164,6 @@ class SharePointOnlineAuth extends \SoapClient {
 		curl_setopt($ch,CURLOPT_POSTFIELDS,  $payload);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-	  	curl_setopt($ch, CURLOPT_SSLVERSION, 3);
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 		curl_setopt($ch, CURLOPT_TIMEOUT, 10);
 
