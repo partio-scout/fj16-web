@@ -6,7 +6,7 @@ use Thybag\SharePointAPI;
 require 'vendor/autoload.php';
 
 define('FJ16_SHAREPOINT_CONFIG_FILE', '../sharepoint-integration.conf.php');
-define('FJ16_JOBS_CURRENT_ROUND', '3. Tammikuu 2015');
+define('FJ16_JOBS_CURRENT_ROUND', '4. Toukokuu 2015');
 define('FJ16_JOBS_CONTINUOUS_ROUND', '- Erillishaku');
 define('FJ16_JOBS_PUBLIC_YES', 'Kyllä');
 define('FJ16_JOBS_STATUS_PUBLIC', '4. Julkaistu');
