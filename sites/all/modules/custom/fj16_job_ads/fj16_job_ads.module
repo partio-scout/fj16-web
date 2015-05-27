@@ -421,13 +421,8 @@ function fj16_job_application_form($form, &$form_state, $job_node) {
   );
 
   $form['kogi_119'] = array(
-    '#type' => 'radios',
-    '#title' => 'Haluatko osallistua KoGi 119 -kurssille?',
-    '#required' => TRUE,
-    '#options' => array(
-      '1' => 'Kyllä',
-      '0' => 'Ei'
-    )
+    '#type' => 'value',
+    '#value' => '0'
   );
 
   // KoGi enrollment
