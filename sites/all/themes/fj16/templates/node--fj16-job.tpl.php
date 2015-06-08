@@ -87,9 +87,9 @@ $department_class = $field_department[0]['value'];
   <div class="info">
     <?php if($page): ?>
       <div class="breadcrumb">
-        <?php print l('Etusivu', '<front>'); ?>
+        <?php print l(t('Front page'), '<front>'); ?>
         &gt;
-        <?php print l('Avoimet pestit', 'pestit'); ?>
+        <?php print l(t('Volunteer positions'), 'pestit'); ?>
         &gt;
         <?php print $title; ?>
       </div>
