@@ -17,6 +17,14 @@ function fj16_base_translations_defaults() {
     'plid' => 0,
     'plural' => 0,
   );
+  $translations['fi:blocks']['0da8c48f074943792e5dc29274bc2ae4'] = array(
+    'source' => 'Filter positions',
+    'context' => 'views:-exp-fj16_jobs-page:title',
+    'location' => 'blocks:views:-exp-fj16_jobs-page:title',
+    'translation' => 'Rajaa pestejä',
+    'plid' => 0,
+    'plural' => 0,
+  );
   $translations['fi:blocks']['accf35f1126d86c1dbfceaaa570a5e38'] = array(
     'source' => '<div class="footer_section">
 <h5>Roihu 2016</h5>
@@ -180,6 +188,14 @@ function fj16_base_translations_defaults() {
     'context' => 'block:1:title',
     'location' => 'blocks:block:1:title',
     'translation' => 'Footer',
+    'plid' => 0,
+    'plural' => 0,
+  );
+  $translations['sv:blocks']['0da8c48f074943792e5dc29274bc2ae4'] = array(
+    'source' => 'Filter positions',
+    'context' => 'views:-exp-fj16_jobs-page:title',
+    'location' => 'blocks:views:-exp-fj16_jobs-page:title',
+    'translation' => 'Filtrera poster',
     'plid' => 0,
     'plural' => 0,
   );
