@@ -39,7 +39,7 @@ function fj16_job_ads_default_fe_block_settings() {
     'custom' => 0,
     'delta' => '-exp-fj16_jobs-page',
     'i18n_block_language' => array(),
-    'i18n_mode' => 0,
+    'i18n_mode' => 1,
     'module' => 'views',
     'node_types' => array(),
     'pages' => 'pestit',
@@ -52,7 +52,7 @@ function fj16_job_ads_default_fe_block_settings() {
         'weight' => -10,
       ),
     ),
-    'title' => 'Rajaa pestejä',
+    'title' => 'Filter positions',
     'visibility' => 1,
   );
 

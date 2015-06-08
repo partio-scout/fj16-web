@@ -22,7 +22,7 @@ function fj16_job_ads_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Avoimet pestit';
+  $handler->display->display_options['title'] = 'Volunteer positions';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'lisää';
@@ -30,9 +30,9 @@ function fj16_job_ads_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
-  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Rajaa pestejä';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Filter positions';
   $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
-  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Näytä kaikki';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Show all';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Lajittele';
   $handler->display->display_options['exposed_form']['options']['expose_sort_order'] = FALSE;
   $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
@@ -126,7 +126,7 @@ function fj16_job_ads_views_default_views() {
   $handler->display->display_options['filters']['field_level_value']['group'] = 1;
   $handler->display->display_options['filters']['field_level_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_level_value']['expose']['operator_id'] = 'field_level_value_op';
-  $handler->display->display_options['filters']['field_level_value']['expose']['label'] = 'Pestin taso';
+  $handler->display->display_options['filters']['field_level_value']['expose']['label'] = 'Position type';
   $handler->display->display_options['filters']['field_level_value']['expose']['operator'] = 'field_level_value_op';
   $handler->display->display_options['filters']['field_level_value']['expose']['identifier'] = 'field_level_value';
   $handler->display->display_options['filters']['field_level_value']['expose']['multiple'] = TRUE;
@@ -142,7 +142,7 @@ function fj16_job_ads_views_default_views() {
   $handler->display->display_options['filters']['field_department_value']['group'] = 1;
   $handler->display->display_options['filters']['field_department_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_department_value']['expose']['operator_id'] = 'field_department_value_op';
-  $handler->display->display_options['filters']['field_department_value']['expose']['label'] = 'Osa-alue';
+  $handler->display->display_options['filters']['field_department_value']['expose']['label'] = 'Department';
   $handler->display->display_options['filters']['field_department_value']['expose']['operator'] = 'field_department_value_op';
   $handler->display->display_options['filters']['field_department_value']['expose']['identifier'] = 'field_department_value';
   $handler->display->display_options['filters']['field_department_value']['expose']['multiple'] = TRUE;
@@ -164,21 +164,24 @@ function fj16_job_ads_views_default_views() {
   $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['path'] = 'pestit';
   $handler->display->display_options['menu']['type'] = 'normal';
-  $handler->display->display_options['menu']['title'] = 'Avoimet pestit';
+  $handler->display->display_options['menu']['title'] = 'Volunteer positions';
+  $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $translatables['fj16_jobs'] = array(
     t('Master'),
-    t('Avoimet pestit'),
+    t('Volunteer positions'),
     t('lisää'),
-    t('Rajaa pestejä'),
-    t('Näytä kaikki'),
+    t('Filter positions'),
+    t('Show all'),
     t('Lajittele'),
     t('Asc'),
     t('Desc'),
     t('Select any filter and click on Apply to see results'),
     t('<p>Ei yhtään näytettävää pestiä.</p>'),
-    t('Pestin taso'),
-    t('Osa-alue'),
+    t('Position type'),
+    t('Department'),
     t('Page'),
     t('more'),
   );
