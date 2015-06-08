@@ -36,15 +36,19 @@ function fj16_job_ads_import_jobs() {
     return;
   }
 
-  $jobs_to_remove = fj16_get_job_nids();
+  $jobs_to_remove = fj16_get_job_nids_for_all_langs();
+  $accepted_languages = array('fi', 'sv', 'en');
 
   // Create or update new jobs
   foreach ($jobs as $job) {
     if(fj16_job_should_be_displayed($job)) {
-      fj16_job_ads_create_or_update($job);
-
-      $guid = fj16_sharepoint_lookup_value($job['uniqueid']);
-      unset($jobs_to_remove[$guid]);
+      
+      foreach ($accepted_languages as $lang) {
+        $nid = fj16_job_ads_create_or_update($job, $lang);
+        if($nid) {
+          unset($jobs_to_remove[$nid]);
+        }
+      }
     }
   }
 
@@ -87,28 +91,46 @@ function fj16_job_should_be_displayed($job) {
 }
 
 
-function fj16_job_ads_create_or_update($job) {
+function fj16_job_ads_create_or_update($job, $lang) {
   $node;
   $guid = fj16_sharepoint_lookup_value($job['uniqueid']);
 
-  if(fj16_job_exists($guid)) {
-    $node = fj16_get_job_by_guid($guid);
+  $title_field = _fj16_get_title_field($lang);
+
+  //If the title field for this language does not exist, return immediately without creating anything
+  if(strlen($job[$title_field]) === 0) {
+    return;
+  }
+
+  if(fj16_job_exists($guid, $lang)) {
+    $node = fj16_get_job_by_guid($guid, $lang);
+    $node->title = $job[$title_field];
   } else {
-    $node = fj16_job_ads_new_node($job['title']);
+    $node = fj16_job_ads_new_node($job[$title_field], $lang);
   }
   
-  fj16_job_update_node_fields($node, $job);
+  fj16_job_update_node_fields($node, $job, $lang);
   $node = node_submit($node);
   node_save($node);
+
+  return $node->nid;
 }
 
+function _fj16_get_title_field($lang) {
+  $field_names = array(
+    'fi' => 'title',
+    'sv' => 'pestin_x0020_nimi_x0020_ruotsiks',
+    'en' => 'pestin_x0020_nimi_x0020_englanni'
+  );
+  return $field_names[$lang];
+}
 
-function fj16_job_ads_new_node($title) {
+function fj16_job_ads_new_node($title, $lang = 'fi') {
   $node = new stdClass();
   $node->title = $title;
   $node->type = 'fj16_job';
   node_object_prepare($node);
-  $node->language = LANGUAGE_NONE;
+  $node->language = $lang;
   $node->uid = 1;
   $node->status = 1;
   $node->promote = 0;
@@ -117,8 +139,8 @@ function fj16_job_ads_new_node($title) {
 }
 
 
-function fj16_job_update_node_fields(&$node, $job) {
-  $mappings = fj16_job_ads_get_field_mappings();
+function fj16_job_update_node_fields(&$node, $job, $lang) {
+  $mappings = fj16_job_ads_get_field_mappings($lang);
 
   foreach ($mappings as $sharepoint_field => $drupal_field) {
     if(!isset($job[$sharepoint_field])) {
@@ -151,13 +173,11 @@ function fj16_job_update_node_fields(&$node, $job) {
 // Mapping SharePoint values to Drupal
 
 
-function fj16_job_ads_get_field_mappings() {
+function fj16_job_ads_get_field_mappings($lang) {
   //Title needs to be mapped separately, as it's not a Fields field
-  return array(
+  $mappings = array(
     'pestin_x0020_taso_x0020__x0028_j'  => 'field_level',
     'pestin_x0020_koko_x0020__x0028_j'  => 'field_jm_work',
-    'ulkoinen_x0020_kuvaus_x0020_nett'  => 'body',
-    'vaatimukset'                       => 'field_requirements',
     'lis_x00e4_tietoja_x0020_antaa_x0'  => 'field_info_contact',
 
     // Job machine (jm, "pestikone") fields
@@ -172,6 +192,19 @@ function fj16_job_ads_get_field_mappings() {
     'id' => 'field_sharepoint_line_id',
     'uniqueid' => 'field_sharepoint_guid'
   );
+
+  if($lang == 'fi') {
+    $mappings['ulkoinen_x0020_kuvaus_x0020_nett'] = 'body';
+    $mappings['vaatimukset'] = 'field_requirements';
+  } else if($lang == 'sv') {
+    $mappings['ulkoinen_x0020_kuvaus_x0020_ruot'] = 'body';
+    $mappings['vaatimukset_x0020_ruotsiksi_x002'] = 'field_requirements';
+  } else if($lang == 'en') {
+    $mappings['ulkoinen_x0020_kuvaus_x0020_engl'] = 'body';
+    $mappings['julkinen_x0020_kuvaus_x0020_engl'] = 'field_requirements'; //this field is named inconsistently due to historical reasons, julkinen_x0020_kuvaus_x0020_engl is correct.
+  }
+
+  return $mappings;
 }
 
 
@@ -195,37 +228,47 @@ function fj16_sharepoint_lookup_value($raw) {
 // Job lookup
 
 
-function fj16_job_exists($guid) {
+function fj16_job_exists($guid, $lang) {
   $nids = fj16_get_job_nids();
-  return isset($nids[$guid]);
+  return isset($nids[$guid][$lang]);
 }
 
 
-function fj16_get_job_by_guid($guid) {
+function fj16_get_job_by_guid($guid, $lang) {
   $job_nids_by_guid = fj16_get_job_nids();
-  return node_load($job_nids_by_guid[$guid]);
-}
-
-
-function fj16_get_jobs() {
-  return node_load_multiple(fj16_get_job_nids());
+  return node_load($job_nids_by_guid[$guid][$lang]);
 }
 
 
 function fj16_get_job_nids() {
-  $result = db_select('field_data_field_sharepoint_guid', 'data')
-    ->fields('data', array('entity_id', 'field_sharepoint_guid_value'))
-    ->condition('bundle', 'fj16_job')
-    ->condition('deleted', 0)
-    ->execute();
+  $query = db_select('field_data_field_sharepoint_guid', 'f');
+  $query->join('node', 'n', 'n.nid = f.entity_id');
+  $query
+    ->fields('f', array('entity_id', 'field_sharepoint_guid_value'))
+    ->fields('n', array('language'))
+    ->condition('f.bundle', 'fj16_job')
+    ->condition('f.deleted', 0);
+  $result = $query->execute();
 
   $job_nids_by_guid = array();
   foreach ($result as $row) {
     $nid  = $row->entity_id;
     $guid = $row->field_sharepoint_guid_value;
-    $job_nids_by_guid[$guid] = $nid;
+    $lang = $row->language;
+    $job_nids_by_guid[$guid][$lang] = $nid;
   }
   return $job_nids_by_guid;
+}
+
+function fj16_get_job_nids_for_all_langs() {
+  $nids_by_lang = fj16_get_job_nids();
+  $flat_nids = array();
+  foreach ($nids_by_lang as $langs) {
+    foreach($langs as $nid) {
+      $flat_nids[$nid] = $nid;
+    }
+  }
+  return $flat_nids;
 }
 
 
