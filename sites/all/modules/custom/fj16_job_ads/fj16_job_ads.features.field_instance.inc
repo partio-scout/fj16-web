@@ -36,7 +36,7 @@ function fj16_job_ads_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'body',
-    'label' => 'Kuvaus',
+    'label' => 'Description',
     'required' => 0,
     'settings' => array(
       'display_summary' => 1,
@@ -64,22 +64,22 @@ function fj16_job_ads_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
+        'module' => 'i18n_field',
         'settings' => array(),
-        'type' => 'list_default',
+        'type' => 'i18n_list_default',
         'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
-        'module' => 'list',
+        'module' => 'i18n_field',
         'settings' => array(),
-        'type' => 'list_default',
+        'type' => 'i18n_list_default',
         'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_department',
-    'label' => 'Osa-alue',
+    'label' => 'Department',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -116,7 +116,7 @@ function fj16_job_ads_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_info_contact',
-    'label' => 'Lisätiedot',
+    'label' => 'Further information',
     'required' => 0,
     'settings' => array(
       'text_processing' => 0,
@@ -502,22 +502,22 @@ function fj16_job_ads_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
+        'module' => 'i18n_field',
         'settings' => array(),
-        'type' => 'list_default',
+        'type' => 'i18n_list_default',
         'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
-        'module' => 'list',
+        'module' => 'i18n_field',
         'settings' => array(),
-        'type' => 'list_default',
+        'type' => 'i18n_list_default',
         'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_level',
-    'label' => 'Pestin taso',
+    'label' => 'Position type',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -554,7 +554,7 @@ function fj16_job_ads_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_requirements',
-    'label' => 'Vaatimukset',
+    'label' => 'Requirements',
     'required' => 0,
     'settings' => array(
       'text_processing' => 1,
@@ -692,21 +692,21 @@ function fj16_job_ads_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Analyyttinen-Luova');
+  t('Department');
+  t('Description');
+  t('Further information');
   t('Johtaminen-Tekeminen');
   t('Kivoja tehtäviä-Tärkeitä tehtäviä');
-  t('Kuvaus');
-  t('Lisätiedot');
   t('Nuorten kasvatus-Partion markkinointi');
-  t('Osa-alue');
   t('Perinteisiä suurleiritaitoja-Jotain aivan muuta');
-  t('Pestin taso');
+  t('Position type');
+  t('Requirements');
   t('SharePoint GUID');
   t('SharePoint line ID');
   t('Suunnittelu-Tekeminen');
   t('Suuret linjat-Yksityiskohdat');
   t('Tiimi');
   t('Työläys');
-  t('Vaatimukset');
   t('Yksilötyö-Ryhmätyö');
 
   return $field_instances;

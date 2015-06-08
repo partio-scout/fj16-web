@@ -119,7 +119,7 @@ function fj16_job_ads_views_default_views() {
     'fj16_job' => 'fj16_job',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Pestin taso (field_level) */
+  /* Filter criterion: Content: Position type (field_level) */
   $handler->display->display_options['filters']['field_level_value']['id'] = 'field_level_value';
   $handler->display->display_options['filters']['field_level_value']['table'] = 'field_data_field_level';
   $handler->display->display_options['filters']['field_level_value']['field'] = 'field_level_value';
@@ -135,7 +135,7 @@ function fj16_job_ads_views_default_views() {
     1 => 0,
     3 => 0,
   );
-  /* Filter criterion: Content: Osa-alue (field_department) */
+  /* Filter criterion: Content: Department (field_department) */
   $handler->display->display_options['filters']['field_department_value']['id'] = 'field_department_value';
   $handler->display->display_options['filters']['field_department_value']['table'] = 'field_data_field_department';
   $handler->display->display_options['filters']['field_department_value']['field'] = 'field_department_value';
