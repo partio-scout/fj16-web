@@ -31,7 +31,7 @@ function fj16_job_ads_import_jobs() {
   //$config = fj16_job_ads_get_config();
   //$jobs = fj16_job_ads_read_sharepoint_list($config['job_list_guid']);
   $jobs = fj16_get_jobs_from_adapter();
-  if($jobs === FALSE) {
+  if($jobs === FALSE || count($jobs) === 0) {
     watchdog('fj16_job_ads', 'SharePoint import failed', array(), WATCHDOG_ERROR);
     return;
   }
