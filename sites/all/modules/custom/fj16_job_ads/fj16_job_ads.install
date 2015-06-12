@@ -14,6 +14,10 @@ function fj16_job_ads_update_7004() {
   ));
 }
 
+function fj16_job_ads_update_7005() {
+  module_enable(array('honeypot'));
+}
+
 function fj16_job_ads_update_7006() {
   if(db_field_exists('fj16_job_applications', 'application_id')) {
     return;
@@ -25,10 +29,6 @@ function fj16_job_ads_update_7006() {
   ), array(
     'primary key' => array('application_id')
   ));
-}
-
-function fj16_job_ads_update_7005() {
-  module_enable(array('honeypot'));
 }
 
 function fj16_job_ads_schema() {
