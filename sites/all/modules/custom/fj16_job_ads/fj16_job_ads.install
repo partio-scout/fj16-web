@@ -31,6 +31,14 @@ function fj16_job_ads_update_7006() {
   ));
 }
 
+function fj16_job_ads_update_7007() {
+  $query = db_query('SELECT nid FROM {node} WHERE node.type = "fj16_job";');
+  foreach($query as $row) {
+    node_delete($row->nid);
+  }
+  drupal_cron_run();
+}
+
 function fj16_job_ads_schema() {
   $schema = array();
 
