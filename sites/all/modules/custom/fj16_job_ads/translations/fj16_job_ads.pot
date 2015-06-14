@@ -14,7 +14,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2015-06-14 19:25+0000\n"
+"POT-Creation-Date: 2015-06-14 20:49+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -217,6 +217,50 @@ msgstr ""
 
 #: fj16_job_ads.module:520
 msgid "Your application was not saved due to a technical problem. Please try again later."
+msgstr ""
+
+#: fj16_job_ads.module:578
+msgid "Director"
+msgstr ""
+
+#: fj16_job_ads.module:579
+msgid "Manager"
+msgstr ""
+
+#: fj16_job_ads.module:580
+msgid "Team leader"
+msgstr ""
+
+#: fj16_job_ads.module:581
+msgid "Subteam leader"
+msgstr ""
+
+#: fj16_job_ads.module:582
+msgid "IST"
+msgstr ""
+
+#: fj16_job_ads.module:583
+msgid "Other"
+msgstr ""
+
+#: fj16_job_ads.module:586
+msgid "Experience"
+msgstr ""
+
+#: fj16_job_ads.module:587
+msgid "Education"
+msgstr ""
+
+#: fj16_job_ads.module:588
+msgid "Service"
+msgstr ""
+
+#: fj16_job_ads.module:589
+msgid "Resource"
+msgstr ""
+
+#: fj16_job_ads.module:590
+msgid "Co-operation"
 msgstr ""
 
 #: fj16_job_ads.module:28;35;60;283;297;302;306;521

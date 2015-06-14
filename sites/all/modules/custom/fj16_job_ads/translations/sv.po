@@ -13,16 +13,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2015-06-14 22:36+0200\n"
-"PO-Revision-Date: 2015-06-14 22:44+0200\n"
+"POT-Creation-Date: 2015-06-14 23:51+0200\n"
+"PO-Revision-Date: 2015-06-14 23:53+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: EMAIL@ADDRESS\n"
+"Language: sv_FI\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.8.1\n"
-"Language: sv_FI\n"
 
 #: fj16_job_ads.features.field_instance.inc:694
 msgid "Analytical-Creative"
@@ -233,6 +233,50 @@ msgid ""
 msgstr ""
 "Din anmälan registrerades inte på grund av tekniska problem. Var vänlig och "
 "sök på nytt senare."
+
+#: fj16_job_ads.module:578
+msgid "Director"
+msgstr "Direktör"
+
+#: fj16_job_ads.module:579
+msgid "Manager"
+msgstr "Chef"
+
+#: fj16_job_ads.module:580
+msgid "Team leader"
+msgstr "Mästare"
+
+#: fj16_job_ads.module:581
+msgid "Subteam leader"
+msgstr "Bas"
+
+#: fj16_job_ads.module:582
+msgid "IST"
+msgstr "Donade"
+
+#: fj16_job_ads.module:583
+msgid "Other"
+msgstr "Annan"
+
+#: fj16_job_ads.module:586
+msgid "Experience"
+msgstr "Upplevelse"
+
+#: fj16_job_ads.module:587
+msgid "Education"
+msgstr "Fostran"
+
+#: fj16_job_ads.module:588
+msgid "Service"
+msgstr "Service"
+
+#: fj16_job_ads.module:589
+msgid "Resource"
+msgstr "Resurs"
+
+#: fj16_job_ads.module:590
+msgid "Co-operation"
+msgstr "Samarbete"
 
 #: fj16_job_ads.module:28;35;60;283;297;302;306;521
 msgid "fj16_job_ads"

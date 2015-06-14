@@ -12,8 +12,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2015-06-14 22:25+0200\n"
-"PO-Revision-Date: 2015-06-14 22:34+0200\n"
+"POT-Creation-Date: 2015-06-14 23:50+0200\n"
+"PO-Revision-Date: 2015-06-14 23:51+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: EMAIL@ADDRESS\n"
 "Language: fi_FI\n"
@@ -233,6 +233,50 @@ msgid ""
 msgstr ""
 "Ilmoittautumisesti ei tallentunut teknisen ongelman vuoksi. Ole hyvä ja "
 "yritä myöhemmin uudelleen."
+
+#: fj16_job_ads.module:578
+msgid "Director"
+msgstr "Johtaja"
+
+#: fj16_job_ads.module:579
+msgid "Manager"
+msgstr "Päällikkö"
+
+#: fj16_job_ads.module:580
+msgid "Team leader"
+msgstr "Mestari"
+
+#: fj16_job_ads.module:581
+msgid "Subteam leader"
+msgstr "Kymppi"
+
+#: fj16_job_ads.module:582
+msgid "IST"
+msgstr "Tekijä"
+
+#: fj16_job_ads.module:583
+msgid "Other"
+msgstr "Muu"
+
+#: fj16_job_ads.module:586
+msgid "Experience"
+msgstr "Elämys"
+
+#: fj16_job_ads.module:587
+msgid "Education"
+msgstr "Kasvatus"
+
+#: fj16_job_ads.module:588
+msgid "Service"
+msgstr "Palvelu"
+
+#: fj16_job_ads.module:589
+msgid "Resource"
+msgstr "Resurssi"
+
+#: fj16_job_ads.module:590
+msgid "Co-operation"
+msgstr "Yhteistyö"
 
 #: fj16_job_ads.module:28;35;60;283;297;302;306;521
 msgid "fj16_job_ads"

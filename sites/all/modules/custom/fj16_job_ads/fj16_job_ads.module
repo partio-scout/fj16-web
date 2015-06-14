@@ -571,3 +571,20 @@ function fj16_job_ads_initialize_sharepoint_client() {
   }
   return false;
 }
+
+// Strings to for by automatic extraction of localizable strings - do not remove
+
+// Job levels
+t('Director');
+t('Manager');
+t('Team leader');
+t('Subteam leader');
+t('IST');
+t('Other');
+
+// Roihu org sections
+t('Experience');
+t('Education');
+t('Service');
+t('Resource');
+t('Co-operation');
