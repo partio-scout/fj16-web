@@ -5,3 +5,17 @@
  */
 
 include_once 'fj16_base.features.inc';
+
+function fj16_import_translation($module, $language) {
+  require_once DRUPAL_ROOT . '/includes/locale.inc';
+
+  $translation_dir = drupal_get_path('module', $module) . '/translations';
+  
+  // Construct file object for PO file
+  $file = new stdClass();
+  $file->name = $language . '.po';
+  $file->uri = $translation_dir . '/' . $file->name;
+  $file->filemime = 'application/octet-stream';
+
+  return _locale_import_po($file, $language, LOCALE_IMPORT_OVERWRITE, 'default');
+}
