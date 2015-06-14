@@ -212,7 +212,7 @@ function fj16_job_ads_field_default_field_bases() {
         'Päällikkö' => 'Manager',
         'Mestari' => 'Team leader',
         'Kymppi' => 'Subteam leader',
-        'Tekijä' => 'Worker',
+        'Tekijä' => 'IST',
         'Muu' => 'Other',
       ),
       'allowed_values_function' => '',

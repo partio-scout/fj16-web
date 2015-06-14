@@ -22,7 +22,7 @@ function fj16_job_ads_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Volunteer positions';
+  $handler->display->display_options['title'] = 'Open staff positions';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'lisää';
@@ -119,7 +119,7 @@ function fj16_job_ads_views_default_views() {
     'fj16_job' => 'fj16_job',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Position type (field_level) */
+  /* Filter criterion: Content: Position level (field_level) */
   $handler->display->display_options['filters']['field_level_value']['id'] = 'field_level_value';
   $handler->display->display_options['filters']['field_level_value']['table'] = 'field_data_field_level';
   $handler->display->display_options['filters']['field_level_value']['field'] = 'field_level_value';
@@ -135,7 +135,7 @@ function fj16_job_ads_views_default_views() {
     1 => 0,
     3 => 0,
   );
-  /* Filter criterion: Content: Department (field_department) */
+  /* Filter criterion: Content: Section (field_department) */
   $handler->display->display_options['filters']['field_department_value']['id'] = 'field_department_value';
   $handler->display->display_options['filters']['field_department_value']['table'] = 'field_data_field_department';
   $handler->display->display_options['filters']['field_department_value']['field'] = 'field_department_value';
@@ -164,14 +164,14 @@ function fj16_job_ads_views_default_views() {
   $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['path'] = 'pestit';
   $handler->display->display_options['menu']['type'] = 'normal';
-  $handler->display->display_options['menu']['title'] = 'Volunteer positions';
+  $handler->display->display_options['menu']['title'] = 'Open staff positions';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'main-menu';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
   $translatables['fj16_jobs'] = array(
     t('Master'),
-    t('Volunteer positions'),
+    t('Open staff positions'),
     t('lisää'),
     t('Filter positions'),
     t('Show all'),
