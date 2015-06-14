@@ -32,7 +32,7 @@ function fj16_job_ads_update_7006() {
 }
 
 function fj16_job_ads_update_7007() {
-  $query = db_query('SELECT nid FROM {node} WHERE node.type = "fj16_job";');
+  $query = db_query('SELECT nid FROM {node} WHERE {node}.type = :type;', array(':type' => 'fj16_job'));
   foreach($query as $row) {
     node_delete($row->nid);
   }
