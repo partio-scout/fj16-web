@@ -33,7 +33,7 @@ function fj16_job_ads_views_default_views() {
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Filter positions';
   $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Show all';
-  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Lajittele';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sort';
   $handler->display->display_options['exposed_form']['options']['expose_sort_order'] = FALSE;
   $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
   $handler->display->display_options['exposed_form']['options']['bef'] = array(
@@ -91,7 +91,7 @@ function fj16_job_ads_views_default_views() {
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area']['content'] = '<p>Ei yhtään näytettävää pestiä.</p>';
+  $handler->display->display_options['empty']['area']['content'] = '<p>No positions to show.</p>';
   $handler->display->display_options['empty']['area']['format'] = 'full_html';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -175,11 +175,11 @@ function fj16_job_ads_views_default_views() {
     t('lisää'),
     t('Filter positions'),
     t('Show all'),
-    t('Lajittele'),
+    t('Sort'),
     t('Asc'),
     t('Desc'),
     t('Select any filter and click on Apply to see results'),
-    t('<p>Ei yhtään näytettävää pestiä.</p>'),
+    t('<p>No positions to show.</p>'),
     t('Position type'),
     t('Department'),
     t('Page'),
