@@ -128,9 +128,9 @@ $department_class = $field_department[0]['value'];
       print render($content);
     ?>
     <?php if($page): ?>
-      <h3>Vaatimukset</h3>
+      <h3><?php print t('Requirements') ?></h3>
       <?php print render($content['field_requirements']); ?>
-      <h3>Lisätiedot</h3>
+      <h3><?php print t('Further information') ?></h3>
       <?php print render($content['field_info_contact']); ?>
       </div>
       <div class="application-form">
