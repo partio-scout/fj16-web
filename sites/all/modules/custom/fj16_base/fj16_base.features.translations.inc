@@ -183,6 +183,22 @@ function fj16_base_translations_defaults() {
     'plid' => 0,
     'plural' => 0,
   );
+  $translations['fi:node']['60c21ce7d4e1c3a2cdb49f59da804ec9'] = array(
+    'source' => 'Title of the position',
+    'context' => 'type:fj16_job:title_label',
+    'location' => 'node:type:fj16_job:title_label',
+    'translation' => 'Pestin nimi',
+    'plid' => 0,
+    'plural' => 0,
+  );
+  $translations['fi:node']['a0a561c7d11c07b781e4a11bbe3f8375'] = array(
+    'source' => 'FJ16 Job',
+    'context' => 'type:fj16_job:name',
+    'location' => 'node:type:fj16_job:name',
+    'translation' => 'FJ16 Job',
+    'plid' => 0,
+    'plural' => 0,
+  );
   $translations['sv:blocks']['00f09b017e8d460c14fd9785abb831c8'] = array(
     'source' => 'Footer',
     'context' => 'block:1:title',
@@ -354,6 +370,22 @@ function fj16_base_translations_defaults() {
     'context' => 'field_requirements:fj16_job:label',
     'location' => 'field:field_requirements:fj16_job:label',
     'translation' => 'Krav',
+    'plid' => 0,
+    'plural' => 0,
+  );
+  $translations['sv:node']['60c21ce7d4e1c3a2cdb49f59da804ec9'] = array(
+    'source' => 'Title of the position',
+    'context' => 'type:fj16_job:title_label',
+    'location' => 'node:type:fj16_job:title_label',
+    'translation' => 'Namn av uppdrag',
+    'plid' => 0,
+    'plural' => 0,
+  );
+  $translations['sv:node']['a0a561c7d11c07b781e4a11bbe3f8375'] = array(
+    'source' => 'FJ16 Job',
+    'context' => 'type:fj16_job:name',
+    'location' => 'node:type:fj16_job:name',
+    'translation' => 'FJ16 Job',
     'plid' => 0,
     'plural' => 0,
   );
