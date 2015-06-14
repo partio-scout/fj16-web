@@ -382,11 +382,11 @@ function fj16_job_application_form($form, &$form_state, $job_node) {
   }
 
   $form['heading'] = array(
-    '#markup' => '<h2>Hae pestiä</h2>'
+    '#markup' => '<h2>' . t('Apply for position') . '</h2>'
   );
 
   $form['instructions'] = array(
-    '#markup' => '<p>Hakijoille ilmoitetaan valintojen tuloksista henkilökohtaisesti.</p>'
+    '#markup' => '<p>' . t('The applicants will be informed personally about the recruitment decision.') . '</p>'
   );
 
   // Title for emails
@@ -415,28 +415,28 @@ function fj16_job_application_form($form, &$form_state, $job_node) {
 
   $form['name'] = array(
     '#type' => 'textfield',
-    '#title' => 'Nimi',
+    '#title' => t('Name'),
     '#required' => TRUE,
   );
   $form['email'] = array(
     '#type' => 'textfield',
-    '#title' => 'Sähköpostiosoite',
+    '#title' => t('Email'),
     '#required' => TRUE,
     '#element_validate' => array('fj16_email_validate')
   );
   $form['phone'] = array(
     '#type' => 'textfield',
-    '#title' => 'Puhelinnumero',
+    '#title' => t('Phone number'),
     '#required' => TRUE,
   );
   $form['troop_and_district'] = array(
     '#type' => 'textfield',
-    '#title' => 'Lippukunta ja piiri',
+    '#title' => t('Country and NSO/NSA/MO'),
     '#required' => TRUE,
   );
   $form['current_jobs'] = array(
     '#type' => 'textfield',
-    '#title' => 'Nykyiset partiopestit',
+    '#title' => t('Current scouting positions'),
     '#required' => TRUE,
   );
 
@@ -444,23 +444,23 @@ function fj16_job_application_form($form, &$form_state, $job_node) {
 
   $form['reasons_for_applying'] = array(
     '#type' => 'textarea',
-    '#title' => 'Miksi haet tähän pestiin?',
+    '#title' => t('Why are you applying for this position?'),
     '#required' => TRUE,
   );
   $form['previous_scouting_experience'] = array(
     '#type' => 'textarea',
-    '#title' => 'Miksi olisit hyvä tässä pestissä? Mitä tarpeellista partiokokemusta sinulla on?',
+    '#title' => t('Why would you be good in this position? What useful scouting experience do you have?'),
     '#required' => TRUE,
   );
   $form['previous_other_experience'] = array(
     '#type' => 'textarea',
-    '#title' => 'Entä muualla hankittua kokemusta?',
+    '#title' => t('Other relevant experience'),
     '#required' => TRUE,
   );
   $form['comments'] = array(
     '#type' => 'textarea',
-    '#title' => 'Muuta mahdollista lisätietoa',
-    '#description' => 'Esimerkiksi linkki hakemukseesi liittyvään tiedostoon.'
+    '#title' => t('Additional information'),
+    '#description' => t('This can be e.g. a link to an attachment for your application.')
   );
 
   $form['kogi_119'] = array(
@@ -472,7 +472,7 @@ function fj16_job_application_form($form, &$form_state, $job_node) {
   
   $form['submit'] = array(
     '#type' => 'submit',
-    '#value' => 'Lähetä hakemus'
+    '#value' => t('Send application')
   );
 
   return $form;
@@ -484,7 +484,7 @@ function fj16_job_ads_form_fj16_job_application_form_alter(&$form, &$form_state,
 
 function fj16_email_validate($element, &$form_state, $form) {
   if(!valid_email_address($element['#value'])) {
-    form_error($element, 'Sähköpostiosoite ei ole oikeassa muodossa.');
+    form_error($element, t('Please enter a valid email address.'));
   }
 }
 
@@ -514,10 +514,10 @@ function fj16_job_application_form_submit($form, &$form_state) {
   $result = drupal_write_record('fj16_job_applications', $record);
 
   if($result == SAVED_NEW) {
-    drupal_set_message('Loistavaa, tervetuloa Roihun tekijöiden joukkoon! Hakemuksesi tuli onnistuneesti perille ja se on toimitettu hakua hoitavalle osa-alueelle. Olemme sinuun yhteydessä hakuajan päätyttyä.');
+    drupal_set_message(t('Welcome to Roihu staff! Your application for the position has been received. We are presently in the process of reviewing each applicants resume. We will contact you after deadline.'));
     $form_state['redirect'] = 'pestit';
   } else {
-    drupal_set_message('Ilmoittautumisesti ei tallentunut teknisen ongelman vuoksi. Ole hyvä ja yritä myöhemmin uudelleen.', 'error');
+    drupal_set_message(t('Your application was not saved due to a technical problem. Please try again later.'), 'error');
     watchdog('fj16_job_ads', 'Unable to save application by @name (@email) fo job @job_title',
       array('@name' => $record['name'], '@email' => $record['email'], '@job_guid' => $form_state['values']['job_title']),
       WATCHDOG_ERROR, 'node/' . $record['nid']);
