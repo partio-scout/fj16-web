@@ -89,7 +89,7 @@ $department_class = $field_department[0]['value'];
       <div class="breadcrumb">
         <?php print l(t('Front page'), '<front>'); ?>
         &gt;
-        <?php print l(t('Volunteer positions'), 'pestit'); ?>
+        <?php print l(t('Open staff positions'), 'pestit'); ?>
         &gt;
         <?php print $title; ?>
       </div>
