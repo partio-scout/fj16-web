@@ -126,7 +126,7 @@ function fj16_job_ads_views_default_views() {
   $handler->display->display_options['filters']['field_level_value']['group'] = 1;
   $handler->display->display_options['filters']['field_level_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_level_value']['expose']['operator_id'] = 'field_level_value_op';
-  $handler->display->display_options['filters']['field_level_value']['expose']['label'] = 'Position type';
+  $handler->display->display_options['filters']['field_level_value']['expose']['label'] = 'Position level';
   $handler->display->display_options['filters']['field_level_value']['expose']['operator'] = 'field_level_value_op';
   $handler->display->display_options['filters']['field_level_value']['expose']['identifier'] = 'field_level_value';
   $handler->display->display_options['filters']['field_level_value']['expose']['multiple'] = TRUE;
@@ -180,7 +180,7 @@ function fj16_job_ads_views_default_views() {
     t('Desc'),
     t('Select any filter and click on Apply to see results'),
     t('<p>No positions to show.</p>'),
-    t('Position type'),
+    t('Position level'),
     t('Department'),
     t('Page'),
     t('more'),
