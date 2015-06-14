@@ -55,14 +55,6 @@ function fj16_base_translations_defaults() {
     'plid' => 0,
     'plural' => 0,
   );
-  $translations['fi:field']['08c957a6b1dc19810fc182e5c5c17587'] = array(
-    'source' => 'Department',
-    'context' => 'field_department:fj16_job:label',
-    'location' => 'field:field_department:fj16_job:label',
-    'translation' => 'Osa-alue',
-    'plid' => 0,
-    'plural' => 0,
-  );
   $translations['fi:field']['0bf3351056dce56ea8b42a04671ddffe'] = array(
     'source' => 'Experience',
     'context' => 'field_department:#allowed_values:elamys',
@@ -103,8 +95,8 @@ function fj16_base_translations_defaults() {
     'plid' => 0,
     'plural' => 0,
   );
-  $translations['fi:field']['409a0c2c1632b3691e6875dab1a78533'] = array(
-    'source' => 'Position type',
+  $translations['fi:field']['62ad1067e4590b32b274a30bbdf06b74'] = array(
+    'source' => 'Position level',
     'context' => 'field_level:fj16_job:label',
     'location' => 'field:field_level:fj16_job:label',
     'translation' => 'Pestin taso',
@@ -124,6 +116,14 @@ function fj16_base_translations_defaults() {
     'context' => 'field_info_contact:fj16_job:label',
     'location' => 'field:field_info_contact:fj16_job:label',
     'translation' => 'Lisätiedot',
+    'plid' => 0,
+    'plural' => 0,
+  );
+  $translations['fi:field']['af4c1be026c1fc7e49fe6aeaf185f727'] = array(
+    'source' => 'IST',
+    'context' => 'field_level:#allowed_values:Tekijä',
+    'location' => 'field:field_level:#allowed_values:Tekijä',
+    'translation' => 'Tekijä',
     'plid' => 0,
     'plural' => 0,
   );
@@ -151,14 +151,6 @@ function fj16_base_translations_defaults() {
     'plid' => 0,
     'plural' => 0,
   );
-  $translations['fi:field']['c73d1c998ebb3f2ecaa1b62f22c3d53c'] = array(
-    'source' => 'Worker',
-    'context' => 'field_level:#allowed_values:Tekijä',
-    'location' => 'field:field_level:#allowed_values:Tekijä',
-    'translation' => 'Tekijä',
-    'plid' => 0,
-    'plural' => 0,
-  );
   $translations['fi:field']['c84ab945b012d72ce17da301819aaafc'] = array(
     'source' => 'Director',
     'context' => 'field_level:#allowed_values:Johtaja',
@@ -172,6 +164,14 @@ function fj16_base_translations_defaults() {
     'context' => 'body:fj16_job:label',
     'location' => 'field:body:fj16_job:label',
     'translation' => 'Kuvaus',
+    'plid' => 0,
+    'plural' => 0,
+  );
+  $translations['fi:field']['e210a87ce75e52ee92581392356b0620'] = array(
+    'source' => 'Section',
+    'context' => 'field_department:fj16_job:label',
+    'location' => 'field:field_department:fj16_job:label',
+    'translation' => 'Osa-alue',
     'plid' => 0,
     'plural' => 0,
   );
@@ -229,14 +229,6 @@ function fj16_base_translations_defaults() {
     'plid' => 0,
     'plural' => 0,
   );
-  $translations['sv:field']['08c957a6b1dc19810fc182e5c5c17587'] = array(
-    'source' => 'Department',
-    'context' => 'field_department:fj16_job:label',
-    'location' => 'field:field_department:fj16_job:label',
-    'translation' => 'Avdelning',
-    'plid' => 0,
-    'plural' => 0,
-  );
   $translations['sv:field']['0bf3351056dce56ea8b42a04671ddffe'] = array(
     'source' => 'Experience',
     'context' => 'field_department:#allowed_values:elamys',
@@ -273,15 +265,15 @@ function fj16_base_translations_defaults() {
     'source' => 'Manager',
     'context' => 'field_level:#allowed_values:Päällikkö',
     'location' => 'field:field_level:#allowed_values:Päällikkö',
-    'translation' => 'Vicechef',
+    'translation' => 'Chef',
     'plid' => 0,
     'plural' => 0,
   );
-  $translations['sv:field']['409a0c2c1632b3691e6875dab1a78533'] = array(
-    'source' => 'Position type',
+  $translations['sv:field']['62ad1067e4590b32b274a30bbdf06b74'] = array(
+    'source' => 'Position level',
     'context' => 'field_level:fj16_job:label',
     'location' => 'field:field_level:fj16_job:label',
-    'translation' => 'Typ av posten',
+    'translation' => 'Typ av uppdrag',
     'plid' => 0,
     'plural' => 0,
   );
@@ -289,7 +281,7 @@ function fj16_base_translations_defaults() {
     'source' => 'Other',
     'context' => 'field_level:#allowed_values:Muu',
     'location' => 'field:field_level:#allowed_values:Muu',
-    'translation' => 'Other',
+    'translation' => 'Annan',
     'plid' => 0,
     'plural' => 0,
   );
@@ -298,6 +290,14 @@ function fj16_base_translations_defaults() {
     'context' => 'field_info_contact:fj16_job:label',
     'location' => 'field:field_info_contact:fj16_job:label',
     'translation' => 'Kontakt',
+    'plid' => 0,
+    'plural' => 0,
+  );
+  $translations['sv:field']['af4c1be026c1fc7e49fe6aeaf185f727'] = array(
+    'source' => 'IST',
+    'context' => 'field_level:#allowed_values:Tekijä',
+    'location' => 'field:field_level:#allowed_values:Tekijä',
+    'translation' => 'Donare',
     'plid' => 0,
     'plural' => 0,
   );
@@ -325,19 +325,11 @@ function fj16_base_translations_defaults() {
     'plid' => 0,
     'plural' => 0,
   );
-  $translations['sv:field']['c73d1c998ebb3f2ecaa1b62f22c3d53c'] = array(
-    'source' => 'Worker',
-    'context' => 'field_level:#allowed_values:Tekijä',
-    'location' => 'field:field_level:#allowed_values:Tekijä',
-    'translation' => 'Arbetare',
-    'plid' => 0,
-    'plural' => 0,
-  );
   $translations['sv:field']['c84ab945b012d72ce17da301819aaafc'] = array(
     'source' => 'Director',
     'context' => 'field_level:#allowed_values:Johtaja',
     'location' => 'field:field_level:#allowed_values:Johtaja',
-    'translation' => 'Chef',
+    'translation' => 'Direktör',
     'plid' => 0,
     'plural' => 0,
   );
@@ -349,11 +341,19 @@ function fj16_base_translations_defaults() {
     'plid' => 0,
     'plural' => 0,
   );
+  $translations['sv:field']['e210a87ce75e52ee92581392356b0620'] = array(
+    'source' => 'Section',
+    'context' => 'field_department:fj16_job:label',
+    'location' => 'field:field_department:fj16_job:label',
+    'translation' => 'Avdelning',
+    'plid' => 0,
+    'plural' => 0,
+  );
   $translations['sv:field']['f2cf0d24fb88bf0e2549ed5fc1a7c73d'] = array(
     'source' => 'Requirements',
     'context' => 'field_requirements:fj16_job:label',
     'location' => 'field:field_requirements:fj16_job:label',
-    'translation' => 'Krav på posten',
+    'translation' => 'Krav',
     'plid' => 0,
     'plural' => 0,
   );
