@@ -211,7 +211,7 @@ function fj16_base_translations_defaults() {
     'source' => 'Filter positions',
     'context' => 'views:-exp-fj16_jobs-page:title',
     'location' => 'blocks:views:-exp-fj16_jobs-page:title',
-    'translation' => 'Filtrera poster',
+    'translation' => 'Filtrera uppdrag',
     'plid' => 0,
     'plural' => 0,
   );
