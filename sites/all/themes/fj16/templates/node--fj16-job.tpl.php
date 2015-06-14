@@ -136,7 +136,7 @@ $department_class = $field_department[0]['value'];
       <div class="application-form">
         <?php print render($content['fj16_job_application_form']); ?>
     <?php else: ?>
-      <a class="read-more" href="<?php print $node_url; ?>">Lue lisää</a>
+      <a class="read-more" href="<?php print $node_url; ?>"><?php print t('Read more'); ?></a>
     <?php endif; ?>
   </div>
 
