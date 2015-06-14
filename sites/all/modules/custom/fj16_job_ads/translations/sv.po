@@ -252,7 +252,7 @@ msgstr "Bas"
 
 #: fj16_job_ads.module:582
 msgid "IST"
-msgstr "Donade"
+msgstr "Donare"
 
 #: fj16_job_ads.module:583
 msgid "Other"
