@@ -152,14 +152,11 @@
 
     <div id="footer">
       <div class="container">
-        <div class="footer_section narrow">
-          <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="roihu-logo"><?php print $site_name; ?></a>
-        </div>
-        <?php print render($page['footer']); ?>
-        <div class="footer_section narrow">
-          <a href="http://partio.fi" target="_blank" id="sp-logo"></a>
+        <div>
+          <?php print render($page['footer']); ?>
         </div>
       </div>
+
     </div>
 
   </div>
