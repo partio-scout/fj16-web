@@ -1,0 +1,313 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  fj16_job_ads.features.field_instance.inc: n/a
+#  fj16_job_ads.features.inc: n/a
+#  fj16_job_ads.views_default.inc: n/a
+#  fj16_job_ads.module: n/a
+#  fj16_job_ads.info: n/a
+#  js/fj16_job_ads.js: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2015-06-14 20:49+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: fj16_job_ads.features.field_instance.inc:694
+msgid "Analytical-Creative"
+msgstr ""
+
+#: fj16_job_ads.features.field_instance.inc:695
+msgid "Description"
+msgstr ""
+
+#: fj16_job_ads.features.field_instance.inc:696
+msgid "Educating youth-Marketing scouting"
+msgstr ""
+
+#: fj16_job_ads.features.field_instance.inc:697
+msgid "Fun-Important"
+msgstr ""
+
+#: fj16_job_ads.features.field_instance.inc:698
+msgid "Further information"
+msgstr ""
+
+#: fj16_job_ads.features.field_instance.inc:699
+msgid "Individual work-Group work"
+msgstr ""
+
+#: fj16_job_ads.features.field_instance.inc:700
+msgid "Leading-Doing"
+msgstr ""
+
+#: fj16_job_ads.features.field_instance.inc:701
+msgid "Overview-Details"
+msgstr ""
+
+#: fj16_job_ads.features.field_instance.inc:702
+msgid "Planning-Doing"
+msgstr ""
+
+#: fj16_job_ads.features.field_instance.inc:703
+msgid "Position level"
+msgstr ""
+
+#: fj16_job_ads.features.field_instance.inc:704
+msgid "Requirements"
+msgstr ""
+
+#: fj16_job_ads.features.field_instance.inc:705
+msgid "Section"
+msgstr ""
+
+#: fj16_job_ads.features.field_instance.inc:706
+msgid "SharePoint GUID"
+msgstr ""
+
+#: fj16_job_ads.features.field_instance.inc:707
+msgid "SharePoint line ID"
+msgstr ""
+
+#: fj16_job_ads.features.field_instance.inc:708
+msgid "Team"
+msgstr ""
+
+#: fj16_job_ads.features.field_instance.inc:709
+msgid "Traditional jamboree skills-Something completely different"
+msgstr ""
+
+#: fj16_job_ads.features.field_instance.inc:710
+msgid "Workload"
+msgstr ""
+
+#: fj16_job_ads.features.inc:29
+msgid "FJ16 Job"
+msgstr ""
+
+#: fj16_job_ads.features.inc:33
+msgid "Title of the position"
+msgstr ""
+
+#: fj16_job_ads.views_default.inc:173
+msgid "Master"
+msgstr ""
+
+#: fj16_job_ads.views_default.inc:174
+msgid "Open staff positions"
+msgstr ""
+
+#: fj16_job_ads.views_default.inc:175
+msgid "lisää"
+msgstr ""
+
+#: fj16_job_ads.views_default.inc:176
+msgid "Filter positions"
+msgstr ""
+
+#: fj16_job_ads.views_default.inc:177
+msgid "Show all"
+msgstr ""
+
+#: fj16_job_ads.views_default.inc:178
+msgid "Sort"
+msgstr ""
+
+#: fj16_job_ads.views_default.inc:179
+msgid "Asc"
+msgstr ""
+
+#: fj16_job_ads.views_default.inc:180
+msgid "Desc"
+msgstr ""
+
+#: fj16_job_ads.views_default.inc:181
+msgid "Select any filter and click on Apply to see results"
+msgstr ""
+
+#: fj16_job_ads.views_default.inc:182
+msgid "<p>No positions to show.</p>"
+msgstr ""
+
+#: fj16_job_ads.views_default.inc:183
+msgid "Position type"
+msgstr ""
+
+#: fj16_job_ads.views_default.inc:184
+msgid "Department"
+msgstr ""
+
+#: fj16_job_ads.views_default.inc:185
+msgid "Page"
+msgstr ""
+
+#: fj16_job_ads.views_default.inc:186
+msgid "more"
+msgstr ""
+
+#: fj16_job_ads.module:385
+msgid "Apply for position"
+msgstr ""
+
+#: fj16_job_ads.module:389
+msgid "The applicants will be informed personally about the recruitment decision."
+msgstr ""
+
+#: fj16_job_ads.module:418
+msgid "Name"
+msgstr ""
+
+#: fj16_job_ads.module:423
+msgid "Email"
+msgstr ""
+
+#: fj16_job_ads.module:429
+msgid "Phone number"
+msgstr ""
+
+#: fj16_job_ads.module:434
+msgid "Country and NSO/NSA/MO"
+msgstr ""
+
+#: fj16_job_ads.module:439
+msgid "Current scouting positions"
+msgstr ""
+
+#: fj16_job_ads.module:447
+msgid "Why are you applying for this position?"
+msgstr ""
+
+#: fj16_job_ads.module:452
+msgid "Why would you be good in this position? What useful scouting experience do you have?"
+msgstr ""
+
+#: fj16_job_ads.module:457
+msgid "Other relevant experience"
+msgstr ""
+
+#: fj16_job_ads.module:462
+msgid "Additional information"
+msgstr ""
+
+#: fj16_job_ads.module:463
+msgid "This can be e.g. a link to an attachment for your application."
+msgstr ""
+
+#: fj16_job_ads.module:475
+msgid "Send application"
+msgstr ""
+
+#: fj16_job_ads.module:487
+msgid "Please enter a valid email address."
+msgstr ""
+
+#: fj16_job_ads.module:517
+msgid "Welcome to Roihu staff! Your application for the position has been received. We are presently in the process of reviewing each applicants resume. We will contact you after deadline."
+msgstr ""
+
+#: fj16_job_ads.module:520
+msgid "Your application was not saved due to a technical problem. Please try again later."
+msgstr ""
+
+#: fj16_job_ads.module:578
+msgid "Director"
+msgstr ""
+
+#: fj16_job_ads.module:579
+msgid "Manager"
+msgstr ""
+
+#: fj16_job_ads.module:580
+msgid "Team leader"
+msgstr ""
+
+#: fj16_job_ads.module:581
+msgid "Subteam leader"
+msgstr ""
+
+#: fj16_job_ads.module:582
+msgid "IST"
+msgstr ""
+
+#: fj16_job_ads.module:583
+msgid "Other"
+msgstr ""
+
+#: fj16_job_ads.module:586
+msgid "Experience"
+msgstr ""
+
+#: fj16_job_ads.module:587
+msgid "Education"
+msgstr ""
+
+#: fj16_job_ads.module:588
+msgid "Service"
+msgstr ""
+
+#: fj16_job_ads.module:589
+msgid "Resource"
+msgstr ""
+
+#: fj16_job_ads.module:590
+msgid "Co-operation"
+msgstr ""
+
+#: fj16_job_ads.module:28;35;60;283;297;302;306;521
+msgid "fj16_job_ads"
+msgstr ""
+
+#: fj16_job_ads.module:28
+msgid "Begin job import from SharePoint"
+msgstr ""
+
+#: fj16_job_ads.module:35
+msgid "SharePoint import failed"
+msgstr ""
+
+#: fj16_job_ads.module:60
+msgid "@num_synced jobs synced from SharePoint, @num_removed removed in @duration seconds"
+msgstr ""
+
+#: fj16_job_ads.module:283
+msgid "Processing application #@id failed: stayed in WAITING state. Export aborted."
+msgstr ""
+
+#: fj16_job_ads.module:297
+msgid "Processing application #@id"
+msgstr ""
+
+#: fj16_job_ads.module:302
+msgid "Application #@id synced successfully"
+msgstr ""
+
+#: fj16_job_ads.module:306
+msgid "Application #@id syncing failed"
+msgstr ""
+
+#: fj16_job_ads.module:521
+msgid "Unable to save application by @name (@email) fo job @job_title"
+msgstr ""
+
+#: fj16_job_ads.info:0
+msgid "FJ16 Job ads"
+msgstr ""
+
+#: fj16_job_ads.info:0
+msgid "FJ16"
+msgstr ""
+
+#: js/fj16_job_ads.js:0
+msgid "Sending..."
+msgstr ""
+

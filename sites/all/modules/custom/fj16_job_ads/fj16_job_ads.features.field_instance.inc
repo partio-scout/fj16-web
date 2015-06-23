@@ -36,7 +36,7 @@ function fj16_job_ads_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'body',
-    'label' => 'Kuvaus',
+    'label' => 'Description',
     'required' => 0,
     'settings' => array(
       'display_summary' => 1,
@@ -64,22 +64,22 @@ function fj16_job_ads_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
+        'module' => 'i18n_field',
         'settings' => array(),
-        'type' => 'list_default',
+        'type' => 'i18n_list_default',
         'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
-        'module' => 'list',
+        'module' => 'i18n_field',
         'settings' => array(),
-        'type' => 'list_default',
+        'type' => 'i18n_list_default',
         'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_department',
-    'label' => 'Osa-alue',
+    'label' => 'Section',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -116,7 +116,7 @@ function fj16_job_ads_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_info_contact',
-    'label' => 'Lisätiedot',
+    'label' => 'Further information',
     'required' => 0,
     'settings' => array(
       'text_processing' => 0,
@@ -155,7 +155,7 @@ function fj16_job_ads_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_jm_analytic_creative',
-    'label' => 'Analyyttinen-Luova',
+    'label' => 'Analytical-Creative',
     'required' => 0,
     'settings' => array(
       'max' => '',
@@ -195,7 +195,7 @@ function fj16_job_ads_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_jm_fun_important',
-    'label' => 'Kivoja tehtäviä-Tärkeitä tehtäviä',
+    'label' => 'Fun-Important',
     'required' => 0,
     'settings' => array(
       'max' => '',
@@ -235,7 +235,7 @@ function fj16_job_ads_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_jm_growing_marketing',
-    'label' => 'Nuorten kasvatus-Partion markkinointi',
+    'label' => 'Educating youth-Marketing scouting',
     'required' => 0,
     'settings' => array(
       'max' => '',
@@ -275,7 +275,7 @@ function fj16_job_ads_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_jm_individual_group',
-    'label' => 'Yksilötyö-Ryhmätyö',
+    'label' => 'Individual work-Group work',
     'required' => 0,
     'settings' => array(
       'max' => '',
@@ -315,7 +315,7 @@ function fj16_job_ads_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_jm_leading_doing',
-    'label' => 'Johtaminen-Tekeminen',
+    'label' => 'Leading-Doing',
     'required' => 0,
     'settings' => array(
       'max' => '',
@@ -355,7 +355,7 @@ function fj16_job_ads_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_jm_macro_micro',
-    'label' => 'Suuret linjat-Yksityiskohdat',
+    'label' => 'Overview-Details',
     'required' => 0,
     'settings' => array(
       'max' => '',
@@ -395,7 +395,7 @@ function fj16_job_ads_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_jm_planning_doing',
-    'label' => 'Suunnittelu-Tekeminen',
+    'label' => 'Planning-Doing',
     'required' => 0,
     'settings' => array(
       'max' => '',
@@ -435,7 +435,7 @@ function fj16_job_ads_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_jm_traditional_modern',
-    'label' => 'Perinteisiä suurleiritaitoja-Jotain aivan muuta',
+    'label' => 'Traditional jamboree skills-Something completely different',
     'required' => 0,
     'settings' => array(
       'max' => '',
@@ -475,7 +475,7 @@ function fj16_job_ads_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_jm_work',
-    'label' => 'Työläys',
+    'label' => 'Workload',
     'required' => 0,
     'settings' => array(
       'max' => '',
@@ -502,22 +502,22 @@ function fj16_job_ads_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
+        'module' => 'i18n_field',
         'settings' => array(),
-        'type' => 'list_default',
+        'type' => 'i18n_list_default',
         'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
-        'module' => 'list',
+        'module' => 'i18n_field',
         'settings' => array(),
-        'type' => 'list_default',
+        'type' => 'i18n_list_default',
         'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_level',
-    'label' => 'Pestin taso',
+    'label' => 'Position level',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -554,7 +554,7 @@ function fj16_job_ads_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_requirements',
-    'label' => 'Vaatimukset',
+    'label' => 'Requirements',
     'required' => 0,
     'settings' => array(
       'text_processing' => 1,
@@ -672,7 +672,7 @@ function fj16_job_ads_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_team',
-    'label' => 'Tiimi',
+    'label' => 'Team',
     'required' => 0,
     'settings' => array(
       'text_processing' => 0,
@@ -691,23 +691,23 @@ function fj16_job_ads_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Analyyttinen-Luova');
-  t('Johtaminen-Tekeminen');
-  t('Kivoja tehtäviä-Tärkeitä tehtäviä');
-  t('Kuvaus');
-  t('Lisätiedot');
-  t('Nuorten kasvatus-Partion markkinointi');
-  t('Osa-alue');
-  t('Perinteisiä suurleiritaitoja-Jotain aivan muuta');
-  t('Pestin taso');
+  t('Analytical-Creative');
+  t('Description');
+  t('Educating youth-Marketing scouting');
+  t('Fun-Important');
+  t('Further information');
+  t('Individual work-Group work');
+  t('Leading-Doing');
+  t('Overview-Details');
+  t('Planning-Doing');
+  t('Position level');
+  t('Requirements');
+  t('Section');
   t('SharePoint GUID');
   t('SharePoint line ID');
-  t('Suunnittelu-Tekeminen');
-  t('Suuret linjat-Yksityiskohdat');
-  t('Tiimi');
-  t('Työläys');
-  t('Vaatimukset');
-  t('Yksilötyö-Ryhmätyö');
+  t('Team');
+  t('Traditional jamboree skills-Something completely different');
+  t('Workload');
 
   return $field_instances;
 }

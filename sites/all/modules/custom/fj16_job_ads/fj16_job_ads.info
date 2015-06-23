@@ -10,6 +10,7 @@ dependencies[] = filter
 dependencies[] = fj16_base
 dependencies[] = fj16_frontpage_boxes
 dependencies[] = honeypot
+dependencies[] = i18n_field
 dependencies[] = list
 dependencies[] = node
 dependencies[] = number

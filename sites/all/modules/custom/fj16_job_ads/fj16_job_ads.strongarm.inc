@@ -41,7 +41,18 @@ function fj16_job_ads_strongarm() {
           'weight' => '16',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'language' => array(
+          'teaser' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+          'default' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__fj16_job'] = $strongarm;
@@ -50,7 +61,7 @@ function fj16_job_ads_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'i18n_node_extended_fj16_job';
-  $strongarm->value = 1;
+  $strongarm->value = '1';
   $export['i18n_node_extended_fj16_job'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -64,7 +75,7 @@ function fj16_job_ads_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_fj16_job';
-  $strongarm->value = '0';
+  $strongarm->value = '2';
   $export['language_content_type_fj16_job'] = $strongarm;
 
   $strongarm = new stdClass();

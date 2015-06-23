@@ -31,20 +31,24 @@ function fj16_job_ads_import_jobs() {
   //$config = fj16_job_ads_get_config();
   //$jobs = fj16_job_ads_read_sharepoint_list($config['job_list_guid']);
   $jobs = fj16_get_jobs_from_adapter();
-  if($jobs === FALSE) {
+  if($jobs === FALSE || count($jobs) === 0) {
     watchdog('fj16_job_ads', 'SharePoint import failed', array(), WATCHDOG_ERROR);
     return;
   }
 
-  $jobs_to_remove = fj16_get_job_nids();
+  $jobs_to_remove = fj16_get_job_nids_for_all_langs();
+  $accepted_languages = array('fi', 'sv', 'en');
 
   // Create or update new jobs
   foreach ($jobs as $job) {
     if(fj16_job_should_be_displayed($job)) {
-      fj16_job_ads_create_or_update($job);
-
-      $guid = fj16_sharepoint_lookup_value($job['uniqueid']);
-      unset($jobs_to_remove[$guid]);
+      
+      foreach ($accepted_languages as $lang) {
+        $nid = fj16_job_ads_create_or_update($job, $lang);
+        if($nid) {
+          unset($jobs_to_remove[$nid]);
+        }
+      }
     }
   }
 
@@ -87,28 +91,46 @@ function fj16_job_should_be_displayed($job) {
 }
 
 
-function fj16_job_ads_create_or_update($job) {
+function fj16_job_ads_create_or_update($job, $lang) {
   $node;
   $guid = fj16_sharepoint_lookup_value($job['uniqueid']);
 
-  if(fj16_job_exists($guid)) {
-    $node = fj16_get_job_by_guid($guid);
+  $title_field = _fj16_get_title_field($lang);
+
+  //If the title field for this language does not exist, return immediately without creating anything
+  if(strlen($job[$title_field]) === 0) {
+    return;
+  }
+
+  if(fj16_job_exists($guid, $lang)) {
+    $node = fj16_get_job_by_guid($guid, $lang);
+    $node->title = $job[$title_field];
   } else {
-    $node = fj16_job_ads_new_node($job['title']);
+    $node = fj16_job_ads_new_node($job[$title_field], $lang);
   }
   
-  fj16_job_update_node_fields($node, $job);
+  fj16_job_update_node_fields($node, $job, $lang);
   $node = node_submit($node);
   node_save($node);
+
+  return $node->nid;
 }
 
+function _fj16_get_title_field($lang) {
+  $field_names = array(
+    'fi' => 'title',
+    'sv' => 'pestin_x0020_nimi_x0020_ruotsiks',
+    'en' => 'pestin_x0020_nimi_x0020_englanni'
+  );
+  return $field_names[$lang];
+}
 
-function fj16_job_ads_new_node($title) {
+function fj16_job_ads_new_node($title, $lang = 'fi') {
   $node = new stdClass();
   $node->title = $title;
   $node->type = 'fj16_job';
   node_object_prepare($node);
-  $node->language = LANGUAGE_NONE;
+  $node->language = $lang;
   $node->uid = 1;
   $node->status = 1;
   $node->promote = 0;
@@ -117,8 +139,8 @@ function fj16_job_ads_new_node($title) {
 }
 
 
-function fj16_job_update_node_fields(&$node, $job) {
-  $mappings = fj16_job_ads_get_field_mappings();
+function fj16_job_update_node_fields(&$node, $job, $lang) {
+  $mappings = fj16_job_ads_get_field_mappings($lang);
 
   foreach ($mappings as $sharepoint_field => $drupal_field) {
     if(!isset($job[$sharepoint_field])) {
@@ -151,13 +173,11 @@ function fj16_job_update_node_fields(&$node, $job) {
 // Mapping SharePoint values to Drupal
 
 
-function fj16_job_ads_get_field_mappings() {
+function fj16_job_ads_get_field_mappings($lang) {
   //Title needs to be mapped separately, as it's not a Fields field
-  return array(
+  $mappings = array(
     'pestin_x0020_taso_x0020__x0028_j'  => 'field_level',
     'pestin_x0020_koko_x0020__x0028_j'  => 'field_jm_work',
-    'ulkoinen_x0020_kuvaus_x0020_nett'  => 'body',
-    'vaatimukset'                       => 'field_requirements',
     'lis_x00e4_tietoja_x0020_antaa_x0'  => 'field_info_contact',
 
     // Job machine (jm, "pestikone") fields
@@ -172,6 +192,19 @@ function fj16_job_ads_get_field_mappings() {
     'id' => 'field_sharepoint_line_id',
     'uniqueid' => 'field_sharepoint_guid'
   );
+
+  if($lang == 'fi') {
+    $mappings['ulkoinen_x0020_kuvaus_x0020_nett'] = 'body';
+    $mappings['vaatimukset'] = 'field_requirements';
+  } else if($lang == 'sv') {
+    $mappings['ulkoinen_x0020_kuvaus_x0020_ruot'] = 'body';
+    $mappings['vaatimukset_x0020_ruotsiksi_x002'] = 'field_requirements';
+  } else if($lang == 'en') {
+    $mappings['ulkoinen_x0020_kuvaus_x0020_engl'] = 'body';
+    $mappings['julkinen_x0020_kuvaus_x0020_engl'] = 'field_requirements'; //this field is named inconsistently due to historical reasons, julkinen_x0020_kuvaus_x0020_engl is correct.
+  }
+
+  return $mappings;
 }
 
 
@@ -195,37 +228,47 @@ function fj16_sharepoint_lookup_value($raw) {
 // Job lookup
 
 
-function fj16_job_exists($guid) {
+function fj16_job_exists($guid, $lang) {
   $nids = fj16_get_job_nids();
-  return isset($nids[$guid]);
+  return isset($nids[$guid][$lang]);
 }
 
 
-function fj16_get_job_by_guid($guid) {
+function fj16_get_job_by_guid($guid, $lang) {
   $job_nids_by_guid = fj16_get_job_nids();
-  return node_load($job_nids_by_guid[$guid]);
-}
-
-
-function fj16_get_jobs() {
-  return node_load_multiple(fj16_get_job_nids());
+  return node_load($job_nids_by_guid[$guid][$lang]);
 }
 
 
 function fj16_get_job_nids() {
-  $result = db_select('field_data_field_sharepoint_guid', 'data')
-    ->fields('data', array('entity_id', 'field_sharepoint_guid_value'))
-    ->condition('bundle', 'fj16_job')
-    ->condition('deleted', 0)
-    ->execute();
+  $query = db_select('field_data_field_sharepoint_guid', 'f');
+  $query->join('node', 'n', 'n.nid = f.entity_id');
+  $query
+    ->fields('f', array('entity_id', 'field_sharepoint_guid_value'))
+    ->fields('n', array('language'))
+    ->condition('f.bundle', 'fj16_job')
+    ->condition('f.deleted', 0);
+  $result = $query->execute();
 
   $job_nids_by_guid = array();
   foreach ($result as $row) {
     $nid  = $row->entity_id;
     $guid = $row->field_sharepoint_guid_value;
-    $job_nids_by_guid[$guid] = $nid;
+    $lang = $row->language;
+    $job_nids_by_guid[$guid][$lang] = $nid;
   }
   return $job_nids_by_guid;
+}
+
+function fj16_get_job_nids_for_all_langs() {
+  $nids_by_lang = fj16_get_job_nids();
+  $flat_nids = array();
+  foreach ($nids_by_lang as $langs) {
+    foreach($langs as $nid) {
+      $flat_nids[$nid] = $nid;
+    }
+  }
+  return $flat_nids;
 }
 
 
@@ -339,11 +382,11 @@ function fj16_job_application_form($form, &$form_state, $job_node) {
   }
 
   $form['heading'] = array(
-    '#markup' => '<h2>Hae pestiä</h2>'
+    '#markup' => '<h2>' . t('Apply for position') . '</h2>'
   );
 
   $form['instructions'] = array(
-    '#markup' => '<p>Hakijoille ilmoitetaan valintojen tuloksista henkilökohtaisesti.</p>'
+    '#markup' => '<p>' . t('The applicants will be informed personally about the recruitment decision.') . '</p>'
   );
 
   // Title for emails
@@ -372,28 +415,28 @@ function fj16_job_application_form($form, &$form_state, $job_node) {
 
   $form['name'] = array(
     '#type' => 'textfield',
-    '#title' => 'Nimi',
+    '#title' => t('Name'),
     '#required' => TRUE,
   );
   $form['email'] = array(
     '#type' => 'textfield',
-    '#title' => 'Sähköpostiosoite',
+    '#title' => t('Email'),
     '#required' => TRUE,
     '#element_validate' => array('fj16_email_validate')
   );
   $form['phone'] = array(
     '#type' => 'textfield',
-    '#title' => 'Puhelinnumero',
+    '#title' => t('Phone number'),
     '#required' => TRUE,
   );
   $form['troop_and_district'] = array(
     '#type' => 'textfield',
-    '#title' => 'Lippukunta ja piiri',
+    '#title' => t('Country and NSO/NSA/MO'),
     '#required' => TRUE,
   );
   $form['current_jobs'] = array(
     '#type' => 'textfield',
-    '#title' => 'Nykyiset partiopestit',
+    '#title' => t('Current scouting positions'),
     '#required' => TRUE,
   );
 
@@ -401,23 +444,23 @@ function fj16_job_application_form($form, &$form_state, $job_node) {
 
   $form['reasons_for_applying'] = array(
     '#type' => 'textarea',
-    '#title' => 'Miksi haet tähän pestiin?',
+    '#title' => t('Why are you applying for this position?'),
     '#required' => TRUE,
   );
   $form['previous_scouting_experience'] = array(
     '#type' => 'textarea',
-    '#title' => 'Miksi olisit hyvä tässä pestissä? Mitä tarpeellista partiokokemusta sinulla on?',
+    '#title' => t('Why would you be good in this position? What useful scouting experience do you have?'),
     '#required' => TRUE,
   );
   $form['previous_other_experience'] = array(
     '#type' => 'textarea',
-    '#title' => 'Entä muualla hankittua kokemusta?',
+    '#title' => t('Other relevant experience'),
     '#required' => TRUE,
   );
   $form['comments'] = array(
     '#type' => 'textarea',
-    '#title' => 'Muuta mahdollista lisätietoa',
-    '#description' => 'Esimerkiksi linkki hakemukseesi liittyvään tiedostoon.'
+    '#title' => t('Additional information'),
+    '#description' => t('This can be e.g. a link to an attachment for your application.')
   );
 
   $form['kogi_119'] = array(
@@ -429,7 +472,7 @@ function fj16_job_application_form($form, &$form_state, $job_node) {
   
   $form['submit'] = array(
     '#type' => 'submit',
-    '#value' => 'Lähetä hakemus'
+    '#value' => t('Send application')
   );
 
   return $form;
@@ -441,7 +484,7 @@ function fj16_job_ads_form_fj16_job_application_form_alter(&$form, &$form_state,
 
 function fj16_email_validate($element, &$form_state, $form) {
   if(!valid_email_address($element['#value'])) {
-    form_error($element, 'Sähköpostiosoite ei ole oikeassa muodossa.');
+    form_error($element, t('Please enter a valid email address.'));
   }
 }
 
@@ -471,10 +514,10 @@ function fj16_job_application_form_submit($form, &$form_state) {
   $result = drupal_write_record('fj16_job_applications', $record);
 
   if($result == SAVED_NEW) {
-    drupal_set_message('Loistavaa, tervetuloa Roihun tekijöiden joukkoon! Hakemuksesi tuli onnistuneesti perille ja se on toimitettu hakua hoitavalle osa-alueelle. Olemme sinuun yhteydessä hakuajan päätyttyä.');
+    drupal_set_message(t('Welcome to Roihu staff! Your application for the position has been received. We are presently in the process of reviewing each applicants resume. We will contact you after deadline.'));
     $form_state['redirect'] = 'pestit';
   } else {
-    drupal_set_message('Ilmoittautumisesti ei tallentunut teknisen ongelman vuoksi. Ole hyvä ja yritä myöhemmin uudelleen.', 'error');
+    drupal_set_message(t('Your application was not saved due to a technical problem. Please try again later.'), 'error');
     watchdog('fj16_job_ads', 'Unable to save application by @name (@email) fo job @job_title',
       array('@name' => $record['name'], '@email' => $record['email'], '@job_guid' => $form_state['values']['job_title']),
       WATCHDOG_ERROR, 'node/' . $record['nid']);
@@ -528,3 +571,20 @@ function fj16_job_ads_initialize_sharepoint_client() {
   }
   return false;
 }
+
+// Strings to for by automatic extraction of localizable strings - do not remove
+
+// Job levels
+t('Director');
+t('Manager');
+t('Team leader');
+t('Subteam leader');
+t('IST');
+t('Other');
+
+// Roihu org sections
+t('Experience');
+t('Education');
+t('Service');
+t('Resource');
+t('Co-operation');
