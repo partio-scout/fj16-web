@@ -21,6 +21,18 @@ function fj16_job_ads_cron() {
 }
 
 
+function fj16_job_ads_menu() {
+  $menu = array();
+  $menu['monitoring'] = array(
+    'type' => MENU_CALLBACK,
+    'access callback' => TRUE,
+    'page callback' => '_fj16_job_ads_monitoring',
+    'delivery callback' => '_fj16_job_ads_deliver_json'
+  );
+  return $menu;
+}
+
+
 // Job import
 
 
@@ -33,6 +45,7 @@ function fj16_job_ads_import_jobs() {
   $jobs = fj16_get_jobs_from_adapter();
   if($jobs === FALSE || count($jobs) === 0) {
     watchdog('fj16_job_ads', 'SharePoint import failed', array(), WATCHDOG_ERROR);
+    variable_set('fj16_job_import_success', FALSE);
     return;
   }
 
@@ -63,6 +76,8 @@ function fj16_job_ads_import_jobs() {
       '@num_removed' => count($jobs_to_remove),
       '@duration' => (time() - $import_started_time)
     ), WATCHDOG_INFO);
+
+  variable_set('fj16_job_import_success', TRUE);
 }
 
 
@@ -570,6 +585,41 @@ function fj16_job_ads_initialize_sharepoint_client() {
     );
   }
   return false;
+}
+
+
+// Integration monitoring endpoint
+
+
+function _fj16_job_ads_monitoring() {
+  drupal_page_is_cacheable(FALSE);
+
+  $import_success = variable_get('fj16_job_import_success', TRUE);
+  $export_success = !fj16_jobs_is_export_in_error_state();
+  return array(
+    'sharepoint_job_import' => $import_success ? 'SUCCESS' : 'ERROR',
+    'sharepoint_job_applications_export' => $export_success ? 'SUCCESS' : 'ERROR'
+  );
+}
+
+function _fj16_job_ads_deliver_json($result) {
+  drupal_add_http_header('Content-Type', 'application/json; charset=utf-8');
+  print json_encode($result);
+}
+
+function fj16_jobs_count_applications_by_status($status) {
+  return db_select('fj16_job_applications')
+    ->condition('status', $status)
+    ->countQuery()
+    ->execute()
+    ->fetchField();
+}
+
+function fj16_jobs_is_export_in_error_state() {
+  $count_errors = fj16_jobs_count_applications_by_status('ERROR');
+  $count_processing = fj16_jobs_count_applications_by_status('PROCESSING');
+  // Applications are processed one at a time. If ther's more, that means an export has failed.
+  return $count_errors > 0 || $count_processing > 1;
 }
 
 // Strings to for by automatic extraction of localizable strings - do not remove
