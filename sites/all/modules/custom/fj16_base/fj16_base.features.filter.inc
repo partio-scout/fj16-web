@@ -10,6 +10,16 @@
 function fj16_base_filter_default_formats() {
   $formats = array();
 
+  // Exported format: FJ16 Block content.
+  $formats['fj16_block_content'] = array(
+    'format' => 'fj16_block_content',
+    'name' => 'FJ16 Block content',
+    'cache' => 1,
+    'status' => 1,
+    'weight' => 0,
+    'filters' => array(),
+  );
+
   // Exported format: Full HTML.
   $formats['full_html'] = array(
     'format' => 'full_html',
