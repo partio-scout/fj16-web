@@ -613,6 +613,8 @@ function fj16_jobs_is_export_in_error_state() {
 
 // Strings to for by automatic extraction of localizable strings - do not remove
 
+t('Position type');
+
 // Job levels
 t('Director');
 t('Manager');
