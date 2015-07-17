@@ -1,7 +1,17 @@
 #!/bin/sh
 
-echo "DEPLOYING..."
+DATE=$(date)
+echo "DEPLOY STARTED AT $DATE"
+git log -1
+echo
+
+echo "Running update hooks..."
 /var/lib/nginx/drush/drush updatedb -y
+echo "Reverting features..."
 /var/lib/nginx/drush/drush features-revert-all -y
+echo "Clearing caches..."
 /var/lib/nginx/drush/drush cc all #clear caches
-echo "DEPLOY DONE"
+
+DATE=$(date)
+echo "DEPLOY COMPLETED AT $DATE"
+echo
