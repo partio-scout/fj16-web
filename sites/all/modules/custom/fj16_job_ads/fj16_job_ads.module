@@ -192,18 +192,7 @@ function fj16_job_ads_get_field_mappings($lang) {
   //Title needs to be mapped separately, as it's not a Fields field
   $mappings = array(
     'pestin_x0020_taso_x0020__x0028_j'  => 'field_level',
-    'pestin_x0020_koko_x0020__x0028_j'  => 'field_jm_work',
     'lis_x00e4_tietoja_x0020_antaa_x0'  => 'field_info_contact',
-
-    // Job machine (jm, "pestikone") fields
-    'pestikone_x003a__x0020_analyytti'  => 'field_jm_analytic_creative',
-    'pestikone_x003a__x0020_suunnitte'  => 'field_jm_planning_doing',
-    'pestikone_x003a__x0020_johtamine'  => 'field_jm_leading_doing',
-    'pestikone_x003a__x0020_yksil_x00'  => 'field_jm_individual_group',
-    'pestikone_x003a__x0020_perinteis'  => 'field_jm_traditional_modern',
-    'pestikone_x003a__x0020_nuorten_x'  => 'field_jm_growing_marketing',
-    'pestikone_x003a__x0020_suuret_x0'  => 'field_jm_macro_micro',
-    'pestikone_x003a__x0020_kivoja_x0'  => 'field_jm_fun_important',
     'id' => 'field_sharepoint_line_id',
     'uniqueid' => 'field_sharepoint_guid'
   );
