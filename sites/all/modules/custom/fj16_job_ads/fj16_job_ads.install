@@ -46,6 +46,26 @@ function fj16_job_ads_update_7008() {
   fj16_import_translation('fj16_job_ads', 'sv');
 }
 
+function fj16_job_ads_update_7010() {
+  $field_names = array(
+    'field_jm_work',
+    'field_jm_analytic_creative',
+    'field_jm_planning_doing',
+    'field_jm_leading_doing',
+    'field_jm_individual_group',
+    'field_jm_traditional_modern',
+    'field_jm_growing_marketing',
+    'field_jm_macro_micro',
+    'field_jm_fun_important'
+  );
+  foreach ($field_names as $field_name) {
+    if(field_info_field($field_name) !== NULL) {
+      field_delete_field($field_name);
+    }
+  }
+  field_purge_batch(1000); // actually delete all data, instances and base of these fields
+}
+
 function fj16_job_ads_schema() {
   $schema = array();
 
