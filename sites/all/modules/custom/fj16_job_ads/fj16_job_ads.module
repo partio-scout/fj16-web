@@ -164,7 +164,7 @@ function fj16_job_update_node_fields(&$node, $job, $lang) {
 
     $node->$drupal_field = array(
       LANGUAGE_NONE => array(
-        array('value' => $job[$sharepoint_field])
+        array('value' => fj16_job_value_clean($job[$sharepoint_field]))
       )
     );
   }
@@ -182,6 +182,12 @@ function fj16_job_update_node_fields(&$node, $job, $lang) {
 
   // sharepoint GUID has the line id prepended, remove that
   $node->field_sharepoint_guid[LANGUAGE_NONE][0]['value'] = fj16_sharepoint_lookup_value($node->field_sharepoint_guid[LANGUAGE_NONE][0]['value']);
+}
+
+function fj16_job_value_clean($value) {
+  $value = str_replace('&nbsp;', ' ', $value);
+  $value = str_replace('&#160;', ' ', $value);
+  return $value;
 }
 
 
