@@ -377,7 +377,9 @@ user/*/*';
   $strongarm->name = 'i18n_string_allowed_formats';
   $strongarm->value = array(
     'full_html' => 'full_html',
+    'fj16_block_content' => 'fj16_block_content',
     'plain_text' => 'plain_text',
+    'fj16_job_content' => 0,
   );
   $export['i18n_string_allowed_formats'] = $strongarm;
 
