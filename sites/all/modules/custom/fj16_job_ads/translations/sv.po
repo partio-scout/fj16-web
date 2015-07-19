@@ -158,7 +158,7 @@ msgstr "mera"
 
 #: fj16_job_ads.module:385
 msgid "Apply for position"
-msgstr "Söka till uppdraget"
+msgstr "Sök till uppdrag"
 
 #: fj16_job_ads.module:389
 msgid ""
