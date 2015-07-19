@@ -11,6 +11,8 @@ echo "Reverting features..."
 /var/lib/nginx/drush/drush features-revert-all -y
 echo "Clearing caches..."
 /var/lib/nginx/drush/drush cc all #clear caches
+echo "Running cron..."
+/var/lib/nginx/drush/drush core-cron
 
 DATE=$(date)
 echo "DEPLOY COMPLETED AT $DATE"
