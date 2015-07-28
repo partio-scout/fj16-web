@@ -14,6 +14,44 @@
   }
 }
 
+div.messages {
+  margin: 0;
+  border: 0;
+  padding: 20px 10px 10px 76px;
+  line-height: 2em;
+  background: none no-repeat 20px 20px;
+  background-size: 36px;
+  min-height: 76px;
+
+  a {
+    color: inherit; // normal link color could be illegible
+    text-decoration: underline; // links need to be seen, though
+  }
+
+  &.status {
+    background-color: $green;
+    background-image: inline-image("../img/icons/status.png");
+    color: #FFF;
+  }
+
+  &.error {
+    background-color: $red;
+    background-image: inline-image("../img/icons/error.png");
+    color: #FFF;
+  }
+
+  &.warning {
+    background-color: $yellow;
+    background-image: inline-image("../img/icons/warning.png");
+    color: #000;
+  }
+
+  ul, li {
+    margin: 0;
+    padding: 0;
+  }
+}
+
 #sidebar-left {
   width: 26%;
   float: left;

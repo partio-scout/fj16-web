@@ -87,9 +87,9 @@ $department_class = $field_department[0]['value'];
   <div class="info">
     <?php if($page): ?>
       <div class="breadcrumb">
-        <?php print l('Etusivu', '<front>'); ?>
+        <?php print l(t('Front page'), '<front>'); ?>
         &gt;
-        <?php print l('Avoimet pestit', 'pestit'); ?>
+        <?php print l(t('Open staff positions'), 'pestit'); ?>
         &gt;
         <?php print $title; ?>
       </div>
@@ -128,15 +128,15 @@ $department_class = $field_department[0]['value'];
       print render($content);
     ?>
     <?php if($page): ?>
-      <h3>Vaatimukset</h3>
+      <h3><?php print t('Requirements') ?></h3>
       <?php print render($content['field_requirements']); ?>
-      <h3>Lisätiedot</h3>
+      <h3><?php print t('Further information') ?></h3>
       <?php print render($content['field_info_contact']); ?>
       </div>
       <div class="application-form">
         <?php print render($content['fj16_job_application_form']); ?>
     <?php else: ?>
-      <a class="read-more" href="<?php print $node_url; ?>">Lue lisää</a>
+      <a class="read-more" href="<?php print $node_url; ?>"><?php print t('Read more'); ?></a>
     <?php endif; ?>
   </div>
 

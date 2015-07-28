@@ -14,6 +14,10 @@ function fj16_job_ads_update_7004() {
   ));
 }
 
+function fj16_job_ads_update_7005() {
+  module_enable(array('honeypot'));
+}
+
 function fj16_job_ads_update_7006() {
   if(db_field_exists('fj16_job_applications', 'application_id')) {
     return;
@@ -27,8 +31,25 @@ function fj16_job_ads_update_7006() {
   ));
 }
 
-function fj16_job_ads_update_7005() {
-  module_enable(array('honeypot'));
+function fj16_job_ads_update_7007() {
+  $query = db_query('SELECT nid FROM {node} WHERE {node}.type = :type;', array(':type' => 'fj16_job'));
+  foreach($query as $row) {
+    node_delete($row->nid);
+  }
+  drupal_cron_run();
+}
+
+function fj16_job_ads_update_7008() {
+  // fj16_base.module needs to be included to access fj16_import_translation()
+  require_once(drupal_get_path('module', 'fj16_base') . '/fj16_base.module');
+  fj16_import_translation('fj16_job_ads', 'fi');
+  fj16_import_translation('fj16_job_ads', 'sv');
+}
+
+function fj16_job_ads_update_7011() {
+  //Update swedish translation
+  require_once(drupal_get_path('module', 'fj16_base') . '/fj16_base.module');
+  fj16_import_translation('fj16_job_ads', 'sv');
 }
 
 function fj16_job_ads_schema() {

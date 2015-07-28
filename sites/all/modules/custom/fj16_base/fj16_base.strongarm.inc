@@ -41,6 +41,13 @@ function fj16_base_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'cron_safe_threshold';
+  $strongarm->value = '3600';
+  $export['cron_safe_threshold'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'date_default_timezone';
   $strongarm->value = 'Europe/Helsinki';
   $export['date_default_timezone'] = $strongarm;
@@ -370,7 +377,9 @@ user/*/*';
   $strongarm->name = 'i18n_string_allowed_formats';
   $strongarm->value = array(
     'full_html' => 'full_html',
+    'fj16_block_content' => 'fj16_block_content',
     'plain_text' => 'plain_text',
+    'fj16_job_content' => 0,
   );
   $export['i18n_string_allowed_formats'] = $strongarm;
 
@@ -566,7 +575,7 @@ user/*/*';
     'domain' => '',
     'prefix' => '',
     'weight' => '0',
-    'javascript' => 'QLbraJ71FHR_kEINNRd3jHa_4a9o2-2m7DVh2Pbp0hM',
+    'javascript' => 'OWlnQEkJRmaz151fjWxG9-svnmfk4py05sitTu5ch38',
   );
   $export['language_default'] = $strongarm;
 

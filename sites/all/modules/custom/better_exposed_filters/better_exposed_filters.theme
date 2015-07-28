@@ -635,7 +635,7 @@ function theme_secondary_exposed_elements($vars) {
  */
 function bef_checkbox($element, $value, $label, $selected) {
   $value = check_plain($value);
-  $label = filter_xss_admin($label);
+  $label = filter_xss_admin(t($label));
   $id = drupal_html_id($element['#id'] . '-' . $value);
   // Custom ID for each checkbox based on the <select>'s original ID.
   $properties = array(

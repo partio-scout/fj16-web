@@ -136,8 +136,11 @@
 					text-transform: none;
 					display: block;
 					height: 50px;
-					line-height: 50px;
-					margin: -10px 0 0;
+					height: 100%;
+					line-height: 20px;
+					margin: 0;
+					padding-top: 5px;
+					padding-bottom: 15px;
 				}
 
 				a:hover {
