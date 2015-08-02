@@ -1,10 +1,11 @@
 #footer {
 	background: #dbdbdb;
 	padding: 100px 0;
+	padding-left: 20%;
 
 
 	.footer_section.narrow {
-		width: 15%;
+		width: 25%;
 		display: block;
 		float: left;
 		text-align: right;
@@ -14,28 +15,7 @@
 		}
 
 		
-		#roihu-logo {
-			display: inline-block;
-			max-width: 100%;
-			width: 170px;
-			height: 80px;
-			text-indent: -9999em;
 
-			@include at2x('footer_roihu_logo', 100%);
-			background-repeat: no-repeat;
-		}
-
-		#sp-logo {
-			display: inline-block;
-			max-width: 100%;
-			width: 150px;
-			height: 58px;
-			text-indent: -9999em;
-
-			@include at2x('footer_sp_logo', 100%);
-			background-repeat: no-repeat;
-
-		}
 	}
 
 	.block {
@@ -55,7 +35,7 @@
 		}
 
 		.content {
-			width: 70%;
+			width: 75%;
 			float: left;
 			position: relative;
 
@@ -67,7 +47,34 @@
 				&:first-child {
 					padding: 0 50px 0 20px;
 				}
+
+				#roihu-logo {
+					display: inline-block;
+					max-width: 100%;
+					width: 241px;
+					height: 90px;
+					text-indent: -9999em;
+
+					@include at2x('footer_roihu_logo2', 100%);
+					background-repeat: no-repeat;
+					margin-bottom: 20px;
+				}
+
+				#sp-logo {
+					display: inline-block;
+					max-width: 100%;
+					width: 235px;
+					height: 90px;
+					text-indent: -9999em;
+
+					@include at2x('footer_sp_logo2', 100%);
+					background-repeat: no-repeat;
+					margin-bottom: 20px;
+
+				}
 			}
+
+
 		}
 	}
 
