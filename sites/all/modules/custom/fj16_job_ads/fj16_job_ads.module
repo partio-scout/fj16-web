@@ -113,7 +113,7 @@ function fj16_job_ads_create_or_update($job, $lang) {
   $title_field = _fj16_get_title_field($lang);
 
   //If the title field for this language does not exist, return immediately without creating anything
-  if(strlen($job[$title_field]) === 0) {
+  if(!isset($job[$title_field]) || strlen($job[$title_field]) === 0) {
     return;
   }
 
