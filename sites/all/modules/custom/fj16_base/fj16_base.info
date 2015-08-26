@@ -13,6 +13,7 @@ dependencies[] = features
 dependencies[] = features_translations
 dependencies[] = file
 dependencies[] = filter
+dependencies[] = git_status
 dependencies[] = globalredirect
 dependencies[] = googleanalytics
 dependencies[] = i18n
