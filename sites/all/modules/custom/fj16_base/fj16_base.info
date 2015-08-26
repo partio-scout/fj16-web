@@ -165,6 +165,7 @@ features[user_permission][] = translate content
 features[user_permission][] = translate interface
 features[user_permission][] = translate user-defined strings
 features[user_permission][] = use PHP for tracking visibility
+features[user_permission][] = use text format fj16_block_content
 features[user_permission][] = use text format full_html
 features[user_permission][] = view all blocks
 features[user_permission][] = view media

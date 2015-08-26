@@ -633,6 +633,15 @@ function fj16_base_user_default_permissions() {
     'module' => 'googleanalytics',
   );
 
+  // Exported permission: 'use text format fj16_block_content'.
+  $permissions['use text format fj16_block_content'] = array(
+    'name' => 'use text format fj16_block_content',
+    'roles' => array(
+      'content editor' => 'content editor',
+    ),
+    'module' => 'filter',
+  );
+
   // Exported permission: 'use text format full_html'.
   $permissions['use text format full_html'] = array(
     'name' => 'use text format full_html',
