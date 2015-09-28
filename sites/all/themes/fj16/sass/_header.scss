@@ -76,11 +76,16 @@
 			left: 0;
 			height: 50px;
 			min-height: 50px;
-			z-index: 50;
+			z-index: 50; 
 
 			ul li a {
 				height: 50px;
 				line-height: 50px;
+			}
+
+			ul li ul li a {
+				line-height: 1.1em;
+				height: 100%;
 			}
 		}
 
@@ -242,7 +247,7 @@
 					}
 				}
 			}
-		}
+		} 
 	}
 	
 	#bg-slides {
