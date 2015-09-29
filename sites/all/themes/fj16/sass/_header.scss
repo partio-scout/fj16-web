@@ -108,6 +108,10 @@
 				line-height: 80px;
 				color: #fff;
 				@include transition(background-color 0.3s ease-out);
+        
+        @include respond(medium) {
+          padding: 0 20px;
+        }
 			}
 
 			a.active, a.active-trail, li:hover a {

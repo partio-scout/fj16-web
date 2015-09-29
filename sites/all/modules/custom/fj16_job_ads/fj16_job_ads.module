@@ -200,7 +200,8 @@ function fj16_job_ads_get_field_mappings($lang) {
     'pestin_x0020_taso_x0020__x0028_j'  => 'field_level',
     'lis_x00e4_tietoja_x0020_antaa_x0'  => 'field_info_contact',
     'id' => 'field_sharepoint_line_id',
-    'uniqueid' => 'field_sharepoint_guid'
+    'uniqueid' => 'field_sharepoint_guid',
+    'haku_x0020_p_x00e4__x00e4_ttyy_x' => 'field_sharepoint_closing_date'
   );
 
   if($lang == 'fi') {
@@ -620,6 +621,7 @@ function fj16_jobs_is_export_in_error_state() {
 // Strings to for by automatic extraction of localizable strings - do not remove
 
 t('Position type');
+t('Apply by');
 
 // Job levels
 t('Director');

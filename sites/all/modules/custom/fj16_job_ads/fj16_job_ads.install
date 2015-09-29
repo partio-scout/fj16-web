@@ -46,6 +46,13 @@ function fj16_job_ads_update_7008() {
   fj16_import_translation('fj16_job_ads', 'sv');
 }
 
+function fj16_job_ads_update_9000() {
+  // fj16_base.module needs to be included to access fj16_import_translation()
+  require_once(drupal_get_path('module', 'fj16_base') . '/fj16_base.module');
+  fj16_import_translation('fj16_job_ads', 'fi');
+  fj16_import_translation('fj16_job_ads', 'sv');
+}
+
 function fj16_job_ads_update_7011() {
   //Update swedish translation
   require_once(drupal_get_path('module', 'fj16_base') . '/fj16_base.module');
