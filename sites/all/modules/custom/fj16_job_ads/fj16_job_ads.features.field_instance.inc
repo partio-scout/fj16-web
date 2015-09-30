@@ -171,6 +171,50 @@ function fj16_job_ads_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-fj16_job-field_priority'
+  $field_instances['node-fj16_job-field_priority'] = array(
+    'bundle' => 'fj16_job',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 17,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_priority',
+    'label' => 'Priority',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 20,
+    ),
+  );
+
   // Exported field_instance: 'node-fj16_job-field_requirements'
   $field_instances['node-fj16_job-field_requirements'] = array(
     'bundle' => 'fj16_job',
@@ -334,6 +378,7 @@ function fj16_job_ads_field_default_field_instances() {
   t('Description');
   t('Further information');
   t('Position level');
+  t('Priority');
   t('Requirements');
   t('Section');
   t('SharePoint GUID');
