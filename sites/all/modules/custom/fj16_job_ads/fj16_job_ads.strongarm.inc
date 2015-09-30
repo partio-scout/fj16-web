@@ -40,6 +40,9 @@ function fj16_job_ads_strongarm() {
         'redirect' => array(
           'weight' => '16',
         ),
+        'language' => array(
+          'weight' => '0',
+        ),
       ),
       'display' => array(
         'language' => array(
