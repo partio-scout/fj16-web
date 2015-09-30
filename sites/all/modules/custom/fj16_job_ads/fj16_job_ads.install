@@ -46,13 +46,6 @@ function fj16_job_ads_update_7008() {
   fj16_import_translation('fj16_job_ads', 'sv');
 }
 
-function fj16_job_ads_update_9000() {
-  // fj16_base.module needs to be included to access fj16_import_translation()
-  require_once(drupal_get_path('module', 'fj16_base') . '/fj16_base.module');
-  fj16_import_translation('fj16_job_ads', 'fi');
-  fj16_import_translation('fj16_job_ads', 'sv');
-}
-
 function fj16_job_ads_update_7011() {
   //Update swedish translation
   require_once(drupal_get_path('module', 'fj16_base') . '/fj16_base.module');
@@ -77,6 +70,13 @@ function fj16_job_ads_update_7012() {
     }
   }
   field_purge_batch(1000); // actually delete all data, instances and base of these fields
+}
+
+function fj16_job_ads_update_7013() {
+  // fj16_base.module needs to be included to access fj16_import_translation()
+  require_once(drupal_get_path('module', 'fj16_base') . '/fj16_base.module');
+  fj16_import_translation('fj16_job_ads', 'fi');
+  fj16_import_translation('fj16_job_ads', 'sv');
 }
 
 function fj16_job_ads_schema() {
