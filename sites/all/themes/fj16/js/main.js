@@ -1,4 +1,23 @@
 (function($, Drupal, undefined){
+  
+
+  var countdownDate = new Date(2015,10,01);
+  $('div#clock').countdown(countdownDate, function(event) {
+    $this = $(this);
+    switch(event.type) {
+      case "seconds":
+      case "minutes":
+      case "hours":
+      case "days":
+      case "weeks":
+      case "daysLeft":
+        $this.find('span#'+event.type).html(event.value);
+        break;
+      case "finished":
+        $this.fadeTo('slow', .5);
+        break;
+    }
+  });
 
 	if($('.node-fj16-frontpage-box').length) {
 		$('.node-fj16-frontpage-box').each(function(){

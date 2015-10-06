@@ -132,6 +132,22 @@
 
       <div id="content" class="column">
         <a id="main-content"></a>
+        
+        <?php if($is_front): ?>
+        <div id="clock-wrapper">
+          <h2>Ilmoittautumisen alkuun:</h2>
+          <div id="clock">
+            <p> <span id="daysLeft"></span> p&auml;iv&auml;&auml; </p>
+            <div class="space">:</div>
+            <p> <span id="hours"></span> tuntia </p>
+            <div class="space">:</div>
+            <p> <span id="minutes"></span> minuuttia </p>
+            <div class="space">:</div>
+            <p> <span id="seconds"></span> sekuntia </p>
+          </div>
+          <a href="/lippukunnille/ilmoittautuminen-roihulle">Lue lis&auml;&auml; ilmoittautumisesta</a>
+        </div>
+        <?php endif; ?>
         <?php print render($title_prefix); ?>
         <?php if ($title): ?><h1 class="title" id="page-title"><?php print $title; ?></h1><?php endif; ?>
         <?php print render($title_suffix); ?>

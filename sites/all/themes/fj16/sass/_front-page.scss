@@ -194,6 +194,67 @@ body.front {
 		}
 
 		padding: 0;
+    
+    div#clock-wrapper {
+			@include at2x('front_section_bg', auto, 100%);
+      background-color: $blue;
+			background-repeat: no-repeat;
+			background-position: center;
+      padding: 70px 0;
+      
+      h2 {
+        color: #fff;
+        font-family: Exo2, sans-serif;
+        font-size: 40px;
+        margin: 0;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      
+      div#clock {
+        color: #fff;
+        margin: 50px auto;
+        width: 630px;
+        overflow: hidden;
+        text-align: center;
+        text-transform: uppercase;
+        
+        p {
+          background: #333;
+          font-size: 16px;
+          line-height: 1.2;
+          float: left;
+          height: 120px;
+          width: 120px;
+          margin-bottom: 0;
+          
+          span {
+            display: block;
+            font-size: 70px;
+            font-weight: bold;
+            padding: 5px 0 0;
+          }
+        }
+      
+        div.space {
+          color: #fff;
+          display: block;
+          line-height: 120px;
+          font-size: 70px;
+          float: left;
+          height: 120px;
+          width: 50px;
+        }
+      }
+      
+      a {
+        display: block;
+        color: #fff;
+        font-size: 25px;
+        text-align: center;
+        
+      }
+    }
 
 		#block-system-main {
 			.node {
