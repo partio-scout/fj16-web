@@ -4,6 +4,7 @@ package = FJ16
 dependencies[] = better_exposed_filters
 dependencies[] = block
 dependencies[] = ctools
+dependencies[] = date
 dependencies[] = fe_block
 dependencies[] = features
 dependencies[] = filter
