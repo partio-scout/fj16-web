@@ -255,6 +255,61 @@ function fj16_job_ads_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-fj16_job-field_sharepoint_deadline'
+  $field_instances['node-fj16_job-field_sharepoint_deadline'] = array(
+    'bundle' => 'fj16_job',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+          'show_remaining_days' => FALSE,
+        ),
+        'type' => 'date_default',
+        'weight' => 17,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_sharepoint_deadline',
+    'label' => 'Sharepoint deadline',
+    'required' => 0,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'increment' => 15,
+        'input_format' => 'Y-m-d H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'no_fieldset' => 0,
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_text',
+      'weight' => 20,
+    ),
+  );
+
   // Exported field_instance: 'node-fj16_job-field_sharepoint_guid'
   $field_instances['node-fj16_job-field_sharepoint_guid'] = array(
     'bundle' => 'fj16_job',
@@ -383,6 +438,7 @@ function fj16_job_ads_field_default_field_instances() {
   t('Section');
   t('SharePoint GUID');
   t('SharePoint line ID');
+  t('Sharepoint deadline');
   t('Team');
 
   return $field_instances;
