@@ -112,7 +112,7 @@ div.messages {
 }
 
 #content {
-  padding: 100px 200px;
+  padding: 100px;
 
   @include respond(medium) {
     padding: 75px 100px;
