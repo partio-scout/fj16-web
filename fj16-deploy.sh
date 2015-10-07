@@ -14,6 +14,11 @@ echo "Clearing caches..."
 echo "Running cron..."
 /var/lib/nginx/drush/drush core-cron
 
+hostname=$(hostname)
+flowname="web-sivut"
+email=$flowname"@finnjamboree2016.flowdock.com"
+git log -1 | mailx -s "Deployed on "$hostname $email
+
 DATE=$(date)
 echo "DEPLOY COMPLETED AT $DATE"
 echo
