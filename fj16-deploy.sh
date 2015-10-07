@@ -18,7 +18,7 @@ hostname=$(hostname)
 flowname="web-sivut"
 email=$flowname"@finnjamboree2016.flowdock.com"
 commit=$(git log -1)
-sendmail emil.virkki@gmail.com -f noreply@roihu2016.fi <<< "Subject: Deployed on "$hostname"
+sendmail $email -f noreply@roihu2016.fi <<< "Subject: Deployed on "$hostname"
 From: noreply@roihu2016.fi
 
 "$commit
