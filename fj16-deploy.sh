@@ -5,6 +5,9 @@ echo "DEPLOY STARTED AT $DATE"
 git log -1
 echo
 
+echo "Testing drush:"
+/var/lib/nginx/drush/drush
+
 echo "Running update hooks..."
 /var/lib/nginx/drush/drush updatedb -y
 echo "Reverting features..."
