@@ -17,7 +17,11 @@ echo "Running cron..."
 hostname=$(hostname)
 flowname="web-sivut"
 email=$flowname"@finnjamboree2016.flowdock.com"
-git log -1 | mailx -s "Deployed on "$hostname -r "noreply@roihu2016.fi" $email
+commit=$(git log -1)
+sendmail $email -f noreply@roihu2016.fi <<< "Subject: Deployed on "$hostname"
+From: noreply@roihu2016.fi
+
+"$commit
 
 DATE=$(date)
 echo "DEPLOY COMPLETED AT $DATE"
