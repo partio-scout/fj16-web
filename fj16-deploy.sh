@@ -7,7 +7,8 @@ echo
 
 echo "Testing drush:"
 ls -la /var/lib/nginx/drush
-drush
+cd ..
+/var/lib/nginx/drush/drush
 
 echo "Running update hooks..."
 /var/lib/nginx/drush/drush updatedb -y
