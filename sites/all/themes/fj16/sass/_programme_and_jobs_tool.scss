@@ -2,6 +2,7 @@
   .views-row {
     width: 30%;
     float: left;
+    height: 360px;
 
     @include respond(small) {
       width: 48%;
