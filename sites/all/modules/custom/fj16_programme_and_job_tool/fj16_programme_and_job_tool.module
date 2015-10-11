@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the FJ16 Programme and job tool feature.
+ */
+
+include_once 'fj16_programme_and_job_tool.features.inc';
