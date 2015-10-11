@@ -18,15 +18,6 @@ $yhteistyo: $blue;
     }
   }
   
-  #content {
-    @extend .container;
-    
-    @include respondMin(medium) {
-      padding-left: 220px;
-      padding-right: 220px;
-    }
-  }
-  
   #content h1 {
     display: none; //TODO Accessibility
   }
