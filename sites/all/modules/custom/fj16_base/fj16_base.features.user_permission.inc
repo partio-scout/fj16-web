@@ -57,6 +57,7 @@ function fj16_base_user_default_permissions() {
     'name' => 'access content overview',
     'roles' => array(
       'content editor' => 'content editor',
+      'jobs editor' => 'jobs editor',
     ),
     'module' => 'node',
   );
@@ -103,6 +104,7 @@ function fj16_base_user_default_permissions() {
     'name' => 'access toolbar',
     'roles' => array(
       'content editor' => 'content editor',
+      'jobs editor' => 'jobs editor',
     ),
     'module' => 'toolbar',
   );
