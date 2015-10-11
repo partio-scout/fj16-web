@@ -7,3 +7,4 @@ dependencies[] = fj16_base
 dependencies[] = fj16_frontpage_boxes
 dependencies[] = fj16_basic_content_type
 dependencies[] = fj16_job_ads
+dependencies[] = fj16_programme_and_job_tool
