@@ -254,6 +254,16 @@ body.front {
         text-align: center;
         
       }
+			
+			@include respondMin(small) {
+				h2, a {
+					opacity: 0;
+
+					&.animated {
+						opacity: 1;
+					}
+				}
+			}
     }
 
 		#block-system-main {

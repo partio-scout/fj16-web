@@ -1,24 +1,4 @@
 (function($, Drupal, undefined){
-  
-
-  var countdownDate = new Date(2015,10,01);
-  $('div#clock').countdown(countdownDate, function(event) {
-    $this = $(this);
-    switch(event.type) {
-      case "seconds":
-      case "minutes":
-      case "hours":
-      case "days":
-      case "weeks":
-      case "daysLeft":
-        $this.find('span#'+event.type).html(event.value);
-        break;
-      case "finished":
-        $this.fadeTo('slow', .5);
-        break;
-    }
-  });
-
 	if($('.node-fj16-frontpage-box').length) {
 		$('.node-fj16-frontpage-box').each(function(){
 			if($(this).find('.image .hashtag').length > 0) {
@@ -148,43 +128,43 @@ function shuffle(array) {
 }
 
 jQuery.fn.isOnScreen = function(x, y){
-    
-    if(x == null || typeof x == 'undefined') x = 1;
-    if(y == null || typeof y == 'undefined') y = 1;
-    
-    var win = jQuery(window);
-    
-    var viewport = {
-        top : win.scrollTop(),
-        left : win.scrollLeft()
-    };
-    viewport.right = viewport.left + win.width();
-    viewport.bottom = viewport.top + win.height();
-    
-    var height = this.outerHeight();
-    var width = this.outerWidth();
+		
+		if(x == null || typeof x == 'undefined') x = 1;
+		if(y == null || typeof y == 'undefined') y = 1;
+		
+		var win = jQuery(window);
+		
+		var viewport = {
+				top : win.scrollTop(),
+				left : win.scrollLeft()
+		};
+		viewport.right = viewport.left + win.width();
+		viewport.bottom = viewport.top + win.height();
+		
+		var height = this.outerHeight();
+		var width = this.outerWidth();
  
-    if(!width || !height){
-        return false;
-    }
-    
-    var bounds = this.offset();
-    bounds.right = bounds.left + width;
-    bounds.bottom = bounds.top + height;
-    
-    var visible = (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
-    
-    if(!visible){
-        return false;   
-    }
-    
-    var deltas = {
-        top : Math.min( 1, ( bounds.bottom - viewport.top ) / height),
-        bottom : Math.min(1, ( viewport.bottom - bounds.top ) / height),
-        left : Math.min(1, ( bounds.right - viewport.left ) / width),
-        right : Math.min(1, ( viewport.right - bounds.left ) / width)
-    };
-    
-    return (deltas.left * deltas.right) >= x && (deltas.top * deltas.bottom) >= y;
-    
+		if(!width || !height){
+				return false;
+		}
+		
+		var bounds = this.offset();
+		bounds.right = bounds.left + width;
+		bounds.bottom = bounds.top + height;
+		
+		var visible = (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
+		
+		if(!visible){
+				return false;	 
+		}
+		
+		var deltas = {
+				top : Math.min( 1, ( bounds.bottom - viewport.top ) / height),
+				bottom : Math.min(1, ( viewport.bottom - bounds.top ) / height),
+				left : Math.min(1, ( bounds.right - viewport.left ) / width),
+				right : Math.min(1, ( viewport.right - bounds.left ) / width)
+		};
+		
+		return (deltas.left * deltas.right) >= x && (deltas.top * deltas.bottom) >= y;
+		
 };

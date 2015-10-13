@@ -12,7 +12,6 @@ regions[mobile_menu] = Mobile menu
 
 stylesheets[all][] = css/fj16.css
 
-scripts[] = js/jquery.countdown.js
 scripts[] = js/skrollr.min.js
 scripts[] = js/main.js
 scripts[] = js/tracking.js
