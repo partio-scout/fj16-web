@@ -132,7 +132,7 @@ body.front {
 				position: absolute;
 				width: 40px;
 				height: 46px;
-				bottom: -80px;
+				bottom: -20px;
 				left: 50%;
 				margin-left: -20px;
 				opacity: 0.75;
@@ -145,7 +145,7 @@ body.front {
 				@include animation-delay(1.2s);
 
 				&:hover {
-					bottom: -95px;
+					bottom: -35px;
 				}
 
 				@include respond(medium) {

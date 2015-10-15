@@ -1,0 +1,19 @@
+.bulk-jobs-list {
+  .views-row {
+    width: 30%;
+    float: left;
+    height: 360px;
+
+    @include respond(small) {
+      width: 48%;
+    }
+
+    @include respond(mobile) {
+      width: 100%;
+    }
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+}

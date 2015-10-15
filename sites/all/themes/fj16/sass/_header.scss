@@ -76,13 +76,12 @@
 			left: 0;
 			height: 50px;
 			min-height: 50px;
-			z-index: 50; 
+			z-index: 50;
 
 			ul li a {
 				height: 50px;
 				line-height: 50px;
 			}
-
 			ul li ul li a {
 				line-height: 1.1em;
 				height: 100%;
@@ -113,6 +112,10 @@
 				line-height: 80px;
 				color: #fff;
 				@include transition(background-color 0.3s ease-out);
+        
+				@include respond(medium) {
+					padding: 0 20px;
+				}
 			}
 
 			a.active, a.active-trail, li:hover a {
@@ -247,7 +250,7 @@
 					}
 				}
 			}
-		} 
+		}
 	}
 	
 	#bg-slides {
