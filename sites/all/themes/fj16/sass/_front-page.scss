@@ -33,7 +33,7 @@ body.front {
 			margin-bottom: 50px;			
 		}
 
-		@include respond(mobile) {
+		@include respond(small) {
 			margin-bottom: 0 !important;
 		}
 
@@ -194,6 +194,86 @@ body.front {
 		}
 
 		padding: 0;
+		
+		div#clock-wrapper {
+			@include at2x('front_section_bg', auto, 100%);
+			background-color: $blue;
+			background-repeat: no-repeat;
+			background-position: center;
+			padding: 3.8em 0;
+			
+			h2 {
+				color: #fff;
+				font-family: Exo2, sans-serif;
+				font-size: 2.22em;
+				margin: 0;
+				text-align: center;
+				text-transform: uppercase;
+			}
+			
+			div#clock {
+				color: #fff;
+				margin: 2.8em auto;
+				width: 35.1em;
+				overflow: hidden;
+				text-align: center;
+				text-transform: uppercase;
+				
+				p {
+					background: #333;
+					font-size: .9em;
+					line-height: 1.2;
+					float: left;
+					height: 7.5em;
+					width: 7.5em;
+					margin-bottom: 0;
+					
+					span {
+						display: block;
+						font-size: 4.32em;
+						font-weight: bold;
+						padding: 5px 0 0;
+					}
+				}
+			
+				div.space {
+					color: #fff;
+					display: block;
+					line-height: 1.52em;
+					font-size: 4.4em;
+					float: left;
+					height: 1.52em;
+					width: .6em;
+				}
+			}
+			
+			a {
+				display: block;
+				color: #fff;
+				font-size: 1.4em;
+				text-align: center;
+				
+			}
+			
+			@include respondMin(small) {
+				h2, a {
+					opacity: 0;
+
+					&.animated {
+						opacity: 1;
+					}
+				}
+			}
+			
+			@include respond(mobile) {
+				font-size: .8em;
+			}
+			@include respond(480px) {
+				div#clock {
+					font-size: .65em;
+				}
+			}
+		}
 
 		#block-system-main {
 			.node {
@@ -258,7 +338,7 @@ body.front {
 						@include respond(mobile) {
 							width: 100%;
 							height: 0 !important;
-							padding: 0 0 50.417%;  // Hack to make bg image fit (ratio is same in all breakpoints)
+							padding: 0 0 50.417%;	// Hack to make bg image fit (ratio is same in all breakpoints)
 							overflow: visible;
 							position: static !important;
 							margin-bottom: 40px;

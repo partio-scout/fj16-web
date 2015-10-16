@@ -17,3 +17,7 @@ function fj16_master_update_7003() {
 function fj16_master_update_7004() {
   module_enable(array('fj16_job_ads'));
 }
+
+function fj16_master_update_7006() {
+  module_enable(array('fj16_countdown'));
+}
