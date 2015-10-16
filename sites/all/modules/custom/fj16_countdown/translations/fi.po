@@ -1,0 +1,44 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  fj16_countdown.info: n/a
+#  js/fj16_countdown.js: n/a
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2015-10-13 20:32+0300\n"
+"PO-Revision-Date: 2015-10-13 21:09+0200\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.5.5\n"
+
+#: fj16_countdown.info:0
+msgid "FJ16 Countdown"
+msgstr ""
+
+#: fj16_countdown.info:0
+msgid "FJ16"
+msgstr ""
+
+#: js/fj16_countdown.js:0
+msgid "days"
+msgstr "päivää"
+
+#: js/fj16_countdown.js:0
+msgid "hours"
+msgstr "tuntia"
+
+#: js/fj16_countdown.js:0
+msgid "minutes"
+msgstr "minuuttia"
+
+#: js/fj16_countdown.js:0
+msgid "seconds"
+msgstr "sekuntia"

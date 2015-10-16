@@ -1,0 +1,45 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  fj16_countdown.info: n/a
+#  js/fj16_countdown.js: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2015-10-13 20:32+0300\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: fj16_countdown.info:0
+msgid "FJ16 Countdown"
+msgstr ""
+
+#: fj16_countdown.info:0
+msgid "FJ16"
+msgstr ""
+
+#: js/fj16_countdown.js:0
+msgid "days"
+msgstr ""
+
+#: js/fj16_countdown.js:0
+msgid "hours"
+msgstr ""
+
+#: js/fj16_countdown.js:0
+msgid "minutes"
+msgstr ""
+
+#: js/fj16_countdown.js:0
+msgid "seconds"
+msgstr ""
+

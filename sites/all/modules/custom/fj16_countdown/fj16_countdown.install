@@ -1,0 +1,15 @@
+<?php
+
+function fj16_countdown_update_7001() {
+  // fj16_base.module needs to be included to access fj16_import_translation()
+  require_once(drupal_get_path('module', 'fj16_base') . '/fj16_base.module');
+  fj16_import_translation('fj16_countdown', 'fi');
+  fj16_import_translation('fj16_countdown', 'sv');
+}
+
+function fj16_countdown_update_7002() {
+  // fj16_base.module needs to be included to access fj16_import_translation()
+  require_once(drupal_get_path('module', 'fj16_base') . '/fj16_base.module');
+  fj16_import_translation('fj16_countdown', 'fi');
+  fj16_import_translation('fj16_countdown', 'sv');
+}
