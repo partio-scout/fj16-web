@@ -6,8 +6,6 @@ use Thybag\SharePointAPI;
 require 'vendor/autoload.php';
 
 define('FJ16_SHAREPOINT_CONFIG_FILE', '../sharepoint-integration.conf.php');
-define('FJ16_JOBS_CURRENT_ROUND', '4. Toukokuu 2015');
-define('FJ16_JOBS_CONTINUOUS_ROUND', '- Erillishaku');
 define('FJ16_JOBS_PUBLIC_YES', 'Kyllä');
 define('FJ16_JOBS_STATUS_PUBLIC', '4. Julkaistu');
 
@@ -83,10 +81,6 @@ function fj16_job_ads_import_jobs() {
 
 function fj16_job_should_be_displayed($job) {
   if($job['pestauksen_x0020_tila'] !== FJ16_JOBS_STATUS_PUBLIC) {
-    return FALSE;
-  }
-
-  if($job['hakuryhm_x00e4_'] !== FJ16_JOBS_CURRENT_ROUND && $job['hakuryhm_x00e4_'] !== FJ16_JOBS_CONTINUOUS_ROUND) {
     return FALSE;
   }
 
@@ -216,7 +210,8 @@ function fj16_job_ads_get_field_mappings($lang) {
     'pestin_x0020_taso_x0020__x0028_j'  => 'field_level',
     'lis_x00e4_tietoja_x0020_antaa_x0'  => 'field_info_contact',
     'id' => 'field_sharepoint_line_id',
-    'uniqueid' => 'field_sharepoint_guid'
+    'uniqueid' => 'field_sharepoint_guid',
+    'haku_x0020_p_x00e4__x00e4_ttyy_x' => 'field_sharepoint_deadline'
   );
 
   if($lang == 'fi') {

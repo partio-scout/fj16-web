@@ -117,6 +117,12 @@ $department_class = $field_department[0]['value'];
           print render($content['field_team']);
         ?>
       </div>
+      <?php
+      
+      print t('Apply by').': ';
+      print(date('j.n.Y', strtotime($node->field_sharepoint_deadline['und']['0']['value']))); 
+      
+       ?>
     </div>
     <?php
       // We hide the comments and links now so that we can render them later.
