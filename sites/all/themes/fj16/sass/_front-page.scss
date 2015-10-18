@@ -197,7 +197,7 @@ body.front {
 		
 		div#clock-wrapper {
 			@include at2x('front_section_bg', auto, 100%);
-			background-color: $blue;
+			background-color: $purple;
 			background-repeat: no-repeat;
 			background-position: center;
 			padding: 3.8em 0;
@@ -214,10 +214,11 @@ body.front {
 			div#clock {
 				color: #fff;
 				margin: 2.8em auto;
-				width: 35.1em;
+				width: 35em;
 				overflow: hidden;
 				text-align: center;
 				text-transform: uppercase;
+				white-space: nowrap;
 				
 				p {
 					background: #333;
