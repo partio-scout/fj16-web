@@ -115,7 +115,11 @@ div.messages {
   padding: 100px;
 
   @include respond(medium) {
-    padding: 75px 100px;
+    padding: 75px;
+  }
+	
+	@include respond(small) {
+    padding: 50px;
   }
 
   @include respond(mobile) {
@@ -124,13 +128,17 @@ div.messages {
 
   h1.title {
     color: $blue;
-    font-size: 4.236em;
+    font-size: 4em;
     text-transform: uppercase;
     font-family: $exo2;
     margin-bottom: 0.3em;
+		
+		@include respond(medium) {
+			font-size: 3.5em;
+		}
 
     @include respond(mobile) {
-      font-size: 2.236em;
+      font-size: 2.5em;
     }
   }
 
