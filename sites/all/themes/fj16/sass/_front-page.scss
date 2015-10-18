@@ -270,8 +270,13 @@ body.front {
 				font-size: .8em;
 			}
 			@include respond(480px) {
+				div.countdown-clock {
+					text-align: center;
+				}
 				div#clock {
+					display: inline-block;
 					font-size: .65em;
+					width: auto;
 				}
 			}
 		}
