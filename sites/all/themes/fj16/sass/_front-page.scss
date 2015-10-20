@@ -48,6 +48,32 @@ body.front {
 				@include animation-delay(1.0s);
 			}
 		}
+		
+		&:before {
+			@extend .animated, .fadeInDown;
+			@include animation-duration(1.0s);
+			@include animation-delay(1.0s);
+					
+			@include at2x('header_sp_logo', 250px);
+			top: 4.8em;
+			right: 2em;
+			width: 249px;
+			height: 95px;
+			
+			@include respond(medium) {
+				width: 200px;
+				height: 76px;
+				background-size: 200px;
+			}
+			
+			@include respond(mobile) {
+				width: 100px;
+				height: 43px;
+				right: 1em;
+				top: 3.8em;
+				background-size: 100px;			
+			}
+		}
 
 		#name-and-slogan {
 			width: 500px;
