@@ -48,6 +48,32 @@ body.front {
 				@include animation-delay(1.0s);
 			}
 		}
+		
+		&:before {
+			@extend .animated, .fadeInDown;
+			@include animation-duration(1.0s);
+			@include animation-delay(1.0s);
+					
+			@include at2x('header_sp_logo', 250px);
+			top: 4.8em;
+			right: 2em;
+			width: 249px;
+			height: 95px;
+			
+			@include respond(medium) {
+				width: 200px;
+				height: 76px;
+				background-size: 200px;
+			}
+			
+			@include respond(mobile) {
+				width: 100px;
+				height: 43px;
+				right: 1em;
+				top: 3.8em;
+				background-size: 100px;			
+			}
+		}
 
 		#name-and-slogan {
 			width: 500px;
@@ -197,7 +223,7 @@ body.front {
 		
 		div#clock-wrapper {
 			@include at2x('front_section_bg', auto, 100%);
-			background-color: $blue;
+			background-color: $purple;
 			background-repeat: no-repeat;
 			background-position: center;
 			padding: 3.8em 0;
@@ -214,10 +240,11 @@ body.front {
 			div#clock {
 				color: #fff;
 				margin: 2.8em auto;
-				width: 35.1em;
+				width: 35em;
 				overflow: hidden;
 				text-align: center;
 				text-transform: uppercase;
+				white-space: nowrap;
 				
 				p {
 					background: #333;
@@ -269,8 +296,13 @@ body.front {
 				font-size: .8em;
 			}
 			@include respond(480px) {
+				div.countdown-clock {
+					text-align: center;
+				}
 				div#clock {
+					display: inline-block;
 					font-size: .65em;
+					width: auto;
 				}
 			}
 		}
