@@ -25,3 +25,7 @@ function fj16_master_update_7005() {
 function fj16_master_update_7006() {
   module_enable(array('fj16_countdown'));
 }
+
+function fj16_master_update_7007() {
+  module_enable(array('fj16_special_pages'));
+}
