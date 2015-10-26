@@ -66,7 +66,7 @@
 		width: 100%;
 		overflow: visible;
 
-		@include respond(1023px) {
+		@include respond($break-small) {
 			display: none;
 		}
 
@@ -174,7 +174,7 @@
 
 		z-index: 50;
 
-		@include respond(1023px) {
+		@include respond($break-small) {
 			background: #000;
 		}
 
@@ -198,7 +198,7 @@
 					color: #000;
 					text-decoration: none; // hide default strikethrough that untranslated links have
 
-					@include respond(1023px) {
+					@include respond($break-small) {
 						color: #FFF;
 					}
 				}
@@ -207,7 +207,7 @@
 
 		// Social media links
 		ul.links {
-			@include respond(1023px) {
+			@include respond($break-small) {
 				display: none; // The links are also in the mobile menu, so hide
 			}
 		}
@@ -220,7 +220,7 @@
 			ul {
 				float: right;
 
-				@include respond(1023px) {
+				@include respond($break-small) {
 					float: left;
 				}
 			}
@@ -229,7 +229,7 @@
 		#mobile-menu-toggle {
 			display: none;
 
-			@include respond(1023px) {
+			@include respond($break-small) {
 				display: block;
 				height: 50px;
 				width: 60px;
