@@ -1,3 +1,163 @@
-.sign-up #page {
-  background: $green;
+.sign-up {
+  #main {
+    max-width: none;
+    padding: 0;
+    
+    #content {
+      padding: 0;
+  
+      #page-title {
+        display: none;
+      }
+      
+      h1.title {
+        color: $white;
+        font-size: 1.8em;
+        font-weight: 600;
+        margin: 0;
+        padding: 2em 0 1.5em;
+        text-align: center;
+      }
+    }
+  }
+  
+  .signup-intro {
+    background-color: $green;
+    @include at2x('front_section_bg', auto, 100%);
+    background-repeat: no-repeat;
+    background-position: right;
+    padding: 0 0 2em;
+    text-align: center;
+    
+    p {
+      color: #fff;
+      font-size: 1.1em;
+      margin: 0 auto 2.5em;
+      max-width: 38em;
+    }
+  }
+  
+  .signup-cta {
+    background: $white url(../img/backgrounds/sign-up-landing-page.png) 50% 100% repeat-x;
+    text-align: center;
+    
+    .btn {
+      background: $purple;
+      border-radius: 1em;
+      color: $white;
+      display: inline-block;
+      font-family: $exo;
+      font-size: 1.5em;
+      font-weight: 600;
+      line-height: 1;
+      padding: .9em 1.8em;
+      text-transform: uppercase;
+    }
+    
+    &.signup-cta-1 {
+      .btn {
+        margin: 6em 0 1em;
+      }
+      
+      p {
+        margin-bottom: 13em;
+        
+        a {
+          color: $black;
+          font-weight: 400;
+        }
+      }    
+    }
+    &.signup-cta-2 {
+      h2 {
+        color: $green;
+        font-family: $exo;
+        font-size: 1.8em;
+        font-weight: 600;
+        margin-top: 7.5em;
+        text-transform: uppercase;
+      }
+      .btn {
+        margin: 3em 0 14em;
+      }    
+    }
+  }
+  
+  .signup-video {
+    .container {
+      padding: 0;
+      
+      .entry-content-asset {
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: 30px;
+        height: 0;
+        overflow: hidden;
+        overflow: hidden;
+      }
+      .entry-content-asset iframe,
+      .entry-content-asset object,
+      .entry-content-asset embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  
+  #content .signup-reasons ul li {
+    list-style: none;
+    margin: 0;
+    padding: .5em 2em .5em 0;
+  }
+  
+  .signup-reasons {
+    background: #f4f4f4;
+    padding: 4em 0;
+    
+    .container {
+      max-width: 50em;
+    }
+    
+    h2 {
+      font-family: $exo;
+      font-size: 1.8em;
+      font-weight: 600;
+      margin: 0;
+      text-transform: uppercase;
+    }
+    
+    ul {
+      margin: 4em 0;
+      
+      li {
+        float: left;
+        font-size: 1.1em;
+        width: 50%;
+        
+        &:before {
+          background: $yellow;
+          border-radius: 2em;
+          content: '';
+          display: block;
+          float: left;
+          margin-right: 1.5em;
+          width: 4em;
+          height: 4em;
+        }
+      }
+    }
+    p {
+      font-family: $exo;
+      font-size: 1.8em;
+      font-weight: 600;
+      clear: both;
+      margin: 0;
+      padding-top: 2em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
 }
