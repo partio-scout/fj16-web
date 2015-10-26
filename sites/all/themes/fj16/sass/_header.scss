@@ -20,14 +20,14 @@
 	
 	&:before {
 		content: '';
-		@include at2x('header_sp_logo', 200px);
+		@include at2x('header_sp_logo', 180px);
 		background-repeat: no-repeat;
 		background-position: center;
 		position: absolute;
 		top: 3.8em;
 		right: 1em;
-		width: 200px;
-		height: 75px;
+		width: 180px;
+		height: 68px;
 		z-index: 1;
 		
 		@include respond(mobile) {

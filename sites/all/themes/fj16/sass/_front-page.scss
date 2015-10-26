@@ -54,16 +54,16 @@ body.front {
 			@include animation-duration(1.0s);
 			@include animation-delay(1.0s);
 					
-			@include at2x('header_sp_logo', 250px);
+			@include at2x('header_sp_logo', 225px);
 			top: 4.8em;
 			right: 2em;
-			width: 249px;
-			height: 95px;
+			width: 225px;
+			height: 84px;
 			
 			@include respond(medium) {
-				width: 200px;
-				height: 76px;
-				background-size: 200px;
+				width: 180px;
+				height: 68px;
+				background-size: 180px;
 			}
 			
 			@include respond(mobile) {
