@@ -79,7 +79,7 @@ div.messages {
         border-bottom: 1px solid $black;
       }
       
-      &:hover, &:focus {
+      &:hover, &:focus, &.active {
         span {
           border-color: $white;
         }
