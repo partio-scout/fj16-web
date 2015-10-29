@@ -202,6 +202,19 @@ body.front {
 			background-position: center;
 			padding: 3.8em 0;
 			
+			&.blue {
+				background-color: $blue;
+			}
+			&.green {
+				background-color: $green;
+			}
+			&.orange {
+				background-color: $red;
+			}
+			&.purple {
+				background-color: $purple;
+			}
+			
 			h2 {
 				color: #fff;
 				font-family: Exo2, sans-serif;
