@@ -266,7 +266,14 @@ body.front {
 				color: #fff;
 				font-size: 1.4em;
 				text-align: center;
-				
+								
+				&:after {
+					content: " ›";
+					font-size: 1.618em;
+					line-height: 1em;
+					position: relative;
+					top: 3px;
+				}
 			}
 			
 			@include respondMin(small) {
