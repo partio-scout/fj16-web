@@ -11,6 +11,19 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Exo2';
+    src: url('../fonts/Exo2.0-SemiBold-webfont.eot');
+    src: url('../fonts/Exo2.0-SemiBold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Exo2.0-SemiBold-webfont.woff') format('woff'),
+         url('../fonts/Exo2.0-SemiBold-webfont.ttf') format('truetype'),
+         url('../fonts/Exo2.0-SemiBold-webfont.svg#Exo2.0-SemiBold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+}
+
+
+
 
 @font-face {
     font-family: 'Aleo';
