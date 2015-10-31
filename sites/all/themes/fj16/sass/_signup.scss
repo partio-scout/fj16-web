@@ -81,7 +81,7 @@
     
     &.signup-cta-1 {
       .btn {
-        margin: 6em 0 1em;
+        margin: 4em 0 1em;
           
         @media (max-width: $break-mobile) {
           margin-top: 25%;
@@ -98,6 +98,14 @@
         a {
           color: $black;
           font-weight: 400;
+          
+          &:after {
+						content: " ›";
+            font-size: 1.618em;
+            line-height: 1em;
+            position: relative;
+            top: 2px;
+          }
         }
       }    
     }
@@ -107,7 +115,7 @@
         font-family: $exo;
         font-size: 1.8em;
         font-weight: 600;
-        margin-top: 7.5em;
+        margin-top: 3em;
         text-transform: uppercase;
       
         @media (max-width: $break-mobile) {
@@ -116,7 +124,7 @@
         }
       }
       .btn {
-        margin: 3em 0 14em;
+        margin: 1.5em 0 9em;
       
         @media (max-width: $break-mobile) {
           margin: 1.5em 0 55%;
@@ -210,7 +218,7 @@
           background-color: $yellow;          
           @include at2x('roihu_logo_lines_faded_bg', auto, 75%);
           background-repeat: no-repeat;
-          background-position: 50% 50%;
+          background-position: 50% 40%;
           border-radius: 2em;
           content: '';
           display: block;
