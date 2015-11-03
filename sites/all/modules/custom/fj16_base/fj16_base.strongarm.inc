@@ -575,7 +575,7 @@ user/*/*';
     'domain' => '',
     'prefix' => '',
     'weight' => '0',
-    'javascript' => 'OWlnQEkJRmaz151fjWxG9-svnmfk4py05sitTu5ch38',
+    'javascript' => 'nZxoQr3EFGZ_zayTEgXb4Fo6K2Dir42gXncVnD9isWg',
   );
   $export['language_default'] = $strongarm;
 
@@ -783,7 +783,7 @@ user/*/*';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_block_2_title_link';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['menu_block_2_title_link'] = $strongarm;
 
   $strongarm = new stdClass();
