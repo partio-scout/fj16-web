@@ -168,6 +168,16 @@ div.messages {
     color: $blue;
     text-transform: uppercase;
   }
+  
+  figure {
+    background: transparent;
+    
+    > figcaption {
+      font-size: .8em;
+      font-style: italic;
+      padding: .7em 0 0;
+    }
+  }
 }
 
 .two-col #content {

@@ -9,6 +9,62 @@
  */
 function fj16_base_ckeditor_profile_defaults() {
   $data = array(
+    'Advanced' => array(
+      'name' => 'Advanced',
+      'settings' => array(
+        'filebrowser' => 'none',
+        'quickupload' => 'f',
+        'ss' => 2,
+        'filters' => array(
+          'filter_html' => 1,
+        ),
+        'default' => 't',
+        'show_toggle' => 't',
+        'popup' => 'f',
+        'toolbar' => '
+[
+    [\'Source\'],
+    [\'Cut\',\'Copy\',\'Paste\',\'PasteText\',\'PasteFromWord\',\'-\',\'SpellChecker\', \'Scayt\'],
+    [\'Undo\',\'Redo\',\'Find\',\'Replace\',\'-\',\'SelectAll\'],
+    [\'Image\',\'Media\',\'Flash\',\'Table\',\'HorizontalRule\',\'Smiley\',\'SpecialChar\'],
+    [\'Maximize\', \'ShowBlocks\'],
+    \'/\',
+    [\'Format\'],
+    [\'Bold\',\'Italic\',\'Underline\',\'Strike\',\'-\',\'Subscript\',\'Superscript\',\'-\',\'RemoveFormat\'],
+    [\'NumberedList\',\'BulletedList\',\'-\',\'Outdent\',\'Indent\',\'Blockquote\'],
+    [\'JustifyLeft\',\'JustifyCenter\',\'JustifyRight\',\'JustifyBlock\',\'-\',\'BidiLtr\',\'BidiRtl\'],
+    [\'Link\',\'Unlink\',\'Anchor\',\'Linkit\']
+]
+    ',
+        'expand' => 't',
+        'width' => '100%',
+        'lang' => 'en',
+        'auto_lang' => 't',
+        'language_direction' => 'default',
+        'enter_mode' => 'p',
+        'shift_enter_mode' => 'br',
+        'font_format' => 'p;div;pre;address;h1;h2;h3;h4;h5;h6',
+        'format_source' => 't',
+        'format_output' => 't',
+        'custom_formatting' => 'f',
+        'formatting' => array(
+          'custom_formatting_options' => array(
+            'indent' => 'indent',
+            'breakBeforeOpen' => 'breakBeforeOpen',
+            'breakAfterOpen' => 'breakAfterOpen',
+            'breakAfterClose' => 'breakAfterClose',
+          ),
+        ),
+        'css_mode' => 'none',
+        'css_path' => '',
+        'user_choose' => 'f',
+        'ckeditor_load_method' => 'ckeditor.js',
+        'ckeditor_load_time_out' => 0,
+        'scayt_autoStartup' => 'f',
+        'html_entities' => 'f',
+      ),
+      'input_formats' => array(),
+    ),
     'CKEditor Global Profile' => array(
       'name' => 'CKEditor Global Profile',
       'settings' => array(
@@ -93,6 +149,17 @@ function fj16_base_ckeditor_profile_defaults() {
               ),
             ),
             'default' => 't',
+          ),
+          'image2' => array(
+            'name' => 'image2',
+            'path' => '%base_path%sites/all/libraries/ckeditor/plugins/image2/',
+            'desc' => 'Plugin for the Enhanced Image widget for CKEditor. See <a href="http://ckeditor.com/addon/image2">addon page</a> for more details.',
+            'buttons' => array(
+              'button_name' => array(
+                'icon' => 'icons/image.png',
+                'label' => 'Image',
+              ),
+            ),
           ),
           'mediaembed' => array(
             'name' => 'mediaembed',
