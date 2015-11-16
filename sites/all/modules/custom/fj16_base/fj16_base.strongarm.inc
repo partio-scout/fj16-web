@@ -575,7 +575,7 @@ user/*/*';
     'domain' => '',
     'prefix' => '',
     'weight' => '0',
-    'javascript' => 'nZxoQr3EFGZ_zayTEgXb4Fo6K2Dir42gXncVnD9isWg',
+    'javascript' => 'kLxvZ67xyzAEyBUfMemmLAFvM3npTWrSpeN4x8Mo8Bs',
   );
   $export['language_default'] = $strongarm;
 
@@ -783,7 +783,7 @@ user/*/*';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_block_2_title_link';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['menu_block_2_title_link'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -913,16 +913,6 @@ user/*/*';
   $strongarm->name = 'node_submitted_webform';
   $strongarm->value = 0;
   $export['node_submitted_webform'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'path_alias_whitelist';
-  $strongarm->value = array(
-    'node' => TRUE,
-    'user' => TRUE,
-  );
-  $export['path_alias_whitelist'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1067,16 +1057,16 @@ user/*/*';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_punctuation_back_slash';
+  $strongarm->name = 'pathauto_punctuation_backtick';
   $strongarm->value = 0;
-  $export['pathauto_punctuation_back_slash'] = $strongarm;
+  $export['pathauto_punctuation_backtick'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_punctuation_backtick';
+  $strongarm->name = 'pathauto_punctuation_back_slash';
   $strongarm->value = 0;
-  $export['pathauto_punctuation_backtick'] = $strongarm;
+  $export['pathauto_punctuation_back_slash'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1315,6 +1305,16 @@ user/*/*';
   $strongarm->name = 'pathauto_verbose';
   $strongarm->value = 0;
   $export['pathauto_verbose'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'path_alias_whitelist';
+  $strongarm->value = array(
+    'node' => TRUE,
+    'user' => TRUE,
+  );
+  $export['path_alias_whitelist'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1663,6 +1663,13 @@ Your account on [site:name] has been canceled.
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'user_pictures';
+  $strongarm->value = 0;
+  $export['user_pictures'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'user_picture_default';
   $strongarm->value = '';
   $export['user_picture_default'] = $strongarm;
@@ -1701,13 +1708,6 @@ Your account on [site:name] has been canceled.
   $strongarm->name = 'user_picture_style';
   $strongarm->value = '';
   $export['user_picture_style'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'user_pictures';
-  $strongarm->value = 0;
-  $export['user_pictures'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
