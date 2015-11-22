@@ -23,10 +23,10 @@ function fj16_base_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
+      'fj16' => array(
+        'region' => 'language_chooser',
+        'status' => 1,
+        'theme' => 'fj16',
         'weight' => 0,
       ),
     ),
@@ -45,11 +45,11 @@ function fj16_base_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'bartik' => array(
+      'fj16' => array(
         'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
+        'status' => 1,
+        'theme' => 'fj16',
+        'weight' => 2,
       ),
     ),
     'title' => '',
@@ -67,11 +67,11 @@ function fj16_base_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
+      'fj16' => array(
+        'region' => 'main_menu',
+        'status' => 1,
+        'theme' => 'fj16',
+        'weight' => -12,
       ),
     ),
     'title' => '<none>',
@@ -89,11 +89,11 @@ function fj16_base_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
+      'fj16' => array(
+        'region' => 'sidebar_left',
+        'status' => 1,
+        'theme' => 'fj16',
+        'weight' => -12,
       ),
     ),
     'title' => '',
@@ -111,10 +111,10 @@ function fj16_base_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
+      'fj16' => array(
+        'region' => 'mobile_menu',
+        'status' => 1,
+        'theme' => 'fj16',
         'weight' => 0,
       ),
     ),

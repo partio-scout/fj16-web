@@ -1,0 +1,89 @@
+/**
+ * @file
+ * Enhanced Image alignment and theming presets.
+ *
+ * Note: All whitespace is set to 1em to facilitate
+ * easy overriding via the theme.
+ */
+
+/**
+ * Specify a consistent default figure & caption
+ * style to apply to both frontend and backend.
+ */
+figure {
+  text-align: inherit;
+  border: 0;
+  border-radius: 0;
+  background: #efefef;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 0;
+  margin: 0 0 1em;
+  display: inline-block;
+  max-width: 100%;
+}
+figure > figcaption {
+  text-align: inherit;
+  display: block; /* For IE8 */
+  margin: 0;
+  padding: .3em 1em .6em;
+}
+figure img {
+  margin: 0 auto;
+  padding: 0;
+  display: block;
+}
+/**
+ * Enhanced Image adds line breaks around
+ * the figcaption that may be converted to
+ * <br> tags on the frontend in some cases
+ * via the Drupal input format filtering
+ * process. Thus we hide the extra br tags
+ * with this CSS hack.
+ */
+figure > br {
+  display: none;
+}
+
+/* Left and right aligned images. */
+.align-left,
+.align-right {
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+.align-left {
+  float: left;
+  margin-right: 1em;
+}
+.align-right {
+  float: right;
+  margin-left: 1em;
+}
+/* A wrapper tag is used to center images. */
+.align-center {
+  text-align: center;
+}
+/**
+ * Override block display of centered figure elements
+ * made by some overzealous Normalize.css scripts.
+ */
+.align-center figure {
+  display: inline-block;
+}
+/* Reset text alignment in center-aligned images with captions. */
+.align-center figcaption {
+  text-align: left; /* LTR */
+}
+
+/* Add whitespace below aligned images */
+.align-left,
+.align-right,
+.align-center {
+  margin-bottom: 1em;
+}
+/* Kill default whitespace on figure tag when configured with alignment. */
+.align-left figure,
+.align-right figure,
+.align-center figure {
+  margin-bottom: 0;
+}

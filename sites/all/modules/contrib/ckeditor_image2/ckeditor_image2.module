@@ -1,0 +1,147 @@
+<?php
+
+/**
+ * @file
+ * Includes tweaks to CKEditor that can't be performed through UI config.
+ */
+
+/**
+ * Implements hook_page_build().
+ */
+function ckeditor_image2_page_build(&$page) {
+  // There is no straightforward way to detect when to add the required styles
+  // for proper display of Image2 enhanced images on the frontend, thus the
+  // stylesheets are added to *all* pages in the site out of the box.
+  $module_path = drupal_get_path('module', 'ckeditor_image2') . '/';
+  $attached_options = array('every_page' => TRUE);
+  $page['page_bottom']['ckeditor_image2']['#attached']['css'] = array(
+    $module_path . 'ckeditor_image2.theme.css' => $attached_options,
+
+    // The responsive styles are split apart from the rest of the layout
+    // styles so that they may be easily disabled or overridden in the theme
+    // to fit custom image size requirements and breakpoints.
+    $module_path . 'ckeditor_image2.responsive.css' => $attached_options,
+  );
+}
+
+/***********************************************************************
+ *
+ * FOR CKEDITOR MODULE
+ *
+ ***********************************************************************/
+
+/**
+ * Implements hook_ckeditor_plugin().
+ */
+function ckeditor_image2_ckeditor_plugin() {
+
+  // The Image2 plugin definition format required for the CKEditor module
+  // will provide an extra checkbox under the "Editor Appearance" section of
+  // the CKEditor profile configuration screen in the Drupal admin UI.
+  return array(
+    'image2' => array(
+      'name' => 'image2',
+      'path' => libraries_get_path('ckeditor') . '/plugins/image2/',
+      'desc' => t('Plugin for the Enhanced Image widget for CKEditor. See <a href="@url">addon page</a> for more details.', array('@url' => 'http://ckeditor.com/addon/image2')),
+      'buttons' => array(
+        'button_name' => array(
+          'icon' => 'icons/image.png',
+          'label' => 'Image',
+        ),
+      ),
+    ),
+  );
+}
+
+/**
+ * Implements hook_ckeditor_settings_alter().
+ */
+function ckeditor_image2_ckeditor_settings_alter(&$settings, $conf) {
+  // Add a custom configuration file which defines the default alignment
+  // class names (align-left, align-right, align-center) and prevents width
+  // and height rules in inline style attributes on image tags.
+  //
+  // Calculate the relative path of the custom configuration file by adding
+  // sets of "../" to the path in order to return to the base_path because
+  // the customConfig path value is *relative* to the location of the
+  // CKEditor library, usually located in sites/all/libraries/ckeditor.
+  $module_path = drupal_get_path('module', 'ckeditor_image2') . '/';
+  $query_string = '?' . variable_get('css_js_query_string', '0');
+  $return_to_base = str_repeat('../', count(explode('/', libraries_get_path('ckeditor'))));
+  $settings['customConfig'] = $return_to_base . $module_path . 'ckeditor_image2_config.js' . $query_string;
+
+  // Add stylesheets for proper alignment and caption display inside an editor.
+  $settings['contentsCss'][] = base_path() . $module_path . 'ckeditor_image2.theme.css' . $query_string;
+  $settings['contentsCss'][] = base_path() . $module_path . 'ckeditor_image2.responsive.css' . $query_string;
+}
+
+/***********************************************************************
+ *
+ * FOR WYSIWYG MODULE
+ *
+ ***********************************************************************/
+
+/**
+ * Implements hook_wysiwyg_plugin().
+ */
+function ckeditor_image2_wysiwyg_plugin($editor, $version) {
+  if ($editor == 'ckeditor' && version_compare($version, '4.4.6', '>=')) {
+    return array(
+      'image2' => array(
+        'url' => 'http://ckeditor.com/addon/image2',
+        'buttons' => array(
+          'image2' => t('Image2'),
+        ),
+        'load' => TRUE,
+        'internal' => TRUE,
+      ),
+      'dialogui' => array(
+        'url' => 'http://ckeditor.com/addon/dialogui',
+        'load' => TRUE,
+        'internal' => TRUE,
+      ),
+      'lineutils' => array(
+        'url' => 'http://ckeditor.com/addon/lineutils',
+        'load' => TRUE,
+        'internal' => TRUE,
+      ),
+      'widget' => array(
+        'url' => 'http://ckeditor.com/addon/widget',
+        'load' => TRUE,
+        'internal' => TRUE,
+      ),
+    );
+  }
+}
+
+/**
+ * Implements hook_wysiwyg_editor_settings_alter().
+ */
+function ckeditor_image2_wysiwyg_editor_settings_alter(&$settings, $context) {
+
+  // Specify the custom config file that adds our custom plugins.
+  if ($context['profile']->editor == 'ckeditor') {
+
+    $module_path = drupal_get_path('module', 'ckeditor_image2') . '/';
+    $query_string = '?' . variable_get('css_js_query_string', '0');
+    $settings['customConfig'] = base_path() . $module_path . 'ckeditor_image2_config.js' . $query_string;
+
+    // Replace image plugin with image2.
+    if (isset($settings['extraPlugins'])) {
+      $settings['extraPlugins'] .= ',image2';
+    }
+    else {
+      $settings['extraPlugins'] = 'image2';
+    }
+    if (isset($settings['removePlugins'])) {
+      $settings['removePlugins'] .= ',image';
+    }
+    else {
+      $settings['removePlugins'] = 'image';
+    }
+
+    // Add stylesheets for proper alignment and caption styles inside an editor.
+    $settings['contentsCss'][] = base_path() . $module_path . 'ckeditor_image2.theme.css' . $query_string;
+    $settings['contentsCss'][] = base_path() . $module_path . 'ckeditor_image2.responsive.css' . $query_string;
+  }
+}
