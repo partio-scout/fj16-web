@@ -497,23 +497,6 @@ user/*/*';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'imce_roles_profiles';
-  $strongarm->value = array(
-    3 => array(
-      'public_pid' => '2',
-    ),
-    2 => array(
-      'public_pid' => 0,
-    ),
-    1 => array(
-      'public_pid' => 0,
-    ),
-  );
-  $export['imce_roles_profiles'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'imce_settings_absurls';
   $strongarm->value = 0;
   $export['imce_settings_absurls'] = $strongarm;
@@ -917,6 +900,16 @@ user/*/*';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'path_alias_whitelist';
+  $strongarm->value = array(
+    'node' => TRUE,
+    'user' => TRUE,
+  );
+  $export['path_alias_whitelist'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_blog_pattern';
   $strongarm->value = 'blogs/[user:name]';
   $export['pathauto_blog_pattern'] = $strongarm;
@@ -1057,16 +1050,16 @@ user/*/*';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_punctuation_backtick';
+  $strongarm->name = 'pathauto_punctuation_back_slash';
   $strongarm->value = 0;
-  $export['pathauto_punctuation_backtick'] = $strongarm;
+  $export['pathauto_punctuation_back_slash'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_punctuation_back_slash';
+  $strongarm->name = 'pathauto_punctuation_backtick';
   $strongarm->value = 0;
-  $export['pathauto_punctuation_back_slash'] = $strongarm;
+  $export['pathauto_punctuation_backtick'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1305,16 +1298,6 @@ user/*/*';
   $strongarm->name = 'pathauto_verbose';
   $strongarm->value = 0;
   $export['pathauto_verbose'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'path_alias_whitelist';
-  $strongarm->value = array(
-    'node' => TRUE,
-    'user' => TRUE,
-  );
-  $export['path_alias_whitelist'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1663,13 +1646,6 @@ Your account on [site:name] has been canceled.
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'user_pictures';
-  $strongarm->value = 0;
-  $export['user_pictures'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'user_picture_default';
   $strongarm->value = '';
   $export['user_picture_default'] = $strongarm;
@@ -1708,6 +1684,13 @@ Your account on [site:name] has been canceled.
   $strongarm->name = 'user_picture_style';
   $strongarm->value = '';
   $export['user_picture_style'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_pictures';
+  $strongarm->value = 0;
+  $export['user_pictures'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

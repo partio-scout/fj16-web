@@ -222,7 +222,6 @@ features[variable][] = i18n_string_source_language
 features[variable][] = image_jpeg_quality
 features[variable][] = image_toolkit
 features[variable][] = imce_profiles
-features[variable][] = imce_roles_profiles
 features[variable][] = imce_settings_absurls
 features[variable][] = imce_settings_disable_private
 features[variable][] = imce_settings_replace
