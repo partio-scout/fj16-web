@@ -21,6 +21,7 @@ function fj16_base_user_default_permissions() {
   $permissions['access administration pages'] = array(
     'name' => 'access administration pages',
     'roles' => array(
+      'activity editor' => 'activity editor',
       'content editor' => 'content editor',
     ),
     'module' => 'system',
@@ -46,6 +47,7 @@ function fj16_base_user_default_permissions() {
   $permissions['access content'] = array(
     'name' => 'access content',
     'roles' => array(
+      'activity editor' => 'activity editor',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
     ),
@@ -56,6 +58,7 @@ function fj16_base_user_default_permissions() {
   $permissions['access content overview'] = array(
     'name' => 'access content overview',
     'roles' => array(
+      'activity editor' => 'activity editor',
       'content editor' => 'content editor',
     ),
     'module' => 'node',
@@ -102,6 +105,7 @@ function fj16_base_user_default_permissions() {
   $permissions['access toolbar'] = array(
     'name' => 'access toolbar',
     'roles' => array(
+      'activity editor' => 'activity editor',
       'content editor' => 'content editor',
     ),
     'module' => 'toolbar',
@@ -646,6 +650,7 @@ function fj16_base_user_default_permissions() {
   $permissions['use text format full_html'] = array(
     'name' => 'use text format full_html',
     'roles' => array(
+      'activity editor' => 'activity editor',
       'content editor' => 'content editor',
     ),
     'module' => 'filter',
@@ -675,6 +680,7 @@ function fj16_base_user_default_permissions() {
   $permissions['view own unpublished content'] = array(
     'name' => 'view own unpublished content',
     'roles' => array(
+      'activity editor' => 'activity editor',
       'content editor' => 'content editor',
     ),
     'module' => 'node',
@@ -693,6 +699,7 @@ function fj16_base_user_default_permissions() {
   $permissions['view the administration theme'] = array(
     'name' => 'view the administration theme',
     'roles' => array(
+      'activity editor' => 'activity editor',
       'content editor' => 'content editor',
     ),
     'module' => 'system',
