@@ -415,8 +415,8 @@ user/*/*';
       'filesize' => '0',
       'quota' => '0',
       'tuquota' => '0',
-      'extensions' => '*',
-      'dimensions' => '0',
+      'extensions' => 'jpg png gif pdf',
+      'dimensions' => '2500x2500',
       'filenum' => '0',
       'directories' => array(
         0 => array(
@@ -456,8 +456,8 @@ user/*/*';
       'filesize' => '0',
       'quota' => '0',
       'tuquota' => '0',
-      'extensions' => '*',
-      'dimensions' => '0',
+      'extensions' => 'jpg png gif pdf',
+      'dimensions' => '2500x2500',
       'filenum' => '0',
       'directories' => array(
         0 => array(
