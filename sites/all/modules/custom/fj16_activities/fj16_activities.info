@@ -34,3 +34,4 @@ features[variable][] = menu_parent_fj16_activity
 features[variable][] = node_options_fj16_activity
 features[variable][] = node_preview_fj16_activity
 features[variable][] = node_submitted_fj16_activity
+features[variable][] = pathauto_node_fj16_activity_pattern
