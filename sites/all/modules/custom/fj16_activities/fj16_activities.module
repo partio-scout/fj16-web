@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the FJ16 Activities feature.
+ */
+
+include_once 'fj16_activities.features.inc';
