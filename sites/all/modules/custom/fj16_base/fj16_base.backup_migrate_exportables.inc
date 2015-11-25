@@ -5,35 +5,6 @@
  */
 
 /**
- * Implements hook_exportables_backup_migrate_destinations().
- */
-function fj16_base_exportables_backup_migrate_destinations() {
-  $export = array();
-
-  $item = new stdClass();
-  $item->disabled = FALSE; /* Edit this to true to make a default item disabled initially */
-  $item->api_version = 1;
-  $item->machine_name = 'amazons3_daily';
-  $item->name = 'AmazonS3 Daily';
-  $item->subtype = 's3';
-  $item->location = 'https://xxx:yyy@s3.amazonaws.com/fj16-www-backup/Daily';
-  $item->settings = array();
-  $export['amazons3_daily'] = $item;
-
-  $item = new stdClass();
-  $item->disabled = FALSE; /* Edit this to true to make a default item disabled initially */
-  $item->api_version = 1;
-  $item->machine_name = 'amazons3_monthly';
-  $item->name = 'AmazonS3 Monthly';
-  $item->subtype = 's3';
-  $item->location = 'https://xxx:yyy@s3.amazonaws.com/fj16-www-backup/Monthly';
-  $item->settings = array();
-  $export['amazons3_monthly'] = $item;
-
-  return $export;
-}
-
-/**
  * Implements hook_exportables_backup_migrate_schedules().
  */
 function fj16_base_exportables_backup_migrate_schedules() {
