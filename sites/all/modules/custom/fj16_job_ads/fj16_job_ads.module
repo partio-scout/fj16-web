@@ -208,7 +208,6 @@ function fj16_job_ads_get_field_mappings($lang) {
   //Title needs to be mapped separately, as it's not a Fields field
   $mappings = array(
     'pestin_x0020_taso_x0020__x0028_j'  => 'field_level',
-    'lis_x00e4_tietoja_x0020_antaa_x0'  => 'field_info_contact',
     'id' => 'field_sharepoint_line_id',
     'uniqueid' => 'field_sharepoint_guid',
     'haku_x0020_p_x00e4__x00e4_ttyy_x' => 'field_sharepoint_deadline'
@@ -217,12 +216,15 @@ function fj16_job_ads_get_field_mappings($lang) {
   if($lang == 'fi') {
     $mappings['ulkoinen_x0020_kuvaus_x0020_nett'] = 'body';
     $mappings['vaatimukset'] = 'field_requirements';
+    $mappings['lis_x00e4_tietoja_x0020_antaa_x0']  = 'field_info_contact';
   } else if($lang == 'sv') {
     $mappings['ulkoinen_x0020_kuvaus_x0020_ruot'] = 'body';
     $mappings['vaatimukset_x0020_ruotsiksi_x002'] = 'field_requirements';
+    $mappings['lis_x00e4_tietoja_x0020_antaa_x00']  = 'field_info_contact';
   } else if($lang == 'en') {
     $mappings['ulkoinen_x0020_kuvaus_x0020_engl'] = 'body';
     $mappings['julkinen_x0020_kuvaus_x0020_engl'] = 'field_requirements'; //this field is named inconsistently due to historical reasons, julkinen_x0020_kuvaus_x0020_engl is correct.
+    $mappings['lis_x00e4_tietoja_x0020_antaa_x01']  = 'field_info_contact';
   }
 
   return $mappings;
