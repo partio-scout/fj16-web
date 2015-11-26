@@ -10,34 +10,30 @@
 function fj16_activities_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_activity_category'
-  $field_bases['field_activity_category'] = array(
+  // Exported field_base: 'field_activity_terms'
+  $field_bases['field_activity_terms'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_activity_category',
+    'field_name' => 'field_activity_terms',
     'indexes' => array(
-      'value' => array(
-        0 => 'value',
+      'tid' => array(
+        0 => 'tid',
       ),
     ),
     'locked' => 0,
-    'module' => 'list',
+    'module' => 'taxonomy',
     'settings' => array(
       'allowed_values' => array(
-        'cub_scouts' => 'Sudenpennut',
-        'adventurers' => 'Seikkailijat',
-        'trackers' => 'Tarpojat',
-        'explorers' => 'Samoajat',
-        'rovers' => 'Vaeltajat',
-        'summer_camp' => 'Kesäleiri',
-        'global_education' => 'Globaalikasvatus',
+        0 => array(
+          'vocabulary' => 'activity_category',
+          'parent' => 0,
+        ),
       ),
-      'allowed_values_function' => '',
     ),
     'translatable' => 0,
-    'type' => 'list_text',
+    'type' => 'taxonomy_term_reference',
   );
 
   // Exported field_base: 'field_gear'
@@ -57,6 +53,28 @@ function fj16_activities_field_default_field_bases() {
     'settings' => array(),
     'translatable' => 0,
     'type' => 'text_long',
+  );
+
+  // Exported field_base: 'field_icon'
+  $field_bases['field_icon'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_icon',
+    'indexes' => array(
+      'fid' => array(
+        0 => 'fid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'image',
+    'settings' => array(
+      'default_image' => 0,
+      'uri_scheme' => 'public',
+    ),
+    'translatable' => 0,
+    'type' => 'image',
   );
 
   // Exported field_base: 'field_links_and_tips'
