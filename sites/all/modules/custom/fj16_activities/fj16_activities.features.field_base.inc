@@ -10,36 +10,6 @@
 function fj16_activities_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_activity_category'
-  $field_bases['field_activity_category'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_activity_category',
-    'indexes' => array(
-      'value' => array(
-        0 => 'value',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'list',
-    'settings' => array(
-      'allowed_values' => array(
-        'cub_scouts' => 'Sudenpennut',
-        'adventurers' => 'Seikkailijat',
-        'trackers' => 'Tarpojat',
-        'explorers' => 'Samoajat',
-        'rovers' => 'Vaeltajat',
-        'summer_camp' => 'Kesäleiri',
-        'global_education' => 'Globaalikasvatus',
-      ),
-      'allowed_values_function' => '',
-    ),
-    'translatable' => 0,
-    'type' => 'list_text',
-  );
-
   // Exported field_base: 'field_activity_terms'
   $field_bases['field_activity_terms'] = array(
     'active' => 1,

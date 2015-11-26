@@ -52,42 +52,6 @@ function fj16_activities_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-fj16_activity-field_activity_category'
-  $field_instances['node-fj16_activity-field_activity_category'] = array(
-    'bundle' => 'fj16_activity',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 5,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_activity_category',
-    'label' => 'Kategoria',
-    'required' => 1,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 1,
-    ),
-  );
-
   // Exported field_instance: 'node-fj16_activity-field_activity_terms'
   $field_instances['node-fj16_activity-field_activity_terms'] = array(
     'bundle' => 'fj16_activity',
