@@ -123,8 +123,8 @@ function fj16_activities_views_default_views() {
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area']['content'] = 'Tämä on oletuskuvaus, kun näytetään kaikki termit.';
-  $handler->display->display_options['empty']['area']['format'] = 'full_html';
+  $handler->display->display_options['empty']['area']['content'] = 'Täältä löydät Roihun upeat kipinäaktiviteetit!';
+  $handler->display->display_options['empty']['area']['format'] = 'plain_text';
   /* Field: Field: Introduction */
   $handler->display->display_options['fields']['field_ingres']['id'] = 'field_ingres';
   $handler->display->display_options['fields']['field_ingres']['table'] = 'field_data_field_ingres';
@@ -163,7 +163,7 @@ function fj16_activities_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('Tämä on oletuskuvaus, kun näytetään kaikki termit.'),
+    t('Täältä löydät Roihun upeat kipinäaktiviteetit!'),
     t('All'),
   );
   $export['fj16_activity_category_intro'] = $view;
