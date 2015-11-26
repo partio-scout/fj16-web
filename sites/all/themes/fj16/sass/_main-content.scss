@@ -133,8 +133,6 @@ div.messages {
 
 #content {
   padding: 100px;
-  max-width: 1100px;
-  margin: 0 auto;
 
   @include respond(medium) {
     padding: 75px;
