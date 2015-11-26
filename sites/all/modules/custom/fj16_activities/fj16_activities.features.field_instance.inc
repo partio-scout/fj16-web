@@ -52,8 +52,8 @@ function fj16_activities_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-fj16_activity-field_activity_category'
-  $field_instances['node-fj16_activity-field_activity_category'] = array(
+  // Exported field_instance: 'node-fj16_activity-field_activity_terms'
+  $field_instances['node-fj16_activity-field_activity_terms'] = array(
     'bundle' => 'fj16_activity',
     'default_value' => NULL,
     'deleted' => 0,
@@ -61,22 +61,23 @@ function fj16_activities_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'list',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'list_default',
+        'type' => 'taxonomy_term_reference_link',
         'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'hidden',
+        'type' => 'taxonomy_term_reference_plain',
         'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_activity_category',
+    'field_name' => 'field_activity_terms',
     'label' => 'Kategoria',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -85,7 +86,7 @@ function fj16_activities_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 1,
+      'weight' => 8,
     ),
   );
 
@@ -144,10 +145,10 @@ function fj16_activities_field_default_field_instances() {
         'weight' => 1,
       ),
       'teaser' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'text_plain',
         'weight' => 0,
       ),
     ),
@@ -212,8 +213,101 @@ function fj16_activities_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'taxonomy_term-activity_category-field_icon'
+  $field_instances['taxonomy_term-activity_category-field_icon'] = array(
+    'bundle' => 'activity_category',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
+      'token' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_icon',
+    'label' => 'Icon',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => 'icons',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '2000x2000',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 33,
+    ),
+  );
+
+  // Exported field_instance: 'taxonomy_term-activity_category-field_ingres'
+  $field_instances['taxonomy_term-activity_category-field_ingres'] = array(
+    'bundle' => 'activity_category',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'token' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_ingres',
+    'label' => 'Introduction',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 32,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
+  t('Icon');
+  t('Introduction');
   t('Kategoria');
   t('Kuvaus');
   t('Lyhyt kuvaus');
