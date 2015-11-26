@@ -68,8 +68,9 @@ function fj16_activities_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'above',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'hidden',
+        'type' => 'taxonomy_term_reference_plain',
         'weight' => 0,
       ),
     ),
