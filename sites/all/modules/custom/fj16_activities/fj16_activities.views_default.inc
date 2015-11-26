@@ -22,7 +22,7 @@ function fj16_activities_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Aktiviteetit';
+  $handler->display->display_options['title'] = 'Kipinät';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -86,7 +86,7 @@ function fj16_activities_views_default_views() {
   $handler->display->display_options['path'] = 'aktiviteetit';
   $translatables['fj16_activities_list'] = array(
     t('Master'),
-    t('Aktiviteetit'),
+    t('Kipinät'),
     t('more'),
     t('Apply'),
     t('Reset'),
