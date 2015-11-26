@@ -133,6 +133,8 @@ div.messages {
 
 #content {
   padding: 100px;
+  max-width: 1100px;
+  margin: 0 auto;
 
   @include respond(medium) {
     padding: 75px;
@@ -143,7 +145,7 @@ div.messages {
   }
 
   @include respond(mobile) {
-    padding: 30px 0;
+    padding: 30px 20px;
   }
 
   h1.title {
@@ -163,10 +165,7 @@ div.messages {
   }
 
   .field-name-field-ingres {
-    margin-bottom: 1.3em;
-    font-family: $exo2;
-    color: $blue;
-    text-transform: uppercase;
+    @extend .ingres;
   }
   
   figure {

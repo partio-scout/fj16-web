@@ -102,7 +102,7 @@
       }
     ?>
 
-    <div class="activity-icons">
+    <div class="activity-links">
       <?php
         $display = array(
           'label' => 'hidden',
@@ -119,7 +119,7 @@
           $icon = field_view_field('taxonomy_term', $term, 'field_icon', $display);
           print '<a href="/aktiviteetit/' . $term->tid . '">';
           print render($icon);
-          print check_plain($term->name);
+          print '<span>' . check_plain($term->name) . '</span>';
           print '</a>';
         }
       ?>
