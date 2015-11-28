@@ -47,3 +47,43 @@
 		@media only screen and (min-width: $size) { @content; }
 	}
 }
+
+.ingres {
+  margin-bottom: 1.3em;
+  font-family: $exo2;
+  color: $blue;
+  text-transform: uppercase;
+}
+
+.item-heading {
+  font-family: $exo2;
+  font-size: 2.236em;
+  text-transform: uppercase;
+  margin: 15px 0 12px;
+  letter-spacing: 0.02em;
+  width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &, & a {
+    color: #000;
+  }
+
+  @include respond(mobile) {
+    font-size: 1.6em;
+    margin-bottom: 7px;
+  }
+}
+
+.font-reset {
+  font-size: $base-font-size;
+  font-family: $aleo;
+  font-weight: 400;
+  line-height: 1.45;
+  text-transform: none;
+  color: $black;
+
+  @include respond(mobile) {
+    font-size: $base-font-size - 2;
+  }
+}

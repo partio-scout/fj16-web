@@ -22,7 +22,7 @@ function fj16_activities_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Aktiviteetit';
+  $handler->display->display_options['title'] = 'Kipinät';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -49,7 +49,6 @@ function fj16_activities_views_default_views() {
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
   $handler->display->display_options['sorts']['title']['field'] = 'title';
-  $handler->display->display_options['sorts']['title']['order'] = 'DESC';
   /* Contextual filter: Content: Has taxonomy term ID */
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
   $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_index';
@@ -86,7 +85,7 @@ function fj16_activities_views_default_views() {
   $handler->display->display_options['path'] = 'aktiviteetit';
   $translatables['fj16_activities_list'] = array(
     t('Master'),
-    t('Aktiviteetit'),
+    t('Kipinät'),
     t('more'),
     t('Apply'),
     t('Reset'),
@@ -124,8 +123,8 @@ function fj16_activities_views_default_views() {
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area']['content'] = 'Tämä on oletuskuvaus, kun näytetään kaikki termit.';
-  $handler->display->display_options['empty']['area']['format'] = 'full_html';
+  $handler->display->display_options['empty']['area']['content'] = 'Täältä löydät Roihun upeat kipinäaktiviteetit!';
+  $handler->display->display_options['empty']['area']['format'] = 'plain_text';
   /* Field: Field: Introduction */
   $handler->display->display_options['fields']['field_ingres']['id'] = 'field_ingres';
   $handler->display->display_options['fields']['field_ingres']['table'] = 'field_data_field_ingres';
@@ -164,7 +163,7 @@ function fj16_activities_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('Tämä on oletuskuvaus, kun näytetään kaikki termit.'),
+    t('Täältä löydät Roihun upeat kipinäaktiviteetit!'),
     t('All'),
   );
   $export['fj16_activity_category_intro'] = $view;
