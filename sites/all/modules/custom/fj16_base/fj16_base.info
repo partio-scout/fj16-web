@@ -38,6 +38,7 @@ dependencies[] = list
 dependencies[] = locale
 dependencies[] = media
 dependencies[] = menu
+dependencies[] = menu_attributes
 dependencies[] = menu_block
 dependencies[] = node
 dependencies[] = number
