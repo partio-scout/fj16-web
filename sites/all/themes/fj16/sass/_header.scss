@@ -203,19 +203,26 @@
 			padding: 0;
 			list-style-type: none;
 			float: left;
+        
+      &.links li a {
+				padding: 0 30px;
+      }
+      
+      &.language-switcher-locale-url li {
+				padding: 0 30px;
+
+				@include respond(mobile) {
+					padding: 0 10px;
+				}
+      }
 
 			li {
 				display: inline-block;
 				float: left;
 				line-height: 50px;
 
-				@include respond(mobile) {
-					padding: 0 10px;
-				}
-
 				a {
 					color: #000;
-					padding: 0 30px;
 					text-decoration: none; // hide default strikethrough that untranslated links have
 
 					@include respond($break-small) {
