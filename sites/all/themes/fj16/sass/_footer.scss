@@ -70,7 +70,14 @@
 					@include at2x('footer_sp_logo2', 100%);
 					background-repeat: no-repeat;
 					margin-bottom: 20px;
-
+				}
+				
+				h5 {
+					margin-bottom: 0;
+				}
+				
+				address {
+					margin-bottom: 0;
 				}
 			}
 
