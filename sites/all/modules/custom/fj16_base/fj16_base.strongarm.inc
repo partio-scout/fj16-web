@@ -415,8 +415,8 @@ user/*/*';
       'filesize' => '0',
       'quota' => '0',
       'tuquota' => '0',
-      'extensions' => '*',
-      'dimensions' => '0',
+      'extensions' => 'jpg png gif pdf',
+      'dimensions' => '2500x2500',
       'filenum' => '0',
       'directories' => array(
         0 => array(
@@ -456,8 +456,8 @@ user/*/*';
       'filesize' => '0',
       'quota' => '0',
       'tuquota' => '0',
-      'extensions' => '*',
-      'dimensions' => '0',
+      'extensions' => 'jpg png gif pdf',
+      'dimensions' => '2500x2500',
       'filenum' => '0',
       'directories' => array(
         0 => array(
@@ -766,7 +766,7 @@ user/*/*';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_block_2_title_link';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['menu_block_2_title_link'] = $strongarm;
 
   $strongarm = new stdClass();

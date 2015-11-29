@@ -131,7 +131,7 @@
 				line-height: 80px;
 				color: #fff;
 				@include transition(background-color 0.3s ease-out);
-        
+				
 				@include respond(medium) {
 					padding: 0 20px;
 				}
@@ -206,7 +206,7 @@
 
 			li {
 				display: inline-block;
-				padding: 0 30px;
+				float: left;
 				line-height: 50px;
 
 				@include respond(mobile) {
@@ -215,10 +215,16 @@
 
 				a {
 					color: #000;
+					padding: 0 30px;
 					text-decoration: none; // hide default strikethrough that untranslated links have
 
 					@include respond($break-small) {
 						color: #FFF;
+					}
+					
+					&.some-icon {
+						margin: 7px 0 0 35px;
+						padding: 0;
 					}
 				}
 			}
