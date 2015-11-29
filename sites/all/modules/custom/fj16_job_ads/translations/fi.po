@@ -12,8 +12,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2015-06-14 23:50+0200\n"
-"PO-Revision-Date: 2015-06-14 23:51+0200\n"
+"POT-Creation-Date: 2015-09-28 23:39+0300\n"
+"PO-Revision-Date: 2015-09-28 23:40+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: EMAIL@ADDRESS\n"
 "Language: fi_FI\n"
@@ -21,75 +21,40 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.1\n"
+"X-Generator: Poedit 1.5.5\n"
 
-#: fj16_job_ads.features.field_instance.inc:694
-msgid "Analytical-Creative"
-msgstr "Analyyttinen-Luova"
-
-#: fj16_job_ads.features.field_instance.inc:695
+#: fj16_job_ads.features.field_instance.inc:334
 msgid "Description"
 msgstr "Kuvaus"
 
-#: fj16_job_ads.features.field_instance.inc:696
-msgid "Educating youth-Marketing scouting"
-msgstr "Nuorten kasvatus-Partion markkinointi"
-
-#: fj16_job_ads.features.field_instance.inc:697
-msgid "Fun-Important"
-msgstr "Haustaa tekemistä-Tärkeää tekemistä"
-
-#: fj16_job_ads.features.field_instance.inc:698
+#: fj16_job_ads.features.field_instance.inc:335
 msgid "Further information"
 msgstr "Lisätiedot"
 
-#: fj16_job_ads.features.field_instance.inc:699
-msgid "Individual work-Group work"
-msgstr "Yksilötyötä-Ryhmätyötä"
-
-#: fj16_job_ads.features.field_instance.inc:700
-msgid "Leading-Doing"
-msgstr "Johtamista-Tekemistä"
-
-#: fj16_job_ads.features.field_instance.inc:701
-msgid "Overview-Details"
-msgstr "Suuret linjat-Yksityiskohdat"
-
-#: fj16_job_ads.features.field_instance.inc:702
-msgid "Planning-Doing"
-msgstr "Suunnittelua-Tekemistä"
-
-#: fj16_job_ads.features.field_instance.inc:703
+#: fj16_job_ads.features.field_instance.inc:336
+#: fj16_job_ads.views_default.inc:183
 msgid "Position level"
 msgstr "Pestin taso"
 
-#: fj16_job_ads.features.field_instance.inc:704
+#: fj16_job_ads.features.field_instance.inc:337
 msgid "Requirements"
 msgstr "Vaatimukset"
 
-#: fj16_job_ads.features.field_instance.inc:705
+#: fj16_job_ads.features.field_instance.inc:338
 msgid "Section"
 msgstr "Osa-alue"
 
-#: fj16_job_ads.features.field_instance.inc:706
+#: fj16_job_ads.features.field_instance.inc:339
 msgid "SharePoint GUID"
 msgstr "SharePoint GUID"
 
-#: fj16_job_ads.features.field_instance.inc:707
+#: fj16_job_ads.features.field_instance.inc:340
 msgid "SharePoint line ID"
 msgstr "SharePoint rivin ID"
 
-#: fj16_job_ads.features.field_instance.inc:708
+#: fj16_job_ads.features.field_instance.inc:341
 msgid "Team"
 msgstr "Tiimi"
-
-#: fj16_job_ads.features.field_instance.inc:709
-msgid "Traditional jamboree skills-Something completely different"
-msgstr "Perinteisiä suurleiritaitoja-Jotain aivan muuta"
-
-#: fj16_job_ads.features.field_instance.inc:710
-msgid "Workload"
-msgstr "Työmäärä"
 
 #: fj16_job_ads.features.inc:29
 msgid "FJ16 Job"
@@ -139,10 +104,6 @@ msgstr "Valitse mikä tahansa suodating ja paina Käytä nähdäksesi tulokset"
 msgid "<p>No positions to show.</p>"
 msgstr "<p>Ei näytettäviä pestejä</p>"
 
-#: fj16_job_ads.views_default.inc:183
-msgid "Position type"
-msgstr "Pestin tyyppi"
-
 #: fj16_job_ads.views_default.inc:184
 msgid "Department"
 msgstr "Osa-alue"
@@ -155,40 +116,40 @@ msgstr "Sivu"
 msgid "more"
 msgstr "lisää"
 
-#: fj16_job_ads.module:385
+#: fj16_job_ads.module:396
 msgid "Apply for position"
 msgstr "Hae pestiä"
 
-#: fj16_job_ads.module:389
+#: fj16_job_ads.module:400
 msgid ""
 "The applicants will be informed personally about the recruitment decision."
 msgstr "Hakijoille ilmoitetaan valintojen tuloksista henkilökohtaisesti."
 
-#: fj16_job_ads.module:418
+#: fj16_job_ads.module:429
 msgid "Name"
 msgstr "Nimi"
 
-#: fj16_job_ads.module:423
+#: fj16_job_ads.module:434
 msgid "Email"
 msgstr "Sähköposti"
 
-#: fj16_job_ads.module:429
+#: fj16_job_ads.module:440
 msgid "Phone number"
 msgstr "Puhelinnumero"
 
-#: fj16_job_ads.module:434
+#: fj16_job_ads.module:445
 msgid "Country and NSO/NSA/MO"
 msgstr "Lippukunta ja piiri"
 
-#: fj16_job_ads.module:439
+#: fj16_job_ads.module:450
 msgid "Current scouting positions"
 msgstr "Nykyiset partiopestit"
 
-#: fj16_job_ads.module:447
+#: fj16_job_ads.module:458
 msgid "Why are you applying for this position?"
 msgstr "Miksi haet tähän pestiin?"
 
-#: fj16_job_ads.module:452
+#: fj16_job_ads.module:463
 msgid ""
 "Why would you be good in this position? What useful scouting experience do "
 "you have?"
@@ -196,27 +157,27 @@ msgstr ""
 "Miksi olisit hyvä tässä pestissä? Mitä tarpeellista partiokokemusta sinulla "
 "on?"
 
-#: fj16_job_ads.module:457
+#: fj16_job_ads.module:468
 msgid "Other relevant experience"
 msgstr "Entä muualla hankittua kokemusta?"
 
-#: fj16_job_ads.module:462
+#: fj16_job_ads.module:473
 msgid "Additional information"
 msgstr "Muuta mahdollista lisätietoa"
 
-#: fj16_job_ads.module:463
+#: fj16_job_ads.module:474
 msgid "This can be e.g. a link to an attachment for your application."
 msgstr "Esimerkiksi linkki hakemukseesi liittyvään tiedostoon."
 
-#: fj16_job_ads.module:475
+#: fj16_job_ads.module:486
 msgid "Send application"
 msgstr "Lähetä hakemus"
 
-#: fj16_job_ads.module:487
+#: fj16_job_ads.module:498
 msgid "Please enter a valid email address."
 msgstr "Sähköpostiosoite ei ole oikeassa muodossa."
 
-#: fj16_job_ads.module:517
+#: fj16_job_ads.module:528
 msgid ""
 "Welcome to Roihu staff! Your application for the position has been received. "
 "We are presently in the process of reviewing each applicants resume. We will "
@@ -226,7 +187,7 @@ msgstr ""
 "onnistuneesti perille ja se on toimitettu hakua hoitavalle osa-alueelle. "
 "Olemme sinuun yhteydessä hakuajan päätyttyä."
 
-#: fj16_job_ads.module:520
+#: fj16_job_ads.module:531
 msgid ""
 "Your application was not saved due to a technical problem. Please try again "
 "later."
@@ -234,63 +195,71 @@ msgstr ""
 "Ilmoittautumisesti ei tallentunut teknisen ongelman vuoksi. Ole hyvä ja "
 "yritä myöhemmin uudelleen."
 
-#: fj16_job_ads.module:578
+#: fj16_job_ads.module:623
+msgid "Position type"
+msgstr "Pestin tyyppi"
+
+#: fj16_job_ads.module:624
+msgid "Apply by"
+msgstr "Haku päättyy"
+
+#: fj16_job_ads.module:627
 msgid "Director"
 msgstr "Johtaja"
 
-#: fj16_job_ads.module:579
+#: fj16_job_ads.module:628
 msgid "Manager"
 msgstr "Päällikkö"
 
-#: fj16_job_ads.module:580
+#: fj16_job_ads.module:629
 msgid "Team leader"
 msgstr "Mestari"
 
-#: fj16_job_ads.module:581
+#: fj16_job_ads.module:630
 msgid "Subteam leader"
 msgstr "Kymppi"
 
-#: fj16_job_ads.module:582
+#: fj16_job_ads.module:631
 msgid "IST"
 msgstr "Tekijä"
 
-#: fj16_job_ads.module:583
+#: fj16_job_ads.module:632
 msgid "Other"
 msgstr "Muu"
 
-#: fj16_job_ads.module:586
+#: fj16_job_ads.module:635
 msgid "Experience"
 msgstr "Elämys"
 
-#: fj16_job_ads.module:587
+#: fj16_job_ads.module:636
 msgid "Education"
 msgstr "Kasvatus"
 
-#: fj16_job_ads.module:588
+#: fj16_job_ads.module:637
 msgid "Service"
 msgstr "Palvelu"
 
-#: fj16_job_ads.module:589
+#: fj16_job_ads.module:638
 msgid "Resource"
 msgstr "Resurssi"
 
-#: fj16_job_ads.module:590
+#: fj16_job_ads.module:639
 msgid "Co-operation"
 msgstr "Yhteistyö"
 
-#: fj16_job_ads.module:28;35;60;283;297;302;306;521
+#: fj16_job_ads.module:40;47;73;294;308;313;317;532
 msgid "fj16_job_ads"
 msgstr "fj16_job_ads"
 
-#: fj16_job_ads.module:28
+#: fj16_job_ads.module:40
 msgid "Begin job import from SharePoint"
 msgstr "Aloitetaan pestien tuonti SharePointista"
 
-#: fj16_job_ads.module:35
+#: fj16_job_ads.module:47
 msgid "SharePoint import failed"
 msgstr "SharePoint-tuonti epäonnistui"
 
-#: fj16_job_ads.module:60
+#: fj16_job_ads.module:73
 msgid ""
 "@num_synced jobs synced from SharePoint, @num_removed removed in @duration "
 "seconds"
@@ -298,26 +267,26 @@ msgstr ""
 "@num_synced pestiä synkronoitiin SharePointista, @num_removed poistettiin. "
 "Operaatio kesti @duration sekuntia."
 
-#: fj16_job_ads.module:283
+#: fj16_job_ads.module:294
 msgid ""
 "Processing application #@id failed: stayed in WAITING state. Export aborted."
 msgstr ""
 "Hakemuksen #@id vienti SharePointiin epäonnistui ja se jäi WAITING-tilaan. "
 "Vienti keskeytettiin."
 
-#: fj16_job_ads.module:297
+#: fj16_job_ads.module:308
 msgid "Processing application #@id"
 msgstr "Käsitellään hakemusta #@id"
 
-#: fj16_job_ads.module:302
+#: fj16_job_ads.module:313
 msgid "Application #@id synced successfully"
 msgstr "Hakemus #@id vietiin SharePointiin onnistuneesti"
 
-#: fj16_job_ads.module:306
+#: fj16_job_ads.module:317
 msgid "Application #@id syncing failed"
 msgstr "Hakemuksen #@id vienti epäonnistui"
 
-#: fj16_job_ads.module:521
+#: fj16_job_ads.module:532
 msgid "Unable to save application by @name (@email) fo job @job_title"
 msgstr ""
 "Ei voitu tallentaa hakemusta pestiin @job_title. Hakija: @name (@email)."
@@ -333,3 +302,30 @@ msgstr "FJ16"
 #: js/fj16_job_ads.js:0
 msgid "Sending..."
 msgstr "Lähetetään…"
+
+#~ msgid "Analytical-Creative"
+#~ msgstr "Analyyttinen-Luova"
+
+#~ msgid "Educating youth-Marketing scouting"
+#~ msgstr "Nuorten kasvatus-Partion markkinointi"
+
+#~ msgid "Fun-Important"
+#~ msgstr "Haustaa tekemistä-Tärkeää tekemistä"
+
+#~ msgid "Individual work-Group work"
+#~ msgstr "Yksilötyötä-Ryhmätyötä"
+
+#~ msgid "Leading-Doing"
+#~ msgstr "Johtamista-Tekemistä"
+
+#~ msgid "Overview-Details"
+#~ msgstr "Suuret linjat-Yksityiskohdat"
+
+#~ msgid "Planning-Doing"
+#~ msgstr "Suunnittelua-Tekemistä"
+
+#~ msgid "Traditional jamboree skills-Something completely different"
+#~ msgstr "Perinteisiä suurleiritaitoja-Jotain aivan muuta"
+
+#~ msgid "Workload"
+#~ msgstr "Työmäärä"

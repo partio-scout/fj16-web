@@ -1,0 +1,8 @@
+<?php
+
+function fj16_activities_update_7001() {
+  if(field_info_field('field_activity_category') !== NULL) {
+    field_delete_field('field_activity_category');
+    field_purge_batch(100);
+  }
+}

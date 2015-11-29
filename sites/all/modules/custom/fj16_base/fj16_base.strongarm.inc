@@ -415,8 +415,8 @@ user/*/*';
       'filesize' => '0',
       'quota' => '0',
       'tuquota' => '0',
-      'extensions' => '*',
-      'dimensions' => '0',
+      'extensions' => 'jpg png gif pdf',
+      'dimensions' => '2500x2500',
       'filenum' => '0',
       'directories' => array(
         0 => array(
@@ -456,8 +456,8 @@ user/*/*';
       'filesize' => '0',
       'quota' => '0',
       'tuquota' => '0',
-      'extensions' => '*',
-      'dimensions' => '0',
+      'extensions' => 'jpg png gif pdf',
+      'dimensions' => '2500x2500',
       'filenum' => '0',
       'directories' => array(
         0 => array(
@@ -493,23 +493,6 @@ user/*/*';
     ),
   );
   $export['imce_profiles'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'imce_roles_profiles';
-  $strongarm->value = array(
-    3 => array(
-      'public_pid' => '2',
-    ),
-    2 => array(
-      'public_pid' => 0,
-    ),
-    1 => array(
-      'public_pid' => 0,
-    ),
-  );
-  $export['imce_roles_profiles'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -575,7 +558,7 @@ user/*/*';
     'domain' => '',
     'prefix' => '',
     'weight' => '0',
-    'javascript' => 'OWlnQEkJRmaz151fjWxG9-svnmfk4py05sitTu5ch38',
+    'javascript' => 'kLxvZ67xyzAEyBUfMemmLAFvM3npTWrSpeN4x8Mo8Bs',
   );
   $export['language_default'] = $strongarm;
 
@@ -783,7 +766,7 @@ user/*/*';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_block_2_title_link';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['menu_block_2_title_link'] = $strongarm;
 
   $strongarm = new stdClass();

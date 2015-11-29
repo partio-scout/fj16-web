@@ -1,14 +1,7 @@
 // Golden ratio from type-scale.com
 
 html, body {
-	font-size: $base-font-size;
-	font-family: $aleo;
-	font-weight: 400;
-	line-height: 1.45;
-
-	@include respond(mobile) {
-		font-size: $base-font-size - 2;
-	}
+	@extend .font-reset;
 }
 
 p {
@@ -50,9 +43,17 @@ i, em {
 	font-style: italic;
 }
 
-#content ul li {
+#content ul, #content ol {
+	margin: 0 0 1.3em;
+}
+
+#content ul li, #content ol li {
 	display: list-item;
 	list-style: disc;
 	margin: 0 0 0.5em 20px;
-	padding: 0 10px;
+	padding: 0;
+}
+
+#content ol li {
+	list-style: decimal;
 }

@@ -6,8 +6,6 @@ use Thybag\SharePointAPI;
 require 'vendor/autoload.php';
 
 define('FJ16_SHAREPOINT_CONFIG_FILE', '../sharepoint-integration.conf.php');
-define('FJ16_JOBS_CURRENT_ROUND', '4. Toukokuu 2015');
-define('FJ16_JOBS_CONTINUOUS_ROUND', '- Erillishaku');
 define('FJ16_JOBS_PUBLIC_YES', 'Kyllä');
 define('FJ16_JOBS_STATUS_PUBLIC', '4. Julkaistu');
 
@@ -86,10 +84,6 @@ function fj16_job_should_be_displayed($job) {
     return FALSE;
   }
 
-  if($job['hakuryhm_x00e4_'] !== FJ16_JOBS_CURRENT_ROUND && $job['hakuryhm_x00e4_'] !== FJ16_JOBS_CONTINUOUS_ROUND) {
-    return FALSE;
-  }
-
   if($job['julkinen_x0020_haku'] !== FJ16_JOBS_PUBLIC_YES) {
     return FALSE;
   }
@@ -113,7 +107,7 @@ function fj16_job_ads_create_or_update($job, $lang) {
   $title_field = _fj16_get_title_field($lang);
 
   //If the title field for this language does not exist, return immediately without creating anything
-  if(strlen($job[$title_field]) === 0) {
+  if(!isset($job[$title_field]) || strlen($job[$title_field]) === 0) {
     return;
   }
 
@@ -138,6 +132,18 @@ function _fj16_get_title_field($lang) {
     'en' => 'pestin_x0020_nimi_x0020_englanni'
   );
   return $field_names[$lang];
+}
+
+function fj16_job_ads_get_priority_integer($job_level) {
+  $prios = array(
+    'Johtaja' => 5,
+    'Päällikkö' => 4,
+    'Mestari' => 3,
+    'Kymppi' => 2,
+    'Tekijä' => 1,
+    'Muu' => 1
+  );
+  return $prios[$job_level];
 }
 
 function fj16_job_ads_new_node($title, $lang = 'fi') {
@@ -180,6 +186,10 @@ function fj16_job_update_node_fields(&$node, $job, $lang) {
   $team = end($org_parts);
   $node->field_team[LANGUAGE_NONE][0]['value'] = $team;
 
+  // Priority is determined from job level
+  $priority = fj16_job_ads_get_priority_integer($job['pestin_x0020_taso_x0020__x0028_j']);
+  $node->field_priority[LANGUAGE_NONE][0]['value'] = $priority;
+
   // sharepoint GUID has the line id prepended, remove that
   $node->field_sharepoint_guid[LANGUAGE_NONE][0]['value'] = fj16_sharepoint_lookup_value($node->field_sharepoint_guid[LANGUAGE_NONE][0]['value']);
 }
@@ -198,31 +208,23 @@ function fj16_job_ads_get_field_mappings($lang) {
   //Title needs to be mapped separately, as it's not a Fields field
   $mappings = array(
     'pestin_x0020_taso_x0020__x0028_j'  => 'field_level',
-    'pestin_x0020_koko_x0020__x0028_j'  => 'field_jm_work',
-    'lis_x00e4_tietoja_x0020_antaa_x0'  => 'field_info_contact',
-
-    // Job machine (jm, "pestikone") fields
-    'pestikone_x003a__x0020_analyytti'  => 'field_jm_analytic_creative',
-    'pestikone_x003a__x0020_suunnitte'  => 'field_jm_planning_doing',
-    'pestikone_x003a__x0020_johtamine'  => 'field_jm_leading_doing',
-    'pestikone_x003a__x0020_yksil_x00'  => 'field_jm_individual_group',
-    'pestikone_x003a__x0020_perinteis'  => 'field_jm_traditional_modern',
-    'pestikone_x003a__x0020_nuorten_x'  => 'field_jm_growing_marketing',
-    'pestikone_x003a__x0020_suuret_x0'  => 'field_jm_macro_micro',
-    'pestikone_x003a__x0020_kivoja_x0'  => 'field_jm_fun_important',
     'id' => 'field_sharepoint_line_id',
-    'uniqueid' => 'field_sharepoint_guid'
+    'uniqueid' => 'field_sharepoint_guid',
+    'haku_x0020_p_x00e4__x00e4_ttyy_x' => 'field_sharepoint_deadline'
   );
 
   if($lang == 'fi') {
     $mappings['ulkoinen_x0020_kuvaus_x0020_nett'] = 'body';
     $mappings['vaatimukset'] = 'field_requirements';
+    $mappings['lis_x00e4_tietoja_x0020_antaa_x0']  = 'field_info_contact';
   } else if($lang == 'sv') {
     $mappings['ulkoinen_x0020_kuvaus_x0020_ruot'] = 'body';
     $mappings['vaatimukset_x0020_ruotsiksi_x002'] = 'field_requirements';
+    $mappings['lis_x00e4_tietoja_x0020_antaa_x00']  = 'field_info_contact';
   } else if($lang == 'en') {
     $mappings['ulkoinen_x0020_kuvaus_x0020_engl'] = 'body';
     $mappings['julkinen_x0020_kuvaus_x0020_engl'] = 'field_requirements'; //this field is named inconsistently due to historical reasons, julkinen_x0020_kuvaus_x0020_engl is correct.
+    $mappings['lis_x00e4_tietoja_x0020_antaa_x01']  = 'field_info_contact';
   }
 
   return $mappings;
@@ -629,6 +631,8 @@ function fj16_jobs_is_export_in_error_state() {
 }
 
 // Strings to for by automatic extraction of localizable strings - do not remove
+
+t('Position type');
 
 // Job levels
 t('Director');

@@ -13,8 +13,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2015-06-14 23:51+0200\n"
-"PO-Revision-Date: 2015-06-14 23:53+0200\n"
+"POT-Creation-Date: 2015-09-28 23:39+0300\n"
+"PO-Revision-Date: 2015-09-28 23:47+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: EMAIL@ADDRESS\n"
 "Language: sv_FI\n"
@@ -22,74 +22,39 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.1\n"
+"X-Generator: Poedit 1.5.5\n"
 
-#: fj16_job_ads.features.field_instance.inc:694
-msgid "Analytical-Creative"
-msgstr ""
-
-#: fj16_job_ads.features.field_instance.inc:695
+#: fj16_job_ads.features.field_instance.inc:334
 msgid "Description"
 msgstr ""
 
-#: fj16_job_ads.features.field_instance.inc:696
-msgid "Educating youth-Marketing scouting"
-msgstr ""
-
-#: fj16_job_ads.features.field_instance.inc:697
-msgid "Fun-Important"
-msgstr ""
-
-#: fj16_job_ads.features.field_instance.inc:698
+#: fj16_job_ads.features.field_instance.inc:335
 msgid "Further information"
 msgstr "Mer information"
 
-#: fj16_job_ads.features.field_instance.inc:699
-msgid "Individual work-Group work"
-msgstr ""
-
-#: fj16_job_ads.features.field_instance.inc:700
-msgid "Leading-Doing"
-msgstr ""
-
-#: fj16_job_ads.features.field_instance.inc:701
-msgid "Overview-Details"
-msgstr ""
-
-#: fj16_job_ads.features.field_instance.inc:702
-msgid "Planning-Doing"
-msgstr ""
-
-#: fj16_job_ads.features.field_instance.inc:703
+#: fj16_job_ads.features.field_instance.inc:336
+#: fj16_job_ads.views_default.inc:183
 msgid "Position level"
 msgstr "Typ av uppdrag"
 
-#: fj16_job_ads.features.field_instance.inc:704
+#: fj16_job_ads.features.field_instance.inc:337
 msgid "Requirements"
 msgstr "Krav"
 
-#: fj16_job_ads.features.field_instance.inc:705
+#: fj16_job_ads.features.field_instance.inc:338
 msgid "Section"
 msgstr "Avdelning"
 
-#: fj16_job_ads.features.field_instance.inc:706
+#: fj16_job_ads.features.field_instance.inc:339
 msgid "SharePoint GUID"
 msgstr ""
 
-#: fj16_job_ads.features.field_instance.inc:707
+#: fj16_job_ads.features.field_instance.inc:340
 msgid "SharePoint line ID"
 msgstr ""
 
-#: fj16_job_ads.features.field_instance.inc:708
+#: fj16_job_ads.features.field_instance.inc:341
 msgid "Team"
-msgstr ""
-
-#: fj16_job_ads.features.field_instance.inc:709
-msgid "Traditional jamboree skills-Something completely different"
-msgstr ""
-
-#: fj16_job_ads.features.field_instance.inc:710
-msgid "Workload"
 msgstr ""
 
 #: fj16_job_ads.features.inc:29
@@ -140,10 +105,6 @@ msgstr ""
 msgid "<p>No positions to show.</p>"
 msgstr "<p>Inga uppdrag att söka.</p>"
 
-#: fj16_job_ads.views_default.inc:183
-msgid "Position type"
-msgstr "Typ av uppdrag"
-
 #: fj16_job_ads.views_default.inc:184
 msgid "Department"
 msgstr "Avdelning"
@@ -156,40 +117,40 @@ msgstr "Sida"
 msgid "more"
 msgstr "mera"
 
-#: fj16_job_ads.module:385
+#: fj16_job_ads.module:396
 msgid "Apply for position"
 msgstr "Sök till uppdrag"
 
-#: fj16_job_ads.module:389
+#: fj16_job_ads.module:400
 msgid ""
 "The applicants will be informed personally about the recruitment decision."
 msgstr "De sökande kontaktas personligen när valen har gjorts."
 
-#: fj16_job_ads.module:418
+#: fj16_job_ads.module:429
 msgid "Name"
 msgstr "Namn"
 
-#: fj16_job_ads.module:423
+#: fj16_job_ads.module:434
 msgid "Email"
 msgstr "E-post"
 
-#: fj16_job_ads.module:429
+#: fj16_job_ads.module:440
 msgid "Phone number"
 msgstr "Telefon"
 
-#: fj16_job_ads.module:434
+#: fj16_job_ads.module:445
 msgid "Country and NSO/NSA/MO"
 msgstr "Kår och distrikt"
 
-#: fj16_job_ads.module:439
+#: fj16_job_ads.module:450
 msgid "Current scouting positions"
 msgstr "Dina nuvarande ansvarsuppdrag"
 
-#: fj16_job_ads.module:447
+#: fj16_job_ads.module:458
 msgid "Why are you applying for this position?"
 msgstr "Varför söker du till detta uppdrag?"
 
-#: fj16_job_ads.module:452
+#: fj16_job_ads.module:463
 msgid ""
 "Why would you be good in this position? What useful scouting experience do "
 "you have?"
@@ -197,27 +158,27 @@ msgstr ""
 "Varför borde vi välja dig? Vilka nyttiga färdigheter, kunskaper och "
 "erfarenhet har du?"
 
-#: fj16_job_ads.module:457
+#: fj16_job_ads.module:468
 msgid "Other relevant experience"
 msgstr "Annan kompetens"
 
-#: fj16_job_ads.module:462
+#: fj16_job_ads.module:473
 msgid "Additional information"
 msgstr "Ytterlig information"
 
-#: fj16_job_ads.module:463
+#: fj16_job_ads.module:474
 msgid "This can be e.g. a link to an attachment for your application."
 msgstr "Kan vara t.ex. en länk till bilagor."
 
-#: fj16_job_ads.module:475
+#: fj16_job_ads.module:486
 msgid "Send application"
 msgstr "Skicka ansökan"
 
-#: fj16_job_ads.module:487
+#: fj16_job_ads.module:498
 msgid "Please enter a valid email address."
 msgstr "E-postadressen är inte giltig."
 
-#: fj16_job_ads.module:517
+#: fj16_job_ads.module:528
 msgid ""
 "Welcome to Roihu staff! Your application for the position has been received. "
 "We are presently in the process of reviewing each applicants resume. We will "
@@ -226,7 +187,7 @@ msgstr ""
 "Fint och välkommen med! Din ansökan har kommit fram och delgetts vidare. Vi "
 "tar kontakt efter att ansökningstiden har gått ut."
 
-#: fj16_job_ads.module:520
+#: fj16_job_ads.module:531
 msgid ""
 "Your application was not saved due to a technical problem. Please try again "
 "later."
@@ -234,86 +195,94 @@ msgstr ""
 "Din anmälan registrerades inte på grund av tekniska problem. Var vänlig och "
 "sök på nytt senare."
 
-#: fj16_job_ads.module:578
+#: fj16_job_ads.module:623
+msgid "Position type"
+msgstr "Typ av uppdrag"
+
+#: fj16_job_ads.module:624
+msgid "Apply by"
+msgstr "Ansökningstiden går ut"
+
+#: fj16_job_ads.module:627
 msgid "Director"
 msgstr "Direktör"
 
-#: fj16_job_ads.module:579
+#: fj16_job_ads.module:628
 msgid "Manager"
 msgstr "Chef"
 
-#: fj16_job_ads.module:580
+#: fj16_job_ads.module:629
 msgid "Team leader"
 msgstr "Mästare"
 
-#: fj16_job_ads.module:581
+#: fj16_job_ads.module:630
 msgid "Subteam leader"
 msgstr "Bas"
 
-#: fj16_job_ads.module:582
+#: fj16_job_ads.module:631
 msgid "IST"
 msgstr "Donare"
 
-#: fj16_job_ads.module:583
+#: fj16_job_ads.module:632
 msgid "Other"
 msgstr "Annan"
 
-#: fj16_job_ads.module:586
+#: fj16_job_ads.module:635
 msgid "Experience"
 msgstr "Upplevelse"
 
-#: fj16_job_ads.module:587
+#: fj16_job_ads.module:636
 msgid "Education"
 msgstr "Fostran"
 
-#: fj16_job_ads.module:588
+#: fj16_job_ads.module:637
 msgid "Service"
 msgstr "Service"
 
-#: fj16_job_ads.module:589
+#: fj16_job_ads.module:638
 msgid "Resource"
 msgstr "Resurs"
 
-#: fj16_job_ads.module:590
+#: fj16_job_ads.module:639
 msgid "Co-operation"
 msgstr "Samarbete"
 
-#: fj16_job_ads.module:28;35;60;283;297;302;306;521
+#: fj16_job_ads.module:40;47;73;294;308;313;317;532
 msgid "fj16_job_ads"
 msgstr "fj16_job_ads"
 
-#: fj16_job_ads.module:28
+#: fj16_job_ads.module:40
 msgid "Begin job import from SharePoint"
 msgstr ""
 
-#: fj16_job_ads.module:35
+#: fj16_job_ads.module:47
 msgid "SharePoint import failed"
 msgstr ""
 
-#: fj16_job_ads.module:60
+#: fj16_job_ads.module:73
 msgid ""
 "@num_synced jobs synced from SharePoint, @num_removed removed in @duration "
 "seconds"
 msgstr ""
 
-#: fj16_job_ads.module:283
+#: fj16_job_ads.module:294
 msgid ""
 "Processing application #@id failed: stayed in WAITING state. Export aborted."
 msgstr ""
 
-#: fj16_job_ads.module:297
+#: fj16_job_ads.module:308
 msgid "Processing application #@id"
 msgstr ""
 
-#: fj16_job_ads.module:302
+#: fj16_job_ads.module:313
 msgid "Application #@id synced successfully"
 msgstr ""
 
-#: fj16_job_ads.module:306
+#: fj16_job_ads.module:317
 msgid "Application #@id syncing failed"
 msgstr ""
 
-#: fj16_job_ads.module:521
+#: fj16_job_ads.module:532
 msgid "Unable to save application by @name (@email) fo job @job_title"
 msgstr ""
 

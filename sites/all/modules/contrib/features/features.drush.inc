@@ -138,6 +138,18 @@ function features_drush_command() {
     'aliases' => array('fd'),
   );
 
+  $items['features-diff-all'] = array(
+    'description' => "Show the code difference for all enabled features not in their default state.",
+    'arguments' => array(
+      'feature_exclude' => 'A space-delimited list of features to exclude from being reverted.',
+    ),
+    'options' => array(
+      'force' => "Bypass the confirmations. This is useful if you want to output all of the diffs to a log file.",
+    ),
+    'drupal dependencies' => array('features', 'diff'),
+    'aliases' => array('fda'),
+  );
+
   return $items;
 }
 
@@ -297,7 +309,7 @@ function _drush_features_component_filter($all_components, $patterns = array(), 
   // First filter on exported state.
   foreach ($all_components as $source => $components) {
     foreach ($components as $name => $title) {
-      $exported = sizeof($components_map[$source][$name]) > 0;
+      $exported = !empty($components_map[$source][$name]);
       if ($exported) {
         if ($options['exported']) {
           $pool[$source][$name] = $title;
@@ -325,7 +337,8 @@ function _drush_features_component_filter($all_components, $patterns = array(), 
     // Rewrite * to %. Let users use both as wildcard.
     $pattern = strtr($pattern, array('*' => '%'));
     $sources = array();
-    list($source_pattern, $component_pattern) = explode(':', $pattern, 2);
+    $source_pattern = strtok($pattern, ':');
+    $component_pattern = strtok(':');
     // If source is empty, use a pattern.
     if ($source_pattern == '') {
       $source_pattern = '%';
@@ -390,7 +403,7 @@ function _drush_features_component_filter($all_components, $patterns = array(), 
             return drush_set_error('', dt('Ambiguous component "!component", matches !matches', array('!component' => $component_pattern, '!matches' => join(', ', $matches))));
           }
         }
-        if (!is_array($selected[$source])) {
+        if (empty($selected[$source])) {
           $selected[$source] = array();
         }
         $selected[$source] += array_intersect_key($pool[$source], array_flip($matches));
@@ -411,7 +424,7 @@ function _drush_features_component_filter($all_components, $patterns = array(), 
   if ($options['provided by'] && $options['exported'] ) {
     foreach ($selected as $source => $components) {
       foreach ($components as $name => $title) {
-        $exported = sizeof($components_map[$source][$name]) > 0;
+        $exported = !empty($components_map[$source][$name]);
         if ($exported) {
           $provided_by[$source . ':' . $name] = join(', ', $components_map[$source][$name]);
         }
@@ -597,6 +610,28 @@ function _drush_features_export($info, $module_name = NULL, $directory = NULL) {
       drupal_flush_all_caches();
       $export = _drush_features_generate_export($info, $module_name);
       $files = features_export_render($export, $module_name, TRUE);
+      // Copy any files if _files key is there.
+      if (!empty($files['_files'])) {
+        foreach ($files['_files'] as $file_name => $file_info) {
+          // See if files are in a sub directory.
+          if (strpos($file_name, '/')) {
+            $file_directory = $directory . '/' . substr($file_name, 0, strrpos($file_name, '/'));
+            if (!is_dir($file_directory)) {
+              drush_op('mkdir', $file_directory);
+            }
+          }
+          if (!empty($file_info['file_path'])) {
+            drush_op('file_unmanaged_copy', $file_info['file_path'], "{$directory}/{$file_name}", FILE_EXISTS_REPLACE);
+          }
+          elseif (!empty($file_info['file_content'])) {
+            drush_op('file_put_contents', "{$directory}/{$file_name}", $file_info['file_content']);
+          }
+          else {
+            drush_log(dt("Entry for @file_name.in !module is invalid. ", array('!module' => $module_name, '@file_name' => $file_name)), 'ok');
+          }
+        }
+        unset($files['_files']);
+      }
       foreach ($files as $extension => $file_contents) {
         if (!in_array($extension, array('module', 'info'))) {
           $extension .= '.inc';
@@ -896,6 +931,62 @@ function drush_features_diff() {
       }
       else {
         drush_print($row);
+      }
+    }
+  }
+}
+
+/**
+ * Diff all enabled features that are not in their default state.
+ *
+ * @param ...
+ *   (Optional) A list of features to exclude from being reverted.
+ */
+function drush_features_diff_all() {
+  module_load_include('inc', 'features', 'features.export');
+  $features_to_exclude = func_get_args();
+
+  $features_to_revert = array();
+  foreach (features_get_features(NULL, TRUE) as $module) {
+    if ($module->status && !in_array($module->name, $features_to_exclude)) {
+      switch (features_get_storage($module->name)) {
+        case FEATURES_OVERRIDDEN:
+        case FEATURES_NEEDS_REVIEW:
+        case FEATURES_REBUILDABLE:
+          $features_to_diff[] = $module->name;
+          break;
+      }
+    }
+  }
+
+  if ($features_to_diff) {
+
+    // Check if the user wants to apply the force option.
+    $force = drush_get_option('force');
+
+    if($force) {
+      foreach ($features_to_diff as $module) {
+
+        drush_print(dt('Diff for !module:', array('!module' => $module)));
+
+        drush_invoke_process(drush_sitealias_get_record('@self'), 'features-diff', array($module));
+      }
+    }
+    else {
+
+      drush_print(dt('A diff will be performed for the following modules: !modules',
+        array('!modules' => implode(', ', $features_to_diff))
+      ));
+
+      if (drush_confirm(dt('Do you want to continue?'))) {
+        foreach ($features_to_diff as $module) {
+          if (drush_confirm(dt('Diff !module?', array('!module' => $module)))) {
+            drush_invoke_process(drush_sitealias_get_record('@self'), 'features-diff', array($module));
+          }
+        }
+      }
+      else {
+        return drush_user_abort('Aborting.');
       }
     }
   }

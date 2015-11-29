@@ -1,0 +1,54 @@
+/* Default to responsive images */
+img {
+  vertical-align: baseline;
+  max-width: 100%;
+  height: auto !important;
+}
+@media (max-width: 480px) {
+  .align-right,
+  .align-left {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+@media (min-width: 481px) {
+  .align-left {
+    float: left;
+    margin-right: 1em;
+    width: auto;
+    max-width: 46%;
+  }
+  .align-right {
+    float: right;
+    margin-left: 1em;
+    width: auto;
+    max-width: 46%;
+  }
+}
+/* Narrow screens & tablets */
+@media (min-device-width: 740px) and (min-width: 740px), (max-device-width: 800px) and (min-width: 740px) and (orientation: landscape) {
+  .align-left {
+    max-width: 40%;
+  }
+  .align-right {
+    max-width: 40%;
+  }
+}
+/* Normal screens */
+@media (min-device-width: 980px) and (min-width: 980px), (max-device-width: 1024px) and (min-width: 1024px) and (orientation: landscape) {
+  .align-left {
+    max-width: 30%;
+  }
+  .align-right {
+    max-width: 30%;
+  }
+}
+/* Wide screens */
+@media (min-width: 1220px) {
+  .align-left {
+    max-width: 46%;
+  }
+  .align-right {
+    max-width: 46%;
+  }
+}
