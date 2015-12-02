@@ -1,0 +1,143 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  fj16_activities.features.field_instance.inc: n/a
+#  fj16_activities.features.inc: n/a
+#  fj16_activities.views_default.inc: n/a
+#  fj16_activities.info: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2015-12-02 21:50+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: fj16_activities.features.field_instance.inc:268
+msgid "Category"
+msgstr ""
+
+#: fj16_activities.features.field_instance.inc:269
+msgid "Description"
+msgstr ""
+
+#: fj16_activities.features.field_instance.inc:270
+msgid "Icon"
+msgstr ""
+
+#: fj16_activities.features.field_instance.inc:271
+msgid "Ingres"
+msgstr ""
+
+#: fj16_activities.features.field_instance.inc:272
+msgid "Materials"
+msgstr ""
+
+#: fj16_activities.features.field_instance.inc:273
+msgid "Tips & links"
+msgstr ""
+
+#: fj16_activities.features.inc:53
+msgid "Activity"
+msgstr ""
+
+#: fj16_activities.features.inc:57
+msgid "Title"
+msgstr ""
+
+#: fj16_activities.views_default.inc:94;167
+msgid "Master"
+msgstr ""
+
+#: fj16_activities.views_default.inc:95
+msgid "Sparks"
+msgstr ""
+
+#: fj16_activities.views_default.inc:96;168
+msgid "more"
+msgstr ""
+
+#: fj16_activities.views_default.inc:97;169
+msgid "Apply"
+msgstr ""
+
+#: fj16_activities.views_default.inc:98;170
+msgid "Reset"
+msgstr ""
+
+#: fj16_activities.views_default.inc:99;171
+msgid "Sort by"
+msgstr ""
+
+#: fj16_activities.views_default.inc:100;172
+msgid "Asc"
+msgstr ""
+
+#: fj16_activities.views_default.inc:101;173
+msgid "Desc"
+msgstr ""
+
+#: fj16_activities.views_default.inc:102
+msgid "Kaikki"
+msgstr ""
+
+#: fj16_activities.views_default.inc:103
+msgid "%1"
+msgstr ""
+
+#: fj16_activities.views_default.inc:104
+msgid "Page"
+msgstr ""
+
+#: fj16_activities.views_default.inc:174
+msgid "Items per page"
+msgstr ""
+
+#: fj16_activities.views_default.inc:175
+msgid "- All -"
+msgstr ""
+
+#: fj16_activities.views_default.inc:176
+msgid "Offset"
+msgstr ""
+
+#: fj16_activities.views_default.inc:177
+msgid "« first"
+msgstr ""
+
+#: fj16_activities.views_default.inc:178
+msgid "‹ previous"
+msgstr ""
+
+#: fj16_activities.views_default.inc:179
+msgid "next ›"
+msgstr ""
+
+#: fj16_activities.views_default.inc:180
+msgid "last »"
+msgstr ""
+
+#: fj16_activities.views_default.inc:181
+msgid "Here you can find Roihu's awesome spark activities!"
+msgstr ""
+
+#: fj16_activities.views_default.inc:182
+msgid "All"
+msgstr ""
+
+#: fj16_activities.info:0
+msgid "FJ16 Activities"
+msgstr ""
+
+#: fj16_activities.info:0
+msgid "FJ16"
+msgstr ""
+
