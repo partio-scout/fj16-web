@@ -6,3 +6,8 @@ function fj16_activities_update_7001() {
     field_purge_batch(100);
   }
 }
+
+function fj16_activities_update_7002() {
+  module_enable(array('i18n_taxonomy'));
+}
+
