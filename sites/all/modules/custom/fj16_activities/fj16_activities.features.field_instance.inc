@@ -263,54 +263,12 @@ function fj16_activities_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-activity_category-field_ingres'
-  $field_instances['taxonomy_term-activity_category-field_ingres'] = array(
-    'bundle' => 'activity_category',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-      'token' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'taxonomy_term',
-    'field_name' => 'field_ingres',
-    'label' => 'Introduction',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 32,
-    ),
-  );
-
   // Translatables
   // Included for use with string extractors like potx.
   t('Category');
   t('Description');
   t('Icon');
   t('Ingres');
-  t('Introduction');
   t('Materials');
   t('Tips & links');
 
