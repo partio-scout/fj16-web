@@ -125,12 +125,12 @@ function fj16_activities_views_default_views() {
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = 'Täältä löydät Roihun upeat kipinäaktiviteetit!';
   $handler->display->display_options['empty']['area']['format'] = 'plain_text';
-  /* Field: Field: Introduction */
-  $handler->display->display_options['fields']['field_ingres']['id'] = 'field_ingres';
-  $handler->display->display_options['fields']['field_ingres']['table'] = 'field_data_field_ingres';
-  $handler->display->display_options['fields']['field_ingres']['field'] = 'field_ingres';
-  $handler->display->display_options['fields']['field_ingres']['label'] = '';
-  $handler->display->display_options['fields']['field_ingres']['element_label_colon'] = FALSE;
+  /* Field: Taxonomy term: Term description */
+  $handler->display->display_options['fields']['description']['id'] = 'description';
+  $handler->display->display_options['fields']['description']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['description']['field'] = 'description';
+  $handler->display->display_options['fields']['description']['label'] = '';
+  $handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
   /* Contextual filter: Taxonomy term: Term ID */
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
   $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_term_data';
