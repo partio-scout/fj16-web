@@ -33,7 +33,7 @@ function fj16_activities_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'body',
-    'label' => 'Kuvaus',
+    'label' => 'Description',
     'required' => 1,
     'settings' => array(
       'display_summary' => 0,
@@ -76,7 +76,7 @@ function fj16_activities_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_activity_terms',
-    'label' => 'Kategoria',
+    'label' => 'Category',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -113,7 +113,7 @@ function fj16_activities_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_gear',
-    'label' => 'Tarvikkeet',
+    'label' => 'Materials',
     'required' => 0,
     'settings' => array(
       'text_processing' => 1,
@@ -154,7 +154,7 @@ function fj16_activities_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_ingres',
-    'label' => 'Lyhyt kuvaus',
+    'label' => 'Ingres',
     'required' => 1,
     'settings' => array(
       'text_processing' => 0,
@@ -194,7 +194,7 @@ function fj16_activities_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_links_and_tips',
-    'label' => 'Vinkit ja linkit',
+    'label' => 'Tips & links',
     'required' => 0,
     'settings' => array(
       'display_summary' => 0,
@@ -306,13 +306,13 @@ function fj16_activities_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Category');
+  t('Description');
   t('Icon');
+  t('Ingres');
   t('Introduction');
-  t('Kategoria');
-  t('Kuvaus');
-  t('Lyhyt kuvaus');
-  t('Tarvikkeet');
-  t('Vinkit ja linkit');
+  t('Materials');
+  t('Tips & links');
 
   return $field_instances;
 }

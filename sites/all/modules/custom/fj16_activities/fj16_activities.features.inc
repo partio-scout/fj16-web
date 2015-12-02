@@ -50,9 +50,9 @@ function fj16_activities_image_default_styles() {
 function fj16_activities_node_info() {
   $items = array(
     'fj16_activity' => array(
-      'name' => t('Aktiviteetti'),
+      'name' => t('Activity'),
       'base' => 'node_content',
-      'description' => t('Kipinäaktiviteetti'),
+      'description' => '',
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
