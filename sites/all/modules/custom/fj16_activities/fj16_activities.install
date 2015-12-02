@@ -6,3 +6,20 @@ function fj16_activities_update_7001() {
     field_purge_batch(100);
   }
 }
+
+function fj16_activities_update_7002() {
+  module_enable(array('i18n_taxonomy'));
+}
+
+function fj16_activities_update_7003() {
+  if ($instance = field_info_instance('taxonomy_term', 'field_ingres', 'activity_category')) {
+    field_delete_instance($instance);
+  }
+}
+
+function fj16_activities_update_7004() {
+  // fj16_base.module needs to be included to access fj16_import_translation()
+  require_once(drupal_get_path('module', 'fj16_base') . '/fj16_base.module');
+  fj16_import_translation('fj16_activities', 'fi');
+  fj16_import_translation('fj16_activities', 'sv');
+}

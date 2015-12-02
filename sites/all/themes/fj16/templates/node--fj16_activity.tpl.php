@@ -115,9 +115,10 @@
           if(!isset($value['taxonomy_term'])) {
             continue;
           }
-          $term = $value['taxonomy_term'];
+          $term = i18n_taxonomy_localize_terms($value['taxonomy_term']);
           $icon = field_view_field('taxonomy_term', $term, 'field_icon', $display);
-          print '<a href="/aktiviteetit/' . $term->tid . '">';
+          $url = url('activities/' . $term->tid);
+          print '<a href="' . $url . '">';
           print render($icon);
           print '<span>' . check_plain($term->name) . '</span>';
           print '</a>';

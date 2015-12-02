@@ -37,6 +37,15 @@ function fj16_activities_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete terms in activity_category'.
+  $permissions['delete terms in activity_category'] = array(
+    'name' => 'delete terms in activity_category',
+    'roles' => array(
+      'activity editor' => 'activity editor',
+    ),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'edit any fj16_activity content'.
   $permissions['edit any fj16_activity content'] = array(
     'name' => 'edit any fj16_activity content',
@@ -53,6 +62,15 @@ function fj16_activities_user_default_permissions() {
       'activity editor' => 'activity editor',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'edit terms in activity_category'.
+  $permissions['edit terms in activity_category'] = array(
+    'name' => 'edit terms in activity_category',
+    'roles' => array(
+      'activity editor' => 'activity editor',
+    ),
+    'module' => 'taxonomy',
   );
 
   return $permissions;
