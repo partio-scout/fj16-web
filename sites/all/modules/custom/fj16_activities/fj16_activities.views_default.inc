@@ -22,7 +22,7 @@ function fj16_activities_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Kipinät';
+  $handler->display->display_options['title'] = 'Sparks';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -79,13 +79,20 @@ function fj16_activities_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'fj16_activity' => 'fj16_activity',
   );
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'aktiviteetit';
+  $handler->display->display_options['path'] = 'activities';
   $translatables['fj16_activities_list'] = array(
     t('Master'),
-    t('Kipinät'),
+    t('Sparks'),
     t('more'),
     t('Apply'),
     t('Reset'),
@@ -123,14 +130,22 @@ function fj16_activities_views_default_views() {
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area']['content'] = 'Täältä löydät Roihun upeat kipinäaktiviteetit!';
+  $handler->display->display_options['empty']['area']['content'] = 'Here you can find Roihu\'s awesome spark activities!';
   $handler->display->display_options['empty']['area']['format'] = 'plain_text';
-  /* Field: Field: Introduction */
-  $handler->display->display_options['fields']['field_ingres']['id'] = 'field_ingres';
-  $handler->display->display_options['fields']['field_ingres']['table'] = 'field_data_field_ingres';
-  $handler->display->display_options['fields']['field_ingres']['field'] = 'field_ingres';
-  $handler->display->display_options['fields']['field_ingres']['label'] = '';
-  $handler->display->display_options['fields']['field_ingres']['element_label_colon'] = FALSE;
+  /* Field: Taxonomy term: Term description */
+  $handler->display->display_options['fields']['description']['id'] = 'description';
+  $handler->display->display_options['fields']['description']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['description']['field'] = 'description';
+  $handler->display->display_options['fields']['description']['label'] = '';
+  $handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
+  /* Field: WORKAROUND: forces term id to be included in view result */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['ui_name'] = 'WORKAROUND: forces term id to be included in view result';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   /* Contextual filter: Taxonomy term: Term ID */
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
   $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_term_data';
@@ -163,7 +178,7 @@ function fj16_activities_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('Täältä löydät Roihun upeat kipinäaktiviteetit!'),
+    t('Here you can find Roihu\'s awesome spark activities!'),
     t('All'),
   );
   $export['fj16_activity_category_intro'] = $view;
