@@ -172,13 +172,13 @@ jQuery.fn.isOnScreen = function(x, y){
     
 };
 
-$('[data-ga-event-category]').click(function(e){
+$('[data-ga-event-category][dats-ga-event-action]').click(function(e){
 	
 	var eventCategory = $(this).data('ga-event-category'),
 	    eventAction   = $(this).data('ga-event-action'),
 	    eventLabel    = $(this).data('ga-event-label'),
 	    eventValue    = $(this).data('ga-event-value');
 			
-	ga(eventCategory, eventAction, eventLabel, eventValue);	
+	ga('send', 'event', eventCategory, eventAction, eventLabel, eventValue);	
 
 });
