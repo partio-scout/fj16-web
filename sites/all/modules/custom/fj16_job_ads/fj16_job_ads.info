@@ -10,6 +10,7 @@ dependencies[] = features
 dependencies[] = filter
 dependencies[] = fj16_base
 dependencies[] = fj16_frontpage_boxes
+dependencies[] = fj16_sharepoint_api
 dependencies[] = honeypot
 dependencies[] = i18n_field
 dependencies[] = list

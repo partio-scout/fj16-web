@@ -1,0 +1,5 @@
+<?php
+
+function fj16_programme_and_job_tool_update_7001() {
+  module_enable(array('fj16_sharepoint_api'));
+}

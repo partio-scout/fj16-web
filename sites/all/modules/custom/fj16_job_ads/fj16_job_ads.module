@@ -2,9 +2,6 @@
 
 include_once 'fj16_job_ads.features.inc';
 
-use Thybag\SharePointAPI;
-require 'vendor/autoload.php';
-
 define('FJ16_SHAREPOINT_CONFIG_FILE', '../sharepoint-integration.conf.php');
 define('FJ16_JOBS_PUBLIC_YES', 'Kyllä');
 define('FJ16_JOBS_STATUS_PUBLIC', '4. Julkaistu');

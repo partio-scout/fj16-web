@@ -5,3 +5,15 @@
  */
 
 include_once 'fj16_programme_and_job_tool.features.inc';
+
+function fj16_programme_and_job_tool_cron() {
+  fj16_programme_and_job_tool_import_jobs();
+}
+
+function fj16_programme_and_job_tool_import_jobs() {
+
+}
+
+function fj16_programme_and_job_tool_get_jobs_from_sharepoint() {
+  
+}
