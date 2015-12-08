@@ -6,14 +6,24 @@
 
 include_once 'fj16_programme_and_job_tool.features.inc';
 
+define('FJ16_BULK_JOBS_LIST', '{D99DB96C-696B-493E-9ABE-6314FC853B39}');
+
 function fj16_programme_and_job_tool_cron() {
   fj16_programme_and_job_tool_import_jobs();
 }
 
 function fj16_programme_and_job_tool_import_jobs() {
+  $jobs = fj16_programme_and_job_tool_get_jobs_from_sharepoint();
 
+  foreach ($jobs as $job) {
+    fj16_programme_and_job_tool_create_or_update_job($job);
+  }
+}
+
+function fj16_programme_and_job_tool_create_or_update_job($job) {
+  //TODO
 }
 
 function fj16_programme_and_job_tool_get_jobs_from_sharepoint() {
-  
+  return fj16_sharepoint_api_get_list_contents(FJ16_BULK_JOBS_LIST);
 }

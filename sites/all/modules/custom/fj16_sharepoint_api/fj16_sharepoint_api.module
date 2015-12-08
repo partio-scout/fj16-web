@@ -3,3 +3,15 @@
 use Thybag\SharePointAPI;
 require_once('vendor/autoload.php');
 
+define('FJ16_WSDL_LOCATION', drupal_get_path('module', 'fj16_sharepoint_api') . '/wsdl.xml');
+
+function fj16_sharepoint_api_get_config() {
+  require_once DRUPAL_ROOT . '/../sharepoint-integration.conf.php';
+  return $fj16_sharepoint_config;
+}
+
+function fj16_sharepoint_api_get_list_contents($list_guid) {
+  $conf = fj16_sharepoint_api_get_config();
+  $sp = new SharePointAPI($conf['username'], $conf['password'], FJ16_WSDL_LOCATION, $conf['auth_variant']);
+  return $sp->query($list_guid)->all_fields()->get();
+}
