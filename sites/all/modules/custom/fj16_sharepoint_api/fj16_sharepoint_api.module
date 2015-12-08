@@ -6,7 +6,7 @@ require_once('vendor/autoload.php');
 define('FJ16_WSDL_LOCATION', drupal_get_path('module', 'fj16_sharepoint_api') . '/wsdl.xml');
 
 function fj16_sharepoint_api_get_config() {
-  require_once DRUPAL_ROOT . '/../sharepoint-integration.conf.php';
+  require DRUPAL_ROOT . '/../sharepoint-integration.conf.php';
   return $fj16_sharepoint_config;
 }
 
