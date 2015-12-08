@@ -32,7 +32,7 @@ class SharePointOnlineAuth extends \SoapClient {
 		curl_setopt($curl, CURLOPT_POSTFIELDS, $request);
 		curl_setopt($curl, CURLOPT_COOKIE, $this->authCookies);
 
-		curl_setopt($curl, CURLOPT_TIMEOUT, 10);
+		curl_setopt($curl, CURLOPT_TIMEOUT, 20);
 		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE);
 		curl_setopt($curl, CURLOPT_SSLVERSION, 1);
 
@@ -166,7 +166,7 @@ class SharePointOnlineAuth extends \SoapClient {
 
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 		curl_setopt($ch, CURLOPT_SSLVERSION, 1);
-		curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+		curl_setopt($ch, CURLOPT_TIMEOUT, 20);
 
 		if($header)  curl_setopt($ch, CURLOPT_HEADER, true);
 
