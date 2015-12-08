@@ -131,7 +131,7 @@
 				line-height: 80px;
 				color: #fff;
 				@include transition(background-color 0.3s ease-out);
-        
+				
 				@include respond(medium) {
 					padding: 0 20px;
 				}
@@ -203,15 +203,23 @@
 			padding: 0;
 			list-style-type: none;
 			float: left;
-
-			li {
-				display: inline-block;
+        
+      &.links li a {
 				padding: 0 30px;
-				line-height: 50px;
+      }
+      
+      &.language-switcher-locale-url li {
+				padding: 0 30px;
 
 				@include respond(mobile) {
 					padding: 0 10px;
 				}
+      }
+
+			li {
+				display: inline-block;
+				float: left;
+				line-height: 50px;
 
 				a {
 					color: #000;
@@ -219,6 +227,11 @@
 
 					@include respond($break-small) {
 						color: #FFF;
+					}
+					
+					&.some-icon {
+						margin: 7px 0 0 35px;
+						padding: 0;
 					}
 				}
 			}
