@@ -1,5 +1,7 @@
 #main {
   @extend .container;
+  
+  padding: 0;
 
   .breadcrumb {
     a {
@@ -59,12 +61,30 @@ div.messages {
 
 #sidebar-left .block-menu-block {
   font-family: $exo;
-  margin-right: 7px;
-  margin-left: -20px;
 
   h2 {
-    font-size: 100%;
-    margin: 40px 0 30px 18%;
+    font-size: 120%;
+    margin: 40px 0 30px;
+    
+    a {
+      padding: .5em 0 .5em 18%;
+      text-decoration: none;
+      text-transform: uppercase;
+      
+      &:before {
+        display: none;
+      }
+      
+      span {
+        border-bottom: 1px solid $black;
+      }
+      
+      &:hover, &:focus, &.active {
+        span {
+          border-color: $white;
+        }
+      }
+    }
   }
 
   ul, li {
@@ -115,30 +135,45 @@ div.messages {
   padding: 100px;
 
   @include respond(medium) {
-    padding: 75px 100px;
+    padding: 75px;
+  }
+  
+  @include respond(small) {
+    padding: 50px;
   }
 
   @include respond(mobile) {
-    padding: 30px 0;
+    padding: 30px 20px;
   }
 
   h1.title {
     color: $blue;
-    font-size: 4.236em;
+    font-size: 4em;
     text-transform: uppercase;
     font-family: $exo2;
     margin-bottom: 0.3em;
+    
+    @include respond(medium) {
+      font-size: 3.5em;
+    }
 
     @include respond(mobile) {
-      font-size: 2.236em;
+      font-size: 2.5em;
     }
   }
 
   .field-name-field-ingres {
-    margin-bottom: 1.3em;
-    font-family: $exo2;
-    color: $blue;
-    text-transform: uppercase;
+    @extend .ingres;
+  }
+  
+  figure {
+    background: transparent;
+    
+    > figcaption {
+      font-size: .8em;
+      font-style: italic;
+      padding: .7em 0 0;
+    }
   }
 }
 

@@ -60,6 +60,8 @@
 	$('#to-content').click(function(){
 		$('html,body').animate({scrollTop: $('#main').offset().top}, 400);
 	});
+	
+	$('#sidebar-left .block-menu-block h2 a').wrapInner('<span></span>');
 
 
 	// Sticky nav

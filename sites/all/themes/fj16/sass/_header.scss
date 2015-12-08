@@ -17,6 +17,25 @@
 	@include respond(mobile) {
 		height: 300px;
 	}
+	
+	&:before {
+		content: '';
+		@include at2x('header_sp_logo', 180px);
+		background-repeat: no-repeat;
+		background-position: center;
+		position: absolute;
+		top: 3.8em;
+		right: 1em;
+		width: 180px;
+		height: 68px;
+		z-index: 1;
+		
+		@include respond(mobile) {
+			width: 100px;
+			height: 43px;
+			background-size: 100px;			
+		}
+	}
 
 
 	#name-and-slogan {
@@ -66,7 +85,7 @@
 		width: 100%;
 		overflow: visible;
 
-		@include respond(1023px) {
+		@include respond($break-small) {
 			display: none;
 		}
 
@@ -174,7 +193,7 @@
 
 		z-index: 50;
 
-		@include respond(1023px) {
+		@include respond($break-small) {
 			background: #000;
 		}
 
@@ -198,7 +217,7 @@
 					color: #000;
 					text-decoration: none; // hide default strikethrough that untranslated links have
 
-					@include respond(1023px) {
+					@include respond($break-small) {
 						color: #FFF;
 					}
 				}
@@ -207,7 +226,7 @@
 
 		// Social media links
 		ul.links {
-			@include respond(1023px) {
+			@include respond($break-small) {
 				display: none; // The links are also in the mobile menu, so hide
 			}
 		}
@@ -220,7 +239,7 @@
 			ul {
 				float: right;
 
-				@include respond(1023px) {
+				@include respond($break-small) {
 					float: left;
 				}
 			}
@@ -229,7 +248,7 @@
 		#mobile-menu-toggle {
 			display: none;
 
-			@include respond(1023px) {
+			@include respond($break-small) {
 				display: block;
 				height: 50px;
 				width: 60px;

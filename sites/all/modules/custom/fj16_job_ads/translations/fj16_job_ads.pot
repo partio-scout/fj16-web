@@ -14,7 +14,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2015-07-17 09:59+0000\n"
+"POT-Creation-Date: 2015-09-28 23:39+0300\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -115,119 +115,123 @@ msgstr ""
 msgid "more"
 msgstr ""
 
-#: fj16_job_ads.module:389
+#: fj16_job_ads.module:396
 msgid "Apply for position"
 msgstr ""
 
-#: fj16_job_ads.module:393
+#: fj16_job_ads.module:400
 msgid "The applicants will be informed personally about the recruitment decision."
 msgstr ""
 
-#: fj16_job_ads.module:422
+#: fj16_job_ads.module:429
 msgid "Name"
 msgstr ""
 
-#: fj16_job_ads.module:427
+#: fj16_job_ads.module:434
 msgid "Email"
 msgstr ""
 
-#: fj16_job_ads.module:433
+#: fj16_job_ads.module:440
 msgid "Phone number"
 msgstr ""
 
-#: fj16_job_ads.module:438
+#: fj16_job_ads.module:445
 msgid "Country and NSO/NSA/MO"
 msgstr ""
 
-#: fj16_job_ads.module:443
+#: fj16_job_ads.module:450
 msgid "Current scouting positions"
 msgstr ""
 
-#: fj16_job_ads.module:451
+#: fj16_job_ads.module:458
 msgid "Why are you applying for this position?"
 msgstr ""
 
-#: fj16_job_ads.module:456
+#: fj16_job_ads.module:463
 msgid "Why would you be good in this position? What useful scouting experience do you have?"
 msgstr ""
 
-#: fj16_job_ads.module:461
+#: fj16_job_ads.module:468
 msgid "Other relevant experience"
 msgstr ""
 
-#: fj16_job_ads.module:466
+#: fj16_job_ads.module:473
 msgid "Additional information"
 msgstr ""
 
-#: fj16_job_ads.module:467
+#: fj16_job_ads.module:474
 msgid "This can be e.g. a link to an attachment for your application."
 msgstr ""
 
-#: fj16_job_ads.module:479
+#: fj16_job_ads.module:486
 msgid "Send application"
 msgstr ""
 
-#: fj16_job_ads.module:491
+#: fj16_job_ads.module:498
 msgid "Please enter a valid email address."
 msgstr ""
 
-#: fj16_job_ads.module:521
+#: fj16_job_ads.module:528
 msgid "Welcome to Roihu staff! Your application for the position has been received. We are presently in the process of reviewing each applicants resume. We will contact you after deadline."
 msgstr ""
 
-#: fj16_job_ads.module:524
+#: fj16_job_ads.module:531
 msgid "Your application was not saved due to a technical problem. Please try again later."
 msgstr ""
 
-#: fj16_job_ads.module:616
+#: fj16_job_ads.module:623
 msgid "Position type"
 msgstr ""
 
-#: fj16_job_ads.module:619
-msgid "Director"
-msgstr ""
-
-#: fj16_job_ads.module:620
-msgid "Manager"
-msgstr ""
-
-#: fj16_job_ads.module:621
-msgid "Team leader"
-msgstr ""
-
-#: fj16_job_ads.module:622
-msgid "Subteam leader"
-msgstr ""
-
-#: fj16_job_ads.module:623
-msgid "IST"
-msgstr ""
-
 #: fj16_job_ads.module:624
-msgid "Other"
+msgid "Apply by"
 msgstr ""
 
 #: fj16_job_ads.module:627
-msgid "Experience"
+msgid "Director"
 msgstr ""
 
 #: fj16_job_ads.module:628
-msgid "Education"
+msgid "Manager"
 msgstr ""
 
 #: fj16_job_ads.module:629
-msgid "Service"
+msgid "Team leader"
 msgstr ""
 
 #: fj16_job_ads.module:630
-msgid "Resource"
+msgid "Subteam leader"
 msgstr ""
 
 #: fj16_job_ads.module:631
+msgid "IST"
+msgstr ""
+
+#: fj16_job_ads.module:632
+msgid "Other"
+msgstr ""
+
+#: fj16_job_ads.module:635
+msgid "Experience"
+msgstr ""
+
+#: fj16_job_ads.module:636
+msgid "Education"
+msgstr ""
+
+#: fj16_job_ads.module:637
+msgid "Service"
+msgstr ""
+
+#: fj16_job_ads.module:638
+msgid "Resource"
+msgstr ""
+
+#: fj16_job_ads.module:639
 msgid "Co-operation"
 msgstr ""
 
-#: fj16_job_ads.module:40;47;73;287;301;306;310;525
+#: fj16_job_ads.module:40;47;73;294;308;313;317;532
 msgid "fj16_job_ads"
 msgstr ""
 
@@ -243,23 +247,23 @@ msgstr ""
 msgid "@num_synced jobs synced from SharePoint, @num_removed removed in @duration seconds"
 msgstr ""
 
-#: fj16_job_ads.module:287
+#: fj16_job_ads.module:294
 msgid "Processing application #@id failed: stayed in WAITING state. Export aborted."
 msgstr ""
 
-#: fj16_job_ads.module:301
+#: fj16_job_ads.module:308
 msgid "Processing application #@id"
 msgstr ""
 
-#: fj16_job_ads.module:306
+#: fj16_job_ads.module:313
 msgid "Application #@id synced successfully"
 msgstr ""
 
-#: fj16_job_ads.module:310
+#: fj16_job_ads.module:317
 msgid "Application #@id syncing failed"
 msgstr ""
 
-#: fj16_job_ads.module:525
+#: fj16_job_ads.module:532
 msgid "Unable to save application by @name (@email) fo job @job_title"
 msgstr ""
 

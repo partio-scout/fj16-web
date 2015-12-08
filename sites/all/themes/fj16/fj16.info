@@ -13,5 +13,6 @@ regions[mobile_menu] = Mobile menu
 stylesheets[all][] = css/fj16.css
 
 scripts[] = js/skrollr.min.js
+scripts[] = js/hyphenate.js
 scripts[] = js/main.js
 scripts[] = js/tracking.js

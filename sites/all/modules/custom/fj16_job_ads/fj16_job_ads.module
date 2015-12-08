@@ -6,8 +6,6 @@ use Thybag\SharePointAPI;
 require 'vendor/autoload.php';
 
 define('FJ16_SHAREPOINT_CONFIG_FILE', '../sharepoint-integration.conf.php');
-define('FJ16_JOBS_CURRENT_ROUND', '4. Toukokuu 2015');
-define('FJ16_JOBS_CONTINUOUS_ROUND', '- Erillishaku');
 define('FJ16_JOBS_PUBLIC_YES', 'Kyllä');
 define('FJ16_JOBS_STATUS_PUBLIC', '4. Julkaistu');
 
@@ -83,10 +81,6 @@ function fj16_job_ads_import_jobs() {
 
 function fj16_job_should_be_displayed($job) {
   if($job['pestauksen_x0020_tila'] !== FJ16_JOBS_STATUS_PUBLIC) {
-    return FALSE;
-  }
-
-  if($job['hakuryhm_x00e4_'] !== FJ16_JOBS_CURRENT_ROUND && $job['hakuryhm_x00e4_'] !== FJ16_JOBS_CONTINUOUS_ROUND) {
     return FALSE;
   }
 
@@ -214,20 +208,23 @@ function fj16_job_ads_get_field_mappings($lang) {
   //Title needs to be mapped separately, as it's not a Fields field
   $mappings = array(
     'pestin_x0020_taso_x0020__x0028_j'  => 'field_level',
-    'lis_x00e4_tietoja_x0020_antaa_x0'  => 'field_info_contact',
     'id' => 'field_sharepoint_line_id',
-    'uniqueid' => 'field_sharepoint_guid'
+    'uniqueid' => 'field_sharepoint_guid',
+    'haku_x0020_p_x00e4__x00e4_ttyy_x' => 'field_sharepoint_deadline'
   );
 
   if($lang == 'fi') {
     $mappings['ulkoinen_x0020_kuvaus_x0020_nett'] = 'body';
     $mappings['vaatimukset'] = 'field_requirements';
+    $mappings['lis_x00e4_tietoja_x0020_antaa_x0']  = 'field_info_contact';
   } else if($lang == 'sv') {
     $mappings['ulkoinen_x0020_kuvaus_x0020_ruot'] = 'body';
     $mappings['vaatimukset_x0020_ruotsiksi_x002'] = 'field_requirements';
+    $mappings['lis_x00e4_tietoja_x0020_antaa_x00']  = 'field_info_contact';
   } else if($lang == 'en') {
     $mappings['ulkoinen_x0020_kuvaus_x0020_engl'] = 'body';
     $mappings['julkinen_x0020_kuvaus_x0020_engl'] = 'field_requirements'; //this field is named inconsistently due to historical reasons, julkinen_x0020_kuvaus_x0020_engl is correct.
+    $mappings['lis_x00e4_tietoja_x0020_antaa_x01']  = 'field_info_contact';
   }
 
   return $mappings;

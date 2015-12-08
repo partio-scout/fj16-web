@@ -1,0 +1,24 @@
+<?php
+/**
+ * @file
+ * Code for the FJ16 Activities feature.
+ */
+
+include_once 'fj16_activities.features.inc';
+
+// Use views pre render hook to translate taxonomy terms in activity list intro
+function fj16_activities_views_pre_render(&$view) {
+  global $language;
+
+  if ($view->name !== 'fj16_activity_category_intro') {
+    return;
+  }
+
+  foreach($view->result as $delta => $term) {
+    if(isset($term->tid)) {
+      $localized_term = i18n_taxonomy_localize_terms(taxonomy_term_load($term->tid));
+      $term->taxonomy_term_data_name = $localized_term->name;
+      $term->taxonomy_term_data_description = $localized_term->description;
+    }
+  }
+}

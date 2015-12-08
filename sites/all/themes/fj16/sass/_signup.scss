@@ -1,0 +1,280 @@
+.sign-up {
+  #main {
+    max-width: none;
+    padding: 0;
+    
+    #content {
+      padding: 0;
+  
+      #page-title {
+        display: none;
+      }
+      
+      h1.title {
+        color: $white;
+        font-size: 1.8em;
+        font-weight: 600;
+        margin: 0;
+        padding: 2em 0 1.5em;
+        text-align: center;
+      
+        @media (max-width: $break-mobile) {
+          font-size: 1.6em;
+          padding: 1.5em 0 1em;
+        }
+      }
+    }
+  }
+  
+  .signup-intro {
+    background-color: $green;
+    @include at2x('roihu_logo_lines_faded_bg', auto, 95%);
+    background-repeat: no-repeat;
+    background-position: 98% 50%;
+    padding: 0 0 2em;
+    text-align: center;    
+    
+    @media (max-width: $break-mobile) {
+      background-position: 50% 50%;
+      background-size: 95% auto;
+      padding: 0 0 1em;
+    }
+    
+    p {
+      color: #fff;
+      font-size: 1.1em;
+      margin: 0 auto 2.5em;
+      max-width: 38em;
+      
+      @media (max-width: $break-mobile) {
+        font-size: .9em;
+        margin-bottom: 1.5em;
+      }
+      
+      a {
+        color: $white;
+        border-bottom: 1px solid $white;
+      }      
+    }
+  }
+  
+  .signup-cta {
+    background: $white url(../img/backgrounds/sign-up-landing-page.png) 50% 100% repeat-x;
+    text-align: center;
+    
+    @media (max-width: $break-mobile) {
+      background-size: 200% auto;
+    }
+    
+    .btn {
+      background: $purple;
+      background: linear-gradient(to bottom, #b03a77 0%, #8d3461 100%);
+      border-radius: 1em;
+      color: $white;
+      display: inline-block;
+      font-family: $exo;
+      font-size: 1.5em;
+      font-weight: 600;
+      line-height: 1;
+      padding: .9em 1.8em;
+      text-transform: uppercase;
+      
+      @media (max-width: $break-mobile) {
+        font-size: 1.3em;
+      }
+    }
+    
+    &.signup-cta-1 {
+      .btn {
+        margin: 4em 0 1em;
+          
+        @media (max-width: $break-mobile) {
+          margin-top: 25%;
+        }
+      }
+      
+      p {
+        margin-bottom: 13em;
+          
+        @media (max-width: $break-mobile) {
+          margin-bottom: 45%;
+        }
+        
+        a {
+          color: $black;
+          font-weight: 400;
+          
+          &:after {
+						content: " ›";
+            font-size: 1.618em;
+            line-height: 1em;
+            position: relative;
+            top: 2px;
+          }
+        }
+      }    
+    }
+    &.signup-cta-2 {
+      h2 {
+        color: $green;
+        font-family: $exo;
+        font-size: 1.8em;
+        font-weight: 600;
+        margin-top: 3em;
+        text-transform: uppercase;
+      
+        @media (max-width: $break-mobile) {
+          font-size: 1.6em;
+          margin-top: 25%;
+        }
+      }
+      .btn {
+        margin: 1.5em 0 9em;
+      
+        @media (max-width: $break-mobile) {
+          margin: 1.5em 0 55%;
+        }
+      }    
+    }
+  }
+  
+  .signup-video {
+    background: $black;
+    
+    .container {
+      padding: 0;
+      
+      .entry-content-asset {
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: 30px;
+        height: 0;
+        overflow: hidden;
+        overflow: hidden;
+      }
+      .entry-content-asset iframe,
+      .entry-content-asset object,
+      .entry-content-asset embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  
+  #content .signup-reasons {
+    background: #f4f4f4;
+    padding: 4em 0;
+      
+    @media (max-width: $break-mobile) {
+      padding: 2em 0;
+    }
+    
+    .container {
+      max-width: 50em;
+    }
+    
+    h2 {
+      font-family: $exo;
+      font-size: 1.8em;
+      font-weight: 600;
+      margin: 0;
+      text-transform: uppercase;
+      
+      @media (max-width: $break-mobile) {
+        font-size: 1.6em;
+      }
+    }
+    
+    ul {
+      margin: 4em 0;
+      
+      @media (max-width: $break-mobile) {
+        margin: 1.5em 0;
+      }
+      
+      li {
+        display: table;
+        float: left;
+        font-size: 1.1em;
+        height: 5em;
+        line-height: 4;
+        list-style: none;
+        margin: 0;
+        padding: .5em 2em .5em 0;
+        width: 50%;
+        
+        @media (max-width: $break-mobile) {
+          font-size: 1em;
+          width: 100%;
+          padding: .3em 0;
+        }
+        
+        span {
+          display: table-cell;
+          vertical-align: middle;
+          line-height: 1.2;
+          width: 100%;
+        }
+        
+        &:before {
+          background-color: $yellow;          
+          @include at2x('roihu_logo_lines_faded_bg', auto, 75%);
+          background-repeat: no-repeat;
+          background-position: 50% 40%;
+          border-radius: 2em;
+          content: '';
+          display: block;
+          float: left;
+          margin-right: 1.5em;
+          width: 4em;
+          height: 4em;
+          
+        }
+        
+        &:nth-child(even) {
+          padding-left: 2em;
+          padding-right: 0;
+          
+          @media (max-width: $break-mobile) {
+            padding-left: 0;
+          }
+        }
+        
+        &.yellow:before {
+          background-color: $yellow;
+        }
+        &.purple:before {
+          background-color: $purple;
+        }
+        &.orange:before {
+          background-color: $red;
+        }
+        &.green:before {
+          background-color: $green;
+        }
+        &.blue:before {
+          background-color: $blue;
+        }
+      }
+    }
+    p {
+      font-family: $exo;
+      font-size: 1.8em;
+      font-weight: 600;
+      clear: both;
+      line-height: 1.2;
+      margin: 0;
+      padding-top: 2em;
+      text-align: center;
+      text-transform: uppercase;
+      
+      @media (max-width: $break-mobile) {
+        font-size: 1.6em;
+        padding-top: 1.5em;
+      }
+    }
+  }
+}
