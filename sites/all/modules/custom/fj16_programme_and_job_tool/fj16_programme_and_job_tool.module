@@ -8,22 +8,31 @@ include_once 'fj16_programme_and_job_tool.features.inc';
 
 define('FJ16_BULK_JOBS_LIST', '{D99DB96C-696B-493E-9ABE-6314FC853B39}');
 
-function fj16_programme_and_job_tool_cron() {
-  fj16_programme_and_job_tool_import_jobs();
+/**
+ * Implements hook_fj16_lists_to_sync
+ */
+function fj16_programme_and_job_tool_fj16_lists_to_sync() {
+  return array(
+    array(
+      'source' => FJ16_BULK_JOBS_LIST,
+      'destination' => 'fj16_bulk_job'
+    )
+  );
 }
 
-function fj16_programme_and_job_tool_import_jobs() {
-  $jobs = fj16_programme_and_job_tool_get_jobs_from_sharepoint();
+function fj16_programme_and_job_tool_fj16_list_content_alter(&$list_content, &$context) {
+  $new_list = array();
 
-  foreach ($jobs as $job) {
-    fj16_programme_and_job_tool_create_or_update_job($job);
+  foreach ($list_content as $row) {
+    $new_list[] = array(
+      'title' => $row['title'],
+      'language' => 'fi',
+      'uniqueid' => 'FI:' . $row['uniqueid']
+      //TODO Other fields, languages
+    );
   }
+
+  $list_content = $new_list;
 }
 
-function fj16_programme_and_job_tool_create_or_update_job($job) {
-  //TODO
-}
-
-function fj16_programme_and_job_tool_get_jobs_from_sharepoint() {
-  return fj16_sharepoint_api_get_list_contents(FJ16_BULK_JOBS_LIST);
-}
+//TODO Implement alter hook that actually saves the fields

@@ -19,3 +19,16 @@ function fj16_import_translation($module, $language) {
 
   return _locale_import_po($file, $language, LOCALE_IMPORT_OVERWRITE, 'default');
 }
+
+function fj16_initialize_node($type, $title, $lang = LANGUAGE_NONE) {
+  $node = new stdClass();
+  $node->title = $title;
+  $node->type = $type;
+  node_object_prepare($node);
+  $node->language = $lang;
+  $node->uid = 1;
+  $node->status = 1;
+  $node->promote = 0;
+  $node->comment = 0;
+  return $node;
+}

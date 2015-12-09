@@ -1,3 +1,8 @@
 name = FJ16 SharePoint API
 core = 7.x
 package = FJ16
+dependencies[] = features
+dependencies[] = text
+features[features_api][] = api:2
+features[field_base][] = field_sharepoint_unique_id
+project path = sites/all/modules/custom

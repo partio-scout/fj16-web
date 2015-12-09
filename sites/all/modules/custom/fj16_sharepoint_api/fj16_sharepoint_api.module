@@ -15,3 +15,76 @@ function fj16_sharepoint_api_get_list_contents($list_guid) {
   $sp = new SharePointAPI($conf['username'], $conf['password'], FJ16_WSDL_LOCATION, $conf['auth_variant']);
   return $sp->query($list_guid)->all_fields()->get();
 }
+
+function fj16_sharepoint_api_get_lookup_value($raw) {
+  return substr($raw, strpos($raw, '#') + 1);
+}
+
+
+// Syncing of lists to nodes
+
+
+function fj16_sharepoint_api_cron() {
+  foreach(module_implements('fj16_lists_to_sync') as $module) {
+    $lists_to_sync = module_invoke($module, 'fj16_lists_to_sync');
+    fj16_sharepoint_api_sync_lists($lists_to_sync);
+  }
+}
+
+function fj16_sharepoint_api_sync_lists($lists) {
+  foreach ($lists as $list) {
+    fj16_sharepoint_api_sync_into_nodes($list['source'], $list['destination']);
+  }
+}
+
+function fj16_sharepoint_api_sync_into_nodes($list_guid, $node_type) {
+  $items = fj16_sharepoint_api_get_list_contents($list_guid);
+  $context = array(
+    'list_guid' => $list_guid,
+    'node_type' => $node_type 
+  );
+  drupal_alter('fj16_list_content', $items, $context);
+
+  $nids_to_remove = array(); //TODO Set to all nids of type that have uniqueid field
+
+  foreach ($items as $item) {
+    $nid = fj16_sharepoint_api_row_save($node_type, $item);
+    if($nid) {
+      unset($nids_to_remove[$nid]);
+    }
+  }
+
+  foreach ($nids_to_remove as $nid) {
+    node_delete($nid);
+  }
+}
+
+function fj16_sharepoint_api_find_node_by_unique_id($node_type, $uniqueid) {
+  $nid = db_select('field_data_field_sharepoint_unique_id', 'f')
+    ->condition('entity_type', 'node')
+    ->condition('bundle', $node_type)
+    ->condition('field_sharepoint_unique_id_value', $uniqueid)
+    ->fields('f', array('entity_id'))
+    ->execute()
+    ->fetchField();
+
+  if($nid === FALSE) {
+    return NULL;
+  }
+
+  return node_load($nid);
+}
+
+function fj16_sharepoint_api_row_save($node_type, $item) {
+  $node = fj16_sharepoint_api_find_node_by_unique_id($node_type, $item['uniqueid']);
+  if($node === NULL) {
+    $node = fj16_initialize_node($node_type, $item['title']);
+  }
+  $node->field_sharepoint_unique_id[LANGUAGE_NONE][0]['value'] = $item['uniqueid'];
+
+  drupal_alter('fj16_sharepoint_api_row_presave', $node, $item);
+
+  $node = node_submit($node);
+  node_save($node);
+  return $node->nid;
+}
