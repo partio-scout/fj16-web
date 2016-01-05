@@ -131,15 +131,17 @@
       print render($content);
     ?>
 
-    <h2 class="field-label"><?php print t('Tips & links'); ?>:</h2>
-    <?php
-      print render($content['field_links_and_tips']);
-    ?>
+    <?php if(!$teaser): ?>
+      <h2 class="field-label"><?php print t('Tips & links'); ?>:</h2>
+      <?php
+        print render($content['field_links_and_tips']);
+      ?>
 
-    <h2 class="field-label"><?php print t('Materials'); ?>:</h2>
-    <?php
-      print render($content['field_gear']);
-    ?>
+      <h2 class="field-label"><?php print t('Materials'); ?>:</h2>
+      <?php
+        print render($content['field_gear']);
+      ?>
+    <?php endif; ?>
   </div>
 
   <?php if($teaser): ?>
