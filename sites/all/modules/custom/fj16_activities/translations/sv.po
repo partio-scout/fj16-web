@@ -44,7 +44,7 @@ msgstr "Material"
 
 #: fj16_activities.features.field_instance.inc:273
 msgid "Tips & links"
-msgstr "Tips och länkar"
+msgstr "Tips och trix"
 
 #: fj16_activities.features.inc:53
 msgid "Activity"
@@ -128,7 +128,7 @@ msgstr ""
 
 #: fj16_activities.views_default.inc:181
 msgid "Here you can find Roihu's awesome spark activities!"
-msgstr "Här finns du Roihus häftiga aktivitet för Gnistor!"
+msgstr "Här hittar du Roihus gnistaktiviteter"
 
 #: fj16_activities.views_default.inc:182
 msgid "All"
