@@ -1,8 +1,10 @@
 #footer {
 	background: #dbdbdb;
 	padding: 100px 0;
-	padding-left: 20%;
-
+  
+  > .container {
+    max-width: 1200px;
+  }
 
 	.footer_section.narrow {
 		width: 25%;
