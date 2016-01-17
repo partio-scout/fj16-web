@@ -14,8 +14,6 @@
 			text-align: left;
 		}
 
-		
-
 	}
 
 	.block {
@@ -35,12 +33,9 @@
 		}
 
 		.content {
-			width: 75%;
-			float: left;
-			position: relative;
 
 			.footer_section {
-				width: 50%;
+				width: (100% / 3);
 				float: left;
 				padding: 0 20px;
 
