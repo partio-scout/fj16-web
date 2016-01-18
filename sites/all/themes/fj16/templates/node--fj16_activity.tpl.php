@@ -96,6 +96,8 @@
       hide($content['comments']);
       hide($content['links']);
       hide($content['field_activity_terms']);
+      hide($content['field_gear']);
+      hide($content['field_links_and_tips']);
 
       if($page) {
         print render($content['field_ingres']);
@@ -128,6 +130,18 @@
     <?php
       print render($content);
     ?>
+
+    <?php if(!$teaser): ?>
+      <h2 class="field-label"><?php print t('Tips & links'); ?>:</h2>
+      <?php
+        print render($content['field_links_and_tips']);
+      ?>
+
+      <h2 class="field-label"><?php print t('Materials'); ?>:</h2>
+      <?php
+        print render($content['field_gear']);
+      ?>
+    <?php endif; ?>
   </div>
 
   <?php if($teaser): ?>

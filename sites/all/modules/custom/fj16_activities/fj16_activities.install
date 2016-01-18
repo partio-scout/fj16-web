@@ -23,3 +23,9 @@ function fj16_activities_update_7004() {
   fj16_import_translation('fj16_activities', 'fi');
   fj16_import_translation('fj16_activities', 'sv');
 }
+
+function fj16_activities_update_7005() {
+  require_once(drupal_get_path('module', 'fj16_base') . '/fj16_base.module');
+  fj16_import_translation('fj16_activities', 'fi');
+  fj16_import_translation('fj16_activities', 'sv');
+}

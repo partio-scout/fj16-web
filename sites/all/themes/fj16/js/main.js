@@ -77,7 +77,7 @@
 			}
 		});
 	}
-
+	
 	// Avoid `console` errors in browsers that lack a console.
 	(function() {
 		var method;
@@ -146,27 +146,38 @@ jQuery.fn.isOnScreen = function(x, y){
 		var height = this.outerHeight();
 		var width = this.outerWidth();
  
-		if(!width || !height){
-				return false;
-		}
-		
-		var bounds = this.offset();
-		bounds.right = bounds.left + width;
-		bounds.bottom = bounds.top + height;
-		
-		var visible = (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
-		
-		if(!visible){
-				return false;	 
-		}
-		
-		var deltas = {
-				top : Math.min( 1, ( bounds.bottom - viewport.top ) / height),
-				bottom : Math.min(1, ( viewport.bottom - bounds.top ) / height),
-				left : Math.min(1, ( bounds.right - viewport.left ) / width),
-				right : Math.min(1, ( viewport.right - bounds.left ) / width)
-		};
-		
-		return (deltas.left * deltas.right) >= x && (deltas.top * deltas.bottom) >= y;
-		
+    if(!width || !height){
+        return false;
+    }
+    
+    var bounds = this.offset();
+    bounds.right = bounds.left + width;
+    bounds.bottom = bounds.top + height;
+    
+    var visible = (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
+    
+    if(!visible){
+        return false;   
+    }
+    
+    var deltas = {
+        top : Math.min( 1, ( bounds.bottom - viewport.top ) / height),
+        bottom : Math.min(1, ( viewport.bottom - bounds.top ) / height),
+        left : Math.min(1, ( bounds.right - viewport.left ) / width),
+        right : Math.min(1, ( viewport.right - bounds.left ) / width)
+    };
+    
+    return (deltas.left * deltas.right) >= x && (deltas.top * deltas.bottom) >= y;
+    
 };
+
+$('[data-ga-event-category][data-ga-event-action]').click(function(e){
+	
+	var eventCategory = $(this).data('ga-event-category'),
+	    eventAction   = $(this).data('ga-event-action'),
+	    eventLabel    = $(this).data('ga-event-label'),
+	    eventValue    = $(this).data('ga-event-value');
+			
+	ga('send', 'event', eventCategory, eventAction, eventLabel, eventValue);	
+
+});
