@@ -1,0 +1,54 @@
+<?php
+
+function fj16_event_map_menu() {
+  $menu = array();
+
+  $menu['map/json'] = array(
+    'type' => MENU_CALLBACK,
+    'access callback' => TRUE,
+    'page callback' => '_fj16_event_map_get_json',
+  	'delivery callback' => '_fj16_event_map_deliver_json'
+  );
+
+  $menu['map'] = array(
+    'access callback' => TRUE,
+    'page callback' => '_fj16_event_map_map'
+  );
+
+  return $menu;
+}
+
+function _fj16_event_map_map() {
+  return '<div id="insta-map" style="width: 500px; height: 500px"></div>';
+}
+
+function _fj16_event_map_deliver_json($json) {
+  drupal_add_http_header('Content-Type', 'application/json; charset=utf-8');
+  print $json;
+}
+
+function _fj16_has_location($media) {
+  return isset($media['location']);
+}
+
+function _fj16_has_hashtag($media, $hashtag) {
+  return true;
+}
+
+function _fj16_is_valid_media($media) {
+  return _fj16_has_location($media) && _fj16_has_hashtag($media, 'itson');
+}
+
+function _fj16_event_map_get_json() {
+  $endpoint = 'https://api.instagram.com/v1/tags/';
+  $endpoint .= urlencode('roihu2016');
+  $endpoint .= '/media/recent?client_id=';
+  $endpoint .= FJ16_INSTAGRAM_CLIENT_ID;
+
+  $res = file_get_contents($endpoint);
+  $obj = json_decode($res, TRUE);
+
+  $items = array_values(array_filter($obj['data'], '_fj16_is_valid_media'));
+
+  return json_encode($items);
+}

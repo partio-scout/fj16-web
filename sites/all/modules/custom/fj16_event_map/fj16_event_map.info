@@ -1,0 +1,5 @@
+name = FJ16 Event map
+core = 7.x
+package = FJ16
+dependencies[] = fj16_frontpage_boxes
+scripts[] = js/fj16_event_map.js
