@@ -1,0 +1,36 @@
+.page-map {
+  #content {
+    padding: 0;
+  }
+
+  #insta-map {
+    width: 100%;
+    height: 600px;
+    max-height: 90vh; // Leave some space for touch scroll
+  }
+}
+
+#insta-map {
+  .insta-map-infowindow {
+    img {
+      display: block;
+      width: 200px;
+      height: 200px;
+    }
+  }
+
+  .insta-map-author {
+    font-weight: bold;
+    padding-top: 7px;
+  }
+
+  .insta-map-submitted {
+    font-size: 0.8em;
+    padding-bottom: 5px;
+  }
+
+  a {
+    display: block;
+    padding-top: 6px;
+  }
+}

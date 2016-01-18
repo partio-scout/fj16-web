@@ -47,7 +47,7 @@ function fj16_event_map_cron() {
 }
 
 function _fj16_event_map_map() {
-  return '<div id="insta-map" style="width: 500px; height: 500px"></div>';
+  return '<div id="insta-map"></div>';
 }
 
 function _fj16_event_map_deliver_json($json) {
@@ -56,15 +56,17 @@ function _fj16_event_map_deliver_json($json) {
 }
 
 function _fj16_has_location($media) {
-  return isset($media['location']);
+  return !empty($media['location']['latitude']) && !empty($media['location']['longitude']);
 }
 
 function _fj16_has_hashtag($media, $hashtag) {
+  //TODO Check hashtag
   return true;
 }
 
 function _fj16_is_valid_media($media) {
-  return _fj16_has_location($media) && _fj16_has_hashtag($media, 'itson');
+  //TODO Remove official Roihu user
+  return _fj16_has_location($media) && _fj16_has_hashtag($media, 'now');
 }
 
 function _fj16_event_map_get_json() {
