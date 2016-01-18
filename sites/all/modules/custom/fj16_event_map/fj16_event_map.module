@@ -18,6 +18,34 @@ function fj16_event_map_menu() {
   return $menu;
 }
 
+function fj16_event_map_cron() {
+  $initial_url = 'https://api.instagram.com/v1/tags/';
+  $initial_url .= urlencode('roihu2016');
+  $initial_url .= '/media/recent?client_id=';
+  $initial_url .= FJ16_INSTAGRAM_CLIENT_ID;
+
+  $url = $initial_url;
+  $all_items = array();
+  for($i = 0; $i < 50 && !empty($url); $i++) {
+    $res = file_get_contents($url);
+    if($res === FALSE){
+      return;
+    }
+    $obj = json_decode($res, TRUE);
+    $items = $obj['data'];
+    foreach ($items as $item) {
+      if(_fj16_is_valid_media($item)) {
+        $all_items[] = $item;
+      }
+    }
+    $url = $obj['pagination']['next_url'];
+  }
+
+  if(count($all_items) > 0) {
+    variable_set('fj16_event_map_images', $all_items);
+  }
+}
+
 function _fj16_event_map_map() {
   return '<div id="insta-map" style="width: 500px; height: 500px"></div>';
 }
@@ -40,15 +68,6 @@ function _fj16_is_valid_media($media) {
 }
 
 function _fj16_event_map_get_json() {
-  $endpoint = 'https://api.instagram.com/v1/tags/';
-  $endpoint .= urlencode('roihu2016');
-  $endpoint .= '/media/recent?client_id=';
-  $endpoint .= FJ16_INSTAGRAM_CLIENT_ID;
-
-  $res = file_get_contents($endpoint);
-  $obj = json_decode($res, TRUE);
-
-  $items = array_values(array_filter($obj['data'], '_fj16_is_valid_media'));
-
+  $items = variable_get('fj16_event_map_images', array());
   return json_encode($items);
 }
