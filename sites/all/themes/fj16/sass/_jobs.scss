@@ -259,6 +259,19 @@ $yhteistyo: $blue;
     .field-label {
       display: none; //TODO Accessibility
     }
+    
+    .job-shares {
+      line-height: 1;
+      margin-top: 15px;
+    
+      > * {
+        vertical-align: top !important;
+        
+        + * {
+          margin-left: 10px;
+        }
+      }
+    }
   }
 
   h2 {
