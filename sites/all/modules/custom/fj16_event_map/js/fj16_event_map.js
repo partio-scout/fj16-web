@@ -43,7 +43,7 @@ function gMapsReady() {
         marker.addListener('click', function() {
           var content = '';
 
-          content += '<img src="' + escapeStr(item.images.low_resolution.url) + '" alt="">';
+          content += '<div class="insta-map-img"><img src="' + escapeStr(item.images.low_resolution.url) + '" alt=""></div>';
           content += '<div class="insta-map-author">@' + escapeStr(item.user.username) + '</div>';
 
           var t = new Date(item.created_time*1000);
