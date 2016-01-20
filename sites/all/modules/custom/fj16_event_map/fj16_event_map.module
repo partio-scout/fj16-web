@@ -10,7 +10,7 @@ function fj16_event_map_menu() {
   	'delivery callback' => '_fj16_event_map_deliver_json'
   );
 
-  $menu['map'] = array(
+  $menu['liekit'] = array(
     'access callback' => TRUE,
     'page callback' => '_fj16_event_map_map'
   );
@@ -47,7 +47,13 @@ function fj16_event_map_cron() {
 }
 
 function _fj16_event_map_map() {
-  return '<div id="insta-map"></div>';
+  $content = '<div class="event-map-intro">';
+  $content .= '<h1>Roihun liekit</h1>';
+  $content .= '<p>Roihu-vuosi on alkanut ja sana leviää isolla liekillä! Lukuisat lippukunnat ympäri Suomen ovat jo startanneet toimintakautensa roihuavan aloitustapahtuman merkeissä. Seuraa kartalta liekkien leviämistä!</p>';
+  $content .= '<p>Oman kuvasi saat kartalle lisäämällä kuvan Instagramiin tunnisteilla #roihu2016 ja #now. Lisätietoa Roihu-vuoden kulusta <a href="http://roihu2016.fi/roihuvuosi">täällä</a>.</p>';
+  $content .= '</div>';
+  $content .= '<div id="insta-map"></div>';
+  return $content;
 }
 
 function _fj16_event_map_deliver_json($json) {
@@ -60,13 +66,15 @@ function _fj16_has_location($media) {
 }
 
 function _fj16_has_hashtag($media, $hashtag) {
-  //TODO Check hashtag
-  return true;
+  return in_array($hashtag, $media['tags']);
+}
+
+function _fj16_author_not($media, $author) {
+  return $media['user']['username'] !== $author;
 }
 
 function _fj16_is_valid_media($media) {
-  //TODO Remove official Roihu user
-  return _fj16_has_location($media) && _fj16_has_hashtag($media, 'now');
+  return _fj16_has_location($media) && _fj16_has_hashtag($media, 'now') && _fj16_author_not($media, 'roihu2016');
 }
 
 function _fj16_event_map_get_json() {

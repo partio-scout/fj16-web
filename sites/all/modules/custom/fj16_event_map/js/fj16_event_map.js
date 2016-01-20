@@ -10,7 +10,11 @@ function gMapsReady() {
     var map = new google.maps.Map(document.getElementById('insta-map'), {
       center: { lat: 65.578458, lng: 27.176209 },
       zoom: 5,
-      disableDefaultUI: true
+      disableDefaultUI: true,
+      zoomControl: true,
+      zoomControlOptions: {
+        position: google.maps.ControlPosition.RIGHT_BOTTOM
+      }
     });
 
     var infoWindow = new google.maps.InfoWindow({
