@@ -10,7 +10,11 @@ function gMapsReady() {
     var map = new google.maps.Map(document.getElementById('insta-map'), {
       center: { lat: 65.578458, lng: 27.176209 },
       zoom: 5,
-      disableDefaultUI: true
+      disableDefaultUI: true,
+      zoomControl: true,
+      zoomControlOptions: {
+        position: google.maps.ControlPosition.RIGHT_BOTTOM
+      }
     });
 
     var infoWindow = new google.maps.InfoWindow({
@@ -39,7 +43,7 @@ function gMapsReady() {
         marker.addListener('click', function() {
           var content = '';
 
-          content += '<img src="' + escapeStr(item.images.low_resolution.url) + '" alt="">';
+          content += '<div class="insta-map-img"><img src="' + escapeStr(item.images.low_resolution.url) + '" alt=""></div>';
           content += '<div class="insta-map-author">@' + escapeStr(item.user.username) + '</div>';
 
           var t = new Date(item.created_time*1000);
