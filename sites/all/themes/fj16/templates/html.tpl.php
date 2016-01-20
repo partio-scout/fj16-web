@@ -98,5 +98,6 @@
   <?php print $page; ?>
   <?php print $page_bottom; ?>
   <?php print $scripts; ?>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfdF6MZXhbxDVKFsxoMtWrWbLZyUih15Q&amp;callback=gMapsReady" async defer></script>
 </body>
 </html>

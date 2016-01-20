@@ -7,7 +7,7 @@
 include_once 'fj16_frontpage_boxes.features.inc';
 
 define('FJ16_INSTAGRAM_CLIENT_ID', 'de5ab22ba902466e84feddc6de55d4be');
-define('FJ16_INSTAGRAM_CACHE_LIFETIME', 30); // in seconds
+define('FJ16_INSTAGRAM_CACHE_LIFETIME', 60*10); // in seconds
 
 function fj16_frontpage_boxes_menu() {
   $menu = array();
