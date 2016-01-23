@@ -78,7 +78,7 @@
 			}
 		});
 	}
-
+	
 	// Avoid `console` errors in browsers that lack a console.
 	(function() {
 		var method;
@@ -171,3 +171,14 @@ jQuery.fn.isOnScreen = function(x, y){
     return (deltas.left * deltas.right) >= x && (deltas.top * deltas.bottom) >= y;
     
 };
+
+$('[data-ga-event-category][data-ga-event-action]').click(function(e){
+	
+	var eventCategory = $(this).data('ga-event-category'),
+	    eventAction   = $(this).data('ga-event-action'),
+	    eventLabel    = $(this).data('ga-event-label'),
+	    eventValue    = $(this).data('ga-event-value');
+			
+	ga('send', 'event', eventCategory, eventAction, eventLabel, eventValue);	
+
+});

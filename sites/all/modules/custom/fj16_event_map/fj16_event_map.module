@@ -1,0 +1,83 @@
+<?php
+
+function fj16_event_map_menu() {
+  $menu = array();
+
+  $menu['map/json'] = array(
+    'type' => MENU_CALLBACK,
+    'access callback' => TRUE,
+    'page callback' => '_fj16_event_map_get_json',
+  	'delivery callback' => '_fj16_event_map_deliver_json'
+  );
+
+  $menu['liekit'] = array(
+    'access callback' => TRUE,
+    'page callback' => '_fj16_event_map_map'
+  );
+
+  return $menu;
+}
+
+function fj16_event_map_cron() {
+  $initial_url = 'https://api.instagram.com/v1/tags/';
+  $initial_url .= urlencode('roihu2016');
+  $initial_url .= '/media/recent?client_id=';
+  $initial_url .= FJ16_INSTAGRAM_CLIENT_ID;
+
+  $url = $initial_url;
+  $all_items = array();
+  for($i = 0; $i < 50 && !empty($url); $i++) {
+    $res = file_get_contents($url);
+    if($res === FALSE){
+      return;
+    }
+    $obj = json_decode($res, TRUE);
+    $items = $obj['data'];
+    foreach ($items as $item) {
+      if(_fj16_is_valid_media($item)) {
+        $all_items[] = $item;
+      }
+    }
+    $url = $obj['pagination']['next_url'];
+  }
+
+  if(count($all_items) > 0) {
+    variable_set('fj16_event_map_images', $all_items);
+  }
+}
+
+function _fj16_event_map_map() {
+  $content = '<div class="event-map-intro">';
+  $content .= '<h1>Roihun liekit</h1>';
+  $content .= '<p>Roihu-vuosi on alkanut ja sana leviää isolla liekillä! Lukuisat lippukunnat ympäri Suomen ovat jo startanneet toimintakautensa roihuavan aloitustapahtuman merkeissä. Seuraa kartalta liekkien leviämistä!</p>';
+  $content .= '<p>Oman kuvasi saat kartalle lisäämällä kuvan Instagramiin tunnisteilla #roihu2016 ja #now. Lisätietoa Roihu-vuoden kulusta <a href="http://roihu2016.fi/roihuvuosi">täällä</a>.</p>';
+  $content .= '</div>';
+  $content .= '<div id="insta-map"></div>';
+  return $content;
+}
+
+function _fj16_event_map_deliver_json($json) {
+  drupal_add_http_header('Content-Type', 'application/json; charset=utf-8');
+  print $json;
+}
+
+function _fj16_has_location($media) {
+  return !empty($media['location']['latitude']) && !empty($media['location']['longitude']);
+}
+
+function _fj16_has_hashtag($media, $hashtag) {
+  return in_array($hashtag, $media['tags']);
+}
+
+function _fj16_author_not($media, $author) {
+  return $media['user']['username'] !== $author;
+}
+
+function _fj16_is_valid_media($media) {
+  return _fj16_has_location($media) && _fj16_has_hashtag($media, 'now') && _fj16_author_not($media, 'roihu2016');
+}
+
+function _fj16_event_map_get_json() {
+  $items = variable_get('fj16_event_map_images', array());
+  return json_encode($items);
+}

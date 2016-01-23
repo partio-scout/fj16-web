@@ -31,5 +31,9 @@ function fj16_master_update_7008() {
 }
 
 function fj16_master_update_7009() {
+  module_enable(array('fj16_event_map'));
+}
+
+function fj16_master_update_7010() {
   module_enable(array('fj16_programme_and_job_tool'));
 }

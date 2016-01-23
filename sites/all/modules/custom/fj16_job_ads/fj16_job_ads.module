@@ -77,6 +77,10 @@ function fj16_job_ads_import_jobs() {
 
 
 function fj16_job_should_be_displayed($job) {
+  if(!isset($job['haku_x0020_p_x00e4__x00e4_ttyy_x'])) {
+    return FALSE;
+  }
+
   if($job['pestauksen_x0020_tila'] !== FJ16_JOBS_STATUS_PUBLIC) {
     return FALSE;
   }
