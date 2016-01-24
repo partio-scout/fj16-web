@@ -48,11 +48,11 @@ function fj16_programme_and_job_tool_fj16_sharepoint_api_row_presave_alter(&$nod
   $node->field_image_url[LANGUAGE_NONE][0]['value'] = $image_url;
   //TODO Download image and save it to the image field if url has changed
 
-  //TODO Sync tags
-  //Do this by adding field to the tags that contains the original key in finnish
-  //Then set original field name (source language=english) to the same and add finnish translation
   $tag_names = fj16_programme_and_job_tool_parse_categories($sp_item['avainsanat']);
-  print_r($tag_names);
+  $node->field_tags['fi'] = fj16_programme_and_job_tool_produce_tids_for('bulk_jobs_tags', $tag_names['tags'], 'fi');
+  $node->field_tags['sv'] = fj16_programme_and_job_tool_produce_tids_for('bulk_jobs_tags', $tag_names['tags'], 'sv');
+  $node->field_tags['en'] = fj16_programme_and_job_tool_produce_tids_for('bulk_jobs_tags', $tag_names['tags'], 'en');
+  //TODO Osaamisalueet
 }
 
 function fj16_programme_and_job_tool_parse_categories($raw_tags) {
@@ -75,7 +75,51 @@ function fj16_programme_and_job_tool_parse_categories($raw_tags) {
   return $result;
 }
 
-function fj16_programme_and_job_tool_find_or_create_term($tag_name, $vocabulary_id) {
+function fj16_programme_and_job_tool_produce_tids_for($vocabulary_name, $tag_names, $lang) {
+  $vocabulary = taxonomy_vocabulary_machine_name_load($vocabulary_name);
+  
+  $tids = array();
+  foreach($tag_names as $tag_name) {
+    $term = fj16_programme_and_job_tool_find_or_create_term($vocabulary, $tag_name, $lang);
+    $tids[] = array(
+      'tid' => $term->tid
+    );
+  }
 
+  return $tids;
+}
+
+function fj16_programme_and_job_tool_find_or_create_term($vocabulary, $sp_tag_name, $lang) {
+  $term = fj16_programme_and_job_tool_find_term_by_sp_tag($vocabulary, $sp_tag_name, $lang);
+  
+  if($term === NULL) {
+    $term = new stdClass();
+    $term->name = $sp_tag_name;
+    $term->vid = $vocabulary->vid;
+    $term->language = $lang;
+    $term->field_sharepoint_name = array(
+      $lang => array(array('value' => $sp_tag_name))
+    );
+    taxonomy_term_save($term);
+  }
+
+  return $term;
+}
+
+function fj16_programme_and_job_tool_find_term_by_sp_tag($vocabulary, $sp_tag_name, $lang) {
+  $tid = db_select('field_data_field_sharepoint_name', 'f')
+    ->condition('entity_type', 'taxonomy_term')
+    ->condition('bundle', $vocabulary->machine_name)
+    ->condition('language', $lang)
+    ->condition('field_sharepoint_name_value', $sp_tag_name)
+    ->fields('f', array('entity_id'))
+    ->execute()
+    ->fetchField();
+
+  if($tid === FALSE) {
+    return NULL;
+  }
+
+  return taxonomy_term_load($tid);
 }
 
