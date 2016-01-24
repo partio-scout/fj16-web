@@ -7,6 +7,7 @@
 include_once 'fj16_programme_and_job_tool.features.inc';
 
 define('FJ16_BULK_JOBS_LIST', '{D99DB96C-696B-493E-9ABE-6314FC853B39}');
+define('FJ16_SKILL_AREA_PREFIX', 'Osaamisalue: ');
 
 /**
  * Implements hook_fj16_lists_to_sync
@@ -20,19 +21,61 @@ function fj16_programme_and_job_tool_fj16_lists_to_sync() {
   );
 }
 
-function fj16_programme_and_job_tool_fj16_list_content_alter(&$list_content, &$context) {
-  $new_list = array();
+function fj16_programme_and_job_tool_fj16_sharepoint_api_row_presave_alter(&$node, &$sp_item) {
+  print('PRESAVE: ' . $node->title . ' = ' . $sp_item['title'] . "\n");
 
-  foreach ($list_content as $row) {
-    $new_list[] = array(
-      'title' => $row['title'],
-      'language' => 'fi',
-      'uniqueid' => 'FI:' . $row['uniqueid']
-      //TODO Other fields, languages
-    );
-  }
+  //TODO Set job type
+  
+  $node->field_localized_title['fi'][0]['value'] = $sp_item['title'];
+  $node->field_localized_title['sv'][0]['value'] = $sp_item['pestin_x0020_nimi_x0020_ruotsiks'];
+  $node->field_localized_title['en'][0]['value'] = $sp_item['pestin_x0020_nimi_x0020_englanni'];
 
-  $list_content = $new_list;
+  $node->field_job_description['fi'][0]['value'] = $sp_item['pestin_x0020_kuvaus'];
+  $node->field_job_description['sv'][0]['value'] = $sp_item['pestin_x0020_kuvaus_x0020_ruotsi'];
+  $node->field_job_description['en'][0]['value'] = $sp_item['pestin_x0020_kuvaus_x0020_englan'];
+
+  $node->field_contact_name[LANGUAGE_NONE][0]['value'] = $sp_item['lis_x00e4_tietoja_x0020_antaa'];
+  $node->field_contact_phone[LANGUAGE_NONE][0]['value'] = $sp_item['lis_x00e4_tietoja_x0020_antaa_x0'];
+  $node->field_contact_email[LANGUAGE_NONE][0]['value'] = $sp_item['lis_x00e4_tietoja_x0020_antaa_x00'];
+
+  $node->field_inventory_minimum[LANGUAGE_NONE][0]['value'] = $sp_item['varasto_x0020_min'];
+  $node->field_inventory_maximum[LANGUAGE_NONE][0]['value'] = $sp_item['varasto_x0020_max'];
+  $node->field_inventory_reserved[LANGUAGE_NONE][0]['value'] = $sp_item['varasto_x0020_nyt'];
+
+  $image_parts = explode(',', $sp_item['kuva']);
+  $image_url = $image_parts[0];
+  print "  <$image_url>\n";
+  $node->field_image_url[LANGUAGE_NONE][0]['value'] = $image_url;
+  //TODO Download image and save it to the image field if url has changed
+
+  //TODO Sync tags
+  //Do this by adding field to the tags that contains the original key in finnish
+  //Then set original field name (source language=english) to the same and add finnish translation
+  $tag_names = fj16_programme_and_job_tool_parse_categories($sp_item['avainsanat']);
+  print_r($tag_names);
 }
 
-//TODO Implement alter hook that actually saves the fields
+function fj16_programme_and_job_tool_parse_categories($raw_tags) {
+  $result = array(
+    'tags' => array(),
+    'skill_areas' => array()
+  );
+
+  $parts = explode(';#', $raw_tags);
+  foreach($parts as $part) {
+    if($part === '') {
+      continue;
+    } else if(strpos($part, FJ16_SKILL_AREA_PREFIX) === 0) {
+      $result['skill_areas'][] = substr($part, strlen(FJ16_SKILL_AREA_PREFIX));
+    } else {
+      $result['tags'][] = $part;
+    }
+  }
+
+  return $result;
+}
+
+function fj16_programme_and_job_tool_find_or_create_term($tag_name, $vocabulary_id) {
+
+}
+
