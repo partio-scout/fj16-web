@@ -1,6 +1,7 @@
 name = FJ16 Programme and job tool
 core = 7.x
 package = FJ16
+dependencies[] = entity_translation
 dependencies[] = fj16_frontpage_boxes
 dependencies[] = fj16_sharepoint_api
 dependencies[] = i18n_taxonomy

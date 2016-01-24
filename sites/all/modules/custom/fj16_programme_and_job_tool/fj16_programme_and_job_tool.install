@@ -3,3 +3,7 @@
 function fj16_programme_and_job_tool_update_7001() {
   module_enable(array('fj16_sharepoint_api'));
 }
+
+function fj16_programme_and_job_tool_update_7002() {
+  module_enable(array('entity_translation'));
+}
