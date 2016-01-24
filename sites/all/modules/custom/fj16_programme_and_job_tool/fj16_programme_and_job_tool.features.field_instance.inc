@@ -501,6 +501,47 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-fj16_bulk_job-field_skill_areas'
+  $field_instances['node-fj16_bulk_job-field_skill_areas'] = array(
+    'bundle' => 'fj16_bulk_job',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 13,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_skill_areas',
+    'label' => 'Skill areas',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 16,
+    ),
+  );
+
   // Exported field_instance: 'node-fj16_bulk_job-field_tags'
   $field_instances['node-fj16_bulk_job-field_tags'] = array(
     'bundle' => 'fj16_bulk_job',
@@ -593,6 +634,7 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
   t('Localized title');
   t('SharePoint Name');
   t('SharePoint Unique ID');
+  t('Skill areas');
   t('Tags');
   t('image');
 

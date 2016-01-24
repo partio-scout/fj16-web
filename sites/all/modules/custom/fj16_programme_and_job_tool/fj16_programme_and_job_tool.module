@@ -52,7 +52,9 @@ function fj16_programme_and_job_tool_fj16_sharepoint_api_row_presave_alter(&$nod
   $node->field_tags['fi'] = fj16_programme_and_job_tool_produce_tids_for('bulk_jobs_tags', $tag_names['tags'], 'fi');
   $node->field_tags['sv'] = fj16_programme_and_job_tool_produce_tids_for('bulk_jobs_tags', $tag_names['tags'], 'sv');
   $node->field_tags['en'] = fj16_programme_and_job_tool_produce_tids_for('bulk_jobs_tags', $tag_names['tags'], 'en');
-  //TODO Osaamisalueet
+  $node->field_skill_areas['fi'] = fj16_programme_and_job_tool_produce_tids_for('bulk_jobs_skill_areas', $tag_names['skill_areas'], 'fi');
+  $node->field_skill_areas['sv'] = fj16_programme_and_job_tool_produce_tids_for('bulk_jobs_skill_areas', $tag_names['skill_areas'], 'sv');
+  $node->field_skill_areas['en'] = fj16_programme_and_job_tool_produce_tids_for('bulk_jobs_skill_areas', $tag_names['skill_areas'], 'en');
 }
 
 function fj16_programme_and_job_tool_parse_categories($raw_tags) {
