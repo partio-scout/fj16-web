@@ -55,6 +55,12 @@ function fj16_programme_and_job_tool_strongarm() {
             'visible' => FALSE,
           ),
         ),
+        'flag_fj16_choose_bulk_job' => array(
+          'teaser' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+        ),
       ),
     ),
   );
