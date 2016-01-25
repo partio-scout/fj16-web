@@ -420,6 +420,44 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-fj16_bulk_job-field_job_type'
+  $field_instances['node-fj16_bulk_job-field_job_type'] = array(
+    'bundle' => 'fj16_bulk_job',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 14,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_job_type',
+    'label' => 'Job type',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 17,
+    ),
+  );
+
   // Exported field_instance: 'node-fj16_bulk_job-field_localized_title'
   $field_instances['node-fj16_bulk_job-field_localized_title'] = array(
     'bundle' => 'fj16_bulk_job',
@@ -631,6 +669,7 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
   t('Inventory minimum');
   t('Inventory reserved');
   t('Job description');
+  t('Job type');
   t('Localized title');
   t('SharePoint Name');
   t('SharePoint Unique ID');

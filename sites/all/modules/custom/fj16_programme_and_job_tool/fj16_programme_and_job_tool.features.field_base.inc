@@ -195,6 +195,33 @@ function fj16_programme_and_job_tool_field_default_field_bases() {
     'type' => 'image',
   );
 
+  // Exported field_base: 'field_job_type'
+  $field_bases['field_job_type'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_job_type',
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        'explorers' => 'Explorers',
+        'rovers_and_adults' => 'Rovers and adults',
+        'construction_or_demolition' => 'Construction or demolition camp',
+      ),
+      'allowed_values_function' => '',
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
+  );
+
   // Exported field_base: 'field_localized_title'
   $field_bases['field_localized_title'] = array(
     'active' => 1,

@@ -23,7 +23,12 @@ function fj16_programme_and_job_tool_fj16_lists_to_sync() {
 }
 
 function fj16_programme_and_job_tool_fj16_sharepoint_api_row_presave_alter(&$node, &$sp_item) {
-  //TODO Set job type
+  $job_types = array(
+    'Samoajapesti' => 'explorers',
+    'Vaeltaja/aikuispesti' => 'rovers_and_adults',
+    'Raksapesti' => 'construction_or_demolition'
+  );
+  $node->field_job_type[LANGUAGE_NONE][0]['value'] = $job_types[$sp_item['pestin_x0020_tyyppi']];
   
   $node->field_localized_title['fi'][0]['value'] = $sp_item['title'];
   $node->field_localized_title['sv'][0]['value'] = $sp_item['pestin_x0020_nimi_x0020_ruotsiks'];
