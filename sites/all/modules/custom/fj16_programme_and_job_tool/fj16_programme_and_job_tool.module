@@ -8,6 +8,7 @@ include_once 'fj16_programme_and_job_tool.features.inc';
 
 define('FJ16_BULK_JOBS_LIST', '{D99DB96C-696B-493E-9ABE-6314FC853B39}');
 define('FJ16_SKILL_AREA_PREFIX', 'Osaamisalue: ');
+define('FJ16_BULK_JOBS_IMAGE_DIR', 'public://programme_and_job_tool');
 
 /**
  * Implements hook_fj16_lists_to_sync
@@ -22,8 +23,6 @@ function fj16_programme_and_job_tool_fj16_lists_to_sync() {
 }
 
 function fj16_programme_and_job_tool_fj16_sharepoint_api_row_presave_alter(&$node, &$sp_item) {
-  print('PRESAVE: ' . $node->title . ' = ' . $sp_item['title'] . "\n");
-
   //TODO Set job type
   
   $node->field_localized_title['fi'][0]['value'] = $sp_item['title'];
@@ -44,9 +43,14 @@ function fj16_programme_and_job_tool_fj16_sharepoint_api_row_presave_alter(&$nod
 
   $image_parts = explode(',', $sp_item['kuva']);
   $image_url = $image_parts[0];
-  print "  <$image_url>\n";
-  $node->field_image_url[LANGUAGE_NONE][0]['value'] = $image_url;
-  //TODO Download image and save it to the image field if url has changed
+
+  if(empty($node->field_image_url[LANGUAGE_NONE][0]['value']) || $node->field_image_url[LANGUAGE_NONE][0]['value'] !== $image_url) {
+    $node->field_image_url[LANGUAGE_NONE][0]['value'] = $image_url;
+    $image_object = fj16_programme_and_job_tool_get_image_object($image_url);
+    $node->field_job_image = array(
+      'und' => array((array) $image_object)
+    );
+  }
 
   $tag_names = fj16_programme_and_job_tool_parse_categories($sp_item['avainsanat']);
   $node->field_tags['fi'] = fj16_programme_and_job_tool_produce_tids_for('bulk_jobs_tags', $tag_names['tags'], 'fi');
@@ -125,3 +129,68 @@ function fj16_programme_and_job_tool_find_term_by_sp_tag($vocabulary, $sp_tag_na
   return taxonomy_term_load($tid);
 }
 
+function fj16_programme_and_job_tool_get_image_object($url) {
+  $tempfile = fj16_programme_and_job_tool_fetch_image($url);
+  if(!$tempfile) {
+    return NULL;
+  }
+
+  $image_object = NULL;
+  if(fj16_programme_and_jobs_tool_is_valid_image($tempfile)) {
+    $image_object = fj16_programme_and_job_tool_persist_image($tempfile, $url);
+  }
+
+  unlink($tempfile);
+  return $image_object;
+}
+
+function fj16_programme_and_job_tool_fetch_image($url) {
+  $target = file_directory_temp() . '/' . md5($url) . '.tmp';
+  if (copy($url, $target)) {
+    return $target;
+  } else {
+    watchdog('fj16_programme_and_jobs_tool', 'Unable to get image: @url',
+      array('@url' => $url), WATCHDOG_ERROR, $url);
+    return FALSE;
+  }
+}
+
+function fj16_programme_and_job_tool_persist_image($filepath, $url) {
+  $image_info = image_get_info($filepath);
+  $extension = $image_info['extension'];
+  $destination_filename = md5($url) . '.' . $extension;
+  $destination = FJ16_BULK_JOBS_IMAGE_DIR . '/' . $destination_filename;
+  $filepath = file_unmanaged_copy($filepath, $destination, FILE_EXISTS_REPLACE);
+
+  //TODO Scale image down to max size
+
+  $image_object = fj16_programme_and_jobs_tool_find_file_by_url($destination);
+  if($image_object === NULL) {
+    $image_object = new stdClass();
+  }
+  $image_object->status = FILE_STATUS_PERMANENT;
+  $image_object->uid = 1;
+  $image_object->filename = $destination_filename;
+  $image_object->uri = $destination;
+  $image_object->filemime = $image_info['mime_type'];
+  $image_object->filesize = $image_info['file_size'];
+  file_save($image_object);
+  return $image_object;
+}
+
+function fj16_programme_and_jobs_tool_is_valid_image($filepath) {
+  return image_get_info($filepath) !== FALSE;
+}
+
+function fj16_programme_and_jobs_tool_find_file_by_url($url) {
+  $fid = db_select('file_managed', 'f')
+    ->condition('uri', $url)
+    ->fields('f', array('fid'))
+    ->execute()
+    ->fetchField();
+
+  if($fid !== FALSE) {
+    return file_load($fid);
+  }
+  return NULL;
+}

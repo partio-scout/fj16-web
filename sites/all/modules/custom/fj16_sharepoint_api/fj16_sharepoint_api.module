@@ -38,7 +38,16 @@ function fj16_sharepoint_api_sync_lists($lists) {
 }
 
 function fj16_sharepoint_api_sync_into_nodes($list_guid, $node_type) {
+  watchdog('fj16_sharepoint_api', 'Starting SharePoint import to @node_type.',
+    array('@node_type' => $node_type), WATCHDOG_INFO);
+
   $items = fj16_sharepoint_api_get_list_contents($list_guid);
+
+  if(gettype($items) !== "array" || count($items) === 0) {
+    watchdog('fj16_sharepoint_api', 'SharePoint import to @node_type failed', array('@node_type' => $node_type), WATCHDOG_ERROR);
+    return;
+  }
+
   $context = array(
     'list_guid' => $list_guid,
     'node_type' => $node_type 
@@ -59,6 +68,10 @@ function fj16_sharepoint_api_sync_into_nodes($list_guid, $node_type) {
     $node->status = NODE_NOT_PUBLISHED;
     node_save($node);
   }
+
+  watchdog('fj16_sharepoint_api', 'Synced @num_items items from SharePoint list to @node_type nodes and removed @num_removed items.',
+    array('@num_items' => count($items), '@num_removed' => count($nids_to_remove), '@node_type' => $node_type),
+    WATCHDOG_INFO);
 }
 
 function fj16_sharepoint_api_all_nids_of_type($node_type) {

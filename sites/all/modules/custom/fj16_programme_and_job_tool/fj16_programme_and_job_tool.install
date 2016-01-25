@@ -7,3 +7,7 @@ function fj16_programme_and_job_tool_update_7001() {
 function fj16_programme_and_job_tool_update_7002() {
   module_enable(array('entity_translation'));
 }
+
+function fj16_programme_and_job_tool_update_7003() {
+  drupal_mkdir(FJ16_BULK_JOBS_IMAGE_DIR);
+}
