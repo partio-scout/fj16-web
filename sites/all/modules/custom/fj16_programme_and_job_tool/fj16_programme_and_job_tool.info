@@ -71,6 +71,7 @@ features[variable][] = node_options_fj16_bulk_job
 features[variable][] = node_preview_fj16_bulk_job
 features[variable][] = node_submitted_fj16_bulk_job
 features[views_view][] = fj16_bulk_jobs
+features[views_view][] = fj16_bulk_jobs_explorers
 features_exclude[dependencies][ctools] = ctools
 features_exclude[dependencies][features] = features
 features_exclude[dependencies][image] = image
