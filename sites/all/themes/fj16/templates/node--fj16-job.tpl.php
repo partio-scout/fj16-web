@@ -83,6 +83,7 @@
 $department_class = $field_department[0]['value'];
 
 ?>
+
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes . ' ' . $view_mode . ' ' . $department_class; ?>"<?php print $attributes; ?>>
   <div class="info">
     <?php if($page): ?>
@@ -120,9 +121,41 @@ $department_class = $field_department[0]['value'];
       <?php
       
       print t('Apply by').': ';
-      print(date('j.n.Y', strtotime($node->field_sharepoint_deadline['und']['0']['value']))); 
+      print(date('j.n.Y', strtotime($node->field_sharepoint_deadline['und']['0']['value'])));
       
-       ?>
+      global $language;
+      $lang = $language->language;
+      
+      switch($lang) {
+        case 'fi':
+          $lang = 'fi_FI';
+          break;
+        case 'sv':
+          $lang = 'sv_SE';
+          break;
+        default:
+          $lang = 'en_US';
+          break;        
+      }
+      
+      if($page) { ?>
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/<?php print $lang; ?>/sdk.js#xfbml=1&version=v2.5";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+        <div class="job-shares">
+          <div class="fb-share-button" data-href="http://roihu2016.fi<?php print $node_url; ?>" data-layout="button_count"></div>
+          <a href="https://twitter.com/share" class="twitter-share-button"{count}></a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+          <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: <?php print $lang; ?></script>
+          <script type="IN/Share" data-url="http://roihu2016.fi<?php print $node_url; ?>" data-counter="right"></script>
+        </div>
+      <?php } ?>
     </div>
     <?php
       // We hide the comments and links now so that we can render them later.
