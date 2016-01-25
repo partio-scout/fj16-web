@@ -229,8 +229,12 @@ user/*/*';
   $strongarm->name = 'googleanalytics_roles';
   $strongarm->value = array(
     1 => '1',
-    2 => 0,
+    2 => '2',
     3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
   );
   $export['googleanalytics_roles'] = $strongarm;
 
