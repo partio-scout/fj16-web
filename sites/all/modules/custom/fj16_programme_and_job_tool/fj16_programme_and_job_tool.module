@@ -10,6 +10,42 @@ define('FJ16_BULK_JOBS_LIST', '{D99DB96C-696B-493E-9ABE-6314FC853B39}');
 define('FJ16_SKILL_AREA_PREFIX', 'Osaamisalue: ');
 define('FJ16_BULK_JOBS_IMAGE_DIR', 'public://programme_and_job_tool');
 
+function fj16_programme_and_job_tool_flag_access($flag, $entity_id, $action, $account) {
+  if($action === 'flag' && $flag->name === 'fj16_choose_bulk_job') {
+    return !fj16_programme_and_job_tool_is_job_full($entity_id, $flag);
+  }
+  return NULL;
+}
+
+function fj16_programme_and_job_tool_is_job_full($nid, $flag) {
+  $flag_count = $flag->get_count($nid);
+  
+  $node = node_load($nid);
+  $max_count = $node->field_inventory_maximum[LANGUAGE_NONE][0]['value'];
+  $reserved = $node->field_inventory_reserved[LANGUAGE_NONE][0]['value'];
+
+  return $flag_count >= ($max_count - $reserved);
+}
+
+function fj16_programme_and_job_tool_page_alter(&$page) {
+  // This is a bit of a hack, but there's no clean way to show custom message
+  // when a flag access check prevents flagging.
+
+  $path = current_path();
+  $is_flagging = strpos($path, 'flag/flag/fj16_choose_bulk_job') === 0;
+  $is_403 = drupal_get_http_header("status") === "403 Forbidden";
+
+  if($is_flagging && $is_403) {
+    drupal_set_title(t('This assignment is full'));
+    $page['content']['system_main']['main']['#markup'] = t('Unfortunately the assignment you selected is already full. !return and try selecting another one.',
+      array('!return' => l(t('Return to the assignment list'), 'generator')));
+  }
+}
+
+
+// SharePoint Integration
+
+
 /**
  * Implements hook_fj16_lists_to_sync
  */
