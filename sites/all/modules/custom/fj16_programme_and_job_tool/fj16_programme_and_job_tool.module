@@ -10,6 +10,17 @@ define('FJ16_BULK_JOBS_LIST', '{D99DB96C-696B-493E-9ABE-6314FC853B39}');
 define('FJ16_SKILL_AREA_PREFIX', 'Osaamisalue: ');
 define('FJ16_BULK_JOBS_IMAGE_DIR', 'public://programme_and_job_tool');
 
+function fj16_programme_and_job_tool_menu() {
+  $menu = array();
+
+  $menu['generator'] = array(
+    'page callback' => '_fj16_programme_and_job_tool_generator_page',
+    'access arguments' => array('access content')
+  );
+
+  return $menu;
+}
+
 function fj16_programme_and_job_tool_flag_access($flag, $entity_id, $action, $account) {
   if($action === 'flag' && $flag->name === 'fj16_choose_bulk_job') {
     return !fj16_programme_and_job_tool_is_job_full($entity_id, $flag);
@@ -41,6 +52,67 @@ function fj16_programme_and_job_tool_page_alter(&$page) {
       array('!return' => l(t('Return to the assignment list'), 'generator')));
   }
 }
+
+function _fj16_programme_and_job_tool_generator_page() {
+  global $user;
+
+  if($user->uid === 0) {
+    // Anonymous users
+    drupal_set_title(t('Welcome to the generator!'));
+    $variables = array(
+      'intro_text' => 'This is an intro text lorem ipsum dolor sit amet...',
+      //TODO Make sure to mention it's the persons OWN ScoutID
+      'login_link' => '(ScoutID login not implemented yet)',
+      'alternative_login_link' => t("International guest or not yet a scout/guide? !register and the !login with your user name and password.", array(
+          '!register' => l(t('Register'), 'user/register'),
+          '!login' => l(t('log in'), 'user')
+        ))
+    );
+    //TODO Use template
+    return 'GENERATOR'; //TODO Show login page
+  } else if(fj16_user_has_role_named('explorer')) {
+    //TODO Redirect to will-o'-the-wisp selection when its done
+    drupal_goto('generator/assignment/explorer');
+  } else if(fj16_user_has_role_named('rover or adult')) {
+    drupal_goto('generator/assignment');
+  } else {
+    drupal_set_title(t('Choose your age group'));
+    return drupal_get_form('_fj16_programme_and_job_tool_role_form');
+  }
+}
+
+function _fj16_programme_and_job_tool_role_form($form, &$form_state) {
+  $form['submit_explorer'] = array(
+    '#type' => 'submit',
+    '#value' => t('Explorer'),
+    '#name' => 'explorer'
+  );
+
+  $form['submit_rover_or_adult'] = array(
+    '#type' => 'submit',
+    '#value' => t('Rover or adult'),
+    '#name' => 'rover_or_adult'
+  );
+
+  return $form;
+}
+
+function _fj16_programme_and_job_tool_role_form_submit($form, &$form_state) {
+  global $user;
+  if($user->uid === 0) {
+    return;
+  }
+
+  $button = $form_state['triggering_element']['#name'];
+  if($button === 'explorer') {
+    fj16_user_add_role($user, 'explorer');
+  } else if($button === 'rover_or_adult') {
+    fj16_user_add_role($user, 'rover or adult');
+  }
+
+  drupal_goto('generator'); //TODO Maybe go directly to page?
+}
+
 
 
 // SharePoint Integration

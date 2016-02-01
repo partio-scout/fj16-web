@@ -32,3 +32,16 @@ function fj16_initialize_node($type, $title, $lang = LANGUAGE_NONE) {
   $node->comment = 0;
   return $node;
 }
+
+function fj16_user_has_role_named($name) {
+  global $user;
+  return is_array($user->roles) && in_array($name, $user->roles);
+}
+
+function fj16_user_add_role($user, $role_name) {
+  if($role = user_role_load_by_name($role_name)) {
+    $user->roles[$role->rid] = $role->name;
+    return user_save($user);
+  }
+  return FALSE;
+}
