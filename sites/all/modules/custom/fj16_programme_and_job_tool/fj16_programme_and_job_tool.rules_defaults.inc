@@ -27,5 +27,22 @@ function fj16_programme_and_job_tool_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_fj16_redirect_to_generator_after_login'] = entity_import('rules_config', '{ "rules_fj16_redirect_to_generator_after_login" : {
+      "LABEL" : "FJ16 redirect to generator after login",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "ON" : { "user_login" : [] },
+      "IF" : [
+        { "NOT user_has_role" : {
+            "account" : [ "account" ],
+            "roles" : { "value" : { "3" : "3", "4" : "4", "5" : "5" } },
+            "operation" : "OR"
+          }
+        }
+      ],
+      "DO" : [ { "redirect" : { "url" : "generator" } } ]
+    }
+  }');
   return $items;
 }
