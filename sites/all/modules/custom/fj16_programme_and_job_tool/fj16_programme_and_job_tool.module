@@ -143,6 +143,7 @@ function fj16_programme_and_job_tool_fj16_lists_to_sync() {
 }
 
 function fj16_programme_and_job_tool_fj16_sharepoint_api_row_presave_alter(&$node, &$sp_item) {
+  //TODO Fix notices
   $job_types = array(
     'Samoajapesti' => 'explorers',
     'Vaeltaja/aikuispesti' => 'rovers_and_adults',
