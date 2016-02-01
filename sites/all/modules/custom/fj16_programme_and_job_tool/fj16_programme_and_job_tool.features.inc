@@ -35,10 +35,10 @@ function fj16_programme_and_job_tool_flag_default_flags() {
     ),
     'flag_short' => 'Choose this assignment',
     'flag_long' => '',
-    'flag_message' => '',
+    'flag_message' => 'Your choice has been saved',
     'unflag_short' => 'Assignment selected',
-    'unflag_long' => '',
-    'unflag_message' => '',
+    'unflag_long' => 'Reject this assignment',
+    'unflag_message' => 'You have been removed from the assignment [node:title]',
     'unflag_denied_text' => '',
     'link_type' => 'normal',
     'weight' => 0,
@@ -53,11 +53,11 @@ function fj16_programme_and_job_tool_flag_default_flags() {
     'access_author' => '',
     'show_contextual_link' => FALSE,
     'i18n' => 0,
-    'api_version' => 3,
     'module' => 'fj16_programme_and_job_tool',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 3,
   );
   return $flags;
 
