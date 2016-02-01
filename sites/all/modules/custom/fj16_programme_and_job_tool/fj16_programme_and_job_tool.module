@@ -21,6 +21,19 @@ function fj16_programme_and_job_tool_menu() {
   return $menu;
 }
 
+function fj16_programme_and_job_tool_theme($existing, $type, $theme, $path) {
+  return array(
+    'fj16_generator_front' => array(
+      'variables' => array(
+        'intro_text' => NULL,
+        'login_link' => NULL,
+        'alternative_login_link' => NULL
+      ),
+      'template' => 'templates/fj16_generator_front'
+    )
+  );
+}
+
 function fj16_programme_and_job_tool_flag_access($flag, $entity_id, $action, $account) {
   if($action === 'flag' && $flag->name === 'fj16_choose_bulk_job') {
     return !fj16_programme_and_job_tool_is_job_full($entity_id, $flag);
@@ -63,13 +76,12 @@ function _fj16_programme_and_job_tool_generator_page() {
       'intro_text' => 'This is an intro text lorem ipsum dolor sit amet...',
       //TODO Make sure to mention it's the persons OWN ScoutID
       'login_link' => '(ScoutID login not implemented yet)',
-      'alternative_login_link' => t("International guest or not yet a scout/guide? !register and the !login with your user name and password.", array(
+      'alternative_login_link' => t("International guest or not yet a scout/guide? !register and then !login with your user name and password.", array(
           '!register' => l(t('Register'), 'user/register'),
           '!login' => l(t('log in'), 'user')
         ))
     );
-    //TODO Use template
-    return 'GENERATOR'; //TODO Show login page
+    return theme('fj16_generator_front', $variables);
   } else if(fj16_user_has_role_named('explorer')) {
     //TODO Redirect to will-o'-the-wisp selection when its done
     drupal_goto('generator/assignment/explorer');
