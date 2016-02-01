@@ -27,6 +27,23 @@ function fj16_programme_and_job_tool_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_fj16_redirect_to_generator_after_editing_account'] = entity_import('rules_config', '{ "rules_fj16_redirect_to_generator_after_editing_account" : {
+      "LABEL" : "FJ16 Redirect to generator after editing account",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "ON" : { "user_update" : [] },
+      "IF" : [
+        { "NOT user_has_role" : {
+            "account" : [ "account" ],
+            "roles" : { "value" : { "3" : "3", "4" : "4", "5" : "5" } },
+            "operation" : "OR"
+          }
+        }
+      ],
+      "DO" : [ { "redirect" : { "url" : "generator" } } ]
+    }
+  }');
   $items['rules_fj16_redirect_to_generator_after_login'] = entity_import('rules_config', '{ "rules_fj16_redirect_to_generator_after_login" : {
       "LABEL" : "FJ16 redirect to generator after login",
       "PLUGIN" : "reaction rule",
@@ -39,9 +56,24 @@ function fj16_programme_and_job_tool_default_rules_configuration() {
             "roles" : { "value" : { "3" : "3", "4" : "4", "5" : "5" } },
             "operation" : "OR"
           }
+        },
+        { "NOT text_matches" : {
+            "text" : [ "site:current-page:path" ],
+            "match" : "user\\/reset",
+            "operation" : "starts"
+          }
         }
       ],
       "DO" : [ { "redirect" : { "url" : "generator" } } ]
+    }
+  }');
+  $items['rules_fj16_redirect_to_login_after_registration'] = entity_import('rules_config', '{ "rules_fj16_redirect_to_login_after_registration" : {
+      "LABEL" : "FJ16 Redirect to login after registration",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "ON" : { "user_insert" : [] },
+      "DO" : [ { "redirect" : { "url" : "user" } } ]
     }
   }');
   return $items;
