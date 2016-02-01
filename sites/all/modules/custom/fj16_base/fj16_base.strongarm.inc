@@ -562,7 +562,7 @@ user/*/*';
     'domain' => '',
     'prefix' => '',
     'weight' => '0',
-    'javascript' => 'kLxvZ67xyzAEyBUfMemmLAFvM3npTWrSpeN4x8Mo8Bs',
+    'javascript' => 'ZPmXxSoeZLq6KPlKL40znHtk3GsyhCs4uc9jV6MZXP8',
   );
   $export['language_default'] = $strongarm;
 
@@ -629,7 +629,7 @@ user/*/*';
   $strongarm->name = 'language_types';
   $strongarm->value = array(
     'language' => TRUE,
-    'language_content' => FALSE,
+    'language_content' => TRUE,
     'language_url' => FALSE,
   );
   $export['language_types'] = $strongarm;
@@ -907,6 +907,7 @@ user/*/*';
   $strongarm->name = 'path_alias_whitelist';
   $strongarm->value = array(
     'node' => TRUE,
+    'taxonomy' => TRUE,
     'user' => TRUE,
   );
   $export['path_alias_whitelist'] = $strongarm;
@@ -1414,7 +1415,7 @@ user/*/*';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'user_admin_role';
-  $strongarm->value = 0;
+  $strongarm->value = '0';
   $export['user_admin_role'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1468,7 +1469,7 @@ This link expires in one day and nothing will happen if it is not used.
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'user_mail_password_reset_body';
-  $strongarm->value = '[user:name],
+  $strongarm->value = 'Hi,
 
 A request to reset the password for your account has been made at [site:name].
 
@@ -1519,7 +1520,7 @@ password: Your password
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'user_mail_register_no_approval_required_body';
-  $strongarm->value = '[user:name],
+  $strongarm->value = 'Hi,
 
 Thank you for registering at [site:name]. You may now log in by clicking this link or copying and pasting it to your browser:
 
@@ -1539,7 +1540,7 @@ password: Your password
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'user_mail_register_no_approval_required_subject';
-  $strongarm->value = 'Account details for [user:name] at [site:name]';
+  $strongarm->value = 'Your account details at [site:name]';
   $export['user_mail_register_no_approval_required_subject'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1665,7 +1666,7 @@ Your account on [site:name] has been canceled.
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'user_picture_file_size';
-  $strongarm->value = 30;
+  $strongarm->value = '30';
   $export['user_picture_file_size'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1700,7 +1701,7 @@ Your account on [site:name] has been canceled.
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'user_register';
-  $strongarm->value = 0;
+  $strongarm->value = '1';
   $export['user_register'] = $strongarm;
 
   $strongarm = new stdClass();
