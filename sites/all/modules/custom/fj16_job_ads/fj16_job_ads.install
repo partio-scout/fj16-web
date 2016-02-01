@@ -83,6 +83,10 @@ function fj16_job_ads_update_7014() {
   module_enable(array('date'));
 }
 
+function fj16_job_ads_update_7015() {
+  module_enable(array('fj16_sharepoint_api'));
+}
+
 function fj16_job_ads_schema() {
   $schema = array();
 

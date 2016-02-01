@@ -5,3 +5,305 @@
  */
 
 include_once 'fj16_programme_and_job_tool.features.inc';
+
+define('FJ16_BULK_JOBS_LIST', '{D99DB96C-696B-493E-9ABE-6314FC853B39}');
+define('FJ16_SKILL_AREA_PREFIX', 'Osaamisalue: ');
+define('FJ16_BULK_JOBS_IMAGE_DIR', 'public://programme_and_job_tool');
+
+function fj16_programme_and_job_tool_menu() {
+  $menu = array();
+
+  $menu['generator'] = array(
+    'page callback' => '_fj16_programme_and_job_tool_generator_page',
+    'access arguments' => array('access content')
+  );
+
+  return $menu;
+}
+
+function fj16_programme_and_job_tool_flag_access($flag, $entity_id, $action, $account) {
+  if($action === 'flag' && $flag->name === 'fj16_choose_bulk_job') {
+    return !fj16_programme_and_job_tool_is_job_full($entity_id, $flag);
+  }
+  return NULL;
+}
+
+function fj16_programme_and_job_tool_is_job_full($nid, $flag) {
+  $flag_count = $flag->get_count($nid);
+  
+  $node = node_load($nid);
+  $max_count = $node->field_inventory_maximum[LANGUAGE_NONE][0]['value'];
+  $reserved = $node->field_inventory_reserved[LANGUAGE_NONE][0]['value'];
+
+  return $flag_count >= ($max_count - $reserved);
+}
+
+function fj16_programme_and_job_tool_page_alter(&$page) {
+  // This is a bit of a hack, but there's no clean way to show custom message
+  // when a flag access check prevents flagging.
+
+  $path = current_path();
+  $is_flagging = strpos($path, 'flag/flag/fj16_choose_bulk_job') === 0;
+  $is_403 = drupal_get_http_header("status") === "403 Forbidden";
+
+  if($is_flagging && $is_403) {
+    drupal_set_title(t('This assignment is full'));
+    $page['content']['system_main']['main']['#markup'] = t('Unfortunately the assignment you selected is already full. !return and try selecting another one.',
+      array('!return' => l(t('Return to the assignment list'), 'generator')));
+  }
+}
+
+function _fj16_programme_and_job_tool_generator_page() {
+  global $user;
+
+  if($user->uid === 0) {
+    // Anonymous users
+    drupal_set_title(t('Welcome to the generator!'));
+    $variables = array(
+      'intro_text' => 'This is an intro text lorem ipsum dolor sit amet...',
+      //TODO Make sure to mention it's the persons OWN ScoutID
+      'login_link' => '(ScoutID login not implemented yet)',
+      'alternative_login_link' => t("International guest or not yet a scout/guide? !register and the !login with your user name and password.", array(
+          '!register' => l(t('Register'), 'user/register'),
+          '!login' => l(t('log in'), 'user')
+        ))
+    );
+    //TODO Use template
+    return 'GENERATOR'; //TODO Show login page
+  } else if(fj16_user_has_role_named('explorer')) {
+    //TODO Redirect to will-o'-the-wisp selection when its done
+    drupal_goto('generator/assignment/explorer');
+  } else if(fj16_user_has_role_named('rover or adult')) {
+    drupal_goto('generator/assignment');
+  } else {
+    drupal_set_title(t('Choose your age group'));
+    return drupal_get_form('_fj16_programme_and_job_tool_role_form');
+  }
+}
+
+function _fj16_programme_and_job_tool_role_form($form, &$form_state) {
+  $form['submit_explorer'] = array(
+    '#type' => 'submit',
+    '#value' => t('Explorer'),
+    '#name' => 'explorer'
+  );
+
+  $form['submit_rover_or_adult'] = array(
+    '#type' => 'submit',
+    '#value' => t('Rover or adult'),
+    '#name' => 'rover_or_adult'
+  );
+
+  return $form;
+}
+
+function _fj16_programme_and_job_tool_role_form_submit($form, &$form_state) {
+  global $user;
+  if($user->uid === 0) {
+    return;
+  }
+
+  $button = $form_state['triggering_element']['#name'];
+  if($button === 'explorer') {
+    fj16_user_add_role($user, 'explorer');
+  } else if($button === 'rover_or_adult') {
+    fj16_user_add_role($user, 'rover or adult');
+  }
+
+  drupal_goto('generator'); //TODO Maybe go directly to page?
+}
+
+
+
+// SharePoint Integration
+
+
+/**
+ * Implements hook_fj16_lists_to_sync
+ */
+function fj16_programme_and_job_tool_fj16_lists_to_sync() {
+  return array(
+    array(
+      'source' => FJ16_BULK_JOBS_LIST,
+      'destination' => 'fj16_bulk_job'
+    )
+  );
+}
+
+function fj16_programme_and_job_tool_fj16_sharepoint_api_row_presave_alter(&$node, &$sp_item) {
+  $job_types = array(
+    'Samoajapesti' => 'explorers',
+    'Vaeltaja/aikuispesti' => 'rovers_and_adults',
+    'Raksapesti' => 'construction_or_demolition'
+  );
+  $node->field_job_type[LANGUAGE_NONE][0]['value'] = $job_types[$sp_item['pestin_x0020_tyyppi']];
+  
+  $node->field_localized_title['fi'][0]['value'] = $sp_item['title'];
+  $node->field_localized_title['sv'][0]['value'] = $sp_item['pestin_x0020_nimi_x0020_ruotsiks'];
+  $node->field_localized_title['en'][0]['value'] = $sp_item['pestin_x0020_nimi_x0020_englanni'];
+
+  $node->field_job_description['fi'][0]['value'] = $sp_item['pestin_x0020_kuvaus'];
+  $node->field_job_description['sv'][0]['value'] = $sp_item['pestin_x0020_kuvaus_x0020_ruotsi'];
+  $node->field_job_description['en'][0]['value'] = $sp_item['pestin_x0020_kuvaus_x0020_englan'];
+
+  $node->field_contact_name[LANGUAGE_NONE][0]['value'] = $sp_item['lis_x00e4_tietoja_x0020_antaa'];
+  $node->field_contact_phone[LANGUAGE_NONE][0]['value'] = $sp_item['lis_x00e4_tietoja_x0020_antaa_x0'];
+  $node->field_contact_email[LANGUAGE_NONE][0]['value'] = $sp_item['lis_x00e4_tietoja_x0020_antaa_x00'];
+
+  $node->field_inventory_minimum[LANGUAGE_NONE][0]['value'] = $sp_item['varasto_x0020_min'];
+  $node->field_inventory_maximum[LANGUAGE_NONE][0]['value'] = $sp_item['varasto_x0020_max'];
+  $node->field_inventory_reserved[LANGUAGE_NONE][0]['value'] = $sp_item['varasto_x0020_nyt'];
+
+  $image_parts = explode(',', $sp_item['kuva']);
+  $image_url = $image_parts[0];
+
+  if(empty($node->field_image_url[LANGUAGE_NONE][0]['value']) || $node->field_image_url[LANGUAGE_NONE][0]['value'] !== $image_url) {
+    $node->field_image_url[LANGUAGE_NONE][0]['value'] = $image_url;
+    $image_object = fj16_programme_and_job_tool_get_image_object($image_url);
+    $node->field_job_image = array(
+      'und' => array((array) $image_object)
+    );
+  }
+
+  $tag_names = fj16_programme_and_job_tool_parse_categories($sp_item['avainsanat']);
+  $node->field_tags['fi'] = fj16_programme_and_job_tool_produce_tids_for('bulk_jobs_tags', $tag_names['tags'], 'fi');
+  $node->field_tags['sv'] = fj16_programme_and_job_tool_produce_tids_for('bulk_jobs_tags', $tag_names['tags'], 'sv');
+  $node->field_tags['en'] = fj16_programme_and_job_tool_produce_tids_for('bulk_jobs_tags', $tag_names['tags'], 'en');
+  $node->field_skill_areas['fi'] = fj16_programme_and_job_tool_produce_tids_for('bulk_jobs_skill_areas', $tag_names['skill_areas'], 'fi');
+  $node->field_skill_areas['sv'] = fj16_programme_and_job_tool_produce_tids_for('bulk_jobs_skill_areas', $tag_names['skill_areas'], 'sv');
+  $node->field_skill_areas['en'] = fj16_programme_and_job_tool_produce_tids_for('bulk_jobs_skill_areas', $tag_names['skill_areas'], 'en');
+}
+
+function fj16_programme_and_job_tool_parse_categories($raw_tags) {
+  $result = array(
+    'tags' => array(),
+    'skill_areas' => array()
+  );
+
+  $parts = explode(';#', $raw_tags);
+  foreach($parts as $part) {
+    if($part === '') {
+      continue;
+    } else if(strpos($part, FJ16_SKILL_AREA_PREFIX) === 0) {
+      $result['skill_areas'][] = substr($part, strlen(FJ16_SKILL_AREA_PREFIX));
+    } else {
+      $result['tags'][] = $part;
+    }
+  }
+
+  return $result;
+}
+
+function fj16_programme_and_job_tool_produce_tids_for($vocabulary_name, $tag_names, $lang) {
+  $vocabulary = taxonomy_vocabulary_machine_name_load($vocabulary_name);
+  
+  $tids = array();
+  foreach($tag_names as $tag_name) {
+    $term = fj16_programme_and_job_tool_find_or_create_term($vocabulary, $tag_name, $lang);
+    $tids[] = array(
+      'tid' => $term->tid
+    );
+  }
+
+  return $tids;
+}
+
+function fj16_programme_and_job_tool_find_or_create_term($vocabulary, $sp_tag_name, $lang) {
+  $term = fj16_programme_and_job_tool_find_term_by_sp_tag($vocabulary, $sp_tag_name, $lang);
+  
+  if($term === NULL) {
+    $term = new stdClass();
+    $term->name = $sp_tag_name;
+    $term->vid = $vocabulary->vid;
+    $term->language = $lang;
+    $term->field_sharepoint_name = array(
+      $lang => array(array('value' => $sp_tag_name))
+    );
+    taxonomy_term_save($term);
+  }
+
+  return $term;
+}
+
+function fj16_programme_and_job_tool_find_term_by_sp_tag($vocabulary, $sp_tag_name, $lang) {
+  $tid = db_select('field_data_field_sharepoint_name', 'f')
+    ->condition('entity_type', 'taxonomy_term')
+    ->condition('bundle', $vocabulary->machine_name)
+    ->condition('language', $lang)
+    ->condition('field_sharepoint_name_value', $sp_tag_name)
+    ->fields('f', array('entity_id'))
+    ->execute()
+    ->fetchField();
+
+  if($tid === FALSE) {
+    return NULL;
+  }
+
+  return taxonomy_term_load($tid);
+}
+
+function fj16_programme_and_job_tool_get_image_object($url) {
+  $tempfile = fj16_programme_and_job_tool_fetch_image($url);
+  if(!$tempfile) {
+    return NULL;
+  }
+
+  $image_object = NULL;
+  if(fj16_programme_and_jobs_tool_is_valid_image($tempfile)) {
+    $image_object = fj16_programme_and_job_tool_persist_image($tempfile, $url);
+  }
+
+  unlink($tempfile);
+  return $image_object;
+}
+
+function fj16_programme_and_job_tool_fetch_image($url) {
+  $target = file_directory_temp() . '/' . md5($url) . '.tmp';
+  if (copy($url, $target)) {
+    return $target;
+  } else {
+    watchdog('fj16_programme_and_jobs_tool', 'Unable to get image: @url',
+      array('@url' => $url), WATCHDOG_ERROR, $url);
+    return FALSE;
+  }
+}
+
+function fj16_programme_and_job_tool_persist_image($filepath, $url) {
+  $image_info = image_get_info($filepath);
+  $extension = $image_info['extension'];
+  $destination_filename = md5($url) . '.' . $extension;
+  $destination = FJ16_BULK_JOBS_IMAGE_DIR . '/' . $destination_filename;
+  $filepath = file_unmanaged_copy($filepath, $destination, FILE_EXISTS_REPLACE);
+
+  //TODO Scale image down to max size
+
+  $image_object = fj16_programme_and_jobs_tool_find_file_by_url($destination);
+  if($image_object === NULL) {
+    $image_object = new stdClass();
+  }
+  $image_object->status = FILE_STATUS_PERMANENT;
+  $image_object->uid = 1;
+  $image_object->filename = $destination_filename;
+  $image_object->uri = $destination;
+  $image_object->filemime = $image_info['mime_type'];
+  $image_object->filesize = $image_info['file_size'];
+  file_save($image_object);
+  return $image_object;
+}
+
+function fj16_programme_and_jobs_tool_is_valid_image($filepath) {
+  return image_get_info($filepath) !== FALSE;
+}
+
+function fj16_programme_and_jobs_tool_find_file_by_url($url) {
+  $fid = db_select('file_managed', 'f')
+    ->condition('uri', $url)
+    ->fields('f', array('fid'))
+    ->execute()
+    ->fetchField();
+
+  if($fid !== FALSE) {
+    return file_load($fid);
+  }
+  return NULL;
+}

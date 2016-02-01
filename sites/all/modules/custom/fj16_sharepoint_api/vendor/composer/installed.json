@@ -1,0 +1,38 @@
+[
+    {
+        "name": "thybag/php-sharepoint-lists-api",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/thybag/PHP-SharePoint-Lists-API.git",
+            "reference": "523f26d47dcdea5df12134a816dae27926dab5e8"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/thybag/PHP-SharePoint-Lists-API/zipball/523f26d47dcdea5df12134a816dae27926dab5e8",
+            "reference": "523f26d47dcdea5df12134a816dae27926dab5e8",
+            "shasum": ""
+        },
+        "time": "2014-08-05 17:46:50",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Thybag": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Carl Saggs",
+                "email": "carl@userbag.co.uk"
+            }
+        ],
+        "description": "A simple PHP API to make working with SharePoint lists easy.",
+        "homepage": "https://github.com/thybag/PHP-SharePoint-Lists-API"
+    }
+]

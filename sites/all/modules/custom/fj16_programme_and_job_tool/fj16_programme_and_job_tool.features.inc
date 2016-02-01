@@ -21,6 +21,49 @@ function fj16_programme_and_job_tool_views_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_flag_default_flags().
+ */
+function fj16_programme_and_job_tool_flag_default_flags() {
+  $flags = array();
+  // Exported flag: "FJ16 Choose bulk job".
+  $flags['fj16_choose_bulk_job'] = array(
+    'entity_type' => 'node',
+    'title' => 'FJ16 Choose bulk job',
+    'global' => 0,
+    'types' => array(
+      0 => 'fj16_bulk_job',
+    ),
+    'flag_short' => 'Choose this assignment',
+    'flag_long' => '',
+    'flag_message' => 'Your choice has been saved',
+    'unflag_short' => 'Assignment selected',
+    'unflag_long' => 'Reject this assignment',
+    'unflag_message' => 'You have been removed from the assignment [node:title]',
+    'unflag_denied_text' => '',
+    'link_type' => 'normal',
+    'weight' => 0,
+    'show_in_links' => array(
+      'full' => 0,
+      'teaser' => 0,
+      'rss' => 0,
+      'token' => 0,
+    ),
+    'show_as_field' => 1,
+    'show_on_form' => 0,
+    'access_author' => '',
+    'show_contextual_link' => FALSE,
+    'i18n' => 0,
+    'module' => 'fj16_programme_and_job_tool',
+    'locked' => array(
+      0 => 'name',
+    ),
+    'api_version' => 3,
+  );
+  return $flags;
+
+}
+
+/**
  * Implements hook_node_info().
  */
 function fj16_programme_and_job_tool_node_info() {

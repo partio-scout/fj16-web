@@ -18,10 +18,6 @@ function fj16_master_update_7004() {
   module_enable(array('fj16_job_ads'));
 }
 
-function fj16_master_update_7005() {
-  module_enable(array('fj16_programme_and_job_tool'));
-}
-
 function fj16_master_update_7006() {
   module_enable(array('fj16_countdown'));
 }
@@ -36,4 +32,8 @@ function fj16_master_update_7008() {
 
 function fj16_master_update_7009() {
   module_enable(array('fj16_event_map'));
+}
+
+function fj16_master_update_7010() {
+  module_enable(array('fj16_programme_and_job_tool'));
 }
