@@ -150,7 +150,7 @@ $department_class = $field_department[0]['value'];
 
         <div class="job-shares">
           <div class="fb-share-button" data-href="http://roihu2016.fi<?php print $node_url; ?>" data-layout="button_count"></div>
-          <a href="https://twitter.com/share" class="twitter-share-button"{count}>Tweet</a>
+          <a href="https://twitter.com/share" class="twitter-share-button"{count}></a>
           <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
           <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: <?php print $lang; ?></script>
           <script type="IN/Share" data-url="http://roihu2016.fi<?php print $node_url; ?>" data-counter="right"></script>
