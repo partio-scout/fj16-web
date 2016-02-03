@@ -143,7 +143,13 @@ $yhteistyo: $blue;
   }
 }
 
+.node-type-fj16-job #content {
+  @extend .container;
+}
+
 .node-fj16-job {
+  @include clearfix();
+  
   background: #FFF;
   position: relative;
 
@@ -228,20 +234,35 @@ $yhteistyo: $blue;
         font-size: 1em;
         text-transform: uppercase;
       }
+
+      @include respondMin(small) {
+        float: left;
+        width: 50%;
+      }
     }
 
     .application-form {
+      @include clearfix();
+      
       padding: 3.4%;
       background: #d2d2d1;
 
       h2 {
         margin: 0 0 20px;
       }
+
+      @include respondMin(small) {
+        float: left;
+        width: 50%;
+      }
     }
 
     .job-content, .application-form form {
-      width: 610px;
       max-width: 100%;
+      
+      @include respond(small) {
+        max-width: 610px;
+      }
     }
 
     .meta {
