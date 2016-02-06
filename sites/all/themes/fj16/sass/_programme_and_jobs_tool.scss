@@ -1,19 +1,165 @@
+#edit-submit-explorer {
+	margin-right: 10px;
+}
+
+#edit-submit-rover-or-adult {
+	background: $purple;
+	
+	&:hover {
+		background: darken($purple, 10%);
+	}
+}
+
 .bulk-jobs-list {
-  .views-row {
-    width: 30%;
-    float: left;
-    height: 360px;
+	.views-row {
+		width: 33.3%;
+		float: left;
+		padding-right: 20px;
+		margin-top: 20px;
 
-    @include respond(small) {
-      width: 48%;
-    }
+		.field {
+			margin-bottom: 0;
+		}
 
-    @include respond(mobile) {
-      width: 100%;
-    }
-  }
+		&:nth-child(3n+1) {
+			clear: left;
+		}
+		
+		@include respond(small) {
+			width: 50%;
+			&:nth-child(3n+1) { clear: none; }
+			&:nth-child(2n+1) { clear: both; }
+		}
 
-  h2 {
-    font-size: 26px;
-  }
+		@include respond(mobile) {
+			width: 100%;
+			padding-right: 0;
+
+			&:nth-child(2n+1) { clear: none; }
+		}
+
+		.read-more {
+			// margin-
+		}
+
+		.flag-wrapper {
+			// text-align: right;
+
+			.flag {
+				font-size: 0.8em;
+				font-weight: bold;
+				text-transform: uppercase;
+
+				&.flag-action:after {
+					content: ' \00BB';
+				}
+			}
+		}
+	}
+
+	h2 {
+		font-size: 1.3em;
+		word-wrap: break-word;
+	}
+
+	p {
+		font-size: 0.8em;
+	}
+}
+
+.node-fj16-bulk-job {
+	.field-type-image {
+		@include respond(mobile) {
+			float: none;
+			margin: 0 auto;
+			display: block;
+			text-align: center;
+		}
+	}
+
+	.field {
+		margin-bottom: 1em;
+
+		.field-label {
+			min-width: 150px;
+			display: inline-block;
+
+			@include respond(mobile) {
+				display: block;
+				&:after {
+					content: '\00a0';
+				}
+			}
+		}
+
+		.field-items {
+			display: inline-block;
+		}
+
+		&.field-name-field-contact-name, &.field-name-field-contact-email {
+			margin-bottom: 0;
+		}
+
+		&.field-name-field-contact-email, &.field-name-field-contact-phone {
+			margin-left: 150px;
+			
+			@include respond(mobile) {
+				margin-left: 0;
+			}
+		}
+	}
+
+	.field-name-field-skill-areas, .field-name-field-tags {
+		.field-items {
+			div {
+				display: inline-block;
+
+				a {
+					margin: 0 5px 0 0;
+					font-size: 0.8em;
+					background: $blue;
+					color: #fff;
+					padding: 3px 6px;
+					text-transform: lowercase;
+					position: relative;
+					top: -2px;
+
+					&:hover {
+						background: darken($blue, 15%);
+					}
+				}
+			}
+		}
+
+		&.field-name-field-skill-areas {
+			.field-items a {
+				background: $red;
+
+				&:hover {
+					background: darken($red, 15%);
+				}
+			}
+		}
+	}
+
+	.flag-fj16-choose-bulk-job {
+		clear: both;
+		display: block;
+		text-align: center;
+		margin: 2.5em 0 1em 0;
+
+		a {
+			@extend .button;
+			font-size: 1.4em;
+			text-transform: uppercase;
+			// background: $green;
+			// border-
+
+			&:after {
+				content: ' \00BB';
+			}
+		}
+	}
+
+
 }

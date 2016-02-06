@@ -59,7 +59,7 @@ input[type="text"],  input[type="email"], textarea {
 	max-width: 100%;
 }
 
-input[type="submit"] {
+input[type="submit"], .button {
 	background: $green;
 	color: #FFF;
 	padding: 15px 30px;

@@ -101,7 +101,16 @@
       // We hide the comments and links now so that we can render them later.
       hide($content['comments']);
       hide($content['links']);
+      hide($content['flag_fj16_choose_bulk_job']);
       print render($content);
+    ?>
+
+    <p class="read-more"><a href="<?php print $node_url; ?>"><?php print t('Lue lisää'); ?></a></h2></p>
+
+    <?php
+
+      print render($content['flag_fj16_choose_bulk_job']);
+
       if ($teaser && $logged_in && !isset($content['flag_fj16_choose_bulk_job'])) {
         print '<div class="job-full">' . t('Full!assignment', array('!assignment' => '')) . '</div>';
       } else if ($logged_in && !isset($content['flag_fj16_choose_bulk_job'])) {
