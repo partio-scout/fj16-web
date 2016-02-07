@@ -48,7 +48,8 @@ function fj16_programme_and_job_tool_default_rules_configuration() {
             "roles" : { "value" : { "3" : "3", "4" : "4", "5" : "5" } },
             "operation" : "OR"
           }
-        }
+        },
+        { "NOT data_is" : { "data" : [ "site:current-page:path" ], "value" : "generator\\/confirm" } }
       ],
       "DO" : [ { "redirect" : { "url" : "generator" } } ]
     }
