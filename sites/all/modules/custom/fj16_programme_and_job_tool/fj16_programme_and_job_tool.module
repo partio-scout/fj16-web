@@ -109,8 +109,7 @@ function _fj16_programme_and_job_tool_generator_page() {
     drupal_set_title('TODO');
     return 'Your selections';
   } else if(fj16_user_has_role_named('explorer')) {
-    //TODO Redirect to will-o'-the-wisp selection when its done
-    drupal_goto('generator/assignment/explorer');
+    drupal_goto('generator/will-o-the-wisp');
   } else if(fj16_user_has_role_named('rover or adult')) {
     drupal_goto('generator/assignment');
   } else {
