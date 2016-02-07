@@ -54,6 +54,7 @@ features[field_instance][] = node-fj16_bulk_job-field_tags
 features[field_instance][] = taxonomy_term-bulk_jobs_tags-field_sharepoint_name
 features[flag][] = fj16_choose_bulk_job
 features[node][] = fj16_bulk_job
+features[rules_config][] = rules_fj16_go_to_confirmation_after_job_selection
 features[rules_config][] = rules_fj16_limit_one_job_selected
 features[rules_config][] = rules_fj16_redirect_to_generator_after_editing_account
 features[rules_config][] = rules_fj16_redirect_to_generator_after_login

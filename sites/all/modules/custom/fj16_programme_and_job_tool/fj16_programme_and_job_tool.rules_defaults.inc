@@ -9,6 +9,15 @@
  */
 function fj16_programme_and_job_tool_default_rules_configuration() {
   $items = array();
+  $items['rules_fj16_go_to_confirmation_after_job_selection'] = entity_import('rules_config', '{ "rules_fj16_go_to_confirmation_after_job_selection" : {
+      "LABEL" : "FJ16 Go to confirmation after job selection",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "flag" ],
+      "ON" : { "flag_flagged_fj16_choose_bulk_job" : [] },
+      "DO" : [ { "redirect" : { "url" : "generator\\/confirm" } } ]
+    }
+  }');
   $items['rules_fj16_limit_one_job_selected'] = entity_import('rules_config', '{ "rules_fj16_limit_one_job_selected" : {
       "LABEL" : "FJ16 Limit one job selected",
       "PLUGIN" : "reaction rule",
