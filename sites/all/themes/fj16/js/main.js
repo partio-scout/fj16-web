@@ -78,6 +78,17 @@
 			}
 		});
 	}
+
+	if($('.bulk-jobs-list').length) { 
+		$('.view-content').masonry({
+			// set itemSelector so .grid-sizer is not used in layout
+			itemSelector: '.views-row',
+			// use element for option
+			columnWidth: '.views-row',
+			percentPosition: true
+			// columnWidth: 300
+		});
+	}
 	
 	// Avoid `console` errors in browsers that lack a console.
 	(function() {
@@ -172,12 +183,12 @@ jQuery.fn.isOnScreen = function(x, y){
     
 };
 
-$('[data-ga-event-category][data-ga-event-action]').click(function(e){
+jQuery('[data-ga-event-category][data-ga-event-action]').click(function(e){
 	
-	var eventCategory = $(this).data('ga-event-category'),
-	    eventAction   = $(this).data('ga-event-action'),
-	    eventLabel    = $(this).data('ga-event-label'),
-	    eventValue    = $(this).data('ga-event-value');
+	var eventCategory = jQuery(this).data('ga-event-category'),
+	    eventAction   = jQuery(this).data('ga-event-action'),
+	    eventLabel    = jQuery(this).data('ga-event-label'),
+	    eventValue    = jQuery(this).data('ga-event-value');
 			
 	ga('send', 'event', eventCategory, eventAction, eventLabel, eventValue);	
 

@@ -1,3 +1,14 @@
+.page-generator-assignment #main {
+    background: 50% 0 #a96f2e url(/sites/all/themes/fj16/img/backgrounds/pestit-2048.jpg);
+    background-size: 100% auto;
+    max-width: none;
+
+    #content h1.title {
+    	color: #fff;
+    	text-align: center;
+    }
+}
+
 #edit-submit-explorer {
 	margin-right: 10px;
 }
@@ -12,58 +23,140 @@
 
 .bulk-jobs-list {
 	.views-row {
-		width: 33.3%;
+		width: 23%;
+		margin: 30px 2% 0 0;
 		float: left;
-		padding-right: 20px;
-		margin-top: 20px;
+		padding: 0 20px 20px;
+		background: #fff;
+		position: relative;
+		min-height: 190px;
+		
+		h2 {
+			font-size: 1.3em;
+			word-wrap: break-word;
+			font-family: $exo;
+			text-transform: uppercase;
+		}
+
+		p {
+			font-size: 0.8em;
+		}
+
+		.content {
+			word-wrap: break-word;
+		}
+
+		.field-name-field-job-image {
+			text-align: center;
+
+			img {
+				margin: 1em 0;
+			}
+		}
 
 		.field {
 			margin-bottom: 0;
 		}
-
-		&:nth-child(3n+1) {
-			clear: left;
-		}
 		
 		@include respond(small) {
-			width: 50%;
-			&:nth-child(3n+1) { clear: none; }
-			&:nth-child(2n+1) { clear: both; }
+			width: 48%;
+			margin: 20px 2% 0 0;
 		}
 
 		@include respond(mobile) {
 			width: 100%;
 			padding-right: 0;
-
-			&:nth-child(2n+1) { clear: none; }
+			margin-top: 30px;
 		}
 
-		.read-more {
-			// margin-
-		}
+		.actions {
 
-		.flag-wrapper {
-			// text-align: right;
+			.read-more {
+				margin-top: 2em;
 
-			.flag {
-				font-size: 0.8em;
-				font-weight: bold;
-				text-transform: uppercase;
+				a {
+					@extend .button;
+					background: $purple;
+					font-size: 1em;
 
-				&.flag-action:after {
-					content: ' \00BB';
+					&:hover {
+						background: darken($purple, 5%);
+					}
+
+					&:after {
+						content: ' \00BB';
+					}
+				}
+			}
+
+			.flag-wrapper {
+				text-align: left;
+				margin: 1.5em 0 0;
+
+				.flag {
+					font-size: 1em;
+					display: block;
+					max-width: 300px;
+
+					&.flag-action:after {
+						content: ' \00BB';
+					}
+				}
+			}
+
+			@include respondMin(1025px) {
+
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				opacity: 0;
+
+				@include transition(opacity 0.5s ease-in-out);
+
+				display: table-cell;
+				vertical-align: middle;
+
+				background: rgba(0,0,0,.8);
+				text-align: center;
+
+				.buttons-wrap {
+					height: 230px;
+					margin-top: -115px;
+					position: absolute;
+					top: 50%;
+					left: 15px;
+					right: 15px;
+					text-align: center;
+				}
+
+				.read-more {
+					a {
+						display: block;
+						max-width: 300px;
+						font-size: 1em;
+						margin: 0 auto;
+					}
+				}
+
+				.flag-wrapper {
+					// text-align: right;
+
+					.flag {
+						text-transform: uppercase;
+						max-width: 300px;
+						margin: 1em auto 0;
+					}
 				}
 			}
 		}
-	}
 
-	h2 {
-		font-size: 1.3em;
-		word-wrap: break-word;
-	}
-
-	p {
-		font-size: 0.8em;
+		@include respondMin(1025px) {
+			&:hover .actions {
+				opacity: 1;
+			}
+		}
 	}
 }
 
