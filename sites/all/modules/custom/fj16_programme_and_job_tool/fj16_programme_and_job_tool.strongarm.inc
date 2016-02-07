@@ -64,7 +64,7 @@ function fj16_programme_and_job_tool_strongarm() {
         ),
         'flag_fj16_choose_bulk_job' => array(
           'teaser' => array(
-            'weight' => '10',
+            'weight' => '2',
             'visible' => TRUE,
           ),
         ),
@@ -95,16 +95,16 @@ function fj16_programme_and_job_tool_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '-5',
+          'weight' => '0',
         ),
         'path' => array(
-          'weight' => '30',
+          'weight' => '2',
         ),
         'redirect' => array(
-          'weight' => '30',
+          'weight' => '3',
         ),
         'language' => array(
-          'weight' => '5',
+          'weight' => '1',
         ),
       ),
       'display' => array(),
