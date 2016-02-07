@@ -149,6 +149,23 @@ function fj16_programme_and_job_tool_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
+  // Exported field_base: 'field_inventory_total'
+  $field_bases['field_inventory_total'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_inventory_total',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'number_integer',
+  );
+
   // Exported field_base: 'field_job_description'
   $field_bases['field_job_description'] = array(
     'active' => 1,
@@ -244,6 +261,28 @@ function fj16_programme_and_job_tool_field_default_field_bases() {
     'type' => 'text',
   );
 
+  // Exported field_base: 'field_required_gear'
+  $field_bases['field_required_gear'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_required_gear',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max_length' => 255,
+    ),
+    'translatable' => 1,
+    'type' => 'text',
+  );
+
   // Exported field_base: 'field_sharepoint_name'
   $field_bases['field_sharepoint_name'] = array(
     'active' => 1,
@@ -294,6 +333,27 @@ function fj16_programme_and_job_tool_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
+  // Exported field_base: 'field_suitability'
+  $field_bases['field_suitability'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_suitability',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 1,
+    'type' => 'text_long',
+  );
+
   // Exported field_base: 'field_tags'
   $field_bases['field_tags'] = array(
     'active' => 1,
@@ -320,6 +380,27 @@ function fj16_programme_and_job_tool_field_default_field_bases() {
     ),
     'translatable' => 1,
     'type' => 'taxonomy_term_reference',
+  );
+
+  // Exported field_base: 'field_wotw_description'
+  $field_bases['field_wotw_description'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_wotw_description',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 1,
+    'type' => 'text_long',
   );
 
   return $field_bases;

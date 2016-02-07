@@ -76,6 +76,14 @@ function fj16_programme_and_job_tool_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
+    'fj16_will_o_the_wisp' => array(
+      'name' => t('FJ16 Will-o\'-the-wisp'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
   );
   drupal_alter('node_info', $items);
   return $items;

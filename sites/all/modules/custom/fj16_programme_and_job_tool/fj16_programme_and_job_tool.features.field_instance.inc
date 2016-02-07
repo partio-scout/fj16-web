@@ -621,6 +621,221 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-fj16_will_o_the_wisp-field_inventory_total'
+  $field_instances['node-fj16_will_o_the_wisp-field_inventory_total'] = array(
+    'bundle' => 'fj16_will_o_the_wisp',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_inventory_total',
+    'label' => 'Inventory total',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max' => '',
+      'min' => 0,
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 37,
+    ),
+  );
+
+  // Exported field_instance: 'node-fj16_will_o_the_wisp-field_localized_title'
+  $field_instances['node-fj16_will_o_the_wisp-field_localized_title'] = array(
+    'bundle' => 'fj16_will_o_the_wisp',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_plain',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_localized_title',
+    'label' => 'Localized title',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 33,
+    ),
+  );
+
+  // Exported field_instance: 'node-fj16_will_o_the_wisp-field_required_gear'
+  $field_instances['node-fj16_will_o_the_wisp-field_required_gear'] = array(
+    'bundle' => 'fj16_will_o_the_wisp',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_required_gear',
+    'label' => 'Required gear',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 36,
+    ),
+  );
+
+  // Exported field_instance: 'node-fj16_will_o_the_wisp-field_suitability'
+  $field_instances['node-fj16_will_o_the_wisp-field_suitability'] = array(
+    'bundle' => 'fj16_will_o_the_wisp',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_suitability',
+    'label' => 'Suitability',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 35,
+    ),
+  );
+
+  // Exported field_instance: 'node-fj16_will_o_the_wisp-field_wotw_description'
+  $field_instances['node-fj16_will_o_the_wisp-field_wotw_description'] = array(
+    'bundle' => 'fj16_will_o_the_wisp',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(
+          'trim_length' => 50,
+        ),
+        'type' => 'text_trimmed',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_wotw_description',
+    'label' => 'Description',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 34,
+    ),
+  );
+
   // Exported field_instance:
   // 'taxonomy_term-bulk_jobs_tags-field_sharepoint_name'
   $field_instances['taxonomy_term-bulk_jobs_tags-field_sharepoint_name'] = array(
@@ -662,18 +877,22 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
   t('Contact email');
   t('Contact name');
   t('Contact phone');
+  t('Description');
   t('Do not edit this field.');
   t('How many spots have been reserved outside of this system');
   t('Image URL');
   t('Inventory maximum');
   t('Inventory minimum');
   t('Inventory reserved');
+  t('Inventory total');
   t('Job description');
   t('Job type');
   t('Localized title');
+  t('Required gear');
   t('SharePoint Name');
   t('SharePoint Unique ID');
   t('Skill areas');
+  t('Suitability');
   t('Tags');
   t('image');
 
