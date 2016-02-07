@@ -1,4 +1,4 @@
-.page-generator-assignment #main {
+.page-generator-assignment #main, .page-generator-will-o-the-wisp {
     background: 50% 0 #a96f2e url(/sites/all/themes/fj16/img/backgrounds/pestit-2048.jpg);
     background-size: 100% auto;
     max-width: none;
@@ -17,7 +17,7 @@
 	@extend .purple;
 }
 
-.bulk-jobs-list {
+.bulk-jobs-list, .wotw-list {
 	.views-row {
 		width: 23%;
 		margin: 30px 2% 0 0;
@@ -42,7 +42,7 @@
 			word-wrap: break-word;
 		}
 
-		.field-name-field-job-image {
+		.field-name-type-image {
 			text-align: center;
 
 			img {
@@ -164,7 +164,7 @@
 	}
 }
 
-.node-fj16-bulk-job {
+.node-fj16-bulk-job, .node-fj16-will-o-the-wisp {
 	.field-type-image {
 		@include respond(mobile) {
 			float: none;
@@ -239,7 +239,7 @@
 		}
 	}
 
-	.flag-fj16-choose-bulk-job {
+	.flag-fj16-choose-bulk-job, .flag-fj16-will-o-the-wisp {
 		clear: both;
 		display: block;
 		text-align: center;

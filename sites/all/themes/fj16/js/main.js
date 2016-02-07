@@ -79,7 +79,7 @@
 		});
 	}
 
-	if($('.bulk-jobs-list').length) { 
+	if($('.bulk-jobs-list, .wotw-list').length) { 
 		$('.view-content').masonry({
 			// set itemSelector so .grid-sizer is not used in layout
 			itemSelector: '.views-row',

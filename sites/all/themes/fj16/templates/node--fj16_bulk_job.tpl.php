@@ -86,7 +86,9 @@
 
   <?php print render($title_prefix); ?>
   <?php if (!$page): ?>
-    <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
+    <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>">
+      <?php print $field_localized_title[0]['safe_value']; ?>
+    </a></h2>
   <?php endif; ?>
   <?php print render($title_suffix); ?>
 
@@ -118,7 +120,7 @@
           $text = $matches[0];
           hide($content['field_job_description']);
           print render($content);
-          echo $text;
+          echo check_plain($text);
         }
 
       } else {
