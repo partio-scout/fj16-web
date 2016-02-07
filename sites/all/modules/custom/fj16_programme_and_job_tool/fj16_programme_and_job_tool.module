@@ -23,6 +23,11 @@ function fj16_programme_and_job_tool_menu() {
     'access callback' => TRUE //TODO limit by roles
   );
 
+  $menu['generator/thankyou'] = array(
+    'page callback' => '_fj16_programme_and_job_tool_generator_thankyou_page',
+    'access callback' => TRUE //TODO limit by roles
+  );
+
   return $menu;
 }
 
@@ -107,6 +112,10 @@ function _fj16_programme_and_job_tool_generator_confirmation_page() {
   return drupal_get_form('_fj16_programme_and_job_tool_confirmation_form');
 }
 
+function _fj16_programme_and_job_tool_generator_thankyou_page() {
+  return 'thanks';
+}
+
 function _fj16_programme_and_job_tool_role_form($form, &$form_state) {
   $form['submit_explorer'] = array(
     '#type' => 'submit',
@@ -173,10 +182,13 @@ function _fj16_programme_and_job_tool_confirmation_form($form, &$form_state) {
       . l($user->mail, $user->mail)
   );
 
+  $greetings = field_get_items('user', $user_full, 'field_further_info_for_org')[0]['value'];
+
   $form['greetings'] = array(
     '#type' => 'textarea',
     '#rows' => 3,
-    '#title' => t('Optional greetings for the camp organisation')
+    '#title' => t('Optional greetings for the camp organisation'),
+    '#default_value' => $greetings
   );
 
   $form['confirm'] = array(
@@ -188,8 +200,14 @@ function _fj16_programme_and_job_tool_confirmation_form($form, &$form_state) {
 }
 
 function _fj16_programme_and_job_tool_confirmation_form_submit($form, &$form_state) {
-  //TODO Handle save
-  die('error: functionality not implemented');
+  global $user;
+
+  $greetings = $form_state['values']['greetings'];
+  $real_user = user_load($user->uid);
+  $real_user->field_further_info_for_org[LANGUAGE_NONE][0]['value'] = $greetings;
+  user_save($real_user);
+
+  $form_state['redirect'] = 'generator/thankyou';
 }
 
 function fj16_get_user_selections($user) {
