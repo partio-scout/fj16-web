@@ -47,10 +47,10 @@ function fj16_programme_and_job_tool_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Sort criterion: Content: Title */
-  $handler->display->display_options['sorts']['title']['id'] = 'title';
-  $handler->display->display_options['sorts']['title']['table'] = 'node';
-  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  /* Sort criterion: Content: Localized title (field_localized_title) */
+  $handler->display->display_options['sorts']['field_localized_title_value']['id'] = 'field_localized_title_value';
+  $handler->display->display_options['sorts']['field_localized_title_value']['table'] = 'field_data_field_localized_title';
+  $handler->display->display_options['sorts']['field_localized_title_value']['field'] = 'field_localized_title_value';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -116,6 +116,13 @@ function fj16_programme_and_job_tool_views_default_views() {
   );
   $handler->display->display_options['filters']['field_skill_areas_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_skill_areas_tid']['vocabulary'] = 'bulk_jobs_skill_areas';
+  /* Filter criterion: Content: Localized title (field_localized_title:language) */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'field_data_field_localized_title';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -186,10 +193,10 @@ function fj16_programme_and_job_tool_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Sort criterion: Content: Title */
-  $handler->display->display_options['sorts']['title']['id'] = 'title';
-  $handler->display->display_options['sorts']['title']['table'] = 'node';
-  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  /* Sort criterion: Content: Localized title (field_localized_title) */
+  $handler->display->display_options['sorts']['field_localized_title_value']['id'] = 'field_localized_title_value';
+  $handler->display->display_options['sorts']['field_localized_title_value']['table'] = 'field_data_field_localized_title';
+  $handler->display->display_options['sorts']['field_localized_title_value']['field'] = 'field_localized_title_value';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -253,6 +260,13 @@ function fj16_programme_and_job_tool_views_default_views() {
   );
   $handler->display->display_options['filters']['field_skill_areas_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_skill_areas_tid']['vocabulary'] = 'bulk_jobs_skill_areas';
+  /* Filter criterion: Content: Localized title (field_localized_title:language) */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'field_data_field_localized_title';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
