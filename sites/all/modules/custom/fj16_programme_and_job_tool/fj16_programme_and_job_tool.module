@@ -177,7 +177,7 @@ function _fj16_programme_and_job_tool_role_form_submit($form, &$form_state) {
     fj16_user_add_role($user, 'rover or adult');
   }
 
-  drupal_goto('generator'); //TODO Maybe go directly to page?
+  drupal_goto('generator');
 }
 
 function _fj16_programme_and_job_tool_confirmation_form($form, &$form_state) {
@@ -424,8 +424,6 @@ function fj16_programme_and_job_tool_persist_image($filepath, $url) {
   $destination_filename = md5($url) . '.' . $extension;
   $destination = FJ16_BULK_JOBS_IMAGE_DIR . '/' . $destination_filename;
   $filepath = file_unmanaged_copy($filepath, $destination, FILE_EXISTS_REPLACE);
-
-  //TODO Scale image down to max size
 
   $image_object = fj16_programme_and_jobs_tool_find_file_by_url($destination);
   if($image_object === NULL) {
