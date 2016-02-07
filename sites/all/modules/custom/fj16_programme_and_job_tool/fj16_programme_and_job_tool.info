@@ -69,6 +69,7 @@ features[flag][] = fj16_will_o_the_wisp
 features[node][] = fj16_bulk_job
 features[node][] = fj16_will_o_the_wisp
 features[rules_config][] = rules_fj16_go_to_confirmation_after_job_selection
+features[rules_config][] = rules_fj16_go_to_job_selection_after_flagging_wotw
 features[rules_config][] = rules_fj16_limit_one_job_selected
 features[rules_config][] = rules_fj16_limit_one_wotw_selected
 features[rules_config][] = rules_fj16_redirect_to_generator_after_editing_account

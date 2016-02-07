@@ -18,6 +18,15 @@ function fj16_programme_and_job_tool_default_rules_configuration() {
       "DO" : [ { "redirect" : { "url" : "generator\\/confirm" } } ]
     }
   }');
+  $items['rules_fj16_go_to_job_selection_after_flagging_wotw'] = entity_import('rules_config', '{ "rules_fj16_go_to_job_selection_after_flagging_wotw" : {
+      "LABEL" : "FJ16 Go to job selection after flagging wotw",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "flag" ],
+      "ON" : { "flag_flagged_fj16_will_o_the_wisp" : [] },
+      "DO" : [ { "redirect" : { "url" : "generator\\/assignment\\/explorer" } } ]
+    }
+  }');
   $items['rules_fj16_limit_one_job_selected'] = entity_import('rules_config', '{ "rules_fj16_limit_one_job_selected" : {
       "LABEL" : "FJ16 Limit one job selected",
       "PLUGIN" : "reaction rule",
