@@ -57,7 +57,11 @@ function fj16_programme_and_job_tool_strongarm() {
         ),
         'flag_fj16_choose_bulk_job' => array(
           'teaser' => array(
-            'weight' => '10',
+            'weight' => '2',
+            'visible' => TRUE,
+          ),
+          'default' => array(
+            'weight' => '8',
             'visible' => TRUE,
           ),
         ),
