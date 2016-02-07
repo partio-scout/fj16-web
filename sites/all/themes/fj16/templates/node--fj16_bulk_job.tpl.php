@@ -131,19 +131,17 @@
 
     <div class="actions">
       <div class="buttons-wrap">
-        <div class="read-more"><a href="<?php print $node_url; ?>"><?php print t('Lue lisää'); ?></a></h2></div>
+        <?php if($teaser) : ?><div class="read-more"><a href="<?php print $node_url; ?>"><?php print t('Lue lisää'); ?></a></h2></div><?php endif; ?>
         <?php print render($content['flag_fj16_choose_bulk_job']); ?>
+        <?php
+          if ($teaser && $logged_in && !isset($content['flag_fj16_choose_bulk_job']['#markup'])) {
+            print '<div class="job-full">' . t('Full!assignment', array('!assignment' => '')) . '</div>';
+          } else if ($logged_in && !isset($content['flag_fj16_choose_bulk_job']['#markup'])) {
+            print '<div class="job-full">' . t('This assignment is full') . '</div>';
+          }
+        ?>
       </div>
     </div>
-
-    <?php
-
-      if ($teaser && $logged_in && !isset($content['flag_fj16_choose_bulk_job'])) {
-        print '<div class="job-full">' . t('Full!assignment', array('!assignment' => '')) . '</div>';
-      } else if ($logged_in && !isset($content['flag_fj16_choose_bulk_job'])) {
-        print '<div class="job-full">' . t('This assignment is full') . '</div>';
-      }
-    ?>
   </div>
 
   <?php print render($content['links']); ?>

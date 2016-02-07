@@ -14,11 +14,7 @@
 }
 
 #edit-submit-rover-or-adult {
-	background: $purple;
-	
-	&:hover {
-		background: darken($purple, 10%);
-	}
+	@extend .purple;
 }
 
 .bulk-jobs-list {
@@ -75,13 +71,8 @@
 				margin-top: 2em;
 
 				a {
-					@extend .button;
-					background: $purple;
+					@extend .button, .purple;
 					font-size: 1em;
-
-					&:hover {
-						background: darken($purple, 5%);
-					}
 
 					&:after {
 						content: ' \00BB';
@@ -93,7 +84,7 @@
 				text-align: left;
 				margin: 1.5em 0 0;
 
-				.flag {
+				.flag-action {
 					font-size: 1em;
 					display: block;
 					max-width: 300px;
@@ -102,6 +93,11 @@
 						content: ' \00BB';
 					}
 				}
+			}
+
+			.job-full {
+				margin-top: 1.5em;
+				text-transform: uppercase;
 			}
 
 			@include respondMin(1025px) {
@@ -141,13 +137,21 @@
 				}
 
 				.flag-wrapper {
-					// text-align: right;
+					text-align: center;
 
-					.flag {
+					a {
+						color: #fff;
+					}
+
+					.flag-action {
 						text-transform: uppercase;
 						max-width: 300px;
 						margin: 1em auto 0;
 					}
+				}
+
+				.job-full {
+					color: #fff;
 				}
 			}
 		}
@@ -241,12 +245,10 @@
 		text-align: center;
 		margin: 2.5em 0 1em 0;
 
-		a {
+		a.flag-action {
 			@extend .button;
 			font-size: 1.4em;
 			text-transform: uppercase;
-			// background: $green;
-			// border-
 
 			&:after {
 				content: ' \00BB';
