@@ -36,6 +36,24 @@ function fj16_programme_and_job_tool_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_fj16_limit_one_wotw_selected'] = entity_import('rules_config', '{ "rules_fj16_limit_one_wotw_selected" : {
+      "LABEL" : "FJ16 Limit one will-o-the-wisp selected",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "flag" ],
+      "ON" : { "flag_flagged_fj16_will_o_the_wisp" : [] },
+      "DO" : [
+        { "flag_trim" : {
+            "flag" : "fj16_will_o_the_wisp",
+            "flagging_user" : [ "flagging_user" ],
+            "cutoff_size" : "1",
+            "trim_newest" : "0",
+            "permission_check" : "0"
+          }
+        }
+      ]
+    }
+  }');
   $items['rules_fj16_redirect_to_generator_after_editing_account'] = entity_import('rules_config', '{ "rules_fj16_redirect_to_generator_after_editing_account" : {
       "LABEL" : "FJ16 Redirect to generator after editing account",
       "PLUGIN" : "reaction rule",
