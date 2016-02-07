@@ -65,6 +65,7 @@ function fj16_programme_and_job_tool_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'fj16_bulk_job' => 'fj16_bulk_job',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Job type (field_job_type) */
   $handler->display->display_options['filters']['field_job_type_value']['id'] = 'field_job_type_value';
   $handler->display->display_options['filters']['field_job_type_value']['table'] = 'field_data_field_job_type';
@@ -72,6 +73,49 @@ function fj16_programme_and_job_tool_views_default_views() {
   $handler->display->display_options['filters']['field_job_type_value']['value'] = array(
     'rovers_and_adults' => 'rovers_and_adults',
   );
+  $handler->display->display_options['filters']['field_job_type_value']['group'] = 1;
+  /* Filter criterion: Content: Tags (field_tags) */
+  $handler->display->display_options['filters']['field_tags_tid']['id'] = 'field_tags_tid';
+  $handler->display->display_options['filters']['field_tags_tid']['table'] = 'field_data_field_tags';
+  $handler->display->display_options['filters']['field_tags_tid']['field'] = 'field_tags_tid';
+  $handler->display->display_options['filters']['field_tags_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_tags_tid']['expose']['operator_id'] = 'field_tags_tid_op';
+  $handler->display->display_options['filters']['field_tags_tid']['expose']['label'] = 'Tags';
+  $handler->display->display_options['filters']['field_tags_tid']['expose']['operator'] = 'field_tags_tid_op';
+  $handler->display->display_options['filters']['field_tags_tid']['expose']['identifier'] = 'field_tags_tid';
+  $handler->display->display_options['filters']['field_tags_tid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_tags_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+  );
+  $handler->display->display_options['filters']['field_tags_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_tags_tid']['vocabulary'] = 'bulk_jobs_tags';
+  /* Filter criterion: Content: Skill areas (field_skill_areas) */
+  $handler->display->display_options['filters']['field_skill_areas_tid']['id'] = 'field_skill_areas_tid';
+  $handler->display->display_options['filters']['field_skill_areas_tid']['table'] = 'field_data_field_skill_areas';
+  $handler->display->display_options['filters']['field_skill_areas_tid']['field'] = 'field_skill_areas_tid';
+  $handler->display->display_options['filters']['field_skill_areas_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_skill_areas_tid']['expose']['operator_id'] = 'field_skill_areas_tid_op';
+  $handler->display->display_options['filters']['field_skill_areas_tid']['expose']['label'] = 'Skill areas';
+  $handler->display->display_options['filters']['field_skill_areas_tid']['expose']['operator'] = 'field_skill_areas_tid_op';
+  $handler->display->display_options['filters']['field_skill_areas_tid']['expose']['identifier'] = 'field_skill_areas_tid';
+  $handler->display->display_options['filters']['field_skill_areas_tid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_skill_areas_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+  );
+  $handler->display->display_options['filters']['field_skill_areas_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_skill_areas_tid']['vocabulary'] = 'bulk_jobs_skill_areas';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -92,6 +136,8 @@ function fj16_programme_and_job_tool_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
+    t('Tags'),
+    t('Skill areas'),
     t('Page'),
   );
   $export['fj16_bulk_jobs'] = $view;
@@ -115,9 +161,16 @@ function fj16_programme_and_job_tool_views_default_views() {
   $handler->display->display_options['access']['role'] = array(
     6 => '6',
   );
-  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'time';
+  $handler->display->display_options['cache']['results_lifespan'] = '3600';
+  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['output_lifespan'] = '3600';
+  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Filter';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Lajittele';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '0';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -158,6 +211,48 @@ function fj16_programme_and_job_tool_views_default_views() {
   $handler->display->display_options['filters']['field_job_type_value']['value'] = array(
     'explorers' => 'explorers',
   );
+  /* Filter criterion: Content: Tags (field_tags) */
+  $handler->display->display_options['filters']['field_tags_tid']['id'] = 'field_tags_tid';
+  $handler->display->display_options['filters']['field_tags_tid']['table'] = 'field_data_field_tags';
+  $handler->display->display_options['filters']['field_tags_tid']['field'] = 'field_tags_tid';
+  $handler->display->display_options['filters']['field_tags_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_tags_tid']['expose']['operator_id'] = 'field_tags_tid_op';
+  $handler->display->display_options['filters']['field_tags_tid']['expose']['label'] = 'Tags';
+  $handler->display->display_options['filters']['field_tags_tid']['expose']['operator'] = 'field_tags_tid_op';
+  $handler->display->display_options['filters']['field_tags_tid']['expose']['identifier'] = 'field_tags_tid';
+  $handler->display->display_options['filters']['field_tags_tid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_tags_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+  );
+  $handler->display->display_options['filters']['field_tags_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_tags_tid']['vocabulary'] = 'bulk_jobs_tags';
+  /* Filter criterion: Content: Skill areas (field_skill_areas) */
+  $handler->display->display_options['filters']['field_skill_areas_tid']['id'] = 'field_skill_areas_tid';
+  $handler->display->display_options['filters']['field_skill_areas_tid']['table'] = 'field_data_field_skill_areas';
+  $handler->display->display_options['filters']['field_skill_areas_tid']['field'] = 'field_skill_areas_tid';
+  $handler->display->display_options['filters']['field_skill_areas_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_skill_areas_tid']['expose']['operator_id'] = 'field_skill_areas_tid_op';
+  $handler->display->display_options['filters']['field_skill_areas_tid']['expose']['label'] = 'Skill areas';
+  $handler->display->display_options['filters']['field_skill_areas_tid']['expose']['operator'] = 'field_skill_areas_tid_op';
+  $handler->display->display_options['filters']['field_skill_areas_tid']['expose']['identifier'] = 'field_skill_areas_tid';
+  $handler->display->display_options['filters']['field_skill_areas_tid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_skill_areas_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+  );
+  $handler->display->display_options['filters']['field_skill_areas_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_skill_areas_tid']['vocabulary'] = 'bulk_jobs_skill_areas';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -166,9 +261,9 @@ function fj16_programme_and_job_tool_views_default_views() {
     t('Master'),
     t('Millaisen pestin sinä haluat?'),
     t('more'),
-    t('Apply'),
+    t('Filter'),
     t('Reset'),
-    t('Sort by'),
+    t('Lajittele'),
     t('Asc'),
     t('Desc'),
     t('Items per page'),
@@ -178,6 +273,8 @@ function fj16_programme_and_job_tool_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
+    t('Tags'),
+    t('Skill areas'),
     t('Page'),
   );
   $export['fj16_bulk_jobs_explorers'] = $view;
