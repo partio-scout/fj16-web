@@ -107,7 +107,14 @@ function fj16_programme_and_job_tool_strongarm() {
           'weight' => '1',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'flag_fj16_will_o_the_wisp' => array(
+          'teaser' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__fj16_will_o_the_wisp'] = $strongarm;

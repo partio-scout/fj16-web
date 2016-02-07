@@ -65,6 +65,7 @@ features[field_instance][] = node-fj16_will_o_the_wisp-field_wotw_description
 features[field_instance][] = node-fj16_will_o_the_wisp-field_wotw_image
 features[field_instance][] = taxonomy_term-bulk_jobs_tags-field_sharepoint_name
 features[flag][] = fj16_choose_bulk_job
+features[flag][] = fj16_will_o_the_wisp
 features[node][] = fj16_bulk_job
 features[node][] = fj16_will_o_the_wisp
 features[rules_config][] = rules_fj16_go_to_confirmation_after_job_selection
