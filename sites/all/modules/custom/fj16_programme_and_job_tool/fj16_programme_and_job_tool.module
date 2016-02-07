@@ -18,6 +18,11 @@ function fj16_programme_and_job_tool_menu() {
     'access arguments' => array('access content')
   );
 
+  $menu['generator/confirm'] = array(
+    'page callback' => '_fj16_programme_and_job_tool_generator_confirmation_page',
+    'access callback' => TRUE //TODO limit by roles
+  );
+
   return $menu;
 }
 
@@ -83,8 +88,9 @@ function _fj16_programme_and_job_tool_generator_page() {
     );
     return theme('fj16_generator_front', $variables);
   } else if(fj16_user_selections_complete($user)) {
-    drupal_set_title('Confirm your selection');
-    return drupal_get_form('_fj16_programme_and_job_tool_confirmation_form');
+    //TODO Show selections
+    drupal_set_title('TODO');
+    return 'Your selections';
   } else if(fj16_user_has_role_named('explorer')) {
     //TODO Redirect to will-o'-the-wisp selection when its done
     drupal_goto('generator/assignment/explorer');
@@ -94,6 +100,11 @@ function _fj16_programme_and_job_tool_generator_page() {
     drupal_set_title(t('Choose your age group'));
     return drupal_get_form('_fj16_programme_and_job_tool_role_form');
   }
+}
+
+function _fj16_programme_and_job_tool_generator_confirmation_page() {
+  drupal_set_title('Confirm your selection');
+  return drupal_get_form('_fj16_programme_and_job_tool_confirmation_form');
 }
 
 function _fj16_programme_and_job_tool_role_form($form, &$form_state) {
