@@ -838,7 +838,7 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
         'weight' => 2,
       ),
       'teaser' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
           'trim_length' => 50,
@@ -884,7 +884,7 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
         'weight' => 1,
       ),
       'teaser' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
           'image_link' => 'content',
