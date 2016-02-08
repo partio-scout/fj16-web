@@ -60,6 +60,9 @@ function fj16_programme_and_job_tool_flag_access($flag, $entity_id, $action, $ac
   if($action === 'flag' && $flag->name === 'fj16_choose_bulk_job') {
     return !fj16_programme_and_job_tool_is_job_full($entity_id, $flag);
   }
+  if($action === 'flag' && $flag->name === 'fj16_will_o_the_wisp') {
+    return !fj16_programme_and_job_tool_is_wotw_full($entity_id, $flag);
+  }
   return NULL;
 }
 
@@ -71,6 +74,15 @@ function fj16_programme_and_job_tool_is_job_full($nid, $flag) {
   $reserved = $node->field_inventory_reserved[LANGUAGE_NONE][0]['value'];
 
   return $flag_count >= ($max_count - $reserved);
+}
+
+function fj16_programme_and_job_tool_is_wotw_full($nid, $flag) {
+  $flag_count = $flag->get_count($nid);
+  
+  $node = node_load($nid);
+  $max_count = $node->field_inventory_total[LANGUAGE_NONE][0]['value'];
+
+  return $flag_count >= $max_count;
 }
 
 function fj16_programme_and_job_tool_page_alter(&$page) {
