@@ -121,7 +121,7 @@ function fj16_programme_and_job_tool_views_default_views() {
   $handler->display->display_options['filters']['language']['table'] = 'field_data_field_localized_title';
   $handler->display->display_options['filters']['language']['field'] = 'language';
   $handler->display->display_options['filters']['language']['value'] = array(
-    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+    '***DEFAULT_LANGUAGE***' => '***DEFAULT_LANGUAGE***',
   );
 
   /* Display: Page */
@@ -265,7 +265,7 @@ function fj16_programme_and_job_tool_views_default_views() {
   $handler->display->display_options['filters']['language']['table'] = 'field_data_field_localized_title';
   $handler->display->display_options['filters']['language']['field'] = 'language';
   $handler->display->display_options['filters']['language']['value'] = array(
-    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+    '***DEFAULT_LANGUAGE***' => '***DEFAULT_LANGUAGE***',
   );
 
   /* Display: Page */
