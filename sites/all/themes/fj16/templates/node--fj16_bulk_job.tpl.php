@@ -86,7 +86,10 @@
 
   <?php print render($title_prefix); ?>
   <?php if (!$page): ?>
-    <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
+    <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>">
+      <?php hide($content['field_localized_title']); ?>
+      <?php print $field_localized_title[0]['safe_value']; ?>
+    </a></h2>
   <?php endif; ?>
   <?php print render($title_suffix); ?>
 
@@ -118,7 +121,7 @@
           $text = $matches[0];
           hide($content['field_job_description']);
           print render($content);
-          echo $text;
+          echo check_plain($text);
         }
 
       } else {
@@ -131,7 +134,7 @@
 
     <div class="actions">
       <div class="buttons-wrap">
-        <?php if($teaser) : ?><div class="read-more"><a href="<?php print $node_url; ?>"><?php print t('Lue lisää'); ?></a></h2></div><?php endif; ?>
+        <?php if($teaser) : ?><div class="read-more"><a href="<?php print $node_url; ?>"><?php print t('Read more'); ?></a></h2></div><?php endif; ?>
         <?php print render($content['flag_fj16_choose_bulk_job']); ?>
         <?php
           if ($teaser && $logged_in && !isset($content['flag_fj16_choose_bulk_job']['#markup'])) {

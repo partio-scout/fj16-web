@@ -18,6 +18,16 @@ function fj16_programme_and_job_tool_menu() {
     'access arguments' => array('access content')
   );
 
+  $menu['generator/confirm'] = array(
+    'page callback' => '_fj16_programme_and_job_tool_generator_confirmation_page',
+    'access callback' => TRUE //TODO limit by roles
+  );
+
+  $menu['generator/thankyou'] = array(
+    'page callback' => '_fj16_programme_and_job_tool_generator_thankyou_page',
+    'access callback' => TRUE //TODO limit by roles
+  );
+
   return $menu;
 }
 
@@ -30,6 +40,18 @@ function fj16_programme_and_job_tool_theme($existing, $type, $theme, $path) {
         'alternative_login_link' => NULL
       ),
       'template' => 'templates/fj16_generator_front'
+    ),
+    'fj16_generator_thankyou' => array(
+      'variables' => array(
+        'job_name' => NULL,
+        'contact_name' => NULL,
+        'contact_email' => NULL,
+        'contact_phone' => NULL,
+        'job_further_info' => NULL,
+        'will_o_the_wisp_name' => NULL,
+        'info_text' => NULL
+      ),
+      'template' => 'templates/fj16_generator_thankyou'
     )
   );
 }
@@ -37,6 +59,9 @@ function fj16_programme_and_job_tool_theme($existing, $type, $theme, $path) {
 function fj16_programme_and_job_tool_flag_access($flag, $entity_id, $action, $account) {
   if($action === 'flag' && $flag->name === 'fj16_choose_bulk_job') {
     return !fj16_programme_and_job_tool_is_job_full($entity_id, $flag);
+  }
+  if($action === 'flag' && $flag->name === 'fj16_will_o_the_wisp') {
+    return !fj16_programme_and_job_tool_is_wotw_full($entity_id, $flag);
   }
   return NULL;
 }
@@ -49,6 +74,15 @@ function fj16_programme_and_job_tool_is_job_full($nid, $flag) {
   $reserved = $node->field_inventory_reserved[LANGUAGE_NONE][0]['value'];
 
   return $flag_count >= ($max_count - $reserved);
+}
+
+function fj16_programme_and_job_tool_is_wotw_full($nid, $flag) {
+  $flag_count = $flag->get_count($nid);
+  
+  $node = node_load($nid);
+  $max_count = $node->field_inventory_total[LANGUAGE_NONE][0]['value'];
+
+  return $flag_count >= $max_count;
 }
 
 function fj16_programme_and_job_tool_page_alter(&$page) {
@@ -83,17 +117,47 @@ function _fj16_programme_and_job_tool_generator_page() {
     );
     return theme('fj16_generator_front', $variables);
   } else if(fj16_user_selections_complete($user)) {
-    drupal_set_title('Confirm your selection');
-    return drupal_get_form('_fj16_programme_and_job_tool_confirmation_form');
+    //TODO Show selections
+    drupal_set_title('TODO');
+    return 'Your selections';
   } else if(fj16_user_has_role_named('explorer')) {
-    //TODO Redirect to will-o'-the-wisp selection when its done
-    drupal_goto('generator/assignment/explorer');
+    drupal_goto('generator/will-o-the-wisp');
   } else if(fj16_user_has_role_named('rover or adult')) {
     drupal_goto('generator/assignment');
   } else {
     drupal_set_title(t('Choose your age group'));
     return drupal_get_form('_fj16_programme_and_job_tool_role_form');
   }
+}
+
+function _fj16_programme_and_job_tool_generator_confirmation_page() {
+  drupal_set_title('Confirm your selection');
+  return drupal_get_form('_fj16_programme_and_job_tool_confirmation_form');
+}
+
+function _fj16_programme_and_job_tool_generator_thankyou_page() {
+  global $user;
+  drupal_set_title('Thank you!');
+
+  $job = fj16_get_selected_job($user);
+  $job_title = field_get_items('node', $job, 'field_localized_title')[0]['value'];
+  $name = field_get_items('node', $job, 'field_contact_name')[0]['value'];
+  $email = field_get_items('node', $job, 'field_contact_email')[0]['value'];
+  $phone = field_get_items('node', $job, 'field_contact_phone')[0]['value'];
+
+  //TODO Get will-the-wisp
+  $wisp_name = 'Virvatulen nimi';
+
+  $variables = array(
+    'job_name' => check_plain($job_title),
+    'contact_name' => check_plain($name),
+    'contact_email' => check_plain($email),
+    'contact_phone' => check_plain($phone),
+    'job_further_info' => t('Your contact person will contact you within the next 30 days.'),
+    'will_o_the_wisp_name' => check_plain($wisp_name),
+    'info_text' => 'Lorem ipsum dolor sit amet...'
+  );
+  return theme('fj16_generator_thankyou', $variables);
 }
 
 function _fj16_programme_and_job_tool_role_form($form, &$form_state) {
@@ -125,16 +189,13 @@ function _fj16_programme_and_job_tool_role_form_submit($form, &$form_state) {
     fj16_user_add_role($user, 'rover or adult');
   }
 
-  drupal_goto('generator'); //TODO Maybe go directly to page?
+  drupal_goto('generator');
 }
 
 function _fj16_programme_and_job_tool_confirmation_form($form, &$form_state) {
   global $user;
 
-  $selections = fj16_get_user_selections($user);
-
-  $assignment_flag = current($selections['fj16_choose_bulk_job']);
-  $assignment = node_load($assignment_flag->entity_id);
+  $assignment = fj16_get_selected_job($user);
   $assignment_title = field_get_items('node', $assignment, 'field_localized_title')[0]['value'];
 
   $form['assignment'] = array(
@@ -162,10 +223,13 @@ function _fj16_programme_and_job_tool_confirmation_form($form, &$form_state) {
       . l($user->mail, $user->mail)
   );
 
+  $greetings = field_get_items('user', $user_full, 'field_further_info_for_org')[0]['value'];
+
   $form['greetings'] = array(
     '#type' => 'textarea',
     '#rows' => 3,
-    '#title' => t('Optional greetings for the camp organisation')
+    '#title' => t('Optional greetings for the camp organisation'),
+    '#default_value' => $greetings
   );
 
   $form['confirm'] = array(
@@ -177,8 +241,14 @@ function _fj16_programme_and_job_tool_confirmation_form($form, &$form_state) {
 }
 
 function _fj16_programme_and_job_tool_confirmation_form_submit($form, &$form_state) {
-  //TODO Handle save
-  die('error: functionality not implemented');
+  global $user;
+
+  $greetings = $form_state['values']['greetings'];
+  $real_user = user_load($user->uid);
+  $real_user->field_further_info_for_org[LANGUAGE_NONE][0]['value'] = $greetings;
+  user_save($real_user);
+
+  $form_state['redirect'] = 'generator/thankyou';
 }
 
 function fj16_get_user_selections($user) {
@@ -194,6 +264,15 @@ function fj16_user_selections_complete($user) {
     //TODO Check explorer selection
   }
   return TRUE;
+}
+
+function fj16_get_selected_job($user) {
+  $selections = fj16_get_user_selections($user);
+  if(empty($selections['fj16_choose_bulk_job'])) {
+    return FALSE;
+  }
+  $flag = current($selections['fj16_choose_bulk_job']);
+  return node_load($flag->entity_id);
 }
 
 
@@ -357,8 +436,6 @@ function fj16_programme_and_job_tool_persist_image($filepath, $url) {
   $destination_filename = md5($url) . '.' . $extension;
   $destination = FJ16_BULK_JOBS_IMAGE_DIR . '/' . $destination_filename;
   $filepath = file_unmanaged_copy($filepath, $destination, FILE_EXISTS_REPLACE);
-
-  //TODO Scale image down to max size
 
   $image_object = fj16_programme_and_jobs_tool_find_file_by_url($destination);
   if($image_object === NULL) {

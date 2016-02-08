@@ -28,7 +28,11 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
+<<<<<<< HEAD
         'weight' => 14,
+=======
+        'weight' => 9,
+>>>>>>> origin/feature/programme-and-jobs-tool
       ),
     ),
     'entity_type' => 'node',
@@ -69,7 +73,11 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
+<<<<<<< HEAD
         'weight' => 9,
+=======
+        'weight' => 12,
+>>>>>>> origin/feature/programme-and-jobs-tool
       ),
     ),
     'entity_type' => 'node',
@@ -110,7 +118,11 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
+<<<<<<< HEAD
         'weight' => 10,
+=======
+        'weight' => 13,
+>>>>>>> origin/feature/programme-and-jobs-tool
       ),
     ),
     'entity_type' => 'node',
@@ -150,7 +162,11 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
+<<<<<<< HEAD
         'weight' => 11,
+=======
+        'weight' => 5,
+>>>>>>> origin/feature/programme-and-jobs-tool
       ),
     ),
     'entity_type' => 'node',
@@ -190,7 +206,11 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
+<<<<<<< HEAD
         'weight' => 12,
+=======
+        'weight' => 4,
+>>>>>>> origin/feature/programme-and-jobs-tool
       ),
     ),
     'entity_type' => 'node',
@@ -231,7 +251,11 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
+<<<<<<< HEAD
         'weight' => 13,
+=======
+        'weight' => 8,
+>>>>>>> origin/feature/programme-and-jobs-tool
       ),
     ),
     'entity_type' => 'node',
@@ -272,7 +296,11 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
+<<<<<<< HEAD
         'weight' => 8,
+=======
+        'weight' => 3,
+>>>>>>> origin/feature/programme-and-jobs-tool
       ),
     ),
     'entity_type' => 'node',
@@ -315,7 +343,11 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
+<<<<<<< HEAD
         'weight' => 1,
+=======
+        'weight' => 10,
+>>>>>>> origin/feature/programme-and-jobs-tool
       ),
     ),
     'entity_type' => 'node',
@@ -420,7 +452,11 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
+<<<<<<< HEAD
         'weight' => 4,
+=======
+        'weight' => 7,
+>>>>>>> origin/feature/programme-and-jobs-tool
       ),
     ),
     'entity_type' => 'node',
@@ -454,10 +490,16 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
         'weight' => 9,
       ),
       'teaser' => array(
-        'label' => 'above',
+        'label' => 'hidden',
+        'module' => 'text',
         'settings' => array(),
+<<<<<<< HEAD
         'type' => 'hidden',
         'weight' => 3,
+=======
+        'type' => 'text_plain',
+        'weight' => 0,
+>>>>>>> origin/feature/programme-and-jobs-tool
       ),
     ),
     'entity_type' => 'node',
@@ -497,7 +539,11 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
+<<<<<<< HEAD
         'weight' => 5,
+=======
+        'weight' => 11,
+>>>>>>> origin/feature/programme-and-jobs-tool
       ),
     ),
     'entity_type' => 'node',
@@ -579,7 +625,11 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
+<<<<<<< HEAD
         'weight' => 7,
+=======
+        'weight' => 14,
+>>>>>>> origin/feature/programme-and-jobs-tool
       ),
     ),
     'entity_type' => 'node',
@@ -599,6 +649,276 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
       ),
       'type' => 'taxonomy_autocomplete',
       'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'node-fj16_will_o_the_wisp-field_inventory_total'
+  $field_instances['node-fj16_will_o_the_wisp-field_inventory_total'] = array(
+    'bundle' => 'fj16_will_o_the_wisp',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_inventory_total',
+    'label' => 'Inventory total',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max' => '',
+      'min' => 0,
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance: 'node-fj16_will_o_the_wisp-field_localized_title'
+  $field_instances['node-fj16_will_o_the_wisp-field_localized_title'] = array(
+    'bundle' => 'fj16_will_o_the_wisp',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_plain',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_localized_title',
+    'label' => 'Localized title',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-fj16_will_o_the_wisp-field_required_gear'
+  $field_instances['node-fj16_will_o_the_wisp-field_required_gear'] = array(
+    'bundle' => 'fj16_will_o_the_wisp',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_required_gear',
+    'label' => 'Required gear',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance: 'node-fj16_will_o_the_wisp-field_suitability'
+  $field_instances['node-fj16_will_o_the_wisp-field_suitability'] = array(
+    'bundle' => 'fj16_will_o_the_wisp',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_suitability',
+    'label' => 'Suitability',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'node-fj16_will_o_the_wisp-field_wotw_description'
+  $field_instances['node-fj16_will_o_the_wisp-field_wotw_description'] = array(
+    'bundle' => 'fj16_will_o_the_wisp',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(
+          'trim_length' => 50,
+        ),
+        'type' => 'text_trimmed',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_wotw_description',
+    'label' => 'Description',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'node-fj16_will_o_the_wisp-field_wotw_image'
+  $field_instances['node-fj16_will_o_the_wisp-field_wotw_image'] = array(
+    'bundle' => 'fj16_will_o_the_wisp',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => 'content',
+          'image_style' => 'medium',
+        ),
+        'type' => 'image',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_wotw_image',
+    'label' => 'Image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'entity_translation_sync' => FALSE,
+      'file_directory' => 'wotw-images',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '2000x2000',
+      'min_resolution' => '500x500',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 4,
     ),
   );
 
@@ -643,18 +963,23 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
   t('Contact email');
   t('Contact name');
   t('Contact phone');
+  t('Description');
   t('Do not edit this field.');
   t('How many spots have been reserved outside of this system');
+  t('Image');
   t('Image URL');
   t('Inventory maximum');
   t('Inventory minimum');
   t('Inventory reserved');
+  t('Inventory total');
   t('Job description');
   t('Job type');
   t('Localized title');
+  t('Required gear');
   t('SharePoint Name');
   t('SharePoint Unique ID');
   t('Skill areas');
+  t('Suitability');
   t('Tags');
   t('image');
 
