@@ -133,7 +133,7 @@
 
     <div class="actions">
       <div class="buttons-wrap">
-        <?php if($teaser) : ?><div class="read-more"><a href="<?php print $node_url; ?>"><?php print t('Lue lisää'); ?></a></h2></div><?php endif; ?>
+        <?php if($teaser) : ?><div class="read-more"><a href="<?php print $node_url; ?>"><?php print t('Read more'); ?></a></h2></div><?php endif; ?>
         <?php print render($content['flag_fj16_choose_bulk_job']); ?>
         <?php
           if ($teaser && $logged_in && !isset($content['flag_fj16_choose_bulk_job']['#markup'])) {
