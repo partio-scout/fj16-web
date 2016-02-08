@@ -1,133 +1,147 @@
 (function($, Drupal, undefined){
 
-	if($('.node-fj16-frontpage-box').length) {
-		$('.node-fj16-frontpage-box').each(function(){
-			if($(this).find('.image .hashtag').length > 0) {
-				
-				// Init the Instagram feed
-				
-				var el = $(this).find('.image');
-				var hashtag = el.find('.hashtag').text().trim();
-				
-				el.addClass('instagram');
-				el.parents('.node').css('min-height', 0);
+  if($('.node-fj16-frontpage-box').length) {
+    $('.node-fj16-frontpage-box').each(function(){
+      if($(this).find('.image .hashtag').length > 0) {
+        
+        // Init the Instagram feed
+        
+        var el = $(this).find('.image');
+        var hashtag = el.find('.hashtag').text().trim();
+        
+        el.addClass('instagram');
+        el.parents('.node').css('min-height', 0);
 
-				var i = 1;
-				$.getJSON('/instajson/' + hashtag, function(data) {
-					$.each(shuffle(data['data']), function(key, img) {
-						el.append('<a href="' + img.link + '" target="_blank" class="img' + i + '"><img src="' + img.images.standard_resolution.url + '"></a>');
-						if(i++ % 5 == 0) {
-							return false;
-						}
-					});
-				});
-
-
-			} else {
-				// We're parallaxin, baby
-				$(this).find('.image').attr('data-bottom-top', 'transform: translate3d(0,0%,0)');
-				$(this).find('.image').attr('data-top-bottom', 'transform: translate3d(0,-16.66%,0)');	
-			}
-		});
-
-		initSkrollr();
-		$(window).resize(function() {
-			initSkrollr();
-		});
-
-		// Fade in animations
-		if($(window).width() > 1024) {
-			$(window).scroll(function() {
-				$('.node-fj16-frontpage-box').each(function(){
-					if($(this).isOnScreen(1,0.5)){
-						var $this = $(this);
-						setTimeout(function(){
-							$this.find('h2').addClass('animated fadeInDown');
-							$this.find('.body, .link').addClass('animated fadeInUp');
-						}, 300);
-					}
-				});
-			});
-		} else {
-			$('.node-fj16-frontpage-box').find('h2, .body, .link').addClass('animated');
-		}
-	}
-
-	$('#mobile-menu-toggle').click(function(){
-		$('#mobile-menu').toggleClass('visible');
-	});
-
-	$('#to-content').click(function(){
-		$('html,body').animate({scrollTop: $('#main').offset().top}, 400);
-	});
-	
-	$('#sidebar-left .block-menu-block h2 a').wrapInner('<span></span>');
+        var i = 1;
+        $.getJSON('/instajson/' + hashtag, function(data) {
+          $.each(shuffle(data['data']), function(key, img) {
+            el.append('<a href="' + img.link + '" target="_blank" class="img' + i + '"><img src="' + img.images.standard_resolution.url + '"></a>');
+            if(i++ % 5 == 0) {
+              return false;
+            }
+          });
+        });
 
 
-	// Sticky nav
-	if($('#navigation').length) {
-		navpos = $('#navigation').offset();
-		$(window).bind('scroll', function() {
-			if ($(window).scrollTop() > navpos.top - 1) { // -1 for fixing lagging at bottom
-				$('#navigation').addClass('fixed');
-				$('#header').addClass('fixed-nav');
-			}
-			else {
-				$('#navigation').removeClass('fixed');
-				$('#header').removeClass('fixed-nav');
-			}
-		});
-	}
-	
-	// Avoid `console` errors in browsers that lack a console.
-	(function() {
-		var method;
-		var noop = function noop() {};
-		var methods =	[
-							'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
-							'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
-							'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
-							'timeStamp', 'trace', 'warn'
-						];
-		
-		var length = methods.length;
-		var console = (window.console = window.console || {});
+      } else {
+        // We're parallaxin, baby
+        $(this).find('.image').attr('data-bottom-top', 'transform: translate3d(0,0%,0)');
+        $(this).find('.image').attr('data-top-bottom', 'transform: translate3d(0,-16.66%,0)');  
+      }
+    });
 
-		while (length--) {
-			method = methods[length];
+    initSkrollr();
+    $(window).resize(function() {
+      initSkrollr();
+    });
 
-			// Only stub undefined methods.
-			if (!console[method]) {
-				console[method] = noop;
-			}
-		}
-	}());
+    // Fade in animations
+    if($(window).width() > 1024) {
+      $(window).scroll(function() {
+        $('.node-fj16-frontpage-box').each(function(){
+          if($(this).isOnScreen(1,0.5)){
+            var $this = $(this);
+            setTimeout(function(){
+              $this.find('h2').addClass('animated fadeInDown');
+              $this.find('.body, .link').addClass('animated fadeInUp');
+            }, 300);
+          }
+        });
+      });
+    } else {
+      $('.node-fj16-frontpage-box').find('h2, .body, .link').addClass('animated');
+    }
+  }
+
+  //$('#mobile-menu-toggle').click(function(){
+    //$('#mobile-menu').toggleClass('visible');
+  //});
+  
+  $('#mobile-menu-toggle').sidr({
+    name: 'sidr-main',
+    source: '#mobile-menu'
+  });
+  
+  $(document).bind('click', function () {
+    $.sidr('close', 'sidr-main');
+  });
+  
+  //$('.sidr-class-expanded>a').click(function(e){
+  //  e.preventDefault();
+  //  $(this).parent().toggleClass('open');
+  //});
+
+  $('#to-content').click(function(){
+    $('html,body').animate({scrollTop: $('#main').offset().top}, 400);
+  });
+  
+  $('#sidebar-left .block-menu-block h2 a').wrapInner('<span></span>');
+
+
+  // Sticky nav
+  if($('#navigation').length) {
+    navpos = $('#navigation').offset();
+    $(window).bind('scroll', function() {
+      if ($(window).scrollTop() > navpos.top - 1) { // -1 for fixing lagging at bottom
+        $('#navigation').addClass('fixed');
+        $('#header').addClass('fixed-nav');
+      }
+      else {
+        $('#navigation').removeClass('fixed');
+        $('#header').removeClass('fixed-nav');
+      }
+    });
+  }
+  
+  // Avoid `console` errors in browsers that lack a console.
+  (function() {
+    var method;
+    var noop = function noop() {};
+    var methods =  [
+              'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
+              'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
+              'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
+              'timeStamp', 'trace', 'warn'
+            ];
+    
+    var length = methods.length;
+    var console = (window.console = window.console || {});
+
+    while (length--) {
+      method = methods[length];
+
+      // Only stub undefined methods.
+      if (!console[method]) {
+        console[method] = noop;
+      }
+    }
+  }());
 
 })(jQuery, Drupal);
 
 var s = undefined;
 
 function initSkrollr() {
-	if(screen.width > 1024 && !(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
-		if(s == undefined) {
-			s = skrollr.init({forceHeight:false});
-		}
-	} else {
-		if(s != undefined) {
-			s.destroy();
-			s = undefined;
-		}
-	}
+  if(screen.width > 1024 && !(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
+    if(s == undefined) {
+      s = skrollr.init({forceHeight:false});
+    }
+  } else {
+    if(s != undefined) {
+      s.destroy();
+      s = undefined;
+    }
+  }
 }
 
 function shuffle(array) {
-	for (var i = array.length - 1; i > 0; i--) {
-		var j = Math.floor(Math.random() * (i + 1));
-		var temp = array[i];
-		array[i] = array[j];
-		array[j] = temp;
-	}
-	return array;
+  for (var i = array.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+  return array;
 }
 
 jQuery.fn.isOnScreen = function(x, y){
@@ -172,13 +186,13 @@ jQuery.fn.isOnScreen = function(x, y){
     
 };
 
-$('[data-ga-event-category][data-ga-event-action]').click(function(e){
-	
-	var eventCategory = $(this).data('ga-event-category'),
-	    eventAction   = $(this).data('ga-event-action'),
-	    eventLabel    = $(this).data('ga-event-label'),
-	    eventValue    = $(this).data('ga-event-value');
-			
-	ga('send', 'event', eventCategory, eventAction, eventLabel, eventValue);	
+jQuery('[data-ga-event-category][data-ga-event-action]').click(function(e){
+  
+  var eventCategory = $(this).data('ga-event-category'),
+      eventAction   = $(this).data('ga-event-action'),
+      eventLabel    = $(this).data('ga-event-label'),
+      eventValue    = $(this).data('ga-event-value');
+      
+  ga('send', 'event', eventCategory, eventAction, eventLabel, eventValue);  
 
 });

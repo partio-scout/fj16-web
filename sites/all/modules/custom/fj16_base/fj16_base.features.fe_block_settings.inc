@@ -86,7 +86,7 @@ function fj16_base_default_fe_block_settings() {
     'i18n_mode' => 0,
     'module' => 'menu_block',
     'node_types' => array(),
-    'pages' => '',
+    'pages' => 'pestit',
     'roles' => array(),
     'themes' => array(
       'fj16' => array(

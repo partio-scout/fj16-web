@@ -1,123 +1,135 @@
 #footer {
-	background: #dbdbdb;
-	padding: 100px 0;
+  background: #dbdbdb;
+  padding: 100px 0;
   
   > .container {
     max-width: 1200px;
   }
 
-	.footer_section.narrow {
-		width: 25%;
-		display: block;
-		float: left;
-		text-align: right;
+  .footer_section.narrow {
+    width: 25%;
+    display: block;
+    float: left;
+    text-align: right;
 
-		&:first-child {
-			text-align: left;
-		}
+    &:first-child {
+      text-align: left;
+    }
 
-	}
+  }
 
-	.block {
+  .block {
 
-		h2 {
-			display: none;
-		}
+    h2 {
+      display: none;
+    }
 
-		h5 {
-			font-family: $exo;
-			text-transform: uppercase;
-			margin-bottom: 1em;
-		}
+    h5 {
+      font-family: $exo;
+      text-transform: uppercase;
+      margin-bottom: 1em;
+    }
 
-		p, address {
-			margin-bottom: 1em;
-		}
+    p, address {
+      margin-bottom: 1em;
+    }
 
-		.content {
+    .content {
 
-			.footer_section {
-				width: (100% / 3);
-				float: left;
-				padding: 0 20px;
+      .footer_section {
+        width: (100% / 3);
+        float: left;
+        padding: 0 20px;
 
-				&:first-child {
-					padding: 0 50px 0 20px;
-				}
+        &:first-child {
+          padding: 0 50px 0 20px;
+        }
 
-				#roihu-logo {
-					display: inline-block;
-					max-width: 100%;
-					width: 241px;
-					height: 90px;
-					text-indent: -9999em;
+        #roihu-logo {
+          display: inline-block;
+          max-width: 100%;
+          width: 241px;
+          height: 90px;
+          text-indent: -9999em;
 
-					@include at2x('footer_roihu_logo2', 100%);
-					background-repeat: no-repeat;
-					margin-bottom: 20px;
-				}
+          @include at2x('footer_roihu_logo2', 100%);
+          background-repeat: no-repeat;
+          margin-bottom: 20px;
+          
+          @include respond(mobile) {
+            width: 180px;
+          }
+        }
 
-				#sp-logo {
-					display: inline-block;
-					max-width: 100%;
-					width: 235px;
-					height: 90px;
-					text-indent: -9999em;
+        #sp-logo {
+          display: inline-block;
+          max-width: 100%;
+          width: 235px;
+          height: 90px;
+          text-indent: -9999em;
 
-					@include at2x('footer_sp_logo2', 100%);
-					background-repeat: no-repeat;
-					margin-bottom: 20px;
-				}
-				
-				h5 {
-					margin-bottom: 0;
-				}
-				
-				address {
-					margin-bottom: 0;
-				}
-			}
+          @include at2x('footer_sp_logo2', 100%);
+          background-repeat: no-repeat;
+          margin-bottom: 20px;
+          
+          @include respond(mobile) {
+            width: 180px;
+          }
+        }
+        
+        h5 {
+          margin-bottom: 0;
+          
+          @include respond(mobile) {
+            margin: 0 0 15px;
+          }
+        }
+        
+        address {
+          margin-bottom: 0;
+        }
+      }
 
 
-		}
-	}
+    }
+  }
 
-	@include respond(small) {
-		text-align: center;
-		padding: 50px 0;
+  @include respond(small) {
+    text-align: center;
+    padding: 50px 0;
 
-		#roihu-logo, #sp-logo {
-			display: block !important;
-			margin: 0 auto !important;
-		}
+    #roihu-logo, #sp-logo {
+      display: block !important;
+      margin: 0 auto !important;
+    }
 
-		.block {
-			@include clearfix();
-		}
+    .block {
+      @include clearfix();
+    }
 
-		.content {
-			width: 100% !important;
+    .content {
+      width: 100% !important;
 
-			.footer_section {
-				margin-top: 50px !important;
-			}
+      .footer_section {
+        margin-top: 50px !important;
+      }
 
-			.footer_section:first-child {
-				margin-top: 20px !important;
-			}
+      .footer_section:first-child {
+        margin-top: 20px !important;
+      }
 
-			p {
-				max-width: 400px;
-				margin-left: auto;
-				margin-right: auto;
-			}
-		}
+      p {
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
 
-		.footer_section, .footer_section.narrow {
-			display: block !important;
-			width: 100% !important;
-			float: none !important;
-			padding: 0 !important;
-		}
-	}
+    .footer_section, .footer_section.narrow {
+      display: block !important;
+      width: 100% !important;
+      float: none !important;
+      padding: 0 !important;
+    }
+  }
 }
