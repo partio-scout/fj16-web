@@ -109,4 +109,5 @@ features[variable][] = node_submitted_fj16_bulk_job
 features[variable][] = node_submitted_fj16_will_o_the_wisp
 features[views_view][] = fj16_bulk_jobs
 features[views_view][] = fj16_bulk_jobs_explorers
+features[views_view][] = fj16_will_o_the_wisps
 project path = sites/all/modules/custom
