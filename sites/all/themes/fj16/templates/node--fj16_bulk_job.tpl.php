@@ -87,6 +87,7 @@
   <?php print render($title_prefix); ?>
   <?php if (!$page): ?>
     <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>">
+      <?php hide($content['field_localized_title']); ?>
       <?php print $field_localized_title[0]['safe_value']; ?>
     </a></h2>
   <?php endif; ?>
