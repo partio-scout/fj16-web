@@ -162,6 +162,23 @@
 			}
 		}
 	}
+
+	#tags-cloud {
+		a {
+			margin: 0 5px 0 0;
+			font-size: 0.8em;
+			background: $blue;
+			color: #fff;
+			padding: 3px 6px;
+			text-transform: lowercase;
+			position: relative;
+			top: -2px;
+
+			&:hover, &.active {
+				background: darken($blue, 15%);
+			}
+		}
+	}
 }
 
 .node-fj16-bulk-job {

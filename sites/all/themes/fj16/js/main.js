@@ -88,6 +88,36 @@
 			percentPosition: true
 			// columnWidth: 300
 		});
+
+		$('#edit-field-tags-tid').parent().append('<div id="tags-cloud"></div>');
+
+		$('#edit-field-tags-tid').hide();
+
+		$('#edit-field-tags-tid option').each(function(index) {
+			// console.log('<a href="#" data-value="' + $(this).value() + '">' + $(this).text() + '</a>');
+			$('#tags-cloud').append('<a href="#" data-value="' + $(this).val() + '" class="select-tag">' + $(this).text() + '</a>');
+		});
+
+		$('.select-tag').click(function(e){
+			e.preventDefault();
+
+			var id = $(this).attr('data-value');
+
+			if($(this).hasClass('active')) {
+				console.log('Unselected: ' + id);
+				
+				$(this).removeClass('active');
+				$('#edit-field-tags-tid option[value="' + id + '"]').removeAttr('selected');
+			} else {
+				console.log('Selected: ' + id);
+
+				$(this).addClass('active');
+				$('#edit-field-tags-tid option[value="' + id + '"]').attr('selected', 'selected');
+			}
+
+			
+		});
+
 	}
 	
 	// Avoid `console` errors in browsers that lack a console.
