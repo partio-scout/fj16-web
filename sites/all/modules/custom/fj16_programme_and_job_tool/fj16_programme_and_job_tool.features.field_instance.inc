@@ -28,11 +28,7 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-<<<<<<< HEAD
         'weight' => 14,
-=======
-        'weight' => 9,
->>>>>>> origin/feature/programme-and-jobs-tool
       ),
     ),
     'entity_type' => 'node',
@@ -73,11 +69,7 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-<<<<<<< HEAD
         'weight' => 9,
-=======
-        'weight' => 12,
->>>>>>> origin/feature/programme-and-jobs-tool
       ),
     ),
     'entity_type' => 'node',
@@ -118,11 +110,7 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-<<<<<<< HEAD
         'weight' => 10,
-=======
-        'weight' => 13,
->>>>>>> origin/feature/programme-and-jobs-tool
       ),
     ),
     'entity_type' => 'node',
@@ -162,11 +150,7 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-<<<<<<< HEAD
         'weight' => 11,
-=======
-        'weight' => 5,
->>>>>>> origin/feature/programme-and-jobs-tool
       ),
     ),
     'entity_type' => 'node',
@@ -206,11 +190,7 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-<<<<<<< HEAD
         'weight' => 12,
-=======
-        'weight' => 4,
->>>>>>> origin/feature/programme-and-jobs-tool
       ),
     ),
     'entity_type' => 'node',
@@ -251,11 +231,7 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-<<<<<<< HEAD
         'weight' => 13,
-=======
-        'weight' => 8,
->>>>>>> origin/feature/programme-and-jobs-tool
       ),
     ),
     'entity_type' => 'node',
@@ -296,11 +272,7 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-<<<<<<< HEAD
         'weight' => 8,
-=======
-        'weight' => 3,
->>>>>>> origin/feature/programme-and-jobs-tool
       ),
     ),
     'entity_type' => 'node',
@@ -343,11 +315,7 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-<<<<<<< HEAD
         'weight' => 1,
-=======
-        'weight' => 10,
->>>>>>> origin/feature/programme-and-jobs-tool
       ),
     ),
     'entity_type' => 'node',
@@ -452,11 +420,7 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-<<<<<<< HEAD
         'weight' => 4,
-=======
-        'weight' => 7,
->>>>>>> origin/feature/programme-and-jobs-tool
       ),
     ),
     'entity_type' => 'node',
@@ -493,13 +457,8 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
-<<<<<<< HEAD
         'type' => 'hidden',
         'weight' => 3,
-=======
-        'type' => 'text_plain',
-        'weight' => 0,
->>>>>>> origin/feature/programme-and-jobs-tool
       ),
     ),
     'entity_type' => 'node',
@@ -539,11 +498,7 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-<<<<<<< HEAD
         'weight' => 5,
-=======
-        'weight' => 11,
->>>>>>> origin/feature/programme-and-jobs-tool
       ),
     ),
     'entity_type' => 'node',
@@ -625,11 +580,7 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-<<<<<<< HEAD
         'weight' => 7,
-=======
-        'weight' => 14,
->>>>>>> origin/feature/programme-and-jobs-tool
       ),
     ),
     'entity_type' => 'node',
