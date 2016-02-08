@@ -14,5 +14,6 @@ stylesheets[all][] = css/fj16.css
 
 scripts[] = js/skrollr.min.js
 scripts[] = js/hyphenate.js
-scripts[] = js/main.js
 scripts[] = js/tracking.js
+scripts[] = js/masonry.pkgd.min.js
+scripts[] = js/main.js

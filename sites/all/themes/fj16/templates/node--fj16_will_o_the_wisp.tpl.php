@@ -87,11 +87,8 @@
   <?php print render($title_prefix); ?>
   <?php if (!$page): ?>
     <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>">
-      <?php
-        hide($content['field_localized_title']);
-        $value = field_get_items('node', $node, 'field_localized_title')[0]['value'];
-        print check_plain($value);
-      ?>
+      <?php hide($content['field_localized_title']); ?>
+      <?php print $field_localized_title[0]['safe_value']; ?>
     </a></h2>
   <?php endif; ?>
   <?php print render($title_suffix); ?>
@@ -101,22 +98,17 @@
       // We hide the comments and links now so that we can render them later.
       hide($content['comments']);
       hide($content['links']);
-      hide($content['flag_fj16_choose_bulk_job']);
+      hide($content['flag_fj16_will_o_the_wisp']);
       
-
-      // print render($content['field_job_description']);
-
       if($teaser) {
-
-        preg_match('/^(.{10,}?)[.?!]/', preg_replace('/\r|\n/', '', strip_tags(render($content['field_job_description']))), $matches);
-
-        // var_dump($matches);
+        $desc = $field_wotw_description[0]['value'];
+        preg_match('/^(.{10,}?)[.?!]/', preg_replace('/\r|\n/', '', strip_tags($desc)), $matches);
 
         if(empty($matches)) {
           print render($content);
         } else {
           $text = $matches[0];
-          hide($content['field_job_description']);
+          hide($content['field_wotw_description']);
           print render($content);
           echo check_plain($text);
         }
@@ -132,20 +124,15 @@
     <div class="actions">
       <div class="buttons-wrap">
         <?php if($teaser) : ?><div class="read-more"><a href="<?php print $node_url; ?>"><?php print t('Read more'); ?></a></h2></div><?php endif; ?>
-        <?php print render($content['flag_fj16_choose_bulk_job']); ?>
+        <?php print render($content['flag_fj16_will_o_the_wisp']); ?>
         <?php
-          if ($teaser && $logged_in && !isset($content['flag_fj16_choose_bulk_job']['#markup'])) {
-            print '<div class="job-full">' . t('Full!assignment', array('!assignment' => '')) . '</div>';
-          } else if ($logged_in && !isset($content['flag_fj16_choose_bulk_job']['#markup'])) {
-            print '<div class="job-full">' . t('This assignment is full') . '</div>';
+          if ($teaser && $logged_in && !isset($content['flag_fj16_will_o_the_wisp']['#markup'])) {
+            print '<div class="wotw-full">' . t('Full!assignment', array('!assignment' => '')) . '</div>';
+          } else if ($logged_in && !isset($content['flag_fj16_will_o_the_wisp']['#markup'])) {
+            print '<div class="wotw-full">' . t("This will-o'-the-wisp is full") . '</div>';
           }
         ?>
       </div>
     </div>
   </div>
-
-  <?php print render($content['links']); ?>
-
-  <?php print render($content['comments']); ?>
-
 </div>
