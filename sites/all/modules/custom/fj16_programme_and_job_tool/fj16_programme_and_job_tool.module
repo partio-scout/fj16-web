@@ -283,12 +283,12 @@ function fj16_get_selected_job($user) {
  * Implements hook_fj16_lists_to_sync
  */
 function fj16_programme_and_job_tool_fj16_lists_to_sync() {
-  return array(
+  return array(/*
     array(
       'source' => FJ16_BULK_JOBS_LIST,
       'destination' => 'fj16_bulk_job'
     )
-  );
+  */);
 }
 
 function fj16_programme_and_job_tool_fj16_sharepoint_api_row_presave_alter(&$node, &$sp_item) {
