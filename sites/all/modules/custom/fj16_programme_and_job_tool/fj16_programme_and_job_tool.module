@@ -139,14 +139,21 @@ function _fj16_programme_and_job_tool_generator_thankyou_page() {
   global $user;
   drupal_set_title('Thank you!');
 
+  $job_title = $name = $email = $phone = $wotw_title = '';
+
   $job = fj16_get_selected_job($user);
-  $job_title = field_get_items('node', $job, 'field_localized_title')[0]['value'];
-  $name = field_get_items('node', $job, 'field_contact_name')[0]['value'];
-  $email = field_get_items('node', $job, 'field_contact_email')[0]['value'];
-  $phone = field_get_items('node', $job, 'field_contact_phone')[0]['value'];
+  if($job !== FALSE) {
+    $job_title = field_get_items('node', $job, 'field_localized_title')[0]['value'];
+    $name = field_get_items('node', $job, 'field_contact_name')[0]['value'];
+    $email = field_get_items('node', $job, 'field_contact_email')[0]['value'];
+    $phone = field_get_items('node', $job, 'field_contact_phone')[0]['value'];
+  }
 
   //TODO Get will-the-wisp
-  $wisp_name = 'Virvatulen nimi';
+  $wotw = fj16_get_selected_wotw($user);
+  if($wotw !== FALSE) {
+    $wotw_title = field_get_items('node', $wotw, 'field_localized_title')[0]['value'];
+  }
 
   $variables = array(
     'job_name' => check_plain($job_title),
@@ -154,7 +161,7 @@ function _fj16_programme_and_job_tool_generator_thankyou_page() {
     'contact_email' => check_plain($email),
     'contact_phone' => check_plain($phone),
     'job_further_info' => t('Your contact person will contact you within the next 30 days.'),
-    'will_o_the_wisp_name' => check_plain($wisp_name),
+    'will_o_the_wisp_name' => check_plain($wotw_title),
     'info_text' => 'Lorem ipsum dolor sit amet...'
   );
   return theme('fj16_generator_thankyou', $variables);
@@ -196,6 +203,10 @@ function _fj16_programme_and_job_tool_confirmation_form($form, &$form_state) {
   global $user;
 
   $assignment = fj16_get_selected_job($user);
+  if($assignment === FALSE) {
+    return array();
+  }
+
   $assignment_title = field_get_items('node', $assignment, 'field_localized_title')[0]['value'];
 
   $form['assignment'] = array(
@@ -206,7 +217,19 @@ function _fj16_programme_and_job_tool_confirmation_form($form, &$form_state) {
 
   if(fj16_user_has_role_named('explorer')) {
     $form['assignment']['#markup'] = check_plain($assignment_title) . ' ' . l(t('Edit'), 'generator/assignment/explorer');
-    //TODO Will-o-the-wisp
+
+    $wotw = fj16_get_selected_wotw($user);
+
+    if($wotw === FALSE) {
+      return array(); // Don't show form if no wotw selected
+    }
+
+    $wotw_title = field_get_items('node', $wotw, 'field_localized_title')[0]['value'];
+    $form['wotw'] = array(
+      '#type' => 'item',
+      '#title' => t("You have chosen the will-o'-the-wisp"),
+      '#markup' => check_plain($wotw_title) . ' ' . l(t('Edit'), 'generator/will-o-the-wisp')
+    );
   } else if(fj16_user_has_role_named('rover or adult')) {
     $form['assignment']['#markup'] = check_plain($assignment_title) . ' ' . l(t('Edit'), 'generator/assignment');
   }
@@ -257,11 +280,11 @@ function fj16_get_user_selections($user) {
 
 function fj16_user_selections_complete($user) {
   $selections = fj16_get_user_selections($user);
-  if(empty($selections['fj16_choose_bulk_job'])) {
+  if(fj16_get_selected_job($user) === FALSE) {
     return FALSE;
   }
   if(fj16_user_has_role_named('explorer')) {
-    //TODO Check explorer selection
+    return fj16_get_selected_wotw($user) !== FALSE;
   }
   return TRUE;
 }
@@ -275,6 +298,15 @@ function fj16_get_selected_job($user) {
   return node_load($flag->entity_id);
 }
 
+function fj16_get_selected_wotw($user) {
+  $selections = fj16_get_user_selections($user);
+  if(empty($selections['fj16_will_o_the_wisp'])) {
+    return FALSE;
+  }
+  $flag = current($selections['fj16_will_o_the_wisp']);
+  return node_load($flag->entity_id);
+}
+
 
 // SharePoint Integration
 
@@ -283,16 +315,22 @@ function fj16_get_selected_job($user) {
  * Implements hook_fj16_lists_to_sync
  */
 function fj16_programme_and_job_tool_fj16_lists_to_sync() {
-  return array(/*
+  return array(
     array(
       'source' => FJ16_BULK_JOBS_LIST,
       'destination' => 'fj16_bulk_job'
     )
-  */);
+  );
+}
+
+function fj16_get_value_if_set($item, $field) {
+  if(isset($item[$field])) {
+    return $item[$field];
+  }
+  return NULL;
 }
 
 function fj16_programme_and_job_tool_fj16_sharepoint_api_row_presave_alter(&$node, &$sp_item) {
-  //TODO Fix notices
   $job_types = array(
     'Samoajapesti' => 'explorers',
     'Vaeltaja/aikuispesti' => 'rovers_and_adults',
@@ -300,31 +338,35 @@ function fj16_programme_and_job_tool_fj16_sharepoint_api_row_presave_alter(&$nod
   );
   $node->field_job_type[LANGUAGE_NONE][0]['value'] = $job_types[$sp_item['pestin_x0020_tyyppi']];
   
-  $node->field_localized_title['fi'][0]['value'] = $sp_item['title'];
-  $node->field_localized_title['sv'][0]['value'] = $sp_item['pestin_x0020_nimi_x0020_ruotsiks'];
-  $node->field_localized_title['en'][0]['value'] = $sp_item['pestin_x0020_nimi_x0020_englanni'];
+  $node->field_localized_title['fi'][0]['value'] = fj16_get_value_if_set($sp_item, 'title');
+  $node->field_localized_title['sv'][0]['value'] = fj16_get_value_if_set($sp_item, 'pestin_x0020_nimi_x0020_ruotsiks');
+  $node->field_localized_title['en'][0]['value'] = fj16_get_value_if_set($sp_item, 'pestin_x0020_nimi_x0020_englanni');
 
-  $node->field_job_description['fi'][0]['value'] = $sp_item['pestin_x0020_kuvaus'];
-  $node->field_job_description['sv'][0]['value'] = $sp_item['pestin_x0020_kuvaus_x0020_ruotsi'];
-  $node->field_job_description['en'][0]['value'] = $sp_item['pestin_x0020_kuvaus_x0020_englan'];
+  $node->field_job_description['fi'][0]['value'] = fj16_get_value_if_set($sp_item, 'pestin_x0020_kuvaus');
+  $node->field_job_description['sv'][0]['value'] = fj16_get_value_if_set($sp_item, 'pestin_x0020_kuvaus_x0020_ruotsi');
+  $node->field_job_description['en'][0]['value'] = fj16_get_value_if_set($sp_item, 'pestin_x0020_kuvaus_x0020_englan');
 
-  $node->field_contact_name[LANGUAGE_NONE][0]['value'] = $sp_item['lis_x00e4_tietoja_x0020_antaa'];
-  $node->field_contact_phone[LANGUAGE_NONE][0]['value'] = $sp_item['lis_x00e4_tietoja_x0020_antaa_x0'];
-  $node->field_contact_email[LANGUAGE_NONE][0]['value'] = $sp_item['lis_x00e4_tietoja_x0020_antaa_x00'];
+  $node->field_contact_name[LANGUAGE_NONE][0]['value'] = fj16_get_value_if_set($sp_item, 'lis_x00e4_tietoja_x0020_antaa');
+  $node->field_contact_phone[LANGUAGE_NONE][0]['value'] = fj16_get_value_if_set($sp_item, 'lis_x00e4_tietoja_x0020_antaa_x0');
+  $node->field_contact_email[LANGUAGE_NONE][0]['value'] = fj16_get_value_if_set($sp_item, 'lis_x00e4_tietoja_x0020_antaa_x00');
 
-  $node->field_inventory_minimum[LANGUAGE_NONE][0]['value'] = $sp_item['varasto_x0020_min'];
-  $node->field_inventory_maximum[LANGUAGE_NONE][0]['value'] = $sp_item['varasto_x0020_max'];
-  $node->field_inventory_reserved[LANGUAGE_NONE][0]['value'] = $sp_item['varasto_x0020_nyt'];
+  $node->field_inventory_minimum[LANGUAGE_NONE][0]['value'] = fj16_get_value_if_set($sp_item, 'varasto_x0020_min');
+  $node->field_inventory_maximum[LANGUAGE_NONE][0]['value'] = fj16_get_value_if_set($sp_item, 'varasto_x0020_max');
+  $node->field_inventory_reserved[LANGUAGE_NONE][0]['value'] = fj16_get_value_if_set($sp_item, 'varasto_x0020_nyt');
 
-  $image_parts = explode(',', $sp_item['kuva']);
-  $image_url = $image_parts[0];
+  $image_field = $sp_item['kuva'];
 
-  if(empty($node->field_image_url[LANGUAGE_NONE][0]['value']) || $node->field_image_url[LANGUAGE_NONE][0]['value'] !== $image_url) {
-    $node->field_image_url[LANGUAGE_NONE][0]['value'] = $image_url;
-    $image_object = fj16_programme_and_job_tool_get_image_object($image_url);
-    $node->field_job_image = array(
-      'und' => array((array) $image_object)
-    );
+  if(strlen($image_field) > 0) {
+    $image_parts = explode(',', $sp_item['kuva']);
+    $image_url = $image_parts[0];
+
+    if(empty($node->field_image_url[LANGUAGE_NONE][0]['value']) || $node->field_image_url[LANGUAGE_NONE][0]['value'] !== $image_url) {
+      $node->field_image_url[LANGUAGE_NONE][0]['value'] = $image_url;
+      $image_object = fj16_programme_and_job_tool_get_image_object($image_url);
+      $node->field_job_image = array(
+        'und' => array((array) $image_object)
+      );
+    }
   }
 
   $tag_names = fj16_programme_and_job_tool_parse_categories($sp_item['avainsanat']);

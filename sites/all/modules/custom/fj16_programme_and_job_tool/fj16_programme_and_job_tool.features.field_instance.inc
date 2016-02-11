@@ -873,6 +873,42 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
   );
 
   // Exported field_instance:
+  // 'taxonomy_term-bulk_jobs_skill_areas-field_sharepoint_name'
+  $field_instances['taxonomy_term-bulk_jobs_skill_areas-field_sharepoint_name'] = array(
+    'bundle' => 'bulk_jobs_skill_areas',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_sharepoint_name',
+    'label' => 'SharePoint Name',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 32,
+    ),
+  );
+
+  // Exported field_instance:
   // 'taxonomy_term-bulk_jobs_tags-field_sharepoint_name'
   $field_instances['taxonomy_term-bulk_jobs_tags-field_sharepoint_name'] = array(
     'bundle' => 'bulk_jobs_tags',
