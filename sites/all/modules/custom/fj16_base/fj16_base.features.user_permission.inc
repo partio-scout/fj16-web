@@ -60,6 +60,7 @@ function fj16_base_user_default_permissions() {
     'roles' => array(
       'activity editor' => 'activity editor',
       'content editor' => 'content editor',
+      'jobs editor' => 'jobs editor',
     ),
     'module' => 'node',
   );
@@ -107,6 +108,7 @@ function fj16_base_user_default_permissions() {
     'roles' => array(
       'activity editor' => 'activity editor',
       'content editor' => 'content editor',
+      'jobs editor' => 'jobs editor',
     ),
     'module' => 'toolbar',
   );

@@ -78,6 +78,47 @@
 			}
 		});
 	}
+
+	if($('.bulk-jobs-list, .wotw-list').length) { 
+		$('.view-content').masonry({
+			// set itemSelector so .grid-sizer is not used in layout
+			itemSelector: '.views-row',
+			// use element for option
+			columnWidth: '.views-row',
+			percentPosition: true
+			// columnWidth: 300
+		});
+
+		$('#edit-field-tags-tid').parent().append('<div id="tags-cloud"></div>');
+
+		$('#edit-field-tags-tid').hide();
+
+		$('#edit-field-tags-tid option').each(function(index) {
+			// console.log('<a href="#" data-value="' + $(this).value() + '">' + $(this).text() + '</a>');
+			$('#tags-cloud').append('<a href="#" data-value="' + $(this).val() + '" class="select-tag">' + $(this).text() + '</a>');
+		});
+
+		$('.select-tag').click(function(e){
+			e.preventDefault();
+
+			var id = $(this).attr('data-value');
+
+			if($(this).hasClass('active')) {
+				console.log('Unselected: ' + id);
+				
+				$(this).removeClass('active');
+				$('#edit-field-tags-tid option[value="' + id + '"]').removeAttr('selected');
+			} else {
+				console.log('Selected: ' + id);
+
+				$(this).addClass('active');
+				$('#edit-field-tags-tid option[value="' + id + '"]').attr('selected', 'selected');
+			}
+
+			
+		});
+
+	}
 	
 	// Avoid `console` errors in browsers that lack a console.
 	(function() {
@@ -172,12 +213,12 @@ jQuery.fn.isOnScreen = function(x, y){
     
 };
 
-$('[data-ga-event-category][data-ga-event-action]').click(function(e){
+jQuery('[data-ga-event-category][data-ga-event-action]').click(function(e){
 	
-	var eventCategory = $(this).data('ga-event-category'),
-	    eventAction   = $(this).data('ga-event-action'),
-	    eventLabel    = $(this).data('ga-event-label'),
-	    eventValue    = $(this).data('ga-event-value');
+	var eventCategory = jQuery(this).data('ga-event-category'),
+	    eventAction   = jQuery(this).data('ga-event-action'),
+	    eventLabel    = jQuery(this).data('ga-event-label'),
+	    eventValue    = jQuery(this).data('ga-event-value');
 			
 	ga('send', 'event', eventCategory, eventAction, eventLabel, eventValue);	
 

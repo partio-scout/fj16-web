@@ -2,9 +2,6 @@
 
 include_once 'fj16_job_ads.features.inc';
 
-use Thybag\SharePointAPI;
-require 'vendor/autoload.php';
-
 define('FJ16_SHAREPOINT_CONFIG_FILE', '../sharepoint-integration.conf.php');
 define('FJ16_JOBS_PUBLIC_YES', 'Kyllä');
 define('FJ16_JOBS_STATUS_PUBLIC', '4. Julkaistu');
@@ -106,7 +103,7 @@ function fj16_job_should_be_displayed($job) {
 
 function fj16_job_ads_create_or_update($job, $lang) {
   $node;
-  $guid = fj16_sharepoint_lookup_value($job['uniqueid']);
+  $guid = fj16_sharepoint_api_get_lookup_value($job['uniqueid']);
 
   $title_field = _fj16_get_title_field($lang);
 
@@ -151,16 +148,7 @@ function fj16_job_ads_get_priority_integer($job_level) {
 }
 
 function fj16_job_ads_new_node($title, $lang = 'fi') {
-  $node = new stdClass();
-  $node->title = $title;
-  $node->type = 'fj16_job';
-  node_object_prepare($node);
-  $node->language = $lang;
-  $node->uid = 1;
-  $node->status = 1;
-  $node->promote = 0;
-  $node->comment = 0;
-  return $node;
+  return fj16_initialize_node('fj16_job', $title, $lang);
 }
 
 
@@ -195,7 +183,7 @@ function fj16_job_update_node_fields(&$node, $job, $lang) {
   $node->field_priority[LANGUAGE_NONE][0]['value'] = $priority;
 
   // sharepoint GUID has the line id prepended, remove that
-  $node->field_sharepoint_guid[LANGUAGE_NONE][0]['value'] = fj16_sharepoint_lookup_value($node->field_sharepoint_guid[LANGUAGE_NONE][0]['value']);
+  $node->field_sharepoint_guid[LANGUAGE_NONE][0]['value'] = fj16_sharepoint_api_get_lookup_value($node->field_sharepoint_guid[LANGUAGE_NONE][0]['value']);
 }
 
 function fj16_job_value_clean($value) {
@@ -244,11 +232,6 @@ function fj16_map_department($title) {
     'Yhteistyö' => 'yhteistyo'
   );
   return $mappings[$title];
-}
-
-
-function fj16_sharepoint_lookup_value($raw) {
-  return substr($raw, strpos($raw, '#') + 1);
 }
 
 

@@ -12,10 +12,12 @@ $realm_variables = array();
   $realm_variables['language']['en'] = array(
   'site_name' => 'Roihu 2016',
   'site_slogan' => 'Liekeissä. Äventyr. Together.',
+  'anonymous' => 'Anonymous',
 );
   $realm_variables['language']['fi'] = array(
   'site_name' => 'Roihu 2016',
   'site_slogan' => 'Liekeissä. Äventyr. Together.',
+  'anonymous' => 'Anonymous',
 );
   $realm_variables['language']['sv'] = array(
   'site_name' => 'Roihu 2016',

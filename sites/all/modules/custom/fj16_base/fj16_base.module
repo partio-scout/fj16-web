@@ -19,3 +19,29 @@ function fj16_import_translation($module, $language) {
 
   return _locale_import_po($file, $language, LOCALE_IMPORT_OVERWRITE, 'default');
 }
+
+function fj16_initialize_node($type, $title, $lang = LANGUAGE_NONE) {
+  $node = new stdClass();
+  $node->title = $title;
+  $node->type = $type;
+  node_object_prepare($node);
+  $node->language = $lang;
+  $node->uid = 1;
+  $node->status = 1;
+  $node->promote = 0;
+  $node->comment = 0;
+  return $node;
+}
+
+function fj16_user_has_role_named($name) {
+  global $user;
+  return is_array($user->roles) && in_array($name, $user->roles);
+}
+
+function fj16_user_add_role($user, $role_name) {
+  if($role = user_role_load_by_name($role_name)) {
+    $user->roles[$role->rid] = $role->name;
+    return user_save($user);
+  }
+  return FALSE;
+}

@@ -1,0 +1,277 @@
+.page-generator-assignment #main, .page-generator-will-o-the-wisp {
+    background: 50% 0 #a96f2e url(/sites/all/themes/fj16/img/backgrounds/pestit-2048.jpg);
+    background-size: 100% auto;
+    max-width: none;
+
+    #content h1.title {
+    	color: #fff;
+    	text-align: center;
+    }
+}
+
+#edit-submit-explorer {
+	margin-right: 10px;
+}
+
+#edit-submit-rover-or-adult {
+	@extend .purple;
+}
+
+.bulk-jobs-list, .wotw-list {
+	.views-row {
+		width: 23%;
+		margin: 30px 2% 0 0;
+		float: left;
+		padding: 0 20px 20px;
+		background: #fff;
+		position: relative;
+		min-height: 190px;
+		
+		h2 {
+			font-size: 1.3em;
+			word-wrap: break-word;
+			font-family: $exo;
+			text-transform: uppercase;
+		}
+
+		p {
+			font-size: 0.8em;
+		}
+
+		.content {
+			word-wrap: break-word;
+		}
+
+		.field-name-type-image {
+			text-align: center;
+
+			img {
+				margin: 1em 0;
+			}
+		}
+
+		.field {
+			margin-bottom: 0;
+		}
+		
+		@include respond(small) {
+			width: 48%;
+			margin: 20px 2% 0 0;
+		}
+
+		@include respond(mobile) {
+			width: 100%;
+			padding-right: 0;
+			margin-top: 30px;
+		}
+
+		.actions {
+
+			.read-more {
+				margin-top: 2em;
+
+				a {
+					@extend .button, .purple;
+					font-size: 1em;
+
+					&:after {
+						content: ' \00BB';
+					}
+				}
+			}
+
+			.flag-wrapper {
+				text-align: left;
+				margin: 1.5em 0 0;
+
+				.flag-action {
+					font-size: 1em;
+					display: block;
+					max-width: 300px;
+
+					&.flag-action:after {
+						content: ' \00BB';
+					}
+				}
+			}
+
+			.job-full {
+				margin-top: 1.5em;
+				text-transform: uppercase;
+			}
+
+			@include respondMin(1025px) {
+
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				opacity: 0;
+
+				@include transition(opacity 0.5s ease-in-out);
+
+				display: table-cell;
+				vertical-align: middle;
+
+				background: rgba(0,0,0,.8);
+				text-align: center;
+
+				.buttons-wrap {
+					height: 230px;
+					margin-top: -115px;
+					position: absolute;
+					top: 50%;
+					left: 15px;
+					right: 15px;
+					text-align: center;
+				}
+
+				.read-more {
+					a {
+						display: block;
+						max-width: 300px;
+						font-size: 1em;
+						margin: 0 auto;
+					}
+				}
+
+				.flag-wrapper {
+					text-align: center;
+
+					a {
+						color: #fff;
+					}
+
+					.flag-action {
+						text-transform: uppercase;
+						max-width: 300px;
+						margin: 1em auto 0;
+					}
+				}
+
+				.job-full {
+					color: #fff;
+				}
+			}
+		}
+
+		@include respondMin(1025px) {
+			&:hover .actions {
+				opacity: 1;
+			}
+		}
+	}
+
+	#tags-cloud {
+		a {
+			margin: 0 5px 0 0;
+			font-size: 0.8em;
+			background: $blue;
+			color: #fff;
+			padding: 3px 6px;
+			text-transform: lowercase;
+			position: relative;
+			top: -2px;
+
+			&:hover, &.active {
+				background: darken($blue, 15%);
+			}
+		}
+	}
+}
+
+.node-fj16-bulk-job, .node-fj16-will-o-the-wisp {
+	.field-type-image {
+		@include respond(mobile) {
+			float: none;
+			margin: 0 auto;
+			display: block;
+			text-align: center;
+		}
+	}
+
+	.field {
+		margin-bottom: 1em;
+
+		.field-label {
+			min-width: 150px;
+			display: inline-block;
+
+			@include respond(mobile) {
+				display: block;
+				&:after {
+					content: '\00a0';
+				}
+			}
+		}
+
+		.field-items {
+			display: inline-block;
+		}
+
+		&.field-name-field-contact-name, &.field-name-field-contact-email {
+			margin-bottom: 0;
+		}
+
+		&.field-name-field-contact-email, &.field-name-field-contact-phone {
+			margin-left: 150px;
+			
+			@include respond(mobile) {
+				margin-left: 0;
+			}
+		}
+	}
+
+	.field-name-field-skill-areas, .field-name-field-tags {
+		.field-items {
+			div {
+				display: inline-block;
+
+				a {
+					margin: 0 5px 0 0;
+					font-size: 0.8em;
+					background: $blue;
+					color: #fff;
+					padding: 3px 6px;
+					text-transform: lowercase;
+					position: relative;
+					top: -2px;
+
+					&:hover {
+						background: darken($blue, 15%);
+					}
+				}
+			}
+		}
+
+		&.field-name-field-skill-areas {
+			.field-items a {
+				background: $red;
+
+				&:hover {
+					background: darken($red, 15%);
+				}
+			}
+		}
+	}
+
+	.flag-fj16-choose-bulk-job, .flag-fj16-will-o-the-wisp {
+		clear: both;
+		display: block;
+		text-align: center;
+		margin: 2.5em 0 1em 0;
+
+		a.flag-action {
+			@extend .button;
+			font-size: 1.4em;
+			text-transform: uppercase;
+
+			&:after {
+				content: ' \00BB';
+			}
+		}
+	}
+
+
+}
