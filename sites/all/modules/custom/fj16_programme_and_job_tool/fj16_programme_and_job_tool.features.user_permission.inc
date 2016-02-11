@@ -10,6 +10,13 @@
 function fj16_programme_and_job_tool_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: 'administer entity translation'.
+  $permissions['administer entity translation'] = array(
+    'name' => 'administer entity translation',
+    'roles' => array(),
+    'module' => 'entity_translation',
+  );
+
   // Exported permission: 'create fj16_bulk_job content'.
   $permissions['create fj16_bulk_job content'] = array(
     'name' => 'create fj16_bulk_job content',
@@ -94,6 +101,31 @@ function fj16_programme_and_job_tool_user_default_permissions() {
       'jobs editor' => 'jobs editor',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'toggle field translatability'.
+  $permissions['toggle field translatability'] = array(
+    'name' => 'toggle field translatability',
+    'roles' => array(),
+    'module' => 'entity_translation',
+  );
+
+  // Exported permission: 'translate any entity'.
+  $permissions['translate any entity'] = array(
+    'name' => 'translate any entity',
+    'roles' => array(
+      'jobs editor' => 'jobs editor',
+    ),
+    'module' => 'entity_translation',
+  );
+
+  // Exported permission: 'translate node entities'.
+  $permissions['translate node entities'] = array(
+    'name' => 'translate node entities',
+    'roles' => array(
+      'jobs editor' => 'jobs editor',
+    ),
+    'module' => 'entity_translation',
   );
 
   return $permissions;
