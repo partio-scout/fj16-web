@@ -12,7 +12,7 @@ define('FJ16_BULK_JOBS_IMAGE_DIR', 'public://programme_and_job_tool');
 
 function fj16_programme_and_job_tool_menu() {
   $menu = array();
-/*
+
   $menu['generator'] = array(
     'page callback' => '_fj16_programme_and_job_tool_generator_page',
     'access arguments' => array('access content')
@@ -27,7 +27,7 @@ function fj16_programme_and_job_tool_menu() {
     'page callback' => '_fj16_programme_and_job_tool_generator_thankyou_page',
     'access callback' => TRUE //TODO limit by roles
   );
-*/
+
   return $menu;
 }
 
