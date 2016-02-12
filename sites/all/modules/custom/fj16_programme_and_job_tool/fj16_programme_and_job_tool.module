@@ -340,13 +340,12 @@ function fj16_saml_consume() {
   $auth->processResponse();
   $errors = $auth->getErrors();
   if(count($errors) > 0 || !$auth->isAuthenticated()) {
-    //TODO Better error message, log errors
+    $err_str = print_r($errors, TRUE);
+    watchdog('saml', 'SAML login failed with errors: <br><pre>@errors</pre>', array('@errors' => $err_str), WATCHDOG_ERROR);
     return t('Login failed.');
   }
 
   $attrs = $auth->getAttributes();
-
-  //TODO Make sure that we're 100% certain that auth was ok if we reached this line
 
   //TODO validate is_suspended, is_scout etc.
   if(count($attrs) > 0) {
@@ -368,7 +367,10 @@ function fj16_find_or_create_user($attrs) {
 
   $user = user_load_by_name($member_number);
   if($user === FALSE) {
+    watchdog('saml', 'Procuring new SAML user @name', array('@name' => $member_number), WATCHDOG_INFO);
     $user = fj16_init_user();
+  } else {
+    watchdog('saml', 'Logging in existing SAML user @name', array('@name' => $member_number), WATCHDOG_INFO);
   }
 
   $first_name = $attrs['firstname'][0];
