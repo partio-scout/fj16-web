@@ -117,6 +117,10 @@ function fj16_programme_and_job_tool_strongarm() {
             'weight' => '10',
             'visible' => TRUE,
           ),
+          'default' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
         ),
       ),
     ),

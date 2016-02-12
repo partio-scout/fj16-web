@@ -228,30 +228,20 @@
 			div {
 				display: inline-block;
 
-				a {
-					margin: 0 5px 0 0;
-					font-size: 0.8em;
-					background: $blue;
-					color: #fff;
-					padding: 3px 6px;
-					text-transform: lowercase;
-					position: relative;
-					top: -2px;
-
-					&:hover {
-						background: darken($blue, 15%);
-					}
-				}
+				margin: 0 5px 5px 0;
+				font-size: 0.8em;
+				background: $blue;
+				color: #fff;
+				padding: 3px 6px;
+				text-transform: lowercase;
+				position: relative;
+				top: -2px;
 			}
 		}
 
 		&.field-name-field-skill-areas {
-			.field-items a {
+			.field-items div {
 				background: $red;
-
-				&:hover {
-					background: darken($red, 15%);
-				}
 			}
 		}
 	}
