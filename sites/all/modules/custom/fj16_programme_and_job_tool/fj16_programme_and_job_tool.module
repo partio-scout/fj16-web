@@ -9,10 +9,11 @@ include_once 'fj16_programme_and_job_tool.features.inc';
 define('FJ16_BULK_JOBS_LIST', '{D99DB96C-696B-493E-9ABE-6314FC853B39}');
 define('FJ16_SKILL_AREA_PREFIX', 'Osaamisalue: ');
 define('FJ16_BULK_JOBS_IMAGE_DIR', 'public://programme_and_job_tool');
+define('FJ16_GENERATOR_OPENS_DEFAULT', '2016-02-15T21:00:00+02:00');
 
 function fj16_programme_and_job_tool_menu() {
   $menu = array();
-/*
+
   $menu['generator'] = array(
     'page callback' => '_fj16_programme_and_job_tool_generator_page',
     'access arguments' => array('access content')
@@ -27,7 +28,7 @@ function fj16_programme_and_job_tool_menu() {
     'page callback' => '_fj16_programme_and_job_tool_generator_thankyou_page',
     'access callback' => TRUE //TODO limit by roles
   );
-*/
+
   $menu['saml/login'] = array(
     'page callback' => 'fj16_saml_login',
     'access callback' => TRUE
@@ -119,7 +120,7 @@ function _fj16_programme_and_job_tool_generator_page() {
     drupal_set_title(t('Welcome to the generator!'));
     $variables = array(
       'intro_text' => 'This is an intro text lorem ipsum dolor sit amet...',
-      'login_link' => l(t('ScoutID'), 'saml/login'),
+      'login_link' => l(t('Login with ScoutID'), 'saml/login'),
       'login_intro' => t('Note: you need to log in with your personal ScoutID.'),
       'alternative_login_link' => t("International guest or not yet a scout/guide? !register and then !login with your user name and password.", array(
           '!register' => l(t('Register'), 'user/register'),
@@ -160,7 +161,6 @@ function _fj16_programme_and_job_tool_generator_thankyou_page() {
     $phone = field_get_items('node', $job, 'field_contact_phone')[0]['value'];
   }
 
-  //TODO Get will-the-wisp
   $wotw = fj16_get_selected_wotw($user);
   if($wotw !== FALSE) {
     $wotw_title = field_get_items('node', $wotw, 'field_localized_title')[0]['value'];
@@ -179,6 +179,16 @@ function _fj16_programme_and_job_tool_generator_thankyou_page() {
 }
 
 function _fj16_programme_and_job_tool_role_form($form, &$form_state) {
+  global $user;
+  $displayed_opens = strtotime(variable_get('fj16_generator_opens', FJ16_GENERATOR_OPENS_DEFAULT));
+  $displayed_opens += 10 + ($user->uid % 50);
+
+  $form['#attributes'] = array(
+    'id' => 'fj16-generator-role-form',
+    'style' => _fj16_generator_open() ? '' : 'display: none',
+    'data-opens' => $displayed_opens
+  );
+
   $form['submit_explorer'] = array(
     '#type' => 'submit',
     '#value' => t('Explorer'),
@@ -192,6 +202,12 @@ function _fj16_programme_and_job_tool_role_form($form, &$form_state) {
   );
 
   return $form;
+}
+
+function _fj16_programme_and_job_tool_role_form_validate($form, &$form_state) {
+  if(!_fj16_generator_open()) {
+    form_set_error('', t('The generator is not open yet. Please wait a while.'));
+  }
 }
 
 function _fj16_programme_and_job_tool_role_form_submit($form, &$form_state) {
@@ -316,6 +332,12 @@ function fj16_get_selected_wotw($user) {
   }
   $flag = current($selections['fj16_will_o_the_wisp']);
   return node_load($flag->entity_id);
+}
+
+function _fj16_generator_open() {
+  $generator_opens_str = variable_get('fj16_generator_opens', FJ16_GENERATOR_OPENS_DEFAULT);
+  $opens = strtotime($generator_opens_str);
+  return $opens < time();
 }
 
 
