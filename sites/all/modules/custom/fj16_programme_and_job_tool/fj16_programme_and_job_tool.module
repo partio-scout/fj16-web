@@ -28,6 +28,16 @@ function fj16_programme_and_job_tool_menu() {
     'access callback' => TRUE //TODO limit by roles
   );
 */
+  $menu['saml/login'] = array(
+    'page callback' => 'fj16_saml_login',
+    'access callback' => TRUE
+  );
+
+  $menu['saml/consume'] = array(
+    'page callback' => 'fj16_saml_consume',
+    'access callback' => TRUE
+  );
+
   return $menu;
 }
 
@@ -305,6 +315,99 @@ function fj16_get_selected_wotw($user) {
   }
   $flag = current($selections['fj16_will_o_the_wisp']);
   return node_load($flag->entity_id);
+}
+
+
+// SSO
+
+
+function fj16_saml_init() {
+  require_once('vendor/php-saml/_toolkit_loader.php');
+  require DRUPAL_ROOT . '/../fj16-partioid-conf.php';
+  return new OneLogin_Saml2_Auth($samlSettingsInfo);
+}
+
+function fj16_saml_login() {
+  $auth = fj16_saml_init();
+  //TODO What if it could not be loaded
+  //TODO Strict?
+  $auth->login();
+  drupal_exit();
+}
+
+function fj16_saml_consume() {
+  $auth = fj16_saml_init();
+  $auth->processResponse();
+  $errors = $auth->getErrors();
+  if(count($errors) > 0 || !$auth->isAuthenticated()) {
+    //TODO Better error message, log errors
+    return t('Login failed.');
+  }
+
+  $attrs = $auth->getAttributes();
+
+  //TODO Make sure that we're 100% certain that auth was ok if we reached this line
+
+  //TODO validate is_suspended, is_scout etc.
+  if(count($attrs) > 0) {
+    $uid = fj16_find_or_create_user($attrs);
+    if(fj16_login_user($uid)) {
+      drupal_goto('generator');
+    }
+  }
+
+  return t('Login failed.');
+}
+
+function fj16_find_or_create_user($attrs) {
+  print_r($attrs);
+  $member_number = $attrs['membernumber'][0];
+  if(empty($member_number)) {
+    return FALSE;
+  }
+
+  $user = user_load_by_name($member_number);
+  if($user === FALSE) {
+    $user = fj16_init_user();
+  }
+
+  $first_name = $attrs['firstname'][0];
+  $last_name = $attrs['lastname'][0];
+  $full_name = $first_name . ' ' . $last_name;
+  $email = $attrs['email'][0];
+
+  $user->name = $member_number;
+  $user->mail = $email;
+  $user->field_name = array(
+    LANGUAGE_NONE => array(array('value' => $full_name))
+  );
+  $user->field_troop = array(
+    LANGUAGE_NONE => array(array('value' => 'n/a'))
+  );
+
+  user_save($user);
+
+  return $user->uid;
+}
+
+function fj16_login_user($uid) {
+  global $user;
+  if($uid > 1) {
+    $user = user_load($uid);
+    $login_array = array('username' => $user->name);
+    user_login_finalize($login_array);
+    return TRUE;
+  }
+  return FALSE;
+}
+
+function fj16_init_user() {
+  $account = new stdClass();
+  $account->is_new = TRUE;
+  $account->pass = user_password(30);
+  $account->status = 1;
+  $account->roles = array();
+  return $account;
 }
 
 
