@@ -47,6 +47,7 @@ function fj16_programme_and_job_tool_theme($existing, $type, $theme, $path) {
       'variables' => array(
         'intro_text' => NULL,
         'login_link' => NULL,
+        'login_intro' => NULL,
         'alternative_login_link' => NULL
       ),
       'template' => 'templates/fj16_generator_front'
@@ -118,8 +119,8 @@ function _fj16_programme_and_job_tool_generator_page() {
     drupal_set_title(t('Welcome to the generator!'));
     $variables = array(
       'intro_text' => 'This is an intro text lorem ipsum dolor sit amet...',
-      //TODO Make sure to mention it's the persons OWN ScoutID
-      'login_link' => '(ScoutID login not implemented yet)',
+      'login_link' => l(t('ScoutID'), 'saml/login'),
+      'login_intro' => t('Note: you need to log in with your personal ScoutID.'),
       'alternative_login_link' => t("International guest or not yet a scout/guide? !register and then !login with your user name and password.", array(
           '!register' => l(t('Register'), 'user/register'),
           '!login' => l(t('log in'), 'user')
@@ -329,8 +330,6 @@ function fj16_saml_init() {
 
 function fj16_saml_login() {
   $auth = fj16_saml_init();
-  //TODO What if it could not be loaded
-  //TODO Strict?
   $auth->login();
   drupal_exit();
 }
