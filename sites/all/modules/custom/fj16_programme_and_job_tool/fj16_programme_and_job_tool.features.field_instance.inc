@@ -74,7 +74,7 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_contact_name',
-    'label' => 'Contact name',
+    'label' => 'Contact',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -569,7 +569,7 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_plain',
@@ -611,14 +611,8 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'number',
-        'settings' => array(
-          'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 0,
-          'thousand_separator' => ' ',
-        ),
-        'type' => 'number_integer',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 5,
       ),
       'teaser' => array(
@@ -658,9 +652,8 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'teaser' => array(
@@ -824,7 +817,7 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
@@ -946,8 +939,8 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Contact');
   t('Contact email');
-  t('Contact name');
   t('Contact phone');
   t('Description');
   t('Do not edit this field.');
