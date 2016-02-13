@@ -79,8 +79,9 @@
  *
  * @ingroup themeable
  */
+$is_full = !isset($content['flag_fj16_choose_bulk_job']['#markup']);
 ?>
-<div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+<div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>  <?php print $is_full ? 'node-full ' : ''; ?>clearfix"<?php print $attributes; ?>>
 
   <?php print $user_picture; ?>
 
@@ -134,9 +135,9 @@
         <?php if($teaser) : ?><div class="read-more"><a href="<?php print $node_url; ?>"><?php print t('Read more'); ?></a></h2></div><?php endif; ?>
         <?php print render($content['flag_fj16_choose_bulk_job']); ?>
         <?php
-          if ($teaser && $logged_in && !isset($content['flag_fj16_choose_bulk_job']['#markup'])) {
+          if ($teaser && $logged_in && $is_full) {
             print '<div class="job-full">' . t('Full!assignment', array('!assignment' => '')) . '</div>';
-          } else if ($logged_in && !isset($content['flag_fj16_choose_bulk_job']['#markup'])) {
+          } else if ($logged_in && $is_full) {
             print '<div class="job-full">' . t('This assignment is full') . '</div>';
           }
         ?>
