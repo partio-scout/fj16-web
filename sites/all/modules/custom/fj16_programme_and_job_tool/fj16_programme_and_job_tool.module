@@ -9,10 +9,11 @@ include_once 'fj16_programme_and_job_tool.features.inc';
 define('FJ16_BULK_JOBS_LIST', '{D99DB96C-696B-493E-9ABE-6314FC853B39}');
 define('FJ16_SKILL_AREA_PREFIX', 'Osaamisalue: ');
 define('FJ16_BULK_JOBS_IMAGE_DIR', 'public://programme_and_job_tool');
+define('FJ16_GENERATOR_OPENS_DEFAULT', '2016-02-15T21:00:00+02:00');
 
 function fj16_programme_and_job_tool_menu() {
   $menu = array();
-/*
+
   $menu['generator'] = array(
     'page callback' => '_fj16_programme_and_job_tool_generator_page',
     'access arguments' => array('access content')
@@ -27,8 +28,27 @@ function fj16_programme_and_job_tool_menu() {
     'page callback' => '_fj16_programme_and_job_tool_generator_thankyou_page',
     'access callback' => TRUE //TODO limit by roles
   );
-*/
+
+  $menu['saml/login'] = array(
+    'page callback' => 'fj16_saml_login',
+    'access callback' => TRUE
+  );
+
+  $menu['saml/consume'] = array(
+    'page callback' => 'fj16_saml_consume',
+    'access callback' => TRUE
+  );
+
   return $menu;
+}
+
+function fj16_programme_and_job_tool_node_view($node, $view_mode, $langcode) {
+  $is_correct_type = ($node->type === 'fj16_bulk_job') || ($node->type === 'fj16_will_o_the_wisp');
+  $is_current_page = current_path() === 'node/'.$node->nid;
+  if($is_correct_type && $is_current_page) {
+    $title = field_get_items('node', $node, 'field_localized_title', $langcode)[0]['value'];
+    drupal_set_title($title);
+  }
 }
 
 function fj16_programme_and_job_tool_theme($existing, $type, $theme, $path) {
@@ -37,6 +57,7 @@ function fj16_programme_and_job_tool_theme($existing, $type, $theme, $path) {
       'variables' => array(
         'intro_text' => NULL,
         'login_link' => NULL,
+        'login_intro' => NULL,
         'alternative_login_link' => NULL
       ),
       'template' => 'templates/fj16_generator_front'
@@ -108,8 +129,8 @@ function _fj16_programme_and_job_tool_generator_page() {
     drupal_set_title(t('Welcome to the generator!'));
     $variables = array(
       'intro_text' => 'This is an intro text lorem ipsum dolor sit amet...',
-      //TODO Make sure to mention it's the persons OWN ScoutID
-      'login_link' => '(ScoutID login not implemented yet)',
+      'login_link' => l(t('Login with ScoutID'), 'saml/login'),
+      'login_intro' => t('Note: you need to log in with your personal ScoutID.'),
       'alternative_login_link' => t("International guest or not yet a scout/guide? !register and then !login with your user name and password.", array(
           '!register' => l(t('Register'), 'user/register'),
           '!login' => l(t('log in'), 'user')
@@ -149,7 +170,6 @@ function _fj16_programme_and_job_tool_generator_thankyou_page() {
     $phone = field_get_items('node', $job, 'field_contact_phone')[0]['value'];
   }
 
-  //TODO Get will-the-wisp
   $wotw = fj16_get_selected_wotw($user);
   if($wotw !== FALSE) {
     $wotw_title = field_get_items('node', $wotw, 'field_localized_title')[0]['value'];
@@ -168,6 +188,16 @@ function _fj16_programme_and_job_tool_generator_thankyou_page() {
 }
 
 function _fj16_programme_and_job_tool_role_form($form, &$form_state) {
+  global $user;
+  $displayed_opens = strtotime(variable_get('fj16_generator_opens', FJ16_GENERATOR_OPENS_DEFAULT));
+  $displayed_opens += 10 + ($user->uid % 50);
+
+  $form['#attributes'] = array(
+    'id' => 'fj16-generator-role-form',
+    'style' => _fj16_generator_open() ? '' : 'display: none',
+    'data-opens' => $displayed_opens
+  );
+
   $form['submit_explorer'] = array(
     '#type' => 'submit',
     '#value' => t('Explorer'),
@@ -181,6 +211,12 @@ function _fj16_programme_and_job_tool_role_form($form, &$form_state) {
   );
 
   return $form;
+}
+
+function _fj16_programme_and_job_tool_role_form_validate($form, &$form_state) {
+  if(!_fj16_generator_open()) {
+    form_set_error('', t('The generator is not open yet. Please wait a while.'));
+  }
 }
 
 function _fj16_programme_and_job_tool_role_form_submit($form, &$form_state) {
@@ -274,6 +310,22 @@ function _fj16_programme_and_job_tool_confirmation_form_submit($form, &$form_sta
   $form_state['redirect'] = 'generator/thankyou';
 }
 
+function fj16_programme_and_job_tool_form_alter(&$form, &$form_state, $form_id) {
+  global $user;
+
+  if(!user_access('administer users') && $form_id === 'user_profile_form') {
+    $form['field_confirmed']['#access'] = FALSE;
+    $form['field_further_info_for_org']['#access'] = FALSE;
+
+    if(is_numeric($user->name)) {
+      print_r($form);
+      $form['account']['current_pass']['#access'] = FALSE;
+      $form['account']['pass']['#access'] = FALSE;
+      $form['account']['mail']['#access'] = FALSE;
+    }
+  }
+}
+
 function fj16_get_user_selections($user) {
   return flag_get_user_flags('node', NULL, $user->uid);
 }
@@ -305,6 +357,105 @@ function fj16_get_selected_wotw($user) {
   }
   $flag = current($selections['fj16_will_o_the_wisp']);
   return node_load($flag->entity_id);
+}
+
+function _fj16_generator_open() {
+  $generator_opens_str = variable_get('fj16_generator_opens', FJ16_GENERATOR_OPENS_DEFAULT);
+  $opens = strtotime($generator_opens_str);
+  return $opens < time();
+}
+
+
+// SSO
+
+
+function fj16_saml_init() {
+  require_once('vendor/php-saml/_toolkit_loader.php');
+  require DRUPAL_ROOT . '/../fj16-partioid-conf.php';
+  return new OneLogin_Saml2_Auth($samlSettingsInfo);
+}
+
+function fj16_saml_login() {
+  $auth = fj16_saml_init();
+  $auth->login();
+  drupal_exit();
+}
+
+function fj16_saml_consume() {
+  $auth = fj16_saml_init();
+  $auth->processResponse();
+  $errors = $auth->getErrors();
+  if(count($errors) > 0 || !$auth->isAuthenticated()) {
+    $err_str = print_r($errors, TRUE);
+    watchdog('saml', 'SAML login failed with errors: <br><pre>@errors</pre>', array('@errors' => $err_str), WATCHDOG_ERROR);
+    return t('Login failed.');
+  }
+
+  $attrs = $auth->getAttributes();
+
+  //TODO validate is_suspended, is_scout etc.
+  if(count($attrs) > 0) {
+    $uid = fj16_find_or_create_user($attrs);
+    if(fj16_login_user($uid)) {
+      drupal_goto('generator');
+    }
+  }
+
+  return t('Login failed.');
+}
+
+function fj16_find_or_create_user($attrs) {
+  print_r($attrs);
+  $member_number = $attrs['membernumber'][0];
+  if(empty($member_number)) {
+    return FALSE;
+  }
+
+  $user = user_load_by_name($member_number);
+  if($user === FALSE) {
+    watchdog('saml', 'Procuring new SAML user @name', array('@name' => $member_number), WATCHDOG_INFO);
+    $user = fj16_init_user();
+  } else {
+    watchdog('saml', 'Logging in existing SAML user @name', array('@name' => $member_number), WATCHDOG_INFO);
+  }
+
+  $first_name = $attrs['firstname'][0];
+  $last_name = $attrs['lastname'][0];
+  $full_name = $first_name . ' ' . $last_name;
+  $email = $attrs['email'][0];
+
+  $user->name = $member_number;
+  $user->mail = $email;
+  $user->field_name = array(
+    LANGUAGE_NONE => array(array('value' => $full_name))
+  );
+  $user->field_troop = array(
+    LANGUAGE_NONE => array(array('value' => 'n/a'))
+  );
+
+  user_save($user);
+
+  return $user->uid;
+}
+
+function fj16_login_user($uid) {
+  global $user;
+  if($uid > 1) {
+    $user = user_load($uid);
+    $login_array = array('username' => $user->name);
+    user_login_finalize($login_array);
+    return TRUE;
+  }
+  return FALSE;
+}
+
+function fj16_init_user() {
+  $account = new stdClass();
+  $account->is_new = TRUE;
+  $account->pass = user_password(30);
+  $account->status = 1;
+  $account->roles = array();
+  return $account;
 }
 
 
@@ -391,7 +542,14 @@ function fj16_programme_and_job_tool_parse_categories($raw_tags) {
     } else if(strpos($part, FJ16_SKILL_AREA_PREFIX) === 0) {
       $result['skill_areas'][] = substr($part, strlen(FJ16_SKILL_AREA_PREFIX));
     } else {
-      $result['tags'][] = $part;
+      if(strpos($part, ',')) {
+        $more_parts = explode(',', $part);
+        foreach ($more_parts as $tag) {
+          $result['tags'][] = trim($tag);
+        }
+      } else {
+        $result['tags'][] = $part;
+      }
     }
   }
 

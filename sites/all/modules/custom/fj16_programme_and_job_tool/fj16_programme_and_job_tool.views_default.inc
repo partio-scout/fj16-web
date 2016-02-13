@@ -22,7 +22,7 @@ function fj16_programme_and_job_tool_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Millaisen pestin sinä haluat?';
+  $handler->display->display_options['title'] = 'What\'s your assignment?';
   $handler->display->display_options['css_class'] = 'bulk-jobs-list';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
@@ -129,7 +129,7 @@ function fj16_programme_and_job_tool_views_default_views() {
   $handler->display->display_options['path'] = 'generator/assignment';
   $translatables['fj16_bulk_jobs'] = array(
     t('Master'),
-    t('Millaisen pestin sinä haluat?'),
+    t('What\'s your assignment?'),
     t('more'),
     t('Apply'),
     t('Reset'),
@@ -161,18 +161,14 @@ function fj16_programme_and_job_tool_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Millaisen pestin sinä haluat?';
+  $handler->display->display_options['title'] = 'What\'s your assignment?';
   $handler->display->display_options['css_class'] = 'bulk-jobs-list';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
     6 => '6',
   );
-  $handler->display->display_options['cache']['type'] = 'time';
-  $handler->display->display_options['cache']['results_lifespan'] = '3600';
-  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
-  $handler->display->display_options['cache']['output_lifespan'] = '3600';
-  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Filter';
@@ -273,7 +269,7 @@ function fj16_programme_and_job_tool_views_default_views() {
   $handler->display->display_options['path'] = 'generator/assignment/explorer';
   $translatables['fj16_bulk_jobs_explorers'] = array(
     t('Master'),
-    t('Millaisen pestin sinä haluat?'),
+    t('What\'s your assignment?'),
     t('more'),
     t('Filter'),
     t('Reset'),

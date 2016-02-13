@@ -84,14 +84,18 @@
 				text-align: left;
 				margin: 1.5em 0 0;
 
-				.flag-action {
+				.flag-action, .unflag-action {
 					font-size: 1em;
 					display: block;
 					max-width: 300px;
+				}
+					
+				&.flag-action:after {
+					content: ' \00BB';
+				}
 
-					&.flag-action:after {
-						content: ' \00BB';
-					}
+				&.unflag-action:before {
+					content: '✓  ';
 				}
 			}
 
@@ -228,30 +232,20 @@
 			div {
 				display: inline-block;
 
-				a {
-					margin: 0 5px 0 0;
-					font-size: 0.8em;
-					background: $blue;
-					color: #fff;
-					padding: 3px 6px;
-					text-transform: lowercase;
-					position: relative;
-					top: -2px;
-
-					&:hover {
-						background: darken($blue, 15%);
-					}
-				}
+				margin: 0 5px 5px 0;
+				font-size: 0.8em;
+				background: $blue;
+				color: #fff;
+				padding: 3px 6px;
+				text-transform: lowercase;
+				position: relative;
+				top: -2px;
 			}
 		}
 
 		&.field-name-field-skill-areas {
-			.field-items a {
+			.field-items div {
 				background: $red;
-
-				&:hover {
-					background: darken($red, 15%);
-				}
 			}
 		}
 	}
@@ -269,6 +263,16 @@
 
 			&:after {
 				content: ' \00BB';
+			}
+		}
+
+		a.unflag-action {
+			@extend .button;
+			font-size: 1.4em;
+			text-transform: uppercase;
+
+			&:before {
+				content: '✓  ';
 			}
 		}
 	}

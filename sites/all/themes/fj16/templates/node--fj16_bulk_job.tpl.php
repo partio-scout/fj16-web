@@ -79,14 +79,15 @@
  *
  * @ingroup themeable
  */
+$is_full = !isset($content['flag_fj16_choose_bulk_job']['#markup']);
 ?>
-<div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+<div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>  <?php print $is_full ? 'node-full ' : ''; ?>clearfix"<?php print $attributes; ?>>
 
   <?php print $user_picture; ?>
 
   <?php print render($title_prefix); ?>
   <?php if (!$page): ?>
-    <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>">
+    <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>" class="hyphenate">
       <?php
         hide($content['field_localized_title']);
         $value = field_get_items('node', $node, 'field_localized_title')[0]['value'];
@@ -134,9 +135,9 @@
         <?php if($teaser) : ?><div class="read-more"><a href="<?php print $node_url; ?>"><?php print t('Read more'); ?></a></h2></div><?php endif; ?>
         <?php print render($content['flag_fj16_choose_bulk_job']); ?>
         <?php
-          if ($teaser && $logged_in && !isset($content['flag_fj16_choose_bulk_job']['#markup'])) {
+          if ($teaser && $logged_in && $is_full) {
             print '<div class="job-full">' . t('Full!assignment', array('!assignment' => '')) . '</div>';
-          } else if ($logged_in && !isset($content['flag_fj16_choose_bulk_job']['#markup'])) {
+          } else if ($logged_in && $is_full) {
             print '<div class="job-full">' . t('This assignment is full') . '</div>';
           }
         ?>
