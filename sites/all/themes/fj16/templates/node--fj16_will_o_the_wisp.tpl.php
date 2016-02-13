@@ -88,7 +88,7 @@ $is_full = !isset($content['flag_fj16_will_o_the_wisp']['#markup']);
 
   <?php print render($title_prefix); ?>
   <?php if (!$page): ?>
-    <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>">
+    <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>" class="hyphenate">
       <?php hide($content['field_localized_title']); ?>
       <?php print $field_localized_title[0]['safe_value']; ?>
     </a></h2>

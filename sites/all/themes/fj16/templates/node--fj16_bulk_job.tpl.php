@@ -87,7 +87,7 @@ $is_full = !isset($content['flag_fj16_choose_bulk_job']['#markup']);
 
   <?php print render($title_prefix); ?>
   <?php if (!$page): ?>
-    <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>">
+    <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>" class="hyphenate">
       <?php
         hide($content['field_localized_title']);
         $value = field_get_items('node', $node, 'field_localized_title')[0]['value'];
