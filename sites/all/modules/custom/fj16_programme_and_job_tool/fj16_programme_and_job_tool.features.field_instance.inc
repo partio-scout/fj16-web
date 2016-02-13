@@ -937,8 +937,47 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'user-user-field_confirmed'
+  $field_instances['user-user-field_confirmed'] = array(
+    'bundle' => 'user',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_confirmed',
+    'label' => 'Confirmed',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 0,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 34,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
+  t('Confirmed');
   t('Contact');
   t('Contact email');
   t('Contact phone');
