@@ -318,7 +318,6 @@ function fj16_programme_and_job_tool_form_alter(&$form, &$form_state, $form_id) 
     $form['field_further_info_for_org']['#access'] = FALSE;
 
     if(is_numeric($user->name)) {
-      print_r($form);
       $form['account']['current_pass']['#access'] = FALSE;
       $form['account']['pass']['#access'] = FALSE;
       $form['account']['mail']['#access'] = FALSE;
