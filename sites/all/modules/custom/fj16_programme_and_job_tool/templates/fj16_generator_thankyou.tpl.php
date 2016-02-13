@@ -11,9 +11,11 @@
     </p>
     <p><?php print $job_further_info; ?></p>
   </div>
-  <div class="will-o-the-wisp">
-    <p><span class="label"><?php print t("Your will-o'-the-wisp"); ?>:</span> <?php print $will_o_the_wisp_name; ?></p>
-  </div>
+  <?php if($will_o_the_wisp_name): ?>
+    <div class="will-o-the-wisp">
+      <p><span class="label"><?php print t("Your will-o'-the-wisp"); ?>:</span> <?php print $will_o_the_wisp_name; ?></p>
+    </div>
+  <?php endif; ?>
   <div class="further-info">
     <?php print $info_text; ?>
   </div>
