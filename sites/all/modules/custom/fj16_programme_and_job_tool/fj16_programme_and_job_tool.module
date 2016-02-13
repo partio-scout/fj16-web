@@ -517,7 +517,14 @@ function fj16_programme_and_job_tool_parse_categories($raw_tags) {
     } else if(strpos($part, FJ16_SKILL_AREA_PREFIX) === 0) {
       $result['skill_areas'][] = substr($part, strlen(FJ16_SKILL_AREA_PREFIX));
     } else {
-      $result['tags'][] = $part;
+      if(strpos($part, ',')) {
+        $more_parts = explode(',', $part);
+        foreach ($more_parts as $tag) {
+          $result['tags'][] = trim($tag);
+        }
+      } else {
+        $result['tags'][] = $part;
+      }
     }
   }
 
