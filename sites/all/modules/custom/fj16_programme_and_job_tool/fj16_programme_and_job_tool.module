@@ -310,6 +310,22 @@ function _fj16_programme_and_job_tool_confirmation_form_submit($form, &$form_sta
   $form_state['redirect'] = 'generator/thankyou';
 }
 
+function fj16_programme_and_job_tool_form_alter(&$form, &$form_state, $form_id) {
+  global $user;
+
+  if(!user_access('administer users') && $form_id === 'user_profile_form') {
+    $form['field_confirmed']['#access'] = FALSE;
+    $form['field_further_info_for_org']['#access'] = FALSE;
+
+    if(is_numeric($user->name)) {
+      print_r($form);
+      $form['account']['current_pass']['#access'] = FALSE;
+      $form['account']['pass']['#access'] = FALSE;
+      $form['account']['mail']['#access'] = FALSE;
+    }
+  }
+}
+
 function fj16_get_user_selections($user) {
   return flag_get_user_flags('node', NULL, $user->uid);
 }
