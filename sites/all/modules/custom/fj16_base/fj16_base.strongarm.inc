@@ -1532,25 +1532,28 @@ password: Your password
   $strongarm->name = 'user_mail_register_no_approval_required_body';
   $strongarm->value = 'Hi,
 
-Thank you for registering at [site:name]. You may now log in by clicking this link or copying and pasting it to your browser:
+Thank you for registering at Roihu Generator. You may now log in by clicking this
+link or copying and pasting it to your browser:
 
 [user:one-time-login-url]
 
-This link can only be used once to log in and will lead you to a page where you can set your password.
+This link can only be used once to log in and will lead you to a page where
+you can set your password.
 
-After setting your password, you will be able to log in at [site:login-url] in the future using:
+After setting your password, you will be able to log in at
+[site:login-url] in the future using:
 
 username: [user:name]
 password: Your password
 
---  [site:name] team';
+--  Roihu 2016 team';
   $export['user_mail_register_no_approval_required_body'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'user_mail_register_no_approval_required_subject';
-  $strongarm->value = 'Your account details at [site:name]';
+  $strongarm->value = 'Thank you for registering at Roihu Generator';
   $export['user_mail_register_no_approval_required_subject'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1711,7 +1714,7 @@ Your account on [site:name] has been canceled.
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'user_register';
-  $strongarm->value = '0';
+  $strongarm->value = '1';
   $export['user_register'] = $strongarm;
 
   $strongarm = new stdClass();
