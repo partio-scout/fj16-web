@@ -22,7 +22,7 @@ function fj16_programme_and_job_tool_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'What\'s your assignment?';
+  $handler->display->display_options['title'] = 'What type of a staff position do you want?';
   $handler->display->display_options['css_class'] = 'bulk-jobs-list';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
@@ -32,6 +32,9 @@ function fj16_programme_and_job_tool_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Filter';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Clear options';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '0';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -101,7 +104,7 @@ function fj16_programme_and_job_tool_views_default_views() {
   $handler->display->display_options['filters']['field_skill_areas_tid']['field'] = 'field_skill_areas_tid';
   $handler->display->display_options['filters']['field_skill_areas_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_skill_areas_tid']['expose']['operator_id'] = 'field_skill_areas_tid_op';
-  $handler->display->display_options['filters']['field_skill_areas_tid']['expose']['label'] = 'Skill areas';
+  $handler->display->display_options['filters']['field_skill_areas_tid']['expose']['label'] = 'Areas of skill, knowledge or expertise';
   $handler->display->display_options['filters']['field_skill_areas_tid']['expose']['operator'] = 'field_skill_areas_tid_op';
   $handler->display->display_options['filters']['field_skill_areas_tid']['expose']['identifier'] = 'field_skill_areas_tid';
   $handler->display->display_options['filters']['field_skill_areas_tid']['expose']['multiple'] = TRUE;
@@ -129,10 +132,10 @@ function fj16_programme_and_job_tool_views_default_views() {
   $handler->display->display_options['path'] = 'generator/assignment';
   $translatables['fj16_bulk_jobs'] = array(
     t('Master'),
-    t('What\'s your assignment?'),
+    t('What type of a staff position do you want?'),
     t('more'),
-    t('Apply'),
-    t('Reset'),
+    t('Filter'),
+    t('Clear options'),
     t('Sort by'),
     t('Asc'),
     t('Desc'),
@@ -144,7 +147,7 @@ function fj16_programme_and_job_tool_views_default_views() {
     t('next ›'),
     t('last »'),
     t('Tags'),
-    t('Skill areas'),
+    t('Areas of skill, knowledge or expertise'),
     t('Page'),
   );
   $export['fj16_bulk_jobs'] = $view;
@@ -161,7 +164,7 @@ function fj16_programme_and_job_tool_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'What\'s your assignment?';
+  $handler->display->display_options['title'] = 'What type of a staff position do you want?';
   $handler->display->display_options['css_class'] = 'bulk-jobs-list';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
@@ -173,6 +176,7 @@ function fj16_programme_and_job_tool_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Filter';
   $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Clear options';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Lajittele';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '0';
@@ -241,7 +245,7 @@ function fj16_programme_and_job_tool_views_default_views() {
   $handler->display->display_options['filters']['field_skill_areas_tid']['field'] = 'field_skill_areas_tid';
   $handler->display->display_options['filters']['field_skill_areas_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_skill_areas_tid']['expose']['operator_id'] = 'field_skill_areas_tid_op';
-  $handler->display->display_options['filters']['field_skill_areas_tid']['expose']['label'] = 'Skill areas';
+  $handler->display->display_options['filters']['field_skill_areas_tid']['expose']['label'] = 'Areas of skill, knowledge or expertise';
   $handler->display->display_options['filters']['field_skill_areas_tid']['expose']['operator'] = 'field_skill_areas_tid_op';
   $handler->display->display_options['filters']['field_skill_areas_tid']['expose']['identifier'] = 'field_skill_areas_tid';
   $handler->display->display_options['filters']['field_skill_areas_tid']['expose']['multiple'] = TRUE;
@@ -269,10 +273,10 @@ function fj16_programme_and_job_tool_views_default_views() {
   $handler->display->display_options['path'] = 'generator/assignment/explorer';
   $translatables['fj16_bulk_jobs_explorers'] = array(
     t('Master'),
-    t('What\'s your assignment?'),
+    t('What type of a staff position do you want?'),
     t('more'),
     t('Filter'),
-    t('Reset'),
+    t('Clear options'),
     t('Lajittele'),
     t('Asc'),
     t('Desc'),
@@ -284,7 +288,7 @@ function fj16_programme_and_job_tool_views_default_views() {
     t('next ›'),
     t('last »'),
     t('Tags'),
-    t('Skill areas'),
+    t('Areas of skill, knowledge or expertise'),
     t('Page'),
   );
   $export['fj16_bulk_jobs_explorers'] = $view;
@@ -301,7 +305,7 @@ function fj16_programme_and_job_tool_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Which will-o-the-wisp will you choose?';
+  $handler->display->display_options['title'] = 'Which Will-o\'-the-wisp will you choose?';
   $handler->display->display_options['css_class'] = 'wotw-list';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
@@ -346,7 +350,7 @@ function fj16_programme_and_job_tool_views_default_views() {
   $handler->display->display_options['path'] = 'generator/will-o-the-wisp';
   $translatables['fj16_will_o_the_wisps'] = array(
     t('Master'),
-    t('Which will-o-the-wisp will you choose?'),
+    t('Which Will-o\'-the-wisp will you choose?'),
     t('more'),
     t('Apply'),
     t('Reset'),
