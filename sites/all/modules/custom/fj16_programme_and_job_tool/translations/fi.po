@@ -1,0 +1,395 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  fj16_programme_and_job_tool.features.field_instance.inc: n/a
+#  fj16_programme_and_job_tool.views_default.inc: n/a
+#  fj16_programme_and_job_tool.features.inc: n/a
+#  fj16_programme_and_job_tool.module: n/a
+#  fj16_programme_and_job_tool.info: n/a
+#  scripts/counter.js: n/a
+#  templates/fj16_generator_thankyou.tpl.php: n/a
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2016-02-14 02:44+0200\n"
+"PO-Revision-Date: 2016-02-14 02:46+0200\n"
+"Last-Translator: \n"
+"Language-Team: EMAIL@ADDRESS\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.6\n"
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:980
+msgid "Confirmed"
+msgstr "Vahvistettu"
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:981
+msgid "Contact email"
+msgstr "Yhteyshenkilön sähköpostiosoite"
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:982
+msgid "Contact person"
+msgstr "Yhteyshenkilö"
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:983
+msgid "Contact phone"
+msgstr "Yhteyshenkilön puhelinnumero"
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:984
+msgid "Description"
+msgstr "Kuvaus"
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:985
+msgid "Do not edit this field."
+msgstr "Älä muokkaa tätä kenttää"
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:986
+msgid "Extra kit"
+msgstr "Lisävarusteet"
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:987
+msgid "How many spots have been reserved outside of this system"
+msgstr "Kuinka monta paikkaa jaetaan kehittimen ulkopuolella"
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:988
+msgid "Image"
+msgstr "Kuva"
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:989
+msgid "Image URL"
+msgstr "Kuvan URL"
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:990
+msgid "Inventory maximum"
+msgstr "Paikkoja max."
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:991
+msgid "Inventory minimum"
+msgstr "Paikkoja min."
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:992
+msgid "Inventory reserved"
+msgstr "Paikkoja varattu"
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:993
+msgid "Inventory total"
+msgstr "Paikkoja yhteensä"
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:994
+msgid "Job description"
+msgstr "Pestin kuvaus"
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:995
+msgid "Job type"
+msgstr "Pestin tyyppi"
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:996
+msgid "Localized title"
+msgstr "Lokalisoitu otsikko"
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:997
+msgid "SharePoint Name"
+msgstr "SharePoint-nimi"
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:998
+msgid "SharePoint Unique ID"
+msgstr "Uniikki SharePoint-ID"
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:999
+msgid "Skill areas"
+msgstr "Osaamisalueet"
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:1000
+msgid "Suitability"
+msgstr "Soveltuvuus"
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:1001
+#: fj16_programme_and_job_tool.views_default.inc:149;290
+msgid "Tags"
+msgstr "Tagit"
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:1002
+msgid "image"
+msgstr "kuva"
+
+#: fj16_programme_and_job_tool.features.inc:106
+msgid "FJ16 Bulk job"
+msgstr "FJ16 Massapesti"
+
+#: fj16_programme_and_job_tool.features.inc:110;118
+msgid "Title"
+msgstr "Otsikko"
+
+#: fj16_programme_and_job_tool.features.inc:114
+msgid "FJ16 Will-o'-the-wisp"
+msgstr "FJ16 Virvatuli"
+
+#: fj16_programme_and_job_tool.views_default.inc:134;275;352
+msgid "Master"
+msgstr "Master"
+
+#: fj16_programme_and_job_tool.views_default.inc:135;276
+msgid "What type of a staff position do you want?"
+msgstr "Millaisen pestin sinä haluat?"
+
+#: fj16_programme_and_job_tool.views_default.inc:136;277;354
+msgid "more"
+msgstr "lisöö"
+
+#: fj16_programme_and_job_tool.views_default.inc:137;278
+msgid "Filter"
+msgstr "Suodata"
+
+#: fj16_programme_and_job_tool.views_default.inc:138;279
+msgid "Clear options"
+msgstr "Tyhjennä valinnat"
+
+#: fj16_programme_and_job_tool.views_default.inc:139;357
+msgid "Sort by"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:140;281;358
+msgid "Asc"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:141;282;359
+msgid "Desc"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:142;283
+msgid "Items per page"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:143;284
+msgid "- All -"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:144;285
+msgid "Offset"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:145;286
+msgid "« first"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:146;287
+msgid "‹ previous"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:147;288
+msgid "next ›"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:148;289
+msgid "last »"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:150;291
+msgid "Areas of skill, knowledge or expertise"
+msgstr "Osaamisalueet"
+
+#: fj16_programme_and_job_tool.views_default.inc:151;292;360
+msgid "Page"
+msgstr "Sivu"
+
+#: fj16_programme_and_job_tool.views_default.inc:280
+msgid "Lajittele"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:353
+msgid "Which Will-o'-the-wisp will you choose?"
+msgstr "Millaisen virvatulen sinä valitset?"
+
+#: fj16_programme_and_job_tool.views_default.inc:355
+msgid "Apply"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:356
+msgid "Reset"
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:118
+msgid "This staff position is full"
+msgstr "Tämä pesti on täynnä"
+
+#: fj16_programme_and_job_tool.module:119
+msgid ""
+"Unfortunately the staff position you selected is already full. !return and "
+"try selecting another one."
+msgstr ""
+"Valitettavasti pesti on jo täynnä. !return ja kokeile valita toinen pesti."
+
+#: fj16_programme_and_job_tool.module:120
+msgid "Return to the staff position list"
+msgstr "Takaisin valikoimaan"
+
+#: fj16_programme_and_job_tool.module:129
+msgid "Welcome to the generator!"
+msgstr "Tervetuloa Kehittimeen!"
+
+#: fj16_programme_and_job_tool.module:132
+msgid "Log in using ScoutID"
+msgstr "Kirjaudu PartioID:llä"
+
+#: fj16_programme_and_job_tool.module:133
+msgid "Note: you need to log in with your personal ScoutID."
+msgstr "Huom: kirjaudu henkilökohtaisella PartioID:lläsi."
+
+#: fj16_programme_and_job_tool.module:134
+msgid ""
+"International guest or not yet a scout/guide? !register and then !login with "
+"your user name and password."
+msgstr ""
+"Kansainvälinen vieras tai ei-vielä-partiolainen? !register ensin ja !login "
+"sitten käyttäjätunnuksellasi ja salasanallasi."
+
+#: fj16_programme_and_job_tool.module:135
+msgid "Register"
+msgstr "Rekisteröidy"
+
+#: fj16_programme_and_job_tool.module:136
+msgid "log in"
+msgstr "kirjaudu"
+
+#: fj16_programme_and_job_tool.module:149
+msgid "Choose your age group"
+msgstr "Valitse ikäkautesi"
+
+#: fj16_programme_and_job_tool.module:161
+msgid "Thank you!"
+msgstr "Kiitos!"
+
+#: fj16_programme_and_job_tool.module:183
+msgid "The contact person will be in touch within a month."
+msgstr "Yhteyshenkilö ottaa sinuun yhteyttä kuukauden kuluessa"
+
+#: fj16_programme_and_job_tool.module:203
+msgid "Explorer (15-17-years-old)"
+msgstr "Samoaja"
+
+#: fj16_programme_and_job_tool.module:209
+msgid "Rover or Scouter (18+ years)"
+msgstr "Vaeltaja tai aikuinen"
+
+#: fj16_programme_and_job_tool.module:218
+msgid "The generator is not open yet. Please wait a while."
+msgstr "Kehitin ei ole vielä auennut. Ole hyvä ja odota vielä hetki."
+
+#: fj16_programme_and_job_tool.module:250
+msgid "You have chosen the following staff position"
+msgstr "Olet valinnut seuraavan pestin"
+
+#: fj16_programme_and_job_tool.module:255;267;270
+msgid "Edit"
+msgstr "Muokkaa"
+
+#: fj16_programme_and_job_tool.module:266
+msgid "You have chosen the following Will-o'-the-wisp 24h off-camp adventure"
+msgstr "Olet valinnut seuraavan virvatulen"
+
+#: fj16_programme_and_job_tool.module:278
+msgid ""
+"The following information we have on you will be sent to the Roihu "
+"organisation so that they can be in touch."
+msgstr ""
+"Seuraavat tiedot sinusta lähetetään leiriorganisaatiolle yhteydenottoja "
+"varten:"
+
+#: fj16_programme_and_job_tool.module:290
+msgid "Anything you wish to say to the camp organisation?"
+msgstr "Mahdolliset terveisesi leiriorganisaatiolle"
+
+#: fj16_programme_and_job_tool.module:296
+msgid "Confirm"
+msgstr "Vahvista"
+
+#: fj16_programme_and_job_tool.module:390;403
+msgid "Login failed."
+msgstr "Kirjautuminen epäonnistui"
+
+#: fj16_programme_and_job_tool.module:673
+msgid "Choose this staff position"
+msgstr "Valitse pesti"
+
+#: fj16_programme_and_job_tool.module:674
+msgid "Your choice has been saved"
+msgstr "Valintasi on tallennettu"
+
+#: fj16_programme_and_job_tool.module:675
+msgid "Staff position selected"
+msgstr "Pesti valittu"
+
+#: fj16_programme_and_job_tool.module:676
+msgid "Reject this staff position"
+msgstr "Hylkää pesti"
+
+#: fj16_programme_and_job_tool.module:677
+msgid "You have been removed from the staff position [node:title]"
+msgstr "Olet hylännyt pesti [node:title]"
+
+#: fj16_programme_and_job_tool.module:678
+msgid "Choose this"
+msgstr "Valitse tämä"
+
+#: fj16_programme_and_job_tool.module:679
+msgid "Will-o'-the-wisp selected"
+msgstr "Virvatuli valittu"
+
+#: fj16_programme_and_job_tool.module:680
+msgid "Deselect this"
+msgstr "Poista valinta"
+
+#: fj16_programme_and_job_tool.module:389;415;418
+msgid "saml"
+msgstr "saml"
+
+#: fj16_programme_and_job_tool.module:389
+msgid "SAML login failed with errors: <br><pre>@errors</pre>"
+msgstr ""
+"SAML-kirjautuminen epäonnistui seuraavin virhein: <br><pre>@errors</pre>"
+
+#: fj16_programme_and_job_tool.module:415
+msgid "Procuring new SAML user @name"
+msgstr "Provisioidaan uusi SAML-käyttäjä @name"
+
+#: fj16_programme_and_job_tool.module:418
+msgid "Logging in existing SAML user @name"
+msgstr "Kirjaudutaan olemassa olevana SAML-käyttäjänä @name"
+
+#: fj16_programme_and_job_tool.module:626
+msgid "fj16_programme_and_jobs_tool"
+msgstr "fj16_programme_and_jobs_tool"
+
+#: fj16_programme_and_job_tool.module:626
+msgid "Unable to get image: @url"
+msgstr "Kuvan nouto epäonnistui: @url"
+
+#: fj16_programme_and_job_tool.info:0
+msgid "FJ16 Programme and job tool"
+msgstr "FJ16 Massapestit ja virvatulet"
+
+#: fj16_programme_and_job_tool.info:0
+msgid "FJ16"
+msgstr "FJ16"
+
+#: scripts/counter.js:0
+msgid "Hold tight!"
+msgstr "Odota hetki!"
+
+#: scripts/counter.js:0
+msgid ""
+"The generator opens in @days days @hours hours @mins minutes @seconds "
+"seconds."
+msgstr ""
+"Kehitin aukeaa @days päivän @hours tunnin @mins minuutin @seconds sekunnin "
+"kuluttua."
+
+#: templates/fj16_generator_thankyou.tpl.php:21
+msgid "See you at Roihu!"
+msgstr "Nähdään leirillä!"
