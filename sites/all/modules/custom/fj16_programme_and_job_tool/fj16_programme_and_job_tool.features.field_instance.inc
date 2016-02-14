@@ -74,7 +74,7 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_contact_name',
-    'label' => 'Contact',
+    'label' => 'Contact person',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -707,7 +707,7 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_required_gear',
-    'label' => 'Required gear',
+    'label' => 'Extra kit',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -978,11 +978,12 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Confirmed');
-  t('Contact');
   t('Contact email');
+  t('Contact person');
   t('Contact phone');
   t('Description');
   t('Do not edit this field.');
+  t('Extra kit');
   t('How many spots have been reserved outside of this system');
   t('Image');
   t('Image URL');
@@ -993,7 +994,6 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
   t('Job description');
   t('Job type');
   t('Localized title');
-  t('Required gear');
   t('SharePoint Name');
   t('SharePoint Unique ID');
   t('Skill areas');

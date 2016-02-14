@@ -115,9 +115,9 @@ function fj16_programme_and_job_tool_page_alter(&$page) {
   $is_403 = drupal_get_http_header("status") === "403 Forbidden";
 
   if($is_flagging && $is_403) {
-    drupal_set_title(t('This assignment is full'));
-    $page['content']['system_main']['main']['#markup'] = t('Unfortunately the assignment you selected is already full. !return and try selecting another one.',
-      array('!return' => l(t('Return to the assignment list'), 'generator')));
+    drupal_set_title(t('This staff position is full'));
+    $page['content']['system_main']['main']['#markup'] = t('Unfortunately the staff position you selected is already full. !return and try selecting another one.',
+      array('!return' => l(t('Return to the staff position list'), 'generator')));
   }
 }
 
@@ -129,7 +129,7 @@ function _fj16_programme_and_job_tool_generator_page() {
     drupal_set_title(t('Welcome to the generator!'));
     $variables = array(
       'intro_text' => 'This is an intro text lorem ipsum dolor sit amet...',
-      'login_link' => l(t('Login with ScoutID'), 'saml/login'),
+      'login_link' => l(t('Log in using ScoutID'), 'saml/login'),
       'login_intro' => t('Note: you need to log in with your personal ScoutID.'),
       'alternative_login_link' => t("International guest or not yet a scout/guide? !register and then !login with your user name and password.", array(
           '!register' => l(t('Register'), 'user/register'),
@@ -158,7 +158,7 @@ function _fj16_programme_and_job_tool_generator_confirmation_page() {
 
 function _fj16_programme_and_job_tool_generator_thankyou_page() {
   global $user;
-  drupal_set_title('Thank you!');
+  drupal_set_title(t('Thank you!'));
 
   $job_title = $name = $email = $phone = $wotw_title = '';
 
@@ -180,7 +180,7 @@ function _fj16_programme_and_job_tool_generator_thankyou_page() {
     'contact_name' => check_plain($name),
     'contact_email' => check_plain($email),
     'contact_phone' => check_plain($phone),
-    'job_further_info' => t('Your contact person will contact you within the next 30 days.'),
+    'job_further_info' => t('The contact person will be in touch within a month.'),
     'will_o_the_wisp_name' => check_plain($wotw_title),
     'info_text' => 'Lorem ipsum dolor sit amet...'
   );
@@ -200,13 +200,13 @@ function _fj16_programme_and_job_tool_role_form($form, &$form_state) {
 
   $form['submit_explorer'] = array(
     '#type' => 'submit',
-    '#value' => t('Explorer'),
+    '#value' => t('Explorer (15-17-years-old)'),
     '#name' => 'explorer'
   );
 
   $form['submit_rover_or_adult'] = array(
     '#type' => 'submit',
-    '#value' => t('Rover or adult'),
+    '#value' => t('Rover or Scouter (18+ years)'),
     '#name' => 'rover_or_adult'
   );
 
@@ -247,7 +247,7 @@ function _fj16_programme_and_job_tool_confirmation_form($form, &$form_state) {
 
   $form['assignment'] = array(
     '#type' => 'item',
-    '#title' => t('You have chosen the assignment'),
+    '#title' => t('You have chosen the following staff position'),
     '#markup' => 'n/a'
   );
 
@@ -263,7 +263,7 @@ function _fj16_programme_and_job_tool_confirmation_form($form, &$form_state) {
     $wotw_title = field_get_items('node', $wotw, 'field_localized_title')[0]['value'];
     $form['wotw'] = array(
       '#type' => 'item',
-      '#title' => t("You have chosen the will-o'-the-wisp"),
+      '#title' => t('You have chosen the following Will-o\'-the-wisp 24h off-camp adventure'),
       '#markup' => check_plain($wotw_title) . ' ' . l(t('Edit'), 'generator/will-o-the-wisp')
     );
   } else if(fj16_user_has_role_named('rover or adult')) {
@@ -275,7 +275,7 @@ function _fj16_programme_and_job_tool_confirmation_form($form, &$form_state) {
 
   $form['info'] = array(
     '#type' => 'item',
-    '#title' => t('The following information about you will be sent to the camp organisation'),
+    '#title' => t('The following information we have on you will be sent to the Roihu organisation so that they can be in touch.'),
     '#markup' => ''
       . check_plain($name)
       . '<br>'
@@ -287,7 +287,7 @@ function _fj16_programme_and_job_tool_confirmation_form($form, &$form_state) {
   $form['greetings'] = array(
     '#type' => 'textarea',
     '#rows' => 3,
-    '#title' => t('Optional greetings for the camp organisation'),
+    '#title' => t('Anything you wish to say to the camp organisation?'),
     '#default_value' => $greetings
   );
 
@@ -666,3 +666,18 @@ function fj16_programme_and_jobs_tool_find_file_by_url($url) {
   }
   return NULL;
 }
+
+
+// For localization
+
+t('Choose this staff position');
+t('Your choice has been saved');
+t('Staff position selected');
+t('Reject this staff position');
+t('You have been removed from the staff position [node:title]');
+t('Choose this');
+t('Will-o\'-the-wisp selected');
+t('Deselect this');
+
+
+
