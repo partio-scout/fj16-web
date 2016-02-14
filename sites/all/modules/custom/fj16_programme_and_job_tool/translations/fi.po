@@ -14,8 +14,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2016-02-14 02:44+0200\n"
-"PO-Revision-Date: 2016-02-14 02:46+0200\n"
+"POT-Creation-Date: 2016-02-14 03:10+0200\n"
+"PO-Revision-Date: 2016-02-14 03:11+0200\n"
 "Last-Translator: \n"
 "Language-Team: EMAIL@ADDRESS\n"
 "Language: fi\n"
@@ -34,6 +34,7 @@ msgid "Contact email"
 msgstr "Yhteyshenkilön sähköpostiosoite"
 
 #: fj16_programme_and_job_tool.features.field_instance.inc:982
+#: templates/fj16_generator_thankyou.tpl.php:6
 msgid "Contact person"
 msgstr "Yhteyshenkilö"
 
@@ -261,6 +262,10 @@ msgstr "kirjaudu"
 msgid "Choose your age group"
 msgstr "Valitse ikäkautesi"
 
+#: fj16_programme_and_job_tool.module:155
+msgid "Confirm your selection"
+msgstr "Vahvista valintasi"
+
 #: fj16_programme_and_job_tool.module:161
 msgid "Thank you!"
 msgstr "Kiitos!"
@@ -296,10 +301,10 @@ msgstr "Olet valinnut seuraavan virvatulen"
 #: fj16_programme_and_job_tool.module:278
 msgid ""
 "The following information we have on you will be sent to the Roihu "
-"organisation so that they can be in touch."
+"organisation so that they can be in touch"
 msgstr ""
 "Seuraavat tiedot sinusta lähetetään leiriorganisaatiolle yhteydenottoja "
-"varten:"
+"varten"
 
 #: fj16_programme_and_job_tool.module:290
 msgid "Anything you wish to say to the camp organisation?"
@@ -390,6 +395,25 @@ msgstr ""
 "Kehitin aukeaa @days päivän @hours tunnin @mins minuutin @seconds sekunnin "
 "kuluttua."
 
+#: templates/fj16_generator_thankyou.tpl.php:3
+msgid "Your choices have been saved into our system."
+msgstr "Valintasi on tallennettu."
+
+#: templates/fj16_generator_thankyou.tpl.php:4
+msgid "Your staff position"
+msgstr "Pestisi"
+
+#: templates/fj16_generator_thankyou.tpl.php:17
+msgid "Your Will-o'-the-wisp 24h off-camp adventure"
+msgstr "Virvatulesi"
+
 #: templates/fj16_generator_thankyou.tpl.php:21
 msgid "See you at Roihu!"
 msgstr "Nähdään leirillä!"
+
+#~ msgid ""
+#~ "The following information we have on you will be sent to the Roihu "
+#~ "organisation so that they can be in touch."
+#~ msgstr ""
+#~ "Seuraavat tiedot sinusta lähetetään leiriorganisaatiolle yhteydenottoja "
+#~ "varten:"

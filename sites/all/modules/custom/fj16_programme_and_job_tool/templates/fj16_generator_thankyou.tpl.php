@@ -1,6 +1,6 @@
 <div class="generator-thankyou">
   <div class="job">
-    <p><?php print('Your choices have been saved into our system and a confirmation email has been sent.); ?></p>
+    <p><?php print t('Your choices have been saved into our system.'); ?></p>
     <p><span class="label"><?php print t('Your staff position'); ?>:</span> <?php print $job_name; ?></p>
     <p>
       <span class="label"><?php print t('Contact person'); ?>:</span>
@@ -14,7 +14,7 @@
   </div>
   <?php if($will_o_the_wisp_name): ?>
     <div class="will-o-the-wisp">
-      <p><span class="label"><?php print t('Your Will-o\'-the-wisp 24h off-camp adventure'); ?>:</span> <?php print $will_o_the_wisp_name; ?></p>
+      <p><span class="label"><?php print t("Your Will-o'-the-wisp 24h off-camp adventure"); ?>:</span> <?php print $will_o_the_wisp_name; ?></p>
     </div>
   <?php endif; ?>
   <div class="further-info">

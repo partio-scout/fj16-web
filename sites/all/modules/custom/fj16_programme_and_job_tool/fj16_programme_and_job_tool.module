@@ -152,7 +152,7 @@ function _fj16_programme_and_job_tool_generator_page() {
 }
 
 function _fj16_programme_and_job_tool_generator_confirmation_page() {
-  drupal_set_title('Confirm your selection');
+  drupal_set_title(t('Confirm your selection'));
   return drupal_get_form('_fj16_programme_and_job_tool_confirmation_form');
 }
 
@@ -247,7 +247,7 @@ function _fj16_programme_and_job_tool_confirmation_form($form, &$form_state) {
 
   $form['assignment'] = array(
     '#type' => 'item',
-    '#title' => t('You have chosen the following staff position'),
+    '#title' => t('You have chosen the following staff position') . ':',
     '#markup' => 'n/a'
   );
 
@@ -263,7 +263,7 @@ function _fj16_programme_and_job_tool_confirmation_form($form, &$form_state) {
     $wotw_title = field_get_items('node', $wotw, 'field_localized_title')[0]['value'];
     $form['wotw'] = array(
       '#type' => 'item',
-      '#title' => t('You have chosen the following Will-o\'-the-wisp 24h off-camp adventure'),
+      '#title' => t('You have chosen the following Will-o\'-the-wisp 24h off-camp adventure') . ':',
       '#markup' => check_plain($wotw_title) . ' ' . l(t('Edit'), 'generator/will-o-the-wisp')
     );
   } else if(fj16_user_has_role_named('rover or adult')) {
@@ -275,7 +275,7 @@ function _fj16_programme_and_job_tool_confirmation_form($form, &$form_state) {
 
   $form['info'] = array(
     '#type' => 'item',
-    '#title' => t('The following information we have on you will be sent to the Roihu organisation so that they can be in touch.'),
+    '#title' => t('The following information we have on you will be sent to the Roihu organisation so that they can be in touch') . ':',
     '#markup' => ''
       . check_plain($name)
       . '<br>'

@@ -4,18 +4,18 @@
 # Copyright YEAR NAME <EMAIL@ADDRESS>
 # Generated from files:
 #  fj16_programme_and_job_tool.features.field_instance.inc: n/a
+#  templates/fj16_generator_thankyou.tpl.php: n/a
 #  fj16_programme_and_job_tool.views_default.inc: n/a
 #  fj16_programme_and_job_tool.features.inc: n/a
 #  fj16_programme_and_job_tool.module: n/a
 #  fj16_programme_and_job_tool.info: n/a
 #  scripts/counter.js: n/a
-#  templates/fj16_generator_thankyou.tpl.php: n/a
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2016-02-14 00:43+0000\n"
+"POT-Creation-Date: 2016-02-14 01:08+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -32,7 +32,7 @@ msgstr ""
 msgid "Contact email"
 msgstr ""
 
-#: fj16_programme_and_job_tool.features.field_instance.inc:982
+#: fj16_programme_and_job_tool.features.field_instance.inc:982 templates/fj16_generator_thankyou.tpl.php:6
 msgid "Contact person"
 msgstr ""
 
@@ -252,6 +252,10 @@ msgstr ""
 msgid "Choose your age group"
 msgstr ""
 
+#: fj16_programme_and_job_tool.module:155
+msgid "Confirm your selection"
+msgstr ""
+
 #: fj16_programme_and_job_tool.module:161
 msgid "Thank you!"
 msgstr ""
@@ -285,7 +289,7 @@ msgid "You have chosen the following Will-o'-the-wisp 24h off-camp adventure"
 msgstr ""
 
 #: fj16_programme_and_job_tool.module:278
-msgid "The following information we have on you will be sent to the Roihu organisation so that they can be in touch."
+msgid "The following information we have on you will be sent to the Roihu organisation so that they can be in touch"
 msgstr ""
 
 #: fj16_programme_and_job_tool.module:290
@@ -370,6 +374,18 @@ msgstr ""
 
 #: scripts/counter.js:0
 msgid "The generator opens in @days days @hours hours @mins minutes @seconds seconds."
+msgstr ""
+
+#: templates/fj16_generator_thankyou.tpl.php:3
+msgid "Your choices have been saved into our system."
+msgstr ""
+
+#: templates/fj16_generator_thankyou.tpl.php:4
+msgid "Your staff position"
+msgstr ""
+
+#: templates/fj16_generator_thankyou.tpl.php:17
+msgid "Your Will-o'-the-wisp 24h off-camp adventure"
 msgstr ""
 
 #: templates/fj16_generator_thankyou.tpl.php:21
