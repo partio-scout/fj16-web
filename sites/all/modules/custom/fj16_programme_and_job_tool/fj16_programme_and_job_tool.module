@@ -70,7 +70,8 @@ function fj16_programme_and_job_tool_theme($existing, $type, $theme, $path) {
         'contact_phone' => NULL,
         'job_further_info' => NULL,
         'will_o_the_wisp_name' => NULL,
-        'info_text' => NULL
+        'info_text' => NULL,
+        'current_lang' => NULL
       ),
       'template' => 'templates/fj16_generator_thankyou'
     )
@@ -161,6 +162,7 @@ function _fj16_programme_and_job_tool_generator_confirmation_page() {
 }
 
 function _fj16_programme_and_job_tool_generator_thankyou_page() {
+  global $language;
   global $user;
   drupal_set_title(t('Thank you!'));
 
@@ -186,7 +188,8 @@ function _fj16_programme_and_job_tool_generator_thankyou_page() {
     'contact_phone' => check_plain($phone),
     'job_further_info' => t('The contact person will be in touch within a month.'),
     'will_o_the_wisp_name' => check_plain($wotw_title),
-    'info_text' => 'Lorem ipsum dolor sit amet...'
+    'info_text' => 'Lorem ipsum dolor sit amet...',
+    'current_lang' => $language->language
   );
   return theme('fj16_generator_thankyou', $variables);
 }
