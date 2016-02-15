@@ -42,11 +42,13 @@
 			word-wrap: break-word;
 		}
 
-		.field-name-type-image {
+		.field-type-image {
 			text-align: center;
 
 			img {
 				margin: 1em 0;
+				height: auto;
+				width: 100%;
 			}
 		}
 
