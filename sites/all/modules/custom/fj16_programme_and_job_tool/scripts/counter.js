@@ -9,7 +9,8 @@ jQuery(function($) {
       return; // We're open
     }
 
-    var timerElem = $('<p></p>');
+    form.before(form.find('.intro'));
+    var timerElem = $('<p class="generator-timer"></p>');
     form.before(timerElem);
     $('h1').text(Drupal.t('Hold tight!'));
 
