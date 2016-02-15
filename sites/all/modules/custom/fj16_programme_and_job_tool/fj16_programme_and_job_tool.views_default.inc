@@ -54,6 +54,11 @@ function fj16_programme_and_job_tool_views_default_views() {
   $handler->display->display_options['sorts']['field_localized_title_value']['id'] = 'field_localized_title_value';
   $handler->display->display_options['sorts']['field_localized_title_value']['table'] = 'field_data_field_localized_title';
   $handler->display->display_options['sorts']['field_localized_title_value']['field'] = 'field_localized_title_value';
+  /* Sort criterion: Content: Sticky */
+  $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
+  $handler->display->display_options['sorts']['sticky']['table'] = 'node';
+  $handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
+  $handler->display->display_options['sorts']['sticky']['order'] = 'DESC';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -193,6 +198,11 @@ function fj16_programme_and_job_tool_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Sort criterion: Content: Sticky */
+  $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
+  $handler->display->display_options['sorts']['sticky']['table'] = 'node';
+  $handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
+  $handler->display->display_options['sorts']['sticky']['order'] = 'DESC';
   /* Sort criterion: Content: Localized title (field_localized_title) */
   $handler->display->display_options['sorts']['field_localized_title_value']['id'] = 'field_localized_title_value';
   $handler->display->display_options['sorts']['field_localized_title_value']['table'] = 'field_data_field_localized_title';

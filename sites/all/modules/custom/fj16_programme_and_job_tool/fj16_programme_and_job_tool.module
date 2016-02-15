@@ -70,9 +70,16 @@ function fj16_programme_and_job_tool_theme($existing, $type, $theme, $path) {
         'contact_phone' => NULL,
         'job_further_info' => NULL,
         'will_o_the_wisp_name' => NULL,
-        'info_text' => NULL
+        'info_text' => NULL,
+        'current_lang' => NULL
       ),
       'template' => 'templates/fj16_generator_thankyou'
+    ),
+    'fj16_generator_role_select_intro' => array(
+      'variables' => array(
+        'current_lang' => NULL
+      ),
+      'template' => 'templates/fj16_generator_role_select'
     )
   );
 }
@@ -128,8 +135,8 @@ function _fj16_programme_and_job_tool_generator_page() {
     // Anonymous users
     drupal_set_title(t('Welcome to the generator!'));
     $variables = array(
-      'intro_text' => 'This is an intro text lorem ipsum dolor sit amet...',
-      'login_link' => l(t('Log in using ScoutID'), 'saml/login'),
+      'intro_text' => '',
+      'login_link' => l(t('Log in using ScoutID'), 'saml/login', array('attributes' => array('class' => 'scoutid'))),
       'login_intro' => t('Note: you need to log in with your personal ScoutID.'),
       'alternative_login_link' => t("International guest or not yet a scout/guide? !register and then !login with your user name and password.", array(
           '!register' => l(t('Register'), 'user/register'),
@@ -137,12 +144,16 @@ function _fj16_programme_and_job_tool_generator_page() {
         ))
     );
     return theme('fj16_generator_front', $variables);
+  } else if(fj16_user_selections_confirmed($user)) {
+    drupal_goto('generator/thankyou');
   } else if(fj16_user_selections_complete($user)) {
-    //TODO Show selections
-    drupal_set_title('TODO');
-    return 'Your selections';
+    drupal_goto('generator/confirm');
   } else if(fj16_user_has_role_named('explorer')) {
-    drupal_goto('generator/will-o-the-wisp');
+    if(fj16_get_selected_wotw($user) === FALSE) {
+      drupal_goto('generator/will-o-the-wisp');
+    } else {
+      drupal_goto('generator/assignment/explorer');
+    }
   } else if(fj16_user_has_role_named('rover or adult')) {
     drupal_goto('generator/assignment');
   } else {
@@ -157,6 +168,7 @@ function _fj16_programme_and_job_tool_generator_confirmation_page() {
 }
 
 function _fj16_programme_and_job_tool_generator_thankyou_page() {
+  global $language;
   global $user;
   drupal_set_title(t('Thank you!'));
 
@@ -182,13 +194,15 @@ function _fj16_programme_and_job_tool_generator_thankyou_page() {
     'contact_phone' => check_plain($phone),
     'job_further_info' => t('The contact person will be in touch within a month.'),
     'will_o_the_wisp_name' => check_plain($wotw_title),
-    'info_text' => 'Lorem ipsum dolor sit amet...'
+    'info_text' => 'Lorem ipsum dolor sit amet...',
+    'current_lang' => $language->language
   );
   return theme('fj16_generator_thankyou', $variables);
 }
 
 function _fj16_programme_and_job_tool_role_form($form, &$form_state) {
   global $user;
+  global $language;
   $displayed_opens = strtotime(variable_get('fj16_generator_opens', FJ16_GENERATOR_OPENS_DEFAULT));
   $displayed_opens += 10 + ($user->uid % 50);
 
@@ -208,6 +222,11 @@ function _fj16_programme_and_job_tool_role_form($form, &$form_state) {
     '#type' => 'submit',
     '#value' => t('Rover or Scouter (18+ years)'),
     '#name' => 'rover_or_adult'
+  );
+
+  $vars = array('current_lang' => $language->language);
+  $form['intro'] = array(
+    '#markup' => '<p></p>'. theme('fj16_generator_role_select_intro', $vars)
   );
 
   return $form;
@@ -282,7 +301,14 @@ function _fj16_programme_and_job_tool_confirmation_form($form, &$form_state) {
       . l($user->mail, $user->mail)
   );
 
+  $phone = field_get_items('user', $user_full, 'field_phone_number')[0]['value'];
   $greetings = field_get_items('user', $user_full, 'field_further_info_for_org')[0]['value'];
+
+  $form['phone'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Phone number'),
+    '#default_value' => $phone
+  );
 
   $form['greetings'] = array(
     '#type' => 'textarea',
@@ -302,9 +328,12 @@ function _fj16_programme_and_job_tool_confirmation_form($form, &$form_state) {
 function _fj16_programme_and_job_tool_confirmation_form_submit($form, &$form_state) {
   global $user;
 
+  $phone = $form_state['values']['phone'];
   $greetings = $form_state['values']['greetings'];
   $real_user = user_load($user->uid);
   $real_user->field_further_info_for_org[LANGUAGE_NONE][0]['value'] = $greetings;
+  $real_user->field_phone_number[LANGUAGE_NONE][0]['value'] = $phone;
+  $real_user->field_confirmed[LANGUAGE_NONE][0]['value'] = 1;
   user_save($real_user);
 
   $form_state['redirect'] = 'generator/thankyou';
@@ -323,6 +352,22 @@ function fj16_programme_and_job_tool_form_alter(&$form, &$form_state, $form_id) 
       $form['account']['mail']['#access'] = FALSE;
     }
   }
+
+  if($form_id === 'user_register_form') {
+    drupal_set_title(t('Register'));
+    $form['actions']['submit']['#value'] = t('Register');
+  }
+
+  if($form_id === 'user_pass_reset') {
+    drupal_set_title(t('Confirm your registration'));
+    $form['actions']['submit']['#value'] = t('Confirm your registration');
+  }
+}
+
+function fj16_user_selections_confirmed($user) {
+  $account = user_load($user->uid);
+  $confirmed = $account->field_confirmed[LANGUAGE_NONE][0]['value'];
+  return $confirmed === '1';
 }
 
 function fj16_get_user_selections($user) {

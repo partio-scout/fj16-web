@@ -15,6 +15,22 @@
 
 #edit-submit-rover-or-adult {
 	@extend .purple;
+	&[disabled] {
+		background: #AAA !important;
+	}
+}
+
+p.scoutid-login {
+	padding: 30px 0;
+}
+
+a.scoutid {
+	@extend .button, .purple;
+	font-weight: normal;
+}
+
+.page-user-register .tabs {
+	display: none;
 }
 
 .bulk-jobs-list, .wotw-list {
@@ -42,11 +58,13 @@
 			word-wrap: break-word;
 		}
 
-		.field-name-type-image {
+		.field-type-image {
 			text-align: center;
 
 			img {
 				margin: 1em 0;
+				height: auto;
+				width: 100%;
 			}
 		}
 
@@ -264,6 +282,10 @@
 			&:after {
 				content: ' \00BB';
 			}
+		}
+
+		a.flag.sending {
+			opacity: 0.5;
 		}
 
 		a.unflag-action {

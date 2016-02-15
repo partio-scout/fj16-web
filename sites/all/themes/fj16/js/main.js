@@ -237,6 +237,14 @@
 	}
 
 	if($('.bulk-jobs-list, .wotw-list').length) { 
+		// A bit of a hack to hide untranslated items
+		$('.bulk-jobs-list h2, .wotw-list h2').each(function(index, item) {
+			$item = $(item);
+			if($item.text().trim().length < 2) {
+				$item.closest('.views-row').remove();
+			}
+		});
+
 		$('.view-content').masonry({
 			// set itemSelector so .grid-sizer is not used in layout
 			itemSelector: '.views-row',
