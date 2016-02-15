@@ -723,6 +723,7 @@ t('You have been removed from the staff position [node:title]');
 t('Choose this');
 t('Will-o\'-the-wisp selected');
 t('Deselect this');
+t('A welcome message with further instructions has been sent to your e-mail address.');
 
 
 

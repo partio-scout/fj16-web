@@ -14,8 +14,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2016-02-15 16:30+0200\n"
-"PO-Revision-Date: 2016-02-15 16:30+0200\n"
+"POT-Creation-Date: 2016-02-15 17:32+0200\n"
+"PO-Revision-Date: 2016-02-15 17:33+0200\n"
 "Last-Translator: \n"
 "Language-Team: EMAIL@ADDRESS\n"
 "Language: fi\n"
@@ -358,6 +358,14 @@ msgstr "Virvatuli valittu"
 #: fj16_programme_and_job_tool.module:725
 msgid "Deselect this"
 msgstr "Poista valinta"
+
+#: fj16_programme_and_job_tool.module:726
+msgid ""
+"A welcome message with further instructions has been sent to your e-mail "
+"address."
+msgstr ""
+"Olemme lähettäneet sähköpostiisi linkin, jonka avulla voit vahvistaa "
+"käyttäjätilisi ja kirjautua sisään."
 
 #: fj16_programme_and_job_tool.module:434;460;463
 msgid "saml"
