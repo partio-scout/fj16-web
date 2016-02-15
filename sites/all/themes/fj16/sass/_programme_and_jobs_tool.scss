@@ -38,6 +38,14 @@ a.scoutid {
 }
 
 .bulk-jobs-list, .wotw-list {
+	.views-exposed-form {
+		color: white;
+
+		.description {
+			display: none;
+		}
+	}
+
 	.views-row {
 		width: 23%;
 		margin: 30px 2% 0 0;
