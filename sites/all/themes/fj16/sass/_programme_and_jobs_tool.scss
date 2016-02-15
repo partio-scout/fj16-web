@@ -20,6 +20,11 @@
 	}
 }
 
+a.scoutid {
+	@extend .button, .purple;
+	font-weight: normal;
+}
+
 .bulk-jobs-list, .wotw-list {
 	.views-row {
 		width: 23%;
