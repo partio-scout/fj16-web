@@ -15,6 +15,9 @@
 
 #edit-submit-rover-or-adult {
 	@extend .purple;
+	&[disabled] {
+		background: #AAA !important;
+	}
 }
 
 .bulk-jobs-list, .wotw-list {
@@ -266,6 +269,10 @@
 			&:after {
 				content: ' \00BB';
 			}
+		}
+
+		a.flag.sending {
+			opacity: 0.5;
 		}
 
 		a.unflag-action {
