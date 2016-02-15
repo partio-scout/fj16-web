@@ -98,6 +98,15 @@ $is_full = !isset($content['flag_fj16_choose_bulk_job']['#markup']);
   <?php print render($title_suffix); ?>
 
   <div class="content"<?php print $content_attributes; ?>>
+    <?php if($page): ?>
+      <div class="return-link">
+        <?php if($node->field_job_type[LANGUAGE_NONE][0]['value'] === 'explorers'): ?>
+          <p><?php print l('<< '.t('Return to list'), 'generator/assignment/explorer'); ?></p>
+        <?php else: ?>
+          <p><?php print l('<< '.t('Return to list'), 'generator/assignment'); ?></p>
+        <?php endif; ?>
+      </div>
+    <?php endif; ?>
     <?php
       // We hide the comments and links now so that we can render them later.
       hide($content['comments']);
