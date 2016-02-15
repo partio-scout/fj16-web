@@ -259,8 +259,8 @@ $yhteistyo: $blue;
       @include clearfix();
       
       padding: 3.4%;
-      background: lighten($yellow, 47);
-      border-top: 1px solid lighten($yellow, 20);
+      background: lighten($grey, 5);
+      border-top: 1px solid $grey;
 
       h2 {
         margin: 0 0 20px;
@@ -268,7 +268,7 @@ $yhteistyo: $blue;
 
       @include respondMin(medium) {
         border-top: 0;
-        border-left: 1px solid lighten($yellow, 20);
+        border-left: 1px solid $grey;
         width: 50%;
       }
     }
