@@ -80,6 +80,14 @@
 	}
 
 	if($('.bulk-jobs-list, .wotw-list').length) { 
+		// A bit of a hack to hide untranslated items
+		$('.bulk-jobs-list h2, .wotw-list h2').each(function(index, item) {
+			$item = $(item);
+			if($item.text().trim().length < 2) {
+				$item.closest('.views-row').remove();
+			}
+		});
+
 		$('.view-content').masonry({
 			// set itemSelector so .grid-sizer is not used in layout
 			itemSelector: '.views-row',
@@ -87,35 +95,6 @@
 			columnWidth: '.views-row',
 			percentPosition: true
 			// columnWidth: 300
-		});
-
-		$('#edit-field-tags-tid').parent().append('<div id="tags-cloud"></div>');
-
-		$('#edit-field-tags-tid').hide();
-
-		$('#edit-field-tags-tid option').each(function(index) {
-			// console.log('<a href="#" data-value="' + $(this).value() + '">' + $(this).text() + '</a>');
-			$('#tags-cloud').append('<a href="#" data-value="' + $(this).val() + '" class="select-tag">' + $(this).text() + '</a>');
-		});
-
-		$('.select-tag').click(function(e){
-			e.preventDefault();
-
-			var id = $(this).attr('data-value');
-
-			if($(this).hasClass('active')) {
-				console.log('Unselected: ' + id);
-				
-				$(this).removeClass('active');
-				$('#edit-field-tags-tid option[value="' + id + '"]').removeAttr('selected');
-			} else {
-				console.log('Selected: ' + id);
-
-				$(this).addClass('active');
-				$('#edit-field-tags-tid option[value="' + id + '"]').attr('selected', 'selected');
-			}
-
-			
 		});
 
 	}

@@ -1,0 +1,411 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  fj16_programme_and_job_tool.features.field_instance.inc: n/a
+#  templates/fj16_generator_thankyou.tpl.php: n/a
+#  fj16_programme_and_job_tool.module: n/a
+#  fj16_programme_and_job_tool.views_default.inc: n/a
+#  fj16_programme_and_job_tool.features.inc: n/a
+#  fj16_programme_and_job_tool.info: n/a
+#  scripts/counter.js: n/a
+#  scripts/main.js: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2016-02-15 15:30+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:1015
+msgid "Confirmed"
+msgstr ""
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:1016
+msgid "Contact email"
+msgstr ""
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:1017 templates/fj16_generator_thankyou.tpl.php:67
+msgid "Contact person"
+msgstr ""
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:1018
+msgid "Contact phone"
+msgstr ""
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:1019
+msgid "Description"
+msgstr ""
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:1020
+msgid "Do not edit this field."
+msgstr ""
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:1021
+msgid "Extra kit"
+msgstr ""
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:1022
+msgid "How many spots have been reserved outside of this system"
+msgstr ""
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:1023
+msgid "Image"
+msgstr ""
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:1024
+msgid "Image URL"
+msgstr ""
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:1025
+msgid "Inventory maximum"
+msgstr ""
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:1026
+msgid "Inventory minimum"
+msgstr ""
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:1027
+msgid "Inventory reserved"
+msgstr ""
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:1028
+msgid "Inventory total"
+msgstr ""
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:1029
+msgid "Job description"
+msgstr ""
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:1030
+msgid "Job type"
+msgstr ""
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:1031
+msgid "Localized title"
+msgstr ""
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:1032 fj16_programme_and_job_tool.module:309
+msgid "Phone number"
+msgstr ""
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:1033
+msgid "SharePoint Name"
+msgstr ""
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:1034
+msgid "SharePoint Unique ID"
+msgstr ""
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:1035
+msgid "Skill areas"
+msgstr ""
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:1036
+msgid "Suitability"
+msgstr ""
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:1037 fj16_programme_and_job_tool.views_default.inc:154;300
+msgid "Tags"
+msgstr ""
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:1038
+msgid "image"
+msgstr ""
+
+#: fj16_programme_and_job_tool.features.inc:106
+msgid "FJ16 Bulk job"
+msgstr ""
+
+#: fj16_programme_and_job_tool.features.inc:110;118
+msgid "Title"
+msgstr ""
+
+#: fj16_programme_and_job_tool.features.inc:114
+msgid "FJ16 Will-o'-the-wisp"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:139;285;362
+msgid "Master"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:140;286
+msgid "What type of a staff position do you want?"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:141;287;364
+msgid "more"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:142;288
+msgid "Filter"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:143;289
+msgid "Clear options"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:144;367
+msgid "Sort by"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:145;291;368
+msgid "Asc"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:146;292;369
+msgid "Desc"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:147;293
+msgid "Items per page"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:148;294
+msgid "- All -"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:149;295
+msgid "Offset"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:150;296
+msgid "« first"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:151;297
+msgid "‹ previous"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:152;298
+msgid "next ›"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:153;299
+msgid "last »"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:155;301
+msgid "Areas of skill, knowledge or expertise"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:156;302;370
+msgid "Page"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:290
+msgid "Lajittele"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:363
+msgid "Which Will-o'-the-wisp will you choose?"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:365
+msgid "Apply"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:366
+msgid "Reset"
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:125
+msgid "This staff position is full"
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:126
+msgid "Unfortunately the staff position you selected is already full. !return and try selecting another one."
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:127
+msgid "Return to the staff position list"
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:136
+msgid "Welcome to the generator!"
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:139
+msgid "Log in using ScoutID"
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:140
+msgid "Note: you need to log in with your personal ScoutID."
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:141
+msgid "International guest or not yet a scout/guide? !register and then !login with your user name and password."
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:142;357;358
+msgid "Register"
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:143
+msgid "log in"
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:160
+msgid "Choose your age group"
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:166
+msgid "Confirm your selection"
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:173
+msgid "Thank you!"
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:195
+msgid "The contact person will be in touch within a month."
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:217
+msgid "Explorer (15-17-years-old)"
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:223
+msgid "Rover or Scouter (18+ years)"
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:237
+msgid "The generator is not open yet. Please wait a while."
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:269
+msgid "You have chosen the following staff position"
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:274;286;289
+msgid "Edit"
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:285
+msgid "You have chosen the following Will-o'-the-wisp 24h off-camp adventure"
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:297
+msgid "The following information we have on you will be sent to the Roihu organisation so that they can be in touch"
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:316
+msgid "Anything you wish to say to the camp organisation?"
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:322
+msgid "Confirm"
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:362;363
+msgid "Confirm your registration"
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:435;448
+msgid "Login failed."
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:718
+msgid "Choose this staff position"
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:719
+msgid "Your choice has been saved"
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:720
+msgid "Staff position selected"
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:721
+msgid "Reject this staff position"
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:722
+msgid "You have been removed from the staff position [node:title]"
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:723
+msgid "Choose this"
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:724
+msgid "Will-o'-the-wisp selected"
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:725
+msgid "Deselect this"
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:726
+msgid "A welcome message with further instructions has been sent to your e-mail address."
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:434;460;463
+msgid "saml"
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:434
+msgid "SAML login failed with errors: <br><pre>@errors</pre>"
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:460
+msgid "Procuring new SAML user @name"
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:463
+msgid "Logging in existing SAML user @name"
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:671
+msgid "fj16_programme_and_jobs_tool"
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:671
+msgid "Unable to get image: @url"
+msgstr ""
+
+#: fj16_programme_and_job_tool.info:0
+msgid "FJ16 Programme and job tool"
+msgstr ""
+
+#: fj16_programme_and_job_tool.info:0
+msgid "FJ16"
+msgstr ""
+
+#: scripts/counter.js:0
+msgid "Hold tight!"
+msgstr ""
+
+#: scripts/counter.js:0
+msgid "The generator opens in @days days @hours hours @mins minutes @seconds seconds."
+msgstr ""
+
+#: scripts/main.js:0;0
+msgid "Sending..."
+msgstr ""
+
+#: templates/fj16_generator_thankyou.tpl.php:3
+msgid "Your choices have been saved into our system."
+msgstr ""
+
+#: templates/fj16_generator_thankyou.tpl.php:64
+msgid "Your staff position"
+msgstr ""
+
+#: templates/fj16_generator_thankyou.tpl.php:79
+msgid "Your Will-o'-the-wisp 24h off-camp adventure"
+msgstr ""
+
+#: templates/fj16_generator_thankyou.tpl.php:84
+msgid "See you at Roihu!"
+msgstr ""
+

@@ -15,6 +15,26 @@
 
 #edit-submit-rover-or-adult {
 	@extend .purple;
+	&[disabled] {
+		background: #AAA !important;
+	}
+}
+
+.generator-timer {
+	font-style: italic;
+}
+
+p.scoutid-login {
+	padding: 30px 0;
+}
+
+a.scoutid {
+	@extend .button, .purple;
+	font-weight: normal;
+}
+
+.page-user-register .tabs {
+	display: none;
 }
 
 .bulk-jobs-list, .wotw-list {
@@ -42,11 +62,13 @@
 			word-wrap: break-word;
 		}
 
-		.field-name-type-image {
+		.field-type-image {
 			text-align: center;
 
 			img {
 				margin: 1em 0;
+				height: auto;
+				width: 100%;
 			}
 		}
 
@@ -84,14 +106,18 @@
 				text-align: left;
 				margin: 1.5em 0 0;
 
-				.flag-action {
+				.flag-action, .unflag-action {
 					font-size: 1em;
 					display: block;
 					max-width: 300px;
+				}
+					
+				&.flag-action:after {
+					content: ' \00BB';
+				}
 
-					&.flag-action:after {
-						content: ' \00BB';
-					}
+				&.unflag-action:before {
+					content: '✓  ';
 				}
 			}
 
@@ -228,30 +254,20 @@
 			div {
 				display: inline-block;
 
-				a {
-					margin: 0 5px 0 0;
-					font-size: 0.8em;
-					background: $blue;
-					color: #fff;
-					padding: 3px 6px;
-					text-transform: lowercase;
-					position: relative;
-					top: -2px;
-
-					&:hover {
-						background: darken($blue, 15%);
-					}
-				}
+				margin: 0 5px 5px 0;
+				font-size: 0.8em;
+				background: $blue;
+				color: #fff;
+				padding: 3px 6px;
+				text-transform: lowercase;
+				position: relative;
+				top: -2px;
 			}
 		}
 
 		&.field-name-field-skill-areas {
-			.field-items a {
+			.field-items div {
 				background: $red;
-
-				&:hover {
-					background: darken($red, 15%);
-				}
 			}
 		}
 	}
@@ -271,7 +287,27 @@
 				content: ' \00BB';
 			}
 		}
+
+		a.flag.sending {
+			opacity: 0.5;
+		}
+
+		a.unflag-action {
+			@extend .button;
+			font-size: 1.4em;
+			text-transform: uppercase;
+
+			&:before {
+				content: '✓  ';
+			}
+		}
 	}
 
 
+}
+
+#-fj16-programme-and-job-tool-confirmation-form {
+	label {
+		font-weight: bold !important;
+	}
 }

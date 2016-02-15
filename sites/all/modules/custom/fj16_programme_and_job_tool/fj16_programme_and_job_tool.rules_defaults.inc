@@ -24,7 +24,7 @@ function fj16_programme_and_job_tool_default_rules_configuration() {
       "OWNER" : "rules",
       "REQUIRES" : [ "rules", "flag" ],
       "ON" : { "flag_flagged_fj16_will_o_the_wisp" : [] },
-      "DO" : [ { "redirect" : { "url" : "generator\\/assignment\\/explorer" } } ]
+      "DO" : [ { "redirect" : { "url" : "generator" } } ]
     }
   }');
   $items['rules_fj16_limit_one_job_selected'] = entity_import('rules_config', '{ "rules_fj16_limit_one_job_selected" : {

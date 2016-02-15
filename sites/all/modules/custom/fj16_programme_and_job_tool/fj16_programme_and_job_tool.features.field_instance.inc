@@ -74,7 +74,7 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_contact_name',
-    'label' => 'Contact name',
+    'label' => 'Contact person',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -349,7 +349,7 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => '',
+          'image_style' => 'large',
         ),
         'type' => 'image',
         'weight' => 0,
@@ -531,7 +531,7 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
         'label' => 'above',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
+        'type' => 'i18n_taxonomy_term_reference_plain',
         'weight' => 3,
       ),
       'teaser' => array(
@@ -569,10 +569,10 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
+        'type' => 'i18n_taxonomy_term_reference_plain',
         'weight' => 4,
       ),
       'teaser' => array(
@@ -611,14 +611,8 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'number',
-        'settings' => array(
-          'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 0,
-          'thousand_separator' => ' ',
-        ),
-        'type' => 'number_integer',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 5,
       ),
       'teaser' => array(
@@ -658,9 +652,8 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'teaser' => array(
@@ -714,7 +707,7 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_required_gear',
-    'label' => 'Required gear',
+    'label' => 'Extra kit',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -824,11 +817,11 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => '',
+          'image_style' => 'large',
         ),
         'type' => 'image',
         'weight' => 1,
@@ -944,13 +937,88 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'user-user-field_confirmed'
+  $field_instances['user-user-field_confirmed'] = array(
+    'bundle' => 'user',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_confirmed',
+    'label' => 'Confirmed',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 0,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 34,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_phone_number'
+  $field_instances['user-user-field_phone_number'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_phone_number',
+    'label' => 'Phone number',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 35,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
+  t('Confirmed');
   t('Contact email');
-  t('Contact name');
+  t('Contact person');
   t('Contact phone');
   t('Description');
   t('Do not edit this field.');
+  t('Extra kit');
   t('How many spots have been reserved outside of this system');
   t('Image');
   t('Image URL');
@@ -961,7 +1029,7 @@ function fj16_programme_and_job_tool_field_default_field_instances() {
   t('Job description');
   t('Job type');
   t('Localized title');
-  t('Required gear');
+  t('Phone number');
   t('SharePoint Name');
   t('SharePoint Unique ID');
   t('Skill areas');

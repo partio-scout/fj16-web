@@ -69,7 +69,7 @@ function fj16_programme_and_job_tool_strongarm() {
           ),
           'default' => array(
             'weight' => '8',
-            'visible' => FALSE,
+            'visible' => TRUE,
           ),
         ),
       ),
@@ -114,6 +114,10 @@ function fj16_programme_and_job_tool_strongarm() {
       'display' => array(
         'flag_fj16_will_o_the_wisp' => array(
           'teaser' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+          'default' => array(
             'weight' => '10',
             'visible' => TRUE,
           ),
