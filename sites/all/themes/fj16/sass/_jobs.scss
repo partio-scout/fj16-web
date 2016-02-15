@@ -145,6 +145,14 @@ $yhteistyo: $blue;
 
 .node-type-fj16-job #content {
   @extend .container;
+  
+  .node-fj16-job {
+    .info:before {     
+      @include respondMin(medium) {
+        left: 44%;
+      }
+    }
+  }
 }
 
 .node-fj16-job {
@@ -167,10 +175,6 @@ $yhteistyo: $blue;
     height: 50px;
     background: 50% 100% red no-repeat url(../img/triangle.png);
     background-size: contain;
-      
-    @include respondMin(medium) {
-      left: 44%;
-    }
   }
 
   &.elamys {
