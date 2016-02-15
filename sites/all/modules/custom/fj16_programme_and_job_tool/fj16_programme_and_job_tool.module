@@ -137,12 +137,16 @@ function _fj16_programme_and_job_tool_generator_page() {
         ))
     );
     return theme('fj16_generator_front', $variables);
+  } else if(fj16_user_selections_confirmed($user)) {
+    drupal_goto('generator/thankyou');
   } else if(fj16_user_selections_complete($user)) {
-    //TODO Show selections
-    drupal_set_title('TODO');
-    return 'Your selections';
+    drupal_goto('generator/confirm');
   } else if(fj16_user_has_role_named('explorer')) {
-    drupal_goto('generator/will-o-the-wisp');
+    if(fj16_get_selected_wotw($user) === FALSE) {
+      drupal_goto('generator/will-o-the-wisp');
+    } else {
+      drupal_goto('generator/assignment/explorer');
+    }
   } else if(fj16_user_has_role_named('rover or adult')) {
     drupal_goto('generator/assignment');
   } else {
@@ -333,6 +337,12 @@ function fj16_programme_and_job_tool_form_alter(&$form, &$form_state, $form_id) 
       $form['account']['mail']['#access'] = FALSE;
     }
   }
+}
+
+function fj16_user_selections_confirmed($user) {
+  $account = user_load($user->uid);
+  $confirmed = $account->field_confirmed[LANGUAGE_NONE][0]['value'];
+  return $confirmed === '1';
 }
 
 function fj16_get_user_selections($user) {
