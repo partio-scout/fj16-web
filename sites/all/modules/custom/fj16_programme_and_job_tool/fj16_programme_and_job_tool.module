@@ -352,6 +352,16 @@ function fj16_programme_and_job_tool_form_alter(&$form, &$form_state, $form_id) 
       $form['account']['mail']['#access'] = FALSE;
     }
   }
+
+  if($form_id === 'user_register_form') {
+    drupal_set_title(t('Register'));
+    $form['actions']['submit']['#value'] = t('Register');
+  }
+
+  if($form_id === 'user_pass_reset') {
+    drupal_set_title(t('Confirm your registration'));
+    $form['actions']['submit']['#value'] = t('Confirm your registration');
+  }
 }
 
 function fj16_user_selections_confirmed($user) {
