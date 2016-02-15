@@ -12,10 +12,10 @@ a {
 	@include transition(all 0.3s ease-out);
 	text-decoration: none;
 
-	color: $red;
+	color: $blue;
 
 	&:hover {
-		color: shade($red, 15%);
+		color: shade($blue, 15%);
 	}
 }
 
