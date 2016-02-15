@@ -206,6 +206,11 @@ function _fj16_programme_and_job_tool_role_form($form, &$form_state) {
   $displayed_opens = strtotime(variable_get('fj16_generator_opens', FJ16_GENERATOR_OPENS_DEFAULT));
   $displayed_opens += 10 + ($user->uid % 50);
 
+  $vars = array('current_lang' => $language->language);
+  $form['intro'] = array(
+    '#markup' => '<div class="intro"><p></p>'. theme('fj16_generator_role_select_intro', $vars) . '</div>'
+  );
+
   $form['#attributes'] = array(
     'id' => 'fj16-generator-role-form',
     'style' => _fj16_generator_open() ? '' : 'display: none',
@@ -222,11 +227,6 @@ function _fj16_programme_and_job_tool_role_form($form, &$form_state) {
     '#type' => 'submit',
     '#value' => t('Rover or Scouter (18+ years)'),
     '#name' => 'rover_or_adult'
-  );
-
-  $vars = array('current_lang' => $language->language);
-  $form['intro'] = array(
-    '#markup' => '<p></p>'. theme('fj16_generator_role_select_intro', $vars)
   );
 
   return $form;
@@ -723,6 +723,7 @@ t('You have been removed from the staff position [node:title]');
 t('Choose this');
 t('Will-o\'-the-wisp selected');
 t('Deselect this');
+t('A welcome message with further instructions has been sent to your e-mail address.');
 
 
 

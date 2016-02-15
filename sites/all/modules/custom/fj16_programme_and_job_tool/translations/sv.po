@@ -134,7 +134,7 @@ msgstr "Master"
 
 #: fj16_programme_and_job_tool.views_default.inc:140;286
 msgid "What type of a staff position do you want?"
-msgstr "Vad skulle du vilja ha fÃ¶r uppdrag?"
+msgstr "Vad skulle du vilja ha för uppdrag?"
 
 #: fj16_programme_and_job_tool.views_default.inc:141;287;364
 msgid "more"
@@ -146,7 +146,7 @@ msgstr "Filtrera "
 
 #: fj16_programme_and_job_tool.views_default.inc:143;289
 msgid "Clear options"
-msgstr "TÃ¶m dina val"
+msgstr "Töm dina val"
 
 #: fj16_programme_and_job_tool.views_default.inc:144;367
 msgid "Sort by"
@@ -190,7 +190,7 @@ msgstr ""
 
 #: fj16_programme_and_job_tool.views_default.inc:155;301
 msgid "Areas of skill, knowledge or expertise"
-msgstr "KunskapsomrÃ¥de"
+msgstr "Kunskapsområde"
 
 #: fj16_programme_and_job_tool.views_default.inc:156;302;370
 msgid "Page"
