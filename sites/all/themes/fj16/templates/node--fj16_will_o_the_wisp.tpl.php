@@ -96,6 +96,11 @@ $is_full = !isset($content['flag_fj16_will_o_the_wisp']['#markup']);
   <?php print render($title_suffix); ?>
 
   <div class="content"<?php print $content_attributes; ?>>
+    <?php if($page): ?>
+      <div class="return-link">
+        <p><?php print l('<< '.t('Return to list'), 'generator/will-o-the-wisp'); ?></p>
+      </div>
+    <?php endif; ?>
     <?php
       // We hide the comments and links now so that we can render them later.
       hide($content['comments']);

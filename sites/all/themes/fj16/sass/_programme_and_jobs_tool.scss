@@ -24,11 +24,11 @@
 	font-style: italic;
 }
 
-p.scoutid-login {
+p.scoutid-login, p.cta {
 	padding: 30px 0;
 }
 
-a.scoutid {
+a.scoutid, a.cta {
 	@extend .button, .purple;
 	font-weight: normal;
 }
@@ -38,6 +38,14 @@ a.scoutid {
 }
 
 .bulk-jobs-list, .wotw-list {
+	.views-exposed-form {
+		color: white;
+
+		.description {
+			display: none;
+		}
+	}
+
 	.views-row {
 		width: 23%;
 		margin: 30px 2% 0 0;

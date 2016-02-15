@@ -18,7 +18,7 @@
       <p>
       Mitä mieltä olit Kehittimestä?
       </p>
-      <p>
+      <p class="cta">
       <a class="cta" href="https://annamoksman.typeform.com/to/VvoucL">Vastaa kyselyyn</a> 
       </p>
     <?php endif; ?>
@@ -36,7 +36,10 @@
       Explorerscout - du kommer att få bekräftan om när din löpeld går av stapeln och närmare instruktioner angående den per e-post senast i maj. Vi skickar informationen om när du är på löpeld direkt till din uppdragsgivare. 
       </p>
       <p>
-      Hur gick det? <a class="cta" href="https://annamoksman.typeform.com/to/u38hbJ">Svara</a>
+      Hur gick det?
+      </p>
+      <p class="cta">
+        <a class="cta" href="https://annamoksman.typeform.com/to/u38hbJ">Svara</a>
       </p>
     <?php endif; ?>
     <?php if($current_lang == 'en'): ?>
@@ -56,7 +59,10 @@
       On the last page, there will be a link to the feedback survey on Generator functionality. The survey will be in Finnish and English, possibly also in Swedish. 
       </p>
       <p>
-      How did this go? <a class="cta" href="https://annamoksman.typeform.com/to/cPouEd">Answer the questionaire</a>
+      How did this go?
+      </p>
+      <p class="cta">
+      <a class="cta" href="https://annamoksman.typeform.com/to/cPouEd">Answer the questionaire</a>
       </p>
     <?php endif; ?>
 
