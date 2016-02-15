@@ -1,37 +1,277 @@
-# $Id$
-#
-# LANGUAGE translation of Drupal (general)
-# Copyright YEAR NAME <EMAIL@ADDRESS>
-# Generated from files:
-#  fj16_programme_and_job_tool.features.field_instance.inc: n/a
-#  fj16_programme_and_job_tool.views_default.inc: n/a
-#  fj16_programme_and_job_tool.features.inc: n/a
-#  fj16_programme_and_job_tool.module: n/a
-#  fj16_programme_and_job_tool.info: n/a
-#  scripts/counter.js: n/a
-#  templates/fj16_generator_thankyou.tpl.php: n/a
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-02-14 03:10+0200\n"
-"PO-Revision-Date: 2016-02-14 03:10+0200\n"
+"PO-Revision-Date: Sun Feb 14 2016 20:47:08 GMT+0200 (Suomen normaaliaika)\n"
 "Last-Translator: \n"
 "Language-Team: EMAIL@ADDRESS\n"
-"Language: sv\n"
+"Language: EMAIL@ADDRESS\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Loco-Source-Locale: fi_FI\n"
+"X-Generator: Loco - https://localise.biz/\n"
+"X-Loco-Parser: loco_parse_po\n"
+"X-Loco-Target-Locale: sv"
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:987
+msgid "How many spots have been reserved outside of this system"
+msgstr "Antal uppdrag som besätts utanför uppdragsgeneratorn"
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:988
+msgid "Image"
+msgstr "Bild"
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:989
+msgid "Image URL"
+msgstr "Bild URL"
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:990
+msgid "Inventory maximum"
+msgstr "Antal uppdrag (max.)"
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:991
+msgid "Inventory minimum"
+msgstr "Antal uppdrag (min.)"
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:992
+msgid "Inventory reserved"
+msgstr "Antal uppdrag reserverade"
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:993
+msgid "Inventory total"
+msgstr "Antal uppdrag totalt"
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:994
+msgid "Job description"
+msgstr "Uppdragsbeskrivning"
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:995
+msgid "Job type"
+msgstr "Typ av uppdrag"
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:996
+msgid "Localized title"
+msgstr "Lokaliserad rubrik"
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:997
+msgid "SharePoint Name"
+msgstr "SharePoint-namn"
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:998
+msgid "SharePoint Unique ID"
+msgstr "Unikt SharePoint-ID"
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:1000
+msgid "Suitability"
+msgstr "Lämplighet"
+
+#: fj16_programme_and_job_tool.features.field_instance.inc:1002
+msgid "image"
+msgstr "bild"
+
+#: fj16_programme_and_job_tool.features.inc:106
+msgid "FJ16 Bulk job"
+msgstr "FJ16 Bulk job"
+
+#: fj16_programme_and_job_tool.features.inc:110;118
+msgid "Title"
+msgstr "Rubrik"
+
+#: fj16_programme_and_job_tool.views_default.inc:136;277;354
+msgid "more"
+msgstr "mera"
+
+#: fj16_programme_and_job_tool.views_default.inc:137;278
+msgid "Filter"
+msgstr "Filtrera "
+
+#: fj16_programme_and_job_tool.views_default.inc:139;357
+msgid "Sort by"
+msgstr "Sortera enligt"
+
+#: fj16_programme_and_job_tool.views_default.inc:140;281;358
+msgid "Asc"
+msgstr "Asc"
+
+#: fj16_programme_and_job_tool.views_default.inc:141;282;359
+msgid "Desc"
+msgstr "Desc"
+
+#: fj16_programme_and_job_tool.views_default.inc:142;283
+msgid "Items per page"
+msgstr "Uppdrag per sida"
+
+#: fj16_programme_and_job_tool.views_default.inc:143;284
+msgid "- All -"
+msgstr "- Alla - "
+
+#: fj16_programme_and_job_tool.views_default.inc:144;285
+msgid "Offset"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:145;286
+msgid "Â« first"
+msgstr "första sidan"
+
+#: fj16_programme_and_job_tool.views_default.inc:146;287
+msgid "â¹ previous"
+msgstr "föregående"
+
+#: fj16_programme_and_job_tool.views_default.inc:147;288
+msgid "next âº"
+msgstr "nästa sida"
+
+#: fj16_programme_and_job_tool.views_default.inc:148;289
+msgid "last Â»"
+msgstr "sista sidan"
+
+#: fj16_programme_and_job_tool.views_default.inc:151;292;360
+msgid "Page"
+msgstr "Sida"
+
+#: fj16_programme_and_job_tool.views_default.inc:280
+msgid "Lajittele"
+msgstr "Sortera"
+
+#: fj16_programme_and_job_tool.views_default.inc:355
+msgid "Apply"
+msgstr "Använd"
+
+#: fj16_programme_and_job_tool.views_default.inc:356
+msgid "Reset"
+msgstr "Nollställ"
+
+#: fj16_programme_and_job_tool.module:118
+msgid "This staff position is full"
+msgstr "Det här uppdraget är fullsatt"
+
+#: fj16_programme_and_job_tool.module:119
+msgid ""
+"Unfortunately the staff position you selected is already full. !return and "
+"try selecting another one."
+msgstr ""
+"Tyvärr är uppdraget som du valde redan fullsatt. !return och välj ett annat "
+"uppdrag istället  "
+
+#: fj16_programme_and_job_tool.module:120
+msgid "Return to the staff position list"
+msgstr "Tillbaka till uppdragslistan"
+
+#: fj16_programme_and_job_tool.module:129
+msgid "Welcome to the generator!"
+msgstr "Välkommen till uppdragsgeneratorn!"
+
+#: fj16_programme_and_job_tool.module:133
+msgid "Note: you need to log in with your personal ScoutID."
+msgstr "OBS! Logga in med ditt personliga ScoutID"
+
+#: fj16_programme_and_job_tool.module:134
+msgid ""
+"International guest or not yet a scout/guide? !register and then !login with "
+"your user name and password."
+msgstr ""
+"Är du en internationell deltagare eller kompisdeltagare? !register och !"
+"login sedan in med ditt användarnamn och lösenord. "
+
+#: fj16_programme_and_job_tool.module:135
+msgid "Register"
+msgstr "Registrera dig"
+
+#: fj16_programme_and_job_tool.module:136
+msgid "log in"
+msgstr "logga in"
+
+#: fj16_programme_and_job_tool.module:155
+msgid "Confirm your selection"
+msgstr "Bekräfta ditt val"
+
+#: fj16_programme_and_job_tool.module:218
+msgid "The generator is not open yet. Please wait a while."
+msgstr "Uppdragsgeneratorn är ännu inte öppen. Vänta en stund."
+
+#: fj16_programme_and_job_tool.module:296
+msgid "Confirm"
+msgstr "Bekräfta"
+
+#: fj16_programme_and_job_tool.module:390;403
+msgid "Login failed."
+msgstr "Inloggningen misslyckades."
+
+#: fj16_programme_and_job_tool.module:674
+msgid "Your choice has been saved"
+msgstr "Ditt val har sparats"
+
+#: fj16_programme_and_job_tool.module:675
+msgid "Staff position selected"
+msgstr "Uppdraget valt"
+
+#: fj16_programme_and_job_tool.module:676
+msgid "Reject this staff position"
+msgstr "Avfärda uppdraget"
+
+#: fj16_programme_and_job_tool.module:677
+msgid "You have been removed from the staff position [node:title]"
+msgstr "Du har avfärdat uppdraget [node:title]"
+
+#: fj16_programme_and_job_tool.module:678
+msgid "Choose this"
+msgstr "Välj detta"
+
+#: fj16_programme_and_job_tool.module:679
+msgid "Will-o'-the-wisp selected"
+msgstr "Löpeld vald "
+
+#: fj16_programme_and_job_tool.module:680
+msgid "Deselect this"
+msgstr "Töm val"
+
+#: fj16_programme_and_job_tool.module:389;415;418
+msgid "saml"
+msgstr "saml"
+
+#: fj16_programme_and_job_tool.module:389
+msgid "SAML login failed with errors: <br><pre>@errors</pre>"
+msgstr "SAML-inloggning misslyckades med följande fel: @errors"
+
+#: fj16_programme_and_job_tool.module:415
+msgid "Procuring new SAML user @name"
+msgstr "Ny SAML-användare skaffas @name"
+
+#: fj16_programme_and_job_tool.module:418
+msgid "Logging in existing SAML user @name"
+msgstr "Inloggning sker med nuvarande SAML-användare @name"
+
+#: fj16_programme_and_job_tool.module:626
+msgid "Unable to get image: @url"
+msgstr "Inhämtning av bild misslyckades: @url"
+
+#: fj16_programme_and_job_tool.info:0
+msgid "FJ16 Programme and job tool"
+msgstr "FJ16 Verktyg för val av löpeld och serviceuppdrag"
+
+#: scripts/counter.js:0
+msgid "Hold tight!"
+msgstr "Vänta ett ögonblick!"
+
+#: scripts/counter.js:0
+msgid ""
+"The generator opens in @days days @hours hours @mins minutes @seconds "
+"seconds."
+msgstr ""
+"Uppdragsgeneratorn öppnar om @days dagar @hours timmar @mins minuter och "
+"@seconds sekunder."
 
 #: fj16_programme_and_job_tool.features.field_instance.inc:980
 msgid "Confirmed"
-msgstr ""
+msgstr "Bekräftad"
 
 #: fj16_programme_and_job_tool.features.field_instance.inc:981
 msgid "Contact email"
-msgstr ""
+msgstr "Kontaktpersonens e-postadress"
 
 #: fj16_programme_and_job_tool.features.field_instance.inc:982
 #: templates/fj16_generator_thankyou.tpl.php:6
@@ -40,96 +280,32 @@ msgstr "Kontaktperson"
 
 #: fj16_programme_and_job_tool.features.field_instance.inc:983
 msgid "Contact phone"
-msgstr ""
+msgstr "Kontaktpersonens telefonnummer"
 
 #: fj16_programme_and_job_tool.features.field_instance.inc:984
 msgid "Description"
-msgstr ""
+msgstr "Beskrivning"
 
 #: fj16_programme_and_job_tool.features.field_instance.inc:985
 msgid "Do not edit this field."
-msgstr ""
+msgstr "Ändra inte detta fält"
 
 #: fj16_programme_and_job_tool.features.field_instance.inc:986
 msgid "Extra kit"
-msgstr "Tilläggsutrustning"
-
-#: fj16_programme_and_job_tool.features.field_instance.inc:987
-msgid "How many spots have been reserved outside of this system"
-msgstr ""
-
-#: fj16_programme_and_job_tool.features.field_instance.inc:988
-msgid "Image"
-msgstr ""
-
-#: fj16_programme_and_job_tool.features.field_instance.inc:989
-msgid "Image URL"
-msgstr ""
-
-#: fj16_programme_and_job_tool.features.field_instance.inc:990
-msgid "Inventory maximum"
-msgstr ""
-
-#: fj16_programme_and_job_tool.features.field_instance.inc:991
-msgid "Inventory minimum"
-msgstr ""
-
-#: fj16_programme_and_job_tool.features.field_instance.inc:992
-msgid "Inventory reserved"
-msgstr ""
-
-#: fj16_programme_and_job_tool.features.field_instance.inc:993
-msgid "Inventory total"
-msgstr ""
-
-#: fj16_programme_and_job_tool.features.field_instance.inc:994
-msgid "Job description"
-msgstr ""
-
-#: fj16_programme_and_job_tool.features.field_instance.inc:995
-msgid "Job type"
-msgstr ""
-
-#: fj16_programme_and_job_tool.features.field_instance.inc:996
-msgid "Localized title"
-msgstr ""
-
-#: fj16_programme_and_job_tool.features.field_instance.inc:997
-msgid "SharePoint Name"
-msgstr ""
-
-#: fj16_programme_and_job_tool.features.field_instance.inc:998
-msgid "SharePoint Unique ID"
-msgstr ""
+msgstr "TillÃ¤ggsutrustning"
 
 #: fj16_programme_and_job_tool.features.field_instance.inc:999
 msgid "Skill areas"
 msgstr "Kunskapsområde"
-
-#: fj16_programme_and_job_tool.features.field_instance.inc:1000
-msgid "Suitability"
-msgstr ""
 
 #: fj16_programme_and_job_tool.features.field_instance.inc:1001
 #: fj16_programme_and_job_tool.views_default.inc:149;290
 msgid "Tags"
 msgstr "Taggar"
 
-#: fj16_programme_and_job_tool.features.field_instance.inc:1002
-msgid "image"
-msgstr ""
-
-#: fj16_programme_and_job_tool.features.inc:106
-msgid "FJ16 Bulk job"
-msgstr ""
-
-#: fj16_programme_and_job_tool.features.inc:110;118
-msgid "Title"
-msgstr ""
-
 #: fj16_programme_and_job_tool.features.inc:114
 msgid "FJ16 Will-o'-the-wisp"
-msgstr "FJ16 Löpeld"
+msgstr "Löpeld"
 
 #: fj16_programme_and_job_tool.views_default.inc:134;275;352
 msgid "Master"
@@ -137,131 +313,27 @@ msgstr "Master"
 
 #: fj16_programme_and_job_tool.views_default.inc:135;276
 msgid "What type of a staff position do you want?"
-msgstr "Vad skulle du vilja ha för uppdrag?"
-
-#: fj16_programme_and_job_tool.views_default.inc:136;277;354
-msgid "more"
-msgstr ""
-
-#: fj16_programme_and_job_tool.views_default.inc:137;278
-msgid "Filter"
-msgstr ""
+msgstr "Vad skulle du vilja ha fÃ¶r uppdrag?"
 
 #: fj16_programme_and_job_tool.views_default.inc:138;279
 msgid "Clear options"
-msgstr "Töm dina val"
-
-#: fj16_programme_and_job_tool.views_default.inc:139;357
-msgid "Sort by"
-msgstr ""
-
-#: fj16_programme_and_job_tool.views_default.inc:140;281;358
-msgid "Asc"
-msgstr ""
-
-#: fj16_programme_and_job_tool.views_default.inc:141;282;359
-msgid "Desc"
-msgstr ""
-
-#: fj16_programme_and_job_tool.views_default.inc:142;283
-msgid "Items per page"
-msgstr ""
-
-#: fj16_programme_and_job_tool.views_default.inc:143;284
-msgid "- All -"
-msgstr ""
-
-#: fj16_programme_and_job_tool.views_default.inc:144;285
-msgid "Offset"
-msgstr ""
-
-#: fj16_programme_and_job_tool.views_default.inc:145;286
-msgid "« first"
-msgstr ""
-
-#: fj16_programme_and_job_tool.views_default.inc:146;287
-msgid "‹ previous"
-msgstr ""
-
-#: fj16_programme_and_job_tool.views_default.inc:147;288
-msgid "next ›"
-msgstr ""
-
-#: fj16_programme_and_job_tool.views_default.inc:148;289
-msgid "last »"
-msgstr ""
+msgstr "TÃ¶m dina val"
 
 #: fj16_programme_and_job_tool.views_default.inc:150;291
 msgid "Areas of skill, knowledge or expertise"
-msgstr "Kunskapsområde"
-
-#: fj16_programme_and_job_tool.views_default.inc:151;292;360
-msgid "Page"
-msgstr ""
-
-#: fj16_programme_and_job_tool.views_default.inc:280
-msgid "Lajittele"
-msgstr ""
+msgstr "KunskapsomrÃ¥de"
 
 #: fj16_programme_and_job_tool.views_default.inc:353
 msgid "Which Will-o'-the-wisp will you choose?"
 msgstr "Vilken löpeld väljer du?"
 
-#: fj16_programme_and_job_tool.views_default.inc:355
-msgid "Apply"
-msgstr ""
-
-#: fj16_programme_and_job_tool.views_default.inc:356
-msgid "Reset"
-msgstr ""
-
-#: fj16_programme_and_job_tool.module:118
-msgid "This staff position is full"
-msgstr ""
-
-#: fj16_programme_and_job_tool.module:119
-msgid ""
-"Unfortunately the staff position you selected is already full. !return and "
-"try selecting another one."
-msgstr ""
-
-#: fj16_programme_and_job_tool.module:120
-msgid "Return to the staff position list"
-msgstr ""
-
-#: fj16_programme_and_job_tool.module:129
-msgid "Welcome to the generator!"
-msgstr ""
-
 #: fj16_programme_and_job_tool.module:132
 msgid "Log in using ScoutID"
 msgstr "Logga in med ditt ScoutID"
 
-#: fj16_programme_and_job_tool.module:133
-msgid "Note: you need to log in with your personal ScoutID."
-msgstr ""
-
-#: fj16_programme_and_job_tool.module:134
-msgid ""
-"International guest or not yet a scout/guide? !register and then !login with "
-"your user name and password."
-msgstr ""
-
-#: fj16_programme_and_job_tool.module:135
-msgid "Register"
-msgstr ""
-
-#: fj16_programme_and_job_tool.module:136
-msgid "log in"
-msgstr ""
-
 #: fj16_programme_and_job_tool.module:149
 msgid "Choose your age group"
 msgstr "Vilken åldersgrupp hör du till?"
-
-#: fj16_programme_and_job_tool.module:155
-msgid "Confirm your selection"
-msgstr ""
 
 #: fj16_programme_and_job_tool.module:161
 msgid "Thank you!"
@@ -269,19 +341,15 @@ msgstr "Tack!"
 
 #: fj16_programme_and_job_tool.module:183
 msgid "The contact person will be in touch within a month."
-msgstr "Uppdragsgivaren kontaktar dig inom en en månad"
+msgstr "Uppdragsgivaren kontaktar dig inom en månad"
 
 #: fj16_programme_and_job_tool.module:203
 msgid "Explorer (15-17-years-old)"
-msgstr "Explorerscout"
+msgstr "Explorerscout (15-17 år)"
 
 #: fj16_programme_and_job_tool.module:209
 msgid "Rover or Scouter (18+ years)"
-msgstr "Roverscout eller äldre ledare"
-
-#: fj16_programme_and_job_tool.module:218
-msgid "The generator is not open yet. Please wait a while."
-msgstr ""
+msgstr "Roverscout eller äldre ledare (+18 år)"
 
 #: fj16_programme_and_job_tool.module:250
 msgid "You have chosen the following staff position"
@@ -305,89 +373,19 @@ msgstr ""
 
 #: fj16_programme_and_job_tool.module:290
 msgid "Anything you wish to say to the camp organisation?"
-msgstr "Eventuella meddelanden/förfrågningar till lägerorganisationen"
-
-#: fj16_programme_and_job_tool.module:296
-msgid "Confirm"
-msgstr ""
-
-#: fj16_programme_and_job_tool.module:390;403
-msgid "Login failed."
-msgstr ""
+msgstr "Något du önskar säga till lägerorganisationen"
 
 #: fj16_programme_and_job_tool.module:673
 msgid "Choose this staff position"
 msgstr "Välj uppdraget"
 
-#: fj16_programme_and_job_tool.module:674
-msgid "Your choice has been saved"
-msgstr ""
-
-#: fj16_programme_and_job_tool.module:675
-msgid "Staff position selected"
-msgstr ""
-
-#: fj16_programme_and_job_tool.module:676
-msgid "Reject this staff position"
-msgstr ""
-
-#: fj16_programme_and_job_tool.module:677
-msgid "You have been removed from the staff position [node:title]"
-msgstr ""
-
-#: fj16_programme_and_job_tool.module:678
-msgid "Choose this"
-msgstr ""
-
-#: fj16_programme_and_job_tool.module:679
-msgid "Will-o'-the-wisp selected"
-msgstr ""
-
-#: fj16_programme_and_job_tool.module:680
-msgid "Deselect this"
-msgstr ""
-
-#: fj16_programme_and_job_tool.module:389;415;418
-msgid "saml"
-msgstr ""
-
-#: fj16_programme_and_job_tool.module:389
-msgid "SAML login failed with errors: <br><pre>@errors</pre>"
-msgstr ""
-
-#: fj16_programme_and_job_tool.module:415
-msgid "Procuring new SAML user @name"
-msgstr ""
-
-#: fj16_programme_and_job_tool.module:418
-msgid "Logging in existing SAML user @name"
-msgstr ""
-
 #: fj16_programme_and_job_tool.module:626
 msgid "fj16_programme_and_jobs_tool"
 msgstr "fj16_programme_and_jobs_tool"
 
-#: fj16_programme_and_job_tool.module:626
-msgid "Unable to get image: @url"
-msgstr ""
-
-#: fj16_programme_and_job_tool.info:0
-msgid "FJ16 Programme and job tool"
-msgstr ""
-
 #: fj16_programme_and_job_tool.info:0
 msgid "FJ16"
 msgstr "FJ16"
-
-#: scripts/counter.js:0
-msgid "Hold tight!"
-msgstr ""
-
-#: scripts/counter.js:0
-msgid ""
-"The generator opens in @days days @hours hours @mins minutes @seconds "
-"seconds."
-msgstr ""
 
 #: templates/fj16_generator_thankyou.tpl.php:3
 msgid "Your choices have been saved into our system."
@@ -404,10 +402,3 @@ msgstr "Din löpeld"
 #: templates/fj16_generator_thankyou.tpl.php:21
 msgid "See you at Roihu!"
 msgstr "Vi ses på lägret!"
-
-#~ msgid ""
-#~ "The following information we have on you will be sent to the Roihu "
-#~ "organisation so that they can be in touch."
-#~ msgstr ""
-#~ "Följande information om dig kommer att skickas till lägerorganisationen "
-#~ "för senare kontakt"
