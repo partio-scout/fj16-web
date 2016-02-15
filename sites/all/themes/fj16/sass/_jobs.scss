@@ -167,6 +167,10 @@ $yhteistyo: $blue;
     height: 50px;
     background: 50% 100% red no-repeat url(../img/triangle.png);
     background-size: contain;
+      
+    @include respondMin(medium) {
+      left: 44%;
+    }
   }
 
   &.elamys {
@@ -218,6 +222,11 @@ $yhteistyo: $blue;
   &.full {
     .info {
       padding: 3.4% 3.4% 0;
+      
+      @include respondMin(medium) {
+        float: left;
+        width: 50%;
+      }
 
       &:before {
         right: 30px;
@@ -235,7 +244,8 @@ $yhteistyo: $blue;
         text-transform: uppercase;
       }
 
-      @include respondMin(small) {
+      @include respondMin(medium) {
+        clear: left;
         float: left;
         width: 50%;
       }
@@ -245,14 +255,16 @@ $yhteistyo: $blue;
       @include clearfix();
       
       padding: 3.4%;
-      background: #d2d2d1;
+      background: lighten($yellow, 47);
+      border-top: 1px solid lighten($yellow, 20);
 
       h2 {
         margin: 0 0 20px;
       }
 
-      @include respondMin(small) {
-        float: left;
+      @include respondMin(medium) {
+        border-top: 0;
+        border-left: 1px solid lighten($yellow, 20);
         width: 50%;
       }
     }
@@ -260,7 +272,7 @@ $yhteistyo: $blue;
     .job-content, .application-form form {
       max-width: 100%;
       
-      @include respond(small) {
+      @include respond(medium) {
         max-width: 610px;
       }
     }
