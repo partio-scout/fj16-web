@@ -42,6 +42,22 @@ function fj16_programme_and_job_tool_menu() {
   return $menu;
 }
 
+function fj16_programme_and_job_tool_permission() {
+  $permissions = array();
+
+  $permissions['choose explorer programme'] = array(
+    'title' => 'Choose explorer programme',
+    'description' => 'Will-o\'-the-wisps and explorer staff positions'
+  );
+
+  $permissions['choose rover or adult programme'] = array(
+    'title' => 'Choose rover or adult programme',
+    'description' => 'Choose rover or adult staff positions'
+  );
+
+  return $permissions;
+}
+
 function fj16_programme_and_job_tool_node_view($node, $view_mode, $langcode) {
   $is_correct_type = ($node->type === 'fj16_bulk_job') || ($node->type === 'fj16_will_o_the_wisp');
   $is_current_page = current_path() === 'node/'.$node->nid;
