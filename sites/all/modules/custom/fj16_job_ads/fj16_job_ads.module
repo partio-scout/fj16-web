@@ -591,9 +591,14 @@ function _fj16_job_ads_monitoring() {
 
   $import_success = variable_get('fj16_job_import_success', TRUE);
   $export_success = !fj16_jobs_is_export_in_error_state();
+
+  $cron_last_run = variable_get('cron_last');
+  $cron_run_success = (time() - $cron_last_run) < 60*60*6;
+
   return array(
     'sharepoint_job_import' => $import_success ? 'SUCCESS' : 'ERROR',
-    'sharepoint_job_applications_export' => $export_success ? 'SUCCESS' : 'ERROR'
+    'sharepoint_job_applications_export' => $export_success ? 'SUCCESS' : 'ERROR',
+    'cron_run' => $cron_run_success ? 'SUCCESS' : 'ERROR'
   );
 }
 
