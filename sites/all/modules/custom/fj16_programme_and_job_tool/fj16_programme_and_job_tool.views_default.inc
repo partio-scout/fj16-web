@@ -25,10 +25,8 @@ function fj16_programme_and_job_tool_views_default_views() {
   $handler->display->display_options['title'] = 'What type of a staff position do you want?';
   $handler->display->display_options['css_class'] = 'bulk-jobs-list';
   $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'role';
-  $handler->display->display_options['access']['role'] = array(
-    7 => '7',
-  );
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['perm'] = 'choose rover or adult programme';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
@@ -172,10 +170,8 @@ function fj16_programme_and_job_tool_views_default_views() {
   $handler->display->display_options['title'] = 'What type of a staff position do you want?';
   $handler->display->display_options['css_class'] = 'bulk-jobs-list';
   $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'role';
-  $handler->display->display_options['access']['role'] = array(
-    6 => '6',
-  );
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['perm'] = 'choose explorer programme';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
@@ -318,10 +314,8 @@ function fj16_programme_and_job_tool_views_default_views() {
   $handler->display->display_options['title'] = 'Which Will-o\'-the-wisp will you choose?';
   $handler->display->display_options['css_class'] = 'wotw-list';
   $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'role';
-  $handler->display->display_options['access']['role'] = array(
-    6 => '6',
-  );
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['perm'] = 'choose explorer programme';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
