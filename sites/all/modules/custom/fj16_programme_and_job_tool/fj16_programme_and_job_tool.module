@@ -188,7 +188,7 @@ function _fj16_programme_and_job_tool_generator_thankyou_page() {
   global $user;
   drupal_set_title(t('Thank you!'));
 
-  $job_title = $name = $email = $phone = $wotw_title = '';
+  $job_title = $name = $email = $phone = $wotw_title = $wotw_edit = '';
 
   $job = fj16_get_selected_job($user);
   if($job !== FALSE) {
@@ -201,6 +201,7 @@ function _fj16_programme_and_job_tool_generator_thankyou_page() {
   $wotw = fj16_get_selected_wotw($user);
   if($wotw !== FALSE) {
     $wotw_title = field_get_items('node', $wotw, 'field_localized_title')[0]['value'];
+    $wotw_edit = ' ' . l(t('Edit'), 'generator/will-o-the-wisp');
   }
 
   $variables = array(
@@ -209,7 +210,7 @@ function _fj16_programme_and_job_tool_generator_thankyou_page() {
     'contact_email' => check_plain($email),
     'contact_phone' => check_plain($phone),
     'job_further_info' => t('The contact person will be in touch within a month.'),
-    'will_o_the_wisp_name' => check_plain($wotw_title),
+    'will_o_the_wisp_name' => check_plain($wotw_title) . $wotw_edit,
     'info_text' => 'Lorem ipsum dolor sit amet...',
     'current_lang' => $language->language
   );
