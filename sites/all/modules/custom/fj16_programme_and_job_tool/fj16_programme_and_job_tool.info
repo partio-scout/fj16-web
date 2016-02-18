@@ -106,6 +106,7 @@ features[user_role][] = rover or adult
 features[variable][] = field_bundle_settings_flagging__fj16_choose_bulk_job
 features[variable][] = field_bundle_settings_node__fj16_bulk_job
 features[variable][] = field_bundle_settings_node__fj16_will_o_the_wisp
+features[variable][] = honeypot_form_user_register_form
 features[variable][] = i18n_node_extended_fj16_bulk_job
 features[variable][] = i18n_node_options_fj16_bulk_job
 features[variable][] = language_content_type_fj16_bulk_job
