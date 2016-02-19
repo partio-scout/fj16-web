@@ -741,6 +741,8 @@ t('Choose this');
 t('Will-o\'-the-wisp selected');
 t('Deselect this');
 t('A welcome message with further instructions has been sent to your e-mail address.');
-
+t('Full!assignment', array('!assignment' => ''));
+t("This will-o'-the-wisp is full");
+t('This staff position is full');
 
 
