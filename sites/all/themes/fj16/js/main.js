@@ -97,6 +97,10 @@
 			// columnWidth: 300
 		});
 
+		$(window).load(function() {
+			$('.view-content').masonry();
+		});
+
 	}
 	
 	// Avoid `console` errors in browsers that lack a console.

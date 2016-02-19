@@ -16,7 +16,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2016-02-15 15:30+0000\n"
+"POT-Creation-Date: 2016-02-19 00:12+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -33,7 +33,7 @@ msgstr ""
 msgid "Contact email"
 msgstr ""
 
-#: fj16_programme_and_job_tool.features.field_instance.inc:1017 templates/fj16_generator_thankyou.tpl.php:67
+#: fj16_programme_and_job_tool.features.field_instance.inc:1017 templates/fj16_generator_thankyou.tpl.php:73
 msgid "Contact person"
 msgstr ""
 
@@ -93,7 +93,7 @@ msgstr ""
 msgid "Localized title"
 msgstr ""
 
-#: fj16_programme_and_job_tool.features.field_instance.inc:1032 fj16_programme_and_job_tool.module:309
+#: fj16_programme_and_job_tool.features.field_instance.inc:1032 fj16_programme_and_job_tool.module:326
 msgid "Phone number"
 msgstr ""
 
@@ -113,7 +113,7 @@ msgstr ""
 msgid "Suitability"
 msgstr ""
 
-#: fj16_programme_and_job_tool.features.field_instance.inc:1037 fj16_programme_and_job_tool.views_default.inc:154;300
+#: fj16_programme_and_job_tool.features.field_instance.inc:1037 fj16_programme_and_job_tool.views_default.inc:152;296
 msgid "Tags"
 msgstr ""
 
@@ -133,243 +133,251 @@ msgstr ""
 msgid "FJ16 Will-o'-the-wisp"
 msgstr ""
 
-#: fj16_programme_and_job_tool.views_default.inc:139;285;362
+#: fj16_programme_and_job_tool.views_default.inc:137;281;356
 msgid "Master"
 msgstr ""
 
-#: fj16_programme_and_job_tool.views_default.inc:140;286
+#: fj16_programme_and_job_tool.views_default.inc:138;282
 msgid "What type of a staff position do you want?"
 msgstr ""
 
-#: fj16_programme_and_job_tool.views_default.inc:141;287;364
+#: fj16_programme_and_job_tool.views_default.inc:139;283;358
 msgid "more"
 msgstr ""
 
-#: fj16_programme_and_job_tool.views_default.inc:142;288
+#: fj16_programme_and_job_tool.views_default.inc:140;284
 msgid "Filter"
 msgstr ""
 
-#: fj16_programme_and_job_tool.views_default.inc:143;289
+#: fj16_programme_and_job_tool.views_default.inc:141;285
 msgid "Clear options"
 msgstr ""
 
-#: fj16_programme_and_job_tool.views_default.inc:144;367
+#: fj16_programme_and_job_tool.views_default.inc:142;361
 msgid "Sort by"
 msgstr ""
 
-#: fj16_programme_and_job_tool.views_default.inc:145;291;368
+#: fj16_programme_and_job_tool.views_default.inc:143;287;362
 msgid "Asc"
 msgstr ""
 
-#: fj16_programme_and_job_tool.views_default.inc:146;292;369
+#: fj16_programme_and_job_tool.views_default.inc:144;288;363
 msgid "Desc"
 msgstr ""
 
-#: fj16_programme_and_job_tool.views_default.inc:147;293
+#: fj16_programme_and_job_tool.views_default.inc:145;289
 msgid "Items per page"
 msgstr ""
 
-#: fj16_programme_and_job_tool.views_default.inc:148;294
+#: fj16_programme_and_job_tool.views_default.inc:146;290
 msgid "- All -"
 msgstr ""
 
-#: fj16_programme_and_job_tool.views_default.inc:149;295
+#: fj16_programme_and_job_tool.views_default.inc:147;291
 msgid "Offset"
 msgstr ""
 
-#: fj16_programme_and_job_tool.views_default.inc:150;296
+#: fj16_programme_and_job_tool.views_default.inc:148;292
 msgid "« first"
 msgstr ""
 
-#: fj16_programme_and_job_tool.views_default.inc:151;297
+#: fj16_programme_and_job_tool.views_default.inc:149;293
 msgid "‹ previous"
 msgstr ""
 
-#: fj16_programme_and_job_tool.views_default.inc:152;298
+#: fj16_programme_and_job_tool.views_default.inc:150;294
 msgid "next ›"
 msgstr ""
 
-#: fj16_programme_and_job_tool.views_default.inc:153;299
+#: fj16_programme_and_job_tool.views_default.inc:151;295
 msgid "last »"
 msgstr ""
 
-#: fj16_programme_and_job_tool.views_default.inc:155;301
+#: fj16_programme_and_job_tool.views_default.inc:153;297
 msgid "Areas of skill, knowledge or expertise"
 msgstr ""
 
-#: fj16_programme_and_job_tool.views_default.inc:156;302;370
+#: fj16_programme_and_job_tool.views_default.inc:154;298;364
 msgid "Page"
 msgstr ""
 
-#: fj16_programme_and_job_tool.views_default.inc:290
+#: fj16_programme_and_job_tool.views_default.inc:286
 msgid "Lajittele"
 msgstr ""
 
-#: fj16_programme_and_job_tool.views_default.inc:363
+#: fj16_programme_and_job_tool.views_default.inc:357
 msgid "Which Will-o'-the-wisp will you choose?"
 msgstr ""
 
-#: fj16_programme_and_job_tool.views_default.inc:365
+#: fj16_programme_and_job_tool.views_default.inc:359
 msgid "Apply"
 msgstr ""
 
-#: fj16_programme_and_job_tool.views_default.inc:366
+#: fj16_programme_and_job_tool.views_default.inc:360
 msgid "Reset"
 msgstr ""
 
-#: fj16_programme_and_job_tool.module:125
+#: fj16_programme_and_job_tool.module:141;746
 msgid "This staff position is full"
 msgstr ""
 
-#: fj16_programme_and_job_tool.module:126
+#: fj16_programme_and_job_tool.module:142
 msgid "Unfortunately the staff position you selected is already full. !return and try selecting another one."
 msgstr ""
 
-#: fj16_programme_and_job_tool.module:127
+#: fj16_programme_and_job_tool.module:143
 msgid "Return to the staff position list"
 msgstr ""
 
-#: fj16_programme_and_job_tool.module:136
+#: fj16_programme_and_job_tool.module:152
 msgid "Welcome to the generator!"
 msgstr ""
 
-#: fj16_programme_and_job_tool.module:139
+#: fj16_programme_and_job_tool.module:155
 msgid "Log in using ScoutID"
 msgstr ""
 
-#: fj16_programme_and_job_tool.module:140
+#: fj16_programme_and_job_tool.module:156
 msgid "Note: you need to log in with your personal ScoutID."
 msgstr ""
 
-#: fj16_programme_and_job_tool.module:141
+#: fj16_programme_and_job_tool.module:157
 msgid "International guest or not yet a scout/guide? !register and then !login with your user name and password."
 msgstr ""
 
-#: fj16_programme_and_job_tool.module:142;357;358
+#: fj16_programme_and_job_tool.module:158;374;375
 msgid "Register"
 msgstr ""
 
-#: fj16_programme_and_job_tool.module:143
+#: fj16_programme_and_job_tool.module:159
 msgid "log in"
 msgstr ""
 
-#: fj16_programme_and_job_tool.module:160
+#: fj16_programme_and_job_tool.module:176
 msgid "Choose your age group"
 msgstr ""
 
-#: fj16_programme_and_job_tool.module:166
+#: fj16_programme_and_job_tool.module:182
 msgid "Confirm your selection"
 msgstr ""
 
-#: fj16_programme_and_job_tool.module:173
+#: fj16_programme_and_job_tool.module:189
 msgid "Thank you!"
 msgstr ""
 
-#: fj16_programme_and_job_tool.module:195
-msgid "The contact person will be in touch within a month."
-msgstr ""
-
-#: fj16_programme_and_job_tool.module:217
-msgid "Explorer (15-17-years-old)"
-msgstr ""
-
-#: fj16_programme_and_job_tool.module:223
-msgid "Rover or Scouter (18+ years)"
-msgstr ""
-
-#: fj16_programme_and_job_tool.module:237
-msgid "The generator is not open yet. Please wait a while."
-msgstr ""
-
-#: fj16_programme_and_job_tool.module:269
-msgid "You have chosen the following staff position"
-msgstr ""
-
-#: fj16_programme_and_job_tool.module:274;286;289
+#: fj16_programme_and_job_tool.module:204;291;303;306
 msgid "Edit"
 msgstr ""
 
-#: fj16_programme_and_job_tool.module:285
+#: fj16_programme_and_job_tool.module:212
+msgid "The contact person will be in touch within a month."
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:239
+msgid "Explorer (15-17-years-old)"
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:245
+msgid "Rover or Scouter (18+ years)"
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:254
+msgid "The generator is not open yet. Please wait a while."
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:286
+msgid "You have chosen the following staff position"
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:302
 msgid "You have chosen the following Will-o'-the-wisp 24h off-camp adventure"
 msgstr ""
 
-#: fj16_programme_and_job_tool.module:297
+#: fj16_programme_and_job_tool.module:314
 msgid "The following information we have on you will be sent to the Roihu organisation so that they can be in touch"
 msgstr ""
 
-#: fj16_programme_and_job_tool.module:316
+#: fj16_programme_and_job_tool.module:333
 msgid "Anything you wish to say to the camp organisation?"
 msgstr ""
 
-#: fj16_programme_and_job_tool.module:322
+#: fj16_programme_and_job_tool.module:339
 msgid "Confirm"
 msgstr ""
 
-#: fj16_programme_and_job_tool.module:362;363
+#: fj16_programme_and_job_tool.module:379;380
 msgid "Confirm your registration"
 msgstr ""
 
-#: fj16_programme_and_job_tool.module:435;448
+#: fj16_programme_and_job_tool.module:452;465
 msgid "Login failed."
 msgstr ""
 
-#: fj16_programme_and_job_tool.module:718
+#: fj16_programme_and_job_tool.module:735
 msgid "Choose this staff position"
 msgstr ""
 
-#: fj16_programme_and_job_tool.module:719
+#: fj16_programme_and_job_tool.module:736
 msgid "Your choice has been saved"
 msgstr ""
 
-#: fj16_programme_and_job_tool.module:720
+#: fj16_programme_and_job_tool.module:737
 msgid "Staff position selected"
 msgstr ""
 
-#: fj16_programme_and_job_tool.module:721
+#: fj16_programme_and_job_tool.module:738
 msgid "Reject this staff position"
 msgstr ""
 
-#: fj16_programme_and_job_tool.module:722
+#: fj16_programme_and_job_tool.module:739
 msgid "You have been removed from the staff position [node:title]"
 msgstr ""
 
-#: fj16_programme_and_job_tool.module:723
+#: fj16_programme_and_job_tool.module:740
 msgid "Choose this"
 msgstr ""
 
-#: fj16_programme_and_job_tool.module:724
+#: fj16_programme_and_job_tool.module:741
 msgid "Will-o'-the-wisp selected"
 msgstr ""
 
-#: fj16_programme_and_job_tool.module:725
+#: fj16_programme_and_job_tool.module:742
 msgid "Deselect this"
 msgstr ""
 
-#: fj16_programme_and_job_tool.module:726
+#: fj16_programme_and_job_tool.module:743
 msgid "A welcome message with further instructions has been sent to your e-mail address."
 msgstr ""
 
-#: fj16_programme_and_job_tool.module:434;460;463
+#: fj16_programme_and_job_tool.module:744
+msgid "Full!assignment"
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:745
+msgid "This will-o'-the-wisp is full"
+msgstr ""
+
+#: fj16_programme_and_job_tool.module:451;477;480
 msgid "saml"
 msgstr ""
 
-#: fj16_programme_and_job_tool.module:434
+#: fj16_programme_and_job_tool.module:451
 msgid "SAML login failed with errors: <br><pre>@errors</pre>"
 msgstr ""
 
-#: fj16_programme_and_job_tool.module:460
+#: fj16_programme_and_job_tool.module:477
 msgid "Procuring new SAML user @name"
 msgstr ""
 
-#: fj16_programme_and_job_tool.module:463
+#: fj16_programme_and_job_tool.module:480
 msgid "Logging in existing SAML user @name"
 msgstr ""
 
-#: fj16_programme_and_job_tool.module:671
+#: fj16_programme_and_job_tool.module:688
 msgid "fj16_programme_and_jobs_tool"
 msgstr ""
 
-#: fj16_programme_and_job_tool.module:671
+#: fj16_programme_and_job_tool.module:688
 msgid "Unable to get image: @url"
 msgstr ""
 
@@ -397,15 +405,19 @@ msgstr ""
 msgid "Your choices have been saved into our system."
 msgstr ""
 
-#: templates/fj16_generator_thankyou.tpl.php:64
+#: templates/fj16_generator_thankyou.tpl.php:70
 msgid "Your staff position"
 msgstr ""
 
-#: templates/fj16_generator_thankyou.tpl.php:79
+#: templates/fj16_generator_thankyou.tpl.php:85
 msgid "Your Will-o'-the-wisp 24h off-camp adventure"
 msgstr ""
 
-#: templates/fj16_generator_thankyou.tpl.php:84
+#: templates/fj16_generator_thankyou.tpl.php:90
 msgid "See you at Roihu!"
+msgstr ""
+
+#: templates/fj16_generator_thankyou.tpl.php:94
+msgid "Log out"
 msgstr ""
 
