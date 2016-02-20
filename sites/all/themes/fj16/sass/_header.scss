@@ -140,46 +140,76 @@
 			a.active, a.active-trail, li:hover a {
 				background: $blue;
 			}
+      
+      $submenu-width: 300px;
 
-			ul {
-				visibility: hidden;
-				opacity: 0.0; // hide 2nd level by default
-				@include transition(opacity 0.3s ease-out);
+      ul {
+        visibility: hidden;
+        opacity: 0.0; // hide 2nd level by default
+        @include transition(opacity 0.3s ease-out);
 
-				position: absolute;
-				top: 100%;
-				left: 0;
-				background: $blue;
-				width: 300px;
-				padding-top: 10px;
-				z-index: 1;
-				margin-top: -4px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: $blue;
+        width: $submenu-width;
+        padding-top: 10px;
+        z-index: 1;
+        margin-top: -4px;
 
-				li {
-					display: inline;
-				}
+        li {
+          display: inline;
+        }
 
-				a {
-					text-transform: none;
-					display: block;
-					height: 50px;
-					height: 100%;
-					line-height: 20px;
-					margin: 0;
-					padding-top: 5px;
-					padding-bottom: 15px;
-				}
+        a {
+          text-transform: none;
+          display: block;
+          height: 50px;
+          height: 100%;
+          line-height: 20px;
+          margin: 0;
+          padding-top: 5px;
+          padding-bottom: 15px;
+        }
 
-				a:hover {
-					text-decoration: underline;
-				}
-			}
+        a:hover {
+          text-decoration: underline;
+        }
+        
+        li.expanded {
+          > a {
+            position: relative;
+            &:after { //2nd level links' arrow
+              content: '\25b6';
+              position: absolute;
+              right: 20px;
+            }
+          }
+          
+          ul {
+            background: transparent;
+            position: absolute;
+            padding-top: 0;
+            top: -40px;
+            left: $submenu-width;
+            padding-left: 5px;
+            
+            li {
+              background: $blue;
+              
+              &:first-child a {
+                padding-top: 10px;
+              }
+            }
+          }
+        }
+      }
 
-			// Show dropdown on hover
-			li:hover ul, ul:hover {
-				visibility: visible;
-				opacity: 1.0;
-			}
+      // Show dropdown on hover
+      li:hover>ul, ul:hover {
+        visibility: visible;
+        opacity: 1.0;
+      }
 		}
 	}
 
