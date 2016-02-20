@@ -143,7 +143,21 @@ $yhteistyo: $blue;
   }
 }
 
+.node-type-fj16-job #content {
+  @extend .container;
+  
+  .node-fj16-job {
+    .info:before {     
+      @include respondMin(medium) {
+        left: 44%;
+      }
+    }
+  }
+}
+
 .node-fj16-job {
+  @include clearfix();
+  
   background: #FFF;
   position: relative;
 
@@ -212,6 +226,11 @@ $yhteistyo: $blue;
   &.full {
     .info {
       padding: 3.4% 3.4% 0;
+      
+      @include respondMin(medium) {
+        float: left;
+        width: 50%;
+      }
 
       &:before {
         right: 30px;
@@ -228,20 +247,38 @@ $yhteistyo: $blue;
         font-size: 1em;
         text-transform: uppercase;
       }
+
+      @include respondMin(medium) {
+        clear: left;
+        float: left;
+        width: 50%;
+      }
     }
 
     .application-form {
+      @include clearfix();
+      
       padding: 3.4%;
-      background: #d2d2d1;
+      background: lighten($grey, 5);
+      border-top: 1px solid $grey;
 
       h2 {
         margin: 0 0 20px;
       }
+
+      @include respondMin(medium) {
+        border-top: 0;
+        border-left: 1px solid $grey;
+        width: 50%;
+      }
     }
 
     .job-content, .application-form form {
-      width: 610px;
       max-width: 100%;
+      
+      @include respond(medium) {
+        max-width: 610px;
+      }
     }
 
     .meta {
