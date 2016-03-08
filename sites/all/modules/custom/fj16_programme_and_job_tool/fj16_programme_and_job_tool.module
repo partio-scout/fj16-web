@@ -42,6 +42,22 @@ function fj16_programme_and_job_tool_menu() {
   return $menu;
 }
 
+function fj16_programme_and_job_tool_permission() {
+  $permissions = array();
+
+  $permissions['choose explorer programme'] = array(
+    'title' => 'Choose explorer programme',
+    'description' => 'Will-o\'-the-wisps and explorer staff positions'
+  );
+
+  $permissions['choose rover or adult programme'] = array(
+    'title' => 'Choose rover or adult programme',
+    'description' => 'Choose rover or adult staff positions'
+  );
+
+  return $permissions;
+}
+
 function fj16_programme_and_job_tool_node_view($node, $view_mode, $langcode) {
   $is_correct_type = ($node->type === 'fj16_bulk_job') || ($node->type === 'fj16_will_o_the_wisp');
   $is_current_page = current_path() === 'node/'.$node->nid;
@@ -172,7 +188,7 @@ function _fj16_programme_and_job_tool_generator_thankyou_page() {
   global $user;
   drupal_set_title(t('Thank you!'));
 
-  $job_title = $name = $email = $phone = $wotw_title = '';
+  $job_title = $name = $email = $phone = $wotw_title = $wotw_edit = '';
 
   $job = fj16_get_selected_job($user);
   if($job !== FALSE) {
@@ -185,6 +201,7 @@ function _fj16_programme_and_job_tool_generator_thankyou_page() {
   $wotw = fj16_get_selected_wotw($user);
   if($wotw !== FALSE) {
     $wotw_title = field_get_items('node', $wotw, 'field_localized_title')[0]['value'];
+    $wotw_edit = ' ' . l(t('Edit'), 'generator/will-o-the-wisp');
   }
 
   $variables = array(
@@ -193,7 +210,7 @@ function _fj16_programme_and_job_tool_generator_thankyou_page() {
     'contact_email' => check_plain($email),
     'contact_phone' => check_plain($phone),
     'job_further_info' => t('The contact person will be in touch within a month.'),
-    'will_o_the_wisp_name' => check_plain($wotw_title),
+    'will_o_the_wisp_name' => check_plain($wotw_title) . $wotw_edit,
     'info_text' => 'Lorem ipsum dolor sit amet...',
     'current_lang' => $language->language
   );
@@ -353,7 +370,7 @@ function fj16_programme_and_job_tool_form_alter(&$form, &$form_state, $form_id) 
     }
   }
 
-  if($form_id === 'user_register_form') {
+  if(!user_access('administer users') && $form_id === 'user_register_form') {
     drupal_set_title(t('Register'));
     $form['actions']['submit']['#value'] = t('Register');
   }
@@ -724,6 +741,8 @@ t('Choose this');
 t('Will-o\'-the-wisp selected');
 t('Deselect this');
 t('A welcome message with further instructions has been sent to your e-mail address.');
-
+t('Full!assignment', array('!assignment' => ''));
+t("This will-o'-the-wisp is full");
+t('This staff position is full');
 
 

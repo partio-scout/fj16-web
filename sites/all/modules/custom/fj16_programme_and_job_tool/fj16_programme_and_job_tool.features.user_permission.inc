@@ -17,6 +17,24 @@ function fj16_programme_and_job_tool_user_default_permissions() {
     'module' => 'entity_translation',
   );
 
+  // Exported permission: 'choose explorer programme'.
+  $permissions['choose explorer programme'] = array(
+    'name' => 'choose explorer programme',
+    'roles' => array(
+      'explorer' => 'explorer',
+    ),
+    'module' => 'fj16_programme_and_job_tool',
+  );
+
+  // Exported permission: 'choose rover or adult programme'.
+  $permissions['choose rover or adult programme'] = array(
+    'name' => 'choose rover or adult programme',
+    'roles' => array(
+      'rover or adult' => 'rover or adult',
+    ),
+    'module' => 'fj16_programme_and_job_tool',
+  );
+
   // Exported permission: 'create fj16_bulk_job content'.
   $permissions['create fj16_bulk_job content'] = array(
     'name' => 'create fj16_bulk_job content',

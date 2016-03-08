@@ -19,7 +19,7 @@
       Mitä mieltä olit Kehittimestä?
       </p>
       <p class="cta">
-      <a class="cta" href="https://annamoksman.typeform.com/to/VvoucL">Vastaa kyselyyn</a> 
+      <a class="cta" target="_blank" href="https://annamoksman.typeform.com/to/VvoucL">Vastaa kyselyyn</a> 
       </p>
     <?php endif; ?>
     <?php if($current_lang == 'sv'): ?>
@@ -39,7 +39,7 @@
       Hur gick det?
       </p>
       <p class="cta">
-        <a class="cta" href="https://annamoksman.typeform.com/to/u38hbJ">Svara</a>
+        <a class="cta" target="_blank" href="https://annamoksman.typeform.com/to/u38hbJ">Svara</a>
       </p>
     <?php endif; ?>
     <?php if($current_lang == 'en'): ?>
@@ -62,7 +62,7 @@
       How did this go?
       </p>
       <p class="cta">
-      <a class="cta" href="https://annamoksman.typeform.com/to/cPouEd">Answer the questionaire</a>
+      <a class="cta" target="_blank" href="https://annamoksman.typeform.com/to/cPouEd">Answer the questionaire</a>
       </p>
     <?php endif; ?>
 
@@ -87,6 +87,16 @@
     </div>
   <?php endif; ?>
   <div class="further-info">
-    <?php print t('See you at Roihu!'); ?>
+    <p><?php print t('See you at Roihu!'); ?><p>
   </div>
+  <p class="cta">
+    <?php
+      print l(t('Log out'), 'user/logout',
+        array(
+          'attributes' => array('class' => 'cta'),
+          'query' => array('destination' => 'generator')
+        )
+      );
+    ?>
+  </p>
 </div>
