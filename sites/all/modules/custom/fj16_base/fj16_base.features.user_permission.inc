@@ -23,6 +23,7 @@ function fj16_base_user_default_permissions() {
     'roles' => array(
       'activity editor' => 'activity editor',
       'content editor' => 'content editor',
+      'jobs editor' => 'jobs editor',
     ),
     'module' => 'system',
   );
@@ -116,7 +117,9 @@ function fj16_base_user_default_permissions() {
   // Exported permission: 'access user profiles'.
   $permissions['access user profiles'] = array(
     'name' => 'access user profiles',
-    'roles' => array(),
+    'roles' => array(
+      'jobs editor' => 'jobs editor',
+    ),
     'module' => 'user',
   );
 
@@ -703,6 +706,7 @@ function fj16_base_user_default_permissions() {
     'roles' => array(
       'activity editor' => 'activity editor',
       'content editor' => 'content editor',
+      'jobs editor' => 'jobs editor',
     ),
     'module' => 'system',
   );
