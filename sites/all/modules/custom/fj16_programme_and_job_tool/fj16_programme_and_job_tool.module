@@ -156,7 +156,7 @@ function _fj16_programme_and_job_tool_generator_page() {
       'login_intro' => t('Note: you need to log in with your personal ScoutID.'),
       'alternative_login_link' => t("International guest or not yet a scout/guide? !register and then !login with your user name and password.", array(
           '!register' => l(t('Register'), 'user/register'),
-          '!login' => l(t('log in'), 'user')
+          '!login' => l(t('log in'), 'user', array('query' => array('destination' => 'generator')))
         ))
     );
     return theme('fj16_generator_front', $variables);
