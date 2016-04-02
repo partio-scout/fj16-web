@@ -1,303 +1,330 @@
 #header {
-	position: relative;
-	width: 100%;
-	height: 400px;
-	background: #f2f2f2;
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background: #f2f2f2;
 
-	font-family: $exo;
-	text-transform: uppercase;
+  font-family: $exo;
+  text-transform: uppercase;
 
-	background: url(../img/header_bg_1.jpg) center center;
-	background-size: cover;
+  background: url(../img/header_bg_1.jpg) center center;
+  background-size: cover;
 
-	@include respond(small) {
-		background-image: url(../img/header_bg_1_small.jpg);
-	}
+  @include respond(small) {
+    background-image: url(../img/header_bg_1_small.jpg);
+  }
 
-	@include respond(mobile) {
-		height: 300px;
-	}
-	
-	&:before {
-		content: '';
-		@include at2x('header_sp_logo', 180px);
-		background-repeat: no-repeat;
-		background-position: center;
-		position: absolute;
-		top: 3.8em;
-		right: 1em;
-		width: 180px;
-		height: 68px;
-		z-index: 1;
-		
-		@include respond(mobile) {
-			width: 100px;
-			height: 43px;
-			background-size: 100px;			
-		}
-	}
+  @include respond(mobile) {
+    height: 300px;
+  }
+  
+  &:before {
+    content: '';
+    @include at2x('header_sp_logo', 180px);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 3.8em;
+    right: 1em;
+    width: 180px;
+    height: 68px;
+    z-index: 1;
+    
+    @include respond(mobile) {
+      width: 100px;
+      height: 43px;
+      background-size: 100px;      
+    }
+  }
 
+  #name-and-slogan {
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    top: 50px;
+    margin-left: -93px;
+    width: 196px;
 
-	#name-and-slogan {
-		display: inline-block;
-		position: absolute;
-		left: 50%;
-		top: 50px;
-		margin-left: -93px;
-		width: 196px;
+    #site-slogan {
+      display: none;
+    }
 
-		#site-slogan {
-			display: none;
-		}
+    #site-name {
+      a {
+        display: inline-block;
+        width: 196px;
+        height: 270px;
+        text-indent: -9999em;
 
-		#site-name {
-			a {
-				display: inline-block;
-				width: 196px;
-				height: 270px;
-				text-indent: -9999em;
+        @include at2x('header_roihu_logo', 155px);
+        background-repeat: no-repeat;
+        background-position: center;
 
-				@include at2x('header_roihu_logo', 155px);
-				background-repeat: no-repeat;
-				background-position: center;
+        @include respond(mobile) {
+          width: 133px;
+          height: 200px;
+          display: block;
+          margin: 20px auto;
+          position: relative;
+          top: 0; left: 0;
+          background-size: 133px;
+          
+        }
+      }
+    }
+  }
+  
+  
+  #navigation {
+    background: #000;
+    min-height: 80px;
 
-				@include respond(mobile) {
-					width: 133px;
-					height: 200px;
-					display: block;
-					margin: 20px auto;
-					position: relative;
-					top: 0; left: 0;
-					background-size: 133px;
-					
-				}
-			}
-		}
-	}
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: visible;
+        
+    @include respond(1299px) {
+      min-height: 60px;
+    }
 
-	#navigation {
-		background: #000;
-		min-height: 80px;
+    @include respond($break-small) {
+      display: none;
+    }
 
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-		overflow: visible;
-				
-		@include respond(1299px) {
-			min-height: 60px;
-		}
+    &.fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 50px;
+      min-height: 50px;
+      z-index: 50;
 
-		@include respond($break-small) {
-			display: none;
-		}
+      ul li a {
+        height: 50px;
+        line-height: 50px;
+      }
+      ul li ul li a {
+        line-height: 1.1em;
+        height: 100%;
+      }
+    }
 
-		&.fixed {
-			position: fixed;
-			top: 0;
-			left: 0;
-			height: 50px;
-			min-height: 50px;
-			z-index: 50;
+    h2 {
+      display: none;
+    }
 
-			ul li a {
-				height: 50px;
-				line-height: 50px;
-			}
-			ul li ul li a {
-				line-height: 1.1em;
-				height: 100%;
-			}
-		}
+    ul {
+      @extend .container;
+      overflow: visible; // override .container
+      padding: 0;
 
-		h2 {
-			display: none;
-		}
+      li {
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+        position: relative;
+      }
 
-		ul {
-			@extend .container;
-			overflow: visible; // override .container
-			padding: 0;
+      a {
+        display: inline-block;
+        padding: 0 30px;
+        margin: 0 -4px 0 0; // negative right margin to hide the gap between inline-block items
+        height: 80px;
+        line-height: 80px;
+        color: #fff;
+        @include transition(background-color 0.3s ease-out);
+        
+        @include respond(medium) {
+          padding: 0 20px;
+        }
+      }
 
-			li {
-				display: inline-block;
-				padding: 0;
-				margin: 0;
-				position: relative;
-			}
+      a.active, a.active-trail, li:hover a {
+        background: $blue;
+      }
+      
+      $submenu-width: 300px;
 
-			a {
-				display: inline-block;
-				padding: 0 30px;
-				margin: 0 -4px 0 0; // negative right margin to hide the gap between inline-block items
-				height: 80px;
-				line-height: 80px;
-				color: #fff;
-				@include transition(background-color 0.3s ease-out);
-				
-				@include respond(1299px) {
-					font-size: .9em;
-          height: 60px;
-          line-height: 60px;
-          padding: 0 17px;
-				}
-			}
+      ul {
+        visibility: hidden;
+        opacity: 0.0; // hide 2nd level by default
+        @include transition(opacity 0.3s ease-out);
 
-			a.active, a.active-trail, li:hover a {
-				background: $blue;
-			}
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: $blue;
+        width: $submenu-width;
+        z-index: 1;
 
-			ul {
-				visibility: hidden;
-				opacity: 0.0; // hide 2nd level by default
-				@include transition(opacity 0.3s ease-out);
+        li {
+          display: block;
+              
+          &:first-child a {
+            padding-top: 15px;
+          }
+        }
 
-				position: absolute;
-				top: 100%;
-				left: 0;
-				background: $blue;
-				width: 300px;
-				padding-top: 10px;
-				z-index: 1;
-				margin-top: -4px;
+        a {
+          text-transform: none;
+          display: block;
+          height: 50px;
+          height: 100%;
+          line-height: 20px;
+          margin: 0;
+          padding-top: 5px;
+          padding-bottom: 15px;
+        }
 
-				li {
-					display: inline;
-				}
+        a:hover {
+          text-decoration: underline;
+        }
+        
+        li.expanded {
+          > a {
+            position: relative;
+            &:after { //2nd level links' arrow
+              content: '\25b6';
+              position: absolute;
+              right: 20px;
+            }
+          }
+          
+          ul {
+            background: transparent;
+            position: absolute;
+            padding-top: 0;
+            top: 0;
+            left: $submenu-width;
+            padding-left: 5px;
+            
+            li {
+              background: $blue;
+              
+              &:first-child a {
+                padding-top: 10px;
+              }
+            }
+          }
+        }
+      }
 
-				a {
-					text-transform: none;
-					display: block;
-					height: 50px;
-					height: 100%;
-					line-height: 20px;
-					margin: 0;
-					padding-top: 5px;
-					padding-bottom: 15px;
-				}
+      // Show dropdown on hover
+      li:hover>ul, ul:hover {
+        visibility: visible;
+        opacity: 1.0;
+      }
+    }
+  }
 
-				a:hover {
-					text-decoration: underline;
-				}
-			}
+  #top-bar {
+    background: $grey;
 
-			// Show dropdown on hover
-			li:hover ul, ul:hover {
-				visibility: visible;
-				opacity: 1.0;
-			}
-		}
-	}
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 50px;
 
-	#top-bar {
-		background: $grey;
+    z-index: 50;
 
-		position: absolute;
-		top: 0; left: 0;
-		width: 100%;
-		height: 50px;
+    @include respond($break-small) {
+      background: #000;
+    }
 
-		z-index: 50;
+    ul {
+      @extend .container;
 
-		@include respond($break-small) {
-			background: #000;
-		}
-
-		ul {
-			@extend .container;
-
-			padding: 0;
-			list-style-type: none;
-			float: left;
+      padding: 0;
+      list-style-type: none;
+      float: left;
+      float: left;
         
       &.links li a {
-				padding: 0 30px;
+        padding: 0 30px;
       }
       
       &.language-switcher-locale-url li {
-				padding: 0 30px;
+        padding: 0 30px;
 
-				@include respond(mobile) {
-					padding: 0 10px;
-				}
+        @include respond(mobile) {
+          padding: 0 10px;
+        }
       }
 
-			li {
-				display: inline-block;
-				float: left;
-				line-height: 50px;
+      li {
+        display: inline-block;
+        float: left;
+        line-height: 50px;
 
-				a {
-					color: #000;
-					text-decoration: none; // hide default strikethrough that untranslated links have
+        a {
+          color: #000;
+          text-decoration: none; // hide default strikethrough that untranslated links have
 
-					@include respond($break-small) {
-						color: #FFF;
-					}
-					
-					&.some-icon {
-						margin: 7px 0 0 35px;
-						padding: 0;
-					}
-				}
-			}
-		}
+          @include respond($break-small) {
+            color: #FFF;
+          }
+          
+          &.some-icon {
+            margin: 7px 0 0 35px;
+            padding: 0;
+          }
+        }
+      }
+    }
 
-		// Social media links
-		ul.links {
-			@include respond($break-small) {
-				display: none; // The links are also in the mobile menu, so hide
-			}
-		}
+    // Social media links
+    ul.links {
+      @include respond($break-small) {
+        display: none; // The links are also in the mobile menu, so hide
+      }
+    }
 
-		#block-language-switcher-fallback-language-switcher-fallback {
-			h2 {
-				display: none;
-			}
+    #block-language-switcher-fallback-language-switcher-fallback {
+      h2 {
+        display: none;
+      }
 
-			ul {
-				float: right;
+      ul {
+        float: right;
+      }
+    }
 
-				@include respond($break-small) {
-					float: left;
-				}
-			}
-		}
+    #mobile-menu-toggle {
+      display: none;
 
-		#mobile-menu-toggle {
-			display: none;
+      @include respond($break-small) {
+        cursor: pointer;
+        display: block;
+        height: 50px;
+        width: 60px;
+        padding: 10px;
+        position: absolute;
+        top: 0;
+        left: 0;
 
-			@include respond($break-small) {
-				display: block;
-				height: 50px;
-				width: 60px;
-				padding: 10px;
-				position: absolute;
-				top: 0;
-				right: 0;
+        span {
+          display: block;
+          width: 40px;
+          height: 5px;
+          margin-top: 6px;
+          background: #fff;
 
-				span {
-					display: block;
-					width: 40px;
-					height: 5px;
-					margin-top: 6px;
-					background: #fff;
+          &:first-child {
+            margin-top: 2px;
+          }
+        }
+      }
+    }
+  }
+  
+  #bg-slides {
+    display: none;
+  }
 
-					&:first-child {
-						margin-top: 2px;
-					}
-				}
-			}
-		}
-	}
-	
-	#bg-slides {
-		display: none;
-	}
-
-	#to-content {
-		display: none;
-	}
+  #to-content {
+    display: none;
+  }
 
 }
