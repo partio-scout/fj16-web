@@ -213,6 +213,16 @@
           }
         }
       }
+      
+      li:last-child ul {
+        left: auto;
+        right: 0;
+        
+        li.expanded ul {            
+          left: auto;
+          right: $submenu-width;
+        }
+      }
 
       // Show dropdown on hover
       li:hover>ul, ul:hover {
