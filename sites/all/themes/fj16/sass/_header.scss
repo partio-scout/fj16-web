@@ -84,6 +84,10 @@
 		left: 0;
 		width: 100%;
 		overflow: visible;
+				
+		@include respond(1299px) {
+			min-height: 60px;
+		}
 
 		@include respond($break-small) {
 			display: none;
@@ -132,8 +136,11 @@
 				color: #fff;
 				@include transition(background-color 0.3s ease-out);
 				
-				@include respond(medium) {
-					padding: 0 20px;
+				@include respond(1299px) {
+					font-size: .9em;
+          height: 60px;
+          line-height: 60px;
+          padding: 0 17px;
 				}
 			}
 
