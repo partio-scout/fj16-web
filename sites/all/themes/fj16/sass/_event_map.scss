@@ -1,9 +1,6 @@
 .page-liekit {
   #content {
-    @include at2x('event_map_bg', auto, 120%, svg);
-    background-repeat:  no-repeat;
-    background-position: 100% 50%;
-    background-color: $green;
+    background: $green url(../img/event_map_bg.svg) 100% 50%/auto 120% no-repeat;
   }
 
   #insta-map {
