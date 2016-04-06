@@ -336,8 +336,8 @@ msgid "Your choice has been saved"
 msgstr "Valintasi on tallennettu"
 
 #: fj16_programme_and_job_tool.module:737
-msgid "Staff position selected"
-msgstr "Pesti valittu"
+msgid "Deselect this"
+msgstr "Poista valinta"
 
 #: fj16_programme_and_job_tool.module:738
 msgid "Reject this staff position"
@@ -350,10 +350,6 @@ msgstr "Olet hylännyt pesti [node:title]"
 #: fj16_programme_and_job_tool.module:740
 msgid "Choose this"
 msgstr "Valitse tämä"
-
-#: fj16_programme_and_job_tool.module:741
-msgid "Will-o'-the-wisp selected"
-msgstr "Virvatuli valittu"
 
 #: fj16_programme_and_job_tool.module:742
 msgid "Deselect this"

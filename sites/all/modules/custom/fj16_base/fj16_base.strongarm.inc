@@ -86,7 +86,20 @@ function fj16_base_strongarm() {
       ),
     ),
     'extra_fields' => array(
-      'form' => array(),
+      'form' => array(
+        'language' => array(
+          'weight' => '0',
+        ),
+        'title' => array(
+          'weight' => '-5',
+        ),
+        'path' => array(
+          'weight' => '30',
+        ),
+        'redirect' => array(
+          'weight' => '30',
+        ),
+      ),
       'display' => array(
         'webform' => array(
           'default' => array(
@@ -604,7 +617,7 @@ user/*/*';
     'domain' => '',
     'prefix' => '',
     'weight' => '0',
-    'javascript' => 'dHltOVJgoSRrHD5jKx5FZtXianhTmYqi4puANZq8IZY',
+    'javascript' => 'ZPmXxSoeZLq6KPlKL40znHtk3GsyhCs4uc9jV6MZXP8',
   );
   $export['language_default'] = $strongarm;
 

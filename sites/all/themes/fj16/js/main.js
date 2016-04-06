@@ -11,6 +11,18 @@
         el.addClass('instagram');
         el.parents('.node').css('min-height', 0);
 
+  if($('.node-fj16-frontpage-box').length) {
+    $('.node-fj16-frontpage-box').each(function(){
+      if($(this).find('.image .hashtag').length > 0) {
+        
+        // Init the Instagram feed
+        
+        var el = $(this).find('.image');
+        var hashtag = el.find('.hashtag').text().trim();
+        
+        el.addClass('instagram');
+        el.parents('.node').css('min-height', 0);
+
         var i = 1;
         $.getJSON('/instajson/' + hashtag, function(data) {
           $.each(shuffle(data['data']), function(key, img) {
@@ -20,7 +32,6 @@
             }
           });
         });
-
 
       } else {
         // We're parallaxin, baby
@@ -91,8 +102,16 @@
       }
     });
   }
-  
+
   if($('.bulk-jobs-list, .wotw-list').length) { 
+    // A bit of a hack to hide untranslated items
+    $('.bulk-jobs-list h2, .wotw-list h2').each(function(index, item) {
+      $item = $(item);
+      if($item.text().trim().length < 2) {
+        $item.closest('.views-row').remove();
+      }
+    });
+
     $('.view-content').masonry({
       // set itemSelector so .grid-sizer is not used in layout
       itemSelector: '.views-row',
@@ -131,7 +150,39 @@
       
     });
 
+    $(window).load(function() {
+      $('.view-content').masonry();
+    });
+
   }
+  
+  if($('.subcamp-filter').length > 0) {
+    $('.subcamp-filter input').keyup(function () {
+      //split the current value of input
+      var searchquery = this.value.split(' ');
+      //create a jquery object of the rows
+      var jo = $('.subcamp-filter + table tbody').find('tr');
+      if (this.value === '') {
+        jo.show();
+        return;
+      }
+      //hide all the rows
+      jo.hide();
+
+      //Recusively filter the jquery object to get results.
+      jo.filter(function() {
+        for (var word = 0; word < searchquery.length; word++) {
+          if ($(this).text().toLowerCase().indexOf(searchquery[word].toLowerCase()) > -1) {
+            return true;
+          }
+        }
+        return false;
+      })
+      //show the rows that match.
+      .show();
+      
+      console.log(searchquery);
+    });    
   
   // Avoid `console` errors in browsers that lack a console.
   (function() {
@@ -149,133 +200,13 @@
 
     while (length--) {
       method = methods[length];
-      
-	if($('.node-fj16-frontpage-box').length) {
-		$('.node-fj16-frontpage-box').each(function(){
-			if($(this).find('.image .hashtag').length > 0) {
-				
-				// Init the Instagram feed
-				
-				var el = $(this).find('.image');
-				var hashtag = el.find('.hashtag').text().trim();
-				
-				el.addClass('instagram');
-				el.parents('.node').css('min-height', 0);
 
-				var i = 1;
-				$.getJSON('/instajson/' + hashtag, function(data) {
-					$.each(shuffle(data['data']), function(key, img) {
-						el.append('<a href="' + img.link + '" target="_blank" class="img' + i + '"><img src="' + img.images.standard_resolution.url + '"></a>');
-						if(i++ % 5 == 0) {
-							return false;
-						}
-					});
-				});
-
-
-			} else {
-				// We're parallaxin, baby
-				$(this).find('.image').attr('data-bottom-top', 'transform: translate3d(0,0%,0)');
-				$(this).find('.image').attr('data-top-bottom', 'transform: translate3d(0,-16.66%,0)');	
-			}
-		});
-
-		initSkrollr();
-		$(window).resize(function() {
-			initSkrollr();
-		});
-
-		// Fade in animations
-		if($(window).width() > 1024) {
-			$(window).scroll(function() {
-				$('.node-fj16-frontpage-box').each(function(){
-					if($(this).isOnScreen(1,0.5)){
-						var $this = $(this);
-						setTimeout(function(){
-							$this.find('h2').addClass('animated fadeInDown');
-							$this.find('.body, .link').addClass('animated fadeInUp');
-						}, 300);
-					}
-				});
-			});
-		} else {
-			$('.node-fj16-frontpage-box').find('h2, .body, .link').addClass('animated');
-		}
-	}
-
-	$('#mobile-menu-toggle').click(function(){
-		$('#mobile-menu').toggleClass('visible');
-	});
-
-	$('#to-content').click(function(){
-		$('html,body').animate({scrollTop: $('#main').offset().top}, 400);
-	});
-	
-	$('#sidebar-left .block-menu-block h2 a').wrapInner('<span></span>');
-
-
-	// Sticky nav
-	if($('#navigation').length) {
-		navpos = $('#navigation').offset();
-		$(window).bind('scroll', function() {
-			if ($(window).scrollTop() > navpos.top - 1) { // -1 for fixing lagging at bottom
-				$('#navigation').addClass('fixed');
-				$('#header').addClass('fixed-nav');
-			}
-			else {
-				$('#navigation').removeClass('fixed');
-				$('#header').removeClass('fixed-nav');
-			}
-		});
-	}
-
-	if($('.bulk-jobs-list, .wotw-list').length) { 
-		// A bit of a hack to hide untranslated items
-		$('.bulk-jobs-list h2, .wotw-list h2').each(function(index, item) {
-			$item = $(item);
-			if($item.text().trim().length < 2) {
-				$item.closest('.views-row').remove();
-			}
-		});
-
-		$('.view-content').masonry({
-			// set itemSelector so .grid-sizer is not used in layout
-			itemSelector: '.views-row',
-			// use element for option
-			columnWidth: '.views-row',
-			percentPosition: true
-			// columnWidth: 300
-		});
-
-		$(window).load(function() {
-			$('.view-content').masonry();
-		});
-
-	}
-	
-	// Avoid `console` errors in browsers that lack a console.
-	(function() {
-		var method;
-		var noop = function noop() {};
-		var methods =	[
-							'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
-							'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
-							'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
-							'timeStamp', 'trace', 'warn'
-						];
-		
-		var length = methods.length;
-		var console = (window.console = window.console || {});
-
-		while (length--) {
-			method = methods[length];
-
-			// Only stub undefined methods.
-			if (!console[method]) {
-				console[method] = noop;
-			}
-		}
-	}());
+      // Only stub undefined methods.
+      if (!console[method]) {
+        console[method] = noop;
+      }
+    }
+  }());
 
 })(jQuery, Drupal);
 
@@ -347,11 +278,11 @@ jQuery.fn.isOnScreen = function(x, y){
 };
 
 jQuery('[data-ga-event-category][data-ga-event-action]').click(function(e){
-  var eventCategory = jQuery(this).data('ga-event-category'),
-      eventAction   = jQuery(this).data('ga-event-action'),
-      eventLabel    = jQuery(this).data('ga-event-label'),
-      eventValue    = jQuery(this).data('ga-event-value');
+  var eventCategory = $(this).data('ga-event-category'),
+      eventAction   = $(this).data('ga-event-action'),
+      eventLabel    = $(this).data('ga-event-label'),
+      eventValue    = $(this).data('ga-event-value');
       
-  ga('send', 'event', eventCategory, eventAction, eventLabel, eventValue);  
+  ga('send', 'event', eventCategory, eventAction, eventLabel, eventValue);
 
 });

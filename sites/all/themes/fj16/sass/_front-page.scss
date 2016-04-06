@@ -1,653 +1,661 @@
 body.front {
 
-	overflow-x: hidden;
+  overflow-x: hidden;
 
-	#header {
-		min-height: 100vh;
+  #header {
+    min-height: 100vh;
 
-		// Fix iOS7 vh unit handling
-		// iPad
-		@media all and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
-			& {
-				min-height: 1024px;
-			}
-		}
-		@media all and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
-			& {
-				min-height: 768px;
-			}
-		}
-		// iPhone 5
-		@media all and (device-aspect-ratio: 40/71) {
-			& {
-				min-height: 500px;
-			}
-		}
+    // Fix iOS7 vh unit handling
+    // iPad
+    @media all and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+      & {
+        min-height: 1024px;
+      }
+    }
+    @media all and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
+      & {
+        min-height: 768px;
+      }
+    }
+    // iPhone 5
+    @media all and (device-aspect-ratio: 40/71) {
+      & {
+        min-height: 500px;
+      }
+    }
 
-		height: auto;
-		margin-bottom: 80px;
-		background: #f8f8f8;
-		position: relative;
+    height: auto;
+    margin-bottom: 80px;
+    background: #f8f8f8;
+    position: relative;
 
-		&.fixed-nav {
-			margin-bottom: 50px;			
-		}
+    @include respond(1299px) {
+      margin-bottom: 60px;
+    }
 
-		@include respond(small) {
-			margin-bottom: 0 !important;
-		}
+    &.fixed-nav {
+      margin-bottom: 50px;      
+    }
 
-		#top-bar {
-			@extend .animated, .fadeInDown;
-			@include animation-duration(0.8s);
-			@include animation-delay(0.5s);
+    @include respond(small) {
+      margin-bottom: 0 !important;
+    }
 
-			a {
-				@extend .animated, .fadeIn;
-				@include animation-duration(0.5s);
-				@include animation-delay(1.0s);
-			}
-		}
-		
-		&:before {
-			@extend .animated, .fadeInDown;
-			@include animation-duration(1.0s);
-			@include animation-delay(1.0s);
-					
-			@include at2x('header_sp_logo', 225px);
-			top: 4.8em;
-			right: 2em;
-			width: 225px;
-			height: 84px;
-			
-			@include respond(medium) {
-				width: 180px;
-				height: 68px;
-				background-size: 180px;
-			}
-			
-			@include respond(mobile) {
-				width: 100px;
-				height: 43px;
-				right: 1em;
-				top: 3.8em;
-				background-size: 100px;			
-			}
-		}
+    #top-bar {
+      @extend .animated, .fadeInDown;
+      @include animation-duration(0.8s);
+      @include animation-delay(0.5s);
 
-		#name-and-slogan {
-			width: 500px;
-			max-width: 60%;
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			display: block;
-			margin: -300px 0 0 -250px;
-			padding: 50px 0;
+      a {
+        @extend .animated, .fadeIn;
+        @include animation-duration(0.5s);
+        @include animation-delay(1.0s);
+      }
+    }
+    
+    &:before {
+      @extend .animated, .fadeInDown;
+      @include animation-duration(1.0s);
+      @include animation-delay(1.0s);
+          
+      @include at2x('header_sp_logo', 225px);
+      top: 4.8em;
+      right: 2em;
+      width: 225px;
+      height: 84px;
+      
+      @include respond(medium) {
+        width: 180px;
+        height: 68px;
+        background-size: 180px;
+      }
+      
+      @include respond(mobile) {
+        width: 100px;
+        height: 43px;
+        right: 1em;
+        top: 3.8em;
+        background-size: 100px;      
+      }
+    }
+
+    #name-and-slogan {
+      width: 500px;
+      max-width: 60%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      display: block;
+      margin: -300px 0 0 -250px;
+      padding: 50px 0;
 
 
-			@include respond(medium) {
-				padding-top: 30px;
-			}
+      @include respond(medium) {
+        padding-top: 30px;
+      }
 
-			@include respond(mobile) {
-				position: relative;
-				margin: 0;
-				width: 100%;
-				max-width: 100%;
-				top: 0;
-				left: 0;
-				padding-top: 100px;
-			}
+      @include respond(mobile) {
+        position: relative;
+        margin: 0;
+        width: 100%;
+        max-width: 100%;
+        top: 0;
+        left: 0;
+        padding-top: 100px;
+      }
 
-			#site-name {
-				a {
-					@extend .animated, .fadeInUp;
-					@include animation-duration(1.0s);
-					@include animation-delay(1.0s);
+      #site-name {
+        a {
+          @extend .animated, .fadeInUp;
+          @include animation-duration(1.0s);
+          @include animation-delay(1.0s);
 
-					width: 250px;
-					height: 377px;
-					display: block;
-					margin: 0 auto 20px auto;
-					max-width: 100%;
+          width: 250px;
+          height: 377px;
+          display: block;
+          margin: 0 auto 20px auto;
+          max-width: 100%;
 
-					@include at2x('header_roihu_logo', 100%);
-					background-color: transparent;
-					background-repeat: no-repeat;
+          @include at2x('header_roihu_logo', 100%);
+          background-color: transparent;
+          background-repeat: no-repeat;
 
-					@include respond(medium) {
-						width: 200px;
-						height: 301px;
-					}
+          @include respond(medium) {
+            width: 200px;
+            height: 301px;
+          }
 
-					@include respond(mobile) {
-						width: 200px;
-						height: 301px;
-					}
-				}
-			}
+          @include respond(mobile) {
+            width: 200px;
+            height: 301px;
+          }
+        }
+      }
 
-			#site-slogan {
-				@extend .animated, .fadeInUp;
-				@include animation-duration(1.0s);
-				@include animation-delay(1.2s);
+      #site-slogan {
+        @extend .animated, .fadeInUp;
+        @include animation-duration(1.0s);
+        @include animation-delay(1.2s);
 
-				display: block;
-				text-align: center;
-				font-family: $exo;
-				font-size: 1.618em;
+        display: block;
+        text-align: center;
+        font-family: $exo;
+        font-size: 1.618em;
         font-weight: 600;
-				color: #fff;
-				text-transform: none;
-				text-shadow: 1px 1px 3px rgba(0,0,0,.9);
+        color: #fff;
+        text-transform: none;
+        text-shadow: 1px 1px 3px rgba(0,0,0,.9);
 
-				&:before {
-					content: 'Finnjamboree 2016';
-					text-transform: uppercase;
-					display: block;
-				}
+        &:before {
+          content: 'Finnjamboree 2016';
+          text-transform: uppercase;
+          display: block;
+        }
 
-				@include respond(mobile) {
-					font-size: 1.618em;
-				}
-			}
-
-
-			#to-content {
-				display: inline-block;
-				position: absolute;
-				width: 40px;
-				height: 46px;
-				bottom: -20px;
-				left: 50%;
-				margin-left: -20px;
-				opacity: 0.75;
-				cursor: pointer;
-
-				@include at2x('front_arrow_down', 40px);
-
-				@extend .animated, .fadeInDown;
-				@include animation-duration(1.0s);
-				@include animation-delay(1.2s);
-
-				&:hover {
-					bottom: -35px;
-				}
-
-				@include respond(medium) {
-					bottom: -60px;
-
-					&:hover {
-						bottom: -75px;
-					}
-				}
+        @include respond(mobile) {
+          font-size: 1.618em;
+        }
+      }
 
 
-				@include respond(mobile){
-					position: relative;
-					top: 30px;
-				}
-			}
-		}
+      #to-content {
+        display: inline-block;
+        position: absolute;
+        width: 40px;
+        height: 46px;
+        bottom: -20px;
+        left: 50%;
+        margin-left: -20px;
+        opacity: 0.75;
+        cursor: pointer;
 
-		#navigation {
-			bottom: -80px;
-		}
+        @include at2x('front_arrow_down', 40px);
 
-		#bg-slides {
-			display: block;
-			position: absolute;
-			top: 0; left: 0; right: 0; bottom: 0;
+        @extend .animated, .fadeInDown;
+        @include animation-duration(1.0s);
+        @include animation-delay(1.2s);
 
-			background: url('../img/front_header/front_header_slide_1_large.jpg') center;
-			background-size: cover;
+        &:hover {
+          bottom: -35px;
+        }
+
+        @include respond(medium) {
+          bottom: -60px;
+
+          &:hover {
+            bottom: -75px;
+          }
+        }
 
 
-			// TODO: slide change animations
-		}
-	}
+        @include respond(mobile){
+          position: relative;
+          top: 30px;
+        }
+      }
+    }
 
-	#main {
+    #navigation {
+      bottom: -80px;
+        
+      @include respond(1299px) {
+        bottom: -60px;
+      }
+    }
 
-		overflow: visible;
+    #bg-slides {
+      display: block;
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
 
-		h1#page-title {
-			display: none;
-		}
+      background: url('../img/front_header/front_header_slide_1_large.jpg') center;
+      background-size: cover;
 
-		#content {
-			padding: 0;
-		}
 
-		padding: 0;
-		
-		div#clock-wrapper {
-			@include at2x('front_section_bg', auto, 100%);
-			background-color: $purple;
-			background-repeat: no-repeat;
-			background-position: center;
-			padding: 3.8em 0;
-			
-			&.blue {
-				background-color: $blue;
-			}
-			&.green {
-				background-color: $green;
-			}
-			&.orange {
-				background-color: $red;
-			}
-			&.purple {
-				background-color: $purple;
-			}
-			
-			h2 {
-				color: #fff;
-				font-family: Exo2, sans-serif;
-				font-size: 2.22em;
-				margin: 0;
-				text-align: center;
-				text-transform: uppercase;
-			}
-			
-			div#clock {
-				color: #fff;
-				margin: 2.8em auto;
-				width: 35em;
-				overflow: hidden;
-				text-align: center;
-				text-transform: uppercase;
-				white-space: nowrap;
-				
-				p {
-					background: #333;
-					font-size: .9em;
-					line-height: 1.2;
-					float: left;
-					height: 7.5em;
-					width: 7.5em;
-					margin-bottom: 0;
-					
-					span {
-						display: block;
-						font-size: 4.32em;
-						font-weight: bold;
-						padding: 5px 0 0;
-					}
-				}
-			
-				div.space {
-					color: #fff;
-					display: block;
-					line-height: 1.52em;
-					font-size: 4.4em;
-					float: left;
-					height: 1.52em;
-					width: .6em;
-				}
-			}
-			
-			a {
-				display: block;
-				color: #fff;
-				font-size: 1.4em;
-				text-align: center;
-								
-				&:after {
-					content: " ›";
-					font-size: 1.618em;
-					line-height: 1em;
-					position: relative;
-					top: 3px;
-				}
-			}
-			
-			@include respondMin(small) {
-				h2, a {
-					opacity: 0;
+      // TODO: slide change animations
+    }
+  }
 
-					&.animated {
-						opacity: 1;
-					}
-				}
-			}
-			
-			@include respond(mobile) {
-				font-size: .8em;
-			}
-			@include respond(480px) {
-				div.countdown-clock {
-					text-align: center;
-				}
-				div#clock {
-					display: inline-block;
-					font-size: .65em;
-					width: auto;
-				}
-			}
-		}
+  #main {
 
-		#block-system-main {
-			.node {
-				@include at2x('front_section_bg', auto, 100%);
-				background-repeat: no-repeat;
-				background-position: right;
+    overflow: visible;
 
-				overflow: hidden;
+    h1#page-title {
+      display: none;
+    }
 
-				padding: 0;
-				position: relative;
-				min-height: 400px;
+    #content {
+      padding: 0;
+    }
 
-				@include respondMin(large) {
-					// &:before { // Make it look like that box is 100% wide
-					// 	content: '';
-					// 	display: inline-block;
-					// 	position: absolute;
-					// 	top: 0;
-					// 	bottom: 0;
-					// 	left: -100%;
-					// 	right: -100%;
-					// 	z-index: -1;
-					// }
-				}
+    padding: 0;
+    
+    div#clock-wrapper {
+      @include at2x('front_section_bg', auto, 100%);
+      background-color: $purple;
+      background-repeat: no-repeat;
+      background-position: center;
+      padding: 3.8em 0;
+      
+      &.blue {
+        background-color: $blue;
+      }
+      &.green {
+        background-color: $green;
+      }
+      &.orange {
+        background-color: $red;
+      }
+      &.purple {
+        background-color: $purple;
+      }
+      
+      h2 {
+        color: #fff;
+        font-family: Exo2, sans-serif;
+        font-size: 2.22em;
+        margin: 0;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      
+      div#clock {
+        color: #fff;
+        margin: 2.8em auto;
+        width: 35em;
+        overflow: hidden;
+        text-align: center;
+        text-transform: uppercase;
+        white-space: nowrap;
+        
+        p {
+          background: #333;
+          font-size: .9em;
+          line-height: 1.2;
+          float: left;
+          height: 7.5em;
+          width: 7.5em;
+          margin-bottom: 0;
+          
+          span {
+            display: block;
+            font-size: 4.32em;
+            font-weight: bold;
+            padding: 5px 0 0;
+          }
+        }
+      
+        div.space {
+          color: #fff;
+          display: block;
+          line-height: 1.52em;
+          font-size: 4.4em;
+          float: left;
+          height: 1.52em;
+          width: .6em;
+        }
+      }
+      
+      a {
+        display: block;
+        color: #fff;
+        font-size: 1.4em;
+        text-align: center;
+                
+        &:after {
+          content: " ›";
+          font-size: 1.618em;
+          line-height: 1em;
+          position: relative;
+          top: 3px;
+        }
+      }
+      
+      @include respondMin(small) {
+        h2, a {
+          opacity: 0;
 
-				.image {
-					position: absolute;
-					left: 0;
-					top: 0;
-					bottom: 0;
-					width: 60%;
-					overflow: hidden;
-					height: 120%;
-					background-size: cover;
+          &.animated {
+            opacity: 1;
+          }
+        }
+      }
+      
+      @include respond(mobile) {
+        font-size: .8em;
+      }
+      @include respond(480px) {
+        div.countdown-clock {
+          text-align: center;
+        }
+        div#clock {
+          display: inline-block;
+          font-size: .65em;
+          width: auto;
+        }
+      }
+    }
 
-					&:after {
-						content: '';
-						display: inline-block;
-						width: 0;
-						height: 0;
-						border-style: solid;
-						border-width: 70px 50px 70px 0;
-						position: absolute;
-						right: 0;
-						top: 58px;
-					}
+    #block-system-main {
+      .node {
+        @include at2x('front_section_bg', auto, 100%);
+        background-repeat: no-repeat;
+        background-position: right;
 
-					&.instagram {
-						position: relative;
-						background: url('../img/front_ig_feed_bg.jpg');
-						background-repeat: no-repeat;
-						background-size: 100% auto;
-						float: right;
-						height: auto;
-						padding-top: 26%;
+        overflow: hidden;
 
-						.hashtag {
-							display: none;
-						}
+        padding: 0;
+        position: relative;
+        min-height: 400px;
 
-						@include respond(mobile) {
-							width: 100%;
-							height: 0 !important;
-							padding: 0 0 50.417%;	// Hack to make bg image fit (ratio is same in all breakpoints)
-							overflow: visible;
-							position: static !important;
-							margin-bottom: 40px;
+        @include respondMin(large) {
+          // &:before { // Make it look like that box is 100% wide
+          //   content: '';
+          //   display: inline-block;
+          //   position: absolute;
+          //   top: 0;
+          //   bottom: 0;
+          //   left: -100%;
+          //   right: -100%;
+          //   z-index: -1;
+          // }
+        }
 
-							&:after {
-								display: none;
-							}
-						}
+        .image {
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          width: 60%;
+          overflow: hidden;
+          height: 120%;
+          background-size: cover;
 
-						a {
-							width: 20%;
-							display: block;
-							float: left;
-							
-							&.img2 { left: 20%; }
-							&.img3 { left: 40%; }
-							&.img4 { left: 60%; }
-							&.img5 { left: 80%; }
+          &:after {
+            content: '';
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 70px 50px 70px 0;
+            position: absolute;
+            right: 0;
+            top: 58px;
+          }
 
-							@include respond(medium) {
-								width: 25%;
+          &.instagram {
+            position: relative;
+            background: url('../img/front_ig_feed_bg.jpg');
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+            float: right;
+            height: auto;
+            padding-top: 26%;
 
-								&.img2 { left: 25%; }
-								&.img3 { left: 50%; }
-								&.img4 { left: 75%; }
-								&.img5 { display: none; }
-							}
+            .hashtag {
+              display: none;
+            }
 
-							@include respond(small) {
-								width: 33.33%;
+            @include respond(mobile) {
+              width: 100%;
+              height: 0 !important;
+              padding: 0 0 50.417%;  // Hack to make bg image fit (ratio is same in all breakpoints)
+              overflow: visible;
+              position: static !important;
+              margin-bottom: 40px;
 
-								&.img2 { left: 33.33%; }
-								&.img3 { left: 66.66%; }
-								&.img4 { display: none; }
-								&.img5 { display: none; }
-							}
+              &:after {
+                display: none;
+              }
+            }
 
-							@include respond(mobile) {
-								position: absolute;
-								bottom: 0;
-								z-index: 10;
+            a {
+              width: 20%;
+              display: block;
+              float: left;
+              
+              &.img2 { left: 20%; }
+              &.img3 { left: 40%; }
+              &.img4 { left: 60%; }
+              &.img5 { left: 80%; }
 
-								&:after {
-									display: none;
-								}
-							}
+              @include respond(medium) {
+                width: 25%;
 
-							img {
-								width: 100%;
-								height: auto;
-								display: block;
-								@include filter(brightness(75%));
-								@include transition(all 0.3s ease);
+                &.img2 { left: 25%; }
+                &.img3 { left: 50%; }
+                &.img4 { left: 75%; }
+                &.img5 { display: none; }
+              }
 
-								@include respond(small) {
-									@include filter(brightness(100%));
-								}
-							}
+              @include respond(small) {
+                width: 33.33%;
 
-							&:hover {
-								img {
-									@include filter(brightness(100%));
-								}
-							}
-						}
+                &.img2 { left: 33.33%; }
+                &.img3 { left: 66.66%; }
+                &.img4 { display: none; }
+                &.img5 { display: none; }
+              }
 
-						& + .content {
-							position: absolute;
-							top: 0;
-							bottom: 0;
-							padding-bottom: 0;
+              @include respond(mobile) {
+                position: absolute;
+                bottom: 0;
+                z-index: 10;
 
-							@include respond(mobile) {
-								position: relative;
-								padding: 30px 20px 38% 20px;
-							}
-						}
-					}
+                &:after {
+                  display: none;
+                }
+              }
 
-				}
+              img {
+                width: 100%;
+                height: auto;
+                display: block;
+                @include filter(brightness(75%));
+                @include transition(all 0.3s ease);
 
-				.content {
-					width: 40%;
-					padding: 120px 100px;
-					float: right;
+                @include respond(small) {
+                  @include filter(brightness(100%));
+                }
+              }
 
-					@include respond(medium) {
-						padding: 100px 50px;
-					}
+              &:hover {
+                img {
+                  @include filter(brightness(100%));
+                }
+              }
+            }
 
-					@include respond(small) {
-						padding: 80px 30px;
-					}
+            & + .content {
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              padding-bottom: 0;
 
-					h2 {
-						font-family: $exo2;
-						font-size: 2.236em;
-						text-transform: uppercase;
-						margin-top: 0;
+              @include respond(mobile) {
+                position: relative;
+                padding: 30px 20px 38% 20px;
+              }
+            }
+          }
 
-						a {
-							color: #fff;
-						}
+        }
+
+        .content {
+          width: 40%;
+          padding: 120px 100px;
+          float: right;
+
+          @include respond(medium) {
+            padding: 100px 50px;
+          }
+
+          @include respond(small) {
+            padding: 80px 30px;
+          }
+
+          h2 {
+            font-family: $exo2;
+            font-size: 2.236em;
+            text-transform: uppercase;
+            margin-top: 0;
+
+            a {
+              color: #fff;
+            }
             
             @include respond(small) {
               font-size: 1.75em;
             }
-					}
+          }
 
-					.body {
-						color: #fff;
-						margin-bottom: 1.3em;
-					}
+          .body {
+            color: #fff;
+            margin-bottom: 1.3em;
+          }
 
-					.link {
-						color: #fff;
-						font-family: $exo;
-						text-transform: uppercase;
+          .link {
+            color: #fff;
+            font-family: $exo;
+            text-transform: uppercase;
 
-						a {
-							color: #fff;
+            a {
+              color: #fff;
 
-							&:after {
-								content: " ›";
-								font-size: 1.618em;
-								line-height: 1em;
-								position: relative;
-								top: 1px;
-							}
+              &:after {
+                content: " ›";
+                font-size: 1.618em;
+                line-height: 1em;
+                position: relative;
+                top: 1px;
+              }
 
-							&:hover {
-								margin-left: 10px;
-							}
-						}
-					}
-				}
-
-
-				@include respondMin(small) {
-					.content {
-						h2, .body, .link {
-							opacity: 0;
-
-							&.animated {
-								opacity: 1;
-							}
-						}
-					}
-				}
+              &:hover {
+                margin-left: 10px;
+              }
+            }
+          }
+        }
 
 
-				&.purple {
-					background-color: $purple;
-					.image:after { border-color: transparent $purple transparent transparent; }
-					@include respondMin(large) { &:before { background: $purple; } }
-				}
+        @include respondMin(small) {
+          .content {
+            h2, .body, .link {
+              opacity: 0;
 
-				&.turquoise {
-					background-color: $green;
-					.image:after { border-color: transparent $green transparent transparent; }
-					@include respondMin(large) { &:before { background: $green; } }
-				}
-
-				&.orange {
-					background-color: $red;
-					.image:after { border-color: transparent $red transparent transparent; }
-					@include respondMin(large) { &:before { background: $red; } }
-				}
-
-				&.yellow {
-					background-color: $yellow;
-					.image:after { border-color: transparent $yellow transparent transparent; }
-					@include respondMin(large) { &:before { background: $yellow; } }
-				}
-
-				&.blue {
-					background-color: $blue;
-					.image:after { border-color: transparent $blue transparent transparent; }
-					@include respondMin(large) { &:before { background: $blue; } }
-				}
-
-			}
-
-			.views-row-even {
-
-				.node {
-					background-position: left;
-
-					.image {
-						right: 0;
-						left: auto;
-
-						&:after {
-							@include transform(scale(-1,1)); // This is a lot easier than changing the direction manually
-							left: 0;
-							right: auto;
-						}
-
-						&.instagram {
-							float: right;
-
-							@include respond(mobile){
-								float: none;
-							}
-						}
-					}
-
-					.content {
-						float: left;
-					}
-				}
-			}
+              &.animated {
+                opacity: 1;
+              }
+            }
+          }
+        }
 
 
-			@include respond(small) {
-				.node {
-					.image {
-						width: 55%;
-					}
-					.content {
-						width: 45%;
-						font-size: 0.85em;
-					}
-				}
-			}
+        &.purple {
+          background-color: $purple;
+          .image:after { border-color: transparent $purple transparent transparent; }
+          @include respondMin(large) { &:before { background: $purple; } }
+        }
 
-			@include respond(mobile) {
-				.views-row-even, .views-row-odd {
-					.node {
-						.image {
-							position: relative;
-							top: 0;
-							left: 0;
-							right: 0;
-							height: 350px;
-							width: 100%;
+        &.turquoise {
+          background-color: $green;
+          .image:after { border-color: transparent $green transparent transparent; }
+          @include respondMin(large) { &:before { background: $green; } }
+        }
 
-							&:after {
-								@include transform(rotate(90deg));
-								right: 100px;
-								left: auto;
-								top: 280px;
-							}
-						}
+        &.orange {
+          background-color: $red;
+          .image:after { border-color: transparent $red transparent transparent; }
+          @include respondMin(large) { &:before { background: $red; } }
+        }
 
-						.content {
-							width: 100%;
-							float: none;
-							padding: 30px 20px;
-							font-size: 1em;
-						}
-					}
-				}
-			}
+        &.yellow {
+          background-color: $yellow;
+          .image:after { border-color: transparent $yellow transparent transparent; }
+          @include respondMin(large) { &:before { background: $yellow; } }
+        }
 
-		}
+        &.blue {
+          background-color: $blue;
+          .image:after { border-color: transparent $blue transparent transparent; }
+          @include respondMin(large) { &:before { background: $blue; } }
+        }
 
-	}
+      }
+
+      .views-row-even {
+
+        .node {
+          background-position: left;
+
+          .image {
+            right: 0;
+            left: auto;
+
+            &:after {
+              @include transform(scale(-1,1)); // This is a lot easier than changing the direction manually
+              left: 0;
+              right: auto;
+            }
+
+            &.instagram {
+              float: right;
+
+              @include respond(mobile){
+                float: none;
+              }
+            }
+          }
+
+          .content {
+            float: left;
+          }
+        }
+      }
+
+
+      @include respond(small) {
+        .node {
+          .image {
+            width: 55%;
+          }
+          .content {
+            width: 45%;
+            font-size: 0.85em;
+          }
+        }
+      }
+
+      @include respond(mobile) {
+        .views-row-even, .views-row-odd {
+          .node {
+            .image {
+              position: relative;
+              top: 0;
+              left: 0;
+              right: 0;
+              height: 350px;
+              width: 100%;
+
+              &:after {
+                @include transform(rotate(90deg));
+                right: 100px;
+                left: auto;
+                top: 280px;
+              }
+            }
+
+            .content {
+              width: 100%;
+              float: none;
+              padding: 30px 20px;
+              font-size: 1em;
+            }
+          }
+        }
+      }
+
+    }
+
+  }
 }
