@@ -11,18 +11,6 @@
         el.addClass('instagram');
         el.parents('.node').css('min-height', 0);
 
-  if($('.node-fj16-frontpage-box').length) {
-    $('.node-fj16-frontpage-box').each(function(){
-      if($(this).find('.image .hashtag').length > 0) {
-        
-        // Init the Instagram feed
-        
-        var el = $(this).find('.image');
-        var hashtag = el.find('.hashtag').text().trim();
-        
-        el.addClass('instagram');
-        el.parents('.node').css('min-height', 0);
-
         var i = 1;
         $.getJSON('/instajson/' + hashtag, function(data) {
           $.each(shuffle(data['data']), function(key, img) {
@@ -180,9 +168,8 @@
       })
       //show the rows that match.
       .show();
-      
-      console.log(searchquery);
     });    
+  }
   
   // Avoid `console` errors in browsers that lack a console.
   (function() {
