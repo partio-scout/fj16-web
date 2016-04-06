@@ -140,8 +140,6 @@
       })
       //show the rows that match.
       .show();
-      
-      console.log(searchquery);
     });    
   }
   
