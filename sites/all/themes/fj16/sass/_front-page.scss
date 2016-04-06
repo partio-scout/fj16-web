@@ -29,6 +29,10 @@ body.front {
 		background: #f8f8f8;
 		position: relative;
 
+    @include respond(1299px) {
+      margin-bottom: 60px;
+    }
+
 		&.fixed-nav {
 			margin-bottom: 50px;			
 		}
@@ -193,6 +197,10 @@ body.front {
 
 		#navigation {
 			bottom: -80px;
+        
+      @include respond(1299px) {
+        bottom: -60px;
+      }
 		}
 
 		#bg-slides {
