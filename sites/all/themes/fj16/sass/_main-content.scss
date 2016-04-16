@@ -175,6 +175,39 @@ div.messages {
       padding: .7em 0 0;
     }
   }
+  
+  .subcamp-filter {
+    input {
+      border: 1px solid $grey;
+      font-size: 1.25em;
+      margin: 0 0 1em;
+      padding: .75em 1em;
+      width: 100%;
+    }
+    
+    + table {
+      border: 0;
+      width: auto;
+      
+      th, td {
+        border: 1px solid $grey;
+        padding: .5em .75em;
+        vertical-align: top;
+      }
+      
+      // tbody tr:nth-child(even) {
+        // background: $grey;
+      // }
+      
+      thead th {
+        background: $blue;
+        color: #fff;
+        font-family: $exo2;
+        font-size: 1.25em;
+        text-transform: uppercase;
+      }
+    }
+  }
 }
 
 .two-col #content {

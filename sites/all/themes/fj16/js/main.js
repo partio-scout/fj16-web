@@ -127,6 +127,33 @@
 
   }
   
+  if($('.subcamp-filter').length > 0) {
+    $('.subcamp-filter input').keyup(function () {
+      //split the current value of input
+      var searchquery = this.value.split(' ');
+      //create a jquery object of the rows
+      var jo = $('.subcamp-filter + table tbody').find('tr');
+      if (this.value === '') {
+        jo.show();
+        return;
+      }
+      //hide all the rows
+      jo.hide();
+
+      //Recusively filter the jquery object to get results.
+      jo.filter(function() {
+        for (var word = 0; word < searchquery.length; word++) {
+          if ($(this).text().toLowerCase().indexOf(searchquery[word].toLowerCase()) > -1) {
+            return true;
+          }
+        }
+        return false;
+      })
+      //show the rows that match.
+      .show();
+    });    
+  }
+  
   // Avoid `console` errors in browsers that lack a console.
   (function() {
     var method;
