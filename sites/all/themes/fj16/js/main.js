@@ -77,19 +77,30 @@
 
 
   // Sticky nav
-  if($('#navigation').length) {
-    navpos = $('#navigation').offset();
-    $(window).bind('scroll', function() {
-      if ($(window).scrollTop() > navpos.top - 1) { // -1 for fixing lagging at bottom
-        $('#navigation').addClass('fixed');
-        $('#header').addClass('fixed-nav');
-      }
-      else {
-        $('#navigation').removeClass('fixed');
-        $('#header').removeClass('fixed-nav');
-      }
-    });
+  function navScroll(navpos) {
+    if($('#navigation').length) {
+      $(window).bind('scroll', function() {
+        if ($(window).scrollTop() > navpos.top - 1) { // -1 for fixing lagging at bottom
+          $('#navigation').addClass('fixed');
+          $('#header').addClass('fixed-nav');
+        }
+        else {
+          $('#navigation').removeClass('fixed');
+          $('#header').removeClass('fixed-nav');
+        }
+      });
+    }
   }
+  
+  $(window).load(function(){
+    navpos = $('#navigation').offset();
+    navScroll(navpos);
+  });
+  $(window).resize(function(){
+    $(window).unbind('scroll');
+    navpos = $('#navigation').offset();
+    navScroll(navpos);
+  }); 
 
   if($('.bulk-jobs-list, .wotw-list').length) { 
     // A bit of a hack to hide untranslated items
@@ -169,6 +180,17 @@
       //show the rows that match.
       .show();
     });    
+  }
+  
+  if($('textarea.transportation_troops').length > 0) {
+    $('textarea.transportation_troops').textext({
+        plugins: 'autocomplete filter tags ajax',
+        ajax: {
+          url: '/sites/all/themes/fj16/js/kaikki_lippukunnat.json',
+          dataType: 'json',
+          cacheResults: true
+        }
+    });
   }
   
   // Avoid `console` errors in browsers that lack a console.
