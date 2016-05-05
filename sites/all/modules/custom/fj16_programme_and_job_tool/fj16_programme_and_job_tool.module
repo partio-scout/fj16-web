@@ -474,8 +474,10 @@ function fj16_find_or_create_user($attrs) {
 
   $user = user_load_by_name($member_number);
   if($user === FALSE) {
-    watchdog('saml', 'Procuring new SAML user @name', array('@name' => $member_number), WATCHDOG_INFO);
-    $user = fj16_init_user();
+    // User not found, redirect to generator with errors
+    watchdog('saml', 'Declined login as @name, no such existing user', array('@name' => $member_number), WATCHDOG_INFO);
+    drupal_set_message(t('The generator is closed. You can only log in to check your existing choices, which you do not have.'), 'error');
+    drupal_goto('generator');
   } else {
     watchdog('saml', 'Logging in existing SAML user @name', array('@name' => $member_number), WATCHDOG_INFO);
   }
