@@ -151,11 +151,10 @@ function _fj16_programme_and_job_tool_generator_page() {
     // Anonymous users
     drupal_set_title(t('Welcome to the generator!'));
     $variables = array(
-      'intro_text' => '',
+      'intro_text' => 'The generator is closed. You can log it to check the choices you made.',
       'login_link' => l(t('Log in using ScoutID'), 'saml/login', array('attributes' => array('class' => 'scoutid'))),
       'login_intro' => t('Note: you need to log in with your personal ScoutID.'),
-      'alternative_login_link' => t("International guest or not yet a scout/guide? !register and then !login with your user name and password.", array(
-          '!register' => l(t('Register'), 'user/register'),
+      'alternative_login_link' => t("International guest or not yet a scout/guide? Please !login with your user name and password.", array(
           '!login' => l(t('log in'), 'user', array('query' => array('destination' => 'generator')))
         ))
     );
