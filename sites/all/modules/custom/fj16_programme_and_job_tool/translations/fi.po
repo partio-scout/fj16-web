@@ -14,8 +14,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2016-02-19 02:13+0200\n"
-"PO-Revision-Date: 2016-02-19 02:15+0200\n"
+"POT-Creation-Date: 2016-05-06 00:37+0300\n"
+"PO-Revision-Date: 2016-05-06 00:37+0300\n"
 "Last-Translator: \n"
 "Language-Team: EMAIL@ADDRESS\n"
 "Language: fi\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.6\n"
+"X-Generator: Poedit 1.8.7\n"
 
 #: fj16_programme_and_job_tool.features.field_instance.inc:1015
 msgid "Confirmed"
@@ -95,7 +95,7 @@ msgid "Localized title"
 msgstr "Lokalisoitu otsikko"
 
 #: fj16_programme_and_job_tool.features.field_instance.inc:1032
-#: fj16_programme_and_job_tool.module:326
+#: fj16_programme_and_job_tool.views_default.inc:514;626
 msgid "Phone number"
 msgstr "Puhelinnumero"
 
@@ -129,6 +129,7 @@ msgid "FJ16 Bulk job"
 msgstr "FJ16 Massapesti"
 
 #: fj16_programme_and_job_tool.features.inc:110;118
+#: fj16_programme_and_job_tool.views_default.inc:386;510;718
 msgid "Title"
 msgstr "Otsikko"
 
@@ -136,7 +137,7 @@ msgstr "Otsikko"
 msgid "FJ16 Will-o'-the-wisp"
 msgstr "FJ16 Virvatuli"
 
-#: fj16_programme_and_job_tool.views_default.inc:137;281;356
+#: fj16_programme_and_job_tool.views_default.inc:137;281;377;500;613;709;782
 msgid "Master"
 msgstr "Master"
 
@@ -144,7 +145,7 @@ msgstr "Master"
 msgid "What type of a staff position do you want?"
 msgstr "Millaisen pestin sinä haluat?"
 
-#: fj16_programme_and_job_tool.views_default.inc:139;283;358
+#: fj16_programme_and_job_tool.views_default.inc:139;283;379;502;615;711;784
 msgid "more"
 msgstr "lisöö"
 
@@ -156,15 +157,15 @@ msgstr "Suodata"
 msgid "Clear options"
 msgstr "Tyhjennä valinnat"
 
-#: fj16_programme_and_job_tool.views_default.inc:142;361
+#: fj16_programme_and_job_tool.views_default.inc:142;382;505;618;714;787
 msgid "Sort by"
 msgstr ""
 
-#: fj16_programme_and_job_tool.views_default.inc:143;287;362
+#: fj16_programme_and_job_tool.views_default.inc:143;287;383;506;619;715;788
 msgid "Asc"
 msgstr ""
 
-#: fj16_programme_and_job_tool.views_default.inc:144;288;363
+#: fj16_programme_and_job_tool.views_default.inc:144;288;384;507;620;716;789
 msgid "Desc"
 msgstr ""
 
@@ -200,7 +201,7 @@ msgstr ""
 msgid "Areas of skill, knowledge or expertise"
 msgstr "Osaamisalueet"
 
-#: fj16_programme_and_job_tool.views_default.inc:154;298;364
+#: fj16_programme_and_job_tool.views_default.inc:154;298;392;518;630;724;790
 msgid "Page"
 msgstr "Sivu"
 
@@ -208,19 +209,99 @@ msgstr "Sivu"
 msgid "Lajittele"
 msgstr ""
 
-#: fj16_programme_and_job_tool.views_default.inc:357
-msgid "Which Will-o'-the-wisp will you choose?"
-msgstr "Millaisen virvatulen sinä valitset?"
+#: fj16_programme_and_job_tool.views_default.inc:378
+msgid "Generator jobs"
+msgstr ""
 
-#: fj16_programme_and_job_tool.views_default.inc:359
+#: fj16_programme_and_job_tool.views_default.inc:380;503;616;712;785
 msgid "Apply"
 msgstr ""
 
-#: fj16_programme_and_job_tool.views_default.inc:360
+#: fj16_programme_and_job_tool.views_default.inc:381;504;617;713;786
 msgid "Reset"
 msgstr ""
 
-#: fj16_programme_and_job_tool.module:141;746
+#: fj16_programme_and_job_tool.views_default.inc:385;717
+msgid "counter"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:387;719
+msgid "Number of participants"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:388;720
+msgid "."
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:389;721
+msgid ","
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:390;722
+msgid "Participants"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:391
+msgid "<a href=\"/admin/generator-job-selections/[nid]\">Show participants</a>"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:501
+msgid "Generator job selections"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:508;621
+msgid "flag"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:509;622
+msgid "Flag user"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:511;623
+msgid "Name"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:512
+msgid "Age group"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:513;625
+msgid "E-mail"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:515;627
+msgid "Greetings for camp organizers"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:516;628
+msgid "All"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:517;629
+msgid "Participants for %1"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:614
+msgid "Generator wotw participants"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:624
+msgid "Roles"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:710
+msgid "Generator wotw selections"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:723
+msgid "<a href=\"/admin/generator-wotw-participants/[nid]\">Participants</a>"
+msgstr ""
+
+#: fj16_programme_and_job_tool.views_default.inc:783
+msgid "Which Will-o'-the-wisp will you choose?"
+msgstr "Millaisen virvatulen sinä valitset?"
+
+#: fj16_programme_and_job_tool.module:141;662
 msgid "This staff position is full"
 msgstr "Tämä pesti on täynnä"
 
@@ -239,6 +320,12 @@ msgstr "Takaisin valikoimaan"
 msgid "Welcome to the generator!"
 msgstr "Tervetuloa Kehittimeen!"
 
+#: fj16_programme_and_job_tool.module:154
+msgid "The generator is closed. You can log it to check the choices you made."
+msgstr ""
+"Kehitin on suljettu. Voit kuitenkin kirjautua sisään tarkistaaksesi tekemäsi "
+"valinnat."
+
 #: fj16_programme_and_job_tool.module:155
 msgid "Log in using ScoutID"
 msgstr "Kirjaudu PartioID:llä"
@@ -249,113 +336,101 @@ msgstr "Huom: kirjaudu henkilökohtaisella PartioID:lläsi."
 
 #: fj16_programme_and_job_tool.module:157
 msgid ""
-"International guest or not yet a scout/guide? !register and then !login with "
-"your user name and password."
+"International guest or not yet a scout/guide? Please !login with your user "
+"name and password."
 msgstr ""
-"Kansainvälinen vieras tai ei-vielä-partiolainen? !register ensin ja !login "
-"sitten käyttäjätunnuksellasi ja salasanallasi."
+"Kansainvälinen vieras tai ei-vielä-partiolainen? Ole hyvä ja !login "
+"käyttäjätunnuksellasi ja salasanallasi tarkistaaksesi valintasi."
 
-#: fj16_programme_and_job_tool.module:158;374;375
-msgid "Register"
-msgstr "Rekisteröidy"
-
-#: fj16_programme_and_job_tool.module:159
+#: fj16_programme_and_job_tool.module:158
 msgid "log in"
 msgstr "kirjaudu"
 
-#: fj16_programme_and_job_tool.module:176
+#: fj16_programme_and_job_tool.module:175
 msgid "Choose your age group"
 msgstr "Valitse ikäkautesi"
 
-#: fj16_programme_and_job_tool.module:182
-msgid "Confirm your selection"
-msgstr "Vahvista valintasi"
+#: fj16_programme_and_job_tool.module:181
+msgid "The generator is closed"
+msgstr "Kehitin on suljettu"
 
-#: fj16_programme_and_job_tool.module:189
+#: fj16_programme_and_job_tool.module:182
+msgid "Please contact kehitin@roihu2016.fi for further assistance."
+msgstr "Ota yhteys kehitin@roihu2016.fi, jos sinulla on kysyttävää."
+
+#: fj16_programme_and_job_tool.module:188
 msgid "Thank you!"
 msgstr "Kiitos!"
 
-#: fj16_programme_and_job_tool.module:204;291;303;306
-msgid "Edit"
-msgstr "Muokkaa"
-
-#: fj16_programme_and_job_tool.module:212
+#: fj16_programme_and_job_tool.module:211
 msgid "The contact person will be in touch within a month."
 msgstr "Yhteyshenkilö ottaa sinuun yhteyttä kuukauden kuluessa"
 
-#: fj16_programme_and_job_tool.module:239
+#: fj16_programme_and_job_tool.module:238
 msgid "Explorer (15-17-years-old)"
 msgstr "Samoaja"
 
-#: fj16_programme_and_job_tool.module:245
+#: fj16_programme_and_job_tool.module:244
 msgid "Rover or Scouter (18+ years)"
 msgstr "Vaeltaja tai aikuinen"
 
-#: fj16_programme_and_job_tool.module:254
+#: fj16_programme_and_job_tool.module:253
 msgid "The generator is not open yet. Please wait a while."
 msgstr "Kehitin ei ole vielä auennut. Ole hyvä ja odota vielä hetki."
 
-#: fj16_programme_and_job_tool.module:286
-msgid "You have chosen the following staff position"
-msgstr "Olet valinnut seuraavan pestin"
+#: fj16_programme_and_job_tool.module:288;289
+msgid "Register"
+msgstr "Rekisteröidy"
 
-#: fj16_programme_and_job_tool.module:302
-msgid "You have chosen the following Will-o'-the-wisp 24h off-camp adventure"
-msgstr "Olet valinnut seuraavan virvatulen"
-
-#: fj16_programme_and_job_tool.module:314
-msgid ""
-"The following information we have on you will be sent to the Roihu "
-"organisation so that they can be in touch"
-msgstr ""
-"Seuraavat tiedot sinusta lähetetään leiriorganisaatiolle yhteydenottoja "
-"varten"
-
-#: fj16_programme_and_job_tool.module:333
-msgid "Anything you wish to say to the camp organisation?"
-msgstr "Mahdolliset terveisesi leiriorganisaatiolle"
-
-#: fj16_programme_and_job_tool.module:339
-msgid "Confirm"
-msgstr "Vahvista"
-
-#: fj16_programme_and_job_tool.module:379;380
+#: fj16_programme_and_job_tool.module:293;294
 msgid "Confirm your registration"
 msgstr "Vahvista rekisteröityminen"
 
-#: fj16_programme_and_job_tool.module:452;465
+#: fj16_programme_and_job_tool.module:366;379
 msgid "Login failed."
 msgstr "Kirjautuminen epäonnistui"
 
-#: fj16_programme_and_job_tool.module:735
+#: fj16_programme_and_job_tool.module:393
+msgid ""
+"The generator is closed. You can only log in to check your existing choices, "
+"which you do not have."
+msgstr ""
+"Kehitin on suljettu. Voit kirjautua sisään vain tarkistaaksesi valintasi. "
+"Sinulla ei ole valittuna pestiä tai virvatulta."
+
+#: fj16_programme_and_job_tool.module:651
 msgid "Choose this staff position"
 msgstr "Valitse pesti"
 
-#: fj16_programme_and_job_tool.module:736
+#: fj16_programme_and_job_tool.module:652
 msgid "Your choice has been saved"
 msgstr "Valintasi on tallennettu"
 
-#: fj16_programme_and_job_tool.module:737
-msgid "Deselect this"
-msgstr "Poista valinta"
+#: fj16_programme_and_job_tool.module:653
+msgid "Staff position selected"
+msgstr "Pesti valittu"
 
-#: fj16_programme_and_job_tool.module:738
+#: fj16_programme_and_job_tool.module:654
 msgid "Reject this staff position"
 msgstr "Hylkää pesti"
 
-#: fj16_programme_and_job_tool.module:739
+#: fj16_programme_and_job_tool.module:655
 msgid "You have been removed from the staff position [node:title]"
 msgstr "Olet hylännyt pesti [node:title]"
 
-#: fj16_programme_and_job_tool.module:740
+#: fj16_programme_and_job_tool.module:656
 msgid "Choose this"
 msgstr "Valitse tämä"
 
-#: fj16_programme_and_job_tool.module:742
+#: fj16_programme_and_job_tool.module:657
+msgid "Will-o'-the-wisp selected"
+msgstr "Virvatuli valittu"
+
+#: fj16_programme_and_job_tool.module:658
 msgid "Deselect this"
 msgstr "Poista valinta"
 
-#: fj16_programme_and_job_tool.module:743
+#: fj16_programme_and_job_tool.module:659
 msgid ""
 "A welcome message with further instructions has been sent to your e-mail "
 "address."
@@ -363,36 +438,36 @@ msgstr ""
 "Olemme lähettäneet sähköpostiisi linkin, jonka avulla voit vahvistaa "
 "käyttäjätilisi ja kirjautua sisään."
 
-#: fj16_programme_and_job_tool.module:744
+#: fj16_programme_and_job_tool.module:660
 msgid "Full!assignment"
 msgstr "Täynnä!assignment"
 
-#: fj16_programme_and_job_tool.module:745
+#: fj16_programme_and_job_tool.module:661
 msgid "This will-o'-the-wisp is full"
 msgstr "Tämä virvatuli on täynnä"
 
-#: fj16_programme_and_job_tool.module:451;477;480
+#: fj16_programme_and_job_tool.module:365;392;396
 msgid "saml"
 msgstr "saml"
 
-#: fj16_programme_and_job_tool.module:451
+#: fj16_programme_and_job_tool.module:365
 msgid "SAML login failed with errors: <br><pre>@errors</pre>"
 msgstr ""
 "SAML-kirjautuminen epäonnistui seuraavin virhein: <br><pre>@errors</pre>"
 
-#: fj16_programme_and_job_tool.module:477
-msgid "Procuring new SAML user @name"
-msgstr "Provisioidaan uusi SAML-käyttäjä @name"
+#: fj16_programme_and_job_tool.module:392
+msgid "Declined login as @name, no such existing user"
+msgstr "Estettiin kirjautuminen nimellä @name, käyttäjää ei lötynyt"
 
-#: fj16_programme_and_job_tool.module:480
+#: fj16_programme_and_job_tool.module:396
 msgid "Logging in existing SAML user @name"
 msgstr "Kirjaudutaan olemassa olevana SAML-käyttäjänä @name"
 
-#: fj16_programme_and_job_tool.module:688
+#: fj16_programme_and_job_tool.module:604
 msgid "fj16_programme_and_jobs_tool"
 msgstr "fj16_programme_and_jobs_tool"
 
-#: fj16_programme_and_job_tool.module:688
+#: fj16_programme_and_job_tool.module:604
 msgid "Unable to get image: @url"
 msgstr "Kuvan nouto epäonnistui: @url"
 
@@ -438,7 +513,43 @@ msgstr "Nähdään leirillä!"
 
 #: templates/fj16_generator_thankyou.tpl.php:94
 msgid "Log out"
-msgstr ""
+msgstr "Kirjaudu ulos"
+
+#~ msgid ""
+#~ "International guest or not yet a scout/guide? !register and then !login "
+#~ "with your user name and password."
+#~ msgstr ""
+#~ "Kansainvälinen vieras tai ei-vielä-partiolainen? !register ensin ja !"
+#~ "login sitten käyttäjätunnuksellasi ja salasanallasi."
+
+#~ msgid "Confirm your selection"
+#~ msgstr "Vahvista valintasi"
+
+#~ msgid "Edit"
+#~ msgstr "Muokkaa"
+
+#~ msgid "You have chosen the following staff position"
+#~ msgstr "Olet valinnut seuraavan pestin"
+
+#~ msgid ""
+#~ "You have chosen the following Will-o'-the-wisp 24h off-camp adventure"
+#~ msgstr "Olet valinnut seuraavan virvatulen"
+
+#~ msgid ""
+#~ "The following information we have on you will be sent to the Roihu "
+#~ "organisation so that they can be in touch"
+#~ msgstr ""
+#~ "Seuraavat tiedot sinusta lähetetään leiriorganisaatiolle yhteydenottoja "
+#~ "varten"
+
+#~ msgid "Anything you wish to say to the camp organisation?"
+#~ msgstr "Mahdolliset terveisesi leiriorganisaatiolle"
+
+#~ msgid "Confirm"
+#~ msgstr "Vahvista"
+
+#~ msgid "Procuring new SAML user @name"
+#~ msgstr "Provisioidaan uusi SAML-käyttäjä @name"
 
 #~ msgid ""
 #~ "The following information we have on you will be sent to the Roihu "
