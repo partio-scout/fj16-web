@@ -102,10 +102,10 @@ function fj16_programme_and_job_tool_theme($existing, $type, $theme, $path) {
 
 function fj16_programme_and_job_tool_flag_access($flag, $entity_id, $action, $account) {
   if($action === 'flag' && $flag->name === 'fj16_choose_bulk_job') {
-    return !fj16_programme_and_job_tool_is_job_full($entity_id, $flag);
+    return FALSE;
   }
   if($action === 'flag' && $flag->name === 'fj16_will_o_the_wisp') {
-    return !fj16_programme_and_job_tool_is_wotw_full($entity_id, $flag);
+    return FALSE;
   }
   return NULL;
 }
