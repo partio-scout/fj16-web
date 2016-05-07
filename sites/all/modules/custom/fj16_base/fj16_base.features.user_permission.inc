@@ -23,6 +23,7 @@ function fj16_base_user_default_permissions() {
     'roles' => array(
       'activity editor' => 'activity editor',
       'content editor' => 'content editor',
+      'info article editor' => 'info article editor',
       'jobs editor' => 'jobs editor',
     ),
     'module' => 'system',
@@ -51,6 +52,7 @@ function fj16_base_user_default_permissions() {
       'activity editor' => 'activity editor',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
+      'info article editor' => 'info article editor',
     ),
     'module' => 'node',
   );
@@ -61,6 +63,7 @@ function fj16_base_user_default_permissions() {
     'roles' => array(
       'activity editor' => 'activity editor',
       'content editor' => 'content editor',
+      'info article editor' => 'info article editor',
       'jobs editor' => 'jobs editor',
     ),
     'module' => 'node',
@@ -109,6 +112,7 @@ function fj16_base_user_default_permissions() {
     'roles' => array(
       'activity editor' => 'activity editor',
       'content editor' => 'content editor',
+      'info article editor' => 'info article editor',
       'jobs editor' => 'jobs editor',
     ),
     'module' => 'toolbar',
@@ -459,6 +463,7 @@ function fj16_base_user_default_permissions() {
     'name' => 'delete revisions',
     'roles' => array(
       'content editor' => 'content editor',
+      'info article editor' => 'info article editor',
     ),
     'module' => 'node',
   );
@@ -588,6 +593,7 @@ function fj16_base_user_default_permissions() {
     'name' => 'revert revisions',
     'roles' => array(
       'content editor' => 'content editor',
+      'info article editor' => 'info article editor',
     ),
     'module' => 'node',
   );
@@ -613,6 +619,7 @@ function fj16_base_user_default_permissions() {
     'name' => 'translate content',
     'roles' => array(
       'content editor' => 'content editor',
+      'info article editor' => 'info article editor',
     ),
     'module' => 'translation',
   );
@@ -687,6 +694,7 @@ function fj16_base_user_default_permissions() {
     'roles' => array(
       'activity editor' => 'activity editor',
       'content editor' => 'content editor',
+      'info article editor' => 'info article editor',
     ),
     'module' => 'node',
   );
@@ -696,6 +704,7 @@ function fj16_base_user_default_permissions() {
     'name' => 'view revisions',
     'roles' => array(
       'content editor' => 'content editor',
+      'info article editor' => 'info article editor',
     ),
     'module' => 'node',
   );

@@ -145,9 +145,9 @@ $is_full = !isset($content['flag_fj16_choose_bulk_job']['#markup']);
         <?php print render($content['flag_fj16_choose_bulk_job']); ?>
         <?php
           if ($teaser && $logged_in && $is_full) {
-            print '<div class="job-full">' . t('Full!assignment', array('!assignment' => '')) . '</div>';
+            print '<div class="job-full">' . t('Closed!assignment', array('!assignment' => '')) . '</div>';
           } else if ($logged_in && $is_full) {
-            print '<div class="job-full">' . t('This assignment is full') . '</div>';
+            print '<div class="job-full">' . t('This assignment is closed') . '</div>';
           }
         ?>
       </div>

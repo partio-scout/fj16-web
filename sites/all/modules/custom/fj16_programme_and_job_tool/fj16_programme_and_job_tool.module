@@ -102,10 +102,10 @@ function fj16_programme_and_job_tool_theme($existing, $type, $theme, $path) {
 
 function fj16_programme_and_job_tool_flag_access($flag, $entity_id, $action, $account) {
   if($action === 'flag' && $flag->name === 'fj16_choose_bulk_job') {
-    return !fj16_programme_and_job_tool_is_job_full($entity_id, $flag);
+    return FALSE;
   }
   if($action === 'flag' && $flag->name === 'fj16_will_o_the_wisp') {
-    return !fj16_programme_and_job_tool_is_wotw_full($entity_id, $flag);
+    return FALSE;
   }
   return NULL;
 }
@@ -151,11 +151,10 @@ function _fj16_programme_and_job_tool_generator_page() {
     // Anonymous users
     drupal_set_title(t('Welcome to the generator!'));
     $variables = array(
-      'intro_text' => '',
+      'intro_text' => t('The generator is closed. You can log it to check the choices you made.'),
       'login_link' => l(t('Log in using ScoutID'), 'saml/login', array('attributes' => array('class' => 'scoutid'))),
       'login_intro' => t('Note: you need to log in with your personal ScoutID.'),
-      'alternative_login_link' => t("International guest or not yet a scout/guide? !register and then !login with your user name and password.", array(
-          '!register' => l(t('Register'), 'user/register'),
+      'alternative_login_link' => t("International guest or not yet a scout/guide? Please !login with your user name and password.", array(
           '!login' => l(t('log in'), 'user', array('query' => array('destination' => 'generator')))
         ))
     );
@@ -179,8 +178,8 @@ function _fj16_programme_and_job_tool_generator_page() {
 }
 
 function _fj16_programme_and_job_tool_generator_confirmation_page() {
-  drupal_set_title(t('Confirm your selection'));
-  return drupal_get_form('_fj16_programme_and_job_tool_confirmation_form');
+  drupal_set_title(t('The generator is closed'));
+  return t('Please contact kehitin@roihu2016.fi for further assistance.');
 }
 
 function _fj16_programme_and_job_tool_generator_thankyou_page() {
@@ -201,7 +200,7 @@ function _fj16_programme_and_job_tool_generator_thankyou_page() {
   $wotw = fj16_get_selected_wotw($user);
   if($wotw !== FALSE) {
     $wotw_title = field_get_items('node', $wotw, 'field_localized_title')[0]['value'];
-    $wotw_edit = ' ' . l(t('Edit'), 'generator/will-o-the-wisp');
+    $wotw_edit = '';
   }
 
   $variables = array(
@@ -269,91 +268,6 @@ function _fj16_programme_and_job_tool_role_form_submit($form, &$form_state) {
   }
 
   drupal_goto('generator');
-}
-
-function _fj16_programme_and_job_tool_confirmation_form($form, &$form_state) {
-  global $user;
-
-  $assignment = fj16_get_selected_job($user);
-  if($assignment === FALSE) {
-    return array();
-  }
-
-  $assignment_title = field_get_items('node', $assignment, 'field_localized_title')[0]['value'];
-
-  $form['assignment'] = array(
-    '#type' => 'item',
-    '#title' => t('You have chosen the following staff position') . ':',
-    '#markup' => 'n/a'
-  );
-
-  if(fj16_user_has_role_named('explorer')) {
-    $form['assignment']['#markup'] = check_plain($assignment_title) . ' ' . l(t('Edit'), 'generator/assignment/explorer');
-
-    $wotw = fj16_get_selected_wotw($user);
-
-    if($wotw === FALSE) {
-      return array(); // Don't show form if no wotw selected
-    }
-
-    $wotw_title = field_get_items('node', $wotw, 'field_localized_title')[0]['value'];
-    $form['wotw'] = array(
-      '#type' => 'item',
-      '#title' => t('You have chosen the following Will-o\'-the-wisp 24h off-camp adventure') . ':',
-      '#markup' => check_plain($wotw_title) . ' ' . l(t('Edit'), 'generator/will-o-the-wisp')
-    );
-  } else if(fj16_user_has_role_named('rover or adult')) {
-    $form['assignment']['#markup'] = check_plain($assignment_title) . ' ' . l(t('Edit'), 'generator/assignment');
-  }
-
-  $user_full = user_load($user->uid);
-  $name = field_get_items('user', $user_full, 'field_name')[0]['value'];
-
-  $form['info'] = array(
-    '#type' => 'item',
-    '#title' => t('The following information we have on you will be sent to the Roihu organisation so that they can be in touch') . ':',
-    '#markup' => ''
-      . check_plain($name)
-      . '<br>'
-      . l($user->mail, $user->mail)
-  );
-
-  $phone = field_get_items('user', $user_full, 'field_phone_number')[0]['value'];
-  $greetings = field_get_items('user', $user_full, 'field_further_info_for_org')[0]['value'];
-
-  $form['phone'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Phone number'),
-    '#default_value' => $phone
-  );
-
-  $form['greetings'] = array(
-    '#type' => 'textarea',
-    '#rows' => 3,
-    '#title' => t('Anything you wish to say to the camp organisation?'),
-    '#default_value' => $greetings
-  );
-
-  $form['confirm'] = array(
-    '#type' => 'submit',
-    '#value' => t('Confirm')
-  );
-
-  return $form;
-}
-
-function _fj16_programme_and_job_tool_confirmation_form_submit($form, &$form_state) {
-  global $user;
-
-  $phone = $form_state['values']['phone'];
-  $greetings = $form_state['values']['greetings'];
-  $real_user = user_load($user->uid);
-  $real_user->field_further_info_for_org[LANGUAGE_NONE][0]['value'] = $greetings;
-  $real_user->field_phone_number[LANGUAGE_NONE][0]['value'] = $phone;
-  $real_user->field_confirmed[LANGUAGE_NONE][0]['value'] = 1;
-  user_save($real_user);
-
-  $form_state['redirect'] = 'generator/thankyou';
 }
 
 function fj16_programme_and_job_tool_form_alter(&$form, &$form_state, $form_id) {
@@ -474,8 +388,10 @@ function fj16_find_or_create_user($attrs) {
 
   $user = user_load_by_name($member_number);
   if($user === FALSE) {
-    watchdog('saml', 'Procuring new SAML user @name', array('@name' => $member_number), WATCHDOG_INFO);
-    $user = fj16_init_user();
+    // User not found, redirect to generator with errors
+    watchdog('saml', 'Declined login as @name, no such existing user', array('@name' => $member_number), WATCHDOG_INFO);
+    drupal_set_message(t('The generator is closed. You can only log in to check your existing choices, which you do not have.'), 'error');
+    drupal_goto('generator');
   } else {
     watchdog('saml', 'Logging in existing SAML user @name', array('@name' => $member_number), WATCHDOG_INFO);
   }

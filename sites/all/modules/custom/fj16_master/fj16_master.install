@@ -37,3 +37,7 @@ function fj16_master_update_7009() {
 function fj16_master_update_7010() {
   module_enable(array('fj16_programme_and_job_tool'));
 }
+
+function fj16_master_update_7011() {
+  module_enable(array('fj16_info_articles'));
+}
