@@ -12,3 +12,4 @@ dependencies[] = fj16_countdown
 dependencies[] = fj16_special_pages
 dependencies[] = fj16_activities
 dependencies[] = fj16_event_map
+dependencies[] = fj16_info_articles
