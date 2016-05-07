@@ -45,5 +45,12 @@ function fj16_info_articles_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'use text format fj16_markdown'.
+  $permissions['use text format fj16_markdown'] = array(
+    'name' => 'use text format fj16_markdown',
+    'roles' => array(),
+    'module' => 'filter',
+  );
+
   return $permissions;
 }
