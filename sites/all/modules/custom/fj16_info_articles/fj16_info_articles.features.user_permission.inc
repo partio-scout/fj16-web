@@ -112,7 +112,9 @@ function fj16_info_articles_user_default_permissions() {
   // Exported permission: 'use text format fj16_markdown'.
   $permissions['use text format fj16_markdown'] = array(
     'name' => 'use text format fj16_markdown',
-    'roles' => array(),
+    'roles' => array(
+      'info article editor' => 'info article editor',
+    ),
     'module' => 'filter',
   );
 
