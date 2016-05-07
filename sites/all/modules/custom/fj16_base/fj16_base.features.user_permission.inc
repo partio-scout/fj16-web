@@ -23,6 +23,7 @@ function fj16_base_user_default_permissions() {
     'roles' => array(
       'activity editor' => 'activity editor',
       'content editor' => 'content editor',
+      'info article editor' => 'info article editor',
       'jobs editor' => 'jobs editor',
     ),
     'module' => 'system',

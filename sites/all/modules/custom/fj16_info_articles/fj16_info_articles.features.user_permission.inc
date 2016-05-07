@@ -10,6 +10,15 @@
 function fj16_info_articles_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: 'add terms in camp_unit_info'.
+  $permissions['add terms in camp_unit_info'] = array(
+    'name' => 'add terms in camp_unit_info',
+    'roles' => array(
+      'info article editor' => 'info article editor',
+    ),
+    'module' => 'taxonomy_access_fix',
+  );
+
   // Exported permission: 'create fj16_info_article content'.
   $permissions['create fj16_info_article content'] = array(
     'name' => 'create fj16_info_article content',
