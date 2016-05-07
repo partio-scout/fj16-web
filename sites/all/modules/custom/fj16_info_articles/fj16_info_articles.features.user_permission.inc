@@ -37,6 +37,15 @@ function fj16_info_articles_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete terms in camp_unit_info'.
+  $permissions['delete terms in camp_unit_info'] = array(
+    'name' => 'delete terms in camp_unit_info',
+    'roles' => array(
+      'info article editor' => 'info article editor',
+    ),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'edit any fj16_info_article content'.
   $permissions['edit any fj16_info_article content'] = array(
     'name' => 'edit any fj16_info_article content',
@@ -53,6 +62,15 @@ function fj16_info_articles_user_default_permissions() {
       'info article editor' => 'info article editor',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'edit terms in camp_unit_info'.
+  $permissions['edit terms in camp_unit_info'] = array(
+    'name' => 'edit terms in camp_unit_info',
+    'roles' => array(
+      'info article editor' => 'info article editor',
+    ),
+    'module' => 'taxonomy',
   );
 
   // Exported permission: 'use text format fj16_markdown'.

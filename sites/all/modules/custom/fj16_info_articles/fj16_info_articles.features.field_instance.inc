@@ -55,9 +55,49 @@ function fj16_info_articles_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance:
+  // 'node-fj16_info_article-field_category_in_camp_unit_info'
+  $field_instances['node-fj16_info_article-field_category_in_camp_unit_info'] = array(
+    'bundle' => 'fj16_info_article',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_category_in_camp_unit_info',
+    'label' => 'Category in camp unit info',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 32,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
+  t('Category in camp unit info');
 
   return $field_instances;
 }
