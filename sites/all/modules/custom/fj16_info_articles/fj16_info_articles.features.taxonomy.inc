@@ -19,5 +19,15 @@ function fj16_info_articles_taxonomy_default_vocabularies() {
       'language' => 'und',
       'i18n_mode' => 4,
     ),
+    'participant_info' => array(
+      'name' => 'Participant info',
+      'machine_name' => 'participant_info',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+      'language' => 'und',
+      'i18n_mode' => 4,
+    ),
   );
 }

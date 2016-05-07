@@ -19,6 +19,15 @@ function fj16_info_articles_user_default_permissions() {
     'module' => 'taxonomy_access_fix',
   );
 
+  // Exported permission: 'add terms in participant_info'.
+  $permissions['add terms in participant_info'] = array(
+    'name' => 'add terms in participant_info',
+    'roles' => array(
+      'info article editor' => 'info article editor',
+    ),
+    'module' => 'taxonomy_access_fix',
+  );
+
   // Exported permission: 'create fj16_info_article content'.
   $permissions['create fj16_info_article content'] = array(
     'name' => 'create fj16_info_article content',
@@ -55,6 +64,15 @@ function fj16_info_articles_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
+  // Exported permission: 'delete terms in participant_info'.
+  $permissions['delete terms in participant_info'] = array(
+    'name' => 'delete terms in participant_info',
+    'roles' => array(
+      'info article editor' => 'info article editor',
+    ),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'edit any fj16_info_article content'.
   $permissions['edit any fj16_info_article content'] = array(
     'name' => 'edit any fj16_info_article content',
@@ -76,6 +94,15 @@ function fj16_info_articles_user_default_permissions() {
   // Exported permission: 'edit terms in camp_unit_info'.
   $permissions['edit terms in camp_unit_info'] = array(
     'name' => 'edit terms in camp_unit_info',
+    'roles' => array(
+      'info article editor' => 'info article editor',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit terms in participant_info'.
+  $permissions['edit terms in participant_info'] = array(
+    'name' => 'edit terms in participant_info',
     'roles' => array(
       'info article editor' => 'info article editor',
     ),
