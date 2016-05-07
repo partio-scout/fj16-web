@@ -35,6 +35,13 @@ function fj16_info_articles_default_services_endpoint() {
     ),
   );
   $endpoint->resources = array(
+    'categories' => array(
+      'operations' => array(
+        'index' => array(
+          'enabled' => '1',
+        ),
+      ),
+    ),
     'participant' => array(
       'operations' => array(
         'index' => array(
