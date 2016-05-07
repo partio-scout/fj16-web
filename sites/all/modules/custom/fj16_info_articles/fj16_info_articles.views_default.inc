@@ -51,6 +51,10 @@ function fj16_info_articles_views_default_views() {
   $handler->display->display_options['fields']['field_language']['field'] = 'field_language';
   $handler->display->display_options['fields']['field_language']['label'] = '';
   $handler->display->display_options['fields']['field_language']['element_label_colon'] = FALSE;
+  /* Field: Taxonomy term: Weight */
+  $handler->display->display_options['fields']['weight']['id'] = 'weight';
+  $handler->display->display_options['fields']['weight']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['weight']['field'] = 'weight';
   /* Filter criterion: Taxonomy vocabulary: Machine name */
   $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
   $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
@@ -78,6 +82,8 @@ function fj16_info_articles_views_default_views() {
     t('next ›'),
     t('last »'),
     t('.'),
+    t('Weight'),
+    t(','),
     t('Services'),
   );
   $export['fj16_info_categories'] = $view;
