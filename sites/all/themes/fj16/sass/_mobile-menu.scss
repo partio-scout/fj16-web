@@ -3,27 +3,27 @@
 
 	@include respond(1023px) {
 		display: block;		
-		position: fixed;
-		left: 0;
-		top: 0;
-		bottom: 0;
+		// position: fixed;
+		// left: 0;
+		// top: 0;
+		// bottom: 0;
 		width: 100%;
 		background: $green;
 		z-index: 100;
-		padding: 15px 0 15px 60px;
-		margin-left: -60px;
+		// padding: 15px 0 15px 60px;
+		// margin-left: -60px;
 		overflow: auto;
 
 		font-family: $exo;
 
 		// GPU acceleration
-		@include transform(translate3d(-100%,0,0));
+		// @include transform(translate3d(-100%,0,0));
 
-		@include transition(all 0.3s ease-out);
+		// @include transition(all 0.3s ease-out);
 
-		&.visible {
-			@include transform(translate3d(0,0,0));
-		}
+		// &.visible {
+			// @include transform(translate3d(0,0,0));
+		// }
 
 		ul, li {
 			list-style: none;
@@ -32,18 +32,33 @@
 		}
 
 		li {
-			margin: 5px 0;
+      display: none;
+			margin: 0;
 		}
 
 		//Sub-items of currently active item
 		.active ul {
-			background: $blue;
+			background: $green;
 		}
+    
+    .active > a, .active-trail > a {
+      background: darken($green, 10);
+      color: #fff;
+    }
+    
+    .active-trail .active > a {
+      background: $green;
+    }
+    
+    .active, .active li, .active-trail, .active-trail li {
+      display: block;
+      margin: 0;
+    }
 
 		a {
-			color: #FFF;
-			display: block;
-			padding: 0 20px;
+      color: #FFF;
+      display: block;
+      padding: 12px 20px;
 		}
 
 		ul.links {
