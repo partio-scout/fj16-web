@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the FJ16 Info articles feature.
+ */
+
+include_once 'fj16_info_articles.features.inc';
