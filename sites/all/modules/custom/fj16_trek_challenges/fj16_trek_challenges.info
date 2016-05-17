@@ -35,6 +35,7 @@ features[variable][] = menu_parent_fj16_trek_challenge
 features[variable][] = node_options_fj16_trek_challenge
 features[variable][] = node_preview_fj16_trek_challenge
 features[variable][] = node_submitted_fj16_trek_challenge
+features[variable][] = pathauto_node_fj16_trek_challenge_pattern
 features_exclude[dependencies][ctools] = ctools
 features_exclude[dependencies][fj16_frontpage_boxes] = fj16_frontpage_boxes
 features_exclude[dependencies][strongarm] = strongarm
