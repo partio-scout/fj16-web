@@ -1,5 +1,7 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the FJ16 Trek challenges feature.
  */
+
+include_once 'fj16_trek_challenges.features.inc';
