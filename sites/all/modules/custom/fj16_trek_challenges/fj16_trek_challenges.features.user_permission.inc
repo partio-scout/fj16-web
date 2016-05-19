@@ -14,6 +14,7 @@ function fj16_trek_challenges_user_default_permissions() {
   $permissions['create fj16_trek_challenge content'] = array(
     'name' => 'create fj16_trek_challenge content',
     'roles' => array(
+      'anonymous user' => 'anonymous user',
       'trek challenge editor' => 'trek challenge editor',
     ),
     'module' => 'node',
