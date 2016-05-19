@@ -36,7 +36,7 @@ function fj16_trek_challenges_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'body',
-    'label' => 'Body',
+    'label' => 'Kuvaus',
     'required' => 0,
     'settings' => array(
       'display_summary' => 0,
@@ -303,7 +303,7 @@ function fj16_trek_challenges_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Body');
+  t('Kuvaus');
   t('Maakunta');
   t('Tagit');
   t('Tarkempi sijainti');
