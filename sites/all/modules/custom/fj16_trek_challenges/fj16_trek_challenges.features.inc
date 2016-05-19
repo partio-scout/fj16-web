@@ -31,7 +31,7 @@ function fj16_trek_challenges_node_info() {
       'description' => '',
       'has_title' => '1',
       'title_label' => t('Retken nimi'),
-      'help' => '',
+      'help' => t('Lähettämäsi retkihaaste tarkastetaan ennen julkaisua.'),
     ),
   );
   drupal_alter('node_info', $items);
