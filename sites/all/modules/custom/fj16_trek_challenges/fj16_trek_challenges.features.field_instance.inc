@@ -141,7 +141,7 @@ function fj16_trek_challenges_field_default_field_instances() {
     'bundle' => 'fj16_trek_challenge',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Yhteyshenkilön sähköposti näytetään julkisesti.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -182,7 +182,7 @@ function fj16_trek_challenges_field_default_field_instances() {
     'bundle' => 'fj16_trek_challenge',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Yhteyshenkilön nimi näytetään julkisesti.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -224,7 +224,7 @@ function fj16_trek_challenges_field_default_field_instances() {
     'bundle' => 'fj16_trek_challenge',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Yhteyshenkilön puhelinnumero näytetään julkisesti, jos sellainen on syötetty.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -265,7 +265,7 @@ function fj16_trek_challenges_field_default_field_instances() {
     'bundle' => 'fj16_trek_challenge',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Erottele tagit pilkulla.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -303,14 +303,18 @@ function fj16_trek_challenges_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Erottele tagit pilkulla.');
   t('Kuvaus');
   t('Maakunta');
   t('Tagit');
   t('Tarkempi sijainti');
   t('Voit halutessasi antaa tarkemman sijainnin, esimerkiksi osoitteen tai postinumeron.');
   t('Yhteyshenkilön nimi');
+  t('Yhteyshenkilön nimi näytetään julkisesti.');
   t('Yhteyshenkilön puhelinnumero');
+  t('Yhteyshenkilön puhelinnumero näytetään julkisesti, jos sellainen on syötetty.');
   t('Yhteyshenkilön sähköposti');
+  t('Yhteyshenkilön sähköposti näytetään julkisesti.');
 
   return $field_instances;
 }
