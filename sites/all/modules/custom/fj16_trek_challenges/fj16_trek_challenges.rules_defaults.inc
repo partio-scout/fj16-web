@@ -25,7 +25,7 @@ function fj16_trek_challenges_default_rules_configuration() {
         { "mail_to_users_of_role" : {
             "roles" : { "value" : { "9" : "9" } },
             "subject" : "Uusi retkihaaste [node:title] henkil\\u00f6lt\\u00e4 [node:field_trek_contact_name]",
-            "message" : "Kirjaudu sis\\u00e4\\u00e4n ([site:login-url]) ja siirry julkaisemaan tai poistamaan haaste: [site:url]\\/admin\\/fj16-trek-challenges-moderation",
+            "message" : "Kirjaudu sis\\u00e4\\u00e4n ([site:login-url]) ja siirry julkaisemaan tai poistamaan haaste: [site:url]admin\\/fj16-trek-challenges-moderation",
             "from" : "emil.virkki@roihu2016.fi"
           }
         }
