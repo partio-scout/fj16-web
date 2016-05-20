@@ -220,6 +220,7 @@ function fj16_base_user_default_permissions() {
     'name' => 'administer nodes',
     'roles' => array(
       'content editor' => 'content editor',
+      'trek challenge editor' => 'trek challenge editor',
     ),
     'module' => 'node',
   );
