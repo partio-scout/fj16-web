@@ -116,6 +116,7 @@ function fj16_base_user_default_permissions() {
       'content editor' => 'content editor',
       'info article editor' => 'info article editor',
       'jobs editor' => 'jobs editor',
+      'trek challenge editor' => 'trek challenge editor',
     ),
     'module' => 'toolbar',
   );
@@ -720,6 +721,7 @@ function fj16_base_user_default_permissions() {
       'activity editor' => 'activity editor',
       'content editor' => 'content editor',
       'jobs editor' => 'jobs editor',
+      'trek challenge editor' => 'trek challenge editor',
     ),
     'module' => 'system',
   );
