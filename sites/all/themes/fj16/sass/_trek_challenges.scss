@@ -48,7 +48,7 @@
     margin: -65px 0 10px;
     text-align: right;
 
-    * {
+    div, label {
       margin: 0;
       padding: 0;
       display: inline-block;
@@ -63,11 +63,6 @@
       text-shadow: #000 1px 1px 2px;
       margin-right: 10px;
       padding-top: -2px;
-    }
-
-    select {
-      line-height: 31px;
-      min-height: 31px;
     }
 
     @include respond(550px) {
