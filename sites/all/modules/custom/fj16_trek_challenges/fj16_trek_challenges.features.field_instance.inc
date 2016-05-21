@@ -22,7 +22,7 @@ function fj16_trek_challenges_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 0,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -64,11 +64,11 @@ function fj16_trek_challenges_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 2,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -103,11 +103,11 @@ function fj16_trek_challenges_field_default_field_instances() {
     'description' => 'Voit halutessasi antaa tarkemman sijainnin, esimerkiksi osoitteen tai postinumeron.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -145,7 +145,7 @@ function fj16_trek_challenges_field_default_field_instances() {
     'description' => 'Yhteyshenkilön sähköposti näytetään julkisesti.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -186,7 +186,7 @@ function fj16_trek_challenges_field_default_field_instances() {
     'description' => 'Yhteyshenkilön nimi näytetään julkisesti.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -228,7 +228,7 @@ function fj16_trek_challenges_field_default_field_instances() {
     'description' => 'Yhteyshenkilön puhelinnumero näytetään julkisesti, jos sellainen on syötetty.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -269,11 +269,11 @@ function fj16_trek_challenges_field_default_field_instances() {
     'description' => 'Erottele tagit pilkulla.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 1,
+        'type' => 'i18n_taxonomy_term_reference_plain',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'hidden',
