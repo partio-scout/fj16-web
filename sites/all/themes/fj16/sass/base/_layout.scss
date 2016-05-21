@@ -60,6 +60,10 @@ input[type="password"], input[type="text"],  input[type="email"], textarea {
 	max-width: 100%;
 }
 
+.form-item .description {
+	margin: -15px 0 20px;
+}
+
 input[type="submit"], .button {
 	background: $green;
 	color: #FFF;

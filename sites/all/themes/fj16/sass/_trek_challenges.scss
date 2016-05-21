@@ -126,10 +126,26 @@
   }
 }
 
+.field-name-field-region select {
+  min-height: 30px;
+}
+
 .page-node .trek-tags {
   margin: 0 0 25px;
 }
 
+.page-node-add-fj16-trek-challenge .filter-wrapper {
+  display: none;
+}
+
 .field-name-field-tarkempi-sijainti {
   margin-bottom: 1em;
+}
+
+.page-node-add-fj16-trek-challenge #autocomplete {
+  ul, li {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
 }
