@@ -40,7 +40,7 @@ function fj16_trek_challenges_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = '<p>Lorem ipsum tähän vielä joku teksti</p>
+  $handler->display->display_options['header']['area']['content'] = '<p>Lähde seikkailulle toiselle puolelle Suomea tutustumaan oman kylän ulkopuoliseen vaeltajaelämään! Retkihaasteiden avulla vaeltajat ympäri Suomen pääsevät osallistumaan toistensa tapahtumiin ja järjestämään itse jotain ennennäkemättömän hienoa. Miten olisi kanoottiretki pohjoisessa, kuninkaalliset pidot Turun Linnassa tai lettukestit saaristossa? Ilmoita mukaan oma vaeltajatapahtumasi tai ota haaste vastaan, parhaat tapahtumat viedään käsistä!</p>
 <p class="create-trek-challenge"><a href="/node/add/fj16-trek-challenge">Lisää oma retkihaasteesi</a></p>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   /* No results behavior: Global: Text area */
@@ -124,7 +124,7 @@ Ei yhtään retkihaastetta vielä - ole ensimmäinen ja <a href="/node/add/fj16-
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('<p>Lorem ipsum tähän vielä joku teksti</p>
+    t('<p>Lähde seikkailulle toiselle puolelle Suomea tutustumaan oman kylän ulkopuoliseen vaeltajaelämään! Retkihaasteiden avulla vaeltajat ympäri Suomen pääsevät osallistumaan toistensa tapahtumiin ja järjestämään itse jotain ennennäkemättömän hienoa. Miten olisi kanoottiretki pohjoisessa, kuninkaalliset pidot Turun Linnassa tai lettukestit saaristossa? Ilmoita mukaan oma vaeltajatapahtumasi tai ota haaste vastaan, parhaat tapahtumat viedään käsistä!</p>
 <p class="create-trek-challenge"><a href="/node/add/fj16-trek-challenge">Lisää oma retkihaasteesi</a></p>'),
     t('<p>
 Ei yhtään retkihaastetta vielä - ole ensimmäinen ja <a href="/node/add/fj16-trek-challenge">lisää omasi</a>!
