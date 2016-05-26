@@ -22,7 +22,7 @@ function fj16_trek_challenges_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Retkihaasteet';
+  $handler->display->display_options['title'] = 'Retkihaaste';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -110,7 +110,7 @@ Ei yhtään retkihaastetta vielä - ole ensimmäinen ja <a href="/node/add/fj16-
   $handler->display->display_options['menu']['context_only_inline'] = 0;
   $translatables['fj16_trek_challenges'] = array(
     t('Master'),
-    t('Retkihaasteet'),
+    t('Retkihaaste'),
     t('more'),
     t('Näytä'),
     t('Reset'),
