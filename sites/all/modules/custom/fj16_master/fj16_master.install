@@ -41,3 +41,7 @@ function fj16_master_update_7010() {
 function fj16_master_update_7011() {
   module_enable(array('fj16_info_articles'));
 }
+
+function fj16_master_update_7012() {
+  module_enable(array('fj16_trek_challenges'));
+}

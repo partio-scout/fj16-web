@@ -1,0 +1,146 @@
+.page-retkihaaste #content {
+  background: 50% 0 #a96f2e url(../img/backgrounds/pestit-2048.jpg);
+  background-size: 130% auto;
+  max-width: none;
+
+  @include respond(small) {
+    padding: 10px;
+    background-image: url(../img/backgrounds/pestit-1024.jpg);
+  }
+
+  h1, .view-header, .view-empty, .view-empty a {
+    color: #fff;
+    text-shadow: #000 1px 1px 2px;
+  }
+
+  .view-empty {
+    text-align: center;
+    padding: 40px 0;
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  .view-header a {
+    @extend .button;
+    text-shadow: none;
+    box-shadow: rgba(0,0,0,0.4) 1px 1px 2px;
+
+    &:before {
+      content: inline-image('icons/add.png');
+      display: inline-block;
+      margin: 0 7px 0 0;
+      position: relative;
+      bottom: -1px;
+    }
+  }
+
+  .create-trek-challenge {
+    margin: 50px 0 43px;
+
+    @include respond(small) {
+      margin: 40px 0;
+    }
+  }
+
+  .views-exposed-form {
+    margin: -65px 0 10px;
+    text-align: right;
+
+    div, label {
+      margin: 0;
+      padding: 0;
+      display: inline-block;
+    }
+
+    .views-submit-button input {
+      display: none;
+    }
+
+    label {
+      color: #fff;
+      text-shadow: #000 1px 1px 2px;
+      margin-right: 10px;
+      padding-top: -2px;
+    }
+
+    @include respond(550px) {
+      margin: 10px 0;
+      text-align: left;
+    }
+  }
+}
+
+.node-fj16-trek-challenge {
+  &.node-teaser {
+    background: #fff;
+    padding: 20px;
+    margin: 0 0 20px;
+  }
+
+  h2 {
+    @extend .item-heading;
+    margin: 0 0 10px;
+  }
+
+  .trek-tags {
+    margin: 0 0 10px;
+
+    * {
+      display: inline-block;
+    }
+
+    .field-item {
+      margin-right: 20px;
+      padding-left: 22px;
+      background: 0 50% no-repeat;
+    }
+
+    .field-name-field-region .field-item {
+      background-image: inline-image('icons/location.png');
+      margin-right: 16px;
+    }
+
+    .field-name-field-trek-tags .field-item {
+      background-image: inline-image('icons/tag.png');
+    }
+  }
+
+  .read-more {
+    margin-top: -0.5em;
+  }
+
+  .read-more a {
+    font-family: $exo2;
+    text-transform: uppercase;
+
+    &:after {
+      content: ' >';
+    }
+  }
+}
+
+.field-name-field-region select {
+  min-height: 30px;
+}
+
+.page-node .trek-tags {
+  margin: 0 0 25px;
+}
+
+.page-node-add-fj16-trek-challenge .filter-wrapper {
+  display: none;
+}
+
+.field-name-field-tarkempi-sijainti {
+  margin-bottom: 1em;
+}
+
+.page-node-add-fj16-trek-challenge #autocomplete {
+  ul, li {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+}
