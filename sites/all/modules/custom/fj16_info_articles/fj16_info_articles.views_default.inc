@@ -143,6 +143,29 @@ function fj16_info_articles_views_default_views() {
   $handler->display->display_options['fields']['language']['field'] = 'language';
   $handler->display->display_options['fields']['language']['label'] = '';
   $handler->display->display_options['fields']['language']['element_label_colon'] = FALSE;
+  /* Field: Content: Category in participant info */
+  $handler->display->display_options['fields']['field_category_in_participant_in']['id'] = 'field_category_in_participant_in';
+  $handler->display->display_options['fields']['field_category_in_participant_in']['table'] = 'field_data_field_category_in_participant_in';
+  $handler->display->display_options['fields']['field_category_in_participant_in']['field'] = 'field_category_in_participant_in';
+  $handler->display->display_options['fields']['field_category_in_participant_in']['label'] = '';
+  $handler->display->display_options['fields']['field_category_in_participant_in']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_category_in_participant_in']['type'] = 'services';
+  $handler->display->display_options['fields']['field_category_in_participant_in']['settings'] = array(
+    'data_element_key' => '',
+    'skip_safe' => 0,
+    'skip_empty_values' => 0,
+    'term_name' => 0,
+  );
+  /* Field: Content: Sort number */
+  $handler->display->display_options['fields']['field_sort_number']['id'] = 'field_sort_number';
+  $handler->display->display_options['fields']['field_sort_number']['table'] = 'field_data_field_sort_number';
+  $handler->display->display_options['fields']['field_sort_number']['field'] = 'field_sort_number';
+  $handler->display->display_options['fields']['field_sort_number']['type'] = 'services';
+  $handler->display->display_options['fields']['field_sort_number']['settings'] = array(
+    'data_element_key' => 'sort_no',
+    'skip_safe' => 0,
+    'skip_empty_values' => 0,
+  );
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -182,6 +205,7 @@ function fj16_info_articles_views_default_views() {
     t('next ›'),
     t('last »'),
     t('Updated date'),
+    t('Sort number'),
     t('Services'),
   );
   $export['fj16_list_participant_info_articles'] = $view;
