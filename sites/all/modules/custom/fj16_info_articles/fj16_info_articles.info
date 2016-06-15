@@ -8,6 +8,7 @@ dependencies[] = number
 dependencies[] = rest_server
 dependencies[] = services_views
 dependencies[] = taxonomy_access_fix
+dependencies[] = taxonomy_menu
 dependencies[] = tvi
 features[ctools][] = services:services:3
 features[ctools][] = strongarm:strongarm:1
