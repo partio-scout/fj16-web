@@ -1,0 +1,11 @@
+.view-fj16-camp-unit-info-categories, .view-fj16-camp-unit-info-articles {
+  h2 {
+    @extend h4;
+  }
+}
+
+.node-fj16-info-article {
+  .field-name-field-category-in-camp-unit-info {
+    margin-bottom: 1em;
+  }
+}
