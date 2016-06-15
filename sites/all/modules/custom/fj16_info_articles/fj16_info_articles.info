@@ -7,6 +7,7 @@ dependencies[] = markdown
 dependencies[] = number
 dependencies[] = rest_server
 dependencies[] = services_views
+dependencies[] = smart_trim
 dependencies[] = taxonomy_access_fix
 dependencies[] = taxonomy_menu
 dependencies[] = tvi
