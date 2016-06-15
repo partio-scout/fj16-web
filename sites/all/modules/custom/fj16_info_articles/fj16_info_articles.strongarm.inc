@@ -63,6 +63,68 @@ function fj16_info_articles_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_taxonomy_term__camp_unit_info';
+  $strongarm->value = array(
+    'view_modes' => array(
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
+    'extra_fields' => array(
+      'form' => array(),
+      'display' => array(
+        'description' => array(
+          'default' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
+        ),
+        'language' => array(
+          'default' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+        ),
+      ),
+    ),
+  );
+  $export['field_bundle_settings_taxonomy_term__camp_unit_info'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_taxonomy_term__participant_info';
+  $strongarm->value = array(
+    'view_modes' => array(),
+    'extra_fields' => array(
+      'form' => array(
+        'path' => array(
+          'weight' => '30',
+        ),
+        'redirect' => array(
+          'weight' => '30',
+        ),
+        'name' => array(
+          'weight' => '-5',
+        ),
+        'description' => array(
+          'weight' => '0',
+        ),
+        'language' => array(
+          'weight' => '0',
+        ),
+      ),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_taxonomy_term__participant_info'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'i18n_node_extended_fj16_info_article';
   $strongarm->value = '1';
   $export['i18n_node_extended_fj16_info_article'] = $strongarm;
