@@ -88,7 +88,10 @@ function nodequeue_generate_form_submit($form, &$form_state) {
 /**
  * Re-populates nodequeues with nodes.
  *
- * @param $qids Array of queues, that need to be repopulated.
+ * @param array $qids
+ *   Array of queues, that need to be repopulated.
+ * @param int $nodes_limit
+ *   The node limit.
  */
 function nodequeue_generate_repopulate_queues($qids, $nodes_limit = 10) {
   // Remove existing nodes from queues.
