@@ -16,3 +16,6 @@ function fj16_info_articles_update_7005() {
   module_enable(array('smart_trim'));
 }
 
+function fj16_info_articles_update_7006() {
+  module_disable(array('taxonomy_menu'));
+}
