@@ -17,4 +17,5 @@ scripts[] = js/hyphenate.js
 scripts[] = js/jquery.sidr.min.js
 scripts[] = js/tracking.js
 scripts[] = js/masonry.pkgd.min.js
+scripts[] = js/textext.min.js
 scripts[] = js/main.js

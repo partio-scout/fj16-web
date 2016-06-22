@@ -16,6 +16,7 @@
 @import "animate/animate";
 
 @import "sidr";
+@import "textext";
 
 @import "some-icons";
 
@@ -35,10 +36,10 @@
 
 // Quick fix for toolbar overlay
 .admin-menu {
-	#toolbar {
-		display: none;
-	}
-	#admin-menu {
-		font-size: 12px;
-	}
+  #toolbar {
+    display: none;
+  }
+  #admin-menu {
+    font-size: 12px;
+  }
 }

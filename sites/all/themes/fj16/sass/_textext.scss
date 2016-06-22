@@ -1,0 +1,112 @@
+.text-core {
+  position: relative;
+}
+.text-core .text-wrap {
+  background: #fff;
+  // position: absolute;
+}
+.text-core .text-wrap textarea,
+.text-core .text-wrap input {
+  // box-sizing: border-box;
+  // border-radius: 0px;
+  // border: 1px solid #9daccc;
+  // outline: none;
+  // resize: none;
+  // position: absolute;
+  // z-index: 1;
+  // background: none;
+  // overflow: hidden;
+  // margin: 0;
+  // padding: 3px 5px 4px 5px;
+  // white-space: nowrap;
+  // font: 11px "lucida grande", tahoma, verdana, arial, sans-serif;
+  // line-height: 13px;
+  // height: auto;
+}
+
+.text-core .text-wrap .text-tags {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 3px 35px 3px 3px;
+  cursor: text;
+}
+.text-core .text-wrap .text-tags.text-tags-on-top {
+  z-index: 2;
+}
+.text-core .text-wrap .text-tags .text-tag {
+  float: left;
+}
+.text-core .text-wrap .text-tags .text-tag .text-button {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  float: left;
+  border: 1px solid #9daccc;
+  background: #e2e6f0;
+  color: #000;
+  padding: 0px 17px 0px 3px;
+  margin: 0 2px 2px 0;
+  cursor: pointer;
+  height: 16px;
+  font: 11px "lucida grande", tahoma, verdana, arial, sans-serif;
+}
+.text-core .text-wrap .text-tags .text-tag .text-button a.text-remove {
+  position: absolute;
+  right: 3px;
+  top: 2px;
+  display: block;
+  width: 11px;
+  height: 11px;
+  background: url(../img/autocomplete-remove.png) 0 0 no-repeat;
+}
+.text-core .text-wrap .text-tags .text-tag .text-button a.text-remove:hover {
+  background-position: 0 -11px;
+}
+.text-core .text-wrap .text-tags .text-tag .text-button a.text-remove:active {
+  background-position: 0 -22px;
+}
+
+.text-core .text-wrap .text-dropdown {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  position: absolute;
+  z-index: 3;
+  background: #fff;
+  border: 1px solid #9daccc;
+  width: 100%;
+  max-height: 100px;
+  padding: 1px;
+  font: 11px "lucida grande", tahoma, verdana, arial, sans-serif;
+  display: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.text-core .text-wrap .text-dropdown.text-position-below {
+  margin-top: 1px;
+}
+.text-core .text-wrap .text-dropdown.text-position-above {
+  margin-bottom: 1px;
+}
+.text-core .text-wrap .text-dropdown .text-list .text-suggestion {
+  padding: 3px 5px;
+  cursor: pointer;
+}
+.text-core .text-wrap .text-dropdown .text-list .text-suggestion em {
+  font-style: normal;
+  text-decoration: underline;
+}
+.text-core .text-wrap .text-dropdown .text-list .text-suggestion.text-selected {
+  color: #fff;
+  background: #6d84b4;
+}

@@ -154,6 +154,17 @@
     });    
   }
   
+  if($('textarea.transportation_troops').length > 0) {
+    $('textarea.transportation_troops').textext({
+        plugins: 'autocomplete filter tags ajax',
+        ajax: {
+          url: '/sites/all/themes/fj16/js/kaikki_lippukunnat.json',
+          dataType: 'json',
+          cacheResults: true
+        }
+    });
+  }
+  
   // Avoid `console` errors in browsers that lack a console.
   (function() {
     var method;
