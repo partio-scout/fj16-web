@@ -42,12 +42,12 @@
 		}
     
     .active > a, .active-trail > a {
-      background: darken($green, 10);
+      background: $green;
       color: #fff;
     }
     
     .active-trail .active > a {
-      background: $green;
+      background: darken($green, 10);
     }
     
     .active, .active li, .active-trail, .active-trail li {
