@@ -243,7 +243,6 @@ function nodequeue_uninstall() {
   // Remove our variables.
   $variables = array(
     'nodequeue_use_tab',
-    'nodequeue_tab_display_max',
     'nodequeue_tab_name',
     'nodequeue_autocomplete_limit',
     'nodequeue_view_per_queue',
