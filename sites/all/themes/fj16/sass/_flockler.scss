@@ -1,0 +1,35 @@
+.hide-left-sidebar {
+  #sidebar-left {
+    display: none;
+  }
+
+  #main {
+    background: $white;
+  }
+
+  #content {
+    width: 100%;
+  }
+}
+
+.flockler {
+  @extend .hide-left-sidebar;
+
+  h1 {
+    text-align: center;
+  }
+
+  .flockler-tags {
+    text-align: center;
+    margin-bottom: 1.1em;
+
+    span {
+      padding: 0 1em 0.4em;
+      display: block;
+    }
+  }
+
+  .flockler-btn-load-more {
+    @extend .button;
+  }
+}
