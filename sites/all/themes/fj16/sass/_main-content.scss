@@ -178,10 +178,11 @@ div.messages {
   
   .subcamp-filter {
     input {
-      border: 1px solid $grey;
+      background: url(../img/search-icon.png) .75em 50% no-repeat;
+      border: 1px solid darken($grey, 50);
       font-size: 1.25em;
       margin: 0 0 1em;
-      padding: .75em 1em;
+      padding: .75em 1em .75em 3em;
       width: 100%;
     }
     
