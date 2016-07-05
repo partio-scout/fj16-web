@@ -14,6 +14,47 @@ function fj16_news_ctools_plugin_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_image_default_styles().
+ */
+function fj16_news_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: fj16_news_full.
+  $styles['fj16_news_full'] = array(
+    'label' => 'FJ16 News full',
+    'effects' => array(
+      2 => array(
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => 1000,
+          'height' => '',
+          'upscale' => 0,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: fj16_news_teaser.
+  $styles['fj16_news_teaser'] = array(
+    'label' => 'FJ16 News teaser',
+    'effects' => array(
+      3 => array(
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => 225,
+          'height' => '',
+          'upscale' => 0,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  return $styles;
+}
+
+/**
  * Implements hook_node_info().
  */
 function fj16_news_node_info() {

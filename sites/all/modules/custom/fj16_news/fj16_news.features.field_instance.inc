@@ -144,7 +144,7 @@ function fj16_news_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => '',
+          'image_style' => 'fj16_news_full',
         ),
         'type' => 'image',
         'weight' => 1,
@@ -153,8 +153,8 @@ function fj16_news_field_default_field_instances() {
         'label' => 'above',
         'module' => 'image',
         'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
+          'image_link' => 'content',
+          'image_style' => 'fj16_news_teaser',
         ),
         'type' => 'image',
         'weight' => 1,
