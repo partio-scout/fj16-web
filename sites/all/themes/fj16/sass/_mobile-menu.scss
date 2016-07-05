@@ -37,17 +37,17 @@
 		}
 
 		//Sub-items of currently active item
-		.active ul {
-			background: $green;
+		.active-trail > a {
+      // background: darken($green, 10);
 		}
     
-    .active > a, .active-trail > a {
-      background: darken($green, 10);
+    .active-trail ul a {
+			background: darken($green, 10);
       color: #fff;
     }
     
     .active-trail .active > a {
-      background: $green;
+      background: darken($green, 15);
     }
     
     .active, .active li, .active-trail, .active-trail li {
