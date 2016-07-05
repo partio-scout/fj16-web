@@ -136,6 +136,48 @@ function fj16_news_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_fj16_news_article_en_pattern';
+  $strongarm->value = 'news/[node:title]';
+  $export['pathauto_node_fj16_news_article_en_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_fj16_news_article_fi_pattern';
+  $strongarm->value = 'uutiset/[node:title]';
+  $export['pathauto_node_fj16_news_article_fi_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_fj16_news_article_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_fj16_news_article_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_fj16_news_article_sv_pattern';
+  $strongarm->value = 'nyheter/[node:title]';
+  $export['pathauto_node_fj16_news_article_sv_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_fj16_news_article_und_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_fj16_news_article_und_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_news_category_pattern';
+  $strongarm->value = '[term:name]';
+  $export['pathauto_taxonomy_term_news_category_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'webform_node_fj16_news_article';
   $strongarm->value = 0;
   $export['webform_node_fj16_news_article'] = $strongarm;
