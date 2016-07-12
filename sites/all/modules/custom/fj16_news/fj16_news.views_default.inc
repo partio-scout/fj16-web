@@ -81,7 +81,7 @@ function fj16_news_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'fj16-news';
+  $handler->display->display_options['path'] = 'news';
   $export['fj16_news'] = $view;
 
   return $export;
