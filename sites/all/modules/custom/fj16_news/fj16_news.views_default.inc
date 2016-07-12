@@ -47,16 +47,16 @@ function fj16_news_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Contextual filter: Content: Category (field_category) */
-  $handler->display->display_options['arguments']['field_category_tid']['id'] = 'field_category_tid';
-  $handler->display->display_options['arguments']['field_category_tid']['table'] = 'field_data_field_category';
-  $handler->display->display_options['arguments']['field_category_tid']['field'] = 'field_category_tid';
-  $handler->display->display_options['arguments']['field_category_tid']['title_enable'] = TRUE;
-  $handler->display->display_options['arguments']['field_category_tid']['title'] = '%1';
-  $handler->display->display_options['arguments']['field_category_tid']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['field_category_tid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_category_tid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_category_tid']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Content: Has taxonomy term ID */
+  $handler->display->display_options['arguments']['tid']['id'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_index';
+  $handler->display->display_options['arguments']['tid']['field'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['title_enable'] = TRUE;
+  $handler->display->display_options['arguments']['tid']['title'] = '%1';
+  $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
