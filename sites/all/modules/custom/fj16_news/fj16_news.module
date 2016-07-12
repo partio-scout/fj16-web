@@ -5,3 +5,7 @@
  */
 
 include_once 'fj16_news.features.inc';
+
+//For translations
+t('News');
+t('By');
