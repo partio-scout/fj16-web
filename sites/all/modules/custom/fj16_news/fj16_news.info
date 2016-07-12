@@ -58,4 +58,5 @@ features[variable][] = webform_node_fj16_news_article
 features[views_view][] = fj16_news
 features_exclude[dependencies][ctools] = ctools
 features_exclude[dependencies][fj16_frontpage_boxes] = fj16_frontpage_boxes
+features_exclude[variable][i18n_node_options_fj16_news_article] = i18n_node_options_fj16_news_article
 project path = sites/all/modules/custom
