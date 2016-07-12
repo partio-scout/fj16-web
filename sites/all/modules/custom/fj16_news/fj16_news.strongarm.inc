@@ -178,6 +178,21 @@ function fj16_news_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'tvi_vocab_news_category';
+  $strongarm->value = array(
+    'is_default' => TRUE,
+    'type' => 'vocab',
+    'xid' => 'news_category',
+    'status' => 1,
+    'view_name' => 'fj16_news',
+    'display' => 'page',
+    'pass_arguments' => 0,
+  );
+  $export['tvi_vocab_news_category'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'webform_node_fj16_news_article';
   $strongarm->value = 0;
   $export['webform_node_fj16_news_article'] = $strongarm;
