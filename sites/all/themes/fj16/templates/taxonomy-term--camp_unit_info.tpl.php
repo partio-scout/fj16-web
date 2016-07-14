@@ -52,7 +52,7 @@
   </div>
 
   <?php if (!$page): ?>
-    <div><a href="<?php print $term_url; ?>"><?php print t('Read more'); ?></a></div>
+    <div class="more"><a href="<?php print $term_url; ?>"><?php print t('Read more'); ?></a></div>
   <?php endif; ?>
 
 </div>
