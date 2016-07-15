@@ -92,6 +92,19 @@
       <h2<?php print $title_attributes; ?>><?php print $title; ?></h2>
     <?php endif; ?>
   <?php print render($title_suffix); ?>
+  
+  <?php if($page): ?>
+    <div class="author-mobile">
+      <span class="name">
+        <?php print $user_realname; ?>
+      </span>
+      <span class="time">
+        <?php
+          print(date('j.n.Y', $created));
+        ?>
+      </span>
+    </div>
+  <?php endif; ?>
 
   <?php print render($content['field_news_image']); ?>
   <?php print render($content['field_news_image_description']); ?>
