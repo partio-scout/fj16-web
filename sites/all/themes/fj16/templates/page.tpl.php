@@ -152,7 +152,6 @@
     
     <div id="mobile-menu">
       <?php print render($page['mobile_menu']); /* custom menu block */ ?>
-      <?php print theme('links__system_main_menu', array('links' => menu_navigation_links('menu-social-media-links'))); ?>
     </div>
 
     <div id="footer">
