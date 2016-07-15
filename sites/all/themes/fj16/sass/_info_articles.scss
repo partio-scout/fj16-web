@@ -2,10 +2,35 @@
   h2 {
     @extend h4;
   }
+
+  .taxonomy-term .more {
+    margin-top: -0.5em;
+  }
 }
 
-.node-fj16-info-article {
+.fj16-info-articles-back {
+  margin: -0.5em 0 -1.5em;
+}
+
+.field-name-field-category-in-camp-unit-info, .fj16-info-articles-back {
+  a:before {
+    content: '< ';
+  }
+}
+
+#content .node-fj16-info-article {
   .field-name-field-category-in-camp-unit-info {
-    margin-bottom: 1em;
+    margin: -0.5em 0 1em;
+  }
+
+  ul.links {
+    li {
+      display: inline;
+      margin: 0;
+    }
+
+    display: block;
+    list-style: none;
+    margin: 1em 0 0;
   }
 }
