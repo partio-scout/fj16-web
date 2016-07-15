@@ -12,7 +12,7 @@ jQuery(function($) {
 
 		$('div.countdown-clock').append('<div id="clock"><p><span id="daysLeft"></span> '+countdownDays+'</p><div class="space">:</div><p><span id="hours"></span> '+countdownHours+'</p><div class="space">:</div><p><span id="minutes"></span> '+countdownMinutes+'</p><div class="space">:</div><p><span id="seconds"></span> '+countdownSeconds+'</p></div>');
 
-    $('div#clock').countdown(countdownDate, function(event) {
+    $('div#clock').countdown(countdownDateTime, function(event) {
       $this = $(this);
       switch(event.type) {
         case "seconds":
