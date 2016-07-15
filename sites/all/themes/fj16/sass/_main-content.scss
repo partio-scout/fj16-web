@@ -182,12 +182,12 @@ div.messages {
     height: auto;
     
     input {
-      background: url(../img/search-icon.png) .75em 47%/30px 30px no-repeat;
-      border: 1px solid darken($grey, 50);
+      background: url(../img/search-icon.png) .75em 47%/30px 30px no-repeat !important;
+      border: 1px solid darken($grey, 50) !important;
       font-size: 1.25em;
-      margin: 0 0 1em;
-      padding: .75em 1em .75em 3em;
-      width: 100%;
+      margin: 0 0 1em !important;
+      padding: .75em 1em .75em 3em !important;
+      width: 100% !important;
     }
     
     + table {
