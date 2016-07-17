@@ -56,7 +56,6 @@ features[variable][] = node_options_fj16_frontpage_box
 features[variable][] = node_preview_fj16_frontpage_box
 features[variable][] = node_submitted_fj16_frontpage_box
 features[variable][] = save_continue_fj16_frontpage_box
-features[variable][] = site_frontpage
 features[views_view][] = fj16_frontpage_boxes_view
 features_exclude[dependencies][ctools] = ctools
 features_exclude[dependencies][options] = options
