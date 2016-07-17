@@ -178,7 +178,7 @@ div.messages {
   
   .subcamp-filter, .gsc-input-box {
     border: 0;
-    box-shadow: none;
+    box-shadow: none !important;
     background: transparent;
     height: auto;
     
@@ -186,6 +186,7 @@ div.messages {
       background: url(../img/search-icon.png) .75em 47%/30px 30px no-repeat !important;
       border: 1px solid darken($grey, 50) !important;
       color: #000;
+      height: auto !important;
       font-family: $exo;
       font-size: 1.25em;
       margin: 0 0 1em !important;
