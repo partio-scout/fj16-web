@@ -1,4 +1,5 @@
 (function($, Drupal, undefined){
+
   if($('.node-fj16-frontpage-box').length) {
     $('.node-fj16-frontpage-box').each(function(){
       if($(this).find('.image .hashtag').length > 0) {

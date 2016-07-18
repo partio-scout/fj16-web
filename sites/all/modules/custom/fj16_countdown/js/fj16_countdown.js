@@ -1,5 +1,6 @@
 jQuery(function($) {
-	var countdownClock = $('div.countdown-clock');	
+	var countdownClock = $('div.countdown-clock');
+
 	if(countdownClock.length > 0) {
 		var countdownDate = countdownClock.data('date').split('-');
 		var countdownTime = countdownClock.data('time').split(':');
@@ -12,22 +13,22 @@ jQuery(function($) {
 
 		$('div.countdown-clock').append('<div id="clock"><p><span id="daysLeft"></span> '+countdownDays+'</p><div class="space">:</div><p><span id="hours"></span> '+countdownHours+'</p><div class="space">:</div><p><span id="minutes"></span> '+countdownMinutes+'</p><div class="space">:</div><p><span id="seconds"></span> '+countdownSeconds+'</p></div>');
 
-    $('div#clock').countdown(countdownDateTime, function(event) {
-      $this = $(this);
-      switch(event.type) {
-        case "seconds":
-        case "minutes":
-        case "hours":
-        case "days":
-        case "weeks":
-        case "daysLeft":
-          $this.find('span#'+event.type).html(event.value);
-          break;
-        case "finished":
-          $this.parent().parent().find('h2').text(countdownClock.data('finished'));
-          break;
-      }
-    });
+		$('div#clock').countdown(countdownDateTime, function(event) {
+			$this = $(this);
+			switch(event.type) {
+				case "seconds":
+				case "minutes":
+				case "hours":
+				case "days":
+				case "weeks":
+				case "daysLeft":
+					$this.find('span#'+event.type).html(event.value);
+					break;
+				case "finished":
+					$this.parent().parent().find('h2').text(countdownClock.data('finished'));
+					break;
+			}
+		});
 			
 		if($(window).width() > 1024) {
 			$(window).scroll(function() {
