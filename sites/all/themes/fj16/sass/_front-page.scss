@@ -1,3 +1,22 @@
+.front-page-btn {
+  margin: 17px 0 0;
+  background: $purple;
+  background: linear-gradient(to bottom, #b03a77 0%, #8d3461 100%);
+  border-radius: 1em;
+  color: $white;
+  display: inline-block;
+  font-family: $exo;
+  font-size: 1.3em;
+  font-weight: 600;
+  line-height: 1;
+  padding: .7em 1.4em;
+  text-transform: uppercase;
+  
+  @media (max-width: $break-mobile) {
+    font-size: 1.3em;
+  }
+}
+
 body.front {
 
   overflow-x: hidden;
@@ -337,324 +356,80 @@ body.front {
     }
 
     #block-system-main {
-      .node {
-        @include at2x('front_section_bg', auto, 100%);
-        background-repeat: no-repeat;
-        background-position: right;
-
-        overflow: hidden;
-
-        padding: 0;
-        position: relative;
-        min-height: 400px;
-
-        @include respondMin(large) {
-          // &:before { // Make it look like that box is 100% wide
-          //   content: '';
-          //   display: inline-block;
-          //   position: absolute;
-          //   top: 0;
-          //   bottom: 0;
-          //   left: -100%;
-          //   right: -100%;
-          //   z-index: -1;
-          // }
-        }
-
-        .image {
-          position: absolute;
-          left: 0;
-          top: 0;
-          bottom: 0;
-          width: 60%;
-          overflow: hidden;
-          height: 120%;
-          background-size: cover;
-
-          &:after {
-            content: '';
-            display: inline-block;
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 70px 50px 70px 0;
-            position: absolute;
-            right: 0;
-            top: 58px;
-          }
-
-          &.instagram {
-            position: relative;
-            background: url('../img/front_ig_feed_bg.jpg');
-            background-repeat: no-repeat;
-            background-size: 100% auto;
-            float: right;
-            height: auto;
-            padding-top: 26%;
-
-            .hashtag {
-              display: none;
-            }
-
-            @include respond(mobile) {
-              width: 100%;
-              height: 0 !important;
-              padding: 0 0 50.417%;  // Hack to make bg image fit (ratio is same in all breakpoints)
-              overflow: visible;
-              position: static !important;
-              margin-bottom: 40px;
-
-              &:after {
-                display: none;
-              }
-            }
-
-            a {
-              width: 20%;
-              display: block;
-              float: left;
-              
-              &.img2 { left: 20%; }
-              &.img3 { left: 40%; }
-              &.img4 { left: 60%; }
-              &.img5 { left: 80%; }
-
-              @include respond(medium) {
-                width: 25%;
-
-                &.img2 { left: 25%; }
-                &.img3 { left: 50%; }
-                &.img4 { left: 75%; }
-                &.img5 { display: none; }
-              }
-
-              @include respond(small) {
-                width: 33.33%;
-
-                &.img2 { left: 33.33%; }
-                &.img3 { left: 66.66%; }
-                &.img4 { display: none; }
-                &.img5 { display: none; }
-              }
-
-              @include respond(mobile) {
-                position: absolute;
-                bottom: 0;
-                z-index: 10;
-
-                &:after {
-                  display: none;
-                }
-              }
-
-              img {
-                width: 100%;
-                height: auto;
-                display: block;
-                @include filter(brightness(75%));
-                @include transition(all 0.3s ease);
-
-                @include respond(small) {
-                  @include filter(brightness(100%));
-                }
-              }
-
-              &:hover {
-                img {
-                  @include filter(brightness(100%));
-                }
-              }
-            }
-
-            & + .content {
-              position: absolute;
-              top: 0;
-              bottom: 0;
-              padding-bottom: 0;
-
-              @include respond(mobile) {
-                position: relative;
-                padding: 30px 20px 38% 20px;
-              }
-            }
-          }
-
-        }
-
-        .content {
-          width: 40%;
-          padding: 120px 100px;
-          float: right;
-
-          @include respond(medium) {
-            padding: 100px 50px;
-          }
-
-          @include respond(small) {
-            padding: 80px 30px;
-          }
-
-          h2 {
-            font-family: $exo2;
-            font-size: 2.236em;
-            text-transform: uppercase;
-            margin-top: 0;
-
-            a {
-              color: #fff;
-            }
-            
-            @include respond(small) {
-              font-size: 1.75em;
-            }
-          }
-
-          .body {
-            color: #fff;
-            margin-bottom: 1.3em;
-          }
-
-          .link {
-            color: #fff;
-            font-family: $exo;
-            text-transform: uppercase;
-
-            a {
-              color: #fff;
-
-              &:after {
-                content: " ›";
-                font-size: 1.618em;
-                line-height: 1em;
-                position: relative;
-                top: 1px;
-              }
-
-              &:hover {
-                margin-left: 10px;
-              }
-            }
-          }
-        }
-
-
-        @include respondMin(small) {
-          .content {
-            h2, .body, .link {
-              opacity: 0;
-
-              &.animated {
-                opacity: 1;
-              }
-            }
-          }
-        }
-
-
-        &.purple {
-          background-color: $purple;
-          .image:after { border-color: transparent $purple transparent transparent; }
-          @include respondMin(large) { &:before { background: $purple; } }
-        }
-
-        &.turquoise {
-          background-color: $green;
-          .image:after { border-color: transparent $green transparent transparent; }
-          @include respondMin(large) { &:before { background: $green; } }
-        }
-
-        &.orange {
-          background-color: $red;
-          .image:after { border-color: transparent $red transparent transparent; }
-          @include respondMin(large) { &:before { background: $red; } }
-        }
-
-        &.yellow {
-          background-color: $yellow;
-          .image:after { border-color: transparent $yellow transparent transparent; }
-          @include respondMin(large) { &:before { background: $yellow; } }
-        }
-
-        &.blue {
-          background-color: $blue;
-          .image:after { border-color: transparent $blue transparent transparent; }
-          @include respondMin(large) { &:before { background: $blue; } }
-        }
-
+      h2 {
+        display: none;
       }
 
-      .views-row-even {
+      .container {
+        padding: 210px 30px 70px;
+        background: $white url(../img/backgrounds/camp-front-page.png) 50% 0 repeat-x;
+        text-align: center;
 
-        .node {
-          background-position: left;
-
-          .image {
-            right: 0;
-            left: auto;
-
-            &:after {
-              @include transform(scale(-1,1)); // This is a lot easier than changing the direction manually
-              left: 0;
-              right: auto;
-            }
-
-            &.instagram {
-              float: right;
-
-              @include respond(mobile){
-                float: none;
-              }
-            }
+        h3 {
+          font-family: $exo;
+          font-weight: 600;
+          margin: 0 0 30px;
+          text-transform: uppercase;
+          color: $purple;
+          
+          @media (max-width: $break-mobile) {
+            font-size: 1.6em;
           }
+        }
 
-          .content {
-            float: left;
-          }
+        p {
+          max-width: 50em;
+          margin: 20px auto;
+        }
+
+        .btn {
+          @extend .front-page-btn;
         }
       }
 
+      .flockler-tags {
+        background: $blue;
+        color: $white;
+        margin: 0;
+        padding: 45px 25px 0;
 
-      @include respond(small) {
-        .node {
-          .image {
-            width: 55%;
-          }
-          .content {
-            width: 45%;
-            font-size: 0.85em;
-          }
+        text-align: center;
+
+        span {
+          padding: 0 1em 0.4em;
+          display: block;
         }
+      }
+
+      .flockler-wall-item__content {
+        box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.25);
+        border: 0;
+        margin: 12px;
+      }
+
+      #flockler_container {
+        background: $blue ;
+        margin: 0;
+        padding: 30px 30px;
       }
 
       @include respond(mobile) {
-        .views-row-even, .views-row-odd {
-          .node {
-            .image {
-              position: relative;
-              top: 0;
-              left: 0;
-              right: 0;
-              height: 350px;
-              width: 100%;
+        #flockler_container {
+          padding: 12px;
+        }
 
-              &:after {
-                @include transform(rotate(90deg));
-                right: 100px;
-                left: auto;
-                top: 280px;
-              }
-            }
-
-            .content {
-              width: 100%;
-              float: none;
-              padding: 30px 20px;
-              font-size: 1em;
-            }
-          }
+        .flockler-tags {
+          padding-top: 30px;
         }
       }
 
+      .flockler-btn-load-more {
+        @extend .front-page-btn;
+        margin: auto;
+        width: auto;
+        max-width: 13em;
+        margin-bottom: -10px;
+      }
     }
 
   }
