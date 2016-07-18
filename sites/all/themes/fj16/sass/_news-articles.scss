@@ -1,4 +1,5 @@
-.node-type-fj16-news-article {
+.node-type-fj16-news-article,
+.page-news {
   h1#page-title {
     display: none;
   }
@@ -15,6 +16,14 @@
       font-family: $exo;
       font-size: 2.2em;
       margin-top: .4em;
+      
+      @include respond(1023px) {
+        font-size: 1.8em;
+      }
+      
+      a {
+        color: inherit;
+      }
     }
     
     .field-name-field-news-image img {
@@ -72,6 +81,65 @@
       @include respond(1023px) {
         float: none;
         width: auto;
+      }
+    }
+  }
+  
+  #content .view-fj16-news {
+    h2 {
+      margin-top: .2em;
+      margin-bottom: .8em;
+
+      @include respond(1023px) {
+        font-size: 1.8em;
+        margin-bottom: .2em;
+      }
+    }
+    
+    .views-row {
+      padding-bottom: 1.5em;
+      
+      + .views-row {
+        border-top: 1px solid $grey;
+        padding-top: 1.5em;
+      }
+    }
+    
+    .field-name-field-news-image {
+      float: left;
+      width: 22%;
+      
+      @include respond(1023px) {
+        float: none;
+        width: auto;
+      }
+    }
+    .content {
+      float: left;
+      width: 78%;
+      
+      @include respond(1023px) {
+        float: none;
+        width: auto;
+      }
+    }
+  
+    .field-name-field-ingres {
+      color: inherit;
+      font-family: $aleo;
+      text-transform: none;
+      
+      @include respond(1023px) {
+        display: none;
+      }
+    }
+    
+    .author span {
+      font-size: .9em;
+      display: inline;
+      
+      + span {
+        margin-top: 0;
       }
     }
   }
