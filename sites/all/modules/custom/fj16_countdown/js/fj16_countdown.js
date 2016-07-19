@@ -1,17 +1,19 @@
 jQuery(function($) {
-	var countdownClock = $('div.countdown-clock');	
+	var countdownClock = $('div.countdown-clock');
+
 	if(countdownClock.length > 0) {
 		var countdownDate = countdownClock.data('date').split('-');
+		var countdownTime = countdownClock.data('time').split(':');
 		var countdownDays = Drupal.t('days');
 		var countdownHours = Drupal.t('hours');
 		var countdownMinutes = Drupal.t('minutes');
 		var countdownSeconds = Drupal.t('seconds');
 		
-		countdownDate = new Date(countdownDate[0],countdownDate[1]-1,countdownDate[2]);
+		countdownDateTime = new Date(countdownDate[0],countdownDate[1]-1,countdownDate[2],countdownTime[0],countdownTime[1],countdownTime[2]);
 
 		$('div.countdown-clock').append('<div id="clock"><p><span id="daysLeft"></span> '+countdownDays+'</p><div class="space">:</div><p><span id="hours"></span> '+countdownHours+'</p><div class="space">:</div><p><span id="minutes"></span> '+countdownMinutes+'</p><div class="space">:</div><p><span id="seconds"></span> '+countdownSeconds+'</p></div>');
 
-		$('div#clock').countdown(countdownDate, function(event) {
+		$('div#clock').countdown(countdownDateTime, function(event) {
 			$this = $(this);
 			switch(event.type) {
 				case "seconds":
@@ -22,8 +24,8 @@ jQuery(function($) {
 				case "daysLeft":
 					$this.find('span#'+event.type).html(event.value);
 					break;
-				case "finished":r
-					$this.fadeTo('slow', .5);
+				case "finished":
+					$this.parent().parent().find('h2').text(countdownClock.data('finished'));
 					break;
 			}
 		});

@@ -176,13 +176,22 @@ div.messages {
     }
   }
   
-  .subcamp-filter {
+  .subcamp-filter, .gsc-input-box {
+    border: 0;
+    box-shadow: none !important;
+    background: transparent;
+    height: auto;
+    
     input {
-      border: 1px solid $grey;
+      background: url(../img/search-icon.png) .75em 47%/30px 30px no-repeat !important;
+      border: 1px solid darken($grey, 50) !important;
+      color: #000;
+      height: auto !important;
+      font-family: $exo;
       font-size: 1.25em;
-      margin: 0 0 1em;
-      padding: .75em 1em;
-      width: 100%;
+      margin: 0 0 1em !important;
+      padding: .75em 1em .75em 3em !important;
+      width: 100% !important;
     }
     
     + table {
@@ -209,6 +218,9 @@ div.messages {
         text-transform: uppercase;
       }
     }
+  }
+  .gsc-search-button {
+    display: none;
   }
 }
 
