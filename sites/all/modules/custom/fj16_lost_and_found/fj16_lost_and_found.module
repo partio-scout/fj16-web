@@ -1,5 +1,7 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the FJ16 Lost and found feature.
  */
+
+include_once 'fj16_lost_and_found.features.inc';
