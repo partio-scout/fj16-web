@@ -5,3 +5,21 @@
  */
 
 include_once 'fj16_lost_and_found.features.inc';
+
+function fj16_lost_and_found_field_access($op, $field, $entity_type, $entity, $account) {
+  if($entity_type !== 'node' || $entity->type !== 'fj16_lost_and_found') {
+    return;
+  }
+
+  if(user_access('edit any fj16_lost_and_found content')) {
+    return true;
+  }
+
+  $disallowed_fields = array(
+    'body',
+    'field_internal_notes',
+    'field_owner',
+    'field_tavaran_luovuttaja'
+  );
+  return !in_array($field['field_name'], $disallowed_fields);
+}
