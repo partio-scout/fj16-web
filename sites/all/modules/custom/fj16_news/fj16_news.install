@@ -1,0 +1,7 @@
+<?php
+
+function fj16_news_update_7001() {
+  require_once(drupal_get_path('module', 'fj16_base') . '/fj16_base.module');
+  fj16_import_translation('fj16_news', 'fi');
+  fj16_import_translation('fj16_news', 'sv');
+}

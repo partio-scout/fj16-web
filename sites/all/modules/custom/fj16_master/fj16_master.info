@@ -14,3 +14,4 @@ dependencies[] = fj16_activities
 dependencies[] = fj16_event_map
 dependencies[] = fj16_info_articles
 dependencies[] = fj16_trek_challenges
+dependencies[] = fj16_news

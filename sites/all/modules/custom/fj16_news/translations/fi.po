@@ -1,0 +1,67 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  fj16_news.features.field_instance.inc: n/a
+#  fj16_news.features.inc: n/a
+#  fj16_news.module: n/a
+#  fj16_news.info: n/a
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2016-07-13 02:00+0300\n"
+"PO-Revision-Date: 2016-07-13 02:01+0300\n"
+"Language-Team: EMAIL@ADDRESS\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.7\n"
+"Last-Translator: \n"
+"Language: fi\n"
+
+#: fj16_news.features.field_instance.inc:244
+msgid "Body"
+msgstr "Sisältö"
+
+#: fj16_news.features.field_instance.inc:245
+msgid "Category"
+msgstr "Kategoria"
+
+#: fj16_news.features.field_instance.inc:246
+msgid "Image"
+msgstr "Kuva"
+
+#: fj16_news.features.field_instance.inc:247
+msgid "Image description"
+msgstr "Kuvateksti"
+
+#: fj16_news.features.field_instance.inc:248
+msgid "Introduction"
+msgstr "Ingressi"
+
+#: fj16_news.features.inc:70
+msgid "FJ16 News article"
+msgstr "Uutinen"
+
+#: fj16_news.features.inc:74
+msgid "Title"
+msgstr "Otsikko"
+
+#: fj16_news.module:10
+msgid "News"
+msgstr "Uutiset"
+
+#: fj16_news.module:11
+msgid "By"
+msgstr "Kirjoittanut"
+
+#: fj16_news.info:0
+msgid "FJ16 News"
+msgstr ""
+
+#: fj16_news.info:0
+msgid "FJ16"
+msgstr ""

@@ -1,0 +1,11 @@
+<?php
+/**
+ * @file
+ * Code for the FJ16 News feature.
+ */
+
+include_once 'fj16_news.features.inc';
+
+//For translations
+t('News');
+t('By');
