@@ -105,6 +105,7 @@ function fj16_lost_and_found_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = 'Mikä';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -160,7 +161,7 @@ function fj16_lost_and_found_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'lostandfound-internal';
+  $handler->display->display_options['path'] = 'admin/lostandfound-internal';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Löytötavarat';
   $handler->display->display_options['menu']['weight'] = '0';
