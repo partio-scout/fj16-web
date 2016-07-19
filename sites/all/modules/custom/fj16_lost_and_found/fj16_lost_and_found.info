@@ -31,6 +31,7 @@ features[field_instance][] = node-fj16_lost_and_found-field_owner_found
 features[field_instance][] = node-fj16_lost_and_found-field_tavaran_luovuttaja
 features[node][] = fj16_lost_and_found
 features[rules_config][] = rules_fj16_lost_and_found_id
+features[rules_config][] = rules_fj16_lost_and_found_return_to_list
 features[user_permission][] = create fj16_lost_and_found content
 features[user_permission][] = delete any fj16_lost_and_found content
 features[user_permission][] = delete own fj16_lost_and_found content
