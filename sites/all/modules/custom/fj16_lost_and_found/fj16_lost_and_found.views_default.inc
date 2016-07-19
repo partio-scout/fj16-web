@@ -119,6 +119,12 @@ function fj16_lost_and_found_views_default_views() {
   $handler->display->display_options['fields']['field_owner_found']['id'] = 'field_owner_found';
   $handler->display->display_options['fields']['field_owner_found']['table'] = 'field_data_field_owner_found';
   $handler->display->display_options['fields']['field_owner_found']['field'] = 'field_owner_found';
+  /* Field: Content: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = '';
+  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Nid */
   $handler->display->display_options['sorts']['nid']['id'] = 'nid';
   $handler->display->display_options['sorts']['nid']['table'] = 'node';
