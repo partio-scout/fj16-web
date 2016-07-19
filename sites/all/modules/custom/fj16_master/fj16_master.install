@@ -49,3 +49,7 @@ function fj16_master_update_7012() {
 function fj16_master_update_7013() {
   module_enable(array('fj16_news'));
 }
+
+function fj16_master_update_7014() {
+  module_enable(array('fj16_lost_and_found'));
+}
