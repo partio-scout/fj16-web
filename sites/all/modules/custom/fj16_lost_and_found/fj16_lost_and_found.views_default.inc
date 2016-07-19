@@ -160,7 +160,13 @@ function fj16_lost_and_found_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'fj16-lost-and-found-internal';
+  $handler->display->display_options['path'] = 'lostandfound-internal';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Löytötavarat';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'management';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $export['fj16_lost_and_found_internal'] = $view;
 
   return $export;
