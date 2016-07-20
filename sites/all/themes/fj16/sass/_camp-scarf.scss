@@ -11,11 +11,11 @@
       }
       
       h1.title {
-        color: $white;
+        color: $green;
         font-size: 1.8em;
         font-weight: 600;
         margin: 0;
-        padding: 2em 0 1.5em;
+        padding: 1.5em 0;
         text-align: center;
       
         @media (max-width: $break-mobile) {
@@ -69,6 +69,7 @@
   
   .scarf-cta {
     background: $white url(../img/backgrounds/sign-up-landing-page.png) 50% 100% repeat-x;
+    padding-bottom: 150px
     text-align: center;
     
     @media (max-width: $break-mobile) {
@@ -82,7 +83,7 @@
       color: $white;
       display: inline-block;
       font-family: $exo;
-      font-size: 1.5em;
+      font-size: 1.1em;
       font-weight: 600;
       line-height: 1;
       padding: .9em 1.8em;
@@ -114,7 +115,7 @@
           font-weight: 400;
           
           &:after {
-						content: " ›";
+            content: " ›";
             font-size: 1.618em;
             line-height: 1em;
             position: relative;
@@ -171,5 +172,9 @@
         height: 100%;
       }
     }
+  }
+
+  .scarf-fi, .scarf-sv, .scarf-en {
+    display: none;
   }
 }
