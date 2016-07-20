@@ -193,6 +193,18 @@
         }
     });
   }
+
+  if($('body.camp-scarf')) {
+    $('.camp-scarf .scarf-cta .btn').click(function(e){
+      e.preventDefault();
+
+      var scarfLang = $(this).data('lang');
+
+      $('.scarf-cta').fadeOut('fast', function(){
+        $('.scarf-'+scarfLang).fadeIn('fast');
+      });
+    });
+  }
   
   // Avoid `console` errors in browsers that lack a console.
   (function() {
