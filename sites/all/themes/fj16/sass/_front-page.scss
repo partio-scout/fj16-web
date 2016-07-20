@@ -249,7 +249,8 @@ body.front {
 
     padding: 0;
     
-    div#clock-wrapper {
+    div#clock-wrapper,
+    div.frontpage-lift {
       @include at2x('front_section_bg', auto, 100%);
       background-color: $purple;
       background-repeat: no-repeat;
