@@ -116,7 +116,8 @@
     }
     .content {
       float: left;
-      width: 78%;
+      width: 75%;
+      margin-left: 3%;
       
       @include respond(1023px) {
         float: none;
