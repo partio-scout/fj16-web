@@ -7,11 +7,11 @@
   font-family: $exo;
   text-transform: uppercase;
 
-  background: url(../img/header_bg_1.jpg) center center;
+  background: url("#{$s3}/img/header_bg.jpg") center center;
   background-size: cover;
 
   @include respond(small) {
-    background-image: url(../img/header_bg_1_small.jpg);
+    background-image: url("#{$s3}/img/header_bg_small.jpg");
   }
 
   @include respond(mobile) {

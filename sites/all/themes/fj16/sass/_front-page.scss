@@ -227,11 +227,16 @@ body.front {
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
 
-      background: url('../img/front_header/front_header_slide_1_large.jpg') center;
+      background: url("#{$s3}/img/front_header_large.jpg") center;
       background-size: cover;
-
-
-      // TODO: slide change animations
+      
+      @include respond(small) {
+        background-image: url("#{$s3}/img/front_header_small.jpg");
+      }
+      
+      @include respond(mobile) {
+        background-image: url("#{$s3}/img/front_header_mobile.jpg");
+      }
     }
   }
 
