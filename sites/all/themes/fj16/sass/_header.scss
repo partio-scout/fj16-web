@@ -235,25 +235,25 @@
         visibility: visible;
         opacity: 1.0;
       }
-    }
-  }
+		}
+	}
 
   #top-bar {
     background: $grey;
 
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 50px;
+		position: absolute;
+		top: 0; left: 0;
+		width: 100%;
+		height: 50px;
 
-    z-index: 50;
+		z-index: 50;
 
-    @include respond($break-small) {
-      background: #000;
-    }
+		@include respond($break-small) {
+			background: #000;
+		}
 
-    ul {
-      @extend .container;
+		ul {
+			@extend .container;
 
       padding: 0;
       list-style-type: none;

@@ -121,6 +121,35 @@
       // columnWidth: 300
     });
 
+    $('#edit-field-tags-tid').parent().append('<div id="tags-cloud"></div>');
+
+    $('#edit-field-tags-tid').hide();
+
+    $('#edit-field-tags-tid option').each(function(index) {
+      // console.log('<a href="#" data-value="' + $(this).value() + '">' + $(this).text() + '</a>');
+      $('#tags-cloud').append('<a href="#" data-value="' + $(this).val() + '" class="select-tag">' + $(this).text() + '</a>');
+    });
+
+    $('.select-tag').click(function(e){
+      e.preventDefault();
+
+      var id = $(this).attr('data-value');
+
+      if($(this).hasClass('active')) {
+        console.log('Unselected: ' + id);
+        
+        $(this).removeClass('active');
+        $('#edit-field-tags-tid option[value="' + id + '"]').removeAttr('selected');
+      } else {
+        console.log('Selected: ' + id);
+
+        $(this).addClass('active');
+        $('#edit-field-tags-tid option[value="' + id + '"]').attr('selected', 'selected');
+      }
+
+      
+    });
+
     $(window).load(function() {
       $('.view-content').masonry();
     });
@@ -162,6 +191,18 @@
           dataType: 'json',
           cacheResults: true
         }
+    });
+  }
+
+  if($('body.camp-scarf')) {
+    $('.camp-scarf .scarf-cta .btn').click(function(e){
+      e.preventDefault();
+
+      var scarfLang = $(this).data('lang');
+
+      $('.scarf-cta').fadeOut('fast', function(){
+        $('.scarf-'+scarfLang).fadeIn('fast');
+      });
     });
   }
   
@@ -217,21 +258,21 @@ function shuffle(array) {
 }
 
 jQuery.fn.isOnScreen = function(x, y){
-		
-		if(x == null || typeof x == 'undefined') x = 1;
-		if(y == null || typeof y == 'undefined') y = 1;
-		
-		var win = jQuery(window);
-		
-		var viewport = {
-				top : win.scrollTop(),
-				left : win.scrollLeft()
-		};
-		viewport.right = viewport.left + win.width();
-		viewport.bottom = viewport.top + win.height();
-		
-		var height = this.outerHeight();
-		var width = this.outerWidth();
+    
+    if(x == null || typeof x == 'undefined') x = 1;
+    if(y == null || typeof y == 'undefined') y = 1;
+    
+    var win = jQuery(window);
+    
+    var viewport = {
+        top : win.scrollTop(),
+        left : win.scrollLeft()
+    };
+    viewport.right = viewport.left + win.width();
+    viewport.bottom = viewport.top + win.height();
+    
+    var height = this.outerHeight();
+    var width = this.outerWidth();
  
     if(!width || !height){
         return false;
@@ -259,7 +300,6 @@ jQuery.fn.isOnScreen = function(x, y){
 };
 
 jQuery('[data-ga-event-category][data-ga-event-action]').click(function(e){
-  
   var eventCategory = $(this).data('ga-event-category'),
       eventAction   = $(this).data('ga-event-action'),
       eventLabel    = $(this).data('ga-event-label'),
