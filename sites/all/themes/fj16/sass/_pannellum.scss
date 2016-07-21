@@ -1,4 +1,18 @@
-.panorama {
-  width: 100%;
-  height: (100% / (16/9));
+.panorama-wrapper {
+  position: relative;
+
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: 56.25%;
+  }
+
+  > #panorama {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
 }
