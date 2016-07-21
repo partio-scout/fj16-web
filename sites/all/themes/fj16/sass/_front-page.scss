@@ -260,6 +260,10 @@ body.front {
       &.frontpage-lift {
         text-align: center;
 
+        h2 {
+          display: block;
+        }
+
         p {
           color: #fff;
           margin: 1em 0;
