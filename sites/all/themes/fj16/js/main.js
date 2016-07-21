@@ -229,15 +229,16 @@
 
   pannellum.viewer('panorama',{
     "type": "multires",
-    
     "multiRes": {
-      "path": "/sites/all/themes/fj16/panoramas/avajaiset/%l/%s%y_%x",
-      "fallbackPath": "/sites/all/themes/fj16/panoramas/avajaiset/fallback/%s",
+      "path": "/sites/all/themes/fj16/img/panoramas/avajaiset/%l/%s%y_%x",
+      "fallbackPath": "/sites/all/themes/img/fj16/panoramas/avajaiset/fallback/%s",
       "extension": "jpg",
       "tileResolution": 512,
       "maxLevel": 5,
       "cubeResolution": 4368
-    }
+    },
+    "autoLoad": true,
+    "autoRotate": -2
   });
   
   // Avoid `console` errors in browsers that lack a console.
