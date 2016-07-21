@@ -97,3 +97,4 @@ drush fra -y
 All PHP source code and all custom code in this project is licensed under GNU GPL version 2 (see LICENSE.txt for the license). Other source code may be licensed separately - licenses for JavaScript libraries etc. can be found in the library files. Graphics, images and other intellectual property in this repository is copyrighted and you cannot build derivative works based on them without prior permission.
 
 You are encouraged to use contribute to this site and use it as a basis for your own projects.
+
