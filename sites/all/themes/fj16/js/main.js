@@ -185,10 +185,19 @@
         }
     });
   }
+  /sites/all/themes/fj16/
 
-  pannellum.viewer('panorama', {
-    "type": "equirectangular",
-    "panorama": "https://pannellum.org/images/alma.jpg"
+  pannellum.viewer('panorama',{
+    "type": "multires",
+    
+    "multiRes": {
+      "path": "/sites/all/themes/fj16/panoramas/avajaiset/%l/%s%y_%x",
+      "fallbackPath": "/sites/all/themes/fj16/panoramas/avajaiset/fallback/%s",
+      "extension": "jpg",
+      "tileResolution": 512,
+      "maxLevel": 5,
+      "cubeResolution": 4368
+    }  
   });
   
   // Avoid `console` errors in browsers that lack a console.
