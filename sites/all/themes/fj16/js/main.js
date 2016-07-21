@@ -46,9 +46,17 @@
             }, 300);
           }
         });
+
+        $('.frontpage-lift').each(function(){
+          if($(this).isOnScreen(1,0.5)){
+            $(this).find('h2').addClass('animated fadeInDown');
+            $(this).find('a').addClass('animated fadeInUp');
+          }
+        });
       });
     } else {
       $('.node-fj16-frontpage-box').find('h2, .body, .link').addClass('animated');
+      $('.frontpage-lift').find('h2, a').addClass('animated');
     }
   }
 
