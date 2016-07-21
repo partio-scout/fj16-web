@@ -261,6 +261,25 @@ body.front {
       background-repeat: no-repeat;
       background-position: center;
       padding: 3.8em 0;
+
+      &.frontpage-lift {
+        text-align: center;
+
+        h2 {
+          display: block !important;
+        }
+
+        p {
+          color: #fff;
+          margin: 1em 0;
+        }
+
+        audio {
+          display: inline-block;
+          margin: 1em auto;
+          width: 50%;
+        }
+      }
       
       &.blue {
         background-color: $blue;
