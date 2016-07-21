@@ -214,7 +214,6 @@
         }
     });
   }
-  /sites/all/themes/fj16/
 
   if($('body.camp-scarf')) {
     $('.camp-scarf .scarf-cta .btn').click(function(e){
