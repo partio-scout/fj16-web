@@ -186,10 +186,79 @@
     });
   }
 
-  pannellum.viewer('panorama', {
-    "type": "equirectangular",
-    "panorama": "https://pannellum.org/images/alma.jpg"
-  });
+  if($('#panorama').length > 0) {
+    pannellum.viewer('panorama', {   
+      "default": {
+        "firstScene": "panorama-l",
+        //"author": "Matthew Petroff",
+        "sceneFadeDuration": 500
+      },
+
+      "scenes": {
+        "panorama-l": {
+          "title": "Solmu",
+          "type": "multires",    
+          "multiRes": {
+            "path": "/sites/all/themes/fj16/img/panoramas/panorama-l/%l/%s%y_%x",
+            "fallbackPath": "/sites/all/themes/fj16/img/panoramas/panorama-l/fallback/%s",
+            "extension": "jpg",
+            "tileResolution": 512,
+            "maxLevel": 5,
+            "cubeResolution": 4400
+          },
+          "hotSpotDebug": true,
+          "hotSpots": [
+            {
+              "pitch": 1.102067134311712,
+              "yaw": 10.113231968489659,
+              "type": "scene",
+              "text": "Roihu-monumentti",
+              "sceneId": "panorama-g"
+            }
+          ],
+          "autoLoad": true,
+          "autoRotate": -2,
+        },
+        "panorama-g": {
+            "title": "Roihu-monumentti",
+            "type": "multires",
+            "multiRes": {
+              "path": "/sites/all/themes/fj16/img/panoramas/panorama-g/%l/%s%y_%x",
+              "fallbackPath": "/sites/all/themes/fj16/img/panoramas/panorama-g/fallback/%s",
+              "extension": "jpg",
+              "tileResolution": 512,
+              "maxLevel": 5,
+              "cubeResolution": 4296
+            },
+            "hotSpotDebug": true,
+            "hotSpots": [
+              {
+                "pitch": -1.473456190568588,
+                "yaw": -152.84611063258842,
+                "type": "scene",
+                "text": "Solmu",
+                "sceneId": "panorama-l"
+              }
+            ]
+          }
+        }
+    });
+  }
+
+  // pannellum.viewer('panorama',{
+  //   "type": "multires",
+  //   "multiRes": {
+  //     "path": "/sites/all/themes/fj16/img/panoramas/avajaiset/%l/%s%y_%x",
+  //     "fallbackPath": "/sites/all/themes/img/fj16/panoramas/avajaiset/fallback/%s",
+  //     "extension": "jpg",
+  //     "tileResolution": 512,
+  //     "maxLevel": 5,
+  //     "cubeResolution": 4368
+  //   },
+  //   "autoLoad": true,
+  //   "autoRotate": -2,
+  //   "hotSpotDebug": true
+  // });
   
   // Avoid `console` errors in browsers that lack a console.
   (function() {
@@ -243,21 +312,21 @@ function shuffle(array) {
 }
 
 jQuery.fn.isOnScreen = function(x, y){
-		
-		if(x == null || typeof x == 'undefined') x = 1;
-		if(y == null || typeof y == 'undefined') y = 1;
-		
-		var win = jQuery(window);
-		
-		var viewport = {
-				top : win.scrollTop(),
-				left : win.scrollLeft()
-		};
-		viewport.right = viewport.left + win.width();
-		viewport.bottom = viewport.top + win.height();
-		
-		var height = this.outerHeight();
-		var width = this.outerWidth();
+    
+    if(x == null || typeof x == 'undefined') x = 1;
+    if(y == null || typeof y == 'undefined') y = 1;
+    
+    var win = jQuery(window);
+    
+    var viewport = {
+        top : win.scrollTop(),
+        left : win.scrollLeft()
+    };
+    viewport.right = viewport.left + win.width();
+    viewport.bottom = viewport.top + win.height();
+    
+    var height = this.outerHeight();
+    var width = this.outerWidth();
  
     if(!width || !height){
         return false;
