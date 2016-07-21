@@ -185,7 +185,6 @@
         }
     });
   }
-  /sites/all/themes/fj16/
 
   pannellum.viewer('panorama',{
     "type": "multires",
