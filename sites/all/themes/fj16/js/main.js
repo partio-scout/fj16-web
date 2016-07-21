@@ -59,6 +59,19 @@
       $('.frontpage-lift').find('h2, a').addClass('animated');
     }
   }
+  
+  if($(window).width() > 1024) {
+    $(window).scroll(function() {
+      $('.frontpage-lift').each(function(){
+        if($(this).isOnScreen(1,0.5)){
+          $(this).find('h2').addClass('animated fadeInDown');
+          $(this).find('a').addClass('animated fadeInUp');
+        }
+      });
+    });
+  } else {
+    $('.frontpage-lift').find('h2, a').addClass('animated');
+  }
 
   //$('#mobile-menu-toggle').click(function(){
     //$('#mobile-menu').toggleClass('visible');
