@@ -5,3 +5,7 @@ function fj16_news_update_7001() {
   fj16_import_translation('fj16_news', 'fi');
   fj16_import_translation('fj16_news', 'sv');
 }
+
+function fj16_news_update_7002() {
+  module_enable(array('lightbox2'));
+}
