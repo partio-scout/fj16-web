@@ -28,10 +28,10 @@ function fj16_countdown_default_fe_block_settings() {
     'roles' => array(),
     'themes' => array(
       'fj16' => array(
-        'region' => 'content',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'fj16',
-        'weight' => -13,
+        'weight' => 0,
       ),
     ),
     'title' => '',
