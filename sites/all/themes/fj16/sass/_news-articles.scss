@@ -1,4 +1,5 @@
-.node-type-fj16-news-article {
+.node-type-fj16-news-article,
+.page-news {
   h1#page-title {
     display: none;
   }
@@ -15,6 +16,14 @@
       font-family: $exo;
       font-size: 2.2em;
       margin-top: .4em;
+      
+      @include respond(1023px) {
+        font-size: 1.8em;
+      }
+      
+      a {
+        color: inherit;
+      }
     }
     
     .field-name-field-news-image img {
@@ -75,5 +84,110 @@
       }
     }
   }
+  
+  #content .view-fj16-news {
+    h2 {
+      margin-top: .2em;
+      margin-bottom: .8em;
 
+      @include respond(1023px) {
+        font-size: 1.8em;
+        margin-bottom: .2em;
+      }
+    }
+    
+    .views-row {
+      padding-bottom: 1.5em;
+      
+      + .views-row {
+        border-top: 1px solid $grey;
+        padding-top: 1.5em;
+      }
+    }
+    
+    .field-name-field-news-image {
+      float: left;
+      width: 22%;
+      
+      @include respond(1023px) {
+        float: none;
+        width: auto;
+      }
+    }
+    .content {
+      float: left;
+      width: 75%;
+      margin-left: 3%;
+      
+      @include respond(1023px) {
+        float: none;
+        width: auto;
+      }
+    }
+  
+    .field-name-field-ingres {
+      color: inherit;
+      font-family: $aleo;
+      text-transform: none;
+      
+      @include respond(1023px) {
+        display: none;
+      }
+    }
+    
+    .author span {
+      font-size: .9em;
+      display: inline;
+      
+      + span {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .field-name-field-images {
+    overflow: auto;
+
+    img {
+      float: left;
+      margin: 0 15px 15px 0;
+    }
+  }
+}
+
+#lightbox {
+  #outerImageContainer, #imageDataContainer {
+    position: relative;
+    overflow: visible;
+  }
+
+  // Lightbox2 sucks, so we need to force the styles with !important
+  #bottomNavClose {
+    background: no-repeat inline-image("icons/close.png") !important;
+    width: 24px;
+    height: 24px;
+    top: -36px;
+    right: 0;
+  }
+
+  #numberDisplay {
+    display: none !important;
+  }
+
+  #prevLink, #nextLink {
+    position: absolute;
+    width: 50%;
+  }
+
+  #prevLink {
+    background: 90% 50% no-repeat inline-image("icons/prev.png") !important;
+  }
+
+  #nextLink {
+    background: 10% 50% no-repeat inline-image("icons/next.png") !important;
+  }
+
+  #bottomNavZoom, #bottomNavZoomOut {
+    display: none !important;
+  }
 }

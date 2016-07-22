@@ -227,11 +227,16 @@ body.front {
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
 
-      background: url('../img/front_header/front_header_slide_1_large.jpg') center;
+      background: url("#{$s3}/img/front_header_large.jpg") center;
       background-size: cover;
-
-
-      // TODO: slide change animations
+      
+      @include respond(small) {
+        background-image: url("#{$s3}/img/front_header_small.jpg");
+      }
+      
+      @include respond(mobile) {
+        background-image: url("#{$s3}/img/front_header_mobile.jpg");
+      }
     }
   }
 
@@ -249,12 +254,32 @@ body.front {
 
     padding: 0;
     
-    div#clock-wrapper {
+    div#clock-wrapper,
+    div.frontpage-lift {
       @include at2x('front_section_bg', auto, 100%);
       background-color: $purple;
       background-repeat: no-repeat;
       background-position: center;
       padding: 3.8em 0;
+
+      &.frontpage-lift {
+        text-align: center;
+
+        h2 {
+          display: block !important;
+        }
+
+        p {
+          color: #fff;
+          margin: 1em 0;
+        }
+
+        audio {
+          display: inline-block;
+          margin: 1em auto;
+          width: 50%;
+        }
+      }
       
       &.blue {
         background-color: $blue;

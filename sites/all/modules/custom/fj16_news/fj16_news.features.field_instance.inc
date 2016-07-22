@@ -91,6 +91,67 @@ function fj16_news_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-fj16_news_article-field_images'.
+  $field_instances['node-fj16_news_article-field_images'] = array(
+    'bundle' => 'fj16_news_article',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'lightbox2',
+        'settings' => array(
+          'caption' => 'hidden',
+          'image_style' => 'square_thumbnail',
+          'lightbox_style' => 'fj16_news_lightbox',
+          'type' => 'lightbox',
+        ),
+        'type' => 'lightbox2',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_images',
+    'label' => 'images',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'entity_translation_sync' => FALSE,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '2500x2500',
+      'min_resolution' => '800x800',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'default' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'media_generic',
+      'weight' => 9,
+    ),
+  );
+
   // Exported field_instance: 'node-fj16_news_article-field_ingres'.
   $field_instances['node-fj16_news_article-field_ingres'] = array(
     'bundle' => 'fj16_news_article',
@@ -246,6 +307,7 @@ function fj16_news_field_default_field_instances() {
   t('Image');
   t('Image description');
   t('Introduction');
+  t('images');
 
   return $field_instances;
 }
