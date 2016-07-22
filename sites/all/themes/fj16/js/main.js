@@ -214,6 +214,32 @@
         }
     });
   }
+
+  if($('body.camp-scarf')) {
+    $('.camp-scarf .scarf-cta .btn').click(function(e){
+      e.preventDefault();
+
+      var scarfLang = $(this).data('lang');
+
+      $('.scarf-cta').fadeOut('fast', function(){
+        $('.scarf-'+scarfLang).fadeIn('fast');
+      });
+    });
+  }
+
+  pannellum.viewer('panorama',{
+    "type": "multires",
+    "multiRes": {
+      "path": "/sites/all/themes/fj16/img/panoramas/avajaiset/%l/%s%y_%x",
+      "fallbackPath": "/sites/all/themes/img/fj16/panoramas/avajaiset/fallback/%s",
+      "extension": "jpg",
+      "tileResolution": 512,
+      "maxLevel": 5,
+      "cubeResolution": 4368
+    },
+    "autoLoad": true,
+    "autoRotate": -2
+  });
   
   // Avoid `console` errors in browsers that lack a console.
   (function() {
