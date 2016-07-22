@@ -83,7 +83,7 @@ function fj16_news_image_default_styles() {
 function fj16_news_node_info() {
   $items = array(
     'fj16_news_article' => array(
-      'name' => t('FJ16 News article'),
+      'name' => t('News article'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
