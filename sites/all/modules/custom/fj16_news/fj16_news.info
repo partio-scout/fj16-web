@@ -5,6 +5,7 @@ dependencies[] = features
 dependencies[] = fj16_basic_content_type
 dependencies[] = i18n_taxonomy
 dependencies[] = image
+dependencies[] = lightbox2
 dependencies[] = media
 dependencies[] = node
 dependencies[] = options
