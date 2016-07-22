@@ -14,7 +14,7 @@ function fj16_news_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_fj16_news_article';
-  $strongarm->value = 'edit-display';
+  $strongarm->value = 'edit-submission';
   $export['additional_settings__active_tab_fj16_news_article'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -134,7 +134,7 @@ function fj16_news_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'lightbox2_download_link_text';
-  $strongarm->value = 'Download Original';
+  $strongarm->value = '';
   $export['lightbox2_download_link_text'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -204,7 +204,7 @@ function fj16_news_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'lightbox2_image_count_str';
-  $strongarm->value = 'Image !current of !total';
+  $strongarm->value = '';
   $export['lightbox2_image_count_str'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -281,7 +281,7 @@ function fj16_news_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'lightbox2_node_link_text';
-  $strongarm->value = 'View Image Details';
+  $strongarm->value = '';
   $export['lightbox2_node_link_text'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -302,7 +302,7 @@ function fj16_news_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'lightbox2_page_count_str';
-  $strongarm->value = 'Page !current of !total';
+  $strongarm->value = '';
   $export['lightbox2_page_count_str'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -365,7 +365,7 @@ function fj16_news_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'lightbox2_video_count_str';
-  $strongarm->value = 'Video !current of !total';
+  $strongarm->value = '';
   $export['lightbox2_video_count_str'] = $strongarm;
 
   $strongarm = new stdClass();
