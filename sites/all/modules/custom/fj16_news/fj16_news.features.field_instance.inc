@@ -103,7 +103,7 @@ function fj16_news_field_default_field_instances() {
         'settings' => array(
           'caption' => 'hidden',
           'image_style' => 'square_thumbnail',
-          'lightbox_style' => 'large',
+          'lightbox_style' => 'fj16_news_lightbox',
           'type' => 'lightbox',
         ),
         'type' => 'lightbox2',

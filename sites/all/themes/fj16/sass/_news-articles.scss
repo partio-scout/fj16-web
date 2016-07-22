@@ -186,4 +186,8 @@
   #nextLink {
     background: 10% 50% no-repeat inline-image("icons/next.png") !important;
   }
+
+  #bottomNavZoom, #bottomNavZoomOut {
+    display: none !important;
+  }
 }

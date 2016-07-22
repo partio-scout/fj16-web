@@ -28,6 +28,7 @@ features[field_instance][] = node-fj16_news_article-field_ingres
 features[field_instance][] = node-fj16_news_article-field_news_image
 features[field_instance][] = node-fj16_news_article-field_news_image_description
 features[image][] = fj16_news_full
+features[image][] = fj16_news_lightbox
 features[image][] = fj16_news_teaser
 features[node][] = fj16_news_article
 features[taxonomy][] = news_category

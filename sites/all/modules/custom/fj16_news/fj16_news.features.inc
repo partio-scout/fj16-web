@@ -42,6 +42,22 @@ function fj16_news_image_default_styles() {
     ),
   );
 
+  // Exported image style: fj16_news_lightbox.
+  $styles['fj16_news_lightbox'] = array(
+    'label' => 'FJ16 News lightbox',
+    'effects' => array(
+      1 => array(
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => 1000,
+          'height' => 800,
+          'upscale' => 0,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: fj16_news_teaser.
   $styles['fj16_news_teaser'] = array(
     'label' => 'FJ16 News teaser',
