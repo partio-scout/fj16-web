@@ -241,7 +241,9 @@
     "autoRotate": -2
   });
 
-   if($('.roihuradio').length > 0) {
+  console.log('beforeRadio');
+  if($('.roihuradio').length > 0) {
+    console.log('radioExists');
     var time = new Date().getHours();
     if (time >= 9 && time < 12) {
       $('.roihuradio .now-playing span').text('Aamukahvit');
@@ -258,16 +260,20 @@
     
     $('.roihuradio button').click(function(e) {
       e.preventDefault();
+      console.log('click');
       var radioAudio = document.getElementById('radioAudio');
       
       if (radioAudio.paused) {
         radioAudio.play();
+        console.log('play');
       } else {
         radioAudio.pause();
+        console.log('pause');
       }
       $('.roihuradio button').toggleClass('playing');
     });
-   }
+  }
+  console.log('afterRadio');
     
   // Avoid `console` errors in browsers that lack a console.
   (function() {
