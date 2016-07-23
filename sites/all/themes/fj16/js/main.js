@@ -242,15 +242,22 @@
   });
 
    if($('roihuradio').length > 0) {
-     $('.roihuradio button').click(function(e) {
-       e.preventDefault();
+      console.log('exists');
+    $('.roihuradio button').click(function(e) {
+      console.log('click');
+      e.preventDefault();
       var radioAudio = document.getElementById('radioAudio');
+
+      console.log(radioAudio);
       
       if (radioAudio.paused) {
-        radioAudio.trigger('play');
+        console.log('play');
+        radioAudio.play();
       } else {
-        radioAudio.trigger('pause');
+        console.log('pause');
+        radioAudio.pause();
       }
+      console.log('toggle');
       $('.roihuradio button').toggleClass('playing');
     });
    }
