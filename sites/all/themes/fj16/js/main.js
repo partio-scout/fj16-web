@@ -241,7 +241,7 @@
     "autoRotate": -2
   });
 
-  if($('.roihuradio')) {
+  if($('.roihuradio').length > 0) {
     $('.roihuradio button').click(function(e) {
       e.preventDefault();
 

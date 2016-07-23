@@ -2,7 +2,7 @@
   background: $red;
   color: #fff;
   font-family: $exo;
-  padding: 2em 0;
+  padding: 3em 0;
   text-align: center;
   text-transform: uppercase;
 
@@ -16,12 +16,12 @@
 
     button {
       background: url(../img/radio_play.png) 50% 50%/100% 100% no-repeat;
+      border: 0;
       cursor: pointer;
-      float: left;
       display: inline-block;
-      line-height: 100;
-      overflow: hidden;
+      outline: none;
       margin-right: 10px;
+      padding: 0;
       width: 100px;
       height: 100px;
 
@@ -30,13 +30,14 @@
       }
     }
     .now-playing {
-      float: left;
-      font-size: 1.1em;
+      display: inline-block;
+      font-size: 1.2em;
       text-align: left;
+      vertical-align: middle;
 
       span {
         display: block;
-        font-size: .8em;
+        font-size: .7em;
       }
     }
   }
