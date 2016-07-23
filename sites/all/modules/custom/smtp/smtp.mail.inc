@@ -756,8 +756,9 @@ class SmtpMailSystem implements MailSystemInterface {
 
     // If the input is a valid email address in its entirety, then there is
     // nothing to do, just return that.
+    $input = trim($input);
     if (valid_email_address($input)) {
-      $components['email'] = trim($input);
+      $components['email'] = $input;
       return $components;
     }
 

@@ -240,6 +240,20 @@
     "autoLoad": true,
     "autoRotate": -2
   });
+
+  if($('.radioroihu').length > 0) {
+    $('.radioroihu button').click(function(e) {
+      e.preventDefault();
+
+      var radioAudio = $('.radioroihu audio');
+      if (radioAudio.paused) {
+        radioAudio.play();
+      } else {
+        radioAudio.pause();
+      }
+      $('.radioroihu button').toggleClass('playing');
+    });
+  }
   
   // Avoid `console` errors in browsers that lack a console.
   (function() {
