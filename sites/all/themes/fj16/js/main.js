@@ -227,19 +227,21 @@
     });
   }
 
-  pannellum.viewer('panorama',{
-    "type": "multires",
-    "multiRes": {
-      "path": "/sites/all/themes/fj16/img/panoramas/avajaiset/%l/%s%y_%x",
-      "fallbackPath": "/sites/all/themes/img/fj16/panoramas/avajaiset/fallback/%s",
-      "extension": "jpg",
-      "tileResolution": 512,
-      "maxLevel": 5,
-      "cubeResolution": 4368
-    },
-    "autoLoad": true,
-    "autoRotate": -2
-  });
+  if($('#panorama').length > 0) {
+    pannellum.viewer('panorama',{
+      "type": "multires",
+      "multiRes": {
+        "path": "/sites/all/themes/fj16/img/panoramas/avajaiset/%l/%s%y_%x",
+        "fallbackPath": "/sites/all/themes/img/fj16/panoramas/avajaiset/fallback/%s",
+        "extension": "jpg",
+        "tileResolution": 512,
+        "maxLevel": 5,
+        "cubeResolution": 4368
+      },
+      "autoLoad": true,
+      "autoRotate": -2
+    });
+  }
 
   console.log('beforeRadio');
   if($('.roihuradio').length > 0) {
