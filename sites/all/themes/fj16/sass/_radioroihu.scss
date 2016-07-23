@@ -1,0 +1,37 @@
+.radioroihu {
+  background: $red;
+  color: #fff;
+  font-family: $exo;
+  padding: 2em 0;
+  text-align: center;
+  text-transform: uppercase;
+
+  .player {
+    margin: 0 auto;
+    max-width: 600px;
+
+    button {
+      background: url(../img/radio_play.png) 50% 50%/100% 100% no-repeat;
+      cursor: pointer;
+      float: left;
+      display: inline-block;
+      line-height: 100;
+      overflow: hidden;
+      margin-right: 10px;
+      width: 100px;
+      height: 100px;
+
+      &.playing {
+        background-image: url(../img/radio_pause.png);
+      }
+    }
+    .now-playing {
+      float: left;
+
+      span {
+        display: block;
+        font-size: .8em;
+      }
+    }
+  }
+}
