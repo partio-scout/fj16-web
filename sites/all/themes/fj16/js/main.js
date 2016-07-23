@@ -212,7 +212,48 @@
         }
     });
   }
+
+  if($('body.camp-scarf')) {
+    $('.camp-scarf .scarf-cta .btn').click(function(e){
+      e.preventDefault();
+
+      var scarfLang = $(this).data('lang');
+
+      $('.scarf-cta').fadeOut('fast', function(){
+        $('.scarf-'+scarfLang).fadeIn('fast');
+      });
+    });
+  }
   
+  if($('.roihuradio').length > 0) {
+
+    var time = new Date().getHours();
+    if (time >= 9 && time < 12) {
+      $('.roihuradio .now-playing span').text('Aamukahvit');
+    }
+    else if (time >= 12 && time < 15) {
+      $('.roihuradio .now-playing span').text('Päiväntasaaja');
+    }
+    else if (time >= 15 && time < 17) {
+      $('.roihuradio .now-playing span').text('Ihan pihalla');
+    }
+    else {
+      $('.roihuradio .now-playing span').text('Musiikkia');
+    }
+    
+    $('.roihuradio button').click(function(e) {
+      e.preventDefault();
+      var radioAudio = document.getElementById('radioAudio');
+      
+      if (radioAudio.paused) {
+        radioAudio.play();
+      } else {
+        radioAudio.pause();
+      }
+      $('.roihuradio button').toggleClass('playing');
+    });
+  }
+    
   // Avoid `console` errors in browsers that lack a console.
   (function() {
     var method;
