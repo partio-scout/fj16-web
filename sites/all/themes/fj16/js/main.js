@@ -227,22 +227,6 @@
     });
   }
 
-  if($('#panorama').length > 0) {
-    pannellum.viewer('panorama',{
-      "type": "multires",
-      "multiRes": {
-        "path": "/sites/all/themes/fj16/img/panoramas/avajaiset/%l/%s%y_%x",
-        "fallbackPath": "/sites/all/themes/img/fj16/panoramas/avajaiset/fallback/%s",
-        "extension": "jpg",
-        "tileResolution": 512,
-        "maxLevel": 5,
-        "cubeResolution": 4368
-      },
-      "autoLoad": true,
-      "autoRotate": -2
-    });
-  }
-
   if($('.roihuradio').length > 0) {
     var time = new Date().getHours();
     if (time >= 9 && time < 12) {
@@ -270,7 +254,80 @@
       $('.roihuradio button').toggleClass('playing');
     });
   }
-    
+
+  if($('#panorama').length > 0) {
+    pannellum.viewer('panorama', {   
+      "default": {
+          "firstScene": "panorama-l",
+          //"author": "Matthew Petroff",
+          "sceneFadeDuration": 500
+      },
+
+      "scenes": {
+          "panorama-l": {
+              "title": "Panorama L",
+              "type": "multires",    
+              "multiRes": {
+                  "path": "/sites/all/themes/fj16/img/panoramas/panorama-l/%l/%s%y_%x",
+                  "fallbackPath": "/sites/all/themes/fj16/img/panoramas/panorama-l/fallback/%s",
+                  "extension": "jpg",
+                  "tileResolution": 512,
+                  "maxLevel": 5,
+                  "cubeResolution": 4400
+              },
+              "hotSpotDebug": true,
+              "hotSpots": [
+                  {
+                      "pitch": -2.1,
+                      "yaw": 132.9,
+                      "type": "scene",
+                      "text": "Panorama G",
+                      "sceneId": "panorama-g"
+                  }
+              ]
+          },
+
+          "panorama-g": {
+              "title": "Panorama G",
+              "type": "multires",
+              "multiRes": {
+                "path": "/sites/all/themes/fj16/img/panoramas/panorama-g/%l/%s%y_%x",
+                "fallbackPath": "/sites/all/themes/fj16/img/panoramas/panorama-g/fallback/%s",
+                "extension": "jpg",
+                "tileResolution": 512,
+                "maxLevel": 5,
+                "cubeResolution": 4296
+              },
+              "hotSpotDebug": true,
+              "hotSpots": [
+                  {
+                      "pitch": -0.6,
+                      "yaw": 37.1,
+                      "type": "scene",
+                      "text": "Panorama L",
+                      "sceneId": "panorama-l"
+                  }
+              ]
+          }
+      }
+    });
+  }
+
+  // pannellum.viewer('panorama',{
+  //   "type": "multires",
+  //   "multiRes": {
+  //     "path": "/sites/all/themes/fj16/img/panoramas/avajaiset/%l/%s%y_%x",
+  //     "fallbackPath": "/sites/all/themes/img/fj16/panoramas/avajaiset/fallback/%s",
+  //     "extension": "jpg",
+  //     "tileResolution": 512,
+  //     "maxLevel": 5,
+  //     "cubeResolution": 4368
+  //   },
+  //   "autoLoad": true,
+  //   "autoRotate": -2,
+  //   "hotSpotDebug": true
+  // });
+  
   // Avoid `console` errors in browsers that lack a console.
   (function() {
     var method;
