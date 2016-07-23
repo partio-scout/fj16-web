@@ -1,10 +1,14 @@
-.radioroihu {
+.roihuradio {
   background: $red;
   color: #fff;
   font-family: $exo;
   padding: 2em 0;
   text-align: center;
   text-transform: uppercase;
+
+  p {
+    font-size: 1.4em;
+  }
 
   .player {
     margin: 0 auto;
@@ -27,6 +31,8 @@
     }
     .now-playing {
       float: left;
+      font-size: 1.1em;
+      text-align: left;
 
       span {
         display: block;
