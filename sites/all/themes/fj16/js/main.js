@@ -186,22 +186,19 @@
     });
   }
 
-  setTimeout(function(){
-    if($('roihuradio').length > 0) {
-      $('.roihuradio button').click(function(e) {
-        e.preventDefault();
-
-        var radioAudio = document.getElementById('radioAudio');
-        
-        if (radioAudio.paused) {
-          radioAudio.play();
-        } else {
-          radioAudio.pause();
-        }
-        $('.roihuradio button').toggleClass('playing');
-      });
-    }
-  }, 500);
+   if($('roihuradio').length > 0) {
+     $('.roihuradio button').click(function(e) {
+       e.preventDefault();
+      var radioAudio = document.getElementById('radioAudio');
+      
+      if (radioAudio.paused) {
+        radioAudio.trigger('play');
+      } else {
+        radioAudio.trigger('pause');
+      }
+      $('.roihuradio button').toggleClass('playing');
+    });
+   }
     
   // Avoid `console` errors in browsers that lack a console.
   (function() {
