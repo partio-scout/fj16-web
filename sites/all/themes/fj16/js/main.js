@@ -241,23 +241,30 @@
     "autoRotate": -2
   });
 
-   if($('roihuradio').length > 0) {
-      console.log('exists');
+   if($('.roihuradio').length > 0) {
+    var time = new Date().getHours();
+    if (time >= 9 && time < 12) {
+      $('.roihuradio .now-playing span').text('Aamukahvit');
+    }
+    else if (time >= 12 && time < 15) {
+      $('.roihuradio .now-playing span').text('Päiväntasaaja');
+    }
+    else if (time >= 15 && time < 17) {
+      $('.roihuradio .now-playing span').text('Ihan pihalla');
+    }
+    else {
+      $('.roihuradio .now-playing span').text('Musiikkia');
+    }
+    
     $('.roihuradio button').click(function(e) {
-      console.log('click');
       e.preventDefault();
       var radioAudio = document.getElementById('radioAudio');
-
-      console.log(radioAudio);
       
       if (radioAudio.paused) {
-        console.log('play');
         radioAudio.play();
       } else {
-        console.log('pause');
         radioAudio.pause();
       }
-      console.log('toggle');
       $('.roihuradio button').toggleClass('playing');
     });
    }
