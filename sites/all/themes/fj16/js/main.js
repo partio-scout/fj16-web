@@ -258,58 +258,59 @@
   if($('#panorama').length > 0) {
     pannellum.viewer('panorama', {   
       "default": {
-          "firstScene": "panorama-l",
-          //"author": "Matthew Petroff",
-          "sceneFadeDuration": 500
+        "firstScene": "panorama-l",
+        //"author": "Matthew Petroff",
+        "sceneFadeDuration": 500
       },
 
       "scenes": {
-          "panorama-l": {
-              "title": "Panorama L",
-              "type": "multires",    
-              "multiRes": {
-                  "path": "/sites/all/themes/fj16/img/panoramas/panorama-l/%l/%s%y_%x",
-                  "fallbackPath": "/sites/all/themes/fj16/img/panoramas/panorama-l/fallback/%s",
-                  "extension": "jpg",
-                  "tileResolution": 512,
-                  "maxLevel": 5,
-                  "cubeResolution": 4400
-              },
-              "hotSpotDebug": true,
-              "hotSpots": [
-                  {
-                      "pitch": -2.1,
-                      "yaw": 132.9,
-                      "type": "scene",
-                      "text": "Panorama G",
-                      "sceneId": "panorama-g"
-                  }
-              ]
+        "panorama-l": {
+          "title": "Solmu",
+          "type": "multires",    
+          "multiRes": {
+            "path": "/sites/all/themes/fj16/img/panoramas/panorama-l/%l/%s%y_%x",
+            "fallbackPath": "/sites/all/themes/fj16/img/panoramas/panorama-l/fallback/%s",
+            "extension": "jpg",
+            "tileResolution": 512,
+            "maxLevel": 5,
+            "cubeResolution": 4400
           },
-
-          "panorama-g": {
-              "title": "Panorama G",
-              "type": "multires",
-              "multiRes": {
-                "path": "/sites/all/themes/fj16/img/panoramas/panorama-g/%l/%s%y_%x",
-                "fallbackPath": "/sites/all/themes/fj16/img/panoramas/panorama-g/fallback/%s",
-                "extension": "jpg",
-                "tileResolution": 512,
-                "maxLevel": 5,
-                "cubeResolution": 4296
-              },
-              "hotSpotDebug": true,
-              "hotSpots": [
-                  {
-                      "pitch": -0.6,
-                      "yaw": 37.1,
-                      "type": "scene",
-                      "text": "Panorama L",
-                      "sceneId": "panorama-l"
-                  }
-              ]
+          "hotSpotDebug": true,
+          "hotSpots": [
+            {
+              "pitch": 1.102067134311712,
+              "yaw": 10.113231968489659,
+              "type": "scene",
+              "text": "Roihu-monumentti",
+              "sceneId": "panorama-g"
+            }
+          ],
+          "autoLoad": true,
+          "autoRotate": -2,
+        },
+        "panorama-g": {
+            "title": "Roihu-monumentti",
+            "type": "multires",
+            "multiRes": {
+              "path": "/sites/all/themes/fj16/img/panoramas/panorama-g/%l/%s%y_%x",
+              "fallbackPath": "/sites/all/themes/fj16/img/panoramas/panorama-g/fallback/%s",
+              "extension": "jpg",
+              "tileResolution": 512,
+              "maxLevel": 5,
+              "cubeResolution": 4296
+            },
+            "hotSpotDebug": true,
+            "hotSpots": [
+              {
+                "pitch": -1.473456190568588,
+                "yaw": -152.84611063258842,
+                "type": "scene",
+                "text": "Solmu",
+                "sceneId": "panorama-l"
+              }
+            ]
           }
-      }
+        }
     });
   }
 
