@@ -49,4 +49,5 @@ features[variable][] = node_preview_fj16_lost_and_found
 features[variable][] = node_submitted_fj16_lost_and_found
 features[variable][] = save_continue_fj16_lost_and_found
 features[views_view][] = fj16_lost_and_found_internal
+features[views_view][] = fj16_lost_and_found_public
 project path = sites/all/modules/custom

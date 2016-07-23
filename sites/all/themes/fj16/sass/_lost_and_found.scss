@@ -1,0 +1,54 @@
+.view-fj16-lost-and-found-public {
+  .lostandfound-filter {
+    border: 0;
+    box-shadow: none !important;
+    background: transparent;
+    height: auto;
+    
+    input {
+      background: url(../img/search-icon.png) .75em 47%/30px 30px no-repeat !important;
+      border: 1px solid darken($grey, 50) !important;
+      color: #000;
+      height: auto !important;
+      font-family: $exo;
+      font-size: 1.25em;
+      margin: 0 0 1em !important;
+      padding: .75em 1em .75em 3em !important;
+      width: 100% !important;
+    }
+  }
+
+  table {
+    width: 1000px;
+    border: 0;
+    display: block;
+    overflow: auto;
+    width: 100%;
+
+    thead, tbody, tr {
+      width: 100%;
+    }
+    
+    th, td {
+      border: 1px solid $grey;
+      padding: .5em .75em;
+      vertical-align: top;
+    }
+    
+    thead th {
+      background: $blue;
+      color: #fff;
+      font-family: $exo2;
+      font-size: 1.25em;
+      text-transform: uppercase;
+
+      a {
+        color: #fff;
+      }
+
+      img {
+        margin-left: 10px;
+      }
+    }
+  }
+}
