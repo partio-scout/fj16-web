@@ -186,17 +186,17 @@
     });
   }
 
-  if($('.radioroihu').length > 0) {
-    $('.radioroihu button').click(function(e) {
+  if($('.roihuradio')) {
+    $('.roihuradio button').click(function(e) {
       e.preventDefault();
 
-      var radioAudio = $('.radioroihu audio');
+      var radioAudio = document.getElementById('radioAudio');
       if (radioAudio.paused) {
         radioAudio.play();
       } else {
         radioAudio.pause();
       }
-      $('.radioroihu button').toggleClass('playing');
+      $('.roihuradio button').toggleClass('playing');
     });
   }
   
