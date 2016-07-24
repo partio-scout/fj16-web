@@ -190,7 +190,6 @@
     pannellum.viewer('panorama', {   
       "default": {
         "firstScene": "panorama-m",
-        //"author": "Matthew Petroff",
         "sceneFadeDuration": 500
       },
 
@@ -199,8 +198,8 @@
           "title": "Solmu",
           "type": "multires",    
           "multiRes": {
-            "path": "//d21028m0bsfnhj.cloudfront.net/img/panoramas/panorama-l/%l/%s%y_%x",
-            "fallbackPath": "//d21028m0bsfnhj.cloudfront.net/img/panoramas/panorama-l/fallback/%s",
+            "path": "https://d21028m0bsfnhj.cloudfront.net/img/panoramas/panorama-l/%l/%s%y_%x",
+            "fallbackPath": "https://d21028m0bsfnhj.cloudfront.net/img/panoramas/panorama-l/fallback/%s",
             "extension": "jpg",
             "tileResolution": 512,
             "maxLevel": 5,
@@ -217,14 +216,14 @@
             }
           ],
           "autoLoad": true,
-          "autoRotate": -2,
+          "autoRotate": -2
         },
         "panorama-g": {
           "title": "Roihu-monumentti",
           "type": "multires",
           "multiRes": {
-            "path": "//d21028m0bsfnhj.cloudfront.net/img/panoramas/panorama-g/%l/%s%y_%x",
-            "fallbackPath": "//d21028m0bsfnhj.cloudfront.net/img/panoramas/panorama-g/fallback/%s",
+            "path": "https://d21028m0bsfnhj.cloudfront.net/img/panoramas/panorama-g/%l/%s%y_%x",
+            "fallbackPath": "https://d21028m0bsfnhj.cloudfront.net/img/panoramas/panorama-g/fallback/%s",
             "extension": "jpg",
             "tileResolution": 512,
             "maxLevel": 5,
@@ -239,33 +238,39 @@
               "text": "Solmu",
               "sceneId": "panorama-l"
             }
-          ]
+          ],
+          "autoLoad": true,
+          "autoRotate": -2
         },
         "panorama-k": {
           "title": "Panorama K",
           "type": "multires",
           "multiRes": {
-            "path": "//d21028m0bsfnhj.cloudfront.net/img/panoramas/panorama-k/%l/%s%y_%x",
-            "fallbackPath": "//d21028m0bsfnhj.cloudfront.net/img/panoramas/panorama-k/fallback/%s",
+            "path": "https://d21028m0bsfnhj.cloudfront.net/img/panoramas/panorama-k/%l/%s%y_%x",
+            "fallbackPath": "https://d21028m0bsfnhj.cloudfront.net/img/panoramas/panorama-k/fallback/%s",
             "extension": "jpg",
             "tileResolution": 512,
             "maxLevel": 5,
             "cubeResolution": 4304
           },
-          "hotSpotDebug": true
+          "hotSpotDebug": true,
+          "autoLoad": true,
+          "autoRotate": -2
         },
         "panorama-m": {
           "title": "Panorama M",
           "type": "multires",
           "multiRes": {
-            "path": "//d21028m0bsfnhj.cloudfront.net/img/panoramas/panorama-m/%l/%s%y_%x",
-            "fallbackPath": "//d21028m0bsfnhj.cloudfront.net/img/panoramas/panorama-m/fallback/%s",
+            "path": "https://d21028m0bsfnhj.cloudfront.net/img/panoramas/panorama-m/%l/%s%y_%x",
+            "fallbackPath": "https://d21028m0bsfnhj.cloudfront.net/img/panoramas/panorama-m/fallback/%s",
             "extension": "jpg",
             "tileResolution": 512,
             "maxLevel": 5,
             "cubeResolution": 4344
           },
-          "hotSpotDebug": true
+          "hotSpotDebug": true,
+          "autoLoad": true,
+          "autoRotate": -2
         }
       }
     });
