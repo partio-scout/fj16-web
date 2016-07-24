@@ -268,8 +268,8 @@
           "title": "Solmu",
           "type": "multires",    
           "multiRes": {
-            "path": "/sites/all/themes/fj16/img/panoramas/panorama-l/%l/%s%y_%x",
-            "fallbackPath": "/sites/all/themes/fj16/img/panoramas/panorama-l/fallback/%s",
+            "path": "https://d21028m0bsfnhj.cloudfront.net/img/panoramas/panorama-l/%l/%s%y_%x",
+            "fallbackPath": "https://d21028m0bsfnhj.cloudfront.net/img/panoramas/panorama-l/fallback/%s",
             "extension": "jpg",
             "tileResolution": 512,
             "maxLevel": 5,
@@ -292,8 +292,8 @@
             "title": "Roihu-monumentti",
             "type": "multires",
             "multiRes": {
-              "path": "/sites/all/themes/fj16/img/panoramas/panorama-g/%l/%s%y_%x",
-              "fallbackPath": "/sites/all/themes/fj16/img/panoramas/panorama-g/fallback/%s",
+              "path": "https://d21028m0bsfnhj.cloudfront.net/img/panoramas/panorama-g/%l/%s%y_%x",
+              "fallbackPath": "https://d21028m0bsfnhj.cloudfront.net/img/panoramas/panorama-g/fallback/%s",
               "extension": "jpg",
               "tileResolution": 512,
               "maxLevel": 5,
@@ -313,21 +313,6 @@
         }
     });
   }
-
-  // pannellum.viewer('panorama',{
-  //   "type": "multires",
-  //   "multiRes": {
-  //     "path": "/sites/all/themes/fj16/img/panoramas/avajaiset/%l/%s%y_%x",
-  //     "fallbackPath": "/sites/all/themes/img/fj16/panoramas/avajaiset/fallback/%s",
-  //     "extension": "jpg",
-  //     "tileResolution": 512,
-  //     "maxLevel": 5,
-  //     "cubeResolution": 4368
-  //   },
-  //   "autoLoad": true,
-  //   "autoRotate": -2,
-  //   "hotSpotDebug": true
-  // });
   
   // Avoid `console` errors in browsers that lack a console.
   (function() {
