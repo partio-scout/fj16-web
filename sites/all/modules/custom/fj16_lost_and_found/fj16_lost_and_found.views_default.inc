@@ -296,6 +296,108 @@ Löytötavaroita ei jatkosäilytetä enää leirin päätyttyä. Leirin jälkeen
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'loytotavarat';
+
+  /* Display: Sivu */
+  $handler = $view->new_display('page', 'Sivu', 'page_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Lost & found';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<div class="ingres">
+Here you can find a list of the items that have lost their owner.
+</div>
+<p>
+Items that have a name on them are delivered to the subcamps and their rightful owners. You can ask for your lost belongings at the subcamp offices or the camp office, and you need to be able to describe the lost item.
+</p>
+<p>
+Lost and found items will not be stored after the camp. Camping equipment that remain in the lost and found after camp are donated to the Karelian scout district and valuable items (more than 20€) will be taken to the lost and found service called Etelä-Suomen Löytötavaratoimisto.
+</p>
+<div class="lostandfound-filter">
+<input placeholder="Find e.g. reppu hurma 24.7.">
+</div>';
+  $handler->display->display_options['header']['area']['format'] = 'fj16_block_content';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'Item';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Löytöaika */
+  $handler->display->display_options['fields']['field_found_date']['id'] = 'field_found_date';
+  $handler->display->display_options['fields']['field_found_date']['table'] = 'field_data_field_found_date';
+  $handler->display->display_options['fields']['field_found_date']['field'] = 'field_found_date';
+  $handler->display->display_options['fields']['field_found_date']['label'] = 'Found';
+  $handler->display->display_options['fields']['field_found_date']['settings'] = array(
+    'format_type' => 'lost_and_found',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+  );
+  /* Field: Content: Mistä löytynyt */
+  $handler->display->display_options['fields']['field_found_where']['id'] = 'field_found_where';
+  $handler->display->display_options['fields']['field_found_where']['table'] = 'field_data_field_found_where';
+  $handler->display->display_options['fields']['field_found_where']['field'] = 'field_found_where';
+  $handler->display->display_options['fields']['field_found_where']['label'] = 'Location';
+  $handler->display->display_options['path'] = 'lostandfound';
+
+  /* Display: Sivu 2 */
+  $handler = $view->new_display('page', 'Sivu 2', 'page_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Hittegods';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<div class="ingres">
+Här hittar du en lista på saker som ännu inte har hittat sin ägare.
+</div>
+<p>
+Namnförsedda saker levereras via lägrets post tillbaka till underlägren och de rätta ägarna. Saker som försvunnit kan man fråga efter i underlägerkanslierna och huvudlägrets hittegodsbyrå mot kännetecken.
+</p>
+<p>
+Hittegods bevaras inte efter lägret. Utfärdsutrustning som inte hittar sina ägare doneras till Karelska Scouter och hittegods som är värda över 20 euro levereras till Södra Finlands Hittegodsbyrå.
+</p>
+<div class="lostandfound-filter">
+<input placeholder="Sök t.ex. reppu Hurma 24.7.">
+</div>';
+  $handler->display->display_options['header']['area']['format'] = 'fj16_block_content';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'Överskrift';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Löytöaika */
+  $handler->display->display_options['fields']['field_found_date']['id'] = 'field_found_date';
+  $handler->display->display_options['fields']['field_found_date']['table'] = 'field_data_field_found_date';
+  $handler->display->display_options['fields']['field_found_date']['field'] = 'field_found_date';
+  $handler->display->display_options['fields']['field_found_date']['label'] = 'Tidpunkt';
+  $handler->display->display_options['fields']['field_found_date']['settings'] = array(
+    'format_type' => 'lost_and_found',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+  );
+  /* Field: Content: Mistä löytynyt */
+  $handler->display->display_options['fields']['field_found_where']['id'] = 'field_found_where';
+  $handler->display->display_options['fields']['field_found_where']['table'] = 'field_data_field_found_where';
+  $handler->display->display_options['fields']['field_found_where']['field'] = 'field_found_where';
+  $handler->display->display_options['fields']['field_found_where']['label'] = 'Plats';
+  $handler->display->display_options['path'] = 'hittegods';
   $export['fj16_lost_and_found_public'] = $view;
 
   return $export;
