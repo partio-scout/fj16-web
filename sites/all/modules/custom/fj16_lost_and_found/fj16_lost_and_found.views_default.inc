@@ -40,6 +40,8 @@ function fj16_lost_and_found_views_default_views() {
     'nid' => 'nid',
     'field_found_where' => 'field_found_where',
     'field_owner_found' => 'field_owner_found',
+    'edit_node' => 'edit_node',
+    'field_owner_1' => 'field_owner_1',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
@@ -78,6 +80,18 @@ function fj16_lost_and_found_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
+    'edit_node' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_owner_1' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
   );
   /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
@@ -86,6 +100,11 @@ function fj16_lost_and_found_views_default_views() {
   $handler->display->display_options['header']['area']['empty'] = TRUE;
   $handler->display->display_options['header']['area']['content'] = '<p><a href="/node/add/fj16-lost-and-found">Lisää uusi löytötavara</a></p>';
   $handler->display->display_options['header']['area']['format'] = 'fj16_block_content';
+  /* Header: Global: Result summary */
+  $handler->display->display_options['header']['result']['id'] = 'result';
+  $handler->display->display_options['header']['result']['table'] = 'views';
+  $handler->display->display_options['header']['result']['field'] = 'result';
+  $handler->display->display_options['header']['result']['content'] = 'Löytyi @total löytötavaraa.';
   /* Field: Content: Löytöaika */
   $handler->display->display_options['fields']['field_found_date']['id'] = 'field_found_date';
   $handler->display->display_options['fields']['field_found_date']['table'] = 'field_data_field_found_date';
@@ -125,6 +144,10 @@ function fj16_lost_and_found_views_default_views() {
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['label'] = '';
   $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
+  /* Field: Content: Tavaran omistaja */
+  $handler->display->display_options['fields']['field_owner_1']['id'] = 'field_owner_1';
+  $handler->display->display_options['fields']['field_owner_1']['table'] = 'field_data_field_owner';
+  $handler->display->display_options['fields']['field_owner_1']['field'] = 'field_owner';
   /* Sort criterion: Content: Nid */
   $handler->display->display_options['sorts']['nid']['id'] = 'nid';
   $handler->display->display_options['sorts']['nid']['table'] = 'node';
@@ -163,6 +186,27 @@ function fj16_lost_and_found_views_default_views() {
     8 => 0,
     5 => 0,
     9 => 0,
+  );
+  /* Filter criterion: Content: Omistaja löytynyt (field_owner_found) */
+  $handler->display->display_options['filters']['field_owner_found_value']['id'] = 'field_owner_found_value';
+  $handler->display->display_options['filters']['field_owner_found_value']['table'] = 'field_data_field_owner_found';
+  $handler->display->display_options['filters']['field_owner_found_value']['field'] = 'field_owner_found_value';
+  $handler->display->display_options['filters']['field_owner_found_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_owner_found_value']['expose']['operator_id'] = 'field_owner_found_value_op';
+  $handler->display->display_options['filters']['field_owner_found_value']['expose']['label'] = 'Omistaja löytynyt';
+  $handler->display->display_options['filters']['field_owner_found_value']['expose']['operator'] = 'field_owner_found_value_op';
+  $handler->display->display_options['filters']['field_owner_found_value']['expose']['identifier'] = 'field_owner_found_value';
+  $handler->display->display_options['filters']['field_owner_found_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    8 => 0,
+    4 => 0,
+    7 => 0,
+    9 => 0,
+    5 => 0,
+    10 => 0,
+    6 => 0,
   );
 
   /* Display: Page */
