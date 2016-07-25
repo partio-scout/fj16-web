@@ -189,7 +189,7 @@
   if($('#panorama').length > 0) {
     pannellum.viewer('panorama', {   
       "default": {
-        "firstScene": "panorama-m",
+        "firstScene": "panorama-g",
         "sceneFadeDuration": 500
       },
 
@@ -213,6 +213,13 @@
               "type": "scene",
               "text": "Roihu-monumentti",
               "sceneId": "panorama-g"
+            },
+            {
+              "pitch": 0.6345347652998556,
+              "yaw": 70.83277979189732,
+              "type": "scene",
+              "text": "Panorama M",
+              "sceneId": "panorama-m"
             }
           ],
           "autoLoad": true,
@@ -237,6 +244,13 @@
               "type": "scene",
               "text": "Solmu",
               "sceneId": "panorama-l"
+            },
+            {
+              "pitch": -0.6408850989112115,
+              "yaw": 121.73810265586565,
+              "type": "scene",
+              "text": "Panorama K",
+              "sceneId": "panorama-k"
             }
           ],
           "autoLoad": true,
@@ -254,6 +268,15 @@
             "cubeResolution": 4304
           },
           "hotSpotDebug": true,
+          "hotSpots": [
+            {
+              "pitch": -1.3125076259742106,
+              "yaw": -86.29837329553575,
+              "type": "scene",
+              "text": "Roihu-monumentti",
+              "sceneId": "panorama-g"
+            },
+          ],
           "autoLoad": true,
           "autoRotate": -2
         },
@@ -269,6 +292,15 @@
             "cubeResolution": 4344
           },
           "hotSpotDebug": true,
+          "hotSpots": [
+            {
+              "pitch": 1.8976679675316173,
+              "yaw": 47.00176863231155,
+              "type": "scene",
+              "text": "Solmu",
+              "sceneId": "panorama-l"
+            },
+          ],
           "autoLoad": true,
           "autoRotate": -2
         }
