@@ -21,3 +21,4 @@ scripts[] = js/masonry.pkgd.min.js
 scripts[] = js/textext.min.js
 scripts[] = js/pannellum.js
 scripts[] = js/main.js
+scripts[] = js/panoramas.js
