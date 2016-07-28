@@ -1,4 +1,6 @@
 .page-photos {
+  @extend .hide-left-sidebar;
+  
   h1.title {
     display: none;
   }
