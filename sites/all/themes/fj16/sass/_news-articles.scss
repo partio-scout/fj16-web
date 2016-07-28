@@ -145,4 +145,49 @@
     }
   }
 
+  .field-name-field-images {
+    overflow: auto;
+
+    img {
+      float: left;
+      margin: 0 15px 15px 0;
+    }
+  }
+}
+
+#lightbox {
+  #outerImageContainer, #imageDataContainer {
+    position: relative;
+    overflow: visible;
+  }
+
+  // Lightbox2 sucks, so we need to force the styles with !important
+  #bottomNavClose {
+    background: no-repeat inline-image("icons/close.png") !important;
+    width: 24px;
+    height: 24px;
+    top: -36px;
+    right: 0;
+  }
+
+  #numberDisplay {
+    display: none !important;
+  }
+
+  #prevLink, #nextLink {
+    position: absolute;
+    width: 50%;
+  }
+
+  #prevLink {
+    background: 90% 50% no-repeat inline-image("icons/prev.png") !important;
+  }
+
+  #nextLink {
+    background: 10% 50% no-repeat inline-image("icons/next.png") !important;
+  }
+
+  #bottomNavZoom, #bottomNavZoomOut {
+    display: none !important;
+  }
 }

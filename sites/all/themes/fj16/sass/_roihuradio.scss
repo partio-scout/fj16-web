@@ -1,0 +1,44 @@
+.roihuradio {
+  background: $red;
+  color: #fff;
+  font-family: $exo;
+  padding: 3em 0;
+  text-align: center;
+  text-transform: uppercase;
+
+  p {
+    font-size: 1.4em;
+  }
+
+  .player {
+    margin: 0 auto;
+    max-width: 600px;
+
+    button {
+      background: url(../img/radio.png) 0 0/auto 100% no-repeat;
+      border: 0;
+      cursor: pointer;
+      display: inline-block;
+      outline: none;
+      margin-right: 10px;
+      padding: 0;
+      width: 100px;
+      height: 100px;
+
+      &.playing {
+        background-position: -100px 0;
+      }
+    }
+    .now-playing {
+      display: inline-block;
+      font-size: 1.2em;
+      text-align: left;
+      vertical-align: middle;
+
+      span {
+        display: block;
+        font-size: .7em;
+      }
+    }
+  }
+}

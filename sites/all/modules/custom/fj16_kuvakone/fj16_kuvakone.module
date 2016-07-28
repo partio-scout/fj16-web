@@ -1,0 +1,41 @@
+<?php
+
+function fj16_kuvakone_menu() {
+  $menu = array();
+
+  $menu['photos'] = array(
+    'access callback' => TRUE,
+    'page callback' => 'fj16_kuvakone_page'
+  );
+
+  return $menu;
+}
+
+function fj16_kuvakone_page() {
+  $env = fj16_kuvakone_get_env();
+  drupal_set_title('Kuvakone'); //TODO t()
+  drupal_add_html_head(
+    array(
+      '#type' => 'markup',
+      '#markup' => '<link rel="stylesheet" href="https://npmcdn.com/leaflet@1.0.0-rc.2/dist/leaflet.css" />'
+    ),
+    'fj16_leafle_css'
+  );
+  $output = '<div id="kuvakone"></div>';
+  $output .= '<script src="' . $env . '/build/bundle.js"></script>';
+  return $output;
+}
+
+function fj16_kuvakone_host_is($host) {
+  return strpos(gethostname(), $host) !== FALSE;
+}
+
+function fj16_kuvakone_get_env() {
+  if(fj16_kuvakone_host_is('qa') || fj16_kuvakone_host_is('demo')) {
+    return 'http://roihu-kuvakone-staging.herokuapp.com';
+  } else if(fj16_kuvakone_host_is('prod')) {
+    return 'http://roihu-kuvakone.herokuapp.com';
+  } else {
+    return 'http://localhost:3000';
+  }
+}

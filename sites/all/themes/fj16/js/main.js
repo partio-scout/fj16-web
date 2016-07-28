@@ -174,6 +174,33 @@
       .show();
     });    
   }
+
+  if($('.lostandfound-filter').length > 0) {
+    $('.lostandfound-filter input').keyup(function () {
+      //split the current value of input
+      var searchquery = this.value.trim().split(' ');
+      //create a jquery object of the rows
+      var jo = $('.view-fj16-lost-and-found-public tbody').find('tr');
+      if (this.value === '') {
+        jo.show();
+        return;
+      }
+      //hide all the rows
+      jo.hide();
+
+      //Recusively filter the jquery object to get results.
+      jo.filter(function() {
+        for (var word = 0; word < searchquery.length; word++) {
+          if ($(this).text().toLowerCase().indexOf(searchquery[word].toLowerCase()) === -1) {
+            return false;
+          }
+        }
+        return true;
+      })
+      //show the rows that match.
+      .show();
+    });    
+  }
   
   if($('textarea.transportation_troops').length > 0) {
     $('textarea.transportation_troops').textext({
@@ -185,7 +212,48 @@
         }
     });
   }
+
+  if($('body.camp-scarf')) {
+    $('.camp-scarf .scarf-cta .btn').click(function(e){
+      e.preventDefault();
+
+      var scarfLang = $(this).data('lang');
+
+      $('.scarf-cta').fadeOut('fast', function(){
+        $('.scarf-'+scarfLang).fadeIn('fast');
+      });
+    });
+  }
   
+  if($('.roihuradio').length > 0) {
+
+    var time = new Date().getHours();
+    if (time >= 9 && time < 12) {
+      $('.roihuradio .now-playing span').text('Aamukahvit');
+    }
+    else if (time >= 12 && time < 15) {
+      $('.roihuradio .now-playing span').text('Päiväntasaaja');
+    }
+    else if (time >= 15 && time < 17) {
+      $('.roihuradio .now-playing span').text('Ihan pihalla');
+    }
+    else {
+      $('.roihuradio .now-playing span').text('Musiikkia');
+    }
+    
+    $('.roihuradio button').click(function(e) {
+      e.preventDefault();
+      var radioAudio = document.getElementById('radioAudio');
+      
+      if (radioAudio.paused) {
+        radioAudio.play();
+      } else {
+        radioAudio.pause();
+      }
+      $('.roihuradio button').toggleClass('playing');
+    });
+  }
+    
   // Avoid `console` errors in browsers that lack a console.
   (function() {
     var method;
