@@ -1,0 +1,45 @@
+<?php
+
+function fj16_panoramas_menu() {
+  $menu = array();
+
+  $menu['panorama'] = array(
+    'access callback' => TRUE,
+    'page callback' => 'fj16_panoramas_page'
+  );
+
+  return $menu;
+}
+
+function fj16_panoramas_page() {
+  drupal_set_title('Roihu-panorama');
+  $content = <<<EOT
+    <ul class="panorama-list">
+      <li><a href="#" data-panorama="panorama-1-ilma">Ilmailu- ja moottoriohjelma</a></li>
+      <li><a href="#" data-panorama="panorama-2-avajaiset">Avajaiset</a></li>
+      <li><a href="#" data-panorama="panorama-3-luovuus">Luovuuslaakso</a></li>
+      <li><a href="#" data-panorama="panorama-4-liput2">Leirisuora</a></li>
+      <li><a href="#" data-panorama="panorama-5">Pelastus- ja logistiikkakeskus</a></li>
+      <li><a href="#" data-panorama="panorama-6">Iso uimaranta</a></li>
+      <li><a href="#" data-panorama="panorama-a">Metsälaakso</a></li>
+      <li><a href="#" data-panorama="panorama-b">Stage</a></li>
+      <li><a href="#" data-panorama="panorama-c">Riehun alaleiriportti</a></li>
+      <li><a href="#" data-panorama="panorama-d">Syke Central Park</a></li>
+      <li><a href="#" data-panorama="panorama-f">Samoajaohjelma</a></li>
+      <li><a href="#" data-panorama="panorama-g">Roihutori</a></li>
+      <li><a href="#" data-panorama="panorama-h">Raiku Forum</a></li>
+      <li><a href="#" data-panorama="panorama-i-a">Minälaakso</a></li>
+      <li><a href="#" data-panorama="panorama-j-b">Elämyslaakso</a></li>
+      <li><a href="#" data-panorama="panorama-k">Unityn alaleiritoimisto</a></li>
+      <li><a href="#" data-panorama="panorama-l">Solmu</a></li>
+      <li><a href="#" data-panorama="panorama-m">Kiminkierto</a></li>
+      <li><a href="#" data-panorama="panorama-o">Hurma Mini Park</a></li>
+      <li><a href="#" data-panorama="panorama-p">Huminanpolku</a></li>
+    </ul>
+
+    <div class="panorama-wrapper">
+      <div id="panorama"></div>
+    </div>
+EOT;
+  return $content;
+}

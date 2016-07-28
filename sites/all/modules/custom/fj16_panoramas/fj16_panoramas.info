@@ -1,0 +1,4 @@
+name = FJ16 Panoramas
+description = "Displays the Panoramas"
+package = FJ16
+core = 7.x
