@@ -27,15 +27,15 @@ function fj16_kuvakone_page() {
 }
 
 function fj16_kuvakone_host_is($host) {
-  return strpos($_SERVER['SERVER_NAME'], $host) !== FALSE;
+  return strpos(gethostname(), $host) !== FALSE;
 }
 
 function fj16_kuvakone_get_env() {
   if(fj16_kuvakone_host_is('qa') || fj16_kuvakone_host_is('demo')) {
     return 'http://roihu-kuvakone-staging.herokuapp.com';
-  } else if(fj16_kuvakone_host_is('default')) { //drush runserver
-    return 'http://localhost:3000';
-  } else {
+  } else if(fj16_kuvakone_host_is('prod')) {
     return 'http://roihu-kuvakone.herokuapp.com';
+  } else {
+    return 'http://localhost:3000';
   }
 }
