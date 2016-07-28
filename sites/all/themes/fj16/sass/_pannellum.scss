@@ -16,3 +16,18 @@
     bottom: 0;
   }
 }
+
+.panorama-actions {
+  text-align: right;
+
+  .panorama-close {
+    height: 24px;
+    width: 24px;
+    display: inline-block;
+    background: no-repeat 50% 50% url(../img/icons/close-black.png);
+
+    span {
+      display: none;
+    }
+  }
+}

@@ -17,6 +17,7 @@ function fj16_panoramas_page() {
     <ul class="panorama-list">
     </ul>
 
+    <div class="panorama-actions"><a href="#" class="panorama-close"><span>Sulje</span></a></div>
     <div class="panorama-wrapper">
       <div id="panorama"></div>
     </div>

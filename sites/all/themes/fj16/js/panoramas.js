@@ -924,15 +924,27 @@
       $('.panorama-list').append(elem);
     }
 
+    $('.panorama-wrapper').hide();
     $('#panorama').empty().hide();
+    $('.panorama-close').hide();
+    $('.panorama-close').click(function(e) {
+      e.preventDefault();
+      $('#panorama').empty().hide();
+      $('.panorama-close').hide();
+      $('.panorama-list').show();
+      $('.panorama-wrapper').hide();
+    });
 
     $('.panorama-list li a').click(function(e){
       e.preventDefault();
 
       var firstScene = $(this).data('panorama');
 
+      $('.panorama-wrapper').show();
       $('.panorama-list').hide();
       $('#panorama').show();
+
+      $('.panorama-close').show();
 
       pannellum.viewer('panorama', {
         "default": {
