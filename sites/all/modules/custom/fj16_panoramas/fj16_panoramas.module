@@ -1,0 +1,26 @@
+<?php
+
+function fj16_panoramas_menu() {
+  $menu = array();
+
+  $menu['panorama'] = array(
+    'access callback' => TRUE,
+    'page callback' => 'fj16_panoramas_page'
+  );
+
+  return $menu;
+}
+
+function fj16_panoramas_page() {
+  drupal_set_title('Roihu-panorama');
+  $content = <<<EOT
+    <ul class="panorama-list">
+    </ul>
+
+    <div class="panorama-actions"><a href="#" class="panorama-close"><span>Sulje</span></a></div>
+    <div class="panorama-wrapper">
+      <div id="panorama"></div>
+    </div>
+EOT;
+  return $content;
+}

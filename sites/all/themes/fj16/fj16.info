@@ -10,6 +10,7 @@ regions[content] = Content
 regions[footer] = Footer
 regions[mobile_menu] = Mobile menu
 
+stylesheets[all][] = css/pannellum.css
 stylesheets[all][] = css/fj16.css
 
 scripts[] = js/skrollr.min.js
@@ -18,4 +19,6 @@ scripts[] = js/jquery.sidr.min.js
 scripts[] = js/tracking.js
 scripts[] = js/masonry.pkgd.min.js
 scripts[] = js/textext.min.js
+scripts[] = js/pannellum.js
 scripts[] = js/main.js
+scripts[] = js/panoramas.js
