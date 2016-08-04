@@ -118,9 +118,9 @@ msgid "<a href=\"/admin/generator-wotw-participants/[nid]\">Participants</a>"
 msgstr "Deltagare"
 
 #: fj16_programme_and_job_tool.module:154
-msgid "The generator is closed. You can log it to check the choices you made."
+msgid "The generator is closed."
 msgstr ""
-"Uppdragsgeneratorn är stängd. Du kan logga in för att kontrollera dina val."
+"Uppdragsgeneratorn är stängd."
 
 #: fj16_programme_and_job_tool.module:157
 msgid ""

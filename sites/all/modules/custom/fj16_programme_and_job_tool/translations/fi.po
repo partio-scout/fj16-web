@@ -321,10 +321,9 @@ msgid "Welcome to the generator!"
 msgstr "Tervetuloa Kehittimeen!"
 
 #: fj16_programme_and_job_tool.module:154
-msgid "The generator is closed. You can log it to check the choices you made."
+msgid "The generator is closed."
 msgstr ""
-"Kehitin on suljettu. Voit kuitenkin kirjautua sisään tarkistaaksesi tekemäsi "
-"valinnat."
+"Kehitin on suljettu."
 
 #: fj16_programme_and_job_tool.module:155
 msgid "Log in using ScoutID"

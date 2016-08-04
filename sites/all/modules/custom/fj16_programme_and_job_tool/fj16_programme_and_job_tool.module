@@ -29,16 +29,6 @@ function fj16_programme_and_job_tool_menu() {
     'access callback' => TRUE //TODO limit by roles
   );
 
-  $menu['saml/login'] = array(
-    'page callback' => 'fj16_saml_login',
-    'access callback' => TRUE
-  );
-
-  $menu['saml/consume'] = array(
-    'page callback' => 'fj16_saml_consume',
-    'access callback' => TRUE
-  );
-
   return $menu;
 }
 
@@ -151,12 +141,10 @@ function _fj16_programme_and_job_tool_generator_page() {
     // Anonymous users
     drupal_set_title(t('Welcome to the generator!'));
     $variables = array(
-      'intro_text' => t('The generator is closed. You can log it to check the choices you made.'),
-      'login_link' => l(t('Log in using ScoutID'), 'saml/login', array('attributes' => array('class' => 'scoutid'))),
-      'login_intro' => t('Note: you need to log in with your personal ScoutID.'),
-      'alternative_login_link' => t("International guest or not yet a scout/guide? Please !login with your user name and password.", array(
-          '!login' => l(t('log in'), 'user', array('query' => array('destination' => 'generator')))
-        ))
+      'intro_text' => t('The generator is closed.'),
+      'login_link' => '',
+      'login_intro' => '',
+      'alternative_login_link' => ''
     );
     return theme('fj16_generator_front', $variables);
   } else if(fj16_user_selections_confirmed($user)) {
@@ -348,35 +336,6 @@ function fj16_saml_init() {
   require_once('vendor/php-saml/_toolkit_loader.php');
   require DRUPAL_ROOT . '/../fj16-partioid-conf.php';
   return new OneLogin_Saml2_Auth($samlSettingsInfo);
-}
-
-function fj16_saml_login() {
-  $auth = fj16_saml_init();
-  $auth->login();
-  drupal_exit();
-}
-
-function fj16_saml_consume() {
-  $auth = fj16_saml_init();
-  $auth->processResponse();
-  $errors = $auth->getErrors();
-  if(count($errors) > 0 || !$auth->isAuthenticated()) {
-    $err_str = print_r($errors, TRUE);
-    watchdog('saml', 'SAML login failed with errors: <br><pre>@errors</pre>', array('@errors' => $err_str), WATCHDOG_ERROR);
-    return t('Login failed.');
-  }
-
-  $attrs = $auth->getAttributes();
-
-  //TODO validate is_suspended, is_scout etc.
-  if(count($attrs) > 0) {
-    $uid = fj16_find_or_create_user($attrs);
-    if(fj16_login_user($uid)) {
-      drupal_goto('generator');
-    }
-  }
-
-  return t('Login failed.');
 }
 
 function fj16_find_or_create_user($attrs) {

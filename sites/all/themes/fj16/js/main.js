@@ -203,6 +203,33 @@
       .show();
     });    
   }
+
+  if($('.lostandfound-filter').length > 0) {
+    $('.lostandfound-filter input').keyup(function () {
+      //split the current value of input
+      var searchquery = this.value.trim().split(' ');
+      //create a jquery object of the rows
+      var jo = $('.view-fj16-lost-and-found-public tbody').find('tr');
+      if (this.value === '') {
+        jo.show();
+        return;
+      }
+      //hide all the rows
+      jo.hide();
+
+      //Recusively filter the jquery object to get results.
+      jo.filter(function() {
+        for (var word = 0; word < searchquery.length; word++) {
+          if ($(this).text().toLowerCase().indexOf(searchquery[word].toLowerCase()) === -1) {
+            return false;
+          }
+        }
+        return true;
+      })
+      //show the rows that match.
+      .show();
+    });    
+  }
   
   if($('textarea.transportation_troops').length > 0) {
     $('textarea.transportation_troops').textext({
@@ -226,7 +253,7 @@
       });
     });
   }
-
+  
   if($('.roihuradio').length > 0) {
     var time = new Date().getHours();
     if (time >= 9 && time < 12) {
@@ -254,7 +281,11 @@
       $('.roihuradio button').toggleClass('playing');
     });
   }
+<<<<<<< HEAD
   
+=======
+    
+>>>>>>> bugfix/sidebar-navigation-arrows
   // Avoid `console` errors in browsers that lack a console.
   (function() {
     var method;

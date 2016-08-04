@@ -53,3 +53,11 @@ function fj16_master_update_7013() {
 function fj16_master_update_7014() {
   module_enable(array('fj16_lost_and_found'));
 }
+
+function fj16_master_update_7015() {
+  module_enable(array('fj16_kuvakone'));
+}
+
+function fj16_master_update_7016() {
+  module_enable(array('fj16_panoramas'));
+}

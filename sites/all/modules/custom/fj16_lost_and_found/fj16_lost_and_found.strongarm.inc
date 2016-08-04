@@ -13,6 +13,13 @@ function fj16_lost_and_found_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'date_format_lost_and_found';
+  $strongarm->value = 'l j.n.';
+  $export['date_format_lost_and_found'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'entity_translation_hide_translation_links_fj16_lost_and_found';
   $strongarm->value = 0;
   $export['entity_translation_hide_translation_links_fj16_lost_and_found'] = $strongarm;

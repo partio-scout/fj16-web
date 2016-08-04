@@ -1,0 +1,4 @@
+name = FJ16 Kuvakone
+description = "Displays the Kuvakone"
+package = FJ16
+core = 7.x
