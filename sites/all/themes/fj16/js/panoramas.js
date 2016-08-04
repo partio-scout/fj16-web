@@ -920,7 +920,7 @@
     for(var key in scenes) {
       if(!scenes.hasOwnProperty(key)) continue;
       var scene = scenes[key];
-      var elem = $('<li><a href="#" data-panorama="' + key + '">' + scene.title + '</a></li>');
+      var elem = $('<li><a href="#" data-panorama="' + key + '" title="' + scene.title + '">' + scene.title + '</a></li>');
       $('.panorama-list').append(elem);
     }
 
