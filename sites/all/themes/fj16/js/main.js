@@ -281,11 +281,7 @@
       $('.roihuradio button').toggleClass('playing');
     });
   }
-<<<<<<< HEAD
   
-=======
-    
->>>>>>> bugfix/sidebar-navigation-arrows
   // Avoid `console` errors in browsers that lack a console.
   (function() {
     var method;
