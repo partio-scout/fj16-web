@@ -44,115 +44,123 @@
   }
 }
 
-.panorama-list {
-  background: url(../img/roihu_panorama_kartta.jpg) 0 0/100% auto no-repeat;
-  margin: 0;
-  position: relative;
-  
-  &:after {
-    content: "";
-    display: block;
-    width: 100%;
-    padding-bottom: 56.25%;
+@include respond(small) {
+  .panorama-list {
+    column-count: 2;
   }
-  
-  li {
-    list-style: none !important;
-  }
-  
-  a {
-    @include at2x('mapmarker_icon', 100%);
-    background-repeat: no-repeat;
-    display: inline-block;
-    width: 2.286%;
-    height: 6.498%;
-    position: absolute;
-    line-height: 10;
-    overflow: hidden;
+}
+
+@include respondMin(small) {
+  .panorama-list {
+    background: url(../img/roihu_panorama_kartta.jpg) 0 0/100% auto no-repeat;
+    margin: 0;
+    position: relative;
     
-    &:hover, &:focus {
-      @include animation(bounce 1s)
+    &:after {
+      content: "";
+      display: block;
+      width: 100%;
+      padding-bottom: 56.25%;
     }
     
-    &[data-panorama="panorama-1-ilma"] {
-      left: 68%;
-      top: 20%;
+    li {
+      list-style: none !important;
     }
-    &[data-panorama="panorama-2-avajaiset"] {
-      left: 43%;
-      top: 16%;
-    }
-    &[data-panorama="panorama-3-luovuus"] {
-      left: 35%;
-      top: 29%;
-    }
-    &[data-panorama="panorama-4-liput2"] {
-      left: 47%;
-      top: 52%;
-    }
-    &[data-panorama="panorama-5"] {
-      left: 34%;
-      top: 71%;
-    }
-    &[data-panorama="panorama-6"] {
-      left: 50%;
-      top: 20%;
-    }
-    &[data-panorama="panorama-a"] {
-      left: 45.5%;
-      top: 9.5%;
-    }
-    &[data-panorama="panorama-b"] {
-      left: 45%;
-      top: 18%;
-    }
-    &[data-panorama="panorama-c"] {
-      left: 51.6%;
-      top: 24.5%;
-    }
-    &[data-panorama="panorama-d"] {
-      left: 41%;
-      top: 32%;
-    }
-    &[data-panorama="panorama-f"] {
-      left: 71%;
-      top: 40%;
-    }
-    &[data-panorama="panorama-g"] {
-      left: 51.5%;
-      top: 44%
-    }
-    &[data-panorama="panorama-h"] {
-      left: 39%;
-      top: 47%;
-    }
-    &[data-panorama="panorama-i-a"] {
-      left: 21%;
-      top: 46%;
-    }
-    &[data-panorama="panorama-j-b"] {
-      left: 67%;
-      top: 50%;
-    }
-    &[data-panorama="panorama-k"] {
-      left: 55%;
-      top: 51.5%;
-    }
-    &[data-panorama="panorama-l"] {
-      left: 44.5%;
-      top: 57%;
-    }
-    &[data-panorama="panorama-m"] {
-      left: 52%;
-      top: 60%;
-    }
-    &[data-panorama="panorama-o"] {
-      left: 44%;
-      top: 71%;
-    }
-    &[data-panorama="panorama-p"] {
-      left: 43%;
-      top: 88%;
+    
+    a {
+      @include at2x('mapmarker_icon', 100%);
+      background-repeat: no-repeat;
+      display: inline-block;
+      width: 2.286%;
+      height: 6.498%;
+      position: absolute;
+      line-height: 10;
+      overflow: hidden;
+      
+      &:hover, &:focus {
+        @include animation(bounce 1s)
+      }
+      
+      &[data-panorama="panorama-1-ilma"] {
+        left: 68%;
+        top: 20%;
+      }
+      &[data-panorama="panorama-2-avajaiset"] {
+        left: 43%;
+        top: 16%;
+      }
+      &[data-panorama="panorama-3-luovuus"] {
+        left: 35%;
+        top: 29%;
+      }
+      &[data-panorama="panorama-4-liput2"] {
+        left: 47%;
+        top: 52%;
+      }
+      &[data-panorama="panorama-5"] {
+        left: 34%;
+        top: 71%;
+      }
+      &[data-panorama="panorama-6"] {
+        left: 50%;
+        top: 20%;
+      }
+      &[data-panorama="panorama-a"] {
+        left: 45.5%;
+        top: 9.5%;
+      }
+      &[data-panorama="panorama-b"] {
+        left: 45%;
+        top: 18%;
+      }
+      &[data-panorama="panorama-c"] {
+        left: 51.6%;
+        top: 24.5%;
+      }
+      &[data-panorama="panorama-d"] {
+        left: 41%;
+        top: 32%;
+      }
+      &[data-panorama="panorama-f"] {
+        left: 71%;
+        top: 40%;
+      }
+      &[data-panorama="panorama-g"] {
+        left: 51.5%;
+        top: 44%
+      }
+      &[data-panorama="panorama-h"] {
+        left: 39%;
+        top: 47%;
+      }
+      &[data-panorama="panorama-i-a"] {
+        left: 21%;
+        top: 46%;
+      }
+      &[data-panorama="panorama-j-b"] {
+        left: 67%;
+        top: 50%;
+      }
+      &[data-panorama="panorama-k"] {
+        left: 55%;
+        top: 51.5%;
+      }
+      &[data-panorama="panorama-l"] {
+        left: 44.5%;
+        top: 57%;
+      }
+      &[data-panorama="panorama-m"] {
+        left: 52%;
+        top: 60%;
+      }
+      &[data-panorama="panorama-o"] {
+        left: 44%;
+        top: 71%;
+      }
+      &[data-panorama="panorama-p"] {
+        left: 43%;
+        top: 88%;
+      }
     }
   }
 }
