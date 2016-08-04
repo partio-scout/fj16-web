@@ -506,8 +506,8 @@
           "pitch": -1.473456190568588,
           "yaw": -152.84611063258842,
           "type": "scene",
-          "text": "Solmu",
-          "sceneId": "panorama-l"
+          "text": "Leirisuora",
+          "sceneId": "panorama-4-liput2"
         },
         {
           "pitch": -0.6408850989112115,
