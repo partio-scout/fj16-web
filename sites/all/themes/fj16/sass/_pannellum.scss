@@ -10,6 +10,10 @@
   }
 }
 
+.page-panorama {
+  @extend .hide-left-sidebar;
+}
+
 .panorama-wrapper {
   position: relative;
 
