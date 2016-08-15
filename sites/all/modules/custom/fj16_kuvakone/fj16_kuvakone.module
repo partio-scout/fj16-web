@@ -32,10 +32,10 @@ function fj16_kuvakone_host_is($host) {
 
 function fj16_kuvakone_get_env() {
   if(fj16_kuvakone_host_is('qa') || fj16_kuvakone_host_is('demo')) {
-    return 'http://roihu-kuvakone-staging.herokuapp.com';
+    return '//roihu-kuvakone-staging.herokuapp.com';
   } else if(fj16_kuvakone_host_is('prod')) {
-    return 'http://roihu-kuvakone.herokuapp.com';
+    return '//roihu-kuvakone.herokuapp.com';
   } else {
-    return 'http://localhost:3000';
+    return '//localhost:3000';
   }
 }
