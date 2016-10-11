@@ -262,8 +262,12 @@ body.front {
 
     .theme {
       padding-top: 20px;
-      background: $blue 50% 50% no-repeat url(../img/backgrounds/last-front-page.svg);
+      background: $red 50% 50% no-repeat url(../img/backgrounds/last-front-page.svg);
       background-size: 100% auto;
+    }
+
+    .theme:nth-child(2) {
+      background-color: $blue;
     }
 
     .row {
@@ -309,7 +313,7 @@ body.front {
       }
 
       span {
-        margin-right: 1.5em;
+        margin-right: 1em;
         text-decoration: underline;
       }
 
