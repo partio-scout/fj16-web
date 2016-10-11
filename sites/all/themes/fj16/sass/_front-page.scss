@@ -243,218 +243,104 @@ body.front {
   #main {
 
     overflow: visible;
-
-    h1#page-title {
-      display: none;
-    }
+    padding: 0;
 
     #content {
       padding: 0;
     }
 
-    padding: 0;
-    
-    div#clock-wrapper,
-    div.frontpage-lift {
-      @include at2x('front_section_bg', auto, 100%);
-      background-color: $purple;
-      background-repeat: no-repeat;
-      background-position: center;
-      padding: 3.8em 0;
+    h1#page-title, h2 {
+      display: none;
+    }
 
-      &.frontpage-lift {
-        text-align: center;
+    h3 {
+      font-family: $exo;
+      font-size: 3em;
+      margin-top: 0;
+      text-transform: uppercase;
+    }
 
-        h2 {
-          display: block !important;
-        }
+    .theme {
+      padding-top: 100px;
+      background: $blue;
+    }
 
-        p {
-          color: #fff;
-          margin: 1em 0;
-        }
+    .row {
+      width: 95%;
+      max-width: 1300px;
+      margin: 0 auto;
+      clear: both;
+    }
 
-        audio {
-          display: inline-block;
-          margin: 1em auto;
-          width: 50%;
-        }
-      }
-      
-      &.blue {
-        background-color: $blue;
-      }
-      &.green {
-        background-color: $green;
-      }
-      &.orange {
-        background-color: $red;
-      }
-      &.purple {
-        background-color: $purple;
-      }
-      
-      h2 {
-        color: #fff;
-        font-family: Exo2, sans-serif;
-        font-size: 2.22em;
-        margin: 0;
-        text-align: center;
-        text-transform: uppercase;
-      }
-      
-      div#clock {
-        color: #fff;
-        margin: 2.8em auto;
-        width: 35em;
-        overflow: hidden;
-        text-align: center;
-        text-transform: uppercase;
-        white-space: nowrap;
-        
-        p {
-          background: #333;
-          font-size: .9em;
-          line-height: 1.2;
-          float: left;
-          height: 7.5em;
-          width: 7.5em;
-          margin-bottom: 0;
-          
-          span {
-            display: block;
-            font-size: 4.32em;
-            font-weight: bold;
-            padding: 5px 0 0;
-          }
-        }
-      
-        div.space {
-          color: #fff;
-          display: block;
-          line-height: 1.52em;
-          font-size: 4.4em;
-          float: left;
-          height: 1.52em;
-          width: .6em;
-        }
-      }
-      
-      a {
-        display: block;
-        color: #fff;
-        font-size: 1.4em;
-        text-align: center;
-                
-        &:after {
-          content: " ›";
-          font-size: 1.618em;
-          line-height: 1em;
-          position: relative;
-          top: 3px;
-        }
-      }
-      
-      @include respondMin(small) {
-        h2, a {
-          opacity: 0;
+    .intro {
+      float: left;
+      width: 52%;
+      color: $white;
+    }
 
-          &.animated {
-            opacity: 1;
-          }
-        }
-      }
-      
-      @include respond(mobile) {
-        font-size: .8em;
-      }
-      @include respond(480px) {
-        div.countdown-clock {
-          text-align: center;
-        }
-        div#clock {
-          display: inline-block;
-          font-size: .65em;
-          width: auto;
-        }
+    .video {
+      width: 45%;
+      float: right;
+
+      iframe {
+        width: 100%;
+        height: 350px;
+        margin-top: 10px;
       }
     }
 
-    #block-system-main {
-      h2 {
-        display: none;
+    .links {
+      float: left;
+      width: 52%;
+
+      li {
+        list-style: none;
+        margin: 0;
+        padding: 0 0 0.5em 1em;
+        text-indent: -1em;
       }
 
-      .container {
-        padding: 210px 30px 70px;
-        background: $white url(../img/backgrounds/camp-front-page.png) 50% 0 repeat-x;
-        text-align: center;
-
-        h3 {
-          font-family: $exo;
-          font-weight: 600;
-          margin: 0 0 30px;
-          text-transform: uppercase;
-          color: $purple;
-          
-          @media (max-width: $break-mobile) {
-            font-size: 1.6em;
-          }
-        }
-
-        p {
-          max-width: 50em;
-          margin: 20px auto;
-        }
-
-        .btn {
-          @extend .front-page-btn;
-        }
-      }
-
-      .flockler-tags {
-        background: $blue;
+      li:before {
+        content: '> ';
+        padding-right: 0.3em;
         color: $white;
-        margin: 0;
-        padding: 45px 25px 0;
-
-        text-align: center;
-
-        span {
-          padding: 0 1em 0.4em;
-          display: block;
-        }
       }
 
-      .flockler-wall-item__content {
-        box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.25);
-        border: 0;
-        margin: 12px;
+      span {
+        margin-right: 1.5em;
+        text-decoration: underline;
       }
 
-      #flockler_container {
-        background: $blue ;
-        margin: 0;
-        padding: 30px 30px;
+      .site, .date {
+        font-size: 85%;
       }
 
-      @include respond(mobile) {
-        #flockler_container {
-          padding: 12px;
-        }
-
-        .flockler-tags {
-          padding-top: 30px;
-        }
+      .date {
+        margin-right: 0;
       }
 
-      .flockler-btn-load-more {
-        @extend .front-page-btn;
-        margin: auto;
-        width: auto;
-        max-width: 13em;
-        margin-bottom: -10px;
+      a {
+        color: $white;
       }
+    }
+
+    .images {
+      float: right;
+      width: 45%;
+
+      img {
+        width: 48%;
+        float: left;
+        margin-bottom: 3.99%;
+      }
+
+      a:nth-child(odd) img {
+        margin-right: 3.99%;
+      }
+    }
+
+    .videos {
+      clear: both;
     }
 
   }
