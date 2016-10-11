@@ -238,7 +238,7 @@ function fj16_lost_and_found_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
     'title' => 'title',
@@ -273,18 +273,16 @@ function fj16_lost_and_found_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div class="ingres">
-Täältä löydät listan löytyötavaroista, jotka eivät ole vielä löytäneet omistajaansa.
-</div>
-<p>
-Nimikoidut tavarat toimitetaan leirin postin avulla takaisin alaleireihin ja oikeille omistajille. Kadonneita tavaroita voi kysellä alaleiritoimistoista ja pääleiritoimiston löytötavaratoimistosta tuntomerkkejä vastaan.
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = '<p>
+Leirin jäljiltä omistajaa vaille jääneet, pieniarvoiset retkeilyvarusteet, ruokailuvälineet sekä aurinkolasit on lahjoitettu Karjalan partiolaisille.
 </p>
 <p>
-Löytötavaroita ei jatkosäilytetä enää leirin päätyttyä. Leirin jälkeen jäljelle jääneet retkeilyvälineet lahjoitetaan Karjalan Partiolaisille ja yli 20 euron arvoiset löytötavarat toimitetaan Etelä-Suomen Löytötavaratoimistoon.
+Kaikki (toimiston arvion mukaisesti) yli 20 euron arvoiset tavarat on toimitettu jatkosäilytykseen <a href="http://www.eslt.fi">Etelä-Suomen Löytötavaratoimistolle</a>. Voit tiedustella kadonneita tavaroitasi puhelimitse numerosta 0600 55 00 93 (1,83 €/min. +pmp +pvm).
 </p>
-<div class="lostandfound-filter">
-<input placeholder="Etsi esim. reppu Hurma 24.7.">
-</div>';
+<p>
+Etelä-Suomen Löytötavaratoimisto säilyttää tavaroita <strong>kolmen kuukauden ajan löytöpäivästä</strong>. Löytötavarat voi noutaa tuntomerkkejä vastaan Etelä-Suomen Löytötavaratoimiston tiloista sen aukioloaikoina (ma klo 10–18, ti–pe klo 10–16) osoitteessa Saimaankatu 54, 15140 Lahti. Samassa tilassa toimii Kirpputori Cetori. Tarvittaessa tavaroita toimitetaan myös Matkahuollon kautta erillistä maksua vastaan.
+</p>';
   $handler->display->display_options['header']['area']['format'] = 'fj16_block_content';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -336,6 +334,14 @@ Löytötavaroita ei jatkosäilytetä enää leirin päätyttyä. Leirin jälkeen
   $handler->display->display_options['filters']['field_owner_found_value']['value'] = array(
     0 => '0',
   );
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
+  $handler->display->display_options['filters']['type_1']['table'] = 'node';
+  $handler->display->display_options['filters']['type_1']['field'] = 'type';
+  $handler->display->display_options['filters']['type_1']['operator'] = 'not in';
+  $handler->display->display_options['filters']['type_1']['value'] = array(
+    'fj16_lost_and_found' => 'fj16_lost_and_found',
+  );
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -350,18 +356,13 @@ Löytötavaroita ei jatkosäilytetä enää leirin päätyttyä. Leirin jälkeen
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div class="ingres">
-Here you can find a list of the items that have lost their owner.
-</div>
-<p>
-Items that have a name on them are delivered to the subcamps and their rightful owners. You can ask for your lost belongings at the subcamp offices or the camp office, and you need to be able to describe the lost item.
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = '<p>
+All camping equipment of minor value, utensils, dishes and sun glasses have now been donated to scouts in Russian Carelia.
 </p>
 <p>
-Lost and found items will not be stored after the camp. Camping equipment that remain in the lost and found after camp are donated to the Karelian scout district and valuable items (more than 20€) will be taken to the lost and found service called Etelä-Suomen Löytötavaratoimisto.
-</p>
-<div class="lostandfound-filter">
-<input placeholder="Find e.g. reppu hurma 24.7.">
-</div>';
+Items that the lost & found office staff regarded as worth of more than 20 € have been delivered to <a href="http://www.eslt.fi">Etelä-Suomen Löytötavaratoimisto</a> (commercial lost & found office of Southern Finland), where they will be stored <strong>for a maximum of 3 months</strong>. You can ask for your lost items by calling +358 600 55 00 93 and describing your items in detail. If your item is found, they can send it all over the world, but they will charge for both storage of the item and all the postal fees.
+</p>';
   $handler->display->display_options['header']['area']['format'] = 'fj16_block_content';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
@@ -401,18 +402,13 @@ Lost and found items will not be stored after the camp. Camping equipment that r
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div class="ingres">
-Här hittar du en lista på saker som ännu inte har hittat sin ägare.
-</div>
-<p>
-Namnförsedda saker levereras via lägrets post tillbaka till underlägren och de rätta ägarna. Saker som försvunnit kan man fråga efter i underlägerkanslierna och huvudlägrets hittegodsbyrå mot kännetecken.
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = '<p>
+Utfärdutrustning av mindre värde, matkärl och solglasögon som inte har hittat sina ägare har donerats till Karelska Scouter I Ryssland. Hittegods som är värda över 20 euro finns på <a href="http://www.eslt.fi">Etelä-Suomen Löytötavaratoimisto</a>. Du kan fråga efter dina saker per telefon 0600 55 00 93 (1,83 €/min +mta +lna).
 </p>
 <p>
-Hittegods bevaras inte efter lägret. Utfärdsutrustning som inte hittar sina ägare doneras till Karelska Scouter och hittegods som är värda över 20 euro levereras till Södra Finlands Hittegodsbyrå.
-</p>
-<div class="lostandfound-filter">
-<input placeholder="Sök t.ex. reppu Hurma 24.7.">
-</div>';
+Etelä-Suomen Löytötavaratoimisto förvarar saker <strong>i högst tre månader</strong>. Hittegods kan avhämtas mot beskrivning på Etelä-Suomen Löytötavaratoimisto (Saimaankatu 54, 15140 Lahtis, mån 10–18, tis–fre 10–16). Det finns också en transportservice (via Matkahuolto) som kostar extra.
+</p>';
   $handler->display->display_options['header']['area']['format'] = 'fj16_block_content';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
