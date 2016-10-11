@@ -261,14 +261,16 @@ body.front {
     }
 
     .theme {
-      padding-top: 100px;
-      background: $blue;
+      padding-top: 20px;
+      background: $blue 50% 50% no-repeat url(../img/backgrounds/last-front-page.svg);
+      background-size: 100% auto;
     }
 
     .row {
       width: 95%;
       max-width: 1300px;
       margin: 0 auto;
+      padding: 50px 0;
       clear: both;
     }
 
@@ -313,6 +315,7 @@ body.front {
 
       .site, .date {
         font-size: 85%;
+        text-decoration: none;
       }
 
       .date {
@@ -327,6 +330,7 @@ body.front {
     .images {
       float: right;
       width: 45%;
+      padding-top: 5px;
 
       img {
         width: 48%;
@@ -341,6 +345,14 @@ body.front {
 
     .videos {
       clear: both;
+      padding-top: 20px;
+      text-align: center;
+
+      iframe {
+        width: 18%;
+        margin: 0.79%;
+        display: inline-block;
+      }
     }
 
   }
