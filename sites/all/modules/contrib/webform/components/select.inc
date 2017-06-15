@@ -81,7 +81,6 @@ function _webform_edit_select($component) {
       '#type' => 'select',
       '#options' => $options,
       '#default_value' => $component['extra']['options_source'],
-      '#weight' => 1,
       '#description' => t('Use a pre-built list of options rather than entering options manually. Options will not be editable if using pre-built list.'),
       '#parents' => array('extra', 'options_source'),
       '#weight' => 5,
@@ -334,9 +333,13 @@ function _webform_render_select($component, $value = NULL, $filter = TRUE, $subm
     '#weight' => $component['weight'],
     '#description' => $filter ? webform_filter_descriptions($component['extra']['description'], $node) : $component['extra']['description'],
     '#theme_wrappers' => array('webform_element'),
-    '#pre_render' => array(), // Needed to disable double-wrapping of radios and checkboxes.
     '#translatable' => array('title', 'description', 'options'),
   );
+
+  // Prevent double-wrapping of radios and checkboxes.
+  if (!$component['extra']['aslist']) {
+    $element['#pre_render'] = array();
+  }
 
   // Convert the user-entered options list into an array.
   $default_value = $filter ? webform_replace_tokens($component['value'], $node) : $component['value'];
@@ -392,7 +395,7 @@ function _webform_render_select($component, $value = NULL, $filter = TRUE, $subm
     $option_value = reset($value);
     $element['#default_value'] = $option_value === '' ? NULL : $option_value;
   }
-  
+
   if ($component['extra']['other_option'] && module_exists('select_or_other')) {
     // Set display as a select_or_other element:
     $element['#type'] = 'select_or_other';
@@ -759,8 +762,8 @@ function _webform_action_set_select($component, &$element, &$form_state, $value)
   // Set the value as an array for multiple select or single value otherwise.
   if ($element['#type'] == 'checkboxes') {
     $checkbox_values = $element['#options'];
-    array_walk($checkbox_values, function(&$value, $key) use($value) {
-      $value = (int)(strval($key) === $value);
+    array_walk($checkbox_values, function(&$option_value, $key) use($value) {
+      $option_value = (int)(strval($key) === $value);
     });
   }
   else {
@@ -981,7 +984,7 @@ function _webform_select_options_callback($name, $component, $flat = FALSE) {
   }
 
   // Execute the callback function.
-  if (isset($info[$name]['options callback']) && function_exists($info[$name]['options callback'])) {
+  if (isset($info[$name]['options callback']) && is_callable($info[$name]['options callback'])) {
     $function = $info[$name]['options callback'];
 
     $arguments = array();
@@ -1020,7 +1023,7 @@ function _webform_select_options_from_text($text, $flat = FALSE) {
     $group = NULL;
     foreach ($rows as $option) {
       $option = trim($option);
-      /**
+      /*
        * If the Key of the option is within < >, treat as an optgroup
        *
        * <Group 1>

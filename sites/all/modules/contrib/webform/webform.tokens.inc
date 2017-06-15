@@ -64,7 +64,7 @@ function webform_token_info() {
   );
   $info['tokens']['submission']['values'] = array(
     'name' => t('Webform submission values'),
-    'description' => '<div>' . t('Webform tokens from submitted data. Replace the "?" with the "field key", including any parent field keys separated by colons. You can append:') . '</div>' .
+    'description' => '<div>' . t('Webform tokens from submitted data. Replace the "?" with the "form key", including any parent form keys separated by colons. You can append:') . '</div>' .
                      '<ul>' .
                      '<li>' . t('the question key for just that one question (grid components).') . '</li>' .
                      '<li>' . t('the option key for just that one option (grid and select components).') . '</li>' .
@@ -109,7 +109,7 @@ function webform_tokens($type, $tokens, array $data = array(), array $options = 
   // from the rendered submission if recursion has been detected.
   if ($recursion_level) {
     $markup_components = array_keys(array_filter($node->webform['components'],
-                                                 function ($component) { return $component['type'] == 'markup'; }));
+      function ($component) { return $component['type'] == 'markup'; }));
   }
 
   $recursion_level++;
