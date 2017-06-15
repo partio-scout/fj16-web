@@ -11,7 +11,7 @@
   line-height: 1;
   padding: .7em 1.4em;
   text-transform: uppercase;
-  
+
   @media (max-width: $break-mobile) {
     font-size: 1.3em;
   }
@@ -53,7 +53,7 @@ body.front {
     }
 
     &.fixed-nav {
-      margin-bottom: 50px;      
+      margin-bottom: 50px;
     }
 
     @include respond(small) {
@@ -71,30 +71,30 @@ body.front {
         @include animation-delay(1.0s);
       }
     }
-    
+
     &:before {
       @extend .animated, .fadeInDown;
       @include animation-duration(1.0s);
       @include animation-delay(1.0s);
-          
+
       @include at2x('header_sp_logo', 225px);
       top: 4.8em;
       right: 2em;
       width: 225px;
       height: 84px;
-      
+
       @include respond(medium) {
         width: 180px;
         height: 68px;
         background-size: 180px;
       }
-      
+
       @include respond(mobile) {
         width: 100px;
         height: 43px;
         right: 1em;
         top: 3.8em;
-        background-size: 100px;      
+        background-size: 100px;
       }
     }
 
@@ -216,7 +216,7 @@ body.front {
 
     #navigation {
       bottom: -80px;
-        
+
       @include respond(1299px) {
         bottom: -60px;
       }
@@ -229,11 +229,11 @@ body.front {
 
       background: url("#{$s3}/img/front_header_large.jpg") center;
       background-size: cover;
-      
+
       @include respond(small) {
         background-image: url("#{$s3}/img/front_header_small.jpg");
       }
-      
+
       @include respond(mobile) {
         background-image: url("#{$s3}/img/front_header_mobile.jpg");
       }
@@ -253,7 +253,7 @@ body.front {
     }
 
     padding: 0;
-    
+
     div#clock-wrapper,
     div.frontpage-lift {
       @include at2x('front_section_bg', auto, 100%);
@@ -280,7 +280,7 @@ body.front {
           width: 50%;
         }
       }
-      
+
       &.blue {
         background-color: $blue;
       }
@@ -293,7 +293,7 @@ body.front {
       &.purple {
         background-color: $purple;
       }
-      
+
       h2 {
         color: #fff;
         font-family: Exo2, sans-serif;
@@ -302,7 +302,7 @@ body.front {
         text-align: center;
         text-transform: uppercase;
       }
-      
+
       div#clock {
         color: #fff;
         margin: 2.8em auto;
@@ -311,7 +311,7 @@ body.front {
         text-align: center;
         text-transform: uppercase;
         white-space: nowrap;
-        
+
         p {
           background: #333;
           font-size: .9em;
@@ -320,7 +320,7 @@ body.front {
           height: 7.5em;
           width: 7.5em;
           margin-bottom: 0;
-          
+
           span {
             display: block;
             font-size: 4.32em;
@@ -328,7 +328,7 @@ body.front {
             padding: 5px 0 0;
           }
         }
-      
+
         div.space {
           color: #fff;
           display: block;
@@ -339,13 +339,13 @@ body.front {
           width: .6em;
         }
       }
-      
+
       a {
         display: block;
         color: #fff;
         font-size: 1.4em;
         text-align: center;
-                
+
         &:after {
           content: " ›";
           font-size: 1.618em;
@@ -354,7 +354,7 @@ body.front {
           top: 3px;
         }
       }
-      
+
       @include respondMin(small) {
         h2, a {
           opacity: 0;
@@ -364,7 +364,7 @@ body.front {
           }
         }
       }
-      
+
       @include respond(mobile) {
         font-size: .8em;
       }
@@ -396,7 +396,7 @@ body.front {
           margin: 0 0 30px;
           text-transform: uppercase;
           color: $purple;
-          
+
           @media (max-width: $break-mobile) {
             font-size: 1.6em;
           }
@@ -457,5 +457,57 @@ body.front {
       }
     }
 
+  }
+}
+
+// Archive version
+
+#fp-conclusion {
+  @include at2x('front_section_bg', auto, 100%);
+  background-color: $green;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  color: white;
+  padding: 100px 0;
+
+  @include respond(600px) {
+    padding: 50px 0;
+  }
+
+  p {
+    width: 750px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #fp-song {
+    font-style: italic;
+  }
+
+  #fp-video {
+    margin-top: 30px;
+
+    iframe {
+      //width="560" height="315" => h = 0,5625*w
+      width: 700px;
+      height: 394px;
+
+      @include respond(800px) {
+        width: 560px;
+        height: 335px;
+      }
+
+      @include respond(600px) {
+        width: 390px;
+        height: 260px;
+      }
+
+      @include respond(400px) {
+        width: 300px;
+        height: 210px;
+      }
+    }
   }
 }
