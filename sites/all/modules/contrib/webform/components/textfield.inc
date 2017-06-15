@@ -19,6 +19,7 @@ function _webform_defaults_textfield() {
     'extra' => array(
       'width' => '',
       'maxlength' => '',
+      'minlength' => '',
       'field_prefix' => '',
       'field_suffix' => '',
       'disabled' => 0,
@@ -102,7 +103,7 @@ function _webform_edit_textfield($component) {
     '#type' => 'checkbox',
     '#title' => t('Disabled'),
     '#return_value' => 1,
-    '#description' => t('Make this field non-editable. Useful for setting an unchangeable default value.'),
+    '#description' => t('Make this field non-editable. Useful for displaying default value. Changeable via JavaScript or developer tools.'),
     '#weight' => 11,
     '#default_value' => $component['extra']['disabled'],
     '#parents' => array('extra', 'disabled'),
@@ -125,6 +126,16 @@ function _webform_edit_textfield($component) {
     '#maxlength' => 10,
     '#weight' => 2,
     '#parents' => array('extra', 'maxlength'),
+  );
+  $form['validation']['minlength'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Minlength'),
+    '#default_value' => $component['extra']['minlength'],
+    '#description' => t('Minimum length of the textfield value. The component may still be empty unless it is set as Required.'),
+    '#size' => 5,
+    '#maxlength' => 10,
+    '#weight' => 3,
+    '#parents' => array('extra', 'minlength'),
   );
   return $form;
 }
@@ -178,6 +189,9 @@ function _webform_render_textfield($component, $value = NULL, $filter = TRUE, $s
   }
   if ($component['extra']['maxlength'] > 0) {
     $element['#maxlength'] = $component['extra']['maxlength'];
+  }
+  if ($component['extra']['minlength'] > 0) {
+    $element['#minlength'] = $component['extra']['minlength'];
   }
 
   if (isset($value[0])) {

@@ -225,6 +225,7 @@ function _webform_render_grid($component, $value = NULL, $filter = TRUE, $submis
     '#theme' => 'webform_grid',
     '#theme_wrappers' => array('webform_element'),
     '#process' => array('webform_expand_grid'),
+    '#element_validate' => array('webform_validate_grid'),
     '#translatable' => array('title', 'description', 'grid_options', 'grid_questions'),
   );
 
@@ -299,7 +300,9 @@ function webform_expand_grid($element) {
   if (!empty($element['#qrand'])) {
     _webform_shuffle_options($weights);
   }
-  $weight = min($weights);
+  if ($weights) {
+    $weight = min($weights);
+  }
   foreach ($weights as $key => $old_weight) {
     $element[$key]['#options'] = webform_grid_remove_options($options, $element[$key]['#options']);
     $element[$key]['#weight'] = $weight++;
@@ -363,7 +366,7 @@ function webform_grid_merge_options($existing, $new) {
  *   An array of options to be used for this row.
  * @return array
  *   The $row_options with any missing options replaced with empty values.
- **/
+ */
 function webform_grid_remove_options($header, $row_options) {
   foreach ($header as $key => $value) {
     if (!isset($row_options[$key])) {
@@ -489,12 +492,13 @@ function theme_webform_display_grid($variables) {
           }
         }
         $value = implode(', ', $values);
-      } else {
+      }
+      else {
         $element[$question_key]['#title'] = '';
         $value = drupal_render($element[$question_key]);
       }
       $items[] = ' - ' . _webform_grid_question_header($question_element['#title']) . ': ' . $value;
-   }
+    }
     $output = implode("\n", $items);
   }
 
@@ -642,7 +646,8 @@ function _webform_edit_grid_unique_validate($element) {
   // Grids may contain nested multiple value select components.
   // Create a flat array of values.
   $values = array();
-  array_walk_recursive($element['#value'], function($a) use (&$values) { $values[] = $a; });
+  $element['#value'] = (array) $element['#value'];
+  array_walk_recursive($element['#value'], function ($a) use (&$values) { $values[] = $a; });
 
   $nr_unique = count(array_unique($values));
   $nr_values = count($values);
@@ -776,4 +781,29 @@ function _webform_grid_right_titles($element) {
  */
 function _webform_grid_question_header($text) {
   return implode('/', array_filter(explode('|', $text)));
+}
+
+/**
+ * Element validation for Webform grid fields.
+ *
+ * Requires a component implementation because the default required validation
+ * passes when at least one value is supplied, rather than every value. This
+ * makes the server validation match the browser validation.
+ */
+function webform_validate_grid($element, $form_state) {
+  if ($element['#required']) {
+    $values = $form_state['input'];
+    foreach ($element['#parents'] as $key) {
+      $values = isset($values[$key]) ? $values[$key] : $values;
+    }
+    // Remove any values that aren't grid question (i.e. nested components)
+    $grid_questions = $element['#grid_questions'];
+    $values = array_intersect_key($values, $grid_questions);
+    // Remove any unanswered grid questions.
+    $answers = array_filter($values, function($item) { return !is_null($item); });
+    // Give required errors for any questions that aren't answered.
+    foreach (array_diff_key($grid_questions, $answers) as $question_key => $question) {
+      form_error($element[$question_key], t('!question field within !name is required.', array('!question' => $question, '!name' => $element['#title'])));
+    }
+  }
 }
