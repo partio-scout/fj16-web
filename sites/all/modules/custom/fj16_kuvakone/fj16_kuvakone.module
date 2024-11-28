@@ -17,7 +17,7 @@ function fj16_kuvakone_page() {
   drupal_add_html_head(
     array(
       '#type' => 'markup',
-      '#markup' => '<link rel="stylesheet" href="https://npmcdn.com/leaflet@1.0.0-rc.2/dist/leaflet.css" />'
+      '#markup' => '<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.0-rc.2/dist/leaflet.css" />'
     ),
     'fj16_leafle_css'
   );
